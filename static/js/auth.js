@@ -225,10 +225,32 @@ async function handleSignUp(event) {
   setBusy('su', true, 'Sign Up');
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 450));
-    setPageDefaultsForSignIn(byId('su-email').value.trim());
+    const res = await fetch('/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        display_name: byId('su-name').value.trim(),
+        email: byId('su-email').value.trim(),
+        password: byId('su-pass').value,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      throw new Error(data.detail || 'Sign up failed');
+    }
+
+    if (data.access_token) {
+      Auth.setToken(data.access_token);
+      window.location.href = '/app/dashboard.html';
+      return;
+    }
+
     showPage('signin');
-    setBox('si-err', 'si-err-text', 'Account created. Please sign in.', true);
+    setBox('si-err', 'si-err-text', data.detail || 'Check your email to confirm your account.', true);
   } catch (error) {
     setBox('su-err', 'su-err-text', error.message, true);
   } finally {

@@ -1,22 +1,166 @@
-var Auth = window.Auth || {
-  getToken: function () {
-    return localStorage.getItem('access_token');
+const Auth = {
+  tokenKey: 'ct_token',
+
+  getToken() {
+    return localStorage.getItem(this.tokenKey);
   },
 
-  setToken: function (token) {
-    localStorage.setItem('access_token', token);
+  setToken(token) {
+    localStorage.setItem(this.tokenKey, token);
   },
 
-  clearToken: function () {
-    localStorage.removeItem('access_token');
-  }
+  clear() {
+    localStorage.removeItem(this.tokenKey);
+  },
+
+  clearToken() {
+    this.clear();
+  },
 };
 
-var requireAuth = window.requireAuth || async function () {
-  if (Auth.getToken()) {
-    window.location.href = '/app/dashboard.html';
+async function apiFetch(path, options = {}) {
+  const headers = Object.assign({}, options.headers || {});
+  const token = Auth.getToken();
+
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
   }
+
+  return fetch(path, Object.assign({}, options, { headers }));
+}
+
+function isLoginPage() {
+  const path = window.location.pathname;
+  return (
+    path === '/' ||
+    path === '/app/' ||
+    path === '/app/index.html' ||
+    path.endsWith('index.html') ||
+    path.endsWith('index')
+  );
+}
+
+async function requireAuth() {
+  const token = Auth.getToken();
+
+  if (!token) {
+    if (!isLoginPage()) {
+      window.location.href = '/';
+    }
+    return null;
+  }
+
+  try {
+    const res = await apiFetch('/auth/me');
+    if (!res.ok) {
+      throw new Error('bad token');
+    }
+
+    const data = await res.json().catch(() => ({}));
+    const user = data?.user || null;
+
+    if (!user) {
+      throw new Error('no user');
+    }
+
+    if (isLoginPage()) {
+      window.location.href = '/app/dashboard.html';
+      return null;
+    }
+
+    return user;
+  } catch (error) {
+    Auth.clear();
+    if (!isLoginPage()) {
+      window.location.href = '/';
+    }
+    return null;
+  }
+}
+
+function getDisplayName(user) {
+  if (!user) return '';
+  return user.display_name || (user.email ? user.email.split('@')[0] : 'User');
+}
+
+function initTopbar(user) {
+  if (!user) return;
+
+  const nameEl = document.getElementById('topbar-name');
+  if (nameEl) nameEl.textContent = getDisplayName(user);
+
+  const brand = document.querySelector('.topbar-brand, .app-brand');
+  if (brand) {
+    brand.onclick = () => {
+      window.location.href = '/app/dashboard.html';
+    };
+  }
+
+  const btnSettings = document.getElementById('btn-settings');
+  if (btnSettings) {
+    btnSettings.onclick = () => {
+      window.location.href = '/app/settings.html';
+    };
+  }
+
+  const btnLogout = document.getElementById('btn-logout');
+  if (btnLogout) {
+    btnLogout.onclick = async () => {
+      showLoading('Logging out...');
+      Auth.clear();
+      window.location.href = '/';
+    };
+  }
+}
+
+function showLoading(msg = 'Loading...') {
+  let el = document.getElementById('loading-overlay');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'loading-overlay';
+    el.className = 'loading-overlay';
+    el.innerHTML = `
+      <div class="spinner-container">
+        <div class="spinner"></div>
+        <p class="loading-text"></p>
+      </div>`;
+    document.body.appendChild(el);
+  }
+
+  const text = el.querySelector('.loading-text');
+  if (text) text.textContent = msg;
+  el.classList.remove('hidden');
+}
+
+function hideLoading() {
+  const el = document.getElementById('loading-overlay');
+  if (el) el.classList.add('hidden');
+}
+
+const Store = {
+  set(key, val) {
+    sessionStorage.setItem('ct_' + key, JSON.stringify(val));
+  },
+
+  get(key) {
+    try {
+      const item = sessionStorage.getItem('ct_' + key);
+      return item ? JSON.parse(item) : null;
+    } catch (error) {
+      return null;
+    }
+  },
+
+  del(key) {
+    sessionStorage.removeItem('ct_' + key);
+  },
 };
 
 window.Auth = Auth;
+window.apiFetch = apiFetch;
 window.requireAuth = requireAuth;
+window.getDisplayName = getDisplayName;
+window.initTopbar = initTopbar;
+window.showLoading = showLoading;
+window.hideLoading = hideLoading;
+window.Store = Store;
