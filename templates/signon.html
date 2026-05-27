@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cluster Trainer - Auth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/auth.css') }}">
+  <script defer src="{{ url_for('static', filename='js/common.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</head>
+<body>
+  <main class="auth-shell">
+    <section id="page-signin" class="auth-layout auth-page">
+      <div class="auth-left">
+        <div class="eyebrow">Cluster Trainer</div>
+        <h1 class="auth-heading">Welcome back</h1>
+        <p class="auth-sub">Sign in to keep training moving.</p>
+
+        <div class="msg-box err-box" id="si-err" aria-live="polite">
+          <span id="si-err-text"></span>
+        </div>
+
+        <form id="form-signin" novalidate>
+          <div class="field">
+            <label for="si-email">Email</label>
+            <input type="email" id="si-email" placeholder="name@company.com" autocomplete="email">
+            <p class="field-hint" id="si-email-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="si-pass">Password</label>
+            <input type="password" id="si-pass" placeholder="Enter your password" autocomplete="current-password">
+            <button class="toggle-pw" id="toggle-si-pass" type="button" aria-label="Show password">
+              <svg id="eye-icon-si" viewBox="0 0 24 24"></svg>
+            </button>
+            <p class="field-hint" id="si-pass-hint"></p>
+          </div>
+
+          <div class="extras-row">
+            <label class="remember-me">
+              <input type="checkbox" id="si-remember">
+              Remember me
+            </label>
+            <button class="text-link" id="go-forgot" type="button">Forgot password?</button>
+          </div>
+
+          <button class="btn-primary" id="btn-signin" type="submit">
+            <div class="spinner" id="si-spinner"></div>
+            <span id="si-btn-text">Sign In</span>
+          </button>
+        </form>
+
+        <div class="auth-links">
+          Don't have an account?
+          <button class="text-link" id="go-signup" type="button">Sign up</button>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <div class="brand-block">
+          <span class="brand-cluster">CLUSTER</span>
+          <span class="brand-trainer">TRAINER</span>
+          <p>Structured workouts, simple planning, and clean progress tracking.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-signup" class="auth-layout auth-page hidden">
+      <div class="auth-left">
+        <div class="eyebrow">Start fresh</div>
+        <h1 class="auth-heading">Create your account</h1>
+        <p class="auth-sub">Build a training profile in a couple of steps.</p>
+
+        <div class="msg-box err-box" id="su-err" aria-live="polite">
+          <span id="su-err-text"></span>
+        </div>
+
+        <form id="form-signup" novalidate>
+          <div class="field">
+            <label for="su-name">Full name</label>
+            <input type="text" id="su-name" placeholder="Jordan Lee" autocomplete="name">
+            <p class="field-hint" id="su-name-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="su-email">Email</label>
+            <input type="email" id="su-email" placeholder="name@company.com" autocomplete="email">
+            <p class="field-hint" id="su-email-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="su-pass">Password</label>
+            <input type="password" id="su-pass" placeholder="Create a password" autocomplete="new-password">
+            <button class="toggle-pw" id="toggle-su-pass" type="button" aria-label="Show password">
+              <svg id="eye-icon-su" viewBox="0 0 24 24"></svg>
+            </button>
+            <p class="field-hint" id="su-pass-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="su-confirm">Confirm password</label>
+            <input type="password" id="su-confirm" placeholder="Repeat your password" autocomplete="new-password">
+            <button class="toggle-pw" id="toggle-su-confirm" type="button" aria-label="Show password">
+              <svg id="eye-icon-su-confirm" viewBox="0 0 24 24"></svg>
+            </button>
+            <p class="field-hint" id="su-confirm-hint"></p>
+          </div>
+
+          <label class="check-row">
+            <input type="checkbox" id="su-terms">
+            <span>I agree to the terms and privacy policy.</span>
+          </label>
+          <p class="field-hint" id="su-terms-hint"></p>
+
+          <button class="btn-primary" id="btn-signup" type="submit">
+            <div class="spinner" id="su-spinner"></div>
+            <span id="su-btn-text">Sign Up</span>
+          </button>
+        </form>
+
+        <div class="auth-links">
+          Already have an account?
+          <button class="text-link" id="back-to-signin-from-signup" type="button">Sign in</button>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <div class="brand-block brand-block-alt">
+          <span class="brand-cluster">JOIN</span>
+          <span class="brand-trainer">THE CREW</span>
+          <p>Set your baseline, track workouts, and keep your streak alive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-forgot" class="auth-layout auth-page hidden">
+      <div class="auth-left">
+        <div class="eyebrow">Reset access</div>
+        <h1 class="auth-heading">Forgot your password?</h1>
+        <p class="auth-sub">We’ll send a reset link to your inbox.</p>
+
+        <div class="msg-box err-box" id="fo-err" aria-live="polite">
+          <span id="fo-err-text"></span>
+        </div>
+
+        <div class="msg-box success-box hidden" id="fo-ok" aria-live="polite">
+          <span id="fo-ok-text"></span>
+        </div>
+
+        <form id="form-forgot" novalidate>
+          <div class="field">
+            <label for="fo-email">Email</label>
+            <input type="email" id="fo-email" placeholder="name@company.com" autocomplete="email">
+            <p class="field-hint" id="fo-email-hint"></p>
+          </div>
+
+          <button class="btn-primary" id="btn-forgot" type="submit">
+            <div class="spinner" id="fo-spinner"></div>
+            <span id="fo-btn-text">Send reset link</span>
+          </button>
+        </form>
+
+        <div class="auth-links">
+          Remembered it?
+          <button class="text-link" id="back-to-signin-from-forgot" type="button">Back to sign in</button>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <div class="brand-block brand-block-alt">
+          <span class="brand-cluster">RESET</span>
+          <span class="brand-trainer">AND GO</span>
+          <p>Quick recovery so you can get back to training without friction.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
