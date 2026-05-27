@@ -49,6 +49,21 @@ function setBusy(prefix, busy, label) {
   byId(`btn-${prefix}`).disabled = busy;
 }
 
+async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 6000) {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+    return response;
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
 function makeToggle(btnId, inputId, iconId) {
   const eyeOpen = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
   const eyeClose = '<line x1="1" y1="1" x2="23" y2="23"></line><path d="M3.5 8.5C5.5 5.5 8.4 4 12 4c4 0 8 3 10.5 8-1 2-2.4 3.8-4.1 5.1"></path>';
@@ -189,7 +204,7 @@ async function handleSignIn(event) {
   setBusy('si', true, 'Sign In');
 
   try {
-    const res = await fetch('/auth/signin', {
+    const res = await fetchJsonWithTimeout('/auth/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -225,7 +240,7 @@ async function handleSignUp(event) {
   setBusy('su', true, 'Sign Up');
 
   try {
-    const res = await fetch('/auth/signup', {
+    const res = await fetchJsonWithTimeout('/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -266,7 +281,7 @@ async function handleForgot(event) {
   setBusy('fo', true, 'Send reset link');
 
   try {
-    const res = await fetch('/auth/password-reset/request', {
+    const res = await fetchJsonWithTimeout('/auth/password-reset/request', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -284,7 +299,10 @@ async function handleForgot(event) {
 
     setBox('fo-ok', 'fo-ok-text', data.message || 'Reset link sent. Check your email.', true);
   } catch (error) {
-    setBox('fo-err', 'fo-err-text', error.message, true);
+    const message = error.name === 'AbortError'
+      ? 'Supabase is taking too long to respond. Please try again.'
+      : error.message;
+    setBox('fo-err', 'fo-err-text', message, true);
   } finally {
     setBusy('fo', false, 'Send reset link');
   }
