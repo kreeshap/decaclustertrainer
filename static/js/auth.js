@@ -44,9 +44,19 @@ function isEmail(value) {
 }
 
 function setBusy(prefix, busy, label) {
-  byId(`${prefix}-spinner`).style.display = busy ? 'block' : 'none';
-  byId(`${prefix}-btn-text`).textContent = busy ? 'Please wait...' : label;
-  byId(`btn-${prefix}`).disabled = busy;
+  const buttonIds = {
+    si: 'btn-signin',
+    su: 'btn-signup',
+    fo: 'btn-forgot',
+  };
+
+  const spinner = byId(`${prefix}-spinner`);
+  const text = byId(`${prefix}-btn-text`);
+  const button = byId(buttonIds[prefix] || `btn-${prefix}`);
+
+  if (spinner) spinner.style.display = busy ? 'block' : 'none';
+  if (text) text.textContent = busy ? 'Please wait...' : label;
+  if (button) button.disabled = busy;
 }
 
 async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 6000) {

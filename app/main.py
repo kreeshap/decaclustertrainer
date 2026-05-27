@@ -34,11 +34,25 @@ app = Flask(
     static_folder=str(BASE_DIR / "static"),
 )
 
-SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
+
+def normalize_supabase_url(raw_url: str) -> str:
+    """
+    Accept either the project base URL or an accidentally pasted REST/API URL.
+    Supabase auth endpoints need the project base URL, not /rest/v1.
+    """
+    url = (raw_url or "").strip().rstrip("/")
+    for suffix in ("/rest/v1", "/auth/v1"):
+        if url.endswith(suffix):
+            url = url[: -len(suffix)]
+            break
+    return url.rstrip("/")
+
+
+SUPABASE_URL = normalize_supabase_url(os.environ.get("SUPABASE_URL", ""))
 SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY", "")
 SUPABASE_SERVICE_ROLE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 SUPABASE_AUTH_URL = f"{SUPABASE_URL}/auth/v1" if SUPABASE_URL else ""
-SUPABASE_API_TIMEOUT = float(os.environ.get("SUPABASE_API_TIMEOUT", "15"))
+SUPABASE_API_TIMEOUT = float(os.environ.get("SUPABASE_API_TIMEOUT", "6"))
 
 
 def normalize_email(email: str) -> str:
