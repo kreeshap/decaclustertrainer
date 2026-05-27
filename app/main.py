@@ -36,6 +36,7 @@ app = Flask(
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
 SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY", "")
+SUPABASE_SERVICE_ROLE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 SUPABASE_AUTH_URL = f"{SUPABASE_URL}/auth/v1" if SUPABASE_URL else ""
 SUPABASE_API_TIMEOUT = float(os.environ.get("SUPABASE_API_TIMEOUT", "15"))
 
@@ -99,6 +100,63 @@ def supabase_request(path: str, method: str = "GET", token: str | None = None, p
         return 502, {"detail": f"Supabase request failed: {error.reason}"}
     except Exception as error:
         return 502, {"detail": f"Supabase request failed: {error}"}
+
+
+def supabase_admin_request(path: str, method: str = "GET", payload: dict | None = None):
+    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+        return 500, {
+            "detail": "Supabase admin is not configured. Set SUPABASE_SERVICE_ROLE_KEY.",
+        }
+
+    headers = {
+        "apikey": SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
+
+    data = None
+    if payload is not None:
+        data = json.dumps(payload).encode("utf-8")
+
+    request = Request(
+        f"{SUPABASE_AUTH_URL}{path}",
+        data=data,
+        headers=headers,
+        method=method,
+    )
+
+    try:
+        with urlopen(request, timeout=SUPABASE_API_TIMEOUT) as response:
+            body = response.read().decode("utf-8")
+            return response.status, json.loads(body) if body else {}
+    except HTTPError as error:
+        body = error.read().decode("utf-8")
+        try:
+            parsed = json.loads(body) if body else {}
+        except json.JSONDecodeError:
+            parsed = {}
+        if body and "msg" not in parsed:
+            parsed["msg"] = body
+        return error.code, parsed
+    except URLError as error:
+        return 502, {"detail": f"Supabase admin request failed: {error.reason}"}
+    except Exception as error:
+        return 502, {"detail": f"Supabase admin request failed: {error}"}
+
+
+def find_supabase_user_by_email(email: str):
+    target_email = normalize_email(email)
+    status, data = supabase_admin_request("/admin/users")
+    if status != 200:
+        return None, data
+
+    users = data.get("users") or []
+    for user in users:
+        if normalize_email(user.get("email")) == target_email:
+            return user, None
+
+    return None, None
 
 
 def serialize_user(user: dict) -> dict:
@@ -337,6 +395,45 @@ def me():
         return jsonify({"detail": "Unauthorized"}), 401
 
     return jsonify({"user": serialize_user(user)})
+
+
+@app.post("/auth/password-reset/request")
+def password_reset_request():
+    payload = request.get_json(silent=True) or {}
+    email = normalize_email(payload.get("email"))
+
+    if not email:
+        return jsonify({"detail": "Please enter your email address."}), 400
+
+    existing_user, lookup_error = find_supabase_user_by_email(email)
+    if lookup_error:
+        message = (
+            lookup_error.get("msg")
+            or lookup_error.get("error_description")
+            or lookup_error.get("detail")
+            or "Unable to verify account."
+        )
+        return jsonify({"detail": message}), 502
+
+    if not existing_user:
+        return jsonify({"detail": "No account found for that email address."}), 404
+
+    status, data = supabase_request(
+        "/recover",
+        method="POST",
+        payload={"email": email},
+    )
+
+    if status != 200:
+        message = (
+            data.get("msg")
+            or data.get("error_description")
+            or data.get("detail")
+            or "Unable to send reset link."
+        )
+        return jsonify({"detail": message}), status
+
+    return jsonify({"message": "Reset link sent. Check your email."})
 
 
 if __name__ == "__main__":

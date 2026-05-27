@@ -260,13 +260,29 @@ async function handleSignUp(event) {
 
 async function handleForgot(event) {
   event.preventDefault();
+  const email = byId('fo-email').value.trim();
   if (!validateForgot()) return;
 
   setBusy('fo', true, 'Send reset link');
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 450));
-    setBox('fo-ok', 'fo-ok-text', 'Reset link sent. Check your inbox.', true);
+    const res = await fetch('/auth/password-reset/request', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      throw new Error(data.detail || 'Unable to send reset link');
+    }
+
+    setBox('fo-ok', 'fo-ok-text', data.message || 'Reset link sent. Check your email.', true);
   } catch (error) {
     setBox('fo-err', 'fo-err-text', error.message, true);
   } finally {
@@ -304,6 +320,8 @@ function init() {
 
   showPage('signin');
   clearBox('si-err', 'si-err-text');
+  clearBox('fo-err', 'fo-err-text');
+  clearBox('fo-ok', 'fo-ok-text');
 
   if (typeof requireAuth === 'function') {
     requireAuth();
