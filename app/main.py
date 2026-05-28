@@ -1,10 +1,11 @@
 import json
 import os
+import time
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, make_response, render_template, request
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,10 +54,95 @@ SUPABASE_ANON_KEY = os.environ.get("SUPABASE_ANON_KEY", "")
 SUPABASE_SERVICE_ROLE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 SUPABASE_AUTH_URL = f"{SUPABASE_URL}/auth/v1" if SUPABASE_URL else ""
 SUPABASE_API_TIMEOUT = float(os.environ.get("SUPABASE_API_TIMEOUT", "6"))
+LOGIN_LIMIT_MAX_FAILURES = int(os.environ.get("LOGIN_LIMIT_MAX_FAILURES", "5"))
+LOGIN_LIMIT_WINDOW_SECONDS = int(os.environ.get("LOGIN_LIMIT_WINDOW_SECONDS", "600"))
+LOGIN_LIMIT_COOLDOWN_SECONDS = int(os.environ.get("LOGIN_LIMIT_COOLDOWN_SECONDS", "600"))
+REFRESH_COOKIE_NAME = os.environ.get("REFRESH_COOKIE_NAME", "ct_refresh_token")
+REFRESH_COOKIE_MAX_AGE = int(os.environ.get("REFRESH_COOKIE_MAX_AGE", str(60 * 60 * 24 * 30)))
+_LOGIN_FAILURES: dict[str, list[float]] = {}
 
 
 def normalize_email(email: str) -> str:
     return (email or "").strip().lower()
+
+
+def get_client_ip() -> str:
+    forwarded_for = request.headers.get("X-Forwarded-For", "")
+    if forwarded_for:
+        return forwarded_for.split(",")[0].strip() or request.remote_addr or "unknown"
+    return request.remote_addr or "unknown"
+
+
+def login_limit_key(email: str | None = None, ip: str | None = None) -> str:
+    return f"{normalize_email(email)}|{ip or get_client_ip()}"
+
+
+def prune_login_failures(entries: list[float], now: float) -> list[float]:
+    cutoff = now - LOGIN_LIMIT_WINDOW_SECONDS
+    return [ts for ts in entries if ts >= cutoff]
+
+
+def login_limit_status(email: str | None = None, ip: str | None = None) -> tuple[bool, int]:
+    key = login_limit_key(email, ip)
+    now = time.time()
+    entries = prune_login_failures(_LOGIN_FAILURES.get(key, []), now)
+    _LOGIN_FAILURES[key] = entries
+
+    if len(entries) < LOGIN_LIMIT_MAX_FAILURES:
+        return False, 0
+
+    retry_after = max(1, int(LOGIN_LIMIT_COOLDOWN_SECONDS - (now - entries[0])))
+    if retry_after <= 0:
+        _LOGIN_FAILURES[key] = []
+        return False, 0
+
+    return True, retry_after
+
+
+def record_login_failure(email: str | None = None, ip: str | None = None) -> tuple[bool, int]:
+    key = login_limit_key(email, ip)
+    now = time.time()
+    entries = prune_login_failures(_LOGIN_FAILURES.get(key, []), now)
+    entries.append(now)
+    _LOGIN_FAILURES[key] = entries
+
+    if len(entries) < LOGIN_LIMIT_MAX_FAILURES:
+        return False, 0
+
+    return True, LOGIN_LIMIT_COOLDOWN_SECONDS
+
+
+def clear_login_failures(email: str | None = None, ip: str | None = None) -> None:
+    _LOGIN_FAILURES.pop(login_limit_key(email, ip), None)
+
+
+def is_local_host(hostname: str | None) -> bool:
+    hostname = (hostname or "").split(":", 1)[0].lower()
+    return hostname in {"localhost", "127.0.0.1", "::1"}
+
+
+def cookie_secure_flag() -> bool:
+    return not is_local_host(request.host)
+
+
+def set_refresh_cookie(response, refresh_token: str) -> None:
+    response.set_cookie(
+        REFRESH_COOKIE_NAME,
+        refresh_token,
+        max_age=REFRESH_COOKIE_MAX_AGE,
+        httponly=True,
+        secure=cookie_secure_flag(),
+        samesite="Lax",
+        path="/",
+    )
+
+
+def clear_refresh_cookie(response) -> None:
+    response.delete_cookie(
+        REFRESH_COOKIE_NAME,
+        path="/",
+        samesite="Lax",
+    )
 
 
 def display_name_from_email(email: str) -> str:
@@ -194,17 +280,24 @@ def auth_response(data: dict, status_code: int = 200):
     session = data.get("session") or {}
     user = data.get("user") or {}
     access_token = session.get("access_token")
+    refresh_token = session.get("refresh_token")
 
     if not access_token:
-        return jsonify({
+        response = make_response(jsonify({
             "user": serialize_user(user),
             "detail": "Check your email to confirm the account before signing in.",
-        }), 202
+        }), 202)
+        if refresh_token:
+            set_refresh_cookie(response, refresh_token)
+        return response
 
-    return jsonify({
+    response = make_response(jsonify({
         "access_token": access_token,
         "user": serialize_user(user),
-    }), status_code
+    }), status_code)
+    if refresh_token:
+        set_refresh_cookie(response, refresh_token)
+    return response
 
 
 def get_bearer_token() -> str | None:
@@ -348,9 +441,17 @@ def signin():
     payload = request.get_json(silent=True) or {}
     email = normalize_email(payload.get("email"))
     password = payload.get("password") or ""
+    client_ip = get_client_ip()
 
     if not email or not password:
         return jsonify({"detail": "Please fill in all fields."}), 400
+
+    limited, retry_after = login_limit_status(email, client_ip)
+    if limited:
+        return jsonify({
+            "detail": "Too many login attempts. Please wait before trying again.",
+            "retry_after_seconds": retry_after,
+        }), 429
 
     status, data = supabase_request(
         "/token?grant_type=password",
@@ -365,8 +466,15 @@ def signin():
             or data.get("detail")
             or "Invalid email or password."
         )
+        limited, retry_after = record_login_failure(email, client_ip)
+        if limited:
+            return jsonify({
+                "detail": "Too many login attempts. Please wait before trying again.",
+                "retry_after_seconds": retry_after,
+            }), 429
         return jsonify({"detail": message}), 401
 
+    clear_login_failures(email, client_ip)
     return auth_response(data)
 
 
@@ -414,6 +522,55 @@ def me():
         return jsonify({"detail": "Unauthorized"}), 401
 
     return jsonify({"user": serialize_user(user)})
+
+
+@app.post("/auth/session")
+def session_sync():
+    payload = request.get_json(silent=True) or {}
+    refresh_token = payload.get("refresh_token") or ""
+
+    if not refresh_token:
+        return jsonify({"detail": "Missing refresh token."}), 400
+
+    response = make_response(jsonify({"message": "Session stored."}))
+    set_refresh_cookie(response, refresh_token)
+    return response
+
+
+@app.post("/auth/refresh")
+def refresh_session():
+    refresh_token = request.cookies.get(REFRESH_COOKIE_NAME) or ""
+
+    if not refresh_token:
+        response = make_response(jsonify({"detail": "Missing refresh session."}), 401)
+        clear_refresh_cookie(response)
+        return response
+
+    status, data = supabase_request(
+        "/token?grant_type=refresh_token",
+        method="POST",
+        payload={"refresh_token": refresh_token},
+    )
+
+    if status != 200:
+        message = (
+            data.get("msg")
+            or data.get("error_description")
+            or data.get("detail")
+            or "Unable to refresh session."
+        )
+        response = make_response(jsonify({"detail": message}), 401)
+        clear_refresh_cookie(response)
+        return response
+
+    return auth_response(data)
+
+
+@app.post("/auth/logout")
+def logout():
+    response = make_response(jsonify({"message": "Logged out."}), 200)
+    clear_refresh_cookie(response)
+    return response
 
 
 @app.post("/auth/password-reset/request")

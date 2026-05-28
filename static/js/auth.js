@@ -60,7 +60,33 @@ function setBusy(prefix, busy, label) {
   if (button) button.disabled = busy;
 }
 
-function handleAuthCallback() {
+function updatePasswordStrength() {
+  const v = byId('su-pass').value;
+  let score = 0;
+
+  if (v.length >= 6) score++;
+  if (v.length >= 10) score++;
+  if (/[A-Z]/.test(v) && /[0-9]/.test(v)) score++;
+  if (/[^a-zA-Z0-9]/.test(v)) score++;
+
+  const colors = ['', '#f87171', '#fb923c', '#facc15', '#4ade80'];
+  const labels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+  const label = byId('strength-label');
+
+  ['s1', 's2', 's3', 's4'].forEach((id, index) => {
+    const bar = byId(id);
+    if (!bar) return;
+    bar.style.background = index < score ? (colors[score] || 'var(--border)') : 'var(--border)';
+    bar.style.boxShadow = index < score && score >= 3 ? `0 0 10px ${colors[score]}33` : 'none';
+  });
+
+  if (label) {
+    label.textContent = v.length ? labels[score] || 'Weak' : '';
+    label.style.color = colors[score] || 'var(--muted)';
+  }
+}
+
+async function handleAuthCallback() {
   const url = new URL(window.location.href);
   const type = url.searchParams.get('type') || url.hash.match(/type=([^&]+)/)?.[1] || '';
   const token =
@@ -68,10 +94,32 @@ function handleAuthCallback() {
     url.searchParams.get('token') ||
     url.hash.match(/access_token=([^&]+)/)?.[1] ||
     url.hash.match(/token=([^&]+)/)?.[1];
+  const refreshToken =
+    url.searchParams.get('refresh_token') ||
+    url.hash.match(/refresh_token=([^&]+)/)?.[1] ||
+    url.hash.match(/refresh=([^&]+)/)?.[1];
 
   if (!token) return;
 
-  Auth.setToken(decodeURIComponent(token));
+  const decodedToken = decodeURIComponent(token);
+  Auth.setToken(decodedToken);
+
+  if (refreshToken) {
+    try {
+      await fetch('/auth/session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          refresh_token: decodeURIComponent(refreshToken),
+        }),
+      });
+    } catch (error) {
+      // If session sync fails, the access token still works for this browser session.
+    }
+  }
 
   if (type === 'recovery') {
     window.history.replaceState({}, document.title, url.pathname);
@@ -420,7 +468,7 @@ function setPageDefaultsForSignIn(email) {
 }
 
 function init() {
-  const authMode = handleAuthCallback();
+  const authModePromise = handleAuthCallback();
   bindNavigation();
   makeToggle('toggle-si-pass', 'si-pass', 'eye-icon-si');
   makeToggle('toggle-su-pass', 'su-pass', 'eye-icon-su');
@@ -444,21 +492,25 @@ function init() {
   byId('form-signup').addEventListener('submit', handleSignUp);
   byId('form-forgot').addEventListener('submit', handleForgot);
   byId('form-reset').addEventListener('submit', handleReset);
+  byId('su-pass').addEventListener('input', updatePasswordStrength);
 
-  if (authMode === 'recovery') {
-    showPage('reset');
-  } else {
-    showPage('signin');
-  }
-  clearBox('si-err', 'si-err-text');
-  clearBox('fo-err', 'fo-err-text');
-  clearBox('fo-ok', 'fo-ok-text');
-  clearBox('rp-err', 'rp-err-text');
-  clearBox('rp-ok', 'rp-ok-text');
+  authModePromise.then((authMode) => {
+    if (authMode === 'recovery') {
+      showPage('reset');
+    } else {
+      showPage('signin');
+    }
+    clearBox('si-err', 'si-err-text');
+    clearBox('fo-err', 'fo-err-text');
+    clearBox('fo-ok', 'fo-ok-text');
+    clearBox('rp-err', 'rp-err-text');
+    clearBox('rp-ok', 'rp-ok-text');
+    updatePasswordStrength();
 
-  if (typeof requireAuth === 'function' && authMode !== 'recovery') {
-    requireAuth();
-  }
+    if (typeof requireAuth === 'function' && authMode !== 'recovery') {
+      requireAuth();
+    }
+  });
 }
 
 init();

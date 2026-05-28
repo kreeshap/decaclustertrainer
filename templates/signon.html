@@ -52,6 +52,17 @@
             <div class="spinner" id="si-spinner"></div>
             <span id="si-btn-text">Sign In</span>
           </button>
+
+          <div class="social-login" aria-label="Social login options">
+            <button class="social-btn social-google" id="btn-google" type="button">
+              <span class="social-icon" aria-hidden="true">G</span>
+              <span>Sign in with Google</span>
+            </button>
+            <button class="social-btn social-apple" id="btn-apple" type="button">
+              <span class="social-icon" aria-hidden="true">A</span>
+              <span>Sign in with Apple</span>
+            </button>
+          </div>
         </form>
 
         <div class="auth-links">
@@ -97,6 +108,15 @@
             <button class="toggle-pw" id="toggle-su-pass" type="button" aria-label="Show password">
               <svg id="eye-icon-su" viewBox="0 0 24 24"></svg>
             </button>
+            <div class="strength-meter" aria-live="polite">
+              <div class="strength-bars" aria-hidden="true">
+                <span id="s1"></span>
+                <span id="s2"></span>
+                <span id="s3"></span>
+                <span id="s4"></span>
+              </div>
+              <span class="strength-label" id="strength-label"></span>
+            </div>
             <p class="field-hint" id="su-pass-hint"></p>
           </div>
 

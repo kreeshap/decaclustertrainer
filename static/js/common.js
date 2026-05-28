@@ -18,15 +18,53 @@ const Auth = {
   },
 };
 
+async function refreshSession() {
+  try {
+    const res = await fetch('/auth/refresh', {
+      method: 'POST',
+      credentials: 'include',
+    });
+
+    if (!res.ok) {
+      return false;
+    }
+
+    const data = await res.json().catch(() => ({}));
+    if (data.access_token) {
+      Auth.setToken(data.access_token);
+    }
+
+    return Boolean(data.access_token);
+  } catch (error) {
+    return false;
+  }
+}
+
 async function apiFetch(path, options = {}) {
   const headers = Object.assign({}, options.headers || {});
   const token = Auth.getToken();
+  const fetchOptions = Object.assign({ credentials: 'same-origin' }, options, { headers });
 
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
 
-  return fetch(path, Object.assign({}, options, { headers }));
+  let res = await fetch(path, fetchOptions);
+
+  if (res.status === 401 && path !== '/auth/refresh' && path !== '/auth/logout') {
+    const refreshed = await refreshSession();
+    if (refreshed) {
+      const freshToken = Auth.getToken();
+      if (freshToken) {
+        headers.Authorization = `Bearer ${freshToken}`;
+      } else {
+        delete headers.Authorization;
+      }
+      res = await fetch(path, fetchOptions);
+    }
+  }
+
+  return res;
 }
 
 function isLoginPage() {
@@ -41,13 +79,17 @@ function isLoginPage() {
 }
 
 async function requireAuth() {
-  const token = Auth.getToken();
+  let token = Auth.getToken();
 
   if (!token) {
-    if (!isLoginPage()) {
-      window.location.href = '/';
+    const refreshed = await refreshSession();
+    if (!refreshed) {
+      if (!isLoginPage()) {
+        window.location.href = '/';
+      }
+      return null;
     }
-    return null;
+    token = Auth.getToken();
   }
 
   try {
@@ -107,6 +149,14 @@ function initTopbar(user) {
   if (btnLogout) {
     btnLogout.onclick = async () => {
       showLoading('Logging out...');
+      try {
+        await fetch('/auth/logout', {
+          method: 'POST',
+          credentials: 'same-origin',
+        });
+      } catch (error) {
+        // Ignore logout transport errors and clear local session anyway.
+      }
       Auth.clear();
       window.location.href = '/';
     };
@@ -157,6 +207,7 @@ const Store = {
 };
 
 window.Auth = Auth;
+window.refreshSession = refreshSession;
 window.apiFetch = apiFetch;
 window.requireAuth = requireAuth;
 window.getDisplayName = getDisplayName;
