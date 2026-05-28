@@ -64,7 +64,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10%;
+  padding: 0 12%;
   position: relative;
   overflow: hidden;
 }
@@ -73,7 +73,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 0% 100%, rgba(0, 194, 224, .06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 70% 50% at 0% 100%, rgba(0, 194, 224, .04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -97,7 +97,7 @@ form {
 }
 
 .field {
-  margin-bottom: .9rem;
+  margin-bottom: 1rem;
   animation: fadeUp .4s .12s ease both;
   position: relative;
 }
@@ -117,8 +117,8 @@ form {
   width: 100%;
   background: var(--input);
   border: 1.5px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 16px;
+  border-radius: 14px;
+  padding: 16px 18px;
   color: var(--white);
   font-family: 'Barlow', sans-serif;
   font-size: .95rem;
@@ -133,7 +133,7 @@ form {
 .field input:focus,
 .field select:focus {
   border-color: var(--cyan);
-  box-shadow: 0 0 0 3px var(--cyan-glow);
+  box-shadow: 0 0 0 4px var(--cyan-glow);
 }
 
 .field input.is-invalid {
@@ -146,13 +146,13 @@ form {
 
 .toggle-pw {
   position: absolute;
-  right: 13px;
-  bottom: 13px;
+  right: 16px;
+  bottom: 16px;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--muted);
-  padding: 2px;
+  padding: 4px;
   display: flex;
   align-items: center;
   transition: color .15s;
@@ -163,8 +163,8 @@ form {
 }
 
 .toggle-pw svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -181,8 +181,8 @@ form {
 
 .strength-meter {
   display: grid;
-  gap: 7px;
-  margin-top: .5rem;
+  gap: 8px;
+  margin-top: .6rem;
   animation: fadeUp .4s .16s ease both;
 }
 
@@ -193,7 +193,7 @@ form {
 }
 
 .strength-bars span {
-  height: 5px;
+  height: 6px;
   border-radius: 999px;
   background: var(--border);
   transition: background-color .18s ease, box-shadow .18s ease;
@@ -210,7 +210,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
   font-size: .83rem;
   animation: fadeUp .4s .15s ease both;
 }
@@ -238,9 +238,9 @@ form {
 .check-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--muted);
-  margin-bottom: .4rem;
+  margin-bottom: .6rem;
   animation: fadeUp .4s .15s ease both;
 }
 
@@ -271,8 +271,8 @@ form {
 .msg-box {
   background: rgba(239, 68, 68, .1);
   border: 1px solid rgba(239, 68, 68, .3);
-  border-radius: 7px;
-  padding: 10px 14px;
+  border-radius: 12px;
+  padding: 12px 16px;
   font-size: .83rem;
   color: var(--error);
   margin-bottom: .9rem;
@@ -295,10 +295,10 @@ form {
 
 .btn-primary {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   background: var(--cyan);
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   color: #051a1a;
   font-family: 'Barlow', sans-serif;
   font-size: .88rem;
@@ -330,8 +330,8 @@ form {
 .social-login {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 14px;
+  gap: 14px;
+  margin-top: 18px;
   animation: fadeUp .4s .18s ease both;
 }
 
@@ -341,8 +341,8 @@ form {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  min-height: 48px;
-  border-radius: 8px;
+  min-height: 52px;
+  border-radius: 14px;
   border: 1.5px solid var(--border2);
   background: rgba(26, 58, 58, .88);
   color: var(--white);
@@ -353,7 +353,7 @@ form {
 
 .social-btn:hover {
   border-color: var(--cyan);
-  box-shadow: 0 0 0 3px var(--cyan-glow);
+  box-shadow: 0 0 0 4px var(--cyan-glow);
   background: rgba(28, 68, 68, .94);
 }
 
@@ -365,8 +365,8 @@ form {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   background: rgba(255, 255, 255, .08);
   color: var(--cyan);
@@ -393,7 +393,7 @@ form {
 }
 
 .auth-links {
-  margin-top: 1.2rem;
+  margin-top: 1.6rem;
   text-align: center;
   font-size: .88rem;
   color: var(--muted);
@@ -431,7 +431,7 @@ form {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 100% 50%, rgba(0, 194, 224, .07) 0%, transparent 65%);
+  background: radial-gradient(ellipse 50% 40% at 100% 50%, rgba(0, 194, 224, .05) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -442,10 +442,10 @@ form {
   background-image:
     linear-gradient(var(--border2) 1px, transparent 1px),
     linear-gradient(90deg, var(--border2) 1px, transparent 1px);
-  background-size: 48px 48px;
-  opacity: .18;
+  background-size: 56px 56px;
+  opacity: .12;
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 35%, transparent 100%);
 }
 
 .brand-block {
