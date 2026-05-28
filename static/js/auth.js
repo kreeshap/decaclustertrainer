@@ -1,4 +1,4 @@
-const PAGES = ['signin', 'signup', 'forgot'];
+const PAGES = ['signin', 'signup', 'forgot', 'reset'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function byId(id) {
@@ -48,6 +48,7 @@ function setBusy(prefix, busy, label) {
     si: 'btn-signin',
     su: 'btn-signup',
     fo: 'btn-forgot',
+    rp: 'btn-reset',
   };
 
   const spinner = byId(`${prefix}-spinner`);
@@ -57,6 +58,32 @@ function setBusy(prefix, busy, label) {
   if (spinner) spinner.style.display = busy ? 'block' : 'none';
   if (text) text.textContent = busy ? 'Please wait...' : label;
   if (button) button.disabled = busy;
+}
+
+function handleAuthCallback() {
+  const url = new URL(window.location.href);
+  const type = url.searchParams.get('type') || url.hash.match(/type=([^&]+)/)?.[1] || '';
+  const token =
+    url.searchParams.get('access_token') ||
+    url.searchParams.get('token') ||
+    url.hash.match(/access_token=([^&]+)/)?.[1] ||
+    url.hash.match(/token=([^&]+)/)?.[1];
+
+  if (!token) return;
+
+  Auth.setToken(decodeURIComponent(token));
+
+  if (type === 'recovery') {
+    window.history.replaceState({}, document.title, url.pathname);
+    showPage('reset');
+    clearBox('rp-err', 'rp-err-text');
+    clearBox('rp-ok', 'rp-ok-text');
+    return 'recovery';
+  }
+
+  window.history.replaceState({}, document.title, url.pathname);
+  window.location.href = '/app/dashboard.html';
+  return 'login';
 }
 
 async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 6000) {
@@ -200,6 +227,37 @@ function validateForgot() {
   return ok;
 }
 
+function validateReset() {
+  let ok = true;
+  const password = byId('rp-pass').value;
+  const confirm = byId('rp-confirm').value;
+
+  clearBox('rp-err', 'rp-err-text');
+  clearBox('rp-ok', 'rp-ok-text');
+
+  if (!password) {
+    setFieldState('rp-pass', 'rp-pass-hint', 'Password is required.');
+    ok = false;
+  } else if (password.length < 8) {
+    setFieldState('rp-pass', 'rp-pass-hint', 'Use at least 8 characters.');
+    ok = false;
+  } else {
+    clearField('rp-pass', 'rp-pass-hint');
+  }
+
+  if (!confirm) {
+    setFieldState('rp-confirm', 'rp-confirm-hint', 'Please confirm your password.');
+    ok = false;
+  } else if (confirm !== password) {
+    setFieldState('rp-confirm', 'rp-confirm-hint', 'Passwords do not match.');
+    ok = false;
+  } else {
+    clearField('rp-confirm', 'rp-confirm-hint');
+  }
+
+  return ok;
+}
+
 function bindNavigation() {
   byId('go-signup').addEventListener('click', () => showPage('signup'));
   byId('go-forgot').addEventListener('click', () => showPage('forgot'));
@@ -318,6 +376,41 @@ async function handleForgot(event) {
   }
 }
 
+async function handleReset(event) {
+  event.preventDefault();
+  if (!validateReset()) return;
+
+  setBusy('rp', true, 'Update password');
+
+  try {
+    const res = await fetchJsonWithTimeout('/auth/password-reset/complete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        password: byId('rp-pass').value,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      throw new Error(data.detail || 'Unable to update password');
+    }
+
+    setBox('rp-ok', 'rp-ok-text', data.message || 'Password updated successfully.', true);
+    window.location.href = '/app/dashboard.html';
+  } catch (error) {
+    const message = error.name === 'AbortError'
+      ? 'Supabase is taking too long to respond. Please try again.'
+      : error.message;
+    setBox('rp-err', 'rp-err-text', message, true);
+  } finally {
+    setBusy('rp', false, 'Update password');
+  }
+}
+
 function setPageDefaultsForSignIn(email) {
   byId('si-email').value = email;
   byId('si-pass').value = '';
@@ -327,10 +420,13 @@ function setPageDefaultsForSignIn(email) {
 }
 
 function init() {
+  const authMode = handleAuthCallback();
   bindNavigation();
   makeToggle('toggle-si-pass', 'si-pass', 'eye-icon-si');
   makeToggle('toggle-su-pass', 'su-pass', 'eye-icon-su');
   makeToggle('toggle-su-confirm', 'su-confirm', 'eye-icon-su-confirm');
+  makeToggle('toggle-rp-pass', 'rp-pass', 'eye-icon-rp');
+  makeToggle('toggle-rp-confirm', 'rp-confirm', 'eye-icon-rp-confirm');
 
   wireFieldClears([
     ['si-email', 'si-email-hint'],
@@ -340,18 +436,27 @@ function init() {
     ['su-pass', 'su-pass-hint'],
     ['su-confirm', 'su-confirm-hint'],
     ['fo-email', 'fo-email-hint'],
+    ['rp-pass', 'rp-pass-hint'],
+    ['rp-confirm', 'rp-confirm-hint'],
   ]);
 
   byId('form-signin').addEventListener('submit', handleSignIn);
   byId('form-signup').addEventListener('submit', handleSignUp);
   byId('form-forgot').addEventListener('submit', handleForgot);
+  byId('form-reset').addEventListener('submit', handleReset);
 
-  showPage('signin');
+  if (authMode === 'recovery') {
+    showPage('reset');
+  } else {
+    showPage('signin');
+  }
   clearBox('si-err', 'si-err-text');
   clearBox('fo-err', 'fo-err-text');
   clearBox('fo-ok', 'fo-ok-text');
+  clearBox('rp-err', 'rp-err-text');
+  clearBox('rp-ok', 'rp-ok-text');
 
-  if (typeof requireAuth === 'function') {
+  if (typeof requireAuth === 'function' && authMode !== 'recovery') {
     requireAuth();
   }
 }

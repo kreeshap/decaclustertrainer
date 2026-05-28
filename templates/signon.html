@@ -175,6 +175,54 @@
         </div>
       </div>
     </section>
+
+    <section id="page-reset" class="auth-layout auth-page hidden">
+      <div class="auth-left">
+        <div class="eyebrow">Finish reset</div>
+        <h1 class="auth-heading">Set a new password</h1>
+        <p class="auth-sub">Choose a new password for your account</p>
+
+        <div class="msg-box err-box" id="rp-err" aria-live="polite">
+          <span id="rp-err-text"></span>
+        </div>
+
+        <div class="msg-box success-box" id="rp-ok" aria-live="polite">
+          <span id="rp-ok-text"></span>
+        </div>
+
+        <form id="form-reset" novalidate>
+          <div class="field">
+            <label for="rp-pass">New password</label>
+            <input type="password" id="rp-pass" placeholder="Create a new password" autocomplete="new-password">
+            <button class="toggle-pw" id="toggle-rp-pass" type="button" aria-label="Show password">
+              <svg id="eye-icon-rp" viewBox="0 0 24 24"></svg>
+            </button>
+            <p class="field-hint" id="rp-pass-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="rp-confirm">Confirm password</label>
+            <input type="password" id="rp-confirm" placeholder="Repeat your new password" autocomplete="new-password">
+            <button class="toggle-pw" id="toggle-rp-confirm" type="button" aria-label="Show password">
+              <svg id="eye-icon-rp-confirm" viewBox="0 0 24 24"></svg>
+            </button>
+            <p class="field-hint" id="rp-confirm-hint"></p>
+          </div>
+
+          <button class="btn-primary" id="btn-reset" type="submit">
+            <div class="spinner" id="rp-spinner"></div>
+            <span id="rp-btn-text">Update password</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="auth-right">
+        <div class="brand-block">
+          <span class="brand-cluster">CLUSTER</span>
+          <span class="brand-trainer">TRAINER</span>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>

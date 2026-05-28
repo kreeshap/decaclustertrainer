@@ -236,6 +236,11 @@ def app_index():
     return render_template("signon.html")
 
 
+@app.get("/reset-password")
+def reset_password():
+    return render_template("signon.html")
+
+
 @app.get("/app/dashboard.html")
 def dashboard():
     return """
@@ -432,10 +437,14 @@ def password_reset_request():
     if not existing_user:
         return jsonify({"detail": "No account found for that email address."}), 404
 
+    redirect_to = f"{request.host_url.rstrip('/')}/reset-password"
     status, data = supabase_request(
         "/recover",
         method="POST",
-        payload={"email": email},
+        payload={
+            "email": email,
+            "redirect_to": redirect_to,
+        },
     )
 
     if status != 200:
@@ -448,6 +457,37 @@ def password_reset_request():
         return jsonify({"detail": message}), status
 
     return jsonify({"message": "Reset link sent. Check your email."})
+
+
+@app.post("/auth/password-reset/complete")
+def password_reset_complete():
+    token = get_bearer_token()
+    if not token:
+        return jsonify({"detail": "Missing recovery session."}), 401
+
+    payload = request.get_json(silent=True) or {}
+    password = payload.get("password") or ""
+
+    if len(password) < 8:
+        return jsonify({"detail": "Password must be at least 8 characters."}), 400
+
+    status, data = supabase_request(
+        "/user",
+        method="PUT",
+        token=token,
+        payload={"password": password},
+    )
+
+    if status not in (200, 201):
+        message = (
+            data.get("msg")
+            or data.get("error_description")
+            or data.get("detail")
+            or "Unable to update password."
+        )
+        return jsonify({"detail": message}), status
+
+    return jsonify({"message": "Password updated successfully."})
 
 
 if __name__ == "__main__":
