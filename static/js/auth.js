@@ -13,8 +13,32 @@ function showPage(name) {
 
 function setBox(boxId, textId, message, isVisible) {
   const box = byId(boxId);
-  byId(textId).textContent = message || '';
+  const text = byId(textId);
+  if (!box || !text) return;
+  text.textContent = message || '';
   box.classList.toggle('show', Boolean(isVisible && message));
+}
+
+function persistUserProfile(user) {
+  if (!user) return;
+  const name = user.display_name || (user.email ? user.email.split('@')[0] : '');
+  if (!name) return;
+  try {
+    localStorage.setItem('displayName', name);
+  } catch (error) {}
+}
+
+function setEmailConfirmationHelp(visible, message) {
+  const wrap = byId('si-resend-wrap');
+  if (wrap) wrap.classList.toggle('hidden', !visible);
+  if (message) {
+    setBox('si-ok', 'si-ok-text', message, true);
+  }
+}
+
+function clearEmailConfirmationHelp() {
+  setEmailConfirmationHelp(false);
+  clearBox('si-ok', 'si-ok-text');
 }
 
 function clearBox(boxId, textId) {
@@ -22,21 +46,27 @@ function clearBox(boxId, textId) {
 }
 
 function setFieldState(inputId, hintId, message, validState) {
-  const input = byId(inputId);
-  const hint = byId(hintId);
-
-  input.classList.remove('is-invalid', 'is-valid');
-  hint.textContent = message || '';
-
-  if (message) {
-    input.classList.add(validState ? 'is-valid' : 'is-invalid');
+  if (typeof ErrorManager !== 'undefined') {
+    ErrorManager.showFieldError(inputId, message, validState ? 'success' : 'error');
+  } else {
+    const input = byId(inputId);
+    const hint = byId(hintId);
+    input.classList.remove('is-invalid', 'is-valid');
+    hint.textContent = message || '';
+    if (message) {
+      input.classList.add(validState ? 'is-valid' : 'is-invalid');
+    }
   }
 }
 
 function clearField(inputId, hintId) {
-  const input = byId(inputId);
-  input.classList.remove('is-invalid', 'is-valid');
-  byId(hintId).textContent = '';
+  if (typeof ErrorManager !== 'undefined') {
+    ErrorManager.clearField(inputId);
+  } else {
+    const input = byId(inputId);
+    input.classList.remove('is-invalid', 'is-valid');
+    byId(hintId).textContent = '';
+  }
 }
 
 function isEmail(value) {
@@ -49,6 +79,8 @@ function setBusy(prefix, busy, label) {
     su: 'btn-signup',
     fo: 'btn-forgot',
     rp: 'btn-reset',
+    google: 'btn-google',
+    apple: 'btn-apple',
   };
 
   const spinner = byId(`${prefix}-spinner`);
@@ -58,6 +90,99 @@ function setBusy(prefix, busy, label) {
   if (spinner) spinner.style.display = busy ? 'block' : 'none';
   if (text) text.textContent = busy ? 'Please wait...' : label;
   if (button) button.disabled = busy;
+}
+
+function transitionToOpening(triggerEl, source = 'signin') {
+  clearReturnPath();
+  const button = triggerEl || byId('btn-signin');
+  const rect = button ? button.getBoundingClientRect() : null;
+  const startX = rect ? rect.left + rect.width / 2 : window.innerWidth * 0.5;
+  const startY = rect ? rect.top + rect.height / 2 : window.innerHeight * 0.55;
+  const startWidth = rect ? rect.width : 22;
+  const startHeight = rect ? rect.height : 22;
+  const startedAt = Date.now();
+
+  if (button) {
+    button.classList.add('launching');
+  }
+
+  try {
+    sessionStorage.setItem('ct_opening_intro', JSON.stringify({
+      startedAt,
+      source,
+      startX,
+      startY,
+      startWidth,
+      startHeight,
+    }));
+  } catch (error) {}
+
+  let layer = document.querySelector('.route-transition-layer');
+  if (!layer) {
+    layer = document.createElement('div');
+    layer.className = 'route-transition-layer';
+    layer.innerHTML = '<div class="route-orb"></div><div class="route-burst"></div>';
+    document.body.appendChild(layer);
+  }
+
+  const orb = layer.querySelector('.route-orb');
+  const burst = layer.querySelector('.route-burst');
+  const duration = 520;
+  const targetX = window.innerWidth * 0.5;
+  const targetY = window.innerHeight * 0.5;
+
+  const clamp01 = (value) => Math.max(0, Math.min(1, value));
+  const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
+
+  const render = () => {
+    const elapsed = Date.now() - startedAt;
+    const progress = clamp01(elapsed / duration);
+    const eased = easeOutCubic(progress);
+
+    let x = startX + (targetX - startX) * eased;
+    let y = startY + (targetY - startY) * eased;
+    y += Math.sin(progress * 18 * Math.PI) * (14 * (1 - progress * 0.4));
+
+    if (progress > 0.7) {
+      const orbitProgress = clamp01((progress - 0.7) / 0.3);
+      const angle = orbitProgress * Math.PI * 5;
+      const radiusX = 36 * (1 - orbitProgress) + 14;
+      const radiusY = 22 * (1 - orbitProgress) + 8;
+      x = targetX + Math.cos(angle) * radiusX;
+      y = targetY + Math.sin(angle) * radiusY * 0.8;
+    }
+
+    if (progress > 0.96) {
+      const settle = clamp01((progress - 0.96) / 0.04);
+      x += (targetX - x) * settle;
+      y += (targetY - y) * settle;
+    }
+
+    const size = Math.max(56, startHeight * (1 - eased * 0.18) + 56 * eased);
+    orb.style.opacity = '1';
+    orb.style.width = `${size}px`;
+    orb.style.height = `${size}px`;
+    orb.style.transform = `translate3d(${x - size / 2}px, ${y - size / 2}px, 0)`;
+
+    if (progress > 0.9) {
+      const burstScale = 0.45 + (progress - 0.9) * 8;
+      burst.style.opacity = String(Math.min(1, (progress - 0.9) / 0.1));
+      burst.style.transform = `translate3d(${targetX - 70}px, ${targetY - 70}px, 0) scale(${burstScale})`;
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(render);
+    }
+  };
+
+  requestAnimationFrame(render);
+
+  requestAnimationFrame(() => {
+    document.body.classList.add('auth-route-opening');
+  });
+  window.setTimeout(() => {
+    window.location.href = '/app/opening.html';
+  }, duration);
 }
 
 function updatePasswordStrength() {
@@ -102,7 +227,8 @@ async function handleAuthCallback() {
   if (!token) return;
 
   const decodedToken = decodeURIComponent(token);
-  Auth.setToken(decodedToken);
+  const rememberMe = Auth.getRememberPreference();
+  Auth.setToken(decodedToken, rememberMe ?? true);
 
   if (refreshToken) {
     try {
@@ -114,6 +240,7 @@ async function handleAuthCallback() {
         credentials: 'same-origin',
         body: JSON.stringify({
           refresh_token: decodeURIComponent(refreshToken),
+          remember_me: rememberMe ?? true,
         }),
       });
     } catch (error) {
@@ -130,7 +257,7 @@ async function handleAuthCallback() {
   }
 
   window.history.replaceState({}, document.title, url.pathname);
-  window.location.href = '/app/dashboard.html';
+  transitionToOpening(null, 'oauth');
   return 'login';
 }
 
@@ -140,6 +267,7 @@ async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 6000) {
 
   try {
     const response = await fetch(url, {
+      credentials: 'same-origin',
       ...options,
       signal: controller.signal,
     });
@@ -178,6 +306,8 @@ function validateSignIn() {
   const password = byId('si-pass').value;
 
   clearBox('si-err', 'si-err-text');
+  clearBox('si-ok', 'si-ok-text');
+  clearEmailConfirmationHelp();
 
   if (!email) {
     setFieldState('si-email', 'si-email-hint', 'Email is required.');
@@ -196,6 +326,17 @@ function validateSignIn() {
     clearField('si-pass', 'si-pass-hint');
   }
 
+  const captchaWrap = byId('si-captcha-wrap');
+  if (captchaWrap && !captchaWrap.classList.contains('hidden')) {
+    const answer = byId('si-captcha-answer').value.trim();
+    if (!answer) {
+      setFieldState('si-captcha-answer', 'si-captcha-hint', 'Please complete the security check.');
+      ok = false;
+    } else {
+      clearField('si-captcha-answer', 'si-captcha-hint');
+    }
+  }
+
   return ok;
 }
 
@@ -208,6 +349,7 @@ function validateSignUp() {
   const terms = byId('su-terms').checked;
 
   clearBox('su-err', 'su-err-text');
+  clearBox('su-ok', 'su-ok-text');
 
   if (!name) {
     setFieldState('su-name', 'su-name-hint', 'Full name is required.');
@@ -311,6 +453,42 @@ function bindNavigation() {
   byId('go-forgot').addEventListener('click', () => showPage('forgot'));
   byId('back-to-signin-from-signup').addEventListener('click', () => showPage('signin'));
   byId('back-to-signin-from-forgot').addEventListener('click', () => showPage('signin'));
+  const backFromReset = byId('back-to-signin-from-reset');
+  if (backFromReset) {
+    backFromReset.addEventListener('click', () => showPage('signin'));
+  }
+}
+
+async function handleSocialLogin(provider) {
+  setBusy(provider, true, `Sign in with ${provider === 'google' ? 'Google' : 'Apple'}`);
+
+  try {
+    const res = await fetchJsonWithTimeout(`/auth/oauth/${provider}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.detail || `${provider} sign in failed`);
+    }
+
+    if (data.url) {
+      window.location.href = data.url;
+    }
+  } catch (error) {
+    const errorMessage = typeof ErrorManager !== 'undefined'
+      ? ((error.name === 'AbortError' || String(error.message || '').toLowerCase().includes('fetch'))
+          ? ErrorManager.formatNetworkError(error)
+          : ErrorManager.formatAuthError(error))
+      : (error.name === 'AbortError' ? 'Connection error, please try again.' : error.message);
+    setBox('si-err', 'si-err-text', errorMessage, true);
+  } finally {
+    setBusy(provider, false, `Sign in with ${provider === 'google' ? 'Google' : 'Apple'}`);
+  }
 }
 
 async function handleSignIn(event) {
@@ -318,6 +496,9 @@ async function handleSignIn(event) {
   if (!validateSignIn()) return;
 
   setBusy('si', true, 'Sign In');
+  const rememberMe = byId('si-remember').checked;
+  const captchaAnswer = byId('si-captcha-answer').value.trim();
+  let openingLaunchStarted = false;
 
   try {
     const res = await fetchJsonWithTimeout('/auth/signin', {
@@ -328,24 +509,72 @@ async function handleSignIn(event) {
       body: JSON.stringify({
         email: byId('si-email').value.trim(),
         password: byId('si-pass').value,
+        remember_me: rememberMe,
+        captcha_answer: captchaAnswer,
       }),
     });
 
-    const data = await res.json();
+    const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {
-      throw new Error(data.detail || 'Invalid credentials');
+      if (data.requires_email_confirmation) {
+        setEmailConfirmationHelp(true, data.detail || 'Please confirm your email before signing in.');
+        return;
+      }
+      const err = new Error(data.detail || 'Invalid credentials');
+      err.retryAfterSeconds = data.retry_after_seconds;
+      err.captchaRequired = data.captcha_required;
+      err.captchaPrompt = data.captcha_prompt;
+      err.requiresEmailConfirmation = Boolean(data.requires_email_confirmation);
+      throw err;
     }
 
-    if (data.access_token) {
-      Auth.setToken(data.access_token);
+    if (!data.access_token) {
+      const pendingMsg = data.detail || 'Please confirm your email before signing in.';
+      if (res.status === 202 || data.requires_email_confirmation) {
+        setEmailConfirmationHelp(true, pendingMsg);
+        return;
+      }
+      throw new Error(pendingMsg);
     }
 
-    window.location.href = '/app/dashboard.html';
+    clearEmailConfirmationHelp();
+    Auth.setToken(data.access_token, rememberMe);
+    Auth.setRememberPreference(rememberMe);
+    persistUserProfile(data.user);
+
+    if (typeof ErrorManager !== 'undefined') {
+      ErrorManager.showSuccess(ErrorManager.getSuccessMessage('SIGN_IN'), { duration: 2000 });
+    }
+
+    transitionToOpening(byId('btn-signin'), 'signin');
+    openingLaunchStarted = true;
+    return;
   } catch (error) {
-    setBox('si-err', 'si-err-text', error.message, true);
+    const lockSeconds = Number(error.retryAfterSeconds || 0);
+    const errorMessage = lockSeconds > 0
+      ? `Too many login attempts. Try again in ${Math.ceil(lockSeconds / 60)} minute${Math.ceil(lockSeconds / 60) === 1 ? '' : 's'}.`
+      : (typeof ErrorManager !== 'undefined'
+          ? ((error.name === 'AbortError' || String(error.message || '').toLowerCase().includes('fetch'))
+              ? ErrorManager.formatNetworkError(error)
+              : ErrorManager.formatAuthError(error))
+          : (error.name === 'AbortError' ? 'Connection error, please try again.' : error.message));
+    if (error.captchaRequired) {
+      const wrap = byId('si-captcha-wrap');
+      const question = byId('si-captcha-question');
+      if (wrap) wrap.classList.remove('hidden');
+      if (question) question.textContent = error.captchaPrompt || 'Please complete the security check.';
+      clearField('si-captcha-answer', 'si-captcha-hint');
+    }
+    if (error.requiresEmailConfirmation) {
+      setEmailConfirmationHelp(true, errorMessage);
+      return;
+    }
+    setBox('si-err', 'si-err-text', errorMessage, true);
   } finally {
-    setBusy('si', false, 'Sign In');
+    if (!openingLaunchStarted) {
+      setBusy('si', false, 'Sign In');
+    }
   }
 }
 
@@ -354,6 +583,7 @@ async function handleSignUp(event) {
   if (!validateSignUp()) return;
 
   setBusy('su', true, 'Sign Up');
+  let openingLaunchStarted = false;
 
   try {
     const res = await fetchJsonWithTimeout('/auth/signup', {
@@ -375,17 +605,70 @@ async function handleSignUp(event) {
     }
 
     if (data.access_token) {
-      Auth.setToken(data.access_token);
-      window.location.href = '/app/dashboard.html';
+      Auth.setToken(data.access_token, true);
+      Auth.setRememberPreference(true);
+      persistUserProfile(data.user);
+      if (typeof ErrorManager !== 'undefined') {
+        ErrorManager.showSuccess(ErrorManager.getSuccessMessage('SIGN_UP'), { duration: 2000 });
+      }
+      transitionToOpening(byId('btn-signup'), 'signup');
+      openingLaunchStarted = true;
       return;
     }
 
     showPage('signin');
-    setBox('si-err', 'si-err-text', data.detail || 'Check your email to confirm your account.', true);
+    const successMsg = data.detail || (typeof ErrorManager !== 'undefined'
+      ? ErrorManager.getSuccessMessage('SIGN_UP_CONFIRM')
+      : 'Check your email to confirm your account.');
+    if (data.requires_email_confirmation) {
+      setEmailConfirmationHelp(true, successMsg);
+    } else {
+      setBox('si-ok', 'si-ok-text', successMsg, true);
+    }
+    if (typeof ErrorManager !== 'undefined') {
+      ErrorManager.showSuccess(successMsg);
+    }
   } catch (error) {
-    setBox('su-err', 'su-err-text', error.message, true);
+    const errorMessage = typeof ErrorManager !== 'undefined'
+      ? ((error.name === 'AbortError' || String(error.message || '').toLowerCase().includes('fetch'))
+          ? ErrorManager.formatNetworkError(error)
+          : ErrorManager.formatAuthError(error))
+      : (error.name === 'AbortError' ? 'Connection error, please try again.' : error.message);
+    setBox('su-err', 'su-err-text', errorMessage, true);
   } finally {
-    setBusy('su', false, 'Sign Up');
+    if (!openingLaunchStarted) {
+      setBusy('su', false, 'Sign Up');
+    }
+  }
+}
+
+async function handleResendConfirmation() {
+  const email = byId('si-email').value.trim();
+  if (!email || !isEmail(email)) {
+    setFieldState('si-email', 'si-email-hint', 'Enter a valid email to resend confirmation.');
+    return;
+  }
+
+  const button = byId('btn-resend-confirm');
+  if (button) button.disabled = true;
+
+  try {
+    const res = await fetchJsonWithTimeout('/auth/resend-confirmation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.detail || 'Unable to resend confirmation email.');
+    }
+    setEmailConfirmationHelp(true, data.message || 'Confirmation email sent. Check spam and Promotions.');
+  } catch (error) {
+    setBox('si-err', 'si-err-text', error.message, true);
+  } finally {
+    if (button) button.disabled = false;
   }
 }
 
@@ -413,12 +696,16 @@ async function handleForgot(event) {
       throw new Error(data.detail || 'Unable to send reset link');
     }
 
-    setBox('fo-ok', 'fo-ok-text', data.message || 'Reset link sent. Check your email.', true);
+    const successMsg = data.message || ErrorManager.getSuccessMessage('PASSWORD_RESET_REQUEST');
+    setBox('fo-ok', 'fo-ok-text', successMsg, true);
+    if (typeof ErrorManager !== 'undefined') {
+      ErrorManager.showSuccess(successMsg);
+    }
   } catch (error) {
-    const message = error.name === 'AbortError'
-      ? 'Supabase is taking too long to respond. Please try again.'
-      : error.message;
-    setBox('fo-err', 'fo-err-text', message, true);
+    const errorMessage = typeof ErrorManager !== 'undefined' 
+      ? ErrorManager.formatNetworkError(error)
+      : (error.name === 'AbortError' ? 'Supabase is taking too long to respond. Please try again.' : error.message);
+    setBox('fo-err', 'fo-err-text', errorMessage, true);
   } finally {
     setBusy('fo', false, 'Send reset link');
   }
@@ -447,13 +734,17 @@ async function handleReset(event) {
       throw new Error(data.detail || 'Unable to update password');
     }
 
-    setBox('rp-ok', 'rp-ok-text', data.message || 'Password updated successfully.', true);
-    window.location.href = '/app/dashboard.html';
+    const successMsg = data.message || ErrorManager.getSuccessMessage('PASSWORD_RESET_COMPLETE');
+    setBox('rp-ok', 'rp-ok-text', successMsg, true);
+    if (typeof ErrorManager !== 'undefined') {
+      ErrorManager.showSuccess(successMsg, { duration: 2000 });
+    }
+    transitionToOpening(byId('btn-reset'), 'reset');
   } catch (error) {
-    const message = error.name === 'AbortError'
-      ? 'Supabase is taking too long to respond. Please try again.'
-      : error.message;
-    setBox('rp-err', 'rp-err-text', message, true);
+    const errorMessage = typeof ErrorManager !== 'undefined' 
+      ? ErrorManager.formatNetworkError(error)
+      : (error.name === 'AbortError' ? 'Supabase is taking too long to respond. Please try again.' : error.message);
+    setBox('rp-err', 'rp-err-text', errorMessage, true);
   } finally {
     setBusy('rp', false, 'Update password');
   }
@@ -462,13 +753,21 @@ async function handleReset(event) {
 function setPageDefaultsForSignIn(email) {
   byId('si-email').value = email;
   byId('si-pass').value = '';
+  byId('si-captcha-answer').value = '';
   clearBox('si-err', 'si-err-text');
+  clearBox('si-ok', 'si-ok-text');
   clearField('si-email', 'si-email-hint');
   clearField('si-pass', 'si-pass-hint');
+  clearField('si-captcha-answer', 'si-captcha-hint');
+  byId('si-captcha-wrap').classList.add('hidden');
+  byId('si-captcha-question').textContent = '';
 }
 
 function init() {
   const authModePromise = handleAuthCallback();
+  if (typeof applyClientEnvironment === 'function') {
+    applyClientEnvironment();
+  }
   bindNavigation();
   makeToggle('toggle-si-pass', 'si-pass', 'eye-icon-si');
   makeToggle('toggle-su-pass', 'su-pass', 'eye-icon-su');
@@ -479,6 +778,7 @@ function init() {
   wireFieldClears([
     ['si-email', 'si-email-hint'],
     ['si-pass', 'si-pass-hint'],
+    ['si-captcha-answer', 'si-captcha-hint'],
     ['su-name', 'su-name-hint'],
     ['su-email', 'su-email-hint'],
     ['su-pass', 'su-pass-hint'],
@@ -493,6 +793,15 @@ function init() {
   byId('form-forgot').addEventListener('submit', handleForgot);
   byId('form-reset').addEventListener('submit', handleReset);
   byId('su-pass').addEventListener('input', updatePasswordStrength);
+  byId('btn-google').addEventListener('click', () => handleSocialLogin('google'));
+  byId('btn-apple').addEventListener('click', () => handleSocialLogin('apple'));
+  const resendBtn = byId('btn-resend-confirm');
+  if (resendBtn) resendBtn.addEventListener('click', handleResendConfirmation);
+
+  const storedRemember = Auth.getRememberPreference();
+  if (storedRemember !== null) {
+    byId('si-remember').checked = storedRemember;
+  }
 
   authModePromise.then((authMode) => {
     if (authMode === 'recovery') {
@@ -501,6 +810,9 @@ function init() {
       showPage('signin');
     }
     clearBox('si-err', 'si-err-text');
+    clearBox('si-ok', 'si-ok-text');
+    clearBox('su-err', 'su-err-text');
+    clearBox('su-ok', 'su-ok-text');
     clearBox('fo-err', 'fo-err-text');
     clearBox('fo-ok', 'fo-ok-text');
     clearBox('rp-err', 'rp-err-text');
