@@ -234,27 +234,32 @@ function renderTopNav(user) {
   const currentPath = window.location.pathname;
   const items = [
     {
-      label: 'Learn Mode Home',
+      label: 'Dashboard',
       href: '/app/dashboard.html',
-      active: currentPath === '/app/dashboard.html' || currentPath === '/app/index.html',
+      active: currentPath.endsWith('/app/dashboard.html') || currentPath.endsWith('/app/index.html'),
     },
     {
-      label: 'Practice Questions',
-      href: '/app/dashboard.html#practice-questions',
-      active: false,
+      label: 'Learn',
+      href: '/app/learn.html',
+      active: currentPath.endsWith('/app/learn.html'),
     },
     {
-      label: 'Practice Roleplays',
-      href: '/app/dashboard.html#practice-roleplays',
-      active: false,
+      label: 'Questions',
+      href: '/app/practicequestions.html',
+      active: currentPath.endsWith('/app/practicequestions.html'),
+    },
+    {
+      label: 'Roleplays',
+      href: '/app/practiceroleplays.html',
+      active: currentPath.endsWith('/app/practiceroleplays.html'),
     },
   ];
 
   if (isAdminEmail(user && user.email)) {
     items.push({
-      label: 'Admin Panel',
-      href: '/app/dashboard.html#admin-panel',
-      active: false,
+      label: 'Admin',
+      href: '/app/adminpanel.html',
+      active: currentPath.endsWith('/app/adminpanel.html'),
     });
   }
 

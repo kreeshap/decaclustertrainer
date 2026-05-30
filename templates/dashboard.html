@@ -3,286 +3,103 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cluster Trainer - Dashboard</title>
+    <title>Cluster Trainer - Learn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="/static/js/common.js"></script>
     <style>
       :root {
         color-scheme: dark;
-        --bg: #061515;
-        --panel: #0b1f1f;
-        --panel-2: rgba(11, 31, 31, .92);
-        --line: rgba(74, 127, 165, .28);
-        --line-strong: rgba(0, 194, 224, .34);
+        --bg: #0b1f1f;
+        --panel: #112929;
+        --input: #1a3a3a;
+        --border: #1e4040;
+        --border2: #245050;
         --cyan: #00c2e0;
-        --cyan-dim: #00a6bf;
-        --text: #e8f5f5;
-        --muted: #6b8f8f;
+        --cyan-glow: rgba(0, 194, 224, .15);
+        --white: #f0fafa;
+        --muted: #6a9898;
       }
 
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      html, body {
-        margin: 0;
-        min-height: 100vh;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100vh; }
       body {
-        background:
-          radial-gradient(1200px 420px at 50% 0%, rgba(0, 194, 224, .07), transparent 55%),
-          linear-gradient(180deg, #061515 0%, #071717 100%);
-        color: var(--text);
-        font-family: Barlow, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--white);
+        font-family: 'Barlow', sans-serif;
+        padding-top: 56px;
       }
-
-      @keyframes fadeRise {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .app-topbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+        height: 56px; display: flex; align-items: center;
+        padding: 0 24px; background: rgba(11, 31, 31, .92);
+        border-bottom: 1px solid var(--border); backdrop-filter: blur(10px);
       }
-
-      @keyframes softPop {
-        0% {
-          transform: scale(.98);
-        }
-        60% {
-          transform: scale(1.01);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .topbar-wrap {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(4, 18, 18, .84);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--line);
-        box-shadow: inset 0 -1px 0 rgba(255,255,255,.02);
-      }
-
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        min-height: 56px;
-        padding: 0 20px 0 22px;
-        animation: fadeRise .32s ease both;
-      }
-
       .app-brand {
-        cursor: pointer;
-        font-family: "Barlow Condensed", Arial, sans-serif;
-        font-size: 1.05rem;
-        font-weight: 900;
-        letter-spacing: .06em;
-        text-transform: uppercase;
-        color: var(--text);
-        white-space: nowrap;
+        font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+        font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
+        color: var(--white); margin-right: 32px; white-space: nowrap; cursor: pointer;
       }
-
-      .app-brand span:last-child {
-        color: var(--cyan);
-      }
-
-      .topbar-nav {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        flex: 1;
-        margin-left: 18px;
-        min-width: 0;
-      }
-
+      .app-brand em { color: var(--cyan); font-style: normal; }
+      .app-nav { display: flex; gap: 4px; flex: 1; min-width: 0; }
       .topbar-link {
-        position: relative;
-        background: none;
-        border: none;
-        padding: 0;
-        color: var(--muted);
-        font-size: .82rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        transition:
-          color .15s ease,
-          opacity .15s ease,
-          transform .18s ease,
-          text-shadow .18s ease;
-        white-space: nowrap;
-        transform-origin: center bottom;
+        font-size: .74rem; font-weight: 600; letter-spacing: .05em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 5px 12px; border-radius: 4px; text-decoration: none;
+        position: relative; white-space: nowrap;
       }
-
-      .topbar-link:hover {
-        color: var(--text);
-        transform: translateY(-1px);
-        text-shadow: 0 0 12px rgba(0, 194, 224, .08);
-      }
-
-      .topbar-link.active {
-        color: var(--cyan);
-      }
-
-      .topbar-link.is-pressing {
-        animation: softPop .18s ease;
-      }
-
+      .topbar-link:hover { color: var(--white); }
+      .topbar-link.active { color: var(--cyan); }
       .topbar-link.active::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -20px;
-        height: 2px;
-        border-radius: 999px;
-        background: var(--cyan);
-        box-shadow: 0 0 12px rgba(0, 194, 224, .4);
-        transform-origin: center;
-        animation: fadeRise .18s ease both;
+        content: ''; position: absolute; left: 12px; right: 12px; bottom: -2px;
+        height: 2px; border-radius: 2px; background: var(--cyan);
       }
-
-      .topbar-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .icon-button,
-      .pill {
-        height: 34px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 194, 224, .26);
-        background: rgba(255,255,255,.02);
-        color: var(--text);
-        text-decoration: none;
+      .topbar-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+      .user-chip { font-size: .8rem; color: var(--muted); padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; white-space: nowrap; }
+      .btn-sm {
+        background: transparent; border: 1.5px solid var(--border); border-radius: 6px;
+        color: var(--muted); padding: 6px 14px; font-family: 'Barlow', sans-serif;
+        font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
         cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition:
-          border-color .15s ease,
-          background-color .15s ease,
-          color .15s ease,
-          box-shadow .15s ease,
-          transform .18s ease;
       }
-
-      .icon-button {
-        width: 34px;
-        padding: 0;
+      .btn-icon {
+        background: transparent; border: 1.5px solid var(--border2); border-radius: 6px;
+        color: var(--white); width: 34px; height: 34px; display: flex;
+        align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
       }
-
-      .pill {
-        padding: 0 14px;
-        font-size: .72rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-      }
-
-      .icon-button:hover,
-      .pill:hover {
-        border-color: rgba(0, 194, 224, .45);
-        background: rgba(0, 194, 224, .08);
-        box-shadow: 0 0 0 1px rgba(0, 194, 224, .08);
-        transform: translateY(-1px);
-      }
-
-      .icon-button:active,
-      .pill:active,
-      .topbar-link:active {
-        transform: translateY(0) scale(.98);
-      }
-
-      .icon-button svg {
-        width: 16px;
-        height: 16px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.8;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .main-shell {
-        padding: 28px;
-        animation: fadeRise .34s .05s ease both;
-      }
-
-      @media (max-width: 900px) {
-        .topbar {
-          padding: 0 14px;
-          gap: 14px;
-        }
-
-        .topbar-nav {
-          gap: 16px;
-          margin-left: 10px;
-          overflow-x: auto;
-          scrollbar-width: none;
-        }
-
-        .topbar-nav::-webkit-scrollbar {
-          display: none;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .topbar {
-          flex-wrap: wrap;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        }
-
-        .topbar-nav {
-          order: 3;
-          width: 100%;
-          margin-left: 0;
-          padding-top: 8px;
-          padding-bottom: 2px;
-          border-top: 1px solid rgba(255,255,255,.05);
-        }
-
-        .topbar-link.active::after {
-          bottom: -8px;
-        }
-      }
+      .btn-icon svg { display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .main-shell { max-width: 1100px; margin: 0 auto; padding: 28px 28px 56px; }
+      .app-sec { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+      .dash-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.1; margin: 0 0 18px 0; }
+      .dash-title em { color: var(--cyan); font-style: normal; }
+      .panel { border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px; background: rgba(19,47,47,.35); }
     </style>
   </head>
   <body>
-    <header class="topbar-wrap">
-      <div class="topbar">
-        <div class="app-brand"><span>Cluster</span> Trainer</div>
-        <nav class="topbar-nav" id="dashboard-nav" aria-label="Primary"></nav>
-        <div class="topbar-actions">
-          <button class="icon-button" id="btn-settings" type="button" aria-label="Settings">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"></path>
-            </svg>
-          </button>
-          <button class="pill" id="btn-logout" type="button">Log out</button>
-        </div>
+    <header class="app-topbar">
+      <div class="app-brand">CLUSTER <em>TRAINER</em></div>
+      <nav class="app-nav" id="dashboard-nav" aria-label="Primary"></nav>
+      <div class="topbar-right">
+        <div class="user-chip" id="topbar-name"></div>
+        <button class="btn-icon" id="btn-settings" type="button" aria-label="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"></path>
+          </svg>
+        </button>
+        <button class="btn-sm" id="btn-logout" type="button">Log out</button>
       </div>
     </header>
     <main class="main-shell">
-      <h1>Dashboard</h1>
-      <p>You are signed in.</p>
+      <section class="dash-header">
+        <div>
+          <div class="app-sec">Dashboard</div>
+          <h1 class="dash-title"><em>Dashboard</em></h1>
+        </div>
+      </section>
+      <div class="panel">
+        <p>This is the Dashboard</p>
+      </div>
     </main>
     <script>
       requireAuth().then((user) => {

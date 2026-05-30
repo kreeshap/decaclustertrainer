@@ -696,6 +696,26 @@ def dashboard():
     return render_template("dashboard.html")
 
 
+@app.get("/app/learn.html")
+def learn():
+    return render_template("learn.html")
+
+
+@app.get("/app/practicequestions.html")
+def practice_questions():
+    return render_template("practicequestions.html")
+
+
+@app.get("/app/practiceroleplays.html")
+def practice_roleplays():
+    return render_template("practiceroleplays.html")
+
+
+@app.get("/app/adminpanel.html")
+def admin_panel():
+    return render_template("adminpanel.html")
+
+
 @app.get("/app/settings.html")
 def settings():
     return """

@@ -6,7 +6,6 @@
   <title>Cluster Trainer | Welcome</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/static/js/common.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -126,7 +125,7 @@
 
     .brand-cluster-big {
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
+      font-weight: 800;
       font-size: clamp(4.5rem, 13vw, 10rem);
       letter-spacing: -0.01em;
       line-height: 0.88;
@@ -145,16 +144,12 @@
       color: var(--cyan);
       display: block;
     }
-
-    /* ────────────────────────────────
-       PHASE 3 — Cluster grid
-    ──────────────────────────────── */
     #phase-grid { padding: 2rem; gap: 0; z-index: 30; }
 
     .grid-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
+      font-size: 2rem;
+      font-weight: 1000;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 2rem;
@@ -227,6 +222,7 @@
        PHASE 4 — Sub-events
     ──────────────────────────────── */
     #phase-events { padding: 2rem; z-index: 25; }
+    #phase-level  { padding: 2rem; z-index: 999; }
 
     .events-inner {
       max-width: 640px;
@@ -283,6 +279,8 @@
       max-height: 58vh;
       overflow-y: auto;
       padding-right: 6px;
+      position: relative;
+      z-index: 1;
     }
 
     .events-list::-webkit-scrollbar { width: 3px; }
@@ -290,6 +288,10 @@
     .events-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
     .event-item {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      text-align: left;
       padding: 0.85rem 1.1rem;
       border-radius: 8px;
       border: 1.5px solid var(--border);
@@ -301,6 +303,8 @@
       color: var(--muted);
       letter-spacing: 0.02em;
       transition: border-color 0.18s, background 0.18s, color 0.18s, transform 0.18s;
+      position: relative;
+      z-index: 1;
     }
 
     .event-item:hover {
@@ -343,6 +347,91 @@
       animation: blink 1.6s ease infinite;
     }
 
+    .opening-status,
+    .opening-tip {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      width: min(640px, calc(100vw - 2rem));
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(17, 41, 41, 0.92);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(8px);
+      z-index: 130;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease;
+    }
+
+    .opening-status.show,
+    .opening-tip.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .opening-status {
+      top: 1rem;
+      color: var(--white);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .opening-status[data-kind="warning"] { border-color: rgba(248, 113, 113, 0.5); }
+    .opening-status[data-kind="success"] { border-color: rgba(74, 222, 128, 0.45); }
+
+    .opening-tip {
+      bottom: 1rem;
+      top: auto;
+      max-width: 520px;
+    }
+
+    .opening-tip-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.35rem;
+    }
+
+    .opening-tip-text {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--white);
+    }
+
+    .opening-skeleton {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 0.2rem;
+    }
+
+    .skeleton-item {
+      height: 2.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(90deg,
+          rgba(26, 58, 58, 0.75) 0%,
+          rgba(36, 80, 80, 0.88) 50%,
+          rgba(26, 58, 58, 0.75) 100%);
+      background-size: 220% 100%;
+      animation: shimmer 1.2s ease-in-out infinite;
+    }
+
+    .skeleton-item.sm {
+      height: 2.1rem;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 100% 0; opacity: 0.72; }
+      50%  { opacity: 1; }
+      100% { background-position: 0 0; opacity: 0.72; }
+    }
+
     @keyframes blink {
       0%, 100% { opacity: 0.35; }
       50%       { opacity: 0.85; }
@@ -360,6 +449,11 @@
 <body>
 
 <canvas id="particle-canvas"></canvas>
+<div class="opening-status hidden" id="opening-status"></div>
+<div class="opening-tip hidden" id="opening-tip">
+  <div class="opening-tip-label">Quick tip</div>
+  <div class="opening-tip-text" id="opening-tip-text"></div>
+</div>
 
 <!-- PHASE 1 -->
 <div class="phase active" id="phase-explode">
@@ -377,7 +471,7 @@
 
 <!-- PHASE 3 -->
 <div class="phase" id="phase-grid">
-  <div class="grid-eyebrow">Choose your cluster</div>
+  <div class="grid-eyebrow">Choose your cluster:</div>
   <div class="cluster-grid" id="cluster-grid"></div>
 </div>
 
@@ -428,8 +522,13 @@ const TIERS = [
 ];
 
 const STORAGE_KEYS = {
-  competitionTier: 'ct_competitionTier'
+  competitionTier: 'ct_competitionTier',
+  openingTourSeen: 'ct_openingTourSeen'
 };
+
+let openingLoadError = false;
+let openingStatusTimer = null;
+let openingTipTimer = null;
 
 function getSavedTier() {
   try {
@@ -449,69 +548,102 @@ function setSavedTier(tier) {
   }
 }
 
-function getSavedClusterName() {
+function hasSeenOpeningTour() {
   try {
-    return localStorage.getItem(CLUSTER_STORAGE_KEY) || '';
+    return localStorage.getItem(STORAGE_KEYS.openingTourSeen) === '1';
   } catch (error) {
-    return '';
+    return true;
   }
 }
 
-function setSavedClusterName(clusterName) {
+function markOpeningTourSeen() {
   try {
-    if (clusterName) {
-      localStorage.setItem(CLUSTER_STORAGE_KEY, clusterName);
-    }
+    localStorage.setItem(STORAGE_KEYS.openingTourSeen, '1');
   } catch (error) {
     // ignore storage errors
   }
 }
 
-function getClusterByName(name) {
-  const target = String(name || '').trim().toLowerCase();
-  if (!target) return null;
-  return CLUSTERS.find((cluster) => cluster.name.trim().toLowerCase() === target) || null;
-}
+const OPENING_STATE = {
+  source: null,
+  user: null,
+  skipCluster: false,
+  clusterObj: null,
+};
 
-async function loadOpeningUser() {
-  if (typeof apiFetch !== 'function') {
-    return null;
-  }
-
+function getOpeningSource() {
   try {
-    const response = await apiFetch('/auth/me');
-    if (!response.ok) return null;
-    const data = await response.json().catch(() => ({}));
-    return data.user || null;
+    const raw = sessionStorage.getItem('ct_opening_intro');
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    return data?.source || null;
   } catch (error) {
     return null;
   }
 }
 
-async function persistClusterPreference(clusterName) {
-  const trimmed = String(clusterName || '').trim();
-  if (!trimmed) return;
+function getStoredAuthToken() {
+  return localStorage.getItem('ct_token') || sessionStorage.getItem('ct_token') || null;
+}
 
-  setSavedClusterName(trimmed);
-
-  if (typeof apiFetch !== 'function' || !Auth.getToken()) {
-    return;
-  }
+async function fetchCurrentUser() {
+  const token = getStoredAuthToken();
+  if (!token) return null;
 
   try {
-    const response = await apiFetch('/auth/profile', {
+    const res = await fetch('/auth/me', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      credentials: 'same-origin',
+    });
+    if (!res.ok) return null;
+    const payload = await res.json().catch(() => null);
+    return payload?.user || null;
+  } catch (error) {
+    openingLoadError = true;
+    return null;
+  }
+}
+
+function findClusterByName(name) {
+  return CLUSTERS.find(c => c.name === name) || null;
+}
+
+async function saveUserCluster(clusterName) {
+  const token = getStoredAuthToken();
+  if (!token) return false;
+
+  try {
+    const res = await fetch('/auth/profile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
       },
-      body: JSON.stringify({ cluster: trimmed }),
+      credentials: 'same-origin',
+      body: JSON.stringify({ cluster: clusterName }),
     });
-
-    if (!response.ok) {
-      throw new Error('Unable to save cluster.');
-    }
+    if (!res.ok) return false;
+    const data = await res.json().catch(() => null);
+    if (!data?.user) return false;
+    OPENING_STATE.user = data.user;
+    OPENING_STATE.clusterObj = findClusterByName(data.user.cluster) || OPENING_STATE.clusterObj;
+    return true;
   } catch (error) {
-    // Keep the local preference even if the profile sync fails.
+    return false;
+  }
+}
+
+async function initOpeningContext() {
+  OPENING_STATE.source = getOpeningSource();
+  OPENING_STATE.user = await fetchCurrentUser();
+  if (OPENING_STATE.user) {
+    OPENING_STATE.clusterObj = findClusterByName(OPENING_STATE.user.cluster || '') || null;
+    if (OPENING_STATE.source === 'signin' && OPENING_STATE.clusterObj) {
+      OPENING_STATE.skipCluster = true;
+    }
   }
 }
 
@@ -683,6 +815,68 @@ function transitionTo(from, to, delay = 0) {
   });
 }
 
+function setOpeningStatus(message, kind = 'info', duration = 3000) {
+  const el = document.getElementById('opening-status');
+  if (!el) return;
+
+  window.clearTimeout(openingStatusTimer);
+  el.textContent = message || '';
+  el.dataset.kind = kind;
+  el.classList.toggle('hidden', !message);
+  el.classList.add('show');
+
+  if (message && duration > 0) {
+    openingStatusTimer = window.setTimeout(() => {
+      el.classList.remove('show');
+      window.setTimeout(() => el.classList.add('hidden'), 200);
+    }, duration);
+  }
+}
+
+function showOpeningTip(message, duration = 5000) {
+  const el = document.getElementById('opening-tip');
+  const text = document.getElementById('opening-tip-text');
+  if (!el || !text) return;
+  if (hasSeenOpeningTour()) return;
+
+  window.clearTimeout(openingTipTimer);
+  text.textContent = message || '';
+  el.classList.remove('hidden');
+  el.classList.add('show');
+
+  if (duration > 0) {
+    openingTipTimer = window.setTimeout(() => hideOpeningTip(true), duration);
+  }
+}
+
+function hideOpeningTip(markSeen = false) {
+  const el = document.getElementById('opening-tip');
+  if (!el) return;
+
+  window.clearTimeout(openingTipTimer);
+  el.classList.remove('show');
+  window.setTimeout(() => el.classList.add('hidden'), 200);
+  if (markSeen) markOpeningTourSeen();
+}
+
+function renderSkeletonList(listEl, count = 3, compact = false) {
+  if (!listEl) return;
+  listEl.innerHTML = '';
+  listEl.setAttribute('aria-busy', 'true');
+  listEl.classList.add('opening-skeleton');
+  for (let i = 0; i < count; i++) {
+    const item = document.createElement('div');
+    item.className = compact ? 'skeleton-item sm' : 'skeleton-item';
+    listEl.appendChild(item);
+  }
+}
+
+function clearSkeletonList(listEl) {
+  if (!listEl) return;
+  listEl.removeAttribute('aria-busy');
+  listEl.classList.remove('opening-skeleton');
+}
+
 // ── BUILD CLUSTER GRID ────────────────────────────────────────────────────────
 const gridEl = document.getElementById('cluster-grid');
 CLUSTERS.forEach((c, i) => {
@@ -710,27 +904,11 @@ const welcomeToEl = document.getElementById('welcome-to');
 const brandFallEl = document.getElementById('brand-fall');
 const welcomeSubEl = document.getElementById('welcome-sub');
 
-const OPENING_META = (() => {
-  try {
-    return JSON.parse(sessionStorage.getItem('ct_opening_intro') || '{}') || {};
-  } catch (error) {
-    return {};
-  }
-})();
-
-const FLOW_SOURCE = OPENING_META.source === 'signin' ? 'signin' : 'signup';
-const RETURNING_FLOW = FLOW_SOURCE === 'signin';
-const CLUSTER_STORAGE_KEY = 'ct_cluster';
-
-let openingUser = null;
-let savedClusterName = '';
-
 
 // ── SEQUENCE ───────────────────────────────────────────────────────────────────
 function startSequence() {
   const cx = window.innerWidth / 2;
   const cy = window.innerHeight / 2;
-  welcomeToEl.textContent = RETURNING_FLOW ? 'Welcome back' : 'Welcome to';
 
   // Spawn shards during orb burst
   setTimeout(() => spawnShards(cx, cy),       190);
@@ -759,35 +937,32 @@ function startSequence() {
         brandFallEl.style.opacity    = '1';
       }, 300);
 
-      // Returning users skip the full onboarding path if a cluster is already saved.
-      if (RETURNING_FLOW && savedClusterName) {
-        const cluster = getClusterByName(savedClusterName);
-        setTimeout(() => {
-          deactivatePhase(phBrand);
-          setTimeout(() => showWelcome(cluster || CLUSTERS[0], phBrand, null, 'signin'), 800);
-        }, 2000);
-        return;
-      }
-
-      // Hold → fade to grid
+      // Hold → fade to grid or welcome
       setTimeout(() => {
         deactivatePhase(phBrand);
-        setTimeout(() => activatePhase(phGrid), 800);
-      }, RETURNING_FLOW ? 2200 : 3500);
+        setTimeout(() => {
+          if (OPENING_STATE.skipCluster) {
+            showWelcome(OPENING_STATE.clusterObj || CLUSTERS[0], phBrand, null, { forceWelcomeBack: true });
+          } else {
+            activatePhase(phGrid);
+            if (!hasSeenOpeningTour()) {
+              showOpeningTip('Choose your cluster to begin. You can change your competition tier after that.');
+            }
+          }
+        }, 800);
+      }, 3500);
 
     }, 800);
   }, 680);
 }
 
 // ── OPEN CLUSTER ───────────────────────────────────────────────────────────────
-function openCluster(index) {
+async function openCluster(index) {
   const cluster = CLUSTERS[index];
+  hideOpeningTip(true);
 
-  persistClusterPreference(cluster.name);
-
-  if (RETURNING_FLOW) {
-    showWelcome(cluster, phGrid, null, 'signin');
-    return;
+  if (OPENING_STATE.user && !OPENING_STATE.user.cluster) {
+    await saveUserCluster(cluster.name);
   }
 
   if (cluster.events.length === 0) {
@@ -801,43 +976,52 @@ function openCluster(index) {
   document.body.style.setProperty('--active-accent', cluster.color);
 
   const list = document.getElementById('events-list');
-  list.innerHTML = '';
-  cluster.events.forEach(ev => {
-    const item = document.createElement('div');
-    item.className   = 'event-item';
-    item.textContent = ev;
-    item.style.setProperty('--active-accent', cluster.color);
-    item.addEventListener('click', () => openLevelSelection(cluster, phEvents));
-    list.appendChild(item);
-  });
+  renderSkeletonList(list, Math.min(Math.max(cluster.events.length, 3), 5));
+  window.setTimeout(() => {
+    clearSkeletonList(list);
+    list.innerHTML = '';
+    cluster.events.forEach(ev => {
+      const item = document.createElement('div');
+      item.type = 'button';
+      item.className   = 'event-item';
+      item.textContent = ev;
+      item.style.setProperty('--active-accent', cluster.color);
+      item.addEventListener('click', () => openLevelSelection(cluster, phEvents));
+      list.appendChild(item);
+    });
+  }, 140);
 
   deactivatePhase(phGrid);
-  setTimeout(() => activatePhase(phEvents), 800);
+  activatePhase(phEvents);
 }
 
 function openLevelSelection(cluster, fromPhase) {
   const currentTier = getSavedTier();
+  hideOpeningTip(true);
 
   document.getElementById('level-title').textContent = 'Competition Tier';
   document.getElementById('level-accent-bar').style.background = cluster.color;
   document.body.style.setProperty('--active-accent', cluster.color);
 
   const list = document.getElementById('level-list');
+  list.style.pointerEvents = 'auto';
+  deactivatePhase(fromPhase);
+  activatePhase(phLevel);
   list.innerHTML = '';
   TIERS.forEach(tier => {
-    const item = document.createElement('div');
+    const item = document.createElement('button');
+    item.type = 'button';
     item.className   = 'event-item';
     item.textContent = tier + (tier === currentTier ? ' ✓' : '');
     item.style.setProperty('--active-accent', cluster.color);
-    item.addEventListener('click', () => {
+    const chooseTier = () => {
       setSavedTier(tier);
       showWelcome(cluster, phLevel, tier);
-    });
+    };
+    item.addEventListener('pointerdown', chooseTier);
+    item.addEventListener('click', chooseTier);
     list.appendChild(item);
   });
-
-  deactivatePhase(fromPhase);
-  setTimeout(() => activatePhase(phLevel), 800);
 }
 
 document.getElementById('back-btn').addEventListener('click', () => {
@@ -851,38 +1035,38 @@ document.getElementById('level-back-btn').addEventListener('click', () => {
 });
 
 // ── WELCOME SPLASH ─────────────────────────────────────────────────────────────
-function showWelcome(cluster, fromPhase, tier, mode = FLOW_SOURCE) {
+function showWelcome(cluster, fromPhase, tier, options = {}) {
   const selectedTier = tier || getSavedTier();
-  const welcomeName = document.getElementById('welcome-name');
+  const displayName = (OPENING_STATE.user?.display_name || DISPLAY_NAME).split(' ')[0];
 
-  welcomeSubEl.textContent = mode === 'signin'
-    ? 'Welcome back,'
-    : (selectedTier ? `Studying for ${selectedTier},` : "Let's get started,");
-  welcomeName.textContent = DISPLAY_NAME + '.';
-  welcomeName.style.color = cluster && cluster.color ? cluster.color : 'var(--cyan)';
+  if (options.forceWelcomeBack || (OPENING_STATE.source === 'signin' && OPENING_STATE.clusterObj)) {
+    welcomeSubEl.textContent = 'Welcome back,';
+  } else {
+    welcomeSubEl.textContent = selectedTier ? `Studying for ${selectedTier},` : "Let's get started,";
+  }
+
+  document.getElementById('welcome-name').textContent = displayName;
+  document.getElementById('welcome-name').style.color = cluster.color;
 
   deactivatePhase(fromPhase);
   setTimeout(() => activatePhase(phWelcome), 800);
 }
 
 phWelcome.addEventListener('click', () => {
+  markOpeningTourSeen();
   window.location.href = '/app/dashboard.html';
 });
 
 // ── BOOT ───────────────────────────────────────────────────────────────────────
-async function bootOpening() {
-  openingUser = await loadOpeningUser();
-  savedClusterName = (openingUser && openingUser.cluster) || getSavedClusterName() || '';
-  if (savedClusterName) {
-    setSavedClusterName(savedClusterName);
-  }
-  if ((!openingUser || !openingUser.cluster) && savedClusterName) {
-    void persistClusterPreference(savedClusterName);
-  }
+document.addEventListener('DOMContentLoaded', async () => {
+  await initOpeningContext();
   startSequence();
-}
-
-document.addEventListener('DOMContentLoaded', bootOpening);
+  if (openingLoadError) {
+    window.setTimeout(() => {
+      setOpeningStatus('We could not load your saved profile from Supabase, but you can still continue.', 'warning', 6000);
+    }, 4200);
+  }
+});
 </script>
 </body>
 </html>
