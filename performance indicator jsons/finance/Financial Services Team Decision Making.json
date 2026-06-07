@@ -1,0 +1,6 @@
+{
+  "title": "Financial Services Team Decision Making (FTDM) - Performance Indicators",
+  "event_code": "FTDM",
+  "exam_tiers": ["Tier 1: Business Administration Core (pages 4-22)", "Tier 2: Finance Career Cluster (pages 23-26)"],
+  "note": "All indicators for this event are found in overall_finance_exam.json under tier1_business_administration_core and tier2_finance_career_cluster. No Tier 3 pathway indicators are used for this event."
+}

@@ -1,112 +1,598 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cluster Trainer - Learn</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="/static/js/common.js"></script>
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #0b1f1f;
-        --panel: #112929;
-        --input: #1a3a3a;
-        --border: #1e4040;
-        --border2: #245050;
-        --cyan: #00c2e0;
-        --cyan-glow: rgba(0, 194, 224, .15);
-        --white: #f0fafa;
-        --muted: #6a9898;
-      }
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cluster Trainer - Learn</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="/static/js/clusters.js"></script>
+        <script src="/static/js/common.js"></script>
+        <link rel="stylesheet" href="/static/styles/learn.css" />
+    </head>
+    <body>
+        <header class="app-topbar">
+            <div class="app-brand">CLUSTER <em>TRAINER</em></div>
+            <nav class="app-nav" id="dashboard-nav" aria-label="Primary"></nav>
+            <div class="topbar-right">
+                <div class="user-chip" id="topbar-name"></div>
+                <button
+                    class="btn-icon"
+                    id="btn-settings"
+                    type="button"
+                    aria-label="Settings"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"
+                        ></path>
+                    </svg>
+                </button>
+                <button class="btn-sm" id="btn-logout" type="button">
+                    Log out
+                </button>
+            </div>
+        </header>
 
-      *, *::before, *::after { box-sizing: border-box; }
-      html, body { margin: 0; min-height: 100vh; }
-      body {
-        background: var(--bg);
-        color: var(--white);
-        font-family: 'Barlow', sans-serif;
-        padding-top: 56px;
-      }
-      .app-topbar {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-        height: 56px; display: flex; align-items: center;
-        padding: 0 24px; background: rgba(11, 31, 31, .92);
-        border-bottom: 1px solid var(--border); backdrop-filter: blur(10px);
-      }
-      .app-brand {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-        font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
-        color: var(--white); margin-right: 32px; white-space: nowrap; cursor: pointer;
-      }
-      .app-brand em { color: var(--cyan); font-style: normal; }
-      .app-nav { display: flex; gap: 4px; flex: 1; min-width: 0; }
-      .topbar-link {
-        font-size: .74rem; font-weight: 600; letter-spacing: .05em;
-        text-transform: uppercase; color: var(--muted);
-        padding: 5px 12px; border-radius: 4px; text-decoration: none;
-        position: relative; white-space: nowrap;
-      }
-      .topbar-link:hover { color: var(--white); }
-      .topbar-link.active { color: var(--cyan); }
-      .topbar-link.active::after {
-        content: ''; position: absolute; left: 12px; right: 12px; bottom: -2px;
-        height: 2px; border-radius: 2px; background: var(--cyan);
-      }
-      .topbar-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
-      .user-chip { font-size: .8rem; color: var(--muted); padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; white-space: nowrap; }
-      .btn-sm {
-        background: transparent; border: 1.5px solid var(--border); border-radius: 6px;
-        color: var(--muted); padding: 6px 14px; font-family: 'Barlow', sans-serif;
-        font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-        cursor: pointer;
-      }
-      .btn-icon {
-        background: transparent; border: 1.5px solid var(--border2); border-radius: 6px;
-        color: var(--white); width: 34px; height: 34px; display: flex;
-        align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
-      }
-      .btn-icon svg { display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-      .main-shell { max-width: 1100px; margin: 0 auto; padding: 28px 28px 56px; }
-      .app-sec { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-      .dash-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.1; margin: 0 0 18px 0; }
-      .dash-title em { color: var(--cyan); font-style: normal; }
-      .panel { border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px; background: rgba(19,47,47,.35); }
-    </style>
-  </head>
-  <body>
-    <header class="app-topbar">
-      <div class="app-brand">CLUSTER <em>TRAINER</em></div>
-      <nav class="app-nav" id="dashboard-nav" aria-label="Primary"></nav>
-      <div class="topbar-right">
-        <div class="user-chip" id="topbar-name"></div>
-        <button class="btn-icon" id="btn-settings" type="button" aria-label="Settings">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"></path>
-          </svg>
-        </button>
-        <button class="btn-sm" id="btn-logout" type="button">Log out</button>
-      </div>
-    </header>
-    <main class="main-shell">
-      <section class="dash-header">
-        <div>
-          <div class="app-sec">Learn</div>
-          <h1 class="dash-title"><em>Learn</em> mode home</h1>
+        <main id="view-home" class="main-shell">
+            <div class="app-sec">Learn Mode</div>
+            <!-- Dashboard Summary -->
+            <div class="dashboard-summary" id="dashboard-summary" style="display:none">
+                <div class="dash-stat">
+                    <div class="dash-label">Mastery</div>
+                    <div class="dash-value" id="dash-mastery">—</div>
+                </div>
+                <div class="dash-divider"></div>
+                <div class="dash-stat">
+                    <div class="dash-label">Due Today</div>
+                    <div class="dash-value" id="dash-due">—</div>
+                </div>
+                <div class="dash-divider"></div>
+                <div class="dash-stat">
+                    <div class="dash-label">Streak</div>
+                    <div class="dash-value" id="dash-streak">—</div>
+                </div>
+            </div>
+            <div class="event-header-card" id="event-header-card">
+                <div class="event-header-eyebrow">Currently studying</div>
+                <div class="event-header-name" id="event-header-name">
+                    Loading&hellip;
+                </div>
+                <div
+                    class="event-header-cluster"
+                    id="event-header-cluster"
+                ></div>
+            </div>
+            <button class="start-btn" id="start-btn" type="button" disabled>
+                Loading KPIs&hellip;
+            </button>
+
+            <!-- Learning Style Selector -->
+            <div class="learn-home-controls">
+                <div class="learning-style-section">
+                    <div class="learn-control-label">Learning Style</div>
+                    <div class="mode-buttons" id="learn-mode-buttons">
+                        <button type="button" data-learn-mode="standard" class="mode-btn active">Standard</button>
+                        <button type="button" data-learn-mode="activeRecall" class="mode-btn">Active Recall</button>
+                    </div>
+                    <details class="special-modes-dropdown">
+                        <summary class="special-modes-toggle">+ Special Modes</summary>
+                        <div class="special-modes-list">
+                            <button type="button" data-learn-mode="examOnly" class="mode-btn">Exam Only</button>
+                            <button type="button" data-learn-mode="principles" class="mode-btn">Principles</button>
+                            <button type="button" data-learn-mode="teamDecision" class="mode-btn">Team Decision</button>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Single Search Panel -->
+                <div class="learn-search-panel">
+                    <div class="learn-control-label">Search Concepts</div>
+                    <input id="learn-search" class="learn-search-input" type="search" placeholder="Search by KPI code, keyword, or concept" autocomplete="off" />
+                    <div id="search-results" class="search-results hidden"></div>
+                </div>
+            </div>
+
+            <!-- Study Tools -->
+            <div class="widgets-section">
+                <div class="widgets-section-title">Study Tools</div>
+                <div class="learn-home-widgets">
+                    <section class="learn-widget" id="learning-path-panel">
+                        <div class="widget-title">Recommended Learning Path</div>
+                        <div id="learning-path-list" class="widget-list"></div>
+                    </section>
+                    <section class="learn-widget" id="knowledge-graph-panel">
+                        <div class="widget-title">Knowledge Graph</div>
+                        <div id="knowledge-graph" class="knowledge-graph"></div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="widgets-section">
+                <div class="widgets-section-title">Resources</div>
+                <div class="learn-home-widgets">
+                    <section class="learn-widget" id="saved-concepts-panel">
+                        <div class="widget-title">Saved Concepts</div>
+                        <div id="saved-concepts-list" class="widget-list">No saved concepts yet.</div>
+                    </section>
+                    <section class="learn-widget" id="saved-notes-panel">
+                        <div class="widget-title">Concept Notes</div>
+                        <div id="saved-notes-list" class="widget-list"></div>
+                    </section>
+                    <section class="learn-widget" id="mnemonics-panel">
+                        <div class="widget-title">Mnemonics & Tips</div>
+                        <div id="mnemonics-list" class="widget-list"></div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Admin Tools (hidden unless admin) -->
+            <section class="learn-widget admin-panel hidden" id="admin-tools-panel">
+                <div class="widget-title">Admin Learn Tools</div>
+                <div class="admin-controls">
+                    <label class="admin-file-label">
+                        Import KPI JSON
+                        <input type="file" accept="application/json" />
+                    </label>
+                    <button class="admin-btn" id="kpi-import-btn" type="button">Upload KPIs</button>
+                    <button class="admin-btn" id="kpi-edit-open-btn" type="button">Edit KPI Definitions</button>
+                </div>
+            </section>
+
+            <!-- Mastery Dashboard -->
+            <div id="mastery-panel" style="margin-top: 28px">
+                <button
+                    class="review-btn"
+                    id="review-summary-btn"
+                    style="display: none"
+                    type="button"
+                >
+                    &#x26A1; Review Due Questions &mdash;
+                    <span id="due-summary-count">0</span> cards ready
+                </button>
+                <div
+                    class="mastery-summary-row"
+                    id="mastery-summary-row"
+                    style="display: none"
+                >
+                    <div class="mastery-stat">
+                        <div class="mastery-stat-num" id="m-mastery">—</div>
+                        <div class="mastery-stat-label">Avg Mastery</div>
+                        <div class="mastery-bar-outer">
+                            <div
+                                class="mastery-bar-fill"
+                                id="m-mastery-bar"
+                                style="width: 0%"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="mastery-stat">
+                        <div class="mastery-stat-num" id="m-streak">—</div>
+                        <div class="mastery-stat-label">Day Streak</div>
+                    </div>
+                    <div class="mastery-stat">
+                        <div class="mastery-stat-num" id="m-mastered">—</div>
+                        <div class="mastery-stat-label">KPIs Mastered</div>
+                    </div>
+                    <div class="mastery-stat">
+                        <div class="mastery-stat-num" id="m-due">—</div>
+                        <div class="mastery-stat-label">Due Today</div>
+                    </div>
+                </div>
+                <div id="cluster-breakdown-section" style="display: none">
+                    <div class="mastery-section-label">Cluster Breakdown</div>
+                    <div id="cluster-bars"></div>
+                </div>
+                <div id="weak-kpis-section" style="display: none">
+                    <div class="mastery-section-label">Needs Work</div>
+                    <div id="weak-kpis-list"></div>
+                </div>
+                <div id="heatmap-section" style="display: none">
+                    <div class="mastery-section-label">30-Day Activity</div>
+                    <div class="activity-heatmap" id="activity-heatmap"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- SESSION -->
+        <div id="view-session">
+            <div class="session-bar">
+                <button class="session-exit" id="session-exit" type="button">
+                    &#x2190; Exit
+                </button>
+                <div class="sess-kpi-info">
+                    <div class="sess-kpi-label">
+                        KPI <strong id="prog-current">1</strong> of
+                        <strong id="prog-total">45</strong> &nbsp;<span
+                            class="sess-cluster-name"
+                            id="sess-cluster-name"
+                        ></span>
+                    </div>
+                    <div class="progress-track">
+                        <div
+                            class="progress-fill"
+                            id="progress-fill"
+                            style="width: 0%"
+                        ></div>
+                    </div>
+                </div>
+                <div class="phase-pills">
+                    <span class="phase-pill" id="pp-vocab">Vocab</span>
+                    <span class="phase-arrow">›</span>
+                    <span class="phase-pill" id="pp-concept">Concept</span>
+                    <span class="phase-arrow">›</span>
+                    <span class="phase-pill" id="pp-questions">Questions</span>
+                </div>
+            </div>
+
+            <div class="session-content">
+                <!-- LOADING -->
+                <div id="state-loading">
+                    <div class="spinner"></div>
+                    <div class="loading-kpi-text" id="loading-kpi-text"></div>
+                    <div class="loading-sub">
+                        Generating study content&hellip;
+                    </div>
+                </div>
+
+                <!-- ERROR -->
+                <div id="state-error">
+                    <div class="error-title">&#x26A0; Something went wrong</div>
+                    <div class="error-msg" id="error-msg">
+                        Unable to generate content. Check your GROQ_API_KEY.
+                    </div>
+                    <button class="retry-btn" id="retry-btn" type="button">
+                        Try Again
+                    </button>
+                </div>
+
+                <!-- VOCAB -->
+                <div id="state-vocab">
+                    <div class="vocab-counter">
+                        Term <strong id="vocab-idx">1</strong> of
+                        <strong id="vocab-total">6</strong>
+                    </div>
+                    <div class="vocab-card">
+                        <div class="vocab-card-label">Term</div>
+                        <div class="vocab-term-text" id="vocab-term"></div>
+                    </div>
+                    <div class="vocab-choose-label">
+                        Choose the correct definition
+                    </div>
+                    <div class="vocab-grid" id="vocab-grid"></div>
+                    <div class="vocab-skip-row">
+                        <button
+                            class="vocab-skip"
+                            id="vocab-skip"
+                            type="button"
+                        >
+                            Don&rsquo;t know &rsaquo;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONCEPT -->
+                <div id="state-concept">
+                    <div class="kpi-term-box">
+                        <div class="kpi-term-code">
+                            <span id="concept-code"></span>
+                            <span
+                                class="kpi-term-cluster-label"
+                                id="concept-cluster"
+                            ></span>
+                        </div>
+                        <div class="kpi-term-text" id="concept-kpi-text"></div>
+                        <div
+                            class="kpi-term-summary"
+                            id="concept-summary"
+                        ></div>
+                    </div>
+                    <div class="concept-box">
+                        <div class="concept-ai-header">
+                            <div class="concept-ai-avatar">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 2a5 5 0 0 1 5 5v1h1a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1v1a5 5 0 0 1-10 0v-1H6a3 3 0 0 1-3-3v-4a3 3 0 0 1 3-3h1V7a5 5 0 0 1 5-5z"
+                                    />
+                                    <circle cx="9" cy="10" r="1" />
+                                    <circle cx="15" cy="10" r="1" />
+                                </svg>
+                            </div>
+                            <div class="concept-ai-name">CT Coach</div>
+                        </div>
+                        <div
+                            class="concept-explanation"
+                            id="concept-explanation"
+                        ></div>
+                        <ul class="concept-bullets" id="concept-bullets"></ul>
+                    </div>
+                    <div class="concept-table-wrap">
+                        <table class="concept-table">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                            </thead>
+                            <tbody id="concept-table-body"></tbody>
+                        </table>
+                    </div>
+                    <div class="concept-recall-panel hidden" id="concept-recall-panel">
+                        <div class="widget-title">Active Recall</div>
+                        <div class="concept-recall-instruction">
+                            Type your answer first, then compare with the model explanation.
+                        </div>
+                        <textarea id="recall-input" class="recall-input" rows="4" placeholder="Write your answer here..."></textarea>
+                        <button class="admin-btn" id="recall-reveal-btn" type="button">
+                            Reveal the model explanation
+                        </button>
+                    </div>
+                    <div class="concept-save-panel">
+                        <button class="admin-btn" id="save-concept-btn" type="button">Save this concept</button>
+                        <button class="admin-btn secondary" id="add-concept-note-btn" type="button">Add Note</button>
+                    </div>
+                    <textarea id="concept-note-input" class="recall-input hidden" rows="3" placeholder="Write a quick note for this KPI..."></textarea>
+                    <button class="admin-btn hidden" id="save-concept-note-btn" type="button">Save Note</button>
+                    <button
+                        class="understand-btn"
+                        id="understand-btn"
+                        type="button"
+                    >
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Got it &mdash; Show Questions
+                    </button>
+                </div>
+
+                <!-- QUESTIONS -->
+                <div id="state-questions">
+                    <div class="qs-counter">
+                        Question <strong id="qs-current">1</strong> of
+                        <strong id="qs-total">5</strong>
+                    </div>
+                    <div class="question-box">
+                        <div class="question-text" id="question-text"></div>
+                    </div>
+                    <div class="choices-list" id="choices-list"></div>
+                    <div id="result-panel">
+                        <div class="result-banner" id="result-banner">
+                            <span id="result-icon"></span>&nbsp;<span
+                                id="result-label"
+                            ></span>
+                        </div>
+                        <div class="explanation-box" id="explanation-box"></div>
+                        <div class="followup-panel hidden" id="followup-panel">
+                            <div class="widget-title">Follow-up Question</div>
+                            <div id="followup-text" class="followup-text"></div>
+                        </div>
+                    </div>
+                    <button
+                        class="next-btn"
+                        id="next-q-btn"
+                        type="button"
+                        style="display: none"
+                    >
+                        Next &rarr;
+                    </button>
+                </div>
+
+                <!-- ACTIVE RECALL -->
+                <div id="state-active-recall" style="display:none">
+                    <div class="app-sec">Active Recall</div>
+                    <div class="kpi-term-box">
+                        <div class="kpi-term-code"><span id="ar-code"></span></div>
+                        <div class="kpi-term-text" id="ar-kpi-text"></div>
+                    </div>
+                    <div style="margin-top:12px">
+                        <textarea id="active-recall-text" rows="8" style="width:100%" placeholder="Type your answer here..."></textarea>
+                    </div>
+                    <div style="margin-top:8px">
+                        <button id="active-recall-submit" class="understand-btn" type="button">Submit Answer</button>
+                        <button id="active-recall-reveal" class="understand-btn" type="button" style="margin-left:8px;display:none">Reveal Model Answer</button>
+                    </div>
+                    <div id="active-recall-model" style="margin-top:12px;display:none">
+                        <div class="concept-explanation" id="ar-model-answer"></div>
+                        <ul class="concept-bullets" id="ar-model-bullets"></ul>
+                    </div>
+                </div>
+
+                <!-- ROLEPLAY -->
+                <div id="state-roleplay">
+                    <div class="roleplay-badge">&#x1F3AD; Mini Roleplay</div>
+                    <div
+                        class="roleplay-kpi-chips"
+                        id="roleplay-kpi-chips"
+                    ></div>
+                    <div class="roleplay-scenario-box">
+                        <div class="roleplay-scenario-label">Your Scenario</div>
+                        <div
+                            class="roleplay-scenario-text"
+                            id="roleplay-scenario-text"
+                        ></div>
+                        <div
+                            class="roleplay-role-tag"
+                            id="roleplay-role-tag"
+                        ></div>
+                    </div>
+                    <div class="roleplay-instruction">
+                        Respond as if you&rsquo;re in this roleplay. Speak
+                        directly to the judge in a clear, professional tone.
+                        Address the situation using the KPIs above &mdash; show
+                        you understand how they apply here.
+                    </div>
+                    <textarea
+                        class="roleplay-textarea"
+                        id="roleplay-textarea"
+                        placeholder="Start your response here&hellip;"
+                        rows="10"
+                    ></textarea>
+                    <div class="roleplay-word-count" id="roleplay-word-count">
+                        0 words
+                    </div>
+                    <button
+                        class="roleplay-submit"
+                        id="roleplay-submit"
+                        type="button"
+                        disabled
+                    >
+                        Submit for Grading
+                    </button>
+                </div>
+
+                <!-- GRADING -->
+                <div id="state-grading">
+                    <div class="spinner"></div>
+                    <div class="loading-kpi-text">
+                        Grading your response&hellip;
+                    </div>
+                    <div class="loading-sub">
+                        Using AI to evaluate KPI coverage and quality
+                    </div>
+                    <div style="margin-top:10px">
+                        <button class="btn-sm" id="save-concept-btn" type="button">Save Concept</button>
+                    </div>
+                </div>
+
+                <!-- GRADE RESULT -->
+                <div id="state-grade-result">
+                    <div class="grade-header">
+                        <div class="grade-circle" id="grade-circle">8</div>
+                        <div class="grade-meta">
+                            <div class="grade-letter-display" id="grade-letter">
+                                B
+                            </div>
+                            <div class="grade-out-of">out of 10</div>
+                        </div>
+                        <div
+                            style="
+                                flex: 1;
+                                font-size: 0.9rem;
+                                color: rgba(240, 250, 250, 0.75);
+                                line-height: 1.5;
+                            "
+                            id="grade-overall-inline"
+                        ></div>
+                    </div>
+                    <div class="grade-cols">
+                        <div class="grade-col">
+                            <div class="grade-col-title">
+                                &#x2713; Strengths
+                            </div>
+                            <ul class="grade-list" id="grade-strengths"></ul>
+                        </div>
+                        <div class="grade-col">
+                            <div class="grade-col-title">&#x2192; Improve</div>
+                            <ul class="grade-list" id="grade-improvements"></ul>
+                        </div>
+                    </div>
+                    <div class="kpi-coverage-title">KPI Coverage</div>
+                    <div class="kpi-coverage-list" id="kpi-coverage-list"></div>
+                    <button class="next-btn" id="grade-continue" type="button">
+                        Continue Studying &rarr;
+                    </button>
+                </div>
+
+                <!-- SESSION SUMMARY -->
+                <div id="state-summary">
+                    <div
+                        class="app-sec"
+                        style="text-align: center; margin-bottom: 18px"
+                    >
+                        Session Complete
+                    </div>
+                    <div class="sum-grid">
+                        <div class="sum-card">
+                            <div class="sum-card-label">Accuracy</div>
+                            <div class="sum-card-val" id="sum-accuracy">—</div>
+                            <div class="sum-card-sub" id="sum-q-breakdown">
+                                0 / 0 correct
+                            </div>
+                        </div>
+                        <div class="sum-card">
+                            <div class="sum-card-label">Time</div>
+                            <div class="sum-card-val" id="sum-time">—</div>
+                            <div class="sum-card-sub">minutes studied</div>
+                        </div>
+                        <div class="sum-card">
+                            <div class="sum-card-label">KPIs Studied</div>
+                            <div class="sum-card-val" id="sum-kpis">—</div>
+                            <div class="sum-card-sub" id="sum-vocab-line">
+                                vocab cards
+                            </div>
+                        </div>
+                        <div class="sum-card">
+                            <div class="sum-card-label">Streak</div>
+                            <div class="sum-card-val" id="sum-streak">—</div>
+                            <div class="sum-card-sub">day streak</div>
+                        </div>
+                    </div>
+                    <div class="mastery-section-label" id="sum-gains-label">
+                        KPI Progress This Session
+                    </div>
+                    <div id="sum-kpi-gains"></div>
+                    <div class="done-actions" style="margin-top: 24px">
+                        <button
+                            class="done-btn-primary"
+                            id="sum-study-again"
+                            type="button"
+                        >
+                            Study Again
+                        </button>
+                        <button
+                            class="done-btn-secondary"
+                            id="sum-go-home"
+                            type="button"
+                        >
+                            Back to Home
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DONE -->
+                <div id="state-done">
+                    <div class="done-icon">&#x1F3C6;</div>
+                    <div class="done-title">Session Complete!</div>
+                    <div class="done-sub" id="done-sub">
+                        Great work — you studied all KPIs in this session.
+                    </div>
+                    <div class="done-actions">
+                        <button
+                            class="done-btn-primary"
+                            id="done-restart"
+                            type="button"
+                        >
+                            Study Again
+                        </button>
+                        <button
+                            class="done-btn-secondary"
+                            id="done-home"
+                            type="button"
+                        >
+                            Back to Home
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /session-content -->
         </div>
-      </section>
-      <div class="panel">
-        <p>This is the learn home page.</p>
-      </div>
-    </main>
-    <script>
-      requireAuth().then((user) => {
-        if (user) {
-          initTopbar(user);
-        }
-      });
-    </script>
-  </body>
+        <!-- /view-session -->
+
+        <script src="/static/js/learn.js"></script>
+    </body>
 </html>

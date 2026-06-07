@@ -1,112 +1,844 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cluster Trainer - Learn</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="/static/js/common.js"></script>
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #0b1f1f;
-        --panel: #112929;
-        --input: #1a3a3a;
-        --border: #1e4040;
-        --border2: #245050;
-        --cyan: #00c2e0;
-        --cyan-glow: rgba(0, 194, 224, .15);
-        --white: #f0fafa;
-        --muted: #6a9898;
-      }
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cluster Trainer – Settings</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="/static/js/common.js"></script>
+        <script src="/static/js/clusters.js"></script>
+        <link rel="stylesheet" href="/static/styles/settings.css" />
+    </head>
+    <body>
+        <!-- ── TOPBAR ── -->
+        <header class="app-topbar">
+            <div
+                class="app-brand"
+                onclick="location.href = '/app/dashboard.html'"
+            >
+                CLUSTER <em>TRAINER</em>
+            </div>
+            <nav class="app-nav" id="dashboard-nav" aria-label="Primary"></nav>
+            <div class="topbar-right">
+                <div class="user-chip" id="topbar-name"></div>
+                <button
+                    class="btn-icon"
+                    id="btn-settings"
+                    type="button"
+                    aria-label="Settings"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"
+                        ></path>
+                    </svg>
+                </button>
+                <button class="btn-sm" id="btn-logout" type="button">
+                    Log out
+                </button>
+            </div>
+        </header>
 
-      *, *::before, *::after { box-sizing: border-box; }
-      html, body { margin: 0; min-height: 100vh; }
-      body {
-        background: var(--bg);
-        color: var(--white);
-        font-family: 'Barlow', sans-serif;
-        padding-top: 56px;
-      }
-      .app-topbar {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-        height: 56px; display: flex; align-items: center;
-        padding: 0 24px; background: rgba(11, 31, 31, .92);
-        border-bottom: 1px solid var(--border); backdrop-filter: blur(10px);
-      }
-      .app-brand {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-        font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
-        color: var(--white); margin-right: 32px; white-space: nowrap; cursor: pointer;
-      }
-      .app-brand em { color: var(--cyan); font-style: normal; }
-      .app-nav { display: flex; gap: 4px; flex: 1; min-width: 0; }
-      .topbar-link {
-        font-size: .74rem; font-weight: 600; letter-spacing: .05em;
-        text-transform: uppercase; color: var(--muted);
-        padding: 5px 12px; border-radius: 4px; text-decoration: none;
-        position: relative; white-space: nowrap;
-      }
-      .topbar-link:hover { color: var(--white); }
-      .topbar-link.active { color: var(--cyan); }
-      .topbar-link.active::after {
-        content: ''; position: absolute; left: 12px; right: 12px; bottom: -2px;
-        height: 2px; border-radius: 2px; background: var(--cyan);
-      }
-      .topbar-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
-      .user-chip { font-size: .8rem; color: var(--muted); padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; white-space: nowrap; }
-      .btn-sm {
-        background: transparent; border: 1.5px solid var(--border); border-radius: 6px;
-        color: var(--muted); padding: 6px 14px; font-family: 'Barlow', sans-serif;
-        font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-        cursor: pointer;
-      }
-      .btn-icon {
-        background: transparent; border: 1.5px solid var(--border2); border-radius: 6px;
-        color: var(--white); width: 34px; height: 34px; display: flex;
-        align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
-      }
-      .btn-icon svg { display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-      .main-shell { max-width: 1100px; margin: 0 auto; padding: 28px 28px 56px; }
-      .app-sec { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-      .dash-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.1; margin: 0 0 18px 0; }
-      .dash-title em { color: var(--cyan); font-style: normal; }
-      .panel { border: 1px solid var(--border); border-radius: 8px; padding: 20px 22px; background: rgba(19,47,47,.35); }
-    </style>
-  </head>
-  <body>
-    <header class="app-topbar">
-      <div class="app-brand">CLUSTER <em>TRAINER</em></div>
-      <nav class="app-nav" id="dashboard-nav" aria-label="Primary"></nav>
-      <div class="topbar-right">
-        <div class="user-chip" id="topbar-name"></div>
-        <button class="btn-icon" id="btn-settings" type="button" aria-label="Settings">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"></path>
-          </svg>
-        </button>
-        <button class="btn-sm" id="btn-logout" type="button">Log out</button>
-      </div>
-    </header>
-    <main class="main-shell">
-      <section class="dash-header">
-        <div>
-          <div class="app-sec">Learn</div>
-          <h1 class="dash-title"><em>Learn</em> mode home</h1>
+        <div class="settings-shell">
+            <!-- ── SIDEBAR ── -->
+            <aside class="settings-sidebar">
+                <div class="sidebar-search">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+                    </svg>
+                    <input
+                        type="text"
+                        placeholder="Search settings"
+                        id="settings-search"
+                        autocomplete="off"
+                    />
+                </div>
+
+                <div class="sidebar-group-label">Profile</div>
+                <a
+                    class="sidebar-item active"
+                    href="#profile"
+                    onclick="navTo(event, 'profile')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+                    </svg>
+                    You and your account
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#competition"
+                    onclick="navTo(event, 'competition')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        ></path>
+                    </svg>
+                    Competition level
+                </a>
+
+                <hr class="sidebar-divider" />
+                <div class="sidebar-group-label">Security</div>
+                <a
+                    class="sidebar-item"
+                    href="#security"
+                    onclick="navTo(event, 'security')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    Password &amp; Security
+                </a>
+
+                <hr class="sidebar-divider" />
+                <div class="sidebar-group-label">Preferences</div>
+
+                <a
+                    class="sidebar-item"
+                    href="#appearance"
+                    onclick="navTo(event, 'appearance')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                        ></path>
+                    </svg>
+                    Appearance &amp; Theme
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#event-selection"
+                    onclick="navTo(event, 'event-selection')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Event Selection
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#study-goals"
+                    onclick="navTo(event, 'study-goals')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Study Goals
+                </a>
+
+                <hr class="sidebar-divider" />
+                <div class="sidebar-group-label">Privacy &amp; Data</div>
+                <a
+                    class="sidebar-item"
+                    href="#privacy"
+                    onclick="navTo(event, 'privacy')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        ></path>
+                    </svg>
+                    Privacy
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#data"
+                    onclick="navTo(event, 'data')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path
+                            d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"
+                        ></path>
+                    </svg>
+                    My Data
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#danger"
+                    onclick="navTo(event, 'danger')"
+                    style="color: #b07070"
+                >
+                    <svg viewBox="0 0 24 24" style="stroke: #b07070">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path
+                            d="M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"
+                        ></path>
+                    </svg>
+                    Delete Account
+                </a>
+            </aside>
+
+            <!-- ── MAIN CONTENT ── -->
+            <main class="settings-main">
+                <div class="page-section-label">Settings</div>
+                <h1 class="page-title"><em>Settings</em></h1>
+
+                <!-- ════════════════════════════════════════
+           PROFILE
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="profile">
+                    <div class="settings-section-title">
+                        You and your account
+                    </div>
+
+                    <!-- Avatar row -->
+                    <div class="avatar-row">
+                        <div
+                            class="avatar-circle is-loading"
+                            id="avatar-circle"
+                        >
+                            <span id="avatar-initials"></span>
+                        </div>
+                        <div class="avatar-info">
+                            <strong id="display-name-preview">
+                                <span
+                                    class="skel-block"
+                                    style="width: 130px; height: 14px"
+                                ></span>
+                            </strong>
+                            <span id="email-preview">
+                                <span
+                                    class="skel-block"
+                                    style="
+                                        width: 190px;
+                                        height: 11px;
+                                        margin-top: 5px;
+                                    "
+                                ></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Name + email fields -->
+                    <div class="two-col">
+                        <div class="field-group">
+                            <label for="input-name">Display name</label>
+                            <input
+                                class="field-input skeleton"
+                                type="text"
+                                id="input-name"
+                                placeholder="Loading…"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="field-group">
+                            <label>Email address</label>
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 8px;
+                                    align-items: flex-start;
+                                    flex-direction: column;
+                                "
+                            >
+                                <div
+                                    style="
+                                        display: flex;
+                                        gap: 8px;
+                                        align-items: center;
+                                        width: 100%;
+                                    "
+                                >
+                                    <input
+                                        class="field-input skeleton"
+                                        type="email"
+                                        id="input-email"
+                                        placeholder="Loading…"
+                                        readonly
+                                        style="flex: 1"
+                                    />
+                                    <button
+                                        class="row-btn"
+                                        id="btn-toggle-email-form"
+                                        onclick="toggleEmailForm()"
+                                        style="flex-shrink: 0"
+                                    >
+                                        Change
+                                    </button>
+                                </div>
+                                <!-- Email change inline form -->
+                                <div
+                                    class="inline-form"
+                                    id="email-change-form"
+                                    style="width: 100%"
+                                >
+                                    <div class="field-group">
+                                        <label for="input-new-email"
+                                            >New email address</label
+                                        >
+                                        <input
+                                            class="field-input"
+                                            type="email"
+                                            id="input-new-email"
+                                            placeholder="new@example.com"
+                                            autocomplete="email"
+                                        />
+                                    </div>
+                                    <div
+                                        class="inline-form-row"
+                                        style="margin-top: 10px"
+                                    >
+                                        <button
+                                            class="row-btn primary"
+                                            id="btn-send-verification"
+                                            onclick="sendEmailVerification()"
+                                        >
+                                            Send verification
+                                        </button>
+                                        <button
+                                            class="row-btn"
+                                            onclick="toggleEmailForm()"
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Save profile changes</strong>
+                                <span>Update your display name</span>
+                            </div>
+                            <button
+                                class="row-btn primary"
+                                id="btn-save-profile"
+                                onclick="saveProfile()"
+                            >
+                                Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           COMPETITION LEVEL
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="competition">
+                    <div class="settings-section-title">Competition Level</div>
+                    <p
+                        style="
+                            font-size: 0.85rem;
+                            color: var(--muted);
+                            margin: 0 0 14px;
+                            line-height: 1.55;
+                        "
+                    ></p>
+                    <div class="comp-options" id="comp-options">
+                        <div
+                            class="comp-opt"
+                            data-level="districts"
+                            onclick="setComp(this)"
+                        >
+                            <span class="comp-badge">Districts</span>
+                            <div class="comp-desc">
+                                Regional qualifying competition
+                            </div>
+                        </div>
+                        <div
+                            class="comp-opt"
+                            data-level="states"
+                            onclick="setComp(this)"
+                        >
+                            <span class="comp-badge">States</span>
+                            <div class="comp-desc">State-level competition</div>
+                        </div>
+                        <div
+                            class="comp-opt"
+                            data-level="icdc"
+                            onclick="setComp(this)"
+                        >
+                            <span class="comp-badge">ICDC</span>
+                            <div class="comp-desc">
+                                International Career Development Conference
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong id="comp-current-label"
+                                    >Currently set to: —</strong
+                                >
+                                <span
+                                    >Affects question pools, difficulty scaling,
+                                    and tips</span
+                                >
+                            </div>
+                            <button
+                                class="row-btn primary"
+                                id="btn-save-comp"
+                                onclick="saveComp()"
+                            >
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           PASSWORD & SECURITY
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="security">
+                    <div class="settings-section-title">
+                        Password &amp; Security
+                    </div>
+                    <div class="setting-row-group">
+                        <!-- Password change row (expandable) -->
+                        <div
+                            class="setting-row"
+                            style="
+                                flex-direction: column;
+                                align-items: stretch;
+                                gap: 0;
+                            "
+                        >
+                            <div
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                "
+                            >
+                                <div class="row-label">
+                                    <strong>Password</strong>
+                                    <span>Change your account password</span>
+                                </div>
+                                <button
+                                    class="row-btn"
+                                    id="btn-toggle-pw-form"
+                                    onclick="togglePasswordForm()"
+                                >
+                                    Change password
+                                </button>
+                            </div>
+                            <!-- Inline password form -->
+                            <div
+                                class="inline-form"
+                                id="password-change-form"
+                                style="margin-top: 0; padding-top: 14px"
+                            >
+                                <div
+                                    class="field-group"
+                                    style="margin-bottom: 10px"
+                                >
+                                    <label for="input-new-password"
+                                        >New password</label
+                                    >
+                                    <input
+                                        class="field-input"
+                                        type="password"
+                                        id="input-new-password"
+                                        placeholder="Min. 8 characters"
+                                        autocomplete="new-password"
+                                        oninput="updatePwStrength(this.value)"
+                                    />
+                                    <div class="pw-strength">
+                                        <div class="pw-seg" id="pw-s1"></div>
+                                        <div class="pw-seg" id="pw-s2"></div>
+                                        <div class="pw-seg" id="pw-s3"></div>
+                                        <div class="pw-seg" id="pw-s4"></div>
+                                    </div>
+                                    <div
+                                        class="pw-strength-label"
+                                        id="pw-strength-label"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="field-group"
+                                    style="margin-bottom: 12px"
+                                >
+                                    <label for="input-confirm-password"
+                                        >Confirm new password</label
+                                    >
+                                    <input
+                                        class="field-input"
+                                        type="password"
+                                        id="input-confirm-password"
+                                        placeholder="Repeat new password"
+                                        autocomplete="new-password"
+                                    />
+                                </div>
+                                <div class="inline-form-row">
+                                    <button
+                                        class="row-btn primary"
+                                        id="btn-update-password"
+                                        onclick="changePassword()"
+                                    >
+                                        Update password
+                                    </button>
+                                    <button
+                                        class="row-btn"
+                                        onclick="togglePasswordForm()"
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2FA row — Coming soon -->
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong
+                                    >Two-factor authentication<span
+                                        class="badge-soon"
+                                        >Coming soon</span
+                                    ></strong
+                                >
+                                <span
+                                    >Add an extra layer of security to your
+                                    login</span
+                                >
+                            </div>
+                            <div class="toggle-wrap">
+                                <span class="toggle-label">Off</span>
+                                <button
+                                    class="toggle"
+                                    disabled
+                                    title="Coming soon"
+                                    style="opacity: 0.35; cursor: not-allowed"
+                                ></button>
+                            </div>
+                        </div>
+
+                        <!-- Login notifications row (local-only) -->
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           APPEARANCE & THEME
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="appearance">
+                    <div class="settings-section-title">Appearance & Theme</div>
+                    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">
+                        Choose how the app looks while you study.
+                    </p>
+                    <div class="theme-options">
+                        <div class="theme-opt" data-theme="dark" onclick="selectTheme(this)">
+                            <div class="theme-preview theme-dark-preview"></div>
+                            <strong>Dark</strong>
+                            <span>Classic dark mode</span>
+                        </div>
+                        <div class="theme-opt" data-theme="light" onclick="selectTheme(this)">
+                            <div class="theme-preview theme-light-preview"></div>
+                            <strong>Light</strong>
+                            <span>Bright light mode</span>
+                        </div>
+                        <div class="theme-opt" data-theme="system" onclick="selectTheme(this)">
+                            <div class="theme-preview theme-system-preview"></div>
+                            <strong>System</strong>
+                            <span>Match your OS preference</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           EVENT SELECTION
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="event-selection">
+                    <div class="settings-section-title">Event Selection</div>
+                    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">
+                        Choose the DECA cluster and event you want to study in Learn mode.
+                    </p>
+                    <div style="padding:16px 18px;background:rgba(19,47,47,0.3);border:1px solid var(--border);border-radius:8px;margin-bottom:14px;">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                            <div class="field-group">
+                                <label for="select-deca-cluster">DECA Cluster</label>
+                                <select class="field-select" id="select-deca-cluster">
+                                    <option value="">— Select a cluster —</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="select-deca-event">Event</label>
+                                <select class="field-select" id="select-deca-event" disabled>
+                                    <option value="">— Select a cluster first —</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong id="event-current-label">Currently studying: —</strong>
+                                <span>Saved event is loaded when you start Learn mode</span>
+                            </div>
+                            <button class="row-btn primary" id="btn-save-event" onclick="saveEventSelection()">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+       STUDY GOALS  (NEW)
+  ════════════════════════════════════════ -->
+                <div class="settings-section" id="study-goals">
+                    <div class="settings-section-title">Study Goals</div>
+                    <p
+                        style="
+                            font-size: 0.85rem;
+                            color: var(--muted);
+                            margin: 0 0 14px;
+                            line-height: 1.55;
+                        "
+                    >
+                        Set daily targets to build a consistent study habit.
+                    </p>
+                    <div
+                        style="
+                            padding: 16px 18px;
+                            background: rgba(19, 47, 47, 0.3);
+                            border: 1px solid var(--border);
+                            border-radius: 8px;
+                            margin-bottom: 14px;
+                        "
+                    >
+                        <div
+                            style="
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 14px;
+                            "
+                        >
+                            <div class="field-group">
+                                <label for="input-study-minutes"
+                                    >Daily study goal (minutes)</label
+                                >
+                                <input
+                                    class="field-input skeleton"
+                                    type="number"
+                                    id="input-study-minutes"
+                                    min="5"
+                                    max="480"
+                                    step="5"
+                                    placeholder="30"
+                                />
+                            </div>
+                            <div class="field-group">
+                                <label for="input-study-kpis"
+                                    >KPI target per session</label
+                                >
+                                <input
+                                    class="field-input skeleton"
+                                    type="number"
+                                    id="input-study-kpis"
+                                    min="1"
+                                    max="100"
+                                    step="1"
+                                    placeholder="5"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Save study goals</strong>
+                                <span
+                                    >Track your daily progress toward these
+                                    targets</span
+                                >
+                            </div>
+                            <button
+                                class="row-btn primary"
+                                id="btn-save-goals"
+                                onclick="saveStudyGoals()"
+                            >
+                                Save goals
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           PRIVACY  (NEW)
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="privacy">
+                    <div class="settings-section-title">Privacy</div>
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Track study progress</strong>
+                                <span
+                                    >Allow the app to record your session
+                                    history and KPI scores</span
+                                >
+                            </div>
+                            <div class="toggle-wrap">
+                                <span
+                                    class="toggle-label"
+                                    id="lbl-privacy-track"
+                                    >Off</span
+                                >
+                                <button
+                                    class="toggle skeleton"
+                                    id="toggle-privacy-track"
+                                    onclick="
+                                        toggleUI(this, 'lbl-privacy-track')
+                                    "
+                                ></button>
+                            </div>
+                        </div>
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Save privacy settings</strong>
+                                <span></span>
+                            </div>
+                            <button
+                                class="row-btn primary"
+                                id="btn-save-privacy"
+                                onclick="savePrivacy()"
+                            >
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           MY DATA
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="data">
+                    <div class="settings-section-title">My Data</div>
+                    <div class="setting-row-group">
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Export my data</strong>
+                                <span
+                                    >Download a JSON file of all your account
+                                    data and progress</span
+                                >
+                            </div>
+                            <button
+                                class="row-btn primary"
+                                id="btn-export"
+                                onclick="exportData()"
+                            >
+                                Export JSON
+                            </button>
+                        </div>
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong>Reset all progress</strong>
+                                <span
+                                    >Wipe your session history, scores, and KPI
+                                    records</span
+                                >
+                            </div>
+                            <button class="row-btn danger" id="btn-reset-progress" onclick="resetProgress()">
+                                Reset progress
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════
+           DELETE ACCOUNT
+      ════════════════════════════════════════ -->
+                <div class="settings-section" id="danger">
+                    <div
+                        class="settings-section-title"
+                        style="
+                            color: var(--danger);
+                            border-bottom-color: rgba(224, 90, 90, 0.3);
+                        "
+                    >
+                        Delete Account
+                    </div>
+                    <div
+                        class="setting-row-group"
+                        style="border-color: rgba(224, 90, 90, 0.25)"
+                    >
+                        <div class="setting-row">
+                            <div class="row-label">
+                                <strong style="color: var(--danger)"
+                                    >Permanently delete account</strong
+                                >
+                                <span
+                                    >This action is irreversible. All your data
+                                    will be deleted immediately.</span
+                                >
+                            </div>
+                            <button
+                                class="row-btn danger"
+                                onclick="openDeleteModal()"
+                            >
+                                Delete account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-      </section>
-      <div class="panel">
-        <p>This is the learn home page.</p>
-      </div>
-    </main>
-    <script>
-      requireAuth().then((user) => {
-        if (user) {
-          initTopbar(user);
-        }
-      });
-    </script>
-  </body>
+        <!-- /.settings-shell -->
+
+        <!-- ════════════════════════════════════════
+       DELETE CONFIRMATION MODAL
+  ════════════════════════════════════════ -->
+        <div
+            class="modal-overlay"
+            id="delete-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+        >
+            <div class="modal-box">
+                <div class="modal-title" id="modal-title">Delete Account</div>
+                <div class="modal-body">
+                    This action is
+                    <strong style="color: var(--danger)"
+                        >permanent and irreversible</strong
+                    >. All your data — sessions, scores, preferences, and your
+                    account — will be deleted immediately and cannot be
+                    recovered.<br /><br />
+                    Type
+                    <strong style="color: var(--white)">DELETE</strong> below to
+                    confirm.
+                </div>
+                <div class="field-group" style="margin-bottom: 4px">
+                    <input
+                        class="field-input"
+                        type="text"
+                        id="delete-confirm-input"
+                        placeholder="Type DELETE to confirm"
+                        oninput="checkDeleteConfirm()"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                </div>
+                <div class="modal-actions">
+                    <button class="row-btn" onclick="closeDeleteModal()">
+                        Cancel
+                    </button>
+                    <button
+                        class="row-btn danger"
+                        id="btn-confirm-delete"
+                        onclick="confirmDelete()"
+                        disabled
+                    >
+                        Permanently delete
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/static/js/settings.js"></script>
+    </body>
 </html>
