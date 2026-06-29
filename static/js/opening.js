@@ -138,6 +138,20 @@
                 }
             }
 
+            // Save both cluster and event to the profile (fire-and-forget — doesn't block the UI)
+            // NOTE: kept for saveUserCluster backward compat only. Event writes go through UserPrefs.setEvent().
+            async function saveUserEvent(clusterName, eventName) {
+                // Delegate entirely to UserPrefs — it owns this write path
+                const eventId = (typeof getEventIdByName === "function")
+                    ? getEventIdByName(eventName)
+                    : String(eventName || "").toLowerCase().replace(/ /g, "_");
+                await UserPrefs.setEvent(
+                    eventId,
+                    eventName,
+                    clusterName,
+                );
+            }
+
             async function initOpeningContext() {
                 OPENING_STATE.source = getOpeningSource();
                 OPENING_STATE.user = await fetchCurrentUser();
@@ -145,9 +159,11 @@
                     OPENING_STATE.clusterObj =
                         findClusterByName(OPENING_STATE.user.cluster || "") ||
                         null;
-                    if (OPENING_STATE.clusterObj) {
-                    OPENING_STATE.skipCluster = true;
-                   }
+                    // For sign-in users, skip cluster selection if user exists
+                    // For sign-up users, only skip if they have a saved cluster
+                    if (OPENING_STATE.source === 'signin' || OPENING_STATE.clusterObj) {
+                        OPENING_STATE.skipCluster = true;
+                    }
                 }
             }
 
@@ -428,18 +444,20 @@
                     clearSkeletonList(list);
                     list.innerHTML = "";
                     cluster.events.forEach((ev) => {
+                        // events are objects { name, type } — extract the name
+                        const evName = (typeof ev === "string") ? ev : ev.name;
                         const item = document.createElement("div");
                         item.type = "button";
                         item.className = "event-item";
-                        item.textContent = ev;
+                        item.textContent = evName;
                         item.style.setProperty(
                             "--active-accent",
                             cluster.color,
                         );
                         item.addEventListener("click", () => {
-                            try {
-                                localStorage.setItem("ct_selected_event", ev);
-                            } catch (e) {}
+                            // Derive slug the same way the server does: lowercase + underscores
+                            const evSlug = evName.toLowerCase().replace(/ /g, '_');
+                            UserPrefs.setEvent(evSlug, evName, cluster.name);
                             openLevelSelection(cluster, phEvents);
                         });
                         list.appendChild(item);
@@ -508,9 +526,7 @@
 
                 if (options.forceWelcomeBack) {
                     // Show their saved event name as context, not a redundant "welcome back"
-                    const savedEvent = (() => {
-                        try { return localStorage.getItem("ct_selected_event") || ""; } catch(e) { return ""; }
-                    })();
+                    const savedEvent = UserPrefs.getEvent();
                     welcomeSubEl.textContent = savedEvent ? `Ready to study ${savedEvent},` : "Good to see you again,";
                 } else {
                     welcomeSubEl.textContent = selectedTier

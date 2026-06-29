@@ -1,6 +1,6 @@
             // ─── Constants ────────────────────────────────────────────────────────────────
             const QUESTIONS_PER_KPI = 5;
-            const ROLEPLAY_EVERY = 7; // show a mini roleplay every N KPIs
+            const ROLEPLAY_EVERY = 7; // show a mini roleplay every N KPIs (standard/tdm only)
 
             // ─── State ────────────────────────────────────────────────────────────────────
             let allKpis = []; // all KPIs for the user's event (in order)
@@ -9,24 +9,30 @@
             let sessionData = null; // current KPI's Groq response {vocab,concept,questions}
             let vocabList = [];
             let vocabIdx = 0;
-            let qShown = []; // 5 questions chosen for this KPI
+            let qShown = []; // questions chosen for this KPI
             let missed = []; // questions answered wrong this round
-            let qIdx = 0; // which of the 5 we're on
+            let qIdx = 0; // which question we're on
             let qAnswered = false;
             let chunkKpis = []; // KPIs studied in the current chunk of ROLEPLAY_EVERY
 
             // Session tracking
             let currentEventId = "";
+            let currentEventName = "";
+            let currentEventType = "series"; // 'exam'|'tdm'|'series'|'principles'|'operations'
             let currentEvent = null;
-            let currentLearnMode = "standard";
+            let currentLearnMode = "standard"; // 'standard'|'examOnly'|'activeRecall'|'principles'
             let sessionId = null;
             let sessionStartTime = null;
             let sessionQAnswered = 0;
             let sessionQCorrect = 0;
+            let sessionRecogAnswered = 0; // recognition questions answered
+            let sessionRecogCorrect = 0;
+            let sessionAppAnswered = 0;   // application questions answered
+            let sessionAppCorrect = 0;
             let sessionVocabTotal = 0;
             let sessionVocabCorrect = 0;
             let sessionRoleplayScore = null;
-            let sessionArAnswers = []; // Track active-recall answers
+            let sessionArAnswers = [];
             let preMasteryMap = {};
             let analyticsData = null;
             let isReviewMode = false;
@@ -34,10 +40,358 @@
             let savedNotes = [];
             let isActiveRecallMode = false;
 
+            // ─── Per-question timing state (reset in showQuestion) ────────────────────────
+            let _qStartTime         = 0;   // ms timestamp when question was rendered
+            let _qFirstClickTime    = null; // ms timestamp of first answer click
+            let _qAnswerChangeCount = 0;   // number of times the chosen answer changed
+            let _qLastChoice        = null; // index of most-recently clicked choice
+
             // ─── DOM helpers ──────────────────────────────────────────────────────────────
             const $ = (id) => document.getElementById(id);
             const viewHome = $("view-home");
             const viewSession = $("view-session");
+
+            function readJsonStorage(key, fallback = []) {
+                try {
+                    const raw = localStorage.getItem(key);
+                    return raw ? JSON.parse(raw) : fallback;
+                } catch (e) {
+                    return fallback;
+                }
+            }
+
+            function writeJsonStorage(key, value) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {}
+            }
+
+            function getSavedConceptStore() {
+                return readJsonStorage("ct_saved_concepts", []);
+            }
+
+            function getSavedNoteStore() {
+                return readJsonStorage("ct_saved_notes", []);
+            }
+
+            function setSavedNoteStore(notes) {
+                writeJsonStorage("ct_saved_notes", notes.slice(0, 200));
+            }
+
+            function getStudyTips() {
+                return [
+                    "Teach it in one sentence before you start the next topic.",
+                    "Use the search box to jump straight to a weak KPI instead of browsing.",
+                    "Save only the ideas you would want to review before a judge round.",
+                ];
+            }
+
+            function findKpiByCode(code) {
+                return allKpis.find((k) => k.code === code) || null;
+            }
+
+            function focusSessionOnKpi(kpiOrCode) {
+                const code = typeof kpiOrCode === "string"
+                    ? kpiOrCode
+                    : (kpiOrCode && kpiOrCode.code) || "";
+                if (!code) return;
+                startSession(code);
+            }
+
+            function renderSearchResults(query) {
+                const panel = $("search-results");
+                if (!panel) return;
+
+                const q = String(query || "").trim().toLowerCase();
+                if (!q) {
+                    panel.innerHTML = "";
+                    panel.classList.add("hidden");
+                    return;
+                }
+
+                const matches = allKpis.filter((k) => {
+                    const haystack = [
+                        k.code,
+                        k.text,
+                        k.cluster,
+                        k.standard,
+                        k.deca_cluster,
+                    ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase();
+                    return haystack.includes(q);
+                });
+
+                panel.innerHTML = "";
+                panel.classList.remove("hidden");
+
+                if (!matches.length) {
+                    const empty = document.createElement("div");
+                    empty.className = "search-empty";
+                    empty.textContent = "No matches yet. Try a broader topic or a KPI code.";
+                    panel.appendChild(empty);
+                    return;
+                }
+
+                matches.slice(0, 8).forEach((kpi) => {
+                    const row = document.createElement("button");
+                    row.type = "button";
+                    row.className = "search-row";
+                    row.innerHTML =
+                        `<strong>${escHtml(kpi.code || "")}</strong>` +
+                        `<span>${escHtml(kpi.text || "")}</span>` +
+                        `<small>${escHtml(kpi.cluster || "")}</small>`;
+                    row.addEventListener("click", () => focusSessionOnKpi(kpi));
+                    panel.appendChild(row);
+                });
+            }
+
+            function renderRecommendedPath() {
+                const list = $("learning-path-list");
+                if (!list) return;
+
+                const weak = (analyticsData && Array.isArray(analyticsData.weak_kpis))
+                    ? analyticsData.weak_kpis.slice(0, 3)
+                    : [];
+                const source = weak.length
+                    ? weak.map((item) => ({
+                        code: item.kpi_code || item.code || "",
+                        text: item.kpi_text || item.text || "",
+                        score: Math.round(item.mastery_score || 0),
+                    }))
+                    : allKpis.slice(0, 3).map((kpi, idx) => ({
+                        code: kpi.code,
+                        text: kpi.text,
+                        score: idx === 0 ? "Start here" : "Ready",
+                    }));
+
+                list.innerHTML = "";
+                if (!source.length) {
+                    const empty = document.createElement("div");
+                    empty.className = "empty-state";
+                    empty.textContent = "Start a session to generate your next steps.";
+                    list.appendChild(empty);
+                    return;
+                }
+
+                source.forEach((item) => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "study-row";
+                    const numericScore = Number(item.score);
+                    const mastery = Number.isFinite(numericScore) ? Math.max(0, Math.min(100, Math.round(numericScore))) : null;
+                    const difficulty = mastery === null
+                        ? "ready"
+                        : mastery >= 80
+                            ? "easy"
+                            : mastery >= 60
+                                ? "building"
+                                : "focus";
+                    const minutes = mastery === null
+                        ? "2 min"
+                        : mastery >= 80
+                            ? "2 min"
+                            : mastery >= 60
+                                ? "3 min"
+                                : "5 min";
+                    const difficultyLabel = mastery === null
+                        ? (item.score === "Start here" ? "Start" : "Ready")
+                        : mastery >= 80
+                            ? "Warm"
+                            : mastery >= 60
+                                ? "Building"
+                                : "Focus";
+                    const masteryLabel = mastery === null
+                        ? (item.score === "Start here" ? "Start here" : "Ready")
+                        : `${mastery}% learned`;
+                    const barWidth = mastery === null ? 24 : Math.max(12, mastery);
+                    const accent = mastery === null
+                        ? "var(--cyan)"
+                        : mastery >= 80
+                            ? "var(--green)"
+                            : mastery >= 60
+                                ? "var(--yellow)"
+                                : "var(--red)";
+                    btn.dataset.difficulty = difficulty;
+                    btn.style.setProperty("--study-accent", accent);
+                    btn.innerHTML =
+                        `<span class="study-row-code">${escHtml(item.code || "")}</span>` +
+                        `<span class="study-row-text">` +
+                            `<strong>${escHtml(item.text || "")}</strong>` +
+                            `<span class="study-row-meta">${escHtml(difficultyLabel)} • ${escHtml(minutes)} • ${escHtml(masteryLabel)}</span>` +
+                            `<span class="study-row-track"><span class="study-row-fill" style="width:${barWidth}%"></span></span>` +
+                        `</span>` +
+                        `<span class="study-row-score">${item.score === "Start here" ? "Start" : "Continue"}</span>`;
+                    btn.addEventListener("click", () => focusSessionOnKpi(item.code));
+                    list.appendChild(btn);
+                });
+            }
+
+            function renderKnowledgeMap() {
+                const graph = $("knowledge-graph");
+                if (!graph) return;
+
+                const clusters = (analyticsData && Array.isArray(analyticsData.cluster_breakdown))
+                    ? analyticsData.cluster_breakdown
+                    : [];
+
+                graph.innerHTML = "";
+                if (!clusters.length) {
+                    const empty = document.createElement("div");
+                    empty.className = "empty-state";
+                    empty.textContent = "Your visual map appears after a session.";
+                    graph.appendChild(empty);
+                    return;
+                }
+
+                clusters.slice(0, 3).forEach((cluster) => {
+                    const pct = Math.round(cluster.avg_mastery || 0);
+                    const row = document.createElement("div");
+                    row.className = "graph-row";
+                    row.innerHTML =
+                        `<div class="graph-row-top"><span>${escHtml(cluster.cluster || "")}</span><span>${pct}%</span></div>` +
+                        `<div class="graph-track"><div class="graph-fill" style="width:${pct}%"></div></div>`;
+                    graph.appendChild(row);
+                });
+            }
+
+            function renderStudySpace() {
+                const concepts = getSavedConceptStore();
+                const notes = getSavedNoteStore();
+                const tips = getStudyTips();
+
+                const conceptList = $("saved-concepts-list");
+                if (conceptList) {
+                    conceptList.innerHTML = "";
+                    if (!concepts.length) {
+                        const empty = document.createElement("div");
+                        empty.className = "empty-state";
+                        empty.textContent = "No saved concepts yet. Save one from a session to keep it here.";
+                        conceptList.appendChild(empty);
+                    } else {
+                        concepts.slice(0, 6).forEach((item) => {
+                            const row = document.createElement("div");
+                            row.className = "saved-concept-row";
+                            const code = item.code || "";
+                            const title = item.title || item.text || "Saved concept";
+                            row.innerHTML =
+                                `<div class="saved-concept-head"><strong>${escHtml(code)}</strong><span>${escHtml(title)}</span></div>` +
+                                `<div class="saved-concept-actions"><button type="button" class="mini-link-btn">Study again</button></div>`;
+                            const btn = row.querySelector(".mini-link-btn");
+                            if (btn && code) {
+                                btn.addEventListener("click", () => focusSessionOnKpi(code));
+                            }
+                            conceptList.appendChild(row);
+                        });
+                    }
+                }
+
+                const noteList = $("saved-notes-list");
+                if (noteList) {
+                    noteList.innerHTML = "";
+                    const tip = tips[0];
+                    if (tip) {
+                        const row = document.createElement("div");
+                        row.className = "note-row note-row-tip";
+                        row.innerHTML =
+                            `<div class="note-row-top"><strong>Today's tip</strong><span>Study space</span></div>` +
+                            `<div class="note-row-text">${escHtml(tip)}</div>`;
+                        noteList.appendChild(row);
+                    }
+                    if (!notes.length) {
+                        const empty = document.createElement("div");
+                        empty.className = "empty-state";
+                        empty.textContent = "Notes you write during study sessions will show up here.";
+                        noteList.appendChild(empty);
+                    } else {
+                        notes.slice(0, 4).forEach((item) => {
+                            const row = document.createElement("div");
+                            row.className = "note-row";
+                            row.innerHTML =
+                                `<div class="note-row-top"><strong>${escHtml(item.code || "")}</strong><span>${escHtml(item.saved_at ? new Date(item.saved_at).toLocaleDateString() : "")}</span></div>` +
+                                `<div class="note-row-text">${escHtml(item.text || "")}</div>`;
+                            noteList.appendChild(row);
+                        });
+                    }
+                }
+
+                const tipList = $("mnemonics-list");
+                if (tipList) {
+                    tipList.innerHTML = "";
+                    const tip = tips[0] || "Keep your notes short enough to reread before a session.";
+                    const row = document.createElement("div");
+                    row.className = "tip-row";
+                    row.textContent = tip;
+                    tipList.appendChild(row);
+                    const panel = $("mnemonics-panel");
+                    if (panel) {
+                        panel.hidden = true;
+                    }
+                }
+            }
+
+            function renderLearnHome() {
+                const topicCountEl = $("hero-topic-count");
+                if (topicCountEl) {
+                    topicCountEl.textContent = allKpis.length
+                        ? `${allKpis.length} topics ready`
+                        : "No topics loaded";
+                }
+
+                const modeChip = $("hero-mode-chip");
+                if (modeChip) {
+                    const activeMode = document.querySelector(".mode-btn.active");
+                    const label = activeMode ? activeMode.textContent.trim() : "Active Recall";
+                    modeChip.textContent = label + " selected";
+                }
+
+                const startBtn = $("start-btn");
+                if (startBtn) {
+                    startBtn.textContent = allKpis.length
+                        ? "Start Learning"
+                        : "No topics available yet";
+                    startBtn.disabled = !allKpis.length;
+                }
+
+                const progressChip = $("hero-progress-chip");
+                if (progressChip) {
+                    const sum = analyticsData && analyticsData.summary ? analyticsData.summary : null;
+                    const mastered = Number(sum?.mastered_kpis || 0);
+                    const masteredPct = allKpis.length
+                        ? Math.round((mastered / allKpis.length) * 100)
+                        : 0;
+                    const hasActivity = !!(sum && ((sum.avg_mastery || 0) > 0 || mastered > 0 || (sum.questions_due || 0) > 0 || (sum.streak_days || 0) > 0));
+                    progressChip.textContent = hasActivity
+                        ? `${masteredPct || Math.round(Number(sum?.avg_mastery || 0)) || 0}% learned`
+                        : "Progress stats unlock after your first session";
+                }
+
+                const heroNote = $("hero-note");
+                if (heroNote) {
+                    heroNote.textContent = allKpis.length
+                        ? "Continue where you left off. Search or jump to the next recommended concept."
+                        : "Choose an event in Settings, then search or start a session.";
+                }
+
+                const dashSummary = $("dashboard-summary");
+                if (dashSummary) {
+                    dashSummary.style.display = "flex";
+                    const sum = analyticsData && analyticsData.summary ? analyticsData.summary : null;
+                    const mastery = sum ? Math.round(Number(sum.avg_mastery || 0)) : 0;
+                    const due = Number(sum?.questions_due || allKpis.length || 0);
+                    const streak = Number(sum?.streak_days || 0);
+                    const mastered = Number(sum?.mastered_kpis || 0);
+                    const learnedLabel = allKpis.length ? `${Math.min(100, Math.round((mastered / allKpis.length) * 100))}%` : "--";
+                    $("dash-mastery").textContent = mastery ? `${mastery}%` : learnedLabel;
+                    $("dash-due").textContent = due;
+                    $("dash-streak").textContent = streak ? `${streak}d` : "0d";
+                }
+
+                renderRecommendedPath();
+                renderKnowledgeMap();
+                renderStudySpace();
+            }
 
             // ─── Auth ─────────────────────────────────────────────────────────────────────
             requireAuth().then((user) => {
@@ -56,46 +410,103 @@
 
             // ─── Init: load event + KPIs ──────────────────────────────────────────────────
             async function initLearn() {
-                let savedName = "";
+                // Server is source of truth. Fetch profile, hydrate cache, then read cache.
                 try {
-                    savedName = localStorage.getItem("ct_selected_event") || "";
-                } catch (e) {}
+                    const meRes = await apiFetch("/auth/me");
+                    const meData = await meRes.json().catch(() => ({}));
+                    UserPrefs.hydrateFromProfile(meData.user || meData);
+                } catch(e) {
+                    // Network failed — fall through to whatever is already cached
+                }
+                // Always work with the slug. Name is for display only.
+                const savedEventId = UserPrefs.getEventId();
+                const savedEventName = UserPrefs.getEventName();
+                const resolveEventSlug = (value) => {
+                    const raw = String(value || "").trim();
+                    if (!raw) return "";
+                    if (raw.includes("_")) return raw.toLowerCase();
+                    if (typeof getEventIdByName === "function") {
+                        const mapped = getEventIdByName(raw);
+                        if (mapped) return mapped;
+                    }
+                    if (typeof CLUSTERS !== "undefined") {
+                        for (const cluster of CLUSTERS) {
+                            for (const ev of cluster.events || []) {
+                                const name = (typeof ev === "string") ? ev : ev.name;
+                                if (name === raw) {
+                                    return (typeof getEventIdByName === "function")
+                                        ? getEventIdByName(name)
+                                        : name.toLowerCase().replace(/ /g, "_");
+                                }
+                            }
+                        }
+                    }
+                    return raw.toLowerCase().replace(/ /g, "_");
+                };
+                const eventIdForApi = resolveEventSlug(savedEventId || savedEventName);
+
+                if (!eventIdForApi) {
+                    $("event-header-name").textContent =
+                        "No event selected — go to Settings to choose your event.";
+                    return;
+                }
 
                 try {
-                    const res = await apiFetch("/api/kpis");
+                    const res = await apiFetch("/api/kpis?event_id=" + encodeURIComponent(eventIdForApi));
                     const data = await res.json();
                     const events = data.events || [];
                     const kpis = data.kpis || [];
 
-                    const ev =
-                        events.find((e) => e.name === savedName) ||
-                        events[0] ||
-                        null;
+                    // Match by slug — no name-based fallback, no events[0]
+                    const ev = events.find((e) => e.id === eventIdForApi) || null;
                     if (!ev) {
                         $("event-header-name").textContent =
-                            "No event found — go through the opening screen first.";
+                            "Event not found — go to Settings to update your selection.";
                         return;
                     }
 
                     const color = clusterColor(ev.cluster || "");
-                    $("event-header-card").style.setProperty(
-                        "--ev-color",
-                        color,
-                    );
+                    $("event-header-card").style.setProperty("--ev-color", color);
                     $("event-header-name").textContent = ev.name;
                     $("event-header-cluster").textContent = ev.cluster || "";
 
                     currentEventId = ev.id || "";
-                    allKpis = kpis.filter((k) => k.event === ev.id);
+                    currentEventName = ev.name || "";
+                    // event type is derived from name (clusters.js is keyed on name — display logic only)
+                    currentEventType = (typeof getEventType === "function")
+                        ? getEventType(ev.name || "")
+                        : "series";
+                    // KPIs from server are already scoped to this event — no client-side filter needed
+                    allKpis = kpis;
+
+                    const clusterEl = $("event-header-cluster");
+                    if (clusterEl) {
+                        const clusterLabel = ev.cluster || "Study";
+                        clusterEl.textContent = allKpis.length
+                            ? `${clusterLabel} · ${allKpis.length} topics`
+                            : clusterLabel;
+                    }
 
                     const btn = $("start-btn");
                     if (allKpis.length) {
-                        btn.textContent = `Start Learning — ${allKpis.length} KPIs`;
+                        btn.textContent = "Start Learning";
                         btn.disabled = false;
                     } else {
-                        btn.textContent =
-                            "No KPIs available for this event yet";
+                        btn.textContent = "No topics available yet";
                     }
+
+                    // Show/hide mode buttons based on event type
+                    _updateModeButtonsForEventType(currentEventType);
+
+                    const searchInput = $("learn-search");
+                    if (searchInput && !searchInput.dataset.wired) {
+                        searchInput.dataset.wired = "1";
+                        searchInput.addEventListener("input", (e) => {
+                            renderSearchResults(e.target.value);
+                        });
+                    }
+
+                    renderLearnHome();
 
                     // Load mastery dashboard asynchronously (non-blocking)
                     initMasteryDashboard(currentEventId);
@@ -106,6 +517,7 @@
                         btn.addEventListener('click', () => {
                             modeButtons.forEach(b => b.classList.remove('active'));
                             btn.classList.add('active');
+                            renderLearnHome();
                         });
                     });
                 } catch (e) {
@@ -119,14 +531,61 @@
                 startSession();
             });
 
+            // ─── Mode button visibility based on event type ───────────────────────────────
+            function _updateModeButtonsForEventType(eventType) {
+                // Wire all mode buttons
+                const modeButtons = document.querySelectorAll('.mode-btn');
+                modeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        modeButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    });
+                });
+
+                // For principles events, default to principles mode and hide roleplay-related modes
+                if (eventType === 'principles') {
+                    modeButtons.forEach(b => {
+                        const mode = b.dataset.learnMode;
+                        if (mode === 'principles') {
+                            b.classList.add('active');
+                        } else if (mode === 'standard' || mode === 'teamDecision') {
+                            b.classList.remove('active');
+                        }
+                    });
+                    // Activate principles mode by default
+                    const principlesBtn = document.querySelector('[data-learn-mode="principles"]');
+                    if (principlesBtn) {
+                        modeButtons.forEach(b => b.classList.remove('active'));
+                        principlesBtn.classList.add('active');
+                    }
+                } else if (eventType === 'exam') {
+                    // Exam events: default to examOnly
+                    const examBtn = document.querySelector('[data-learn-mode="examOnly"]');
+                    if (examBtn) {
+                        modeButtons.forEach(b => b.classList.remove('active'));
+                        examBtn.classList.add('active');
+                    }
+                }
+                // tdm/series/operations: standard mode is fine as default
+            }
+
             // ─── Session start ────────────────────────────────────────────────────────────
-            function startSession() {
-                sessionQueue = [...allKpis];
+            function startSession(focusCode = "") {
+                const focused = focusCode
+                    ? findKpiByCode(focusCode)
+                    : null;
+                sessionQueue = focused
+                    ? [focused, ...allKpis.filter((kpi) => kpi.code !== focused.code)]
+                    : [...allKpis];
                 sessionIdx = 0;
                 chunkKpis = [];
                 isReviewMode = false;
                 sessionQAnswered = 0;
                 sessionQCorrect = 0;
+                sessionRecogAnswered = 0;
+                sessionRecogCorrect = 0;
+                sessionAppAnswered = 0;
+                sessionAppCorrect = 0;
                 sessionVocabTotal = 0;
                 sessionVocabCorrect = 0;
                 sessionRoleplayScore = null;
@@ -142,33 +601,34 @@
                     });
                 }
 
+                // Determine learn mode from active button, falling back to event type
+                const modeBtn = document.querySelector('.mode-btn.active');
+                currentLearnMode = (modeBtn && modeBtn.dataset.learnMode) || 'standard';
+
+                // Override with event type if no explicit mode chosen
+                if (currentLearnMode === 'standard') {
+                    if (currentEventType === 'principles') currentLearnMode = 'principles';
+                    else if (currentEventType === 'exam') currentLearnMode = 'examOnly';
+                }
+
+                isActiveRecallMode = currentLearnMode === 'activeRecall';
+
                 // Start server session record (non-blocking)
                 apiFetch("/api/learn/session/start", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         event_id: currentEventId,
-                        session_type: "full",
+                        session_type: currentLearnMode,
                     }),
                 })
                     .then((r) => r.json())
-                    .then((d) => {
-                        sessionId = d.session_id || null;
-                    })
+                    .then((d) => { sessionId = d.session_id || null; })
                     .catch(() => {});
-
-                currentLearnMode = 'standard';
-                // Check which mode button is active
-                const modeBtn = document.querySelector('.mode-btn.active');
-                if (modeBtn && modeBtn.dataset.learnMode) {
-                    currentLearnMode = modeBtn.dataset.learnMode;
-                }
-                isActiveRecallMode = currentLearnMode === 'activeRecall';
 
                 viewHome.style.display = "none";
                 viewSession.style.display = "block";
-                document.querySelector(".phase-pills").style.visibility =
-                    "visible";
+                document.querySelector(".phase-pills").style.visibility = "visible";
 
                 $("prog-total").textContent = sessionQueue.length;
                 updateProgress();
@@ -238,30 +698,41 @@
 
                 if (isActiveRecallMode) {
                     startActiveRecall(kpi);
+                } else if (currentLearnMode === 'examOnly') {
+                    // Exam Only: skip vocab and concept, go straight to questions
+                    setPhase("vocab", "done");
+                    setPhase("concept", "done");
+                    startQuestions(kpi);
+                } else if (currentLearnMode === 'principles') {
+                    // Principles: vocab → concept → application question only (no roleplay)
+                    startVocab(kpi);
                 } else {
+                    // Standard / TDM: full flow (vocab → concept → questions → roleplay every 7)
                     startVocab(kpi);
                 }
             }
 
             // ─── Active Recall flow ───────────────────────────────────────────────────
             function startActiveRecall(kpi) {
-                // populate active recall UI
                 $("ar-code").textContent = kpi.code;
                 $("ar-kpi-text").textContent = kpi.text;
                 $("active-recall-text").value = "";
                 $("active-recall-model").style.display = "none";
                 $("active-recall-reveal").style.display = "none";
                 $("active-recall-submit").disabled = false;
+
+                // Remove any old continue button
+                const oldContinue = document.getElementById("ar-continue-btn");
+                if (oldContinue) oldContinue.remove();
+
                 showState("active-recall");
 
-                // wire up submit/reveal
                 $("active-recall-submit").onclick = () => {
                     const answer = $("active-recall-text").value.trim();
-                    // Record AR answer to session state
                     sessionArAnswers.push({
                         kpi_code: kpi.code,
                         kpi_text: kpi.text,
-                        answer: answer,
+                        answer,
                         timestamp: new Date().toISOString(),
                     });
                     $("active-recall-submit").disabled = true;
@@ -269,17 +740,30 @@
                 };
 
                 $("active-recall-reveal").onclick = () => {
-                    // reveal model answer from sessionData.concept
                     const c = sessionData?.concept || {};
                     $("ar-model-answer").textContent = c.explanation || "";
                     const bulletsEl = $("ar-model-bullets");
                     bulletsEl.innerHTML = "";
                     (c.bullets || []).forEach(b => {
-                        const li = document.createElement('li'); li.textContent = b; bulletsEl.appendChild(li);
+                        const li = document.createElement("li");
+                        li.textContent = b;
+                        bulletsEl.appendChild(li);
                     });
                     $("active-recall-model").style.display = "block";
-                    // after reveal, let user continue to concept/questions
-                    // show the understand button below concept when they click it
+                    $("active-recall-reveal").style.display = "none";
+
+                    // Add a continue button after reveal
+                    const btn = document.createElement("button");
+                    btn.id = "ar-continue-btn";
+                    btn.className = "understand-btn";
+                    btn.style.marginTop = "16px";
+                    btn.textContent = "Continue to Questions →";
+                    btn.onclick = () => {
+                        btn.remove();
+                        setPhase("concept", "done");
+                        startQuestions(kpi);
+                    };
+                    $("active-recall-model").insertAdjacentElement("afterend", btn);
                 };
             }
 
@@ -412,6 +896,69 @@
                     tbody.appendChild(tr);
                 });
 
+                // ── Concept check — locks "I understand" until answered ───────────────────
+                // One question testing the core idea. Just enough to verify engagement.
+                // If the model didn't generate one (older cache), fall through silently.
+                const check = c.concept_check;
+                const understandBtn = $("understand-btn");
+                const checkContainer = $("concept-check-container");
+
+                // Clear any leftover check from a previous KPI
+                if (checkContainer) checkContainer.innerHTML = "";
+                understandBtn.disabled = false;
+                understandBtn.textContent = "I understand →";
+
+                if (check && check.question && check.choices && check.choices.length === 4) {
+                    understandBtn.disabled = true;
+                    understandBtn.textContent = "Answer the question below to continue →";
+
+                    const qEl = document.createElement("div");
+                    qEl.className = "concept-check-question";
+                    qEl.innerHTML = `<p class="concept-check-prompt">${escHtml(check.question)}</p>`;
+
+                    const choicesEl = document.createElement("div");
+                    choicesEl.className = "concept-check-choices";
+                    const letters = ["A", "B", "C", "D"];
+                    let checkAnswered = false;
+
+                    check.choices.forEach((choice, i) => {
+                        const btn = document.createElement("button");
+                        btn.className = "choice-btn";
+                        btn.type = "button";
+                        btn.innerHTML = `<span class="choice-letter">${letters[i]}.</span>${escHtml(choice)}`;
+                        btn.addEventListener("click", () => {
+                            if (checkAnswered) return;
+                            checkAnswered = true;
+
+                            // Show correct/wrong immediately
+                            choicesEl.querySelectorAll(".choice-btn").forEach((b, j) => {
+                                b.disabled = true;
+                                if (j === check.correct) b.classList.add("correct");
+                                else if (j === i && i !== check.correct) b.classList.add("wrong");
+                                else b.classList.add("neutral");
+                            });
+
+                            const feedbackEl = document.createElement("p");
+                            feedbackEl.className = "concept-check-feedback";
+                            const correct = i === check.correct;
+                            feedbackEl.style.color = correct ? "var(--green)" : "var(--yellow)";
+                            feedbackEl.textContent = correct
+                                ? "✓ " + (check.explanation || "Correct!")
+                                : "✗ " + (check.explanation || "Not quite — see above.");
+                            qEl.appendChild(feedbackEl);
+
+                            // Unlock continue regardless of right/wrong —
+                            // wrong answer already showed the correct one
+                            understandBtn.disabled = false;
+                            understandBtn.textContent = "I understand →";
+                        });
+                        choicesEl.appendChild(btn);
+                    });
+
+                    qEl.appendChild(choicesEl);
+                    if (checkContainer) checkContainer.appendChild(qEl);
+                }
+
                 showState("concept");
             }
 
@@ -421,20 +968,74 @@
             });
 
             // ─── QUESTIONS phase ──────────────────────────────────────────────────────────
+            // Per-KPI adaptive state — updated from engine response after each answer
+            let _kpiQueueActions = [];  // e.g. ["increase_recognition_weight", "defer_application_questions"]
+
             function startQuestions(kpi) {
                 setPhase("questions", "active");
-                missed = []; // reset retry queue for this KPI
-                const all = sessionData.questions || [];
-                const done = getCorrectQs();
-                const available = all.filter((q) => !done.has(q.id));
+                missed = [];
 
-                if (!available.length) {
-                    // All questions for this KPI mastered — skip straight to next
-                    kpiDone();
-                    return;
+                // Separate recognition from application questions
+                const all = sessionData.questions || [];
+                const recognition = all.filter(q => (q.question_type || "recognition") === "recognition");
+                const application = all.filter(q => q.question_type === "application");
+
+                const done = getCorrectQs();
+                const availableRecognition = recognition.filter(q => !done.has(q.id));
+                const availableApplication = application.filter(q => !done.has(q.id));
+
+                if (currentLearnMode === 'principles') {
+                    if (!availableApplication.length) { kpiDone(); return; }
+                    qShown = [availableApplication[0]];
+
+                } else if (currentLearnMode === 'examOnly') {
+                    if (!availableRecognition.length) { kpiDone(); return; }
+                    qShown = shuffle(availableRecognition).slice(0, QUESTIONS_PER_KPI);
+
+                } else {
+                    // Standard / TDM / activeRecall — with adaptive weighting
+                    if (!availableRecognition.length && !availableApplication.length) { kpiDone(); return; }
+
+                    // Default: 5 recognition + 1 application
+                    let recogCount = QUESTIONS_PER_KPI;
+                    let includeApplication = availableApplication.length > 0;
+
+                    // ── Apply queue_actions from the adaptive engine ──────────────────────
+                    // "increase_recognition_weight": student may be pattern-matching
+                    //   → show all available recognition, push application to end
+                    // "defer_application_questions": signal too noisy for application
+                    //   → skip application entirely this round
+                    if (_kpiQueueActions.includes("defer_application_questions")) {
+                        includeApplication = false;
+                    } else if (_kpiQueueActions.includes("increase_recognition_weight")) {
+                        recogCount = Math.min(availableRecognition.length, QUESTIONS_PER_KPI + 2);
+                    }
+
+                    // ── Adaptive weighting from mastery split ─────────────────────────────
+                    // If recognition mastery is high but application is low, flip the ratio:
+                    // show fewer recognition (they're solid) and prioritise the application Q.
+                    // analyticsData is loaded async on session start from /api/learn/analytics.
+                    const kpiMastery = analyticsData && analyticsData.kpi_mastery
+                        ? analyticsData.kpi_mastery.find(m => m.kpi_code === kpi.code)
+                        : null;
+                    if (kpiMastery) {
+                        const recogM = kpiMastery.recognition_mastery ?? kpiMastery.mastery_score ?? 0;
+                        const appM   = kpiMastery.application_mastery ?? 0;
+                        if (recogM > 0.75 && appM < 0.50 && includeApplication) {
+                            // Strong on recognition, weak on application
+                            // → trim recognition, ensure application leads
+                            recogCount = Math.max(2, Math.floor(QUESTIONS_PER_KPI / 2));
+                        }
+                    }
+
+                    const recognitionToShow = shuffle(availableRecognition).slice(0, recogCount);
+                    qShown = [
+                        ...recognitionToShow,
+                        ...(includeApplication && availableApplication.length ? [availableApplication[0]] : []),
+                    ];
                 }
 
-                qShown = shuffle(available).slice(0, QUESTIONS_PER_KPI);
+                if (!qShown.length) { kpiDone(); return; }
                 qIdx = 0;
                 $("qs-total").textContent = qShown.length;
                 showQuestion();
@@ -444,10 +1045,31 @@
             function showQuestion() {
                 const q = qShown[qIdx];
                 $("qs-current").textContent = qIdx + 1;
-                $("question-text").textContent = q.text;
                 $("result-panel").style.display = "none";
                 $("next-q-btn").style.display = "none";
                 qAnswered = false;
+
+                // Reset per-question timing state
+                _qStartTime         = Date.now();
+                _qFirstClickTime    = null;
+                _qAnswerChangeCount = 0;
+                _qLastChoice        = null;
+
+                // Show question type badge for application questions
+                const questionBox = $("question-text").parentElement;
+                let badge = questionBox.querySelector(".q-type-badge");
+                if (q.question_type === "application") {
+                    if (!badge) {
+                        badge = document.createElement("div");
+                        badge.className = "q-type-badge q-type-application";
+                        questionBox.insertBefore(badge, questionBox.firstChild);
+                    }
+                    badge.textContent = "📋 Application Scenario";
+                } else {
+                    if (badge) badge.remove();
+                }
+
+                $("question-text").textContent = q.text;
 
                 const list = $("choices-list");
                 list.innerHTML = "";
@@ -478,7 +1100,14 @@
 
                 const ok = chosen === q.correct;
                 if (ok) sessionQCorrect++;
-                // Persist to localStorage (fast, offline)
+                // Track by question type
+                if ((q.question_type || "recognition") === "application") {
+                    sessionAppAnswered++;
+                    if (ok) sessionAppCorrect++;
+                } else {
+                    sessionRecogAnswered++;
+                    if (ok) sessionRecogCorrect++;
+                }
                 // Persist to localStorage (fast, offline)
                 if (ok) saveCorrectQ(q.id);
                 // Track wrong answers for end-of-set retry
@@ -560,7 +1189,9 @@
                 chunkKpis.push(currentKpi());
                 sessionIdx++;
 
-                if (chunkKpis.length >= ROLEPLAY_EVERY) {
+                // Roleplay only for standard/TDM modes
+                const roleplayEnabled = (currentLearnMode === 'standard' || currentLearnMode === 'teamDecision');
+                if (roleplayEnabled && chunkKpis.length >= ROLEPLAY_EVERY) {
                     startRoleplay();
                 } else {
                     loadCurrentKpi();
@@ -719,6 +1350,7 @@
             $("done-home").addEventListener("click", () => {
                 viewSession.style.display = "none";
                 viewHome.style.display = "block";
+                renderLearnHome();
             });
 
             // ─── Exit ─────────────────────────────────────────────────────────────────────
@@ -736,6 +1368,7 @@
                 viewSession.style.display = "none";
                 viewHome.style.display = "";
                 initMasteryDashboard(currentEventId);
+                renderLearnHome();
             });
 
             // ─── Error ────────────────────────────────────────────────────────────────────
@@ -857,14 +1490,22 @@
                 const masteredKpis = sum.mastered_kpis || 0;
                 const dueCount = sum.questions_due || 0;
                 const streak = sum.streak_days || 0;
+                const hasActivity = !!(
+                    avgMastery > 0 ||
+                    masteredKpis > 0 ||
+                    dueCount > 0 ||
+                    streak > 0
+                );
 
                 // Populate top dashboard summary
                 const dashSummary = $("dashboard-summary");
                 if (dashSummary) {
-                    dashSummary.style.display = "flex";
-                    $("dash-mastery").textContent = avgMastery + "%";
-                    $("dash-due").textContent = dueCount;
-                    $("dash-streak").textContent = streak;
+                    dashSummary.style.display = hasActivity ? "flex" : "none";
+                    if (hasActivity) {
+                        $("dash-mastery").textContent = avgMastery + "%";
+                        $("dash-due").textContent = dueCount;
+                        $("dash-streak").textContent = streak;
+                    }
                 }
 
                 $("m-mastery").textContent = avgMastery + "%";
@@ -872,7 +1513,36 @@
                 $("m-streak").textContent = streak;
                 $("m-mastered").textContent = masteredKpis;
                 $("m-due").textContent = dueCount;
-                $("mastery-summary-row").style.display = "grid";
+                $("mastery-summary-row").style.display = hasActivity ? "grid" : "none";
+
+                // ── Question type breakdown ───────────────────────────────────────────
+                const qtd = data.question_type_breakdown || {};
+                const recog = qtd.recognition;
+                const app = qtd.application;
+                if (recog && app && (recog.total > 0 || app.total > 0)) {
+                    let typeBreakdownEl = $("type-breakdown-section");
+                    if (!typeBreakdownEl) {
+                        typeBreakdownEl = document.createElement("div");
+                        typeBreakdownEl.id = "type-breakdown-section";
+                        typeBreakdownEl.style.cssText = "display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;";
+                        const masteryRow = $("mastery-summary-row");
+                        if (masteryRow && masteryRow.parentNode) {
+                            masteryRow.parentNode.insertBefore(typeBreakdownEl, masteryRow.nextSibling);
+                        }
+                    }
+                    typeBreakdownEl.innerHTML = "";
+                    const makeTypeCard = (label, acc, total) => {
+                        const color = acc >= 80 ? "var(--green)" : acc >= 60 ? "var(--yellow)" : "var(--red)";
+                        return `<div style="flex:1;min-width:110px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,0.3)">
+                            <div style="font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px">${label}</div>
+                            <div style="font-size:1.3rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;color:${color}">${acc}%</div>
+                            <div style="font-size:0.68rem;color:var(--muted)">${total} attempts</div>
+                        </div>`;
+                    };
+                    if (recog.total > 0) typeBreakdownEl.innerHTML += makeTypeCard("Recognition", Math.round(recog.accuracy), recog.total);
+                    if (app.total > 0) typeBreakdownEl.innerHTML += makeTypeCard("Application", Math.round(app.accuracy), app.total);
+                    typeBreakdownEl.style.display = "flex";
+                }
 
                 // Cluster breakdown bars
                 const clusterBreakdown = data.cluster_breakdown || [];
@@ -909,7 +1579,7 @@
                         row.className = "weak-kpi-row";
                         row.innerHTML =
                             `<span class="weak-kpi-code">${escHtml(k.kpi_code || "")}</span>` +
-                            `<span class="weak-kpi-text">${escHtml(k.kpi_code || "")}</span>` +
+                            `<span class="weak-kpi-text">${escHtml(k.kpi_text || k.kpi_code || "")}</span>` +
                             `<span class="weak-kpi-score">${score}%</span>`;
                         container.appendChild(row);
                     });
@@ -925,11 +1595,17 @@
 
                 // Review button
                 if (dueCount > 0) {
-                    $("due-count").textContent = dueCount;
-                    $("review-btn").style.display = "";
+                    // template uses id="due-summary-count" and id="review-summary-btn"
+                    const dueCntEl = $("due-summary-count") || $("due-count");
+                    if (dueCntEl) dueCntEl.textContent = dueCount;
+                    const reviewBtnEl = $("review-summary-btn") || $("review-btn");
+                    if (reviewBtnEl) reviewBtnEl.style.display = "";
                 } else {
-                    $("review-btn").style.display = "none";
+                    const reviewBtnEl = $("review-summary-btn") || $("review-btn");
+                    if (reviewBtnEl) reviewBtnEl.style.display = "none";
                 }
+
+                renderLearnHome();
             }
 
             function renderHeatmap(daily) {
@@ -965,25 +1641,54 @@
             (function wireSaveConcept() {
                 document.addEventListener('DOMContentLoaded', () => {
                     const btn = document.getElementById('save-concept-btn');
-                    if (!btn) return;
-                    btn.addEventListener('click', () => {
-                        try {
-                            const code = (document.getElementById('concept-code')||{}).textContent || '';
-                            const title = (document.getElementById('concept-kpi-text')||{}).textContent || '';
-                            const summary = (document.getElementById('concept-summary')||{}).textContent || '';
-                            const text = (document.getElementById('concept-explanation')||{}).textContent || '';
-                            const bulletsEls = document.querySelectorAll('#concept-bullets li');
-                            const bullets = [];
-                            bulletsEls.forEach(li => bullets.push(li.textContent || ''));
-                            const saved = JSON.parse(localStorage.getItem('ct_saved_concepts') || '[]');
-                            saved.unshift({ code, title, summary, text, bullets, saved_at: Date.now() });
-                            localStorage.setItem('ct_saved_concepts', JSON.stringify(saved.slice(0,200)));
-                            // quick feedback
-                            setOpeningStatus && setOpeningStatus('Concept saved locally.', 'info', 2000);
-                        } catch (e) {
-                            // ignore
-                        }
-                    });
+                    const noteToggle = document.getElementById('add-concept-note-btn');
+                    const noteInput = document.getElementById('concept-note-input');
+                    const noteSaveBtn = document.getElementById('save-concept-note-btn');
+                    if (btn) {
+                        btn.addEventListener('click', () => {
+                            try {
+                                const code = (document.getElementById('concept-code')||{}).textContent || '';
+                                const title = (document.getElementById('concept-kpi-text')||{}).textContent || '';
+                                const summary = (document.getElementById('concept-summary')||{}).textContent || '';
+                                const text = (document.getElementById('concept-explanation')||{}).textContent || '';
+                                const bulletsEls = document.querySelectorAll('#concept-bullets li');
+                                const bullets = [];
+                                bulletsEls.forEach(li => bullets.push(li.textContent || ''));
+                                const saved = readJsonStorage('ct_saved_concepts', []);
+                                saved.unshift({ code, title, summary, text, bullets, saved_at: Date.now() });
+                                writeJsonStorage('ct_saved_concepts', saved.slice(0, 200));
+                                renderStudySpace();
+                                if (typeof setOpeningStatus === "function") {
+                                    setOpeningStatus('Concept saved locally.', 'info', 2000);
+                                }
+                            } catch (e) {
+                                // ignore
+                            }
+                        });
+                    }
+                    if (noteToggle && noteInput && noteSaveBtn) {
+                        noteToggle.addEventListener('click', () => {
+                            noteInput.classList.toggle('hidden');
+                            noteSaveBtn.classList.toggle('hidden');
+                            if (!noteInput.classList.contains('hidden')) {
+                                noteInput.focus();
+                            }
+                        });
+                        noteSaveBtn.addEventListener('click', () => {
+                            try {
+                                const code = (document.getElementById('concept-code')||{}).textContent || '';
+                                const text = noteInput.value.trim();
+                                if (!text) return;
+                                const notes = getSavedNoteStore();
+                                notes.unshift({ code, text, saved_at: Date.now() });
+                                setSavedNoteStore(notes);
+                                noteInput.value = '';
+                                noteInput.classList.add('hidden');
+                                noteSaveBtn.classList.add('hidden');
+                                renderStudySpace();
+                            } catch (e) {}
+                        });
+                    }
                 });
             })();
 
@@ -1059,9 +1764,7 @@
             // ─── Session end + post-session analytics ────────────────────────────────────────────────────
             async function endSession() {
                 if (!sessionStartTime) return;
-                const duration = Math.round(
-                    (Date.now() - sessionStartTime) / 1000,
-                );
+                const duration = Math.round((Date.now() - sessionStartTime) / 1000);
                 const kpisStudied = isReviewMode ? 0 : sessionIdx;
 
                 if (sessionId) {
@@ -1079,76 +1782,86 @@
                                 roleplay_score: sessionRoleplayScore,
                                 duration_seconds: duration,
                                 ar_answers: sessionArAnswers,
+                                recog_answered: sessionRecogAnswered,
+                                recog_correct: sessionRecogCorrect,
+                                app_answered: sessionAppAnswered,
+                                app_correct: sessionAppCorrect,
+                                learn_mode: currentLearnMode,
                             }),
                         });
                     } catch (e) {}
                 }
 
-                // Refresh analytics for the summary panel
+                // Refresh analytics
                 try {
-                    const url =
-                        "/api/learn/analytics" +
-                        (currentEventId
-                            ? "?event_id=" + encodeURIComponent(currentEventId)
-                            : "");
+                    const url = "/api/learn/analytics" +
+                        (currentEventId ? "?event_id=" + encodeURIComponent(currentEventId) : "");
                     const r = await apiFetch(url);
                     if (r.ok) analyticsData = await r.json();
                 } catch (e) {}
             }
 
             function showSummary() {
-                const acc =
-                    sessionQAnswered > 0
-                        ? Math.round((sessionQCorrect / sessionQAnswered) * 100)
-                        : 0;
+                const acc = sessionQAnswered > 0
+                    ? Math.round((sessionQCorrect / sessionQAnswered) * 100) : 0;
                 const duration = sessionStartTime
-                    ? Math.round((Date.now() - sessionStartTime) / 1000)
-                    : 0;
+                    ? Math.round((Date.now() - sessionStartTime) / 1000) : 0;
                 const minutes = Math.round(duration / 60);
                 const kpisStudied = isReviewMode ? 0 : sessionIdx;
 
                 $("sum-accuracy").textContent = acc + "%";
-                $("sum-q-breakdown").textContent =
-                    sessionQCorrect + " / " + sessionQAnswered + " correct";
+                $("sum-q-breakdown").textContent = sessionQCorrect + " / " + sessionQAnswered + " correct";
                 $("sum-time").textContent = minutes + "m";
                 $("sum-kpis").textContent = kpisStudied || qShown.length;
                 $("sum-vocab-line").textContent = isReviewMode
                     ? "review session"
                     : sessionVocabTotal > 0
-                      ? sessionVocabCorrect +
-                        "/" +
-                        sessionVocabTotal +
-                        " vocab correct"
-                      : "vocab cards";
+                        ? sessionVocabCorrect + "/" + sessionVocabTotal + " vocab correct"
+                        : "vocab cards";
 
-                const streak = analyticsData
-                    ? (analyticsData.summary || {}).streak_days || 0
-                    : 0;
+                const streak = analyticsData ? (analyticsData.summary || {}).streak_days || 0 : 0;
                 $("sum-streak").textContent = streak;
 
-                // KPI gain rows (only for full sessions, not review)
+                // ── Recognition vs Application accuracy breakdown ──────────────────────
                 const gainsContainer = $("sum-kpi-gains");
                 gainsContainer.innerHTML = "";
                 const gainsLabel = $("sum-gains-label");
 
-                if (
-                    !isReviewMode &&
-                    analyticsData &&
-                    analyticsData.kpi_mastery &&
-                    sessionIdx > 0
-                ) {
+                if (sessionRecogAnswered > 0 || sessionAppAnswered > 0) {
+                    const recogAcc = sessionRecogAnswered > 0
+                        ? Math.round(sessionRecogCorrect / sessionRecogAnswered * 100) : null;
+                    const appAcc = sessionAppAnswered > 0
+                        ? Math.round(sessionAppCorrect / sessionAppAnswered * 100) : null;
+
+                    const typeRow = document.createElement("div");
+                    typeRow.style.cssText = "display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;";
+                    if (recogAcc !== null) {
+                        typeRow.innerHTML += `<div style="flex:1;min-width:120px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,0.3)">
+                            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Recognition</div>
+                            <div style="font-size:1.4rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;color:var(--white)">${recogAcc}%</div>
+                            <div style="font-size:0.72rem;color:var(--muted)">${sessionRecogCorrect}/${sessionRecogAnswered} correct</div>
+                        </div>`;
+                    }
+                    if (appAcc !== null) {
+                        typeRow.innerHTML += `<div style="flex:1;min-width:120px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,0.3)">
+                            <div style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Application</div>
+                            <div style="font-size:1.4rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;color:${appAcc >= 70 ? 'var(--green)' : 'var(--yellow)'}">${appAcc}%</div>
+                            <div style="font-size:0.72rem;color:var(--muted)">${sessionAppCorrect}/${sessionAppAnswered} correct</div>
+                        </div>`;
+                    }
+                    gainsContainer.appendChild(typeRow);
+                }
+
+                // ── Per-KPI mastery gains ─────────────────────────────────────────────
+                if (!isReviewMode && analyticsData && analyticsData.kpi_mastery && sessionIdx > 0) {
                     gainsLabel.style.display = "";
+                    // Also show next review recommendation for weakest KPI
                     const studied = sessionQueue.slice(0, sessionIdx);
+                    let weakestKpi = null, weakestScore = 101;
                     studied.forEach((kpi) => {
-                        const newMastery = analyticsData.kpi_mastery.find(
-                            (m) => m.kpi_code === kpi.code,
-                        );
-                        const newScore = newMastery
-                            ? Math.round(newMastery.mastery_score || 0)
-                            : 0;
-                        const oldScore = Math.round(
-                            preMasteryMap[kpi.code] || 0,
-                        );
+                        const newMastery = analyticsData.kpi_mastery.find(m => m.kpi_code === kpi.code);
+                        const newScore = newMastery ? Math.round(newMastery.mastery_score || 0) : 0;
+                        const oldScore = Math.round(preMasteryMap[kpi.code] || 0);
                         const delta = newScore - oldScore;
                         const row = document.createElement("div");
                         row.className = "kpi-gain-row";
@@ -1158,7 +1871,16 @@
                             `<span class="kpi-gain-pct">${newScore}%</span>` +
                             `<span class="kpi-gain-delta ${delta > 0 ? "pos" : delta < 0 ? "neg" : ""}">${delta > 0 ? "+" : ""}${delta}%</span>`;
                         gainsContainer.appendChild(row);
+                        if (newScore < weakestScore) { weakestScore = newScore; weakestKpi = kpi; }
                     });
+
+                    // Next review hint for weakest KPI
+                    if (weakestKpi && weakestScore < 80) {
+                        const hint = document.createElement("div");
+                        hint.style.cssText = "margin-top:12px;padding:10px 14px;border:1px solid var(--border2);border-radius:8px;font-size:0.82rem;color:var(--muted);";
+                        hint.innerHTML = `📅 <strong style="color:var(--white)">${escHtml(weakestKpi.code)}</strong> needs more work (${weakestScore}% mastery). It's scheduled for review via spaced repetition.`;
+                        gainsContainer.appendChild(hint);
+                    }
                 } else {
                     gainsLabel.style.display = "none";
                 }
@@ -1167,15 +1889,17 @@
             }
 
             // ─── Summary button wiring ────────────────────────────────────────────────────────────────────────────
-            const reviewBtn = $("review-btn");
-            if (reviewBtn) {
-                reviewBtn.addEventListener("click", startReview);
-            }
+            // Wire all possible review button IDs (template uses review-summary-btn)
+            ["review-btn", "review-summary-btn"].forEach(id => {
+                const btn = $(id);
+                if (btn) btn.addEventListener("click", startReview);
+            });
 
             $("sum-go-home").addEventListener("click", () => {
                 viewSession.style.display = "none";
                 viewHome.style.display = "";
                 initMasteryDashboard(currentEventId);
+                renderLearnHome();
             });
 
             $("sum-study-again").addEventListener("click", () => {

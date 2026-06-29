@@ -1,0 +1,821 @@
+[
+  {
+    "kpi_code": "FI:641",
+    "kpi_text": "Discuss the impact of obsolescence on business expense",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "business_finance_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the state of being no longer needed or useful because something newer or better has been developed?",
+        "correct_index": 2,
+        "choices": [
+          "Depreciation",
+          "Amortization",
+          "Obsolescence",
+          "Asset Impairment"
+        ],
+        "explanation": "Obsolescence is the correct answer because it refers to the state of being no longer needed or useful due to the development of something newer or better. The other options are incorrect because depre",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of technological obsolescence?",
+        "correct_index": 1,
+        "choices": [
+          "A company's product becoming outdated due to changes in market demand",
+          "A company's technology becoming outdated due to the development of new technologies",
+          "A company's asset becoming impaired due to wear and tear",
+          "A company's intangible asset being amortized over its useful life"
+        ],
+        "explanation": "The correct answer is the one that refers to a company's technology becoming outdated due to the development of new technologies. This is an example of technological obsolescence, where a technology b",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the process of gradually writing off the cost of an intangible asset over its useful life?",
+        "correct_index": 1,
+        "choices": [
+          "Depreciation",
+          "Amortization",
+          "Obsolescence",
+          "Asset Impairment"
+        ],
+        "explanation": "Amortization is the correct answer because it refers to the process of gradually writing off the cost of an intangible asset over its useful life. The other options are incorrect because depreciation ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a potential consequence of obsolescence for a business?",
+        "correct_index": 2,
+        "choices": [
+          "An increase in revenue",
+          "A decrease in expenses",
+          "A decrease in the value of assets",
+          "An increase in market share"
+        ],
+        "explanation": "The correct answer is the one that refers to a decrease in the value of assets. Obsolescence can lead to a decrease in the value of assets, which can have a negative impact on a company's financial pe",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['impact', 'obsolescence', 'business']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for a significant decrease in the value of an asset that is not expected to be recovered?",
+        "correct_index": 3,
+        "choices": [
+          "Depreciation",
+          "Amortization",
+          "Obsolescence",
+          "Asset Impairment"
+        ],
+        "explanation": "Asset impairment is the correct answer because it refers to a significant decrease in the value of an asset that is not expected to be recovered. The other options are incorrect because depreciation r",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering investing in a new technology that is expected to become obsolete within the next 5 years. The ",
+        "correct_index": 0,
+        "choices": [
+          "Invest in the technology and depreciate its value over its expected useful life",
+          "Invest in the technology and amortize its value over its expected useful life",
+          "Do not invest in the technology due to its potential obsolescence",
+          "Invest in the technology and recognize its potential obsolescence as an asset impairment"
+        ],
+        "explanation": "The correct answer is to invest in the technology and depreciate its value over its expected useful life. This is because the technology is expected to become obsolete within the next 5 years, and dep",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:238",
+    "kpi_text": "Calculate the time value of money",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary reason why money received today is worth more than the same amount received in the future?",
+        "correct_index": 1,
+        "choices": [
+          "Inflation",
+          "Interest rate",
+          "Time value of money",
+          "Risk"
+        ],
+        "explanation": "The interest rate is the primary reason why money received today is worth more than the same amount received in the future, as it allows for the potential to earn interest on the money.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['money']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": false,
+            "note": "A choice is too short: ['Inflation', 'Interest rate', 'Time value of money', 'Risk']"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following formulas is used to calculate the present value of a future amount of money?",
+        "correct_index": 1,
+        "choices": [
+          "FV = PV x (1 + r)^n",
+          "PV = FV / (1 + r)^n",
+          "PV = FV x (1 + r)^n",
+          "FV = PV / (1 + r)^n"
+        ],
+        "explanation": "The formula PV = FV / (1 + r)^n is used to calculate the present value of a future amount of money.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['calculate', 'value', 'money']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the process of earning interest on both the principal amount and any accrued interest over time?",
+        "correct_index": 1,
+        "choices": [
+          "Simple interest",
+          "Compound interest",
+          "Amortization",
+          "Depreciation"
+        ],
+        "explanation": "Compound interest is the process of earning interest on both the principal amount and any accrued interest over time.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "None of ['calculate', 'value', 'money'] found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a key concept in calculating the time value of money?",
+        "correct_index": 2,
+        "choices": [
+          "Risk management",
+          "Financial leverage",
+          "Discount rate",
+          "Operating cycle"
+        ],
+        "explanation": "The discount rate is a key concept in calculating the time value of money, as it is used to determine the present value of a future cash flow.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['value', 'money']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the difference between the present value of cash inflows and outflows?",
+        "correct_index": 0,
+        "choices": [
+          "Net present value (NPV)",
+          "Internal rate of return (IRR)",
+          "Return on investment (ROI)",
+          "Payback period"
+        ],
+        "explanation": "The net present value (NPV) is the difference between the present value of cash inflows and outflows.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['value']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering two investment opportunities: a 3-year bond with a 5% annual interest rate and a 5-year bond wi",
+        "correct_index": 1,
+        "choices": [
+          "The 3-year bond, because it has a lower interest rate and a shorter time period",
+          "The 5-year bond, because it has a higher interest rate and a longer time period",
+          "The 3-year bond, because it has a higher interest rate and a shorter time period",
+          "The 5-year bond, because it has a lower interest rate and a longer time period"
+        ],
+        "explanation": "The company should choose the 5-year bond, because it has a higher interest rate and a longer time period, resulting in a higher future value. Although the 3-year bond has a shorter time period, the h",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['value']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.94,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.83,
+      "clear_wording": 1.0,
+      "plausible_distractors": 0.83,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:479",
+    "kpi_text": "Determine the components of internal accounting control procedures for a business",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of internal accounting control procedures?",
+        "correct_index": 2,
+        "choices": [
+          "To increase revenue",
+          "To reduce costs",
+          "To ensure accurate financial reporting",
+          "To improve customer service"
+        ],
+        "explanation": "The primary purpose of internal accounting control procedures is to ensure accurate financial reporting. The other options are not correct because increasing revenue, reducing costs, and improving cus",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal', 'accounting']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of a physical control?",
+        "correct_index": 2,
+        "choices": [
+          "Segregation of duties",
+          "Reconciliation",
+          "Locks and security cameras",
+          "Audit trail"
+        ],
+        "explanation": "Locks and security cameras are examples of physical controls, which are measures taken to protect assets and prevent unauthorized access. The other options are not correct because segregation of dutie",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of reconciliation in internal accounting control procedures?",
+        "correct_index": 0,
+        "choices": [
+          "To detect errors and misstatements",
+          "To prevent fraud",
+          "To improve efficiency",
+          "To increase revenue"
+        ],
+        "explanation": "The purpose of reconciliation is to detect errors and misstatements by comparing and matching two sets of financial records. The other options are not correct because while reconciliation may help to ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal', 'accounting']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a type of internal control?",
+        "correct_index": 3,
+        "choices": [
+          "Preventive control",
+          "Detective control",
+          "Corrective control",
+          "All of the above"
+        ],
+        "explanation": "All of the above are types of internal controls. Preventive controls aim to prevent errors or irregularities, detective controls detect and report errors or irregularities, and corrective controls cor",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the benefit of having an audit trail in internal accounting control procedures?",
+        "correct_index": 2,
+        "choices": [
+          "To reduce costs",
+          "To improve efficiency",
+          "To track and verify transactions",
+          "To increase revenue"
+        ],
+        "explanation": "The benefit of having an audit trail is to track and verify transactions, allowing for the detection of errors or irregularities. The other options are not correct because while an audit trail may hel",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal', 'accounting']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A small business owner has noticed that several employees have been handling cash transactions without proper supervisio",
+        "correct_index": 1,
+        "choices": [
+          "Hire a new accountant to oversee cash transactions",
+          "Implement a segregation of duties policy",
+          "Install security cameras to monitor the cash handling area",
+          "Conduct a thorough audit of all financial transactions"
+        ],
+        "explanation": "The owner should implement a segregation of duties policy, which would ensure that no single employee has control over all aspects of a cash transaction. This would help to prevent theft and reduce th",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['internal', 'accounting']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  }
+]

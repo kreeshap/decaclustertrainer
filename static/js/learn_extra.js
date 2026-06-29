@@ -31,7 +31,8 @@
             row.className = 'search-row';
             row.innerHTML = `<strong>${escapeHtml(k.code)}</strong> — ${escapeHtml(k.text)}`;
             row.addEventListener('click', () => {
-              try { localStorage.setItem('ct_selected_event', k.event_name || ''); } catch(e) {}
+              // UserPrefs.setEvent owns all event writes
+              if (k.event_name) UserPrefs.setEvent(k.event_name, k.cluster_name || '');
               window.location.href = '/app/learn.html';
             });
             searchPanel.appendChild(row);
@@ -114,23 +115,6 @@
           alert('Fetched analytics. See console for details.');
         } catch (e) { alert('Failed to fetch analytics'); }
       });
-    }
-  }
-
-  function loadSavedConcepts() {
-    const list = $('saved-concepts-list');
-    try {
-      const saved = JSON.parse(localStorage.getItem('ct_saved_concepts') || '[]');
-      if (!saved.length) { list.textContent = 'No saved concepts yet.'; return; }
-      list.innerHTML = '';
-      saved.forEach(s => {
-        const el = document.createElement('div');
-        el.className = 'saved-concept-row';
-        el.innerHTML = `<strong>${escapeHtml(s.title||'Untitled')}</strong><div class="saved-concept-text">${escapeHtml(s.text||'')}</div>`;
-        list.appendChild(el);
-      });
-    } catch (e) {
-      list.textContent = 'Unable to load saved concepts.';
     }
   }
 

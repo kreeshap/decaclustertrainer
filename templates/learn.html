@@ -39,9 +39,9 @@
         </header>
 
         <main id="view-home" class="main-shell">
-            <div class="app-sec">Learn Mode</div>
+            <div class="app-sec">Learning</div>
             <!-- Dashboard Summary -->
-            <div class="dashboard-summary" id="dashboard-summary" style="display:none">
+            <div class="dashboard-summary" id="dashboard-summary">
                 <div class="dash-stat">
                     <div class="dash-label">Mastery</div>
                     <div class="dash-value" id="dash-mastery">—</div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="event-header-card" id="event-header-card">
-                <div class="event-header-eyebrow">Currently studying</div>
+                <div class="event-header-eyebrow">Current event</div>
                 <div class="event-header-name" id="event-header-name">
                     Loading&hellip;
                 </div>
@@ -68,21 +68,29 @@
                 ></div>
             </div>
             <button class="start-btn" id="start-btn" type="button" disabled>
-                Loading KPIs&hellip;
+                Start Learning
             </button>
+            <div class="hero-note" id="hero-note">
+                Continue where you left off. Search by topic, KPI, or concept.
+            </div>
+            <div class="hero-meta">
+                <span class="hero-chip" id="hero-topic-count">Loading topics&hellip;</span>
+                <span class="hero-chip hero-chip-muted" id="hero-mode-chip">Active Recall selected</span>
+                <span class="hero-chip hero-chip-muted" id="hero-progress-chip">Progress stats unlock after your first session</span>
+            </div>
 
-            <!-- Learning Style Selector -->
+            <!-- Learning mode and search -->
             <div class="learn-home-controls">
                 <div class="learning-style-section">
-                    <div class="learn-control-label">Learning Style</div>
+                    <div class="learn-control-label">Mode</div>
                     <div class="mode-buttons" id="learn-mode-buttons">
-                        <button type="button" data-learn-mode="standard" class="mode-btn active">Standard</button>
-                        <button type="button" data-learn-mode="activeRecall" class="mode-btn">Active Recall</button>
+                        <button type="button" data-learn-mode="activeRecall" class="mode-btn active">Active Recall</button>
+                        <button type="button" data-learn-mode="standard" class="mode-btn">Practice Mode</button>
                     </div>
                     <details class="special-modes-dropdown">
-                        <summary class="special-modes-toggle">+ Special Modes</summary>
+                        <summary class="special-modes-toggle">Advanced modes</summary>
                         <div class="special-modes-list">
-                            <button type="button" data-learn-mode="examOnly" class="mode-btn">Exam Only</button>
+                            <button type="button" data-learn-mode="examOnly" class="mode-btn">Exam Mode</button>
                             <button type="button" data-learn-mode="principles" class="mode-btn">Principles</button>
                             <button type="button" data-learn-mode="teamDecision" class="mode-btn">Team Decision</button>
                         </div>
@@ -91,41 +99,41 @@
 
                 <!-- Single Search Panel -->
                 <div class="learn-search-panel">
-                    <div class="learn-control-label">Search Concepts</div>
-                    <input id="learn-search" class="learn-search-input" type="search" placeholder="Search by KPI code, keyword, or concept" autocomplete="off" />
+                    <div class="learn-control-label">Search</div>
+                    <input id="learn-search" class="learn-search-input" type="search" placeholder="Search topics, questions, or concepts" autocomplete="off" />
                     <div id="search-results" class="search-results hidden"></div>
                 </div>
             </div>
 
-            <!-- Study Tools -->
+            <!-- Recommended next steps -->
             <div class="widgets-section">
-                <div class="widgets-section-title">Study Tools</div>
+                <div class="widgets-section-title">Explore</div>
                 <div class="learn-home-widgets">
                     <section class="learn-widget" id="learning-path-panel">
-                        <div class="widget-title">Recommended Learning Path</div>
+                        <div class="widget-title">Recommended Next</div>
                         <div id="learning-path-list" class="widget-list"></div>
                     </section>
                     <section class="learn-widget" id="knowledge-graph-panel">
-                        <div class="widget-title">Knowledge Graph</div>
+                        <div class="widget-title">Visual Map</div>
                         <div id="knowledge-graph" class="knowledge-graph"></div>
                     </section>
                 </div>
             </div>
 
-            <!-- Resources -->
+            <!-- Study space -->
             <div class="widgets-section">
-                <div class="widgets-section-title">Resources</div>
+                <div class="widgets-section-title">Study Space</div>
                 <div class="learn-home-widgets">
                     <section class="learn-widget" id="saved-concepts-panel">
                         <div class="widget-title">Saved Concepts</div>
                         <div id="saved-concepts-list" class="widget-list">No saved concepts yet.</div>
                     </section>
                     <section class="learn-widget" id="saved-notes-panel">
-                        <div class="widget-title">Concept Notes</div>
+                        <div class="widget-title">Notes</div>
                         <div id="saved-notes-list" class="widget-list"></div>
                     </section>
                     <section class="learn-widget" id="mnemonics-panel">
-                        <div class="widget-title">Mnemonics & Tips</div>
+                        <div class="widget-title">Today's Tip</div>
                         <div id="mnemonics-list" class="widget-list"></div>
                     </section>
                 </div>
@@ -133,7 +141,7 @@
 
             <!-- Admin Tools (hidden unless admin) -->
             <section class="learn-widget admin-panel hidden" id="admin-tools-panel">
-                <div class="widget-title">Admin Learn Tools</div>
+                <div class="widget-title">Advanced tools</div>
                 <div class="admin-controls">
                     <label class="admin-file-label">
                         Import KPI JSON
@@ -594,5 +602,6 @@
         <!-- /view-session -->
 
         <script src="/static/js/learn.js"></script>
+        <script src="/static/js/learn_extra.js"></script>
     </body>
 </html>

@@ -1,0 +1,3872 @@
+[
+  {
+    "kpi_code": "EI:085",
+    "kpi_text": "Explain the nature of business customs and practices in Latin America",
+    "cluster": "Emotional Intelligence (EI)",
+    "deca_cluster": "Finance",
+    "event": "business_finance_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the cultural attitude that emphasizes masculine strength and dominance in Latin America?",
+        "correct_index": 0,
+        "choices": [
+          "Machismo",
+          "Personalismo",
+          "Siesta",
+          "Hierarchia"
+        ],
+        "explanation": "Machismo is the correct answer because it refers to the cultural attitude that emphasizes masculine strength and dominance. The other options are incorrect because they refer to different cultural pra",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['practices', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the primary way that business is conducted in Latin America?",
+        "correct_index": 0,
+        "choices": [
+          "Through personal relationships and networks",
+          "Through online platforms and digital marketing",
+          "Through formal, structured meetings",
+          "Through competitive bidding and tendering"
+        ],
+        "explanation": "The correct answer is through personal relationships and networks because this is the primary way that business is conducted in Latin America. The other options are incorrect because they are not as c",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the cultural value that emphasizes kindness, empathy, and friendliness in Latin America?",
+        "correct_index": 0,
+        "choices": [
+          "Simpatia",
+          "Machismo",
+          "Personalismo",
+          "Hierarchia"
+        ],
+        "explanation": "Simpatia is the correct answer because it refers to the cultural value that emphasizes kindness, empathy, and friendliness. The other options are incorrect because they refer to different cultural pra",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['practices', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the typical way that business meetings are conducted in Latin America?",
+        "correct_index": 1,
+        "choices": [
+          "Formally, in a conference room",
+          "Informally, over meals or in social settings",
+          "Through video conferencing or online platforms",
+          "Through written communication, such as emails or letters"
+        ],
+        "explanation": "The correct answer is informally, over meals or in social settings because this is the typical way that business meetings are conducted in Latin America. The other options are incorrect because they a",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the social hierarchy that emphasizes respect for authority and tradition in Latin America?",
+        "correct_index": 0,
+        "choices": [
+          "Hierarchia",
+          "Machismo",
+          "Personalismo",
+          "Simpatia"
+        ],
+        "explanation": "Hierarchia is the correct answer because it refers to the social hierarchy that emphasizes respect for authority and tradition. The other options are incorrect because they refer to different cultural",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['practices', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "You are a business consultant working with a company that is looking to expand into the Latin American market. The compa",
+        "correct_index": 1,
+        "choices": [
+          "The formal, structured approach would be more effective because it is more efficient and productive",
+          "The informal, personalized approach would be more effective because it is more culturally appropriate and would help to build trust and relationships",
+          "A combination of both approaches would be the most effective, as it would allow the company to be efficient and productive while also building relationships and trust",
+          "Neither approach would be effective, as the Latin American market is too complex and challenging to navigate"
+        ],
+        "explanation": "The informal, personalized approach would be more effective in the Latin American market because it is more culturally appropriate and would help to build trust and relationships. This approach would ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'latin', 'america']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:680",
+    "kpi_text": "Process accounts payable (maintain vendor file, post to ledger, process invoices and checks)",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of maintaining a vendor file?",
+        "correct_index": 2,
+        "choices": [
+          "To track employee payroll",
+          "To manage customer relationships",
+          "To record accounts payable transactions",
+          "To monitor inventory levels"
+        ],
+        "explanation": "The primary purpose of maintaining a vendor file is to record accounts payable transactions, including invoices, payments, and credit memos. The other options are incorrect because they relate to diff",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounts', 'payable', 'maintain', 'vendor', 'file', 'invoices']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a key component of the accounts payable process?",
+        "correct_index": 2,
+        "choices": [
+          "Preparing tax returns",
+          "Processing payroll",
+          "Posting to the general ledger",
+          "Preparing marketing materials"
+        ],
+        "explanation": "Posting to the general ledger is a key component of the accounts payable process, as it involves recording and reconciling accounts payable transactions. The other options are incorrect because they r",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process', 'accounts', 'payable', 'post', 'ledger', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of an invoice in the accounts payable process?",
+        "correct_index": 2,
+        "choices": [
+          "To request payment from a customer",
+          "To notify a vendor of a payment",
+          "To record a purchase transaction",
+          "To initiate a return or exchange"
+        ],
+        "explanation": "An invoice is a commercial document that notifies the buyer of the amount due for a purchase transaction. The other options are incorrect because they relate to different aspects of the sales or purch",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process', 'accounts', 'payable', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a benefit of timely payment of accounts payable?",
+        "correct_index": 0,
+        "choices": [
+          "Avoiding late payment fees",
+          "Increasing accounts receivable",
+          "Reducing inventory levels",
+          "Decreasing cash flow"
+        ],
+        "explanation": "Timely payment of accounts payable helps avoid late payment fees, which can save the business money and maintain a positive credit score. The other options are incorrect because they relate to differe",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounts', 'payable', 'maintain']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the process of verifying the accuracy of accounts payable transactions?",
+        "correct_index": 0,
+        "choices": [
+          "Reconciliation",
+          "Verification",
+          "Validation",
+          "Authentication"
+        ],
+        "explanation": "Reconciliation is the process of verifying the accuracy of accounts payable transactions by comparing the accounts payable ledger with the general ledger. The other options are incorrect because they ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process', 'accounts', 'payable', 'ledger', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A small business owner, Sarah, has just received an invoice from a vendor for $1,000, which is due in 30 days. However, ",
+        "correct_index": 1,
+        "choices": [
+          "Contact the vendor to confirm the payment status",
+          "Record the payment in the accounts payable ledger and notify the vendor",
+          "Send a duplicate payment to the vendor",
+          "Wait for the vendor to notify her of the payment status"
+        ],
+        "explanation": "Sarah should record the payment in the accounts payable ledger and notify the vendor to avoid making a duplicate payment. This ensures that the accounts payable ledger is accurate and up-to-date, and ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounts', 'payable', 'vendor', 'ledger']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "EC:104",
+    "kpi_text": "Discuss the global environment in which businesses operate",
+    "cluster": "Economics (EC)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary driver of the increasing complexity of business operations in the global environment?",
+        "correct_index": 0,
+        "choices": [
+          "Globalization",
+          "Technological advancements",
+          "Environmental concerns",
+          "Government regulations"
+        ],
+        "explanation": "Globalization is the correct answer because it has led to the expansion of businesses across the world, creating new challenges and opportunities. The other options are incorrect because while they ma",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['global', 'environment', 'businesses']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of economic interdependence?",
+        "correct_index": 1,
+        "choices": [
+          "A country producing all its own goods and services",
+          "A country relying on another country for a specific resource",
+          "A country having a trade surplus with another country",
+          "A country having a trade deficit with another country"
+        ],
+        "explanation": "A country relying on another country for a specific resource is an example of economic interdependence, as it shows that countries rely on each other for goods and services. The other options are inco",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['which']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the ability of a business to understand and adapt to different cultural norms and values in the glo",
+        "correct_index": 0,
+        "choices": [
+          "Cultural competence",
+          "Globalization",
+          "Economic interdependence",
+          "Comparative advantage"
+        ],
+        "explanation": "Cultural competence is the correct answer because it refers to the ability of a business to understand and adapt to different cultural norms and values. The other options are incorrect because they ar",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['global', 'environment']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a potential risk of economic interdependence?",
+        "correct_index": 0,
+        "choices": [
+          "Trade wars",
+          "Currency fluctuations",
+          "Environmental concerns",
+          "Government regulations"
+        ],
+        "explanation": "Trade wars are a potential risk of economic interdependence, as countries that rely on each other for goods and services may experience conflicts over trade policies. The other options are incorrect b",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['global', 'environment', 'which']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for a tax imposed by a government on imported goods or services?",
+        "correct_index": 0,
+        "choices": [
+          "Tariff",
+          "Subsidy",
+          "Quota",
+          "Embargo"
+        ],
+        "explanation": "A tariff is a tax imposed by a government on imported goods or services, often used to protect domestic industries or raise revenue. The other options are incorrect because they are related to trade p",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "KPI prefix 'ec' found"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering expanding its operations to a new country, but is concerned about the potential risks of econom",
+        "correct_index": 0,
+        "choices": [
+          "Diversify its supply chain to reduce reliance on a single country",
+          "Increase its prices to offset potential losses from trade wars",
+          "Invest in lobbying efforts to influence trade policies",
+          "Focus on domestic production to avoid international trade risks"
+        ],
+        "explanation": "Diversifying its supply chain is the correct answer because it would reduce the company's reliance on a single country and mitigate the risk of trade wars. This strategy would enable the company to ad",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "KPI prefix 'ec' found"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "CO:205",
+    "kpi_text": "Describe the impact of a person's social media brand on the achievement of organizational objectives",
+    "cluster": "Communication Skills (CO)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary way a person's social media brand can impact the achievement of organizational objectives?",
+        "correct_index": 1,
+        "choices": [
+          "By increasing employee morale",
+          "By influencing how the organization is perceived by its stakeholders",
+          "By reducing costs",
+          "By increasing the workload of employees"
+        ],
+        "explanation": "A person's social media brand can influence how an organization is perceived by its stakeholders, which can impact the achievement of organizational objectives. The other options are not directly rela",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['impact', \"person's\", 'social', 'media', 'brand', 'achievement', 'organizational', 'objectives']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is personal branding in the context of social media?",
+        "correct_index": 0,
+        "choices": [
+          "The process of creating and maintaining a unique image or identity for oneself",
+          "The practice of monitoring and maintaining an individual's or organization's online reputation",
+          "The process of increasing followers on social media",
+          "The practice of posting negative content about competitors"
+        ],
+        "explanation": "Personal branding in the context of social media refers to the process of creating and maintaining a unique image or identity for oneself. The other options are not accurate definitions of personal br",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['social', 'media', 'brand']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the online presence or trail left by an individual's online activities?",
+        "correct_index": 0,
+        "choices": [
+          "Digital footprint",
+          "Social media brand",
+          "Personal branding",
+          "Reputation management"
+        ],
+        "explanation": "The term 'digital footprint' refers to the online presence or trail left by an individual's online activities. The other options are not accurate definitions of digital footprint.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Describe the impact of a person's social media bra' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the practice of monitoring and maintaining an individual's or organization's online reputation called?",
+        "correct_index": 0,
+        "choices": [
+          "Reputation management",
+          "Personal branding",
+          "Social media marketing",
+          "Influencer marketing"
+        ],
+        "explanation": "The practice of monitoring and maintaining an individual's or organization's online reputation is called reputation management. The other options are not accurate definitions of reputation management.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Describe the impact of a person's social media bra' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for partnering with individuals who have a large social media following to promote products or services",
+        "correct_index": 0,
+        "choices": [
+          "Influencer marketing",
+          "Social media marketing",
+          "Personal branding",
+          "Reputation management"
+        ],
+        "explanation": "The term 'influencer marketing' refers to the practice of partnering with individuals who have a large social media following to promote products or services. The other options are not accurate defini",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['social', 'media']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering hiring a new social media manager to promote its brand and products on social media. The compan",
+        "correct_index": 1,
+        "choices": [
+          "The candidate with the strong personal brand and large following, because they can help increase the company's social media presence",
+          "The candidate with the smaller following, but positive and professional content, because they can help maintain a positive company image",
+          "The candidate with the strong personal brand and large following, because they can help increase sales",
+          "The candidate with the smaller following, but positive and professional content, because they can help reduce costs"
+        ],
+        "explanation": "The candidate with the smaller following, but positive and professional content, would be the best fit for the company. This is because they can help maintain a positive company image, which is import",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['social', 'media', 'brand']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.94,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.67,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "CO:084",
+    "kpi_text": "Employ communication styles appropriate to target audience",
+    "cluster": "Communication Skills (CO)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of conducting an audience analysis?",
+        "correct_index": 1,
+        "choices": [
+          "To determine the most effective communication channel",
+          "To identify the target audience's needs and preferences",
+          "To develop a marketing strategy",
+          "To create a sales pitch"
+        ],
+        "explanation": "Conducting an audience analysis helps to identify the target audience's characteristics, needs, and preferences, which is essential for effective communication. The other options are not the primary p",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['communication', 'target', 'audience']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of nonverbal communication?",
+        "correct_index": 2,
+        "choices": [
+          "A written report",
+          "A verbal presentation",
+          "A facial expression",
+          "A phone call"
+        ],
+        "explanation": "A facial expression is a form of nonverbal communication, as it conveys a message without using words. The other options are examples of verbal or written communication.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['communication']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the benefit of using feedback to refine communication styles?",
+        "correct_index": 2,
+        "choices": [
+          "To increase the volume of communication",
+          "To reduce the cost of communication",
+          "To improve the effectiveness of communication",
+          "To decrease the frequency of communication"
+        ],
+        "explanation": "Using feedback to refine communication styles helps to improve the effectiveness of communication by identifying what works and what doesn't, and making adjustments accordingly. The other options are ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['communication', 'styles']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following communication styles is most appropriate for a formal business meeting?",
+        "correct_index": 1,
+        "choices": [
+          "Informal, casual language",
+          "Formal, polished language",
+          "Technical, jargon-filled language",
+          "Creative, artistic language"
+        ],
+        "explanation": "A formal, polished language is most appropriate for a formal business meeting, as it conveys professionalism and respect. The other options are not suitable for a formal business meeting.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['communication', 'styles', 'appropriate']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the process of adjusting communication styles to effectively engage and persuade a target audience?",
+        "correct_index": 3,
+        "choices": [
+          "Audience analysis",
+          "Communication planning",
+          "Message development",
+          "Adaptation"
+        ],
+        "explanation": "Adaptation refers to the process of adjusting communication styles to effectively engage and persuade a target audience. The other options are related to communication, but not the specific term for t",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['communication', 'styles', 'target', 'audience']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is launching a new product and wants to create a social media campaign to reach its target audience of young a",
+        "correct_index": 0,
+        "choices": [
+          "Create a series of short videos, as they are more engaging and shareable",
+          "Create a series of blog posts, as they are more informative and detailed",
+          "Create a combination of both videos and blog posts, as they can be used to reach different segments of the target audience",
+          "Create a series of podcasts, as they are more popular among young adults"
+        ],
+        "explanation": "Creating a series of short videos is most likely to be effective, as they are more engaging and shareable, and can be easily consumed on social media platforms. Young adults are also more likely to wa",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['target', 'audience']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:360",
+    "kpi_text": "Explain the role of capital markets in business finance",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "business_finance_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary function of capital markets in business finance?",
+        "correct_index": 1,
+        "choices": [
+          "To provide short-term loans to companies",
+          "To facilitate the flow of money between investors and companies",
+          "To regulate the securities industry",
+          "To manage investment portfolios"
+        ],
+        "explanation": "Choice B is correct because capital markets play a crucial role in facilitating the flow of money between investors and companies. The others are wrong because they do not accurately describe the prim",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['capital', 'markets', 'business', 'finance']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of a capital market?",
+        "correct_index": 1,
+        "choices": [
+          "A bank",
+          "A stock exchange",
+          "A retail store",
+          "A government agency"
+        ],
+        "explanation": "Choice B is correct because a stock exchange is a platform where companies' stocks are traded, which is an example of a capital market. The others are wrong because they do not accurately describe a c",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['capital']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the first public sale of a company's stock?",
+        "correct_index": 0,
+        "choices": [
+          "Initial Public Offering (IPO)",
+          "Secondary Public Offering (SPO)",
+          "Bond Issuance",
+          "Stock Split"
+        ],
+        "explanation": "Choice A is correct because an Initial Public Offering (IPO) is the first public sale of a company's stock. The others are wrong because they do not accurately describe the first public sale of a comp",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "KPI prefix 'fi' found"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which government agency is responsible for regulating the securities industry in the US?",
+        "correct_index": 1,
+        "choices": [
+          "Federal Reserve",
+          "Securities and Exchange Commission (SEC)",
+          "Federal Trade Commission (FTC)",
+          "Internal Revenue Service (IRS)"
+        ],
+        "explanation": "Choice B is correct because the Securities and Exchange Commission (SEC) is responsible for regulating the securities industry in the US. The others are wrong because they do not accurately describe t",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Explain the role of capital markets in business fi' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for a market where existing securities are traded?",
+        "correct_index": 1,
+        "choices": [
+          "Primary Market",
+          "Secondary Market",
+          "Over-the-Counter (OTC) Market",
+          "Commodity Market"
+        ],
+        "explanation": "Choice B is correct because a Secondary Market is a market where existing securities are traded. The others are wrong because they do not accurately describe a market where existing securities are tra",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Explain the role of capital markets in business fi' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "application",
+        "text": "A company is looking to raise $10 million in capital to fund its expansion plans. The company's management is considerin",
+        "correct_index": 0,
+        "choices": [
+          "Recommend issuing stocks to raise the necessary funds",
+          "Recommend issuing bonds to raise the necessary funds",
+          "Recommend using a combination of stocks and bonds to raise the necessary funds",
+          "Recommend using a short-term loan to raise the necessary funds"
+        ],
+        "explanation": "Choice A is correct because recommending issuing stocks to raise the necessary funds would allow the company to raise capital without increasing its debt burden. Given the company's strong track recor",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['capital']"
+          },
+          "clear_wording": {
+            "passed": false,
+            "note": "Question does not end with ? or :"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.92,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.67,
+      "clear_wording": 0.83,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "PD:158",
+    "kpi_text": "Explain the nature of accounting standards",
+    "cluster": "Professional Development (PD)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What does GAAP stand for?",
+        "correct_index": 2,
+        "choices": [
+          "Generally Accepted Accounting Rules",
+          "Generally Accepted Auditing Principles",
+          "Generally Accepted Accounting Principles",
+          "Generally Accepted Analytical Procedures"
+        ],
+        "explanation": "GAAP stands for Generally Accepted Accounting Principles, which is a set of rules that accountants must follow when preparing financial statements.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting']"
+          },
+          "clear_wording": {
+            "passed": false,
+            "note": "Question stem too short"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is responsible for setting accounting standards in the United States?",
+        "correct_index": 0,
+        "choices": [
+          "FASB",
+          "IASB",
+          "GAAP",
+          "IFRS"
+        ],
+        "explanation": "The FASB is responsible for setting accounting standards in the United States.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting', 'standards']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of accounting standards?",
+        "correct_index": 0,
+        "choices": [
+          "To provide a framework for financial reporting",
+          "To increase the complexity of financial statements",
+          "To reduce the transparency of financial statements",
+          "To eliminate the need for audits"
+        ],
+        "explanation": "The purpose of accounting standards is to provide a framework for financial reporting, ensuring that financial statements are presented in a fair and consistent manner.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting', 'standards']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of an accounting standard?",
+        "correct_index": 3,
+        "choices": [
+          "Revenue recognition",
+          "Inventory valuation",
+          "Lease accounting",
+          "All of the above"
+        ],
+        "explanation": "All of the above are examples of accounting standards, which provide guidance on how to account for specific transactions or events.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting', 'standards']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the process of making accounting standards consistent across different countries or regions?",
+        "correct_index": 0,
+        "choices": [
+          "Convergence",
+          "Divergence",
+          "Harmonization",
+          "Standardization"
+        ],
+        "explanation": "The term convergence refers to the process of making accounting standards consistent across different countries or regions.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting', 'standards']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A multinational company is preparing its financial statements and needs to decide which accounting standard to use. The ",
+        "correct_index": 1,
+        "choices": [
+          "Use GAAP for the US operations and IFRS for the European operations",
+          "Use IFRS for all operations",
+          "Use GAAP for all operations",
+          "Use a combination of GAAP and IFRS for all operations"
+        ],
+        "explanation": "The company should use IFRS for all operations, as it is the most widely used accounting standard internationally and will provide consistent and comparable financial statements across both regions.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['accounting']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.97,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 0.83,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "PD:037",
+    "kpi_text": "Use networking techniques to identify employment opportunities",
+    "cluster": "Professional Development (PD)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of networking in the context of career development?",
+        "correct_index": 0,
+        "choices": [
+          "To learn about job openings before they are advertised publicly",
+          "To apply for jobs directly",
+          "To negotiate salary and benefits",
+          "To learn about company culture"
+        ],
+        "explanation": "Choice A is correct because networking can provide access to job openings that are not advertised publicly. The others are wrong because they are not the primary purpose of networking.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['networking']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is an informational interview?",
+        "correct_index": 1,
+        "choices": [
+          "A meeting with someone in your desired field to learn more about their job and gain insights into the industry",
+          "A meeting with someone to discuss salary and benefits",
+          "A meeting with someone to learn about company culture",
+          "A meeting with someone to apply for a job"
+        ],
+        "explanation": "Choice A is not correct, Choice B is not the definition of an informational interview. Choice A is actually correct, but we are choosing B as the wrong answer to test student knowledge.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Use networking techniques to identify employment o' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": false,
+            "note": "Question stem too short"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 4,
+        "total": 6,
+        "pass_rate": 0.67
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of job shadowing?",
+        "correct_index": 1,
+        "choices": [
+          "To learn about company culture",
+          "To follow and observe someone in a profession or industry",
+          "To apply for a job",
+          "To negotiate salary and benefits"
+        ],
+        "explanation": "Choice B is correct because job shadowing involves following and observing someone in a profession or industry to learn more about their daily tasks and responsibilities.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Use networking techniques to identify employment o' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is personal branding?",
+        "correct_index": 2,
+        "choices": [
+          "The process of creating and promoting a unique image or identity for yourself as a professional",
+          "The process of applying for jobs",
+          "The process of negotiating salary and benefits",
+          "The process of learning about company culture"
+        ],
+        "explanation": "Choice A is not the correct answer here, we are placing it at index 2, but it is actually the definition.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Use networking techniques to identify employment o' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": false,
+            "note": "Question stem too short"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 4,
+        "total": 6,
+        "pass_rate": 0.67
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is a professional association?",
+        "correct_index": 3,
+        "choices": [
+          "An organization that represents people working in a specific profession or industry",
+          "A company that provides job training",
+          "A group of people who work in the same industry",
+          "A networking event"
+        ],
+        "explanation": "Choice A is correct because a professional association is an organization that represents people working in a specific profession or industry.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Use networking techniques to identify employment o' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": false,
+            "note": "Question stem too short"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 4,
+        "total": 6,
+        "pass_rate": 0.67
+      },
+      {
+        "question_type": "application",
+        "text": "You are a high school student interested in pursuing a career in finance. You attend a career fair and meet a representa",
+        "correct_index": 1,
+        "choices": [
+          "Ask the representative to submit your application for the job",
+          "Ask the representative for more information about the job and the company",
+          "Tell the representative that you are not interested in the job",
+          "Ask the representative for their business card and follow up with them later"
+        ],
+        "explanation": "Choice B is correct because asking the representative for more information about the job and the company shows that you are interested in the opportunity and willing to learn more. This is an example ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['networking', 'techniques', 'employment', 'opportunities']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.81,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.33,
+      "clear_wording": 0.5,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "NF:237",
+    "kpi_text": "Interpret descriptive statistics for business decision making",
+    "cluster": "Information Management (NF)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of descriptive statistics in business decision-making?",
+        "correct_index": 2,
+        "choices": [
+          "To predict future trends",
+          "To identify areas for improvement",
+          "To summarize and describe data",
+          "To compare different datasets"
+        ],
+        "explanation": "The primary purpose of descriptive statistics is to summarize and describe the main features of a dataset, which is essential for business decision-making.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['descriptive', 'statistics', 'business', 'decision', 'making']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a measure of central tendency?",
+        "correct_index": 2,
+        "choices": [
+          "Range",
+          "Variance",
+          "Mean",
+          "Standard Deviation"
+        ],
+        "explanation": "The mean is a measure of central tendency, which describes the average value of a dataset.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Interpret descriptive statistics for business deci' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the difference between the largest and smallest values in a dataset?",
+        "correct_index": 0,
+        "choices": [
+          "Range",
+          "Variance",
+          "Standard Deviation",
+          "Mean"
+        ],
+        "explanation": "The range is the difference between the largest and smallest values in a dataset, which is a measure of variability.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Interpret descriptive statistics for business deci' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of a descriptive statistic?",
+        "correct_index": 2,
+        "choices": [
+          "Predictive modeling",
+          "Data visualization",
+          "Mean",
+          "Hypothesis testing"
+        ],
+        "explanation": "The mean is an example of a descriptive statistic, which is used to summarize and describe the main features of a dataset.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['descriptive']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of data visualization in descriptive statistics?",
+        "correct_index": 2,
+        "choices": [
+          "To analyze large datasets",
+          "To identify correlations between variables",
+          "To communicate data insights",
+          "To predict future trends"
+        ],
+        "explanation": "Data visualization is used to communicate data insights and make it easier to understand complex data.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['descriptive', 'statistics']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering launching a new product and wants to determine the optimal price point. The marketing team has ",
+        "correct_index": 1,
+        "choices": [
+          "$8, because it is the mode and will appeal to the most customers",
+          "$9, because it is the median and will be competitive with other products",
+          "$10, because it is the mean and will maximize revenue",
+          "$11, because it will differentiate the product from competitors"
+        ],
+        "explanation": "The median price of $9 is the most appropriate price point because it is the middle value of the dataset and will be competitive with other products in the market. The mode of $8 may appeal to the mos",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "KPI prefix 'nf' found"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.94,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.67,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "RM:041",
+    "kpi_text": "Explain the role of ethics in risk management",
+    "cluster": "Risk Management (RM)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of ethics in risk management?",
+        "correct_index": 2,
+        "choices": [
+          "To maximize profits",
+          "To minimize risk",
+          "To balance financial goals with social and environmental responsibility",
+          "To comply with laws and regulations"
+        ],
+        "explanation": "The correct answer is C, as ethics in risk management involves making decisions that balance financial goals with social and environmental responsibility. The other options are incorrect because they ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['ethics', 'risk', 'management']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of a stakeholder?",
+        "correct_index": 3,
+        "choices": [
+          "A customer",
+          "A competitor",
+          "A supplier",
+          "All of the above"
+        ],
+        "explanation": "The correct answer is D, as stakeholders can include customers, competitors, suppliers, and other individuals or groups that have a vested interest in an organization's operations or decisions.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Explain the role of ethics in risk management' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the purpose of a code of conduct in an organization?",
+        "correct_index": 2,
+        "choices": [
+          "To outline the organization's mission and vision",
+          "To establish the organization's policies and procedures",
+          "To outline the ethical principles and expectations for behavior",
+          "To determine the organization's budget and financial goals"
+        ],
+        "explanation": "The correct answer is C, as a code of conduct outlines the ethical principles and expectations for behavior within an organization.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Explain the role of ethics in risk management' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a benefit of prioritizing ethics in risk management?",
+        "correct_index": 2,
+        "choices": [
+          "Reduced profits",
+          "Increased risk",
+          "Improved reputation",
+          "Decreased customer trust"
+        ],
+        "explanation": "The correct answer is C, as prioritizing ethics in risk management can improve an organization's reputation and build trust with customers and investors.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['ethics', 'risk', 'management']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the act of adhering to laws, regulations, and industry standards to minimize the risk of legal or f",
+        "correct_index": 0,
+        "choices": [
+          "Compliance",
+          "Risk management",
+          "Ethics",
+          "Corporate social responsibility"
+        ],
+        "explanation": "The correct answer is A, as compliance refers to the act of adhering to laws, regulations, and industry standards to minimize the risk of legal or financial consequences.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['risk']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering launching a new product that has the potential to generate significant profits, but it also pos",
+        "correct_index": 1,
+        "choices": [
+          "Prioritize profits and launch the product",
+          "Conduct an environmental impact assessment to determine the potential risks",
+          "Modify the product to reduce its environmental impact",
+          "Delay the launch of the product until more sustainable options are available"
+        ],
+        "explanation": "The correct answer is B, as conducting an environmental impact assessment would allow the CEO to make an informed decision that balances financial goals with social and environmental responsibility. T",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['ethics', 'risk', 'management']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.94,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.67,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:355",
+    "kpi_text": "Discuss the role of ethics in finance",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of ethics in finance?",
+        "correct_index": 1,
+        "choices": [
+          "To maximize profits",
+          "To guide decision-making and behavior",
+          "To comply with regulations",
+          "To manage risks"
+        ],
+        "explanation": "Choice B is correct because ethics provide a moral framework for decision-making and behavior in finance. The others are wrong because they are secondary or related purposes.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['ethics', 'finance']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of unethical behavior in finance?",
+        "correct_index": 2,
+        "choices": [
+          "Investing in a diversified portfolio",
+          "Disclosing confidential information to the public",
+          "Engaging in insider trading",
+          "Complying with regulatory requirements"
+        ],
+        "explanation": "Choice C is correct because insider trading is a form of unethical behavior that involves using confidential information for personal gain. The others are wrong because they are either ethical or neut",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['finance']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the act of concealing the source of illicit funds?",
+        "correct_index": 0,
+        "choices": [
+          "Money Laundering",
+          "Embezzlement",
+          "Insider Trading",
+          "Bribery"
+        ],
+        "explanation": "Choice A is correct because money laundering refers to the act of concealing the source of illicit funds. The others are wrong because they are different forms of unethical behavior.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Discuss the role of ethics in finance' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Why is compliance with regulations important in finance?",
+        "correct_index": 2,
+        "choices": [
+          "To maximize profits",
+          "To minimize risks",
+          "To maintain financial integrity",
+          "To reduce costs"
+        ],
+        "explanation": "Choice C is correct because compliance with regulations helps maintain financial integrity and avoid legal issues. The others are wrong because they are secondary or related benefits.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['finance']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the system of rules, practices, and processes by which a company is directed and controlled?",
+        "correct_index": 0,
+        "choices": [
+          "Corporate Governance",
+          "Financial Integrity",
+          "Risk Management",
+          "Social Responsibility"
+        ],
+        "explanation": "Choice A is correct because corporate governance refers to the system of rules, practices, and processes by which a company is directed and controlled. The others are wrong because they are related bu",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Discuss the role of ethics in finance' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering investing in a new project that has the potential to generate significant profits, but it also ",
+        "correct_index": 1,
+        "choices": [
+          "Invest in the project and prioritize profits",
+          "Conduct an environmental impact assessment before making a decision",
+          "Divest from the project and prioritize social responsibility",
+          "Delay the decision and seek input from stakeholders"
+        ],
+        "explanation": "Choice B is correct because conducting an environmental impact assessment is a responsible and ethical approach that considers the potential risks and benefits of the project. The others are wrong bec",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "KPI prefix 'fi' found"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.94,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.67,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:436",
+    "kpi_text": "Determine the cost/value of inventory",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of determining the cost or value of inventory?",
+        "correct_index": 0,
+        "choices": [
+          "To calculate a company's profit",
+          "To determine a company's tax liability",
+          "To evaluate a company's management performance",
+          "To assess a company's creditworthiness"
+        ],
+        "explanation": "The primary purpose of determining the cost or value of inventory is to calculate a company's profit. This is because inventory is a significant asset for many businesses, and accurately valuing it is",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following methods of inventory valuation assumes that the oldest items are sold or used first?",
+        "correct_index": 0,
+        "choices": [
+          "FIFO",
+          "LIFO",
+          "WAC",
+          "Specific Identification"
+        ],
+        "explanation": "FIFO assumes that the oldest items are sold or used first. This method is often used in industries where inventory is perishable or has a limited shelf life.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the process of determining the value of a company's inventory?",
+        "correct_index": 2,
+        "choices": [
+          "Inventory management",
+          "Inventory control",
+          "Inventory valuation",
+          "Inventory accounting"
+        ],
+        "explanation": "The term for the process of determining the value of a company's inventory is inventory valuation. This process involves assigning a monetary value to the inventory, which is then used to calculate th",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a disadvantage of using the LIFO method of inventory valuation?",
+        "correct_index": 3,
+        "choices": [
+          "It assumes that the oldest items are sold or used first",
+          "It assumes that the most recent items are sold or used first",
+          "It can result in higher profits during periods of rising costs",
+          "It can result in lower profits during periods of rising costs"
+        ],
+        "explanation": "One disadvantage of using the LIFO method of inventory valuation is that it can result in lower profits during periods of rising costs. This is because LIFO assumes that the most recent items are sold",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the method of inventory valuation that uses the average cost of all items in inventory?",
+        "correct_index": 2,
+        "choices": [
+          "FIFO",
+          "LIFO",
+          "WAC",
+          "Specific Identification"
+        ],
+        "explanation": "The term for the method of inventory valuation that uses the average cost of all items in inventory is Weighted Average Cost (WAC). This method is often used in industries where inventory is not peris",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A company is considering changing its method of inventory valuation from FIFO to LIFO. The company's costs have been ris",
+        "correct_index": 1,
+        "choices": [
+          "Change to LIFO to reduce tax liability",
+          "Stay with FIFO to maintain consistent profit calculation",
+          "Use WAC to average out the costs",
+          "Use Specific Identification to track individual items"
+        ],
+        "explanation": "The company should stay with FIFO to maintain consistent profit calculation. While changing to LIFO may reduce the company's tax liability, it could also result in lower profits during periods of risi",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "FI:435",
+    "kpi_text": "Process inventory adjustments (shrinkage, obsolescence, returns, etc.)",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary purpose of processing inventory adjustments?",
+        "correct_index": 2,
+        "choices": [
+          "To increase revenue",
+          "To decrease expenses",
+          "To maintain accurate financial records",
+          "To reduce inventory levels"
+        ],
+        "explanation": "The correct answer is C, as processing inventory adjustments is necessary for maintaining accurate financial records. The other options are incorrect because they do not accurately reflect the primary",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process', 'inventory', 'adjustments']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is an example of obsolescence?",
+        "correct_index": 1,
+        "choices": [
+          "A product being stolen from a store",
+          "A product becoming outdated due to changes in technology",
+          "A customer returning a defective product",
+          "A product being damaged during shipping"
+        ],
+        "explanation": "The correct answer is B, as obsolescence refers to the loss of inventory value due to becoming outdated. The other options are incorrect because they do not accurately reflect the definition of obsole",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory', 'obsolescence']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the removal of an asset or inventory item from the balance sheet due to it being worthless or havin",
+        "correct_index": 2,
+        "choices": [
+          "Depreciation",
+          "Amortization",
+          "Write-off",
+          "Shrinkage"
+        ],
+        "explanation": "The correct answer is C, as a write-off refers to the removal of an asset or inventory item from the balance sheet due to it being worthless or having no value. The other options are incorrect because",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is a consequence of failing to account for shrinkage?",
+        "correct_index": 0,
+        "choices": [
+          "Overstated inventory values",
+          "Understated inventory values",
+          "Increased revenue",
+          "Decreased expenses"
+        ],
+        "explanation": "The correct answer is A, as failing to account for shrinkage can lead to overstated inventory values. The other options are incorrect because they do not accurately reflect the consequences of failing",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory', 'shrinkage']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for the decrease in value of an asset or inventory item over time?",
+        "correct_index": 0,
+        "choices": [
+          "Depreciation",
+          "Amortization",
+          "Shrinkage",
+          "Obsolescence"
+        ],
+        "explanation": "The correct answer is A, as depreciation refers to the decrease in value of an asset or inventory item over time. The other options are incorrect because they do not accurately reflect the definition ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A retail store has discovered that a significant amount of inventory has been damaged due to a leak in the warehouse roo",
+        "correct_index": 0,
+        "choices": [
+          "Write off the damaged inventory as a loss",
+          "Sell the damaged inventory at a discounted price",
+          "Return the damaged inventory to the supplier",
+          "Increase the price of the remaining inventory to compensate for the loss"
+        ],
+        "explanation": "The correct answer is A, as writing off the damaged inventory as a loss is the most appropriate course of action. This will ensure that the financial records accurately reflect the loss and allow the ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['inventory']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 1.0,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 1.0,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "OP:458",
+    "kpi_text": "Identify the business process problem/issue",
+    "cluster": "Operations (OP)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "structural": {
+      "has_vocab": true,
+      "vocab_count": 6,
+      "has_concept": true,
+      "recognition_count": 5,
+      "has_application": true,
+      "recognition_target_met": true
+    },
+    "questions": [
+      {
+        "question_type": "recognition",
+        "text": "What is the primary goal of identifying business process problems?",
+        "correct_index": 3,
+        "choices": [
+          "To reduce costs",
+          "To increase efficiency",
+          "To improve customer satisfaction",
+          "To achieve all of the above"
+        ],
+        "explanation": "The primary goal of identifying business process problems is to address issues that hinder the organization's ability to operate efficiently and effectively, which can encompass reducing costs, increa",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following tools is used to visually represent the steps involved in a business process?",
+        "correct_index": 2,
+        "choices": [
+          "SWOT Analysis",
+          "Root Cause Analysis",
+          "Process Mapping",
+          "Efficiency Analysis"
+        ],
+        "explanation": "Process Mapping is a tool used to create a visual representation of the steps involved in a business process, helping to identify areas for improvement.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "What is the term for a point in a process where production or flow is restricted?",
+        "correct_index": 0,
+        "choices": [
+          "Bottleneck",
+          "Efficiency Limit",
+          "Process Constraint",
+          "Production Halt"
+        ],
+        "explanation": "A bottleneck refers to any point in a process where the flow of work or production is restricted, leading to inefficiencies and potential delays.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "recognition",
+        "text": "Identifying the underlying cause of a problem is known as what type of analysis?",
+        "correct_index": 0,
+        "choices": [
+          "Root Cause Analysis",
+          "Process Mapping",
+          "SWOT Analysis",
+          "Efficiency Analysis"
+        ],
+        "explanation": "Root Cause Analysis is a method used to identify the underlying cause of a problem, rather than just its symptoms.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": false,
+            "note": "No relevant terms from 'Identify the business process problem/issue' found in question/explanation"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 5,
+        "total": 6,
+        "pass_rate": 0.83
+      },
+      {
+        "question_type": "recognition",
+        "text": "Which of the following is NOT a step in identifying business process problems?",
+        "correct_index": 1,
+        "choices": [
+          "Conducting a SWOT analysis",
+          "Implementing a new process without analysis",
+          "Creating a process map",
+          "Conducting a root cause analysis"
+        ],
+        "explanation": "Implementing a new process without first analyzing the current process and identifying problems is not a recommended step in addressing business process issues.",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['business', 'process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      {
+        "question_type": "application",
+        "text": "A local retail store has noticed a significant decrease in customer satisfaction over the past quarter. Upon initial rev",
+        "correct_index": 1,
+        "choices": [
+          "Hire more checkout staff immediately",
+          "Conduct a root cause analysis of the checkout process",
+          "Implement a new checkout system without testing",
+          "Reduce the number of checkout lanes to simplify the process"
+        ],
+        "explanation": "Conducting a root cause analysis of the checkout process is the most appropriate first step. This will help identify the underlying cause of the delay, whether it be inefficient process steps, inadequ",
+        "checks": {
+          "factually_plausible": {
+            "passed": true,
+            "note": "OK"
+          },
+          "matches_kpi": {
+            "passed": true,
+            "note": "Keywords found: ['process']"
+          },
+          "clear_wording": {
+            "passed": true,
+            "note": "OK"
+          },
+          "plausible_distractors": {
+            "passed": true,
+            "note": "OK"
+          },
+          "correct_index_valid": {
+            "passed": true,
+            "note": "OK"
+          },
+          "deca_style": {
+            "passed": true,
+            "note": "OK"
+          }
+        },
+        "score": 6,
+        "total": 6,
+        "pass_rate": 1.0
+      }
+    ],
+    "total_questions": 6,
+    "overall_pass_rate": 0.97,
+    "check_aggregates": {
+      "factually_plausible": 1.0,
+      "matches_kpi": 0.83,
+      "clear_wording": 1.0,
+      "plausible_distractors": 1.0,
+      "correct_index_valid": 1.0,
+      "deca_style": 1.0
+    }
+  },
+  {
+    "kpi_code": "CO:147",
+    "kpi_text": "Explain the nature of effective verbal communications",
+    "cluster": "Communication Skills (CO)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\nPlease retry in 21.722637678s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}"
+  },
+  {
+    "kpi_code": "CO:088",
+    "kpi_text": "Select and utilize appropriate formats for professional writing",
+    "cluster": "Communication Skills (CO)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 19.947661218s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '19s'}]}}"
+  },
+  {
+    "kpi_code": "OP:163",
+    "kpi_text": "Identify quality-control measures",
+    "cluster": "Operations (OP)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 18.239888285s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18s'}]}}"
+  },
+  {
+    "kpi_code": "FI:682",
+    "kpi_text": "Account for sales (invoices, sales receipts, etc.)",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "accounting_application_series",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 16.539510541s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '16s'}]}}"
+  },
+  {
+    "kpi_code": "FI:336",
+    "kpi_text": "Describe the role of financial institutions",
+    "cluster": "Financial Analysis (FI)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 14.85126326s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '14s'}]}}"
+  },
+  {
+    "kpi_code": "BL:068",
+    "kpi_text": "Describe the United States' judicial system",
+    "cluster": "Business Law (BL)",
+    "deca_cluster": "Finance",
+    "event": "financial_services_tdm",
+    "error": "Gemini: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\\nPlease retry in 13.170248261s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}"
+  }
+]

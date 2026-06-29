@@ -390,9 +390,11 @@
                     placeholder.textContent = "— Select an event —";
                     eventSel.appendChild(placeholder);
                     cluster.events.forEach((ev) => {
+                        // events are objects { name, type } — extract the name
+                        const evName = (typeof ev === "string") ? ev : ev.name;
                         const opt = document.createElement("option");
-                        opt.value = ev;
-                        opt.textContent = ev;
+                        opt.value = evName;
+                        opt.textContent = evName;
                         eventSel.appendChild(opt);
                     });
                 }
@@ -401,22 +403,7 @@
                     populateEvents(clusterSel.value);
                 });
 
-                // Restore saved event on load
-                try {
-                    const savedEvent = localStorage.getItem("ct_selected_event") || "";
-                    if (savedEvent && typeof CLUSTERS !== "undefined") {
-                        const ownerCluster = CLUSTERS.find(
-                            (c) => c.events && c.events.includes(savedEvent)
-                        );
-                        if (ownerCluster) {
-                            clusterSel.value = ownerCluster.name;
-                            populateEvents(ownerCluster.name);
-                            eventSel.value = savedEvent;
-                            const lbl = document.getElementById("event-current-label");
-                            if (lbl) lbl.textContent = "Currently studying: " + savedEvent;
-                        }
-                    }
-                } catch (e) {}
+                // Initial state: dropdowns will be populated by loadSettings() from the server profile
             })();
 
             async function saveEventSelection() {
@@ -429,23 +416,18 @@
                     return;
                 }
                 await doSave(btn, async () => {
-                    // Save to localStorage so Learn mode picks it up
-                    try {
-                        localStorage.setItem("ct_selected_event", eventName);
-                    } catch (e) {}
-                    // Also persist to the profile (default_cluster field)
                     const clusterName = clusterSel ? clusterSel.value : "";
-                    const res = await apiFetch("/auth/profile", {
-                        method: "PUT",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ default_cluster: clusterName }),
-                    });
-                    const data = await res.json().catch(() => ({}));
-                    if (!res.ok) {
-                        ErrorManager.show(
-                            data.detail || "Failed to save event selection.",
-                            "error",
-                        );
+                    // UserPrefs.setEvent owns all event writes — server first, cache on confirm
+                    const eventId = (typeof getEventIdByName === "function")
+                        ? getEventIdByName(eventName)
+                        : eventName.toLowerCase().replace(/ /g, "_");
+                    const result = await UserPrefs.setEvent(
+                        eventId,
+                        eventName,
+                        clusterName,
+                    );
+                    if (!result) {
+                        ErrorManager.show("Failed to save event selection.", "error");
                         return false;
                     }
                     const lbl = document.getElementById("event-current-label");
@@ -841,6 +823,51 @@
                         priv.track_progress !== false,
                     );
 
+                    // ── Event / Cluster (server is source of truth) ───────────
+                    // hydrateFromProfile syncs cache from the confirmed server value.
+                    // It will not overwrite cache if the server has no value yet.
+                    UserPrefs.hydrateFromProfile(u);
+
+                    // Populate the dropdowns from the now-reliable cache
+                    const resolvedEvent   = UserPrefs.getEvent();
+                    const resolvedCluster = UserPrefs.getCluster() || (() => {
+                        // Derive cluster from event name if profile didn't store it
+                        if (resolvedEvent && typeof CLUSTERS !== "undefined") {
+                            const found = CLUSTERS.find(c =>
+                                c.events.some(ev => (typeof ev === "string" ? ev : ev.name) === resolvedEvent)
+                            );
+                            return found ? found.name : "";
+                        }
+                        return "";
+                    })();
+
+                    if (resolvedCluster || resolvedEvent) {
+                        const clusterSel = document.getElementById("select-deca-cluster");
+                        const eventSel   = document.getElementById("select-deca-event");
+                        if (clusterSel && resolvedCluster) {
+                            clusterSel.value = resolvedCluster;
+                            if (eventSel && typeof CLUSTERS !== "undefined") {
+                                const cluster = CLUSTERS.find(c => c.name === resolvedCluster);
+                                if (cluster) {
+                                    eventSel.innerHTML = "";
+                                    const ph = document.createElement("option");
+                                    ph.value = ""; ph.textContent = "— Select an event —";
+                                    eventSel.appendChild(ph);
+                                    cluster.events.forEach(ev => {
+                                        const evName = (typeof ev === "string") ? ev : ev.name;
+                                        const opt = document.createElement("option");
+                                        opt.value = evName; opt.textContent = evName;
+                                        eventSel.appendChild(opt);
+                                    });
+                                    eventSel.disabled = false;
+                                    if (resolvedEvent) eventSel.value = resolvedEvent;
+                                }
+                            }
+                        }
+                        const lbl = document.getElementById("event-current-label");
+                        if (lbl && resolvedEvent) lbl.textContent = "Currently studying: " + resolvedEvent;
+                    }
+
                     // ── Local-only prefs (login notifications) ────────────────
                     const savedLoginNotif =
                         localStorage.getItem("ct_login_notif");
@@ -851,7 +878,6 @@
                             savedLoginNotif === "1",
                         );
                     }
-
                     // ── Remove all skeleton states ────────────────────────────
                     clearSkeletons();
                 } catch (err) {

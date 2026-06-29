@@ -381,6 +381,110 @@ const Store = {
   },
 };
 
+// ── UserPrefs — single authority for user preference state ───────────────────
+//
+// IDENTITY CONTRACT: event_id (slug) is the single canonical identifier.
+//   - ct_selected_event_id  → slug, e.g. "accounting_application_series"
+//   - ct_selected_event     → display name (derived/cached for UI only)
+//   - ct_selected_cluster   → cluster display name
+//
+// Write path:  UserPrefs.setEvent(eventId, eventName, clusterName)  →  server first, then cache
+// Login path:  UserPrefs.hydrateFromProfile(user)  →  cache only (server already confirmed)
+// Read path:   UserPrefs.getEventId()   →  slug (use for all API calls and logic)
+//              UserPrefs.getEventName() →  display name only
+//
+const UserPrefs = {
+  _eventIdKey:   'ct_selected_event_id',
+  _eventNameKey: 'ct_selected_event',    // display only — never used for identity
+  _clusterKey:   'ct_selected_cluster',
+
+  // Slug — use this for all API calls and logic
+  getEventId()   { try { return localStorage.getItem(this._eventIdKey)   || ''; } catch(e) { return ''; } },
+  // Display name — use only for UI text
+  getEventName() { try { return localStorage.getItem(this._eventNameKey) || ''; } catch(e) { return ''; } },
+  // Kept for backward-compat callers; returns slug
+  getEvent()     { return this.getEventId(); },
+  getCluster()   { try { return localStorage.getItem(this._clusterKey)   || ''; } catch(e) { return ''; } },
+
+  // The one function allowed to write event state.
+  // eventId   = slug, e.g. "accounting_application_series"  (required)
+  // eventName = display name, e.g. "Accounting Application Series" (required for UI)
+  // clusterName = display name of the cluster (optional)
+  // Saves to server first; only updates cache on success.
+  async setEvent(eventId, eventName, clusterName) {
+    if (!eventId) return null;
+    const token = Auth.getToken();
+    if (!token) {
+      // Not logged in — cache only (opening screen before signup completes)
+      this._writeCache(eventId, eventName, clusterName);
+      return { eventId, eventName, clusterName };
+    }
+    try {
+      const res = await fetch('/auth/profile', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          default_event_id:  eventId,
+          default_event:     eventName   || '',   // keep name for display restore
+          default_cluster:   clusterName || '',
+        }),
+      });
+      if (!res.ok) return null;
+      this._writeCache(eventId, eventName, clusterName);
+      return { eventId, eventName, clusterName };
+    } catch(e) {
+      return null;
+    }
+  },
+
+  // Called at login/page-load from a confirmed server profile.
+  // Prefers default_event_id (slug); falls back to deriving slug from default_event name
+  // via the CLUSTERS map if needed (migration path for existing profiles).
+  hydrateFromProfile(user) {
+    if (!user) return;
+    let eventId   = user.default_event_id || '';
+    const eventName = user.default_event  || '';
+    const clusterName = user.default_cluster || '';
+
+    if (typeof getEventIdByName === 'function') {
+      eventId = getEventIdByName(eventId || eventName || '');
+    }
+
+    // Migration: old profiles stored name in default_event, no slug yet
+    if (!eventId && eventName && typeof CLUSTERS !== 'undefined') {
+      for (const c of CLUSTERS) {
+        for (const ev of c.events) {
+          const name = typeof ev === 'string' ? ev : ev.name;
+          if (name === eventName) {
+            // Derive slug using the shared canonicalizer
+            eventId = (typeof getEventIdByName === 'function')
+              ? getEventIdByName(name)
+              : name.toLowerCase().replace(/ /g, '_');
+            break;
+          }
+        }
+        if (eventId) break;
+      }
+    }
+
+    if (eventId) this._writeCache(eventId, eventName, clusterName);
+    // If server has nothing, leave existing cache alone
+  },
+
+  // Internal — the only place localStorage gets written
+  _writeCache(eventId, eventName, clusterName) {
+    try {
+      if (eventId)     localStorage.setItem(this._eventIdKey,   eventId);
+      if (eventName)   localStorage.setItem(this._eventNameKey, eventName);
+      if (clusterName) localStorage.setItem(this._clusterKey,   clusterName);
+    } catch(e) {}
+  },
+};
+
 const ErrorManager = {
   errorTypes: {
     VALIDATION: 'validation',

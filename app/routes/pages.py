@@ -89,6 +89,11 @@ def opening():
     return render_template("opening.html")
 
 
+@pages_bp.get("/app/greeting.html")
+def greeting():
+    return render_template("greeting.html")
+
+
 @pages_bp.get("/app/dashboard.html")
 def dashboard():
     return render_template("dashboard.html")

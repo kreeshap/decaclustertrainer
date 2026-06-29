@@ -270,6 +270,8 @@ def update_profile():
     for str_field in (
         "competition_tier",
         "default_cluster",
+        "default_event",
+        "default_event_id",
         "session_time_pref",
         "theme",
     ):

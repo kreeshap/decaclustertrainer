@@ -1,19 +1,32 @@
 /**
  * clusters.js — Single source of truth for DECA cluster + event structure.
  *
- * Loaded by opening.html, learn.html, and any other page that needs
- * the full cluster/event list. Keep this file in sync with the
- * "performance indicator jsons/" folder structure.
- *
- * Each entry:
- *   name   — DECA career cluster display name
- *   color  — accent hex used for UI highlights
- *   glow   — rgba version for glow/shadow effects
- *   folder — subfolder name under "performance indicator jsons/"
- *            (omit if no KPI JSONs exist yet)
- *   events — ordered list of event names; file names inside `folder`
- *            must match these exactly (e.g. "Accounting Application Series.json")
+ * Each event entry:
+ *   name      — display name (must match JSON filename stem)
+ *   type      — 'exam' | 'tdm' | 'series' | 'principles' | 'operations'
+ *               exam      = written exam only (no roleplay component)
+ *               tdm       = Team Decision Making (roleplay-heavy)
+ *               series    = Individual series event (exam + roleplay)
+ *               principles= Principles event (vocab/concept/application only)
+ *               operations= Operations Research (written + presentation)
  */
+
+const EVENT_TYPES = {
+    exam:       'exam',
+    tdm:        'tdm',
+    series:     'series',
+    principles: 'principles',
+    operations: 'operations',
+};
+
+const EVENT_ID_OVERRIDES = {
+  "Financial Services Team Decision Making": "financial_services_tdm",
+};
+
+const EVENT_ID_ALIASES = {
+  "financial_services_team_decision_making": "financial_services_tdm",
+  "financial services team decision making": "financial_services_tdm",
+};
 
 const CLUSTERS = [
   {
@@ -29,9 +42,9 @@ const CLUSTERS = [
     glow: "rgba(245,196,0,0.2)",
     folder: "business_management",
     events: [
-      "Business Law and Ethics Team Decision Making",
-      "Human Resources Management Series",
-      "Business Services Operations Research"
+      { name: "Business Law and Ethics Team Decision Making", type: "tdm" },
+      { name: "Human Resources Management Series",           type: "series" },
+      { name: "Business Services Operations Research",        type: "operations" },
     ]
   },
   {
@@ -40,8 +53,8 @@ const CLUSTERS = [
     glow: "rgba(156,163,175,0.2)",
     folder: "entrepreneurship",
     events: [
-      "Entrepreneurship Team Decision Making",
-      "Entrepreneurship Series"
+      { name: "Entrepreneurship Team Decision Making", type: "tdm" },
+      { name: "Entrepreneurship Series",               type: "series" },
     ]
   },
   {
@@ -50,11 +63,11 @@ const CLUSTERS = [
     glow: "rgba(34,197,94,0.2)",
     folder: "finance",
     events: [
-      "Financial Services Team Decision Making",
-      "Accounting Application Series",
-      "Business Finance Series",
-      "Finance Operations Research",
-      "Financial Consulting"
+      { name: "Financial Services Team Decision Making", type: "tdm" },
+      { name: "Accounting Application Series",           type: "series" },
+      { name: "Business Finance Series",                 type: "series" },
+      { name: "Finance Operations Research",             type: "operations" },
+      { name: "Financial Consulting",                    type: "exam" },
     ]
   },
   {
@@ -63,13 +76,13 @@ const CLUSTERS = [
     glow: "rgba(56,189,248,0.2)",
     folder: "hospitality_tourism",
     events: [
-      "Hospitality Services Team Decision Making",
-      "Hotel and Lodging Management Series",
-      "Travel and Tourism Team Decision Making",
-      "Quick Serve Restaurant Management Series",
-      "Restaurant and Food Service Management Series",
-      "Hospitality and Tourism Operations Research",
-      "Hospitality and Tourism Professional Selling"
+      { name: "Hospitality Services Team Decision Making",          type: "tdm" },
+      { name: "Hotel and Lodging Management Series",                type: "series" },
+      { name: "Travel and Tourism Team Decision Making",            type: "tdm" },
+      { name: "Quick Serve Restaurant Management Series",           type: "series" },
+      { name: "Restaurant and Food Service Management Series",      type: "series" },
+      { name: "Hospitality and Tourism Operations Research",        type: "operations" },
+      { name: "Hospitality and Tourism Professional Selling",       type: "series" },
     ]
   },
   {
@@ -78,20 +91,20 @@ const CLUSTERS = [
     glow: "rgba(248,113,113,0.2)",
     folder: "marketing",
     events: [
-      "Buying and Merchandising Team Decision Making",
-      "Marketing Management Team Decision Making",
-      "Sports and Entertainment Marketing Team Decision Making",
-      "Apparel and Accessories Marketing",
-      "Automotive Services Marketing",
-      "Business Services Marketing Series",
-      "Food Marketing Series",
-      "Marketing Communications Series",
-      "Retail Merchandising Series",
-      "Sports and Entertainment Marketing Series",
-      "Buying and Merchandising Operations Research",
-      "Sports and Entertainment Marketing Operations Research",
-      "Prepared Event",
-      "Professional Selling"
+      { name: "Buying and Merchandising Team Decision Making",             type: "tdm" },
+      { name: "Marketing Management Team Decision Making",                 type: "tdm" },
+      { name: "Sports and Entertainment Marketing Team Decision Making",   type: "tdm" },
+      { name: "Apparel and Accessories Marketing",                         type: "series" },
+      { name: "Automotive Services Marketing",                             type: "series" },
+      { name: "Business Services Marketing Series",                        type: "series" },
+      { name: "Food Marketing Series",                                     type: "series" },
+      { name: "Marketing Communications Series",                           type: "series" },
+      { name: "Retail Merchandising Series",                               type: "series" },
+      { name: "Sports and Entertainment Marketing Series",                 type: "series" },
+      { name: "Buying and Merchandising Operations Research",              type: "operations" },
+      { name: "Sports and Entertainment Marketing Operations Research",    type: "operations" },
+      { name: "Prepared Event",                                            type: "exam" },
+      { name: "Professional Selling",                                      type: "series" },
     ]
   },
   {
@@ -107,11 +120,11 @@ const CLUSTERS = [
     glow: "rgba(167,139,250,0.2)",
     folder: "principles",
     events: [
-      "Principles of Business Management and Administration",
-      "Principles of Entrepreneurship",
-      "Principles of Finance",
-      "Principles of Hospitality",
-      "Principles of Marketing"
+      { name: "Principles of Business Management and Administration", type: "principles" },
+      { name: "Principles of Entrepreneurship",                       type: "principles" },
+      { name: "Principles of Finance",                                type: "principles" },
+      { name: "Principles of Hospitality",                            type: "principles" },
+      { name: "Principles of Marketing",                              type: "principles" },
     ]
   }
 ];
@@ -131,7 +144,43 @@ function findClusterByName(name) {
  * @returns {object|null}
  */
 function findClusterByEvent(eventName) {
-  return CLUSTERS.find(c => c.events.includes(eventName)) || null;
+  return CLUSTERS.find(c =>
+    c.events.some(e => (typeof e === 'string' ? e : e.name) === eventName)
+  ) || null;
+}
+
+/**
+ * Get the event type for a given event name.
+ * Returns 'series' as the default (most common event type).
+ * @param {string} eventName
+ * @returns {string}
+ */
+function getEventType(eventName) {
+  for (const cluster of CLUSTERS) {
+    for (const ev of cluster.events) {
+      const name = typeof ev === 'string' ? ev : ev.name;
+      if (name === eventName) {
+        return typeof ev === 'string' ? 'series' : (ev.type || 'series');
+      }
+    }
+  }
+  return 'series';
+}
+
+/**
+ * Get the canonical event_id slug for a given event display name.
+ * Uses known overrides for legacy JSON/file-name mismatches.
+ * @param {string} eventName
+ * @returns {string}
+ */
+function getEventIdByName(eventName) {
+  const name = String(eventName || "").trim();
+  if (!name) return "";
+  const lowered = name.toLowerCase();
+  if (EVENT_ID_ALIASES[lowered]) return EVENT_ID_ALIASES[lowered];
+  if (EVENT_ID_OVERRIDES[name]) return EVENT_ID_OVERRIDES[name];
+  if (EVENT_ID_OVERRIDES[lowered]) return EVENT_ID_OVERRIDES[lowered];
+  return lowered.replace(/ /g, "_");
 }
 
 /**

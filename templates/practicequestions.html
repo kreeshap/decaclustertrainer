@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cluster Trainer - Practice Questions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="/static/js/common.js"></script>
-        <link rel="stylesheet" href="/static/styles/practicequestions.css" />
+    <link rel="stylesheet" href="/static/styles/practicequestions.css" />
   </head>
   <body>
     <header class="app-topbar">
@@ -16,22 +19,532 @@
       <div class="topbar-right">
         <div class="user-chip" id="topbar-name"></div>
         <button class="btn-icon" id="btn-settings" type="button" aria-label="Settings">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"></path></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-1.42 3.42h-.07a1.7 1.7 0 0 0-1.6 1.1l-.02.06a2 2 0 0 1-3.86 0l-.02-.06a1.7 1.7 0 0 0-1.6-1.1h-.07a2 2 0 0 1-1.42-3.42l.05-.05A1.7 1.7 0 0 0 5.6 15l-.02-.07a2 2 0 0 1 0-1.86l.02-.07a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 1.42-3.42h.07a1.7 1.7 0 0 0 1.6-1.1l.02-.06a2 2 0 0 1 3.86 0l.02.06a1.7 1.7 0 0 0 1.6 1.1h.07a2 2 0 0 1 1.42 3.42l-.05.05a1.7 1.7 0 0 0-.34 1.87l.02.07a2 2 0 0 1 0 1.86z"
+            ></path>
+          </svg>
         </button>
         <button class="btn-sm" id="btn-logout" type="button">Log out</button>
       </div>
     </header>
+
     <main class="main-shell">
-      <section class="dash-header">
-        <div>
-          <div class="app-sec">Practice Questions</div>
-          <h1 class="dash-title"><em>Questions</em> page</h1>
+      <section id="practice-home" class="view-shell">
+        <div class="questions-dashboard">
+          <div class="dashboard-hero panel">
+            <div class="dashboard-hero-copy">
+              <div class="panel-kicker">Recommended</div>
+              <h1 class="dash-title"><em id="practice-hero-title">Continue Practice</em></h1>
+              <p class="hero-text" id="practice-hero-subtitle">
+                0 questions | Adaptive | All | -- min
+              </p>
+              <div class="hero-metrics" aria-label="Practice snapshot">
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Questions Due</div>
+                  <div class="hero-metric-value" id="practice-due-count">0</div>
+                </div>
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Estimated Time</div>
+                  <div class="hero-metric-value" id="practice-estimated-time">--</div>
+                </div>
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Avg Mastery</div>
+                  <div class="hero-metric-value" id="practice-avg-mastery">--</div>
+                </div>
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Current Accuracy</div>
+                  <div class="hero-metric-value" id="practice-accuracy">--</div>
+                </div>
+              </div>
+              <div class="action-row">
+                <button class="cta-btn" id="start-practice-btn" type="button" disabled>
+                  Start Practice
+                </button>
+                <button class="ghost-btn" id="refresh-practice-btn" type="button">
+                  Refresh Data
+                </button>
+              </div>
+              <div class="dashboard-ring-note" id="practice-focus">Loading focus...</div>
+            </div>
+          </div>
+
+          <aside class="panel dashboard-overview">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-kicker">Today's Overview</div>
+                <h2 class="panel-title">Session snapshot</h2>
+              </div>
+            </div>
+            <div class="overview-list">
+              <div class="overview-row">
+                <div class="overview-label">Questions Due</div>
+                <div class="overview-value" id="practice-overview-due">0</div>
+              </div>
+              <div class="overview-row">
+                <div class="overview-label">Estimated Time</div>
+                <div class="overview-value" id="practice-overview-time">--</div>
+              </div>
+              <div class="overview-row">
+                <div class="overview-label">Current Mastery</div>
+                <div class="overview-value" id="practice-overview-mastery">--</div>
+              </div>
+              <div class="overview-row">
+                <div class="overview-label">Accuracy</div>
+                <div class="overview-value" id="practice-overview-accuracy">--</div>
+              </div>
+              <div class="overview-row">
+                <div class="overview-label">Day Streak</div>
+                <div class="overview-value" id="practice-overview-streak">--</div>
+              </div>
+            </div>
+            <p class="panel-copy overview-note" id="practice-status">
+              We are loading your current event and question bank.
+            </p>
+          </aside>
+
+          <div class="dashboard-row">
+            <section class="panel info-card">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-kicker">Upcoming</div>
+                  <h2 class="panel-title">Current event</h2>
+                </div>
+              </div>
+              <div class="info-card-title" id="practice-event-name">Loading...</div>
+              <div class="info-card-subtitle" id="practice-event-cluster"></div>
+              <div class="info-card-meta">
+                <div class="info-card-meta-item">
+                  <span>Session Length</span>
+                  <strong id="practice-session-length-label">10 questions</strong>
+                </div>
+                <div class="info-card-meta-item">
+                  <span>Practice Mode</span>
+                  <strong id="practice-mode-label">Adaptive</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel info-card">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-kicker">Recent Session</div>
+                  <h2 class="panel-title">Latest results</h2>
+                </div>
+              </div>
+              <div class="info-card-title" id="practice-recent-session-title">No session yet</div>
+              <div class="info-card-subtitle" id="practice-recent-session-subtitle">
+                Start a session to populate this panel.
+              </div>
+              <div class="info-card-metrics">
+                <div class="info-card-metric">
+                  <span>Accuracy</span>
+                  <strong id="practice-recent-accuracy">--</strong>
+                </div>
+                <div class="info-card-metric">
+                  <span>Answered</span>
+                  <strong id="practice-recent-answered">--</strong>
+                </div>
+                <div class="info-card-metric">
+                  <span>Correct</span>
+                  <strong id="practice-recent-correct">--</strong>
+                </div>
+                <div class="info-card-metric">
+                  <span>Duration</span>
+                  <strong id="practice-recent-duration">--</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel info-card focus-card">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-kicker">Focus Areas</div>
+                  <h2 class="panel-title">Where to push next</h2>
+                </div>
+              </div>
+              <div class="focus-list" id="practice-focus-list"></div>
+              <div class="focus-empty" id="practice-focus-empty">
+                No weak spots yet. Keep practicing to build a richer focus map.
+              </div>
+            </section>
+          </div>
+
+          <div class="tracking-row">
+            <section class="panel tracking-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-kicker">Progress Tracking</div>
+                  <h2 class="panel-title">What your practice is building</h2>
+                </div>
+                <div class="panel-badge" id="practice-tracking-badge">Tracking</div>
+              </div>
+              <div class="tracking-grid">
+                <div class="tracking-stat">
+                  <span>Accuracy</span>
+                  <strong id="practice-tracking-accuracy">--</strong>
+                </div>
+                <div class="tracking-stat">
+                  <span>Answered</span>
+                  <strong id="practice-tracking-answered">--</strong>
+                </div>
+                <div class="tracking-stat">
+                  <span>Correct</span>
+                  <strong id="practice-tracking-correct">--</strong>
+                </div>
+                <div class="tracking-stat">
+                  <span>Mastered KPIs</span>
+                  <strong id="practice-tracking-mastered">--</strong>
+                </div>
+                <div class="tracking-stat">
+                  <span>Due Now</span>
+                  <strong id="practice-tracking-due">--</strong>
+                </div>
+                <div class="tracking-stat">
+                  <span>Day Streak</span>
+                  <strong id="practice-tracking-streak">--</strong>
+                </div>
+              </div>
+              <div class="tracking-bar-wrap">
+                <div class="tracking-bar-head">
+                  <span>Overall mastery</span>
+                  <strong id="practice-tracking-mastery">--</strong>
+                </div>
+                <div class="tracking-bar">
+                  <div class="tracking-bar-fill" id="practice-tracking-fill"></div>
+                </div>
+                <div class="tracking-copy" id="practice-tracking-note"></div>
+              </div>
+            </section>
+
+            <section class="panel history-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="panel-kicker">Question History</div>
+                  <h2 class="panel-title">Recent answers and outcomes</h2>
+                </div>
+                <div class="panel-badge" id="practice-history-count">0 entries</div>
+              </div>
+              <div class="history-list" id="practice-history-list"></div>
+            </section>
+          </div>
+
+          <details class="panel practice-panel practice-accordion">
+            <summary class="practice-accordion-summary">
+              <div class="practice-accordion-head">
+                <div>
+                  <div class="panel-kicker">Advanced Practice Settings</div>
+                  <h2 class="panel-title">Practice settings</h2>
+                </div>
+                <div class="panel-badge" id="practice-intel-summary">Waiting to start</div>
+              </div>
+            </summary>
+            <div class="practice-accordion-body">
+              <div class="practice-filters" aria-label="Practice filters">
+                <div class="practice-filter-group">
+                  <div class="practice-filter-label">Mode</div>
+                  <div class="practice-chip-row" id="practice-mode-group">
+                    <button class="practice-chip-btn active" type="button" data-practice-mode="adaptive">
+                      Adaptive
+                    </button>
+                    <button class="practice-chip-btn" type="button" data-practice-mode="mixed">
+                      Mixed
+                    </button>
+                    <button class="practice-chip-btn" type="button" data-practice-mode="daily">
+                      Daily
+                    </button>
+                    <button class="practice-chip-btn" type="button" data-practice-mode="random">
+                      Random
+                    </button>
+                  </div>
+                </div>
+                <div class="practice-filter-group">
+                  <div class="practice-filter-label">Filter</div>
+                  <div class="practice-chip-row" id="practice-type-group">
+                    <button class="practice-chip-btn active" type="button" data-question-filter="all">
+                      All
+                    </button>
+                    <button class="practice-chip-btn" type="button" data-question-filter="recognition">
+                      Recognition
+                    </button>
+                    <button class="practice-chip-btn" type="button" data-question-filter="application">
+                      Application
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="session-intel">
+                <div class="session-intel-card">
+                  <div class="session-intel-label">Adaptive choice</div>
+                  <div class="session-intel-value" id="practice-intel-choice">Waiting to start</div>
+                </div>
+                <div class="session-intel-card">
+                  <div class="session-intel-label">Session state</div>
+                  <div class="session-intel-value" id="practice-intel-state">Ready</div>
+                </div>
+                <div class="session-intel-card">
+                  <div class="session-intel-label">Accuracy split</div>
+                  <div class="session-intel-value" id="practice-intel-split">--</div>
+                </div>
+                <div class="session-intel-card">
+                  <div class="session-intel-label">Next step</div>
+                  <div class="session-intel-value" id="practice-intel-next">Pick a mode to begin</div>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
       </section>
-      <div class="panel">
-        <p>This page is ready for practice questions.</p>
-      </div>
+
+      <section id="practice-session" class="view-shell is-hidden">
+        <div class="session-shell">
+          <div class="session-bar">
+            <div>
+              <div class="panel-kicker">Practice Session</div>
+              <div class="session-title" id="practice-session-title">Loading...</div>
+            </div>
+            <button class="ghost-btn" id="exit-session-btn" type="button">Exit Session</button>
+          </div>
+
+          <div class="session-settings">
+            <div class="session-setting-block">
+              <div class="session-setting-label">Session Length</div>
+              <select id="practice-session-length" class="session-select" aria-label="Session length">
+                <option value="5">5 questions</option>
+                <option value="10" selected>10 questions</option>
+                <option value="15">15 questions</option>
+                <option value="20">20 questions</option>
+                <option value="all">All available</option>
+              </select>
+            </div>
+            <div class="session-setting-block">
+              <div class="session-setting-label">Time Mode</div>
+              <div class="session-toggle-row" role="group" aria-label="Timed mode toggle">
+                <button class="session-toggle-btn active" type="button" data-session-timed="false">
+                  Untimed
+                </button>
+                <button class="session-toggle-btn" type="button" data-session-timed="true">
+                  Timed
+                </button>
+              </div>
+            </div>
+            <div class="session-setting-block">
+              <div class="session-setting-label">Question Review</div>
+              <button class="session-toggle-btn active" type="button" id="practice-review-toggle">
+                Review On
+              </button>
+            </div>
+            <div class="session-setting-block session-timer-block">
+              <div class="session-setting-label">Timer</div>
+              <div class="session-timer" id="practice-session-timer">Untimed</div>
+            </div>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress-label">
+              Question <strong id="practice-progress-current">1</strong> of
+              <strong id="practice-progress-total">0</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="practice-progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="panel question-panel">
+            <div class="question-type" id="practice-question-type">Recognition</div>
+            <h2 class="question-stem" id="practice-question-stem"></h2>
+            <div class="choice-list" id="practice-choice-list"></div>
+
+            <div class="question-controls">
+              <button class="cta-btn" id="practice-check-btn" type="button" disabled>
+                Check Answer
+              </button>
+              <button class="ghost-btn" id="practice-view-question-btn" type="button">
+                View Question
+              </button>
+              <button class="ghost-btn" id="practice-next-btn" type="button" hidden>
+                Next Question
+              </button>
+            </div>
+
+            <div class="feedback-box" id="practice-feedback" hidden>
+              <div class="feedback-kicker" id="practice-feedback-kicker"></div>
+              <div class="feedback-copy" id="practice-feedback-copy"></div>
+              <div class="feedback-explanation" id="practice-feedback-explanation"></div>
+              <div class="feedback-reveal">
+                <div class="feedback-reveal-head">
+                  <div class="feedback-reveal-title">Answer Reveal</div>
+                  <div class="quality-pill" id="practice-quality-badge">Quality --</div>
+                </div>
+                <div class="feedback-answer" id="practice-feedback-answer"></div>
+                <div class="feedback-distractors" id="practice-feedback-distractors"></div>
+              </div>
+              <div class="feedback-benchmark">
+                <div class="feedback-reveal-head">
+                  <div class="feedback-reveal-title">Question Benchmark</div>
+                  <div class="quality-pill" id="practice-benchmark-badge">Benchmark --</div>
+                </div>
+                <div class="feedback-benchmark-copy" id="practice-benchmark-copy">
+                  Benchmark data will appear after the question is answered.
+                </div>
+                <div class="feedback-benchmark-grid">
+                  <div class="feedback-benchmark-item">
+                    <span>Accuracy</span>
+                    <strong id="practice-benchmark-accuracy">--</strong>
+                  </div>
+                  <div class="feedback-benchmark-item">
+                    <span>Time vs baseline</span>
+                    <strong id="practice-benchmark-speed">--</strong>
+                  </div>
+                  <div class="feedback-benchmark-item">
+                    <span>Attempts</span>
+                    <strong id="practice-benchmark-attempts">--</strong>
+                  </div>
+                  <div class="feedback-benchmark-item">
+                    <span>Quality score</span>
+                    <strong id="practice-benchmark-quality">--</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="feedback-report-box">
+                <div class="feedback-reveal-head">
+                  <div class="feedback-reveal-title">Question Reporting</div>
+                  <button class="ghost-btn feedback-report-toggle" id="practice-report-toggle" type="button">
+                    Report Question
+                  </button>
+                </div>
+                <div class="feedback-report-panel is-hidden" id="practice-report-panel">
+                  <div class="report-field">
+                    <label for="practice-report-reason">Reason</label>
+                    <select id="practice-report-reason" class="session-select">
+                      <option value="ambiguous">Ambiguous wording</option>
+                      <option value="wrong_key">Wrong answer key</option>
+                      <option value="bad_distractors">Weak distractors</option>
+                      <option value="poor_explanation">Poor explanation</option>
+                      <option value="typo">Typo or grammar issue</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="report-field">
+                    <label for="practice-report-details">Details</label>
+                    <textarea id="practice-report-details" class="report-textarea" rows="3" placeholder="Add any context that would help improve this question."></textarea>
+                  </div>
+                  <div class="action-row">
+                    <button class="cta-btn" id="practice-report-submit" type="button">Submit Report</button>
+                    <button class="ghost-btn" id="practice-report-cancel" type="button">Cancel</button>
+                  </div>
+                  <div class="report-status" id="practice-report-status"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="practice-summary" class="view-shell is-hidden">
+        <div class="summary-shell">
+          <div class="panel summary-hero">
+            <div class="panel-kicker">Session summary</div>
+            <h2 class="panel-title">Your practice set is complete</h2>
+            <p class="panel-copy" id="practice-summary-note"></p>
+          </div>
+
+          <div class="summary-grid">
+            <div class="summary-card">
+              <div class="summary-label">Accuracy</div>
+              <div class="summary-value" id="practice-summary-accuracy">0%</div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-label">Correct</div>
+              <div class="summary-value" id="practice-summary-correct">0 / 0</div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-label">Average Response</div>
+              <div class="summary-value" id="practice-summary-average">0.0s</div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-label">Questions</div>
+              <div class="summary-value" id="practice-summary-answered">0</div>
+            </div>
+          </div>
+
+          <div class="summary-grid summary-grid-tight">
+            <div class="summary-card">
+              <div class="summary-label">Recognition</div>
+              <div class="summary-value" id="practice-summary-recognition">0%</div>
+              <div class="summary-subtle" id="practice-summary-recognition-detail"></div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-label">Application</div>
+              <div class="summary-value" id="practice-summary-application">0%</div>
+              <div class="summary-subtle" id="practice-summary-application-detail"></div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-label">Retry Loop</div>
+              <div class="summary-value" id="practice-summary-retries">0</div>
+              <div class="summary-subtle">Missed questions replayed</div>
+            </div>
+          </div>
+
+          <div class="panel review-panel" id="practice-review-panel">
+            <div class="panel-heading">
+              <div>
+                <div class="panel-kicker">Question Review</div>
+                <h2 class="panel-title">Walk through the session</h2>
+              </div>
+              <div class="panel-badge" id="practice-review-count">0 reviewed</div>
+            </div>
+            <div class="review-list" id="practice-review-list"></div>
+          </div>
+
+          <div class="summary-actions">
+            <button class="cta-btn" id="practice-summary-retake" type="button">
+              Practice Again
+            </button>
+            <button class="ghost-btn" id="practice-summary-home" type="button">
+              Back to Overview
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <div class="question-viewer-backdrop is-hidden" id="practice-question-viewer" aria-hidden="true">
+      <div class="question-viewer" role="dialog" aria-modal="true" aria-labelledby="practice-question-viewer-title">
+        <div class="question-viewer-head">
+          <div>
+            <div class="panel-kicker">Question Viewer</div>
+            <h2 class="panel-title" id="practice-question-viewer-title">Question details</h2>
+          </div>
+          <button class="ghost-btn" id="practice-question-viewer-close" type="button">Close</button>
+        </div>
+        <div class="question-viewer-meta">
+          <span class="viewer-pill" id="practice-question-viewer-type">Recognition</span>
+          <span class="viewer-pill viewer-pill-muted" id="practice-question-viewer-kpi">KPI</span>
+          <span class="viewer-pill viewer-pill-muted" id="practice-question-viewer-cluster">Cluster</span>
+        </div>
+        <div class="question-viewer-body">
+          <div class="question-viewer-section">
+            <div class="question-viewer-label">Question</div>
+            <div class="question-viewer-stem" id="practice-question-viewer-stem"></div>
+          </div>
+          <div class="question-viewer-section">
+            <div class="question-viewer-label">Explanation</div>
+            <div class="question-viewer-explanation" id="practice-question-viewer-explanation"></div>
+          </div>
+          <div class="question-viewer-section">
+            <div class="question-viewer-label">Answer Reveal</div>
+            <div class="question-viewer-answer" id="practice-question-viewer-answer"></div>
+          </div>
+          <div class="question-viewer-section">
+            <div class="question-viewer-label">Distractors</div>
+            <div class="question-viewer-distractors" id="practice-question-viewer-distractors"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/static/js/practicequestions.js"></script>
   </body>
 </html>

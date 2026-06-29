@@ -309,6 +309,12 @@ def serialize_user(user: dict, profile: dict | None = None) -> dict:
         "default_cluster": p.get("default_cluster")
         or user_metadata.get("default_cluster")
         or "",
+        "default_event": p.get("default_event")
+        or user_metadata.get("default_event")
+        or "",
+        "default_event_id": p.get("default_event_id")
+        or user_metadata.get("default_event_id")
+        or "",
         "session_time_pref": p.get("session_time_pref")
         or user_metadata.get("session_time_pref")
         or "morning",

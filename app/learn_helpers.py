@@ -1,4 +1,5 @@
 import json
+import re
 
 from .config import BASE_DIR, SUPABASE_SERVICE_ROLE_KEY
 from .db import supabase_rest_request
@@ -6,29 +7,29 @@ from .db import supabase_rest_request
 KPI_DIR = BASE_DIR / "performance indicator jsons"
 
 # Maps (folder_name, file_stem) -> event metadata dict, or None to skip the file.
-# Add a new entry here whenever a new event JSON is added.
 _EVENT_META: dict[tuple[str, str], dict | None] = {
-    # Finance cluster ─────────────────────────────────────────────────────────
-    # Files are now named exactly like their DECA events (e.g.
-    # "Financial Services Team Decision Making.json").
-    # The fallback logic uses the file stem as the event name and the
-    # capitalised folder name as the DECA cluster, so no entry is needed
-    # for files whose stem already matches the event name exactly.
-    #
     # Legacy file — still holds the KPI data; maps to the TDM event.
     ("finance", "Finance"): {
         "event_id": "financial_services_tdm",
         "name": "Financial Services Team Decision Making",
         "cluster": "Finance",
     },
-    # The properly-named file is a pointer note only — skip it so the
-    # legacy Finance.json is the sole source of KPIs for this event.
+    # The properly-named file is a pointer note only — skip it.
     ("finance", "Financial Services Team Decision Making"): None,
 }
 
+# ── Module-level KPI cache ─────────────────────────────────────────────────────
+# Loaded once per process; cleared if the underlying files change (restart server).
+_KPI_CACHE: tuple[list[dict], list[dict]] | None = None
 
-def _load_all_kpis() -> tuple[list[dict], list[dict]]:
-    """Load all KPIs from JSON files.  Returns (kpis, events)."""
+
+def _load_all_kpis(force_reload: bool = False) -> tuple[list[dict], list[dict]]:
+    """Load all KPIs from JSON files.  Returns (kpis, events).
+    Results are cached in-process so disk is only read once per server start."""
+    global _KPI_CACHE
+    if _KPI_CACHE is not None and not force_reload:
+        return _KPI_CACHE
+
     all_kpis: list[dict] = []
     events: list[dict] = []
     seen_event_ids: set[str] = set()
@@ -42,19 +43,15 @@ def _load_all_kpis() -> tuple[list[dict], list[dict]]:
         if map_key in _EVENT_META:
             meta = _EVENT_META[map_key]
             if meta is None:
-                continue  # explicitly skipped (pointer / note file)
+                continue  # explicitly skipped
             event_id = meta["event_id"]
             event_name = meta["name"]
             cluster_label = meta["cluster"]
         else:
-            # Fallback: file stem IS the event name (files are now named
-            # after their DECA event exactly), and the folder name is the
-            # DECA cluster (title-cased, underscores replaced with spaces).
             event_id = file_stem.lower().replace(" ", "_")
-            event_name = file_stem  # already human-readable
+            event_name = file_stem
             cluster_label = folder_name.replace("_", " ").title()
 
-        # Skip empty files ───────────────────────────────────────────────────
         if json_file.stat().st_size == 0:
             continue
 
@@ -63,9 +60,17 @@ def _load_all_kpis() -> tuple[list[dict], list[dict]]:
         except Exception:
             continue
 
-        tiers = data.get("tiers", {})
+        # ── Accept both "tiers" and any top-level key that looks like a tier dict
+        # This handles files that use "tier3_accounting_pathway" etc. directly
+        tiers = data.get("tiers")
+        if tiers is None:
+            # Fall back: collect any top-level dict whose key starts with "tier"
+            tiers = {
+                k: v for k, v in data.items()
+                if isinstance(v, dict) and k.lower().startswith("tier")
+            }
         if not isinstance(tiers, dict) or not tiers:
-            continue  # no actual KPI data
+            continue
 
         # Count real indicators before registering the event ─────────────────
         has_indicators = any(
@@ -90,7 +95,10 @@ def _load_all_kpis() -> tuple[list[dict], list[dict]]:
             )
 
         for tier_key, tier_data in tiers.items():
-            tier_label = "Tier 1" if "tier1" in tier_key else "Tier 2"
+            tier_label = "Tier 1" if "tier1" in tier_key else (
+                "Tier 2" if "tier2" in tier_key else
+                "Tier 3" if "tier3" in tier_key else tier_key
+            )
             if not isinstance(tier_data, dict):
                 continue
             for kpi_cluster_name, cluster_data in tier_data.items():
@@ -113,7 +121,8 @@ def _load_all_kpis() -> tuple[list[dict], list[dict]]:
                         }
                     )
 
-    return all_kpis, events
+    _KPI_CACHE = (all_kpis, events)
+    return _KPI_CACHE
 
 
 def _supabase_svc(
@@ -142,8 +151,8 @@ def _fetch_kpi_questions(kpi_code: str) -> list[dict]:
         "/kpi_questions",
         params={
             "kpi_code": f"eq.{kpi_code}",
-            "select": "id,kpi_code,kpi_text,kpi_cluster,deca_cluster,event_id,question_text,choices,correct_index,explanation",
-            "order": "created_at.asc",
+            "select": "id,kpi_code,kpi_text,kpi_cluster,deca_cluster,event_id,question_text,choices,correct_index,explanation,question_type,quality_state,answer_reveal",
+            "order": "question_type.asc,created_at.asc",  # recognition before application
         },
     )
     if status == 200 and isinstance(rows, list):
@@ -151,10 +160,189 @@ def _fetch_kpi_questions(kpi_code: str) -> list[dict]:
     return []
 
 
+def _tokenize_text(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", (text or "").lower()) if len(t) > 2}
+
+
+def _quality_band(score: float) -> str:
+    if score >= 85:
+        return "excellent"
+    if score >= 70:
+        return "strong"
+    if score >= 55:
+        return "usable"
+    if score >= 40:
+        return "weak"
+    return "poor"
+
+
+def _bounded(score: float) -> int:
+    return max(0, min(100, int(round(score))))
+
+
+def _build_answer_reveal(question_text: str, choices: list, correct_index: int, explanation: str,
+                         distractor_quality: list[dict]) -> dict:
+    correct_choice = choices[correct_index] if 0 <= correct_index < len(choices) else ""
+    distractors = []
+    for item in distractor_quality:
+        if item.get("role") == "distractor":
+            distractors.append(
+                {
+                    "index": item.get("index"),
+                    "choice": item.get("choice", ""),
+                    "role": "distractor",
+                    "why_it_isnt_right": item.get("why_it_isnt_right", ""),
+                    "plausibility": item.get("score", 0),
+                }
+            )
+    return {
+        "correct_index": correct_index,
+        "correct_choice": correct_choice,
+        "prompt": question_text,
+        "explanation": explanation or "",
+        "distractors": distractors,
+    }
+
+
+def _compute_quality_state(question_text: str, choices: list, correct_index: int,
+                           explanation: str, question_type: str) -> dict:
+    """Heuristic MCQ + distractor quality state stored with each question."""
+    clean_choices = [str(choice or "").strip() for choice in (choices or [])[:4]]
+    while len(clean_choices) < 4:
+        clean_choices.append("")
+
+    correct_choice = clean_choices[correct_index] if 0 <= correct_index < 4 else ""
+    choice_tokens = [_tokenize_text(choice) for choice in clean_choices]
+    correct_tokens = choice_tokens[correct_index] if 0 <= correct_index < 4 else set()
+    unique_count = len({c.lower() for c in clean_choices if c})
+    non_empty = sum(1 for c in clean_choices if c)
+
+    stem_words = len(_tokenize_text(question_text))
+    stem_target = 18 if question_type == "application" else 12
+    stem_upper = 42 if question_type == "application" else 28
+    if stem_words < 6:
+        stem_score = 25
+    elif stem_words < stem_target:
+        stem_score = 55 + ((stem_words - 6) / max(stem_target - 6, 1)) * 30
+    elif stem_words <= stem_upper:
+        stem_score = 90
+    else:
+        stem_score = max(45, 90 - (stem_words - stem_upper) * 2)
+
+    explanation_words = len(_tokenize_text(explanation))
+    explanation_score = 35
+    if explanation_words >= 16:
+        explanation_score += 25
+    if explanation_words >= 30:
+        explanation_score += 20
+    if "because" in (explanation or "").lower():
+        explanation_score += 10
+    if "wrong" in (explanation or "").lower():
+        explanation_score += 10
+
+    uniqueness_score = 100 if non_empty == 0 else (unique_count / max(non_empty, 1)) * 100
+    balance_score = 50
+    if non_empty >= 2:
+        lengths = [len(choice) for choice in clean_choices if choice]
+        avg_len = sum(lengths) / len(lengths)
+        spread = sum(abs(length - avg_len) for length in lengths) / len(lengths)
+        balance_score = max(0, 100 - spread * 2.5)
+
+    distractor_state = []
+    distractor_scores = []
+    for idx, choice in enumerate(clean_choices):
+        tokens = choice_tokens[idx]
+        length = len(choice)
+        if idx == correct_index:
+            distractor_state.append(
+                {
+                    "index": idx,
+                    "choice": choice,
+                    "role": "correct",
+                    "score": 100,
+                    "level": "correct",
+                    "why_it_isnt_right": "",
+                }
+            )
+            continue
+
+        overlap = 0.0
+        if correct_tokens or tokens:
+            union = len(correct_tokens | tokens) or 1
+            overlap = len(correct_tokens & tokens) / union
+        length_ratio = min(length, len(correct_choice) or 1) / max(max(length, len(correct_choice)), 1)
+        plausibility = 100 - (abs(overlap - 0.25) * 130) - (abs(length_ratio - 0.80) * 40)
+        plausibility -= 10 if not choice else 0
+        plausibility = _bounded(plausibility)
+        level = _quality_band(plausibility)
+        distractor_state.append(
+            {
+                "index": idx,
+                "choice": choice,
+                "role": "distractor",
+                "score": plausibility,
+                "level": level,
+                "why_it_isnt_right": (
+                    "Too vague to compete with the correct answer"
+                    if plausibility < 40
+                    else "Plausible but weaker than the keyed answer"
+                ),
+            }
+        )
+        distractor_scores.append(plausibility)
+
+    mcq_score = (
+        stem_score * 0.30
+        + uniqueness_score * 0.15
+        + balance_score * 0.15
+        + explanation_score * 0.15
+        + (sum(distractor_scores) / max(len(distractor_scores), 1)) * 0.25
+    )
+    mcq_score = _bounded(mcq_score)
+
+    return {
+        "mcq_quality": {
+            "score": mcq_score,
+            "level": _quality_band(mcq_score),
+            "signals": {
+                "stem_score": _bounded(stem_score),
+                "uniqueness_score": _bounded(uniqueness_score),
+                "balance_score": _bounded(balance_score),
+                "explanation_score": _bounded(explanation_score),
+            },
+        },
+        "distractor_quality": distractor_state,
+        "answer_reveal": _build_answer_reveal(
+            question_text, clean_choices, correct_index, explanation, distractor_state
+        ),
+    }
+
+
+def _ensure_quality_state(row: dict) -> dict:
+    quality_state = row.get("quality_state") or {}
+    answer_reveal = row.get("answer_reveal") or {}
+    if quality_state and answer_reveal:
+        return quality_state
+
+    computed = _compute_quality_state(
+        row.get("question_text", ""),
+        row.get("choices", []),
+        int(row.get("correct_index", 0)),
+        row.get("explanation", ""),
+        row.get("question_type", "recognition"),
+    )
+    if not quality_state:
+        row["quality_state"] = computed
+    if not answer_reveal:
+        row["answer_reveal"] = computed["answer_reveal"]
+    return row["quality_state"]
+
+
 def _normalise_db_question(row: dict) -> dict:
     """Map a kpi_questions DB row to the shape the frontend expects."""
+    _ensure_quality_state(row)
     return {
-        "id": row.get("id", ""),  # Supabase UUID (used for answer recording)
+        "id": row.get("id", ""),
         "text": row.get("question_text", ""),
         "choices": row.get("choices", []),
         "correct": row.get("correct_index", 0),
@@ -164,6 +352,9 @@ def _normalise_db_question(row: dict) -> dict:
         "cluster": row.get("kpi_cluster", ""),
         "deca_cluster": row.get("deca_cluster", ""),
         "event_id": row.get("event_id", ""),
+        "question_type": row.get("question_type", "recognition"),
+        "quality_state": row.get("quality_state", {}) or {},
+        "answer_reveal": row.get("answer_reveal", {}) or {},
     }
 
 
@@ -177,33 +368,50 @@ def _save_questions_supabase(
 ) -> list[dict]:
     """
     Persist generated questions to kpi_questions.
-    If questions already exist for this KPI (>=30 rows) returns existing rows,
-    otherwise inserts new ones and returns the inserted rows with UUIDs.
+    If questions already exist for this KPI (>= 6 rows, at least 1 application)
+    returns existing rows. Otherwise inserts new ones and returns them with UUIDs.
     """
     existing = _fetch_kpi_questions(kpi_code)
-    if len(existing) >= 30:
+    has_application = any(r.get("question_type") == "application" for r in existing)
+    if len(existing) >= 6 and has_application:
         return [_normalise_db_question(r) for r in existing]
 
     rows = [
-        {
-            "kpi_code": kpi_code,
-            "kpi_text": kpi_text,
-            "kpi_cluster": kpi_cluster,
-            "deca_cluster": deca_cluster,
-            "event_id": event_id,
-            "question_text": q.get("text", ""),
-            "choices": q.get("choices", []),
-            "correct_index": int(q.get("correct", 0)),
-            "explanation": q.get("explanation", ""),
-        }
+        (
+            {
+                "kpi_code": kpi_code,
+                "kpi_text": kpi_text,
+                "kpi_cluster": kpi_cluster,
+                "deca_cluster": deca_cluster,
+                "event_id": event_id,
+                "question_text": q.get("text", ""),
+                "choices": q.get("choices", []),
+                "correct_index": int(q.get("correct", 0)),
+                "explanation": q.get("explanation", ""),
+                "question_type": q.get("question_type", "recognition"),
+            }
+        )
         for q in questions
         if q.get("text")
     ]
     if not rows:
         return []
 
+    enriched_rows = []
+    for row, q in zip(rows, [q for q in questions if q.get("text")]):
+        quality_state = _compute_quality_state(
+            row["question_text"],
+            row["choices"],
+            row["correct_index"],
+            row["explanation"],
+            row["question_type"],
+        )
+        row["quality_state"] = quality_state
+        row["answer_reveal"] = quality_state["answer_reveal"]
+        enriched_rows.append(row)
+
     status, saved = _supabase_svc(
-        "/kpi_questions", method="POST", payload=rows, prefer="return=representation"
+        "/kpi_questions", method="POST", payload=enriched_rows, prefer="return=representation"
     )
     if status in (200, 201) and isinstance(saved, list):
         return [_normalise_db_question(r) for r in saved]
@@ -295,8 +503,8 @@ def _update_kpi_mastery(
     )
 
     # Filter to questions belonging to this KPI
-    kpi_q_ids = {r["id"] for r in (q_rows or [])}
-    kpi_srs = [r for r in (srs_rows or []) if r.get("question_id") in kpi_q_ids]
+    kpi_q_ids = {r["id"] for r in (q_rows if isinstance(q_rows, list) else [])}
+    kpi_srs = [r for r in (srs_rows if isinstance(srs_rows, list) else []) if r.get("question_id") in kpi_q_ids]
 
     seen = len(kpi_srs)
     mastered = sum(1 for r in kpi_srs if r.get("interval_days", 0) >= 7)
@@ -406,7 +614,7 @@ def _get_kpi_meta(kpi_code: str) -> dict:
     """Return cluster/deca_cluster/event_id for a KPI code (cached)."""
     global _KPI_META_CACHE
     if not _KPI_META_CACHE:
-        kpis, _ = _load_all_kpis()
+        kpis, _ = _load_all_kpis()  # uses module-level cache
         _KPI_META_CACHE = {
             k["code"]: {
                 "cluster":      k["cluster"],
@@ -424,7 +632,7 @@ def get_due_kpis(user_id: str, token: str, event_id: str) -> list[dict]:
 
     all_kpis = [k for k in _load_all_kpis()[0] if k["event"] == event_id]
 
-    _, mastery_rows = supabase_rest_request(
+    mastery_status, mastery_rows = supabase_rest_request(
         "/user_kpi_mastery", token=token,
         params={
             "user_id":  f"eq.{user_id}",
@@ -433,7 +641,10 @@ def get_due_kpis(user_id: str, token: str, event_id: str) -> list[dict]:
         },
         prefer="",
     )
-    mastery_map = {r["kpi_code"]: r for r in (mastery_rows or [])}
+    # mastery_rows must be a list of dicts; on error Supabase returns a dict
+    if not isinstance(mastery_rows, list):
+        mastery_rows = []
+    mastery_map = {r["kpi_code"]: r for r in mastery_rows}
 
     now = datetime.utcnow().isoformat() + "Z"
     due = []

@@ -22,10 +22,10 @@ function setBox(boxId, textId, message, isVisible) {
 function persistUserProfile(user) {
   if (!user) return;
   const name = user.display_name || (user.email ? user.email.split('@')[0] : '');
-  if (!name) return;
-  try {
-    localStorage.setItem('displayName', name);
-  } catch (error) {}
+  try { if (name) localStorage.setItem('displayName', name); } catch(e) {}
+  // Hydrate event/cluster cache from the server-confirmed profile value.
+  // This is read-only sync — not a write intent. UserPrefs owns the write path.
+  UserPrefs.hydrateFromProfile(user);
 }
 
 function setEmailConfirmationHelp(visible, message) {
@@ -181,7 +181,9 @@ function transitionToOpening(triggerEl, source = 'signin') {
     document.body.classList.add('auth-route-opening');
   });
   window.setTimeout(() => {
-    window.location.href = '/app/opening.html';
+    // Redirect to appropriate page based on auth source
+    const redirectUrl = '/app/opening.html';
+    window.location.href = redirectUrl;
   }, duration);
 }
 
@@ -768,6 +770,43 @@ function init() {
   if (typeof applyClientEnvironment === 'function') {
     applyClientEnvironment();
   }
+  
+  // Check if user is already logged in and auto-redirect
+  const existingToken = Auth.getToken();
+  if (existingToken) {
+    // Verify token is valid by checking /auth/me
+    fetch('/auth/me', {
+      headers: {
+        'Authorization': `Bearer ${existingToken}`,
+        'Content-Type': 'application/json',
+      },
+      credentials: 'same-origin',
+    })
+      .then(res => {
+        if (res.ok) {
+          // Token is valid, redirect to the opening flow
+          transitionToOpening(null, 'signin');
+          return;
+        }
+        // Token expired, clear it and show signin form
+        Auth.clear();
+        setupSigninForm();
+      })
+      .catch(() => {
+        // Network error, clear and show signin form
+        Auth.clear();
+        setupSigninForm();
+      });
+    return;
+  }
+  
+  setupSigninForm();
+}
+
+function setupSigninForm() {
+  if (typeof applyClientEnvironment === 'function') {
+    applyClientEnvironment();
+  }
   bindNavigation();
   makeToggle('toggle-si-pass', 'si-pass', 'eye-icon-si');
   makeToggle('toggle-su-pass', 'su-pass', 'eye-icon-su');
@@ -803,7 +842,7 @@ function init() {
     byId('si-remember').checked = storedRemember;
   }
 
-  authModePromise.then((authMode) => {
+  handleAuthCallback().then((authMode) => {
     if (authMode === 'recovery') {
       showPage('reset');
     } else {
