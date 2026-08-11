@@ -184,11 +184,12 @@
                 sel.classList.add("saving");
                 sel.setAttribute("aria-busy", "true");
                 try {
+                    const competitionTier = sel.dataset.level === "states" ? "scdc" : sel.dataset.level;
                     const res = await apiFetch("/auth/profile", {
                         method: "PUT",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            competition_tier: sel.dataset.level,
+                            competition_tier: competitionTier,
                         }),
                     });
                     const data = await res.json().catch(() => ({}));
@@ -399,7 +400,7 @@
                         // events are objects { name, type } — extract the name
                         const evName = (typeof ev === "string") ? ev : ev.name;
                         const opt = document.createElement("option");
-                        opt.value = evName;
+                        opt.value = getEventIdByName(evName);
                         opt.textContent = evName;
                         eventSel.appendChild(opt);
                     });
@@ -409,22 +410,26 @@
                     populateEvents(clusterSel.value);
                 });
 
+                eventSel.addEventListener("change", () => {
+                    void saveEventSelection();
+                });
+
                 // Initial state: dropdowns will be populated by loadSettings() from the server profile
             })();
 
             async function saveEventSelection() {
                 const clusterSel = document.getElementById("select-deca-cluster");
                 const eventSel = document.getElementById("select-deca-event");
-                const btn = document.getElementById("btn-save-event");
-                const eventName = eventSel ? eventSel.value : "";
-                if (!eventName) {
-                    ErrorManager.show("Please select a cluster and event first.", "error");
-                    return;
-                }
-                await doSave(btn, async () => {
-                    const clusterName = clusterSel ? clusterSel.value : "";
+                const eventId = eventSel ? eventSel.value : "";
+                if (!eventId || !clusterSel?.value) return;
+                const eventName = eventSel.selectedOptions[0]?.textContent || "";
+                const previousEventId = UserPrefs.getEventId();
+                const previousCluster = UserPrefs.getCluster();
+                eventSel.disabled = true;
+                clusterSel.disabled = true;
+                try {
+                    const clusterName = clusterSel.value;
                     // UserPrefs.setEvent owns all event writes — server first, cache on confirm
-                    const eventId = getEventIdByName(eventName);
                     const result = await UserPrefs.setEvent(
                         eventId,
                         eventName,
@@ -432,12 +437,15 @@
                     );
                     if (!result) {
                         ErrorManager.show("Failed to save event selection.", "error");
-                        return false;
+                        clusterSel.value = previousCluster;
+                        eventSel.value = previousEventId;
+                        return;
                     }
-                    const lbl = document.getElementById("event-current-label");
-                    if (lbl) lbl.textContent = "Currently studying: " + eventName;
-                    return true;
-                });
+                    ErrorManager.show("Event saved.", "success");
+                } finally {
+                    clusterSel.disabled = false;
+                    eventSel.disabled = !clusterSel.value;
+                }
             }
 
             /* ──────────────────────────────────────────────────────────────
@@ -732,9 +740,10 @@
                         getInitials(name);
 
                     // ── Competition ───────────────────────────────────────────
-                    const tier = (
+                    const savedTier = (
                         u.competition_tier || "districts"
                     ).toLowerCase();
+                    const tier = savedTier === "scdc" ? "states" : savedTier;
                     const tierEl = document.querySelector(
                         '.comp-opt[data-level="' + tier + '"]',
                     );
@@ -766,19 +775,20 @@
                     UserPrefs.hydrateFromProfile(u);
 
                     // Populate the dropdowns from the now-reliable cache
-                    const resolvedEvent   = UserPrefs.getEvent();
+                    const resolvedEventId = UserPrefs.getEventId();
+                    const resolvedEventName = UserPrefs.getEventName();
                     const resolvedCluster = UserPrefs.getCluster() || (() => {
                         // Derive cluster from event name if profile didn't store it
-                        if (resolvedEvent && typeof CLUSTERS !== "undefined") {
+                        if (resolvedEventName && typeof CLUSTERS !== "undefined") {
                             const found = CLUSTERS.find(c =>
-                                c.events.some(ev => (typeof ev === "string" ? ev : ev.name) === resolvedEvent)
+                                c.events.some(ev => (typeof ev === "string" ? ev : ev.name) === resolvedEventName)
                             );
                             return found ? found.name : "";
                         }
                         return "";
                     })();
 
-                    if (resolvedCluster || resolvedEvent) {
+                    if (resolvedCluster || resolvedEventId) {
                         const clusterSel = document.getElementById("select-deca-cluster");
                         const eventSel   = document.getElementById("select-deca-event");
                         if (clusterSel && resolvedCluster) {
@@ -790,19 +800,17 @@
                                     const ph = document.createElement("option");
                                     ph.value = ""; ph.textContent = "— Select an event —";
                                     eventSel.appendChild(ph);
-                                    cluster.events.forEach(ev => {
+                                    supportedBetaEvents(cluster).forEach(ev => {
                                         const evName = (typeof ev === "string") ? ev : ev.name;
                                         const opt = document.createElement("option");
-                                        opt.value = evName; opt.textContent = evName;
+                                        opt.value = getEventIdByName(evName); opt.textContent = evName;
                                         eventSel.appendChild(opt);
                                     });
                                     eventSel.disabled = false;
-                                    if (resolvedEvent) eventSel.value = resolvedEvent;
+                                    if (resolvedEventId) eventSel.value = resolvedEventId;
                                 }
                             }
                         }
-                        const lbl = document.getElementById("event-current-label");
-                        if (lbl && resolvedEvent) lbl.textContent = "Currently studying: " + resolvedEvent;
                     }
 
                     // ── Local-only prefs (login notifications) ────────────────

@@ -443,11 +443,15 @@ const UserPrefs = {
   hydrateFromProfile(user) {
     if (!user) return;
     let eventId   = user.default_event_id || '';
-    const eventName = user.default_event  || '';
+    let eventName = user.default_event  || '';
     const clusterName = user.default_cluster || '';
 
     if (typeof getEventIdByName === 'function') {
       eventId = getEventIdByName(eventId || eventName || '');
+    }
+
+    if (eventId && typeof getEventNameById === 'function') {
+      eventName = getEventNameById(eventId) || eventName;
     }
 
     // Migration: old profiles stored name in default_event, no slug yet

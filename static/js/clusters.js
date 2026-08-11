@@ -200,6 +200,17 @@ function getEventIdByName(eventName) {
   return lowered.replace(/ /g, "_");
 }
 
+function getEventNameById(eventId) {
+  const canonicalId = getEventIdByName(eventId);
+  for (const cluster of CLUSTERS) {
+    for (const event of supportedBetaEvents(cluster)) {
+      const name = typeof event === "string" ? event : event.name;
+      if (getEventIdByName(name) === canonicalId) return name;
+    }
+  }
+  return "";
+}
+
 /**
  * Return the accent color for a given DECA cluster name.
  * Falls back to the app's default cyan if not found.

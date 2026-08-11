@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUTH_PY = (ROOT / "app" / "routes" / "auth.py").read_text(encoding="utf-8")
 AUTH_JS = (ROOT / "static" / "js" / "auth.js").read_text(encoding="utf-8")
 COMMON_JS = (ROOT / "static" / "js" / "common.js").read_text(encoding="utf-8")
+CLUSTERS_JS = (ROOT / "static" / "js" / "clusters.js").read_text(encoding="utf-8")
 SETTINGS_JS = (ROOT / "static" / "js" / "settings.js").read_text(encoding="utf-8")
 SETTINGS_HTML = (ROOT / "templates" / "settings.html").read_text(encoding="utf-8")
 SETTINGS_CSS = (ROOT / "static" / "styles" / "settings.css").read_text(
@@ -62,7 +63,19 @@ class DarkOnlySettingsContracts(unittest.TestCase):
         self.assertNotIn("Currently set to:", SETTINGS_HTML)
         self.assertNotIn("btn-save-comp", SETTINGS_HTML + SETTINGS_JS)
         self.assertIn("void saveComp(el, previous)", SETTINGS_JS)
-        self.assertIn('competition_tier: sel.dataset.level', SETTINGS_JS)
+        self.assertIn('competition_tier: competitionTier', SETTINGS_JS)
+        self.assertIn('sel.dataset.level === "states" ? "scdc"', SETTINGS_JS)
+
+    def test_event_dropdown_uses_canonical_ids_and_auto_saves(self):
+        self.assertNotIn("event-current-label", SETTINGS_HTML + SETTINGS_JS)
+        self.assertNotIn("btn-save-event", SETTINGS_HTML + SETTINGS_JS)
+        self.assertIn('opt.value = getEventIdByName(evName)', SETTINGS_JS)
+        self.assertIn('void saveEventSelection()', SETTINGS_JS)
+        self.assertIn('const resolvedEventId = UserPrefs.getEventId()', SETTINGS_JS)
+        self.assertIn('const resolvedEventName = UserPrefs.getEventName()', SETTINGS_JS)
+        self.assertNotIn('const resolvedEvent   = UserPrefs.getEvent()', SETTINGS_JS)
+        self.assertIn('function getEventNameById(eventId)', CLUSTERS_JS)
+        self.assertIn('eventName = getEventNameById(eventId) || eventName', COMMON_JS)
 
 
 if __name__ == "__main__":
