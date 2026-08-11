@@ -2490,3 +2490,88 @@ body {
         grid-column: 2;
     }
 }
+
+/* Learn home after removing event and status metadata */
+#view-home .learn-home-controls {
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
+    margin-top: 0;
+}
+
+#view-home #start-btn {
+    grid-row: 2;
+    order: 2;
+}
+
+#view-home .widgets-section {
+    grid-row: 3;
+    order: 3;
+}
+
+#view-home .progress-title {
+    grid-row: 4;
+    order: 4;
+}
+
+#view-home .dashboard-summary {
+    grid-row: 5;
+    order: 5;
+}
+
+#view-home #mastery-panel {
+    grid-row: 6;
+    order: 6;
+}
+
+#view-home .study-row {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+}
+
+#view-home .study-row-score {
+    color: var(--cyan);
+}
+
+@media (max-width: 760px) {
+    #view-home .learn-home-controls,
+    #view-home #start-btn,
+    #view-home .widgets-section,
+    #view-home .progress-title,
+    #view-home .dashboard-summary,
+    #view-home #mastery-panel {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    #view-home .learn-home-controls {
+        order: 2;
+    }
+
+    #view-home #start-btn {
+        order: 3;
+    }
+
+    #view-home .widgets-section {
+        order: 4;
+    }
+
+    #view-home .progress-title {
+        order: 5;
+    }
+
+    #view-home .dashboard-summary {
+        order: 6;
+    }
+
+    #view-home #mastery-panel {
+        order: 7;
+    }
+
+    #view-home .study-row {
+        grid-template-columns: 58px minmax(0, 1fr) auto;
+    }
+
+    #view-home .study-row-score {
+        grid-column: auto;
+    }
+}

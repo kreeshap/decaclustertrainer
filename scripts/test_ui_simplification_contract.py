@@ -39,8 +39,22 @@ class UiSimplificationContractTests(unittest.TestCase):
 
     def test_learn_dashboard_is_compact_and_left_aligned(self) -> None:
         template = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
+        script = (ROOT / "static/js/learn.js").read_text(encoding="utf-8")
         styles = (ROOT / "static/styles/learn.css").read_text(encoding="utf-8")
-        self.assertIn("Recommended for you", template)
+        self.assertIn("Next 3 KPIs to learn", template)
+        for removed_text in (
+            "Current event",
+            "Recommended for you",
+            "Continue where you left off",
+            "hero-topic-count",
+            "hero-mode-chip",
+            "hero-progress-chip",
+        ):
+            self.assertNotIn(removed_text, template)
+        for removed_status in ("Start here", '"Ready"', '"2 min"'):
+            self.assertNotIn(removed_status, script)
+        self.assertIn("source.length >= 3", script)
+        self.assertIn('<span class="study-row-score">Learn</span>', script)
         self.assertIn('class="progress-title">Your progress</div>', template)
         self.assertIn("max-width: 1240px", styles)
         self.assertIn("--radius-sm: 6px", styles)

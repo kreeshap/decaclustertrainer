@@ -122,20 +122,22 @@
                 const list = $("learning-path-list");
                 if (!list) return;
 
-                const weak = (analyticsData && Array.isArray(analyticsData.weak_kpis))
-                    ? analyticsData.weak_kpis.slice(0, 3)
-                    : [];
-                const source = weak.length
-                    ? weak.map((item) => ({
-                        code: item.kpi_code || item.code || "",
-                        text: item.kpi_text || item.text || "",
-                        score: Math.round(item.mastery_score || 0),
-                    }))
-                    : allKpis.slice(0, 3).map((kpi, idx) => ({
-                        code: kpi.code,
-                        text: kpi.text,
-                        score: idx === 0 ? "Start here" : "Ready",
-                    }));
+                const source = [];
+                const seen = new Set();
+                [
+                    ...(kpiGroups.unstarted || []),
+                    ...(kpiGroups.due || []),
+                    ...(kpiGroups.in_progress || []),
+                    ...allKpis,
+                ].forEach((kpi) => {
+                    const code = kpi.kpi_code || kpi.code || "";
+                    if (!code || seen.has(code) || source.length >= 3) return;
+                    seen.add(code);
+                    source.push({
+                        code,
+                        text: kpi.kpi_text || kpi.text || code,
+                    });
+                });
 
                 list.innerHTML = "";
                 if (!source.length) {
@@ -150,70 +152,18 @@
                     const btn = document.createElement("button");
                     btn.type = "button";
                     btn.className = "study-row";
-                    const numericScore = Number(item.score);
-                    const mastery = Number.isFinite(numericScore) ? Math.max(0, Math.min(100, Math.round(numericScore))) : null;
-                    const difficulty = mastery === null
-                        ? "ready"
-                        : mastery >= 80
-                            ? "easy"
-                            : mastery >= 60
-                                ? "building"
-                                : "focus";
-                    const minutes = mastery === null
-                        ? "2 min"
-                        : mastery >= 80
-                            ? "2 min"
-                            : mastery >= 60
-                                ? "3 min"
-                                : "5 min";
-                    const difficultyLabel = mastery === null
-                        ? (item.score === "Start here" ? "Start" : "Ready")
-                        : mastery >= 80
-                            ? "Warm"
-                            : mastery >= 60
-                                ? "Building"
-                                : "Focus";
-                    const masteryLabel = mastery === null
-                        ? (item.score === "Start here" ? "Start here" : "Ready")
-                        : `${mastery}% learned`;
-                    const barWidth = mastery === null ? 24 : Math.max(12, mastery);
-                    const accent = mastery === null
-                        ? "var(--cyan)"
-                        : mastery >= 80
-                            ? "var(--green)"
-                            : mastery >= 60
-                                ? "var(--yellow)"
-                                : "var(--red)";
-                    btn.dataset.difficulty = difficulty;
-                    btn.style.setProperty("--study-accent", accent);
                     btn.innerHTML =
                         `<span class="study-row-code">${escHtml(item.code || "")}</span>` +
                         `<span class="study-row-text">` +
                             `<strong>${escHtml(item.text || "")}</strong>` +
-                            `<span class="study-row-meta">${escHtml(difficultyLabel)} • ${escHtml(minutes)} • ${escHtml(masteryLabel)}</span>` +
-                            `<span class="study-row-track"><span class="study-row-fill" style="width:${barWidth}%"></span></span>` +
                         `</span>` +
-                        `<span class="study-row-score">${item.score === "Start here" ? "Start" : "Continue"}</span>`;
+                        `<span class="study-row-score">Learn</span>`;
                     btn.addEventListener("click", () => focusSessionOnKpi(item.code));
                     list.appendChild(btn);
                 });
             }
 
             function renderLearnHome() {
-                const topicCountEl = $("hero-topic-count");
-                if (topicCountEl) {
-                    topicCountEl.textContent = allKpis.length
-                        ? `${kpiGroups.unstarted.length} new · ${kpiGroups.due.length} due · ${kpiGroups.mastered.length} mastered`
-                        : "No topics loaded";
-                }
-
-                const modeChip = $("hero-mode-chip");
-                if (modeChip) {
-                    const activeMode = document.querySelector(".mode-btn.active");
-                    const label = activeMode ? activeMode.textContent.trim() : "Active Recall";
-                    modeChip.textContent = label + " selected";
-                }
-
                 const startBtn = $("start-btn");
                 if (startBtn) {
                     startBtn.textContent = allKpis.length
@@ -222,32 +172,12 @@
                     startBtn.disabled = !allKpis.length;
                 }
 
-                const progressChip = $("hero-progress-chip");
-                if (progressChip) {
-                    const sum = analyticsData && analyticsData.summary ? analyticsData.summary : null;
-                    const mastered = Number(sum?.mastered_kpis || 0);
-                    const masteredPct = allKpis.length
-                        ? Math.round((mastered / allKpis.length) * 100)
-                        : 0;
-                    const hasActivity = !!(sum && ((sum.avg_mastery || 0) > 0 || mastered > 0 || (sum.questions_due || 0) > 0 || (sum.streak_days || 0) > 0));
-                    progressChip.textContent = hasActivity
-                        ? `${masteredPct || Math.round(Number(sum?.avg_mastery || 0)) || 0}% learned`
-                        : "Progress stats unlock after your first session";
-                }
-
-                const heroNote = $("hero-note");
-                if (heroNote) {
-                    heroNote.textContent = allKpis.length
-                        ? "Continue where you left off. Search or jump to the next recommended concept."
-                        : "Choose an event in Settings, then search or start a session.";
-                }
-
                 const dashSummary = $("dashboard-summary");
                 if (dashSummary) {
                     dashSummary.style.display = "flex";
                     const sum = analyticsData && analyticsData.summary ? analyticsData.summary : null;
                     const mastery = sum ? Math.round(Number(sum.avg_mastery || 0)) : 0;
-                    const due = Number(sum?.questions_due || allKpis.length || 0);
+                    const due = Number(sum?.questions_due ?? kpiGroups.due.length ?? 0);
                     const streak = Number(sum?.streak_days || 0);
                     const mastered = Number(sum?.mastered_kpis || 0);
                     const learnedLabel = allKpis.length ? `${Math.min(100, Math.round((mastered / allKpis.length) * 100))}%` : "--";
@@ -289,8 +219,7 @@
                 const eventIdForApi = resolveEventSlug(savedEventId || savedEventName);
 
                 if (!eventIdForApi) {
-                    $("event-header-name").textContent =
-                        "No event selected — go to Settings to choose your event.";
+                    ErrorManager.show("Choose an event in Settings before starting Learn Mode.", "error");
                     return;
                 }
 
@@ -303,15 +232,9 @@
                     // Match by slug — no name-based fallback, no events[0]
                     const ev = events.find((e) => e.id === eventIdForApi) || null;
                     if (!ev) {
-                        $("event-header-name").textContent =
-                            "Event not found — go to Settings to update your selection.";
+                        ErrorManager.show("Your saved event is unavailable. Choose it again in Settings.", "error");
                         return;
                     }
-
-                    const color = clusterColor(ev.cluster || "");
-                    $("event-header-card").style.setProperty("--ev-color", color);
-                    $("event-header-name").textContent = ev.name;
-                    $("event-header-cluster").textContent = ev.cluster || "";
 
                     currentEventId = ev.id || "";
                     currentEventName = ev.name || "";
@@ -327,14 +250,6 @@
                         in_progress: data.in_progress || [],
                         mastered: data.mastered || [],
                     };
-
-                    const clusterEl = $("event-header-cluster");
-                    if (clusterEl) {
-                        const clusterLabel = ev.cluster || "Study";
-                        clusterEl.textContent = allKpis.length
-                            ? `${clusterLabel} · ${allKpis.length} topics`
-                            : clusterLabel;
-                    }
 
                     const btn = $("start-btn");
                     if (allKpis.length) {
@@ -370,8 +285,7 @@
                         });
                     });
                 } catch (e) {
-                    $("event-header-name").textContent =
-                        "Failed to load — please refresh.";
+                    ErrorManager.show("Learn Mode failed to load. Please refresh.", "error");
                 }
             }
 
