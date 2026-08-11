@@ -478,59 +478,6 @@
             /* ──────────────────────────────────────────────────────────────
        THEME  (saves immediately on click + applies to page)
     ────────────────────────────────────────────────────────────── */
-            function applyTheme(theme) {
-                const root = document.documentElement;
-                // Remove any existing theme class
-                root.classList.remove("theme-light", "theme-dark", "theme-system");
-
-                let effective = theme;
-                if (theme === "system") {
-                    effective = window.matchMedia("(prefers-color-scheme: light)").matches
-                        ? "light"
-                        : "dark";
-                }
-
-                if (effective === "light") {
-                    root.classList.add("theme-light");
-                    root.style.colorScheme = "light";
-                } else {
-                    root.classList.add("theme-dark");
-                    root.style.colorScheme = "dark";
-                }
-            }
-
-            async function selectTheme(el) {
-                document
-                    .querySelectorAll(".theme-opt")
-                    .forEach((o) => o.classList.remove("selected"));
-                el.classList.add("selected");
-                const theme = el.dataset.theme;
-
-                // Apply immediately so user sees the change
-                applyTheme(theme);
-
-                try {
-                    const res = await apiFetch("/auth/profile", {
-                        method: "PUT",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ theme }),
-                    });
-                    const data = await res.json().catch(() => ({}));
-                    if (!res.ok) {
-                        ErrorManager.show(
-                            data.detail || "Failed to save theme.",
-                            "error",
-                        );
-                    } else {
-                        ErrorManager.show("Theme saved.", "success");
-                        // Persist for next page load
-                        try { localStorage.setItem("ct_theme", theme); } catch(e) {}
-                    }
-                } catch (err) {
-                    ErrorManager.show("Could not save theme.", "error");
-                }
-            }
-
             /* ──────────────────────────────────────────────────────────────
        STUDY GOALS  (NEW)
     ────────────────────────────────────────────────────────────── */
@@ -794,17 +741,6 @@
                     }
 
                     // ── Theme ─────────────────────────────────────────────────────
-                    const theme = u.theme || "dark";
-                    document.querySelectorAll(".theme-opt").forEach((el) => {
-                        el.classList.toggle(
-                            "selected",
-                            el.dataset.theme === theme,
-                        );
-                    });
-                    // Apply theme to the page immediately on load
-                    applyTheme(theme);
-                    try { localStorage.setItem("ct_theme", theme); } catch(e) {}
-
                     // ── Study goals ───────────────────────────────────────────
                     if (u.study_goal_minutes != null)
                         document.getElementById("input-study-minutes").value =

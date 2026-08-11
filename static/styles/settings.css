@@ -15,23 +15,6 @@
     --success: #3ecf8e;
 }
 
-/* ── Light mode overrides ── */
-html.theme-light {
-    color-scheme: light;
-    --bg: #f0f7f7;
-    --panel: #ddeee9;
-    --input: #e8f3f0;
-    --border: #b2d8d0;
-    --border2: #8ec8bc;
-    --cyan: #007a94;
-    --cyan-glow: rgba(0, 122, 148, 0.12);
-    --white: #0d2020;
-    --muted: #3a7070;
-    --danger: #c03030;
-    --danger-bg: rgba(192, 48, 48, 0.08);
-    --success: #1a8a5a;
-}
-
 *,
 *::before,
 *::after {
@@ -612,14 +595,6 @@ body {
     display: block;
     margin-bottom: 4px;
 }
-.comp-opt .comp-desc {
-    font-size: 0.75rem;
-    color: var(--muted);
-}
-.comp-opt.selected .comp-desc {
-    color: var(--white);
-}
-
 /* ── Password strength ── */
 .pw-strength {
     display: flex;
@@ -710,48 +685,6 @@ body {
     border: 1px solid rgba(0, 194, 224, 0.25);
     border-radius: 4px;
     padding: 2px 7px;
-}
-
-/* ── Theme pills ── */
-.theme-options {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 14px;
-}
-.theme-opt {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1.5px solid var(--border2);
-    background: var(--input);
-    cursor: pointer;
-    text-align: center;
-    transition: border-color 0.15s;
-}
-.theme-opt.selected {
-    border-color: var(--cyan);
-}
-.theme-preview {
-    height: 28px;
-    border-radius: 4px;
-    margin-bottom: 7px;
-    border: 1px solid var(--border);
-}
-.theme-dark-preview {
-    background: #0b1f1f;
-}
-.theme-light-preview {
-    background: #e8f7f5;
-}
-.theme-system-preview {
-    background: linear-gradient(90deg, #0b1f1f 50%, #e8f7f5 50%);
-}
-.theme-opt span {
-    font-size: 0.78rem;
-    color: var(--muted);
-}
-.theme-opt.selected span {
-    color: var(--cyan);
 }
 
 /* ── Coming soon badge ── */

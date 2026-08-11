@@ -216,7 +216,7 @@ function updatePasswordStrength() {
 async function handleAuthCallback() {
   const url = new URL(window.location.href);
   const type = url.searchParams.get('type') || url.hash.match(/type=([^&]+)/)?.[1] || '';
-  const token =
+  let token =
     url.searchParams.get('access_token') ||
     url.searchParams.get('token') ||
     url.hash.match(/access_token=([^&]+)/)?.[1] ||
@@ -225,8 +225,48 @@ async function handleAuthCallback() {
     url.searchParams.get('refresh_token') ||
     url.hash.match(/refresh_token=([^&]+)/)?.[1] ||
     url.hash.match(/refresh=([^&]+)/)?.[1];
+  const tokenHash =
+    url.searchParams.get('token_hash') ||
+    url.hash.match(/token_hash=([^&]+)/)?.[1];
 
-  if (!token) return;
+  if (!token && tokenHash && type === 'recovery') {
+    try {
+      const verifyResponse = await fetch('/auth/password-reset/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          token_hash: decodeURIComponent(tokenHash),
+          type: 'recovery',
+        }),
+      });
+      const verifyData = await verifyResponse.json().catch(() => ({}));
+      if (!verifyResponse.ok || !verifyData.access_token) {
+        throw new Error(
+          verifyData.detail || 'This password recovery link is invalid or expired.',
+        );
+      }
+      token = verifyData.access_token;
+    } catch (error) {
+      showPage('reset');
+      setBox('rp-err', 'rp-err-text', error.message, true);
+      return 'recovery-error';
+    }
+  }
+
+  if (!token) {
+    if (type === 'recovery' || url.pathname === '/reset-password') {
+      showPage('reset');
+      setBox(
+        'rp-err',
+        'rp-err-text',
+        'This password recovery link is invalid or expired. Request a new link.',
+        true,
+      );
+      return 'recovery-error';
+    }
+    return null;
+  }
 
   const decodedToken = decodeURIComponent(token);
   const rememberMe = Auth.getRememberPreference();
@@ -843,7 +883,8 @@ function setupSigninForm() {
   }
 
   handleAuthCallback().then((authMode) => {
-    if (authMode === 'recovery') {
+    const isRecovery = authMode === 'recovery' || authMode === 'recovery-error';
+    if (isRecovery) {
       showPage('reset');
     } else {
       showPage('signin');
@@ -854,11 +895,13 @@ function setupSigninForm() {
     clearBox('su-ok', 'su-ok-text');
     clearBox('fo-err', 'fo-err-text');
     clearBox('fo-ok', 'fo-ok-text');
-    clearBox('rp-err', 'rp-err-text');
+    if (authMode !== 'recovery-error') {
+      clearBox('rp-err', 'rp-err-text');
+    }
     clearBox('rp-ok', 'rp-ok-text');
     updatePasswordStrength();
 
-    if (typeof requireAuth === 'function' && authMode !== 'recovery') {
+    if (typeof requireAuth === 'function' && !isRecovery) {
       requireAuth();
     }
   });

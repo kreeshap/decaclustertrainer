@@ -408,7 +408,7 @@ def password_reset_request():
 
     existing_user, lookup_error = find_supabase_user_by_email(email)
     if not lookup_error and existing_user:
-        redirect_to = f"{request.host_url.rstrip('/')}/reset-password"
+        redirect_to = f"{app_base_url()}/reset-password"
         supabase_request(
             "/recover",
             method="POST",
@@ -423,6 +423,31 @@ def password_reset_request():
             "message": "If an account exists, a reset link has been sent. Check your email."
         }
     )
+
+
+@auth_bp.post("/auth/password-reset/verify")
+def password_reset_verify():
+    payload = request.get_json(silent=True) or {}
+    token_hash = (payload.get("token_hash") or "").strip()
+    recovery_type = (payload.get("type") or "recovery").strip().lower()
+
+    if not token_hash or recovery_type != "recovery":
+        return jsonify({"detail": "Invalid password recovery link."}), 400
+
+    status, data = supabase_request(
+        "/verify",
+        method="POST",
+        payload={"token_hash": token_hash, "type": "recovery"},
+    )
+    if status != 200:
+        return jsonify(
+            {
+                "detail": supabase_error_message(data)
+                or "This password recovery link is invalid or expired."
+            }
+        ), status
+
+    return auth_response(data, remember_me=False, pending_context="signin")
 
 
 @auth_bp.post("/auth/password-reset/complete")

@@ -1,15 +1,11 @@
 // ── Theme bootstrap — apply saved theme before any paint ────────────────────
 (function() {
   try {
-    var theme = localStorage.getItem('ct_theme') || 'dark';
     var root = document.documentElement;
     root.classList.remove('theme-light', 'theme-dark', 'theme-system');
-    var effective = theme;
-    if (theme === 'system') {
-      effective = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    }
-    root.classList.add('theme-' + effective);
-    root.style.colorScheme = effective;
+    root.classList.add('theme-dark');
+    root.style.colorScheme = 'dark';
+    localStorage.removeItem('ct_theme');
   } catch(e) {}
 })();
 

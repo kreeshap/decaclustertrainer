@@ -105,19 +105,6 @@
 
                 <a
                     class="sidebar-item"
-                    href="#appearance"
-                    onclick="navTo(event, 'appearance')"
-                >
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                        ></path>
-                    </svg>
-                    Appearance &amp; Theme
-                </a>
-                <a
-                    class="sidebar-item"
                     href="#event-selection"
                     onclick="navTo(event, 'event-selection')"
                 >
@@ -315,7 +302,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Save profile changes</strong>
-                                <span>Update your display name</span>
                             </div>
                             <button
                                 class="row-btn primary"
@@ -333,14 +319,6 @@
       ════════════════════════════════════════ -->
                 <div class="settings-section" id="competition">
                     <div class="settings-section-title">Competition Level</div>
-                    <p
-                        style="
-                            font-size: 0.85rem;
-                            color: var(--muted);
-                            margin: 0 0 14px;
-                            line-height: 1.55;
-                        "
-                    ></p>
                     <div class="comp-options" id="comp-options">
                         <div
                             class="comp-opt"
@@ -348,9 +326,6 @@
                             onclick="setComp(this)"
                         >
                             <span class="comp-badge">Districts</span>
-                            <div class="comp-desc">
-                                Regional qualifying competition
-                            </div>
                         </div>
                         <div
                             class="comp-opt"
@@ -358,7 +333,6 @@
                             onclick="setComp(this)"
                         >
                             <span class="comp-badge">States</span>
-                            <div class="comp-desc">State-level competition</div>
                         </div>
                         <div
                             class="comp-opt"
@@ -366,9 +340,6 @@
                             onclick="setComp(this)"
                         >
                             <span class="comp-badge">ICDC</span>
-                            <div class="comp-desc">
-                                International Career Development Conference
-                            </div>
                         </div>
                     </div>
                     <div class="setting-row-group">
@@ -376,10 +347,6 @@
                             <div class="row-label">
                                 <strong id="comp-current-label"
                                     >Currently set to: —</strong
-                                >
-                                <span
-                                    >Affects question pools, difficulty scaling,
-                                    and tips</span
                                 >
                             </div>
                             <button
@@ -419,7 +386,6 @@
                             >
                                 <div class="row-label">
                                     <strong>Password</strong>
-                                    <span>Change your account password</span>
                                 </div>
                                 <button
                                     class="row-btn"
@@ -503,10 +469,6 @@
                                         >Coming soon</span
                                     ></strong
                                 >
-                                <span
-                                    >Add an extra layer of security to your
-                                    login</span
-                                >
                             </div>
                             <div class="toggle-wrap">
                                 <span class="toggle-label">Off</span>
@@ -526,38 +488,11 @@
                 <!-- ════════════════════════════════════════
            APPEARANCE & THEME
       ════════════════════════════════════════ -->
-                <div class="settings-section" id="appearance">
-                    <div class="settings-section-title">Appearance & Theme</div>
-                    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">
-                        Choose how the app looks while you study.
-                    </p>
-                    <div class="theme-options">
-                        <div class="theme-opt" data-theme="dark" onclick="selectTheme(this)">
-                            <div class="theme-preview theme-dark-preview"></div>
-                            <strong>Dark</strong>
-                            <span>Classic dark mode</span>
-                        </div>
-                        <div class="theme-opt" data-theme="light" onclick="selectTheme(this)">
-                            <div class="theme-preview theme-light-preview"></div>
-                            <strong>Light</strong>
-                            <span>Bright light mode</span>
-                        </div>
-                        <div class="theme-opt" data-theme="system" onclick="selectTheme(this)">
-                            <div class="theme-preview theme-system-preview"></div>
-                            <strong>System</strong>
-                            <span>Match your OS preference</span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- ════════════════════════════════════════
            EVENT SELECTION
       ════════════════════════════════════════ -->
                 <div class="settings-section" id="event-selection">
                     <div class="settings-section-title">Event Selection</div>
-                    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">
-                        Choose the DECA cluster and event you want to study in Learn mode.
-                    </p>
                     <div style="padding:16px 18px;background:rgba(19,47,47,0.3);border:1px solid var(--border);border-radius:8px;margin-bottom:14px;">
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                             <div class="field-group">
@@ -578,7 +513,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong id="event-current-label">Currently studying: —</strong>
-                                <span>Saved event is loaded when you start Learn mode</span>
                             </div>
                             <button class="row-btn primary" id="btn-save-event" onclick="saveEventSelection()">
                                 Save
@@ -592,16 +526,6 @@
   ════════════════════════════════════════ -->
                 <div class="settings-section" id="study-goals">
                     <div class="settings-section-title">Study Goals</div>
-                    <p
-                        style="
-                            font-size: 0.85rem;
-                            color: var(--muted);
-                            margin: 0 0 14px;
-                            line-height: 1.55;
-                        "
-                    >
-                        Set daily targets to build a consistent study habit.
-                    </p>
                     <div
                         style="
                             padding: 16px 18px;
@@ -652,10 +576,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Save study goals</strong>
-                                <span
-                                    >Track your daily progress toward these
-                                    targets</span
-                                >
                             </div>
                             <button
                                 class="row-btn primary"
@@ -677,10 +597,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Track study progress</strong>
-                                <span
-                                    >Allow the app to record your session
-                                    history and KPI scores</span
-                                >
                             </div>
                             <div class="toggle-wrap">
                                 <span
@@ -700,7 +616,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Save privacy settings</strong>
-                                <span></span>
                             </div>
                             <button
                                 class="row-btn primary"
@@ -722,10 +637,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Export my data</strong>
-                                <span
-                                    >Download a JSON file of all your account
-                                    data and progress</span
-                                >
                             </div>
                             <button
                                 class="row-btn primary"
@@ -738,10 +649,6 @@
                         <div class="setting-row">
                             <div class="row-label">
                                 <strong>Reset all progress</strong>
-                                <span
-                                    >Wipe your session history, scores, and KPI
-                                    records</span
-                                >
                             </div>
                             <button class="row-btn danger" id="btn-reset-progress" onclick="resetProgress()">
                                 Reset progress
@@ -771,10 +678,6 @@
                             <div class="row-label">
                                 <strong style="color: var(--danger)"
                                     >Permanently delete account</strong
-                                >
-                                <span
-                                    >This action is irreversible. All your data
-                                    will be deleted immediately.</span
                                 >
                             </div>
                             <button
