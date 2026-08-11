@@ -37,6 +37,19 @@ class UiSimplificationContractTests(unittest.TestCase):
         for token in ("visual map", "knowledge-graph", "renderknowledgemap", "graph-row"):
             self.assertNotIn(token, source)
 
+    def test_learn_dashboard_is_compact_and_left_aligned(self) -> None:
+        template = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
+        styles = (ROOT / "static/styles/learn.css").read_text(encoding="utf-8")
+        self.assertIn("Recommended for you", template)
+        self.assertIn('class="progress-title">Your progress</div>', template)
+        self.assertIn("max-width: 1240px", styles)
+        self.assertIn("--radius-sm: 6px", styles)
+        self.assertIn("--radius-md: 10px", styles)
+        self.assertIn("--radius-lg: 14px", styles)
+        self.assertIn("min-height: 72px", styles)
+        self.assertIn(".mastery-summary-row", styles)
+        self.assertIn("display: none !important", styles)
+
     def test_styles_do_not_use_gradients(self) -> None:
         pattern = re.compile(r"(?:linear|radial|conic)-gradient", re.IGNORECASE)
         for stylesheet in (ROOT / "static" / "styles").glob("*.css"):
