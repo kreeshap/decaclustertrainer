@@ -250,7 +250,14 @@
             animParticles();
 
             // ── PHASE HELPERS ──────────────────────────────────────────────────────────────
+            let phaseNavigationVersion = 0;
+            let phaseTransitionTimer = null;
+
             function activatePhase(el) {
+                // Every phase is a full-screen state; never allow two to remain active.
+                document.querySelectorAll(".phase.active").forEach((phase) => {
+                    if (phase !== el) phase.classList.remove("active");
+                });
                 el.classList.add("active");
             }
 
@@ -258,16 +265,15 @@
                 el.classList.remove("active");
             }
 
-            function transitionTo(from, to, delay = 0) {
-                return new Promise((res) => {
-                    setTimeout(() => {
-                        deactivatePhase(from);
-                        setTimeout(() => {
-                            activatePhase(to);
-                            res();
-                        }, 800);
-                    }, delay);
-                });
+            function transitionPhase(from, to, delay = 0) {
+                const version = ++phaseNavigationVersion;
+                window.clearTimeout(phaseTransitionTimer);
+                deactivatePhase(from);
+                phaseTransitionTimer = window.setTimeout(() => {
+                    if (version !== phaseNavigationVersion) return;
+                    activatePhase(to);
+                }, delay);
+                return version;
             }
 
             function setOpeningStatus(message, kind = "info", duration = 3000) {
@@ -476,16 +482,22 @@
                             cluster.color,
                         );
                         item.addEventListener("click", async () => {
+                            const selectionVersion = phaseNavigationVersion;
                             const evSlug = getEventIdByName(evName);
                             const saved = await UserPrefs.setEvent(evSlug, evName, cluster.name);
-                            if (saved) openLevelSelection(cluster, phEvents);
+                            if (
+                                saved &&
+                                selectionVersion === phaseNavigationVersion &&
+                                phEvents.classList.contains("active")
+                            ) {
+                                openLevelSelection(cluster, phEvents);
+                            }
                         });
                         list.appendChild(item);
                     });
                 }, 140);
 
-                deactivatePhase(phGrid);
-                activatePhase(phEvents);
+                transitionPhase(phGrid, phEvents);
             }
 
             function openLevelSelection(cluster, fromPhase) {
@@ -503,8 +515,7 @@
 
                 const list = document.getElementById("level-list");
                 list.style.pointerEvents = "auto";
-                deactivatePhase(fromPhase);
-                activatePhase(phLevel);
+                transitionPhase(fromPhase, phLevel);
                 list.innerHTML = "";
                 TIERS.forEach((tier) => {
                     const item = document.createElement("button");
@@ -514,10 +525,17 @@
                         tier + (tier === currentTier ? " ✓" : "");
                     item.style.setProperty("--active-accent", cluster.color);
                     const chooseTier = async () => {
+                        const selectionVersion = phaseNavigationVersion;
                         item.disabled = true;
                         const saved = await setSavedTier(tier);
                         item.disabled = false;
-                        if (saved) showWelcome(cluster, phLevel, tier);
+                        if (
+                            saved &&
+                            selectionVersion === phaseNavigationVersion &&
+                            phLevel.classList.contains("active")
+                        ) {
+                            showWelcome(cluster, phLevel, tier);
+                        }
                     };
                     item.addEventListener("click", chooseTier);
                     list.appendChild(item);
@@ -527,15 +545,13 @@
             document
                 .getElementById("back-btn")
                 .addEventListener("click", () => {
-                    deactivatePhase(phEvents);
-                    setTimeout(() => activatePhase(phGrid), 800);
+                    transitionPhase(phEvents, phGrid, 800);
                 });
 
             document
                 .getElementById("level-back-btn")
                 .addEventListener("click", () => {
-                    deactivatePhase(phLevel);
-                    setTimeout(() => activatePhase(phGrid), 800);
+                    transitionPhase(phLevel, phGrid, 800);
                 });
 
             // ── WELCOME SPLASH ─────────────────────────────────────────────────────────────
@@ -560,8 +576,7 @@
                 document.getElementById("welcome-name").style.color =
                     cluster.color;
 
-                deactivatePhase(fromPhase);
-                setTimeout(() => activatePhase(phWelcome), 800);
+                transitionPhase(fromPhase, phWelcome, 800);
             }
 
             phWelcome.addEventListener("click", () => {
