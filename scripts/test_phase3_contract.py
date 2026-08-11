@@ -96,6 +96,12 @@ class Phase3ContractTests(unittest.TestCase):
             self.assertIn("session_id:", source)
         self.assertNotIn("correct: ok", (ROOT / "static" / "js" / "learn.js").read_text(encoding="utf-8"))
 
+    def test_search_has_one_event_scoped_owner(self) -> None:
+        learn = (ROOT / "static" / "js" / "learn.js").read_text(encoding="utf-8")
+        extra = (ROOT / "static" / "js" / "learn_extra.js").read_text(encoding="utf-8")
+        self.assertIn("renderSearchResults", learn)
+        self.assertNotIn("fetch('/api/kpis')", extra)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

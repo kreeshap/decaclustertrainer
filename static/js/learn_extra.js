@@ -3,45 +3,7 @@
   function $(id) { return document.getElementById(id); }
 
   function initLearnExtra() {
-    // Wire the single consolidated search input
-    const searchInput = $('learn-search');
-    const searchPanel = $('search-results');
-
-    if (searchInput) {
-      searchInput.addEventListener('input', async (e) => {
-        const q = (e.target.value || '').trim();
-        if (!q) {
-          searchPanel.classList.add('hidden');
-          return;
-        }
-        searchPanel.classList.remove('hidden');
-        searchPanel.textContent = 'Searching...';
-        try {
-          const res = await fetch('/api/kpis');
-          const data = await res.json();
-          const kpis = data.kpis || [];
-          const matched = kpis.filter(k => (k.code + ' ' + k.text + ' ' + (k.cluster||'')).toLowerCase().includes(q.toLowerCase()));
-          if (!matched.length) {
-            searchPanel.textContent = 'No results';
-            return;
-          }
-          searchPanel.innerHTML = '';
-          matched.slice(0, 25).forEach(k => {
-            const row = document.createElement('div');
-            row.className = 'search-row';
-            row.innerHTML = `<strong>${escapeHtml(k.code)}</strong> — ${escapeHtml(k.text)}`;
-            row.addEventListener('click', () => {
-              // UserPrefs.setEvent owns all event writes
-              if (k.event_name) UserPrefs.setEvent(k.event_name, k.cluster_name || '');
-              window.location.href = '/app/learn.html';
-            });
-            searchPanel.appendChild(row);
-          });
-        } catch (e) {
-          searchPanel.textContent = 'Search failed.';
-        }
-      });
-    }
+    // Search is event-scoped and owned by learn.js after its KPI catalog loads.
 
     // Admin panel visibility — already wired in learn.js to check admin status
     // Admin upload + review handlers
