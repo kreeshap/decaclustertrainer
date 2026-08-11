@@ -29,6 +29,14 @@ class UiSimplificationContractTests(unittest.TestCase):
         self.assertRegex(learn, r'<details class="special-modes-dropdown"[^>]*\bhidden\b')
         self.assertRegex(practice, r'<details class="panel practice-panel practice-accordion"[^>]*\bhidden\b')
 
+    def test_visual_map_is_removed(self) -> None:
+        source = "\n".join(
+            (ROOT / path).read_text(encoding="utf-8")
+            for path in ("templates/learn.html", "static/js/learn.js", "static/styles/learn.css")
+        ).lower()
+        for token in ("visual map", "knowledge-graph", "renderknowledgemap", "graph-row"):
+            self.assertNotIn(token, source)
+
     def test_styles_do_not_use_gradients(self) -> None:
         pattern = re.compile(r"(?:linear|radial|conic)-gradient", re.IGNORECASE)
         for stylesheet in (ROOT / "static" / "styles").glob("*.css"):

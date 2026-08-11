@@ -890,43 +890,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
-.graph-row {
-    padding: 11px 12px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: rgba(17, 41, 41, 0.28);
-}
-.graph-row-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    align-items: baseline;
-}
-.graph-row {
-    display: grid;
-    gap: 8px;
-}
-.graph-row-top {
-    color: var(--white);
-    font-size: 0.84rem;
-    font-weight: 600;
-}
-.graph-track {
-    height: 5px;
-    border-radius: 999px;
-    background: var(--border);
-    overflow: hidden;
-}
-.graph-fill {
-    height: 100%;
-    background: var(--cyan);
-    border-radius: inherit;
-}
-.study-space-copy {
-    color: var(--muted);
-    line-height: 1.55;
-    margin-bottom: 12px;
-}
 
 .learn-home-controls .mode-btn {
     min-height: 38px;
@@ -1036,10 +999,6 @@ body {
 .learn-widget {
     border-radius: 16px;
     background: rgba(17, 41, 41, 0.42);
-}
-
-.knowledge-graph {
-    min-height: 108px;
 }
 
 #mastery-panel {

@@ -199,34 +199,6 @@
                 });
             }
 
-            function renderKnowledgeMap() {
-                const graph = $("knowledge-graph");
-                if (!graph) return;
-
-                const clusters = (analyticsData && Array.isArray(analyticsData.cluster_breakdown))
-                    ? analyticsData.cluster_breakdown
-                    : [];
-
-                graph.innerHTML = "";
-                if (!clusters.length) {
-                    const empty = document.createElement("div");
-                    empty.className = "empty-state";
-                    empty.textContent = "Your visual map appears after a session.";
-                    graph.appendChild(empty);
-                    return;
-                }
-
-                clusters.slice(0, 3).forEach((cluster) => {
-                    const pct = Math.round(cluster.avg_mastery || 0);
-                    const row = document.createElement("div");
-                    row.className = "graph-row";
-                    row.innerHTML =
-                        `<div class="graph-row-top"><span>${escHtml(cluster.cluster || "")}</span><span>${pct}%</span></div>` +
-                        `<div class="graph-track"><div class="graph-fill" style="width:${pct}%"></div></div>`;
-                    graph.appendChild(row);
-                });
-            }
-
             function renderLearnHome() {
                 const topicCountEl = $("hero-topic-count");
                 if (topicCountEl) {
@@ -285,7 +257,6 @@
                 }
 
                 renderRecommendedPath();
-                renderKnowledgeMap();
             }
 
             // ─── Auth ─────────────────────────────────────────────────────────────────────
