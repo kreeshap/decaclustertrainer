@@ -8,7 +8,7 @@ Gemini: uses the new `google-genai` SDK (google.genai)
 import json
 import re
 
-from .config import GEMINI_API_KEY, GROQ_API_KEY
+from .config import GEMINI_API_KEY, GEMINI_MODEL, GROQ_API_KEY
 
 # ── Lazy clients ───────────────────────────────────────────────────────────────
 _groq_client = None
@@ -75,7 +75,7 @@ def call_gemini_json(
     prompt: str,
     max_tokens: int = 8192,
     temperature: float = 0.7,
-    model: str = "gemini-2.0-flash",
+    model: str = GEMINI_MODEL,
 ) -> tuple:
     """Call Gemini and return a parsed JSON dict. Returns (data, error)."""
     if not GEMINI_API_KEY:
@@ -109,7 +109,7 @@ def call_gemini_json(
 
 def call_gemini(
     prompt: str,
-    model: str = "gemini-2.0-flash",
+    model: str = GEMINI_MODEL,
 ) -> tuple:
     """Call Gemini and return raw text (used for grading). Returns (text, error)."""
     if not GEMINI_API_KEY:
