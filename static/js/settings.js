@@ -167,19 +167,23 @@
             /* ──────────────────────────────────────────────────────────────
        COMPETITION LEVEL
     ────────────────────────────────────────────────────────────── */
+            let competitionSavePending = false;
+
             function setComp(el) {
-                // Only update the visual selection — label updates on save
+                if (competitionSavePending || el.classList.contains("selected")) return;
+                const previous = document.querySelector(".comp-opt.selected");
                 document
                     .querySelectorAll(".comp-opt")
                     .forEach((o) => o.classList.remove("selected"));
                 el.classList.add("selected");
+                void saveComp(el, previous);
             }
 
-            async function saveComp() {
-                const sel = document.querySelector(".comp-opt.selected");
-                if (!sel) return;
-                const btn = document.getElementById("btn-save-comp");
-                await doSave(btn, async () => {
+            async function saveComp(sel, previous) {
+                competitionSavePending = true;
+                sel.classList.add("saving");
+                sel.setAttribute("aria-busy", "true");
+                try {
                     const res = await apiFetch("/auth/profile", {
                         method: "PUT",
                         headers: { "Content-Type": "application/json" },
@@ -193,18 +197,20 @@
                             data.detail || "Failed to save competition level.",
                             "error",
                         );
-                        return false;
+                        sel.classList.remove("selected");
+                        if (previous) previous.classList.add("selected");
+                        return;
                     }
-                    // Update label only after a successful save
-                    const level = sel.dataset.level;
-                    const display =
-                        level === "icdc"
-                            ? "ICDC"
-                            : level.charAt(0).toUpperCase() + level.slice(1);
-                    document.getElementById("comp-current-label").textContent =
-                        "Currently set to: " + display;
-                    return true;
-                });
+                    ErrorManager.show("Competition level saved.", "success");
+                } catch (error) {
+                    sel.classList.remove("selected");
+                    if (previous) previous.classList.add("selected");
+                    ErrorManager.show("Failed to save competition level.", "error");
+                } finally {
+                    competitionSavePending = false;
+                    sel.classList.remove("saving");
+                    sel.removeAttribute("aria-busy");
+                }
             }
 
             /* ──────────────────────────────────────────────────────────────
@@ -733,11 +739,8 @@
                         '.comp-opt[data-level="' + tier + '"]',
                     );
                     if (tierEl) {
-                        // Visual selection only — label is set from the saved value
                         document.querySelectorAll(".comp-opt").forEach((o) => o.classList.remove("selected"));
                         tierEl.classList.add("selected");
-                        const display = tier === "icdc" ? "ICDC" : tier.charAt(0).toUpperCase() + tier.slice(1);
-                        document.getElementById("comp-current-label").textContent = "Currently set to: " + display;
                     }
 
                     // ── Theme ─────────────────────────────────────────────────────

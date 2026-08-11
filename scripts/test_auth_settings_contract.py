@@ -58,6 +58,12 @@ class DarkOnlySettingsContracts(unittest.TestCase):
         ):
             self.assertNotIn(marker, SETTINGS_HTML)
 
+    def test_competition_level_auto_saves_without_status_row(self):
+        self.assertNotIn("Currently set to:", SETTINGS_HTML)
+        self.assertNotIn("btn-save-comp", SETTINGS_HTML + SETTINGS_JS)
+        self.assertIn("void saveComp(el, previous)", SETTINGS_JS)
+        self.assertIn('competition_tier: sel.dataset.level', SETTINGS_JS)
+
 
 if __name__ == "__main__":
     unittest.main()
