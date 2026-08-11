@@ -36,8 +36,6 @@
             let preMasteryMap = {};
             let analyticsData = null;
             let isReviewMode = false;
-            let savedConcepts = [];
-            let savedNotes = [];
             let isActiveRecallMode = false;
             let kpiGroups = { unstarted: [], due: [], in_progress: [], mastered: [] };
 
@@ -57,41 +55,6 @@
                     return window.crypto.randomUUID();
                 }
                 return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-            }
-
-            function readJsonStorage(key, fallback = []) {
-                try {
-                    const raw = localStorage.getItem(key);
-                    return raw ? JSON.parse(raw) : fallback;
-                } catch (e) {
-                    return fallback;
-                }
-            }
-
-            function writeJsonStorage(key, value) {
-                try {
-                    localStorage.setItem(key, JSON.stringify(value));
-                } catch (e) {}
-            }
-
-            function getSavedConceptStore() {
-                return readJsonStorage("ct_saved_concepts", []);
-            }
-
-            function getSavedNoteStore() {
-                return readJsonStorage("ct_saved_notes", []);
-            }
-
-            function setSavedNoteStore(notes) {
-                writeJsonStorage("ct_saved_notes", notes.slice(0, 200));
-            }
-
-            function getStudyTips() {
-                return [
-                    "Teach it in one sentence before you start the next topic.",
-                    "Use the search box to jump straight to a weak KPI instead of browsing.",
-                    "Save only the ideas you would want to review before a judge round.",
-                ];
             }
 
             function findKpiByCode(code) {
@@ -264,81 +227,6 @@
                 });
             }
 
-            function renderStudySpace() {
-                const concepts = getSavedConceptStore();
-                const notes = getSavedNoteStore();
-                const tips = getStudyTips();
-
-                const conceptList = $("saved-concepts-list");
-                if (conceptList) {
-                    conceptList.innerHTML = "";
-                    if (!concepts.length) {
-                        const empty = document.createElement("div");
-                        empty.className = "empty-state";
-                        empty.textContent = "No saved concepts yet. Save one from a session to keep it here.";
-                        conceptList.appendChild(empty);
-                    } else {
-                        concepts.slice(0, 6).forEach((item) => {
-                            const row = document.createElement("div");
-                            row.className = "saved-concept-row";
-                            const code = item.code || "";
-                            const title = item.title || item.text || "Saved concept";
-                            row.innerHTML =
-                                `<div class="saved-concept-head"><strong>${escHtml(code)}</strong><span>${escHtml(title)}</span></div>` +
-                                `<div class="saved-concept-actions"><button type="button" class="mini-link-btn">Study again</button></div>`;
-                            const btn = row.querySelector(".mini-link-btn");
-                            if (btn && code) {
-                                btn.addEventListener("click", () => focusSessionOnKpi(code));
-                            }
-                            conceptList.appendChild(row);
-                        });
-                    }
-                }
-
-                const noteList = $("saved-notes-list");
-                if (noteList) {
-                    noteList.innerHTML = "";
-                    const tip = tips[0];
-                    if (tip) {
-                        const row = document.createElement("div");
-                        row.className = "note-row note-row-tip";
-                        row.innerHTML =
-                            `<div class="note-row-top"><strong>Today's tip</strong><span>Study space</span></div>` +
-                            `<div class="note-row-text">${escHtml(tip)}</div>`;
-                        noteList.appendChild(row);
-                    }
-                    if (!notes.length) {
-                        const empty = document.createElement("div");
-                        empty.className = "empty-state";
-                        empty.textContent = "Notes you write during study sessions will show up here.";
-                        noteList.appendChild(empty);
-                    } else {
-                        notes.slice(0, 4).forEach((item) => {
-                            const row = document.createElement("div");
-                            row.className = "note-row";
-                            row.innerHTML =
-                                `<div class="note-row-top"><strong>${escHtml(item.code || "")}</strong><span>${escHtml(item.saved_at ? new Date(item.saved_at).toLocaleDateString() : "")}</span></div>` +
-                                `<div class="note-row-text">${escHtml(item.text || "")}</div>`;
-                            noteList.appendChild(row);
-                        });
-                    }
-                }
-
-                const tipList = $("mnemonics-list");
-                if (tipList) {
-                    tipList.innerHTML = "";
-                    const tip = tips[0] || "Keep your notes short enough to reread before a session.";
-                    const row = document.createElement("div");
-                    row.className = "tip-row";
-                    row.textContent = tip;
-                    tipList.appendChild(row);
-                    const panel = $("mnemonics-panel");
-                    if (panel) {
-                        panel.hidden = true;
-                    }
-                }
-            }
-
             function renderLearnHome() {
                 const topicCountEl = $("hero-topic-count");
                 if (topicCountEl) {
@@ -398,7 +286,6 @@
 
                 renderRecommendedPath();
                 renderKnowledgeMap();
-                renderStudySpace();
             }
 
             // ─── Auth ─────────────────────────────────────────────────────────────────────
@@ -406,13 +293,6 @@
                 if (user) {
                     initTopbar(user);
                     initLearn();
-                    // show admin panel if admin
-                    try {
-                        const adminPanel = document.getElementById('admin-tools-panel');
-                        if (adminPanel) {
-                            adminPanel.classList.toggle('hidden', !isAdminEmail(user && user.email));
-                        }
-                    } catch (e) {}
                 }
             });
 
@@ -1670,61 +1550,6 @@
                     container.appendChild(cell);
                 }
             }
-
-            // ─── Save concept handler ─────────────────────────────────────────────────
-            (function wireSaveConcept() {
-                document.addEventListener('DOMContentLoaded', () => {
-                    const btn = document.getElementById('save-concept-btn');
-                    const noteToggle = document.getElementById('add-concept-note-btn');
-                    const noteInput = document.getElementById('concept-note-input');
-                    const noteSaveBtn = document.getElementById('save-concept-note-btn');
-                    if (btn) {
-                        btn.addEventListener('click', () => {
-                            try {
-                                const code = (document.getElementById('concept-code')||{}).textContent || '';
-                                const title = (document.getElementById('concept-kpi-text')||{}).textContent || '';
-                                const summary = (document.getElementById('concept-summary')||{}).textContent || '';
-                                const text = (document.getElementById('concept-explanation')||{}).textContent || '';
-                                const bulletsEls = document.querySelectorAll('#concept-bullets li');
-                                const bullets = [];
-                                bulletsEls.forEach(li => bullets.push(li.textContent || ''));
-                                const saved = readJsonStorage('ct_saved_concepts', []);
-                                saved.unshift({ code, title, summary, text, bullets, saved_at: Date.now() });
-                                writeJsonStorage('ct_saved_concepts', saved.slice(0, 200));
-                                renderStudySpace();
-                                if (typeof setOpeningStatus === "function") {
-                                    setOpeningStatus('Concept saved locally.', 'info', 2000);
-                                }
-                            } catch (e) {
-                                // ignore
-                            }
-                        });
-                    }
-                    if (noteToggle && noteInput && noteSaveBtn) {
-                        noteToggle.addEventListener('click', () => {
-                            noteInput.classList.toggle('hidden');
-                            noteSaveBtn.classList.toggle('hidden');
-                            if (!noteInput.classList.contains('hidden')) {
-                                noteInput.focus();
-                            }
-                        });
-                        noteSaveBtn.addEventListener('click', () => {
-                            try {
-                                const code = (document.getElementById('concept-code')||{}).textContent || '';
-                                const text = noteInput.value.trim();
-                                if (!text) return;
-                                const notes = getSavedNoteStore();
-                                notes.unshift({ code, text, saved_at: Date.now() });
-                                setSavedNoteStore(notes);
-                                noteInput.value = '';
-                                noteInput.classList.add('hidden');
-                                noteSaveBtn.classList.add('hidden');
-                                renderStudySpace();
-                            } catch (e) {}
-                        });
-                    }
-                });
-            })();
 
             // ─── Review Mode ────────────────────────────────────────────────────────────────────────────────────
             async function startReview() {

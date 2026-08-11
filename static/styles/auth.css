@@ -60,7 +60,7 @@ body.auth-route-opening {
   position: absolute;
   inset: -16px;
   border-radius: inherit;
-  background: radial-gradient(circle, rgba(255,255,255,.75) 0%, rgba(255,255,255,.12) 48%, transparent 72%);
+  background: rgba(255,255,255,.18);
   opacity: .55;
 }
 
@@ -71,7 +71,7 @@ body.auth-route-opening {
   width: 140px;
   height: 140px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255,255,255,.98) 0%, rgba(255,255,255,.5) 20%, rgba(255,255,255,0) 68%);
+  background: rgba(255,255,255,.75);
   transform: translate3d(-999px, -999px, 0) scale(.08);
   opacity: 0;
   will-change: transform, opacity;
@@ -128,7 +128,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 50% at 0% 100%, rgba(0, 194, 224, .04) 0%, transparent 70%);
+  background: rgba(0, 194, 224, .025);
   pointer-events: none;
 }
 
@@ -538,7 +538,7 @@ form {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 40% at 100% 50%, rgba(0, 194, 224, .05) 0%, transparent 65%);
+  background: rgba(0, 194, 224, .025);
   pointer-events: none;
 }
 
@@ -546,13 +546,10 @@ form {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(var(--border2) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border2) 1px, transparent 1px);
-  background-size: 56px 56px;
+  background-image: none;
   opacity: .12;
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 35%, transparent 100%);
+  mask-image: none;
 }
 
 .brand-block {

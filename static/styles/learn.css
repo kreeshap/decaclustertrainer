@@ -518,16 +518,6 @@ body {
     cursor: pointer;
 }
 .search-row:hover { background: rgba(17,41,41,0.45); }
-.saved-concept-row {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: rgba(17,41,41,0.25);
-    margin-bottom: 8px;
-}
-.saved-concept-text { color: var(--muted); margin-top:6px; font-size:0.92rem }
-.learn-admin-panel { border: 1px solid var(--border); padding: 12px; border-radius:8px; background: rgba(17,41,41,0.2); }
-
 /* Dashboard Summary */
 .dashboard-summary {
     display: flex;
@@ -674,16 +664,9 @@ body {
 .admin-btn.secondary { background: rgba(255,255,255,0.02) }
 
 .recall-input, textarea.recall-input { width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--input); color:var(--white); font-size:0.95rem }
-.concept-save-panel { display:flex; gap:8px; margin-top:10px }
-
-.saved-concept-row { display:block }
-
 /* Active recall area */
 #state-active-recall { border:1px solid var(--border); padding:12px; border-radius:10px; background: rgba(17,41,41,0.08) }
 #active-recall-text { min-height: 120px }
-
-/* Admin panel inside widgets */
-.admin-panel.hidden { display:none }
 
 /* â”€â”€ Learn mode refresh â”€â”€ */
 .main-shell {
@@ -691,6 +674,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+.special-modes-dropdown[hidden] {
+    display: none !important;
 }
 .learn-hero {
     display: grid;
@@ -700,9 +687,7 @@ body {
     border: 1px solid rgba(0, 194, 224, 0.16);
     border-radius: 18px;
     padding: 18px;
-    background:
-        radial-gradient(circle at top left, rgba(0, 194, 224, 0.12), transparent 35%),
-        linear-gradient(180deg, rgba(17, 41, 41, 0.9), rgba(11, 31, 31, 0.72));
+    background: rgba(17, 41, 41, 0.9);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
     margin-bottom: 0;
 }
@@ -905,49 +890,17 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
-.saved-concept-row,
-.note-row,
-.tip-row,
 .graph-row {
     padding: 11px 12px;
     border-radius: 12px;
     border: 1px solid var(--border);
     background: rgba(17, 41, 41, 0.28);
 }
-.saved-concept-head,
-.note-row-top,
 .graph-row-top {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     align-items: baseline;
-}
-.saved-concept-head strong,
-.note-row-top strong {
-    color: var(--cyan);
-    font-family: "Barlow Condensed", sans-serif;
-    letter-spacing: 0.04em;
-}
-.saved-concept-head span,
-.note-row-top span {
-    color: var(--muted);
-    font-size: 0.75rem;
-}
-.saved-concept-actions {
-    margin-top: 8px;
-}
-.mini-link-btn {
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: var(--cyan);
-    font: inherit;
-    cursor: pointer;
-}
-.note-row-text {
-    margin-top: 8px;
-    color: var(--muted);
-    line-height: 1.45;
 }
 .graph-row {
     display: grid;
@@ -1089,16 +1042,8 @@ body {
     min-height: 108px;
 }
 
-#mnemonics-panel {
-    background: rgba(17, 41, 41, 0.18);
-}
-
 #mastery-panel {
     order: 10;
-}
-
-.admin-panel {
-    order: 11;
 }
 
 /* Existing Learn markup, restyled into a clearer hierarchy */
@@ -1106,9 +1051,7 @@ body {
     border: 1px solid rgba(0, 194, 224, 0.16);
     border-radius: 18px;
     padding: 24px;
-    background:
-        radial-gradient(circle at top left, rgba(0, 194, 224, 0.12), transparent 35%),
-        linear-gradient(180deg, rgba(17, 41, 41, 0.9), rgba(11, 31, 31, 0.72));
+    background: rgba(17, 41, 41, 0.9);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
     margin-bottom: 14px;
 }
@@ -1156,22 +1099,6 @@ body {
     border-radius: 16px;
     background: rgba(17, 41, 41, 0.42);
 }
-.admin-panel {
-    margin-top: 18px;
-}
-
-#mnemonics-panel {
-    display: none !important;
-}
-
-#saved-concepts-panel {
-    grid-column: span 1;
-}
-
-#saved-notes-panel {
-    grid-column: span 1;
-}
-
 .study-row {
     border-color: var(--study-accent, var(--border));
     padding: 12px 14px;
@@ -1227,10 +1154,6 @@ body {
     padding-top: 2px;
 }
 
-.note-row-tip {
-    border-color: rgba(0, 194, 224, 0.18);
-    background: rgba(0, 194, 224, 0.06);
-}
 #mastery-panel {
     margin-top: 18px !important;
 }

@@ -87,7 +87,7 @@
                         <button type="button" data-learn-mode="activeRecall" class="mode-btn active">Active Recall</button>
                         <button type="button" data-learn-mode="standard" class="mode-btn">Practice Mode</button>
                     </div>
-                    <details class="special-modes-dropdown">
+                    <details class="special-modes-dropdown" hidden aria-hidden="true">
                         <summary class="special-modes-toggle">Advanced modes</summary>
                         <div class="special-modes-list">
                             <button type="button" data-learn-mode="examOnly" class="mode-btn">Exam Mode</button>
@@ -119,38 +119,6 @@
                     </section>
                 </div>
             </div>
-
-            <!-- Study space -->
-            <div class="widgets-section">
-                <div class="widgets-section-title">Study Space</div>
-                <div class="learn-home-widgets">
-                    <section class="learn-widget" id="saved-concepts-panel">
-                        <div class="widget-title">Saved Concepts</div>
-                        <div id="saved-concepts-list" class="widget-list">No saved concepts yet.</div>
-                    </section>
-                    <section class="learn-widget" id="saved-notes-panel">
-                        <div class="widget-title">Notes</div>
-                        <div id="saved-notes-list" class="widget-list"></div>
-                    </section>
-                    <section class="learn-widget" id="mnemonics-panel">
-                        <div class="widget-title">Today's Tip</div>
-                        <div id="mnemonics-list" class="widget-list"></div>
-                    </section>
-                </div>
-            </div>
-
-            <!-- Admin Tools (hidden unless admin) -->
-            <section class="learn-widget admin-panel hidden" id="admin-tools-panel">
-                <div class="widget-title">Advanced tools</div>
-                <div class="admin-controls">
-                    <label class="admin-file-label">
-                        Import KPI JSON
-                        <input type="file" accept="application/json" />
-                    </label>
-                    <button class="admin-btn" id="kpi-import-btn" type="button">Upload KPIs</button>
-                    <button class="admin-btn" id="kpi-edit-open-btn" type="button">Edit KPI Definitions</button>
-                </div>
-            </section>
 
             <!-- Mastery Dashboard -->
             <div id="mastery-panel" style="margin-top: 28px">
@@ -340,12 +308,6 @@
                             Reveal the model explanation
                         </button>
                     </div>
-                    <div class="concept-save-panel">
-                        <button class="admin-btn" id="save-concept-btn" type="button">Save this concept</button>
-                        <button class="admin-btn secondary" id="add-concept-note-btn" type="button">Add Note</button>
-                    </div>
-                    <textarea id="concept-note-input" class="recall-input hidden" rows="3" placeholder="Write a quick note for this KPI..."></textarea>
-                    <button class="admin-btn hidden" id="save-concept-note-btn" type="button">Save Note</button>
                     <button
                         class="understand-btn"
                         id="understand-btn"
@@ -471,9 +433,6 @@
                     </div>
                     <div class="loading-sub">
                         Using AI to evaluate KPI coverage and quality
-                    </div>
-                    <div style="margin-top:10px">
-                        <button class="btn-sm" id="save-concept-btn" type="button">Save Concept</button>
                     </div>
                 </div>
 
@@ -602,6 +561,5 @@
         <!-- /view-session -->
 
         <script src="/static/js/learn.js"></script>
-        <script src="/static/js/learn_extra.js"></script>
     </body>
 </html>

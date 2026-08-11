@@ -145,7 +145,7 @@ body {
 }
 
 .cta-btn {
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+  background: var(--cyan);
   border: 0;
   border-radius: 6px;
   color: #031417;
@@ -287,9 +287,7 @@ body {
   padding: 18px 20px;
   border: 1px solid rgba(24, 183, 209, 0.2);
   border-radius: 20px;
-  background:
-    radial-gradient(circle at top left, rgba(24, 183, 209, 0.18), transparent 38%),
-    linear-gradient(135deg, rgba(8, 34, 37, 0.96), rgba(10, 26, 32, 0.98));
+  background: rgba(8, 34, 37, 0.96);
 }
 
 .dashboard-hero-copy {
@@ -446,7 +444,7 @@ body {
   width: 0%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--cyan), var(--green));
+  background: var(--cyan);
   transition: width 220ms ease;
 }
 
@@ -588,7 +586,7 @@ body {
 .focus-item-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--cyan), var(--green));
+  background: var(--cyan);
 }
 
 .focus-item-meta,
@@ -743,7 +741,7 @@ body {
 .practice-chip-btn.active {
   color: #031417;
   border-color: var(--cyan);
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+  background: var(--cyan);
 }
 
 .session-settings {
@@ -806,7 +804,7 @@ body {
 .session-toggle-btn.active {
   color: #031417;
   border-color: var(--cyan);
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+  background: var(--cyan);
 }
 
 .session-timer-block {
@@ -865,6 +863,10 @@ body {
   color: var(--white);
   font-weight: 700;
   line-height: 1.45;
+}
+
+.practice-accordion[hidden] {
+  display: none !important;
 }
 
 .practice-accordion {
@@ -960,7 +962,7 @@ body {
   width: 0%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--cyan), var(--green));
+  background: var(--cyan);
   transition: width 220ms ease;
 }
 
@@ -1153,9 +1155,7 @@ body {
   overflow: auto;
   border-radius: 20px;
   border: 1px solid rgba(0, 194, 224, 0.22);
-  background:
-    radial-gradient(circle at top left, rgba(0, 194, 224, 0.08), transparent 32%),
-    linear-gradient(180deg, rgba(17, 41, 41, 0.98), rgba(10, 26, 32, 0.98));
+  background: rgba(17, 41, 41, 0.98);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
   padding: 18px;
 }
@@ -1329,19 +1329,19 @@ body {
 
 .quality-pill.is-strong {
   color: #031417;
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+  background: var(--cyan);
   border-color: var(--cyan);
 }
 
 .quality-pill.is-usable {
   color: #0f172a;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background: #fbbf24;
   border-color: #fbbf24;
 }
 
 .quality-pill.is-weak {
   color: #1f1306;
-  background: linear-gradient(135deg, #fb923c, #f87171);
+  background: #fb923c;
   border-color: #fb923c;
 }
 
