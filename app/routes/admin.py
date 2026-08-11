@@ -398,7 +398,7 @@ def admin_logs():
         params={
             "select": (
                 "id,user_id,started_at,ended_at,"
-                "kpi_code,questions_answered,questions_correct"
+                "event_id,session_type,questions_answered,questions_correct"
             ),
             "order": "started_at.desc",
             "limit": "50",

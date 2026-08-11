@@ -3,6 +3,8 @@ import time
 
 from flask import Blueprint, jsonify, make_response, request
 
+from ..events import BETA_EVENTS, canonical_event_id
+
 from ..auth_utils import (
     admin_confirm_user_by_email,
     app_base_url,
@@ -240,6 +242,21 @@ def update_profile():
     auth_meta: dict = {}
     profile_patch: dict = {}
 
+    if "default_event_id" in payload or "default_event" in payload:
+        event_id = canonical_event_id(payload.get("default_event_id") or payload.get("default_event"))
+        if not event_id:
+            return jsonify({"detail": "Select one of the three supported beta events."}), 400
+        event = BETA_EVENTS[event_id]
+        if str(payload.get("default_cluster") or event["cluster"]).strip() != event["cluster"]:
+            return jsonify({"detail": "The selected event does not belong to that cluster."}), 400
+        profile_patch.update(default_event_id=event_id, default_event=event["name"], default_cluster=event["cluster"])
+
+    if "competition_tier" in payload:
+        competition_tier = str(payload.get("competition_tier") or "").strip().lower()
+        if competition_tier not in {"districts", "scdc", "icdc"}:
+            return jsonify({"detail": "Competition tier must be Districts, SCDC, or ICDC."}), 400
+        profile_patch["competition_tier"] = competition_tier
+
     # Display name
     display_name = str(payload.get("display_name") or "").strip()
     if display_name:
@@ -275,20 +292,26 @@ def update_profile():
         "session_time_pref",
         "theme",
     ):
+        if str_field == "competition_tier" and "competition_tier" in profile_patch:
+            continue
+        if str_field in {"default_cluster", "default_event", "default_event_id"} and profile_patch.get("default_event_id"):
+            continue
         if str_field in payload and payload[str_field] is not None:
             profile_patch[str_field] = str(payload[str_field]).strip()
 
     # Update Supabase auth user_metadata (only if display_name changed)
     if auth_meta:
-        supabase_request(
+        auth_status, auth_data = supabase_request(
             "/user", method="PUT", token=token, payload={"data": auth_meta}
-        )  # 2nd API call (conditional)
+        )
+        if auth_status not in (200, 204):
+            return jsonify({"detail": auth_data.get("detail") or auth_data.get("msg") or "Profile update failed."}), 502
 
     # Upsert profiles table in a single call using merge-duplicates
     if profile_patch and user_id:
         profile_patch["id"] = user_id
         profile_patch["email"] = user.get("email", "")
-        supabase_rest_request(
+        profile_status, profile_data = supabase_rest_request(
             "/profiles",
             method="POST",
             token=token,
@@ -297,8 +320,15 @@ def update_profile():
         )  # 3rd API call — true upsert, no need for separate PATCH
 
     # Build the response from what we already know — no extra roundtrip
-    merged_profile = profile_patch.copy()
-    return jsonify({"user": serialize_user(user, merged_profile)})
+        if profile_status not in (200, 201):
+            detail = profile_data.get("message") or profile_data.get("details") or profile_data.get("detail") or "Profile update failed."
+            return jsonify({"detail": detail}), 502
+        persisted = profile_data[0] if isinstance(profile_data, list) and profile_data else get_profile(user_id, token)
+        if not persisted:
+            return jsonify({"detail": "Profile update could not be verified."}), 502
+        return jsonify({"user": serialize_user(user, persisted)})
+
+    return jsonify({"user": serialize_user(user, get_profile(user_id, token))})
 
 
 @auth_bp.post("/auth/session")

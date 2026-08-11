@@ -361,7 +361,7 @@
                 // Populate cluster dropdown from CLUSTERS constant (clusters.js)
                 if (typeof CLUSTERS !== "undefined") {
                     CLUSTERS.forEach((c) => {
-                        if (!c.events || !c.events.length) return;
+                        if (!supportedBetaEvents(c).length) return;
                         const opt = document.createElement("option");
                         opt.value = c.name;
                         opt.textContent = c.name;
@@ -389,7 +389,7 @@
                     placeholder.value = "";
                     placeholder.textContent = "— Select an event —";
                     eventSel.appendChild(placeholder);
-                    cluster.events.forEach((ev) => {
+                    supportedBetaEvents(cluster).forEach((ev) => {
                         // events are objects { name, type } — extract the name
                         const evName = (typeof ev === "string") ? ev : ev.name;
                         const opt = document.createElement("option");
@@ -418,9 +418,7 @@
                 await doSave(btn, async () => {
                     const clusterName = clusterSel ? clusterSel.value : "";
                     // UserPrefs.setEvent owns all event writes — server first, cache on confirm
-                    const eventId = (typeof getEventIdByName === "function")
-                        ? getEventIdByName(eventName)
-                        : eventName.toLowerCase().replace(/ /g, "_");
+                    const eventId = getEventIdByName(eventName);
                     const result = await UserPrefs.setEvent(
                         eventId,
                         eventName,

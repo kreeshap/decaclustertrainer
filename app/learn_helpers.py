@@ -1,5 +1,6 @@
 import json
 import re
+import uuid
 
 from .config import BASE_DIR, SUPABASE_SERVICE_ROLE_KEY
 from .db import supabase_rest_request
@@ -145,14 +146,15 @@ def _supabase_svc(
     )
 
 
-def _fetch_kpi_questions(kpi_code: str) -> list[dict]:
+def _fetch_kpi_questions(kpi_code: str, event_id: str) -> list[dict]:
     """Fetch all questions for a KPI from Supabase (service role read)."""
     status, rows = _supabase_svc(
         "/kpi_questions",
         params={
             "kpi_code": f"eq.{kpi_code}",
-            "select": "id,kpi_code,kpi_text,kpi_cluster,deca_cluster,event_id,question_text,choices,correct_index,explanation,question_type,quality_state,answer_reveal",
-            "order": "question_type.asc,created_at.asc",  # recognition before application
+            "event_id": f"eq.{event_id}",
+            "select": "id,kpi_code,kpi_text,kpi_cluster,deca_cluster,event_id,question_text,choices,correct_index,explanation,question_type,question_slot,quality_state,answer_reveal",
+            "order": "question_type.desc,question_slot.asc",
         },
     )
     if status == 200 and isinstance(rows, list):
@@ -371,14 +373,27 @@ def _save_questions_supabase(
     If questions already exist for this KPI (>= 6 rows, at least 1 application)
     returns existing rows. Otherwise inserts new ones and returns them with UUIDs.
     """
-    existing = _fetch_kpi_questions(kpi_code)
-    has_application = any(r.get("question_type") == "application" for r in existing)
-    if len(existing) >= 6 and has_application:
+    existing = _fetch_kpi_questions(kpi_code, event_id)
+    recognition_count = sum(r.get("question_type") == "recognition" for r in existing)
+    application_count = sum(r.get("question_type") == "application" for r in existing)
+    if len(existing) == 6 and recognition_count == 5 and application_count == 1:
         return [_normalise_db_question(r) for r in existing]
 
-    rows = [
-        (
+    rows = []
+    type_slots = {"recognition": 0, "application": 0}
+    for q in questions:
+        if not q.get("text"):
+            continue
+        question_type = q.get("question_type", "recognition")
+        question_slot = type_slots.get(question_type, 0)
+        type_slots[question_type] = question_slot + 1
+        stable_id = uuid.uuid5(
+            uuid.NAMESPACE_URL,
+            f"deca-cluster-trainer:{event_id}:{kpi_code}:{question_type}:{question_slot}",
+        )
+        rows.append(
             {
+                "id": str(stable_id),
                 "kpi_code": kpi_code,
                 "kpi_text": kpi_text,
                 "kpi_cluster": kpi_cluster,
@@ -388,12 +403,10 @@ def _save_questions_supabase(
                 "choices": q.get("choices", []),
                 "correct_index": int(q.get("correct", 0)),
                 "explanation": q.get("explanation", ""),
-                "question_type": q.get("question_type", "recognition"),
+                "question_type": question_type,
+                "question_slot": question_slot,
             }
         )
-        for q in questions
-        if q.get("text")
-    ]
     if not rows:
         return []
 
@@ -410,11 +423,15 @@ def _save_questions_supabase(
         row["answer_reveal"] = quality_state["answer_reveal"]
         enriched_rows.append(row)
 
-    status, saved = _supabase_svc(
-        "/kpi_questions", method="POST", payload=enriched_rows, prefer="return=representation"
+    status, _ = _supabase_svc(
+        "/kpi_questions", method="POST", payload=enriched_rows,
+        params={"on_conflict": "event_id,kpi_code,question_type,question_slot"},
+        prefer="resolution=ignore-duplicates,return=minimal",
     )
-    if status in (200, 201) and isinstance(saved, list):
-        return [_normalise_db_question(r) for r in saved]
+    if status in (200, 201, 204):
+        saved = _fetch_kpi_questions(kpi_code, event_id)
+        if len(saved) == 6:
+            return [_normalise_db_question(r) for r in saved]
     return []
 
 
@@ -487,7 +504,7 @@ def _update_kpi_mastery(
     # How many questions exist for this KPI?
     _, q_rows = _supabase_svc(
         "/kpi_questions",
-        params={"kpi_code": f"eq.{kpi_code}", "select": "id"},
+        params={"kpi_code": f"eq.{kpi_code}", "event_id": f"eq.{event_id}", "select": "id"},
     )
     total_q = len(q_rows) if isinstance(q_rows, list) else 0
 
@@ -497,6 +514,7 @@ def _update_kpi_mastery(
         token=token,
         params={
             "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
             "select": "question_id,interval_days,correct_attempts,total_attempts,next_review",
         },
         prefer="",
@@ -533,6 +551,7 @@ def _update_kpi_mastery(
         method="POST",
         token=token,
         payload=payload,
+        params={"on_conflict": "user_id,event_id,kpi_code"},
         prefer="resolution=merge-duplicates,return=minimal",
     )
     return payload
@@ -541,6 +560,7 @@ def _update_kpi_mastery(
 def _upsert_daily_activity(
     user_id: str,
     token: str,
+    event_id: str,
     q_answered: int = 0,
     q_correct: int = 0,
     kpis_delta: int = 0,
@@ -558,6 +578,7 @@ def _upsert_daily_activity(
         params={
             "user_id": f"eq.{user_id}",
             "activity_date": f"eq.{today}",
+            "event_id": f"eq.{event_id}",
             "select": "*",
         },
         prefer="",
@@ -567,6 +588,7 @@ def _upsert_daily_activity(
     payload = {
         "user_id": user_id,
         "activity_date": today,
+        "event_id": event_id,
         "questions_answered": existing.get("questions_answered", 0) + q_answered,
         "questions_correct": existing.get("questions_correct", 0) + q_correct,
         "kpis_studied": existing.get("kpis_studied", 0) + kpis_delta,
@@ -577,6 +599,7 @@ def _upsert_daily_activity(
         method="POST",
         token=token,
         payload=payload,
+        params={"on_conflict": "user_id,event_id,activity_date"},
         prefer="resolution=merge-duplicates,return=minimal",
     )
 
@@ -657,3 +680,42 @@ def get_due_kpis(user_id: str, token: str, event_id: str) -> list[dict]:
         if m.get("mastery_score", 0) < 80 or (m.get("next_review") or "") <= now:
             due.append(kpi)                        # not mastered or review due
     return due
+
+
+def get_kpi_catalog(user_id: str, token: str, event_id: str) -> dict:
+    """Return every KPI for an event, classified for Learn/Resume UI."""
+    from datetime import datetime, timezone
+
+    kpis = [dict(k) for k in _load_all_kpis()[0] if k["event"] == event_id]
+    status, rows = supabase_rest_request(
+        "/user_kpi_mastery", token=token,
+        params={"user_id": f"eq.{user_id}", "event_id": f"eq.{event_id}", "select": "kpi_code,mastery_score,next_review"},
+        prefer="",
+    )
+    if status != 200 or not isinstance(rows, list):
+        raise RuntimeError("KPI mastery state could not be loaded")
+    mastery = {row["kpi_code"]: row for row in rows}
+    now = datetime.now(timezone.utc)
+    groups = {"unstarted": [], "due": [], "mastered": [], "in_progress": []}
+    for kpi in kpis:
+        row = mastery.get(kpi["code"])
+        if row is None:
+            label = "unstarted"
+            kpi["mastery_score"] = 0
+            kpi["next_review"] = None
+        else:
+            score = float(row.get("mastery_score") or 0)
+            next_review = row.get("next_review")
+            is_due = False
+            if next_review:
+                try:
+                    is_due = datetime.fromisoformat(next_review.replace("Z", "+00:00")) <= now
+                except (TypeError, ValueError):
+                    is_due = True
+            label = "due" if is_due else ("mastered" if score >= 80 else "in_progress")
+            kpi["mastery_score"] = score
+            kpi["next_review"] = next_review
+        kpi["learning_status"] = label
+        groups[label].append(kpi)
+    ordered = groups["due"] + groups["unstarted"] + groups["in_progress"] + groups["mastered"]
+    return {"kpis": ordered, **groups}

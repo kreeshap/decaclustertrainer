@@ -39,6 +39,7 @@
             let savedConcepts = [];
             let savedNotes = [];
             let isActiveRecallMode = false;
+            let kpiGroups = { unstarted: [], due: [], in_progress: [], mastered: [] };
 
             // ─── Per-question timing state (reset in showQuestion) ────────────────────────
             let _qStartTime         = 0;   // ms timestamp when question was rendered
@@ -50,6 +51,13 @@
             const $ = (id) => document.getElementById(id);
             const viewHome = $("view-home");
             const viewSession = $("view-session");
+
+            function createAttemptId() {
+                if (window.crypto && typeof window.crypto.randomUUID === "function") {
+                    return window.crypto.randomUUID();
+                }
+                return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+            }
 
             function readJsonStorage(key, fallback = []) {
                 try {
@@ -141,7 +149,7 @@
                     row.innerHTML =
                         `<strong>${escHtml(kpi.code || "")}</strong>` +
                         `<span>${escHtml(kpi.text || "")}</span>` +
-                        `<small>${escHtml(kpi.cluster || "")}</small>`;
+                        `<small>${escHtml(kpi.cluster || "")} · ${escHtml((kpi.learning_status || "unstarted").replace("_", " "))}</small>`;
                     row.addEventListener("click", () => focusSessionOnKpi(kpi));
                     panel.appendChild(row);
                 });
@@ -335,7 +343,7 @@
                 const topicCountEl = $("hero-topic-count");
                 if (topicCountEl) {
                     topicCountEl.textContent = allKpis.length
-                        ? `${allKpis.length} topics ready`
+                        ? `${kpiGroups.unstarted.length} new · ${kpiGroups.due.length} due · ${kpiGroups.mastered.length} mastered`
                         : "No topics loaded";
                 }
 
@@ -424,24 +432,8 @@
                 const resolveEventSlug = (value) => {
                     const raw = String(value || "").trim();
                     if (!raw) return "";
-                    if (raw.includes("_")) return raw.toLowerCase();
-                    if (typeof getEventIdByName === "function") {
-                        const mapped = getEventIdByName(raw);
-                        if (mapped) return mapped;
-                    }
-                    if (typeof CLUSTERS !== "undefined") {
-                        for (const cluster of CLUSTERS) {
-                            for (const ev of cluster.events || []) {
-                                const name = (typeof ev === "string") ? ev : ev.name;
-                                if (name === raw) {
-                                    return (typeof getEventIdByName === "function")
-                                        ? getEventIdByName(name)
-                                        : name.toLowerCase().replace(/ /g, "_");
-                                }
-                            }
-                        }
-                    }
-                    return raw.toLowerCase().replace(/ /g, "_");
+                    const mapped = getEventIdByName(raw);
+                    return isSupportedBetaEventId(mapped) ? mapped : "";
                 };
                 const eventIdForApi = resolveEventSlug(savedEventId || savedEventName);
 
@@ -478,6 +470,12 @@
                         : "series";
                     // KPIs from server are already scoped to this event — no client-side filter needed
                     allKpis = kpis;
+                    kpiGroups = {
+                        unstarted: data.unstarted || [],
+                        due: data.due || [],
+                        in_progress: data.in_progress || [],
+                        mastered: data.mastered || [],
+                    };
 
                     const clusterEl = $("event-header-cluster");
                     if (clusterEl) {
@@ -570,7 +568,7 @@
             }
 
             // ─── Session start ────────────────────────────────────────────────────────────
-            function startSession(focusCode = "") {
+            async function startSession(focusCode = "") {
                 const focused = focusCode
                     ? findKpiByCode(focusCode)
                     : null;
@@ -613,18 +611,21 @@
 
                 isActiveRecallMode = currentLearnMode === 'activeRecall';
 
-                // Start server session record (non-blocking)
-                apiFetch("/api/learn/session/start", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event_id: currentEventId,
-                        session_type: currentLearnMode,
-                    }),
-                })
-                    .then((r) => r.json())
-                    .then((d) => { sessionId = d.session_id || null; })
-                    .catch(() => {});
+                try {
+                    const response = await apiFetch("/api/learn/session/start", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({event_id: currentEventId, session_type: currentLearnMode}),
+                    });
+                    const data = await response.json().catch(() => ({}));
+                    sessionId = response.ok ? data.session_id || null : null;
+                } catch (error) {
+                    sessionId = null;
+                }
+                if (!sessionId) {
+                    showError("The study session could not be saved. Check your connection and try again.");
+                    return;
+                }
 
                 viewHome.style.display = "none";
                 viewSession.style.display = "block";
@@ -661,7 +662,7 @@
                 showState("loading");
 
                 // Check local cache first
-                const cached = getQBank(kpi.code);
+                const cached = getQBank(kpi.event, kpi.code);
                 if (cached) {
                     sessionData = cached;
                 } else {
@@ -688,7 +689,7 @@
                         (data.questions || []).forEach((q, i) => {
                             if (!q.id) q.id = kpi.code + "_" + i;
                         });
-                        saveQBank(kpi.code, data);
+                        saveQBank(kpi.event, kpi.code, data);
                         sessionData = data;
                     } catch (e) {
                         showError("Network error: " + e.message);
@@ -1044,6 +1045,7 @@
 
             function showQuestion() {
                 const q = qShown[qIdx];
+                q._attemptId = createAttemptId();
                 $("qs-current").textContent = qIdx + 1;
                 $("result-panel").style.display = "none";
                 $("next-q-btn").style.display = "none";
@@ -1084,8 +1086,9 @@
                 });
             }
 
-            function handleQAnswer(chosen, q) {
+            async function handleQAnswer(chosen, q) {
                 if (qAnswered) return;
+                if (_qFirstClickTime === null) _qFirstClickTime = Date.now();
                 qAnswered = true;
                 sessionQAnswered++;
 
@@ -1098,9 +1101,49 @@
                     else b.classList.add("neutral");
                 });
 
-                const ok = chosen === q.correct;
+                let ok = chosen === q.correct;
+                // Persist to Supabase (cross-device, permanent)
+                const sbId = q.id || "";
+                if (!sbId) {
+                    showError("This question has no persistent ID and cannot be answered safely. Reload the lesson.");
+                    return;
+                }
+                {
+                    const kpi = isReviewMode ? null : currentKpi();
+                    try {
+                        const saved = await apiFetch("/api/learn/answer", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                question_id: sbId,
+                                attempt_id: q._attemptId,
+                                selected_index: chosen,
+                                response_time_ms: Math.max(1, Date.now() - _qStartTime),
+                                time_to_first_ms: _qFirstClickTime
+                                    ? Math.max(1, _qFirstClickTime - _qStartTime)
+                                    : null,
+                                answer_change_count: _qAnswerChangeCount,
+                                question_type: q.question_type || "recognition",
+                                session_id: sessionId || "",
+                                kpi_code: q.kpi_code || (kpi ? kpi.code : ""),
+                                cluster: q.cluster || (kpi ? kpi.cluster : ""),
+                                deca_cluster: q.deca_cluster || (kpi ? kpi.deca_cluster || "" : ""),
+                                event_id: q.event_id || (kpi ? kpi.event || "" : ""),
+                            }),
+                        });
+                        if (!saved.ok) {
+                            showError("Your answer could not be saved. Reload and try again before continuing.");
+                            return;
+                        }
+                        const savedAnswer = await saved.json();
+                        ok = Boolean(savedAnswer.correct);
+                    } catch (error) {
+                        showError("Your answer could not be saved. Check your connection, then reload and try again.");
+                        return;
+                    }
+                }
+
                 if (ok) sessionQCorrect++;
-                // Track by question type
                 if ((q.question_type || "recognition") === "application") {
                     sessionAppAnswered++;
                     if (ok) sessionAppCorrect++;
@@ -1108,30 +1151,8 @@
                     sessionRecogAnswered++;
                     if (ok) sessionRecogCorrect++;
                 }
-                // Persist to localStorage (fast, offline)
                 if (ok) saveCorrectQ(q.id);
-                // Track wrong answers for end-of-set retry
                 if (!ok) missed.push(q);
-                // Persist to Supabase (cross-device, permanent)
-                const sbId = q.id || "";
-                if (sbId) {
-                    const kpi = isReviewMode ? null : currentKpi();
-                    apiFetch("/api/learn/answer", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            question_id: sbId,
-                            correct: ok,
-                            kpi_code: q.kpi_code || (kpi ? kpi.code : ""),
-                            cluster: q.cluster || (kpi ? kpi.cluster : ""),
-                            deca_cluster:
-                                q.deca_cluster ||
-                                (kpi ? kpi.deca_cluster || "" : ""),
-                            event_id:
-                                q.event_id || (kpi ? kpi.event || "" : ""),
-                        }),
-                    }).catch(() => {}); // fire-and-forget
-                }
 
                 const banner = $("result-banner");
                 banner.className =
@@ -1223,6 +1244,7 @@
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
+                            event_id: currentEventId,
                             kpis: chunkKpis.map((k) => ({
                                 code: k.code,
                                 text: k.text,
@@ -1272,6 +1294,8 @@
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
+                            event_id: currentEventId,
+                            session_id: sessionId,
                             scenario,
                             response: responseText,
                             kpis: chunkKpis.map((k) => ({
@@ -1342,9 +1366,14 @@
             });
 
             // ─── Done ─────────────────────────────────────────────────────────────────────
-            function showDone() {
+            async function showDone() {
                 $("progress-fill").style.width = "100%";
-                endSession().then(showSummary);
+                try {
+                    await endSession();
+                    showSummary();
+                } catch (error) {
+                    showError("Your session could not be saved. Check your connection and try again.");
+                }
             }
             $("done-restart").addEventListener("click", startSession);
             $("done-home").addEventListener("click", () => {
@@ -1354,7 +1383,7 @@
             });
 
             // ─── Exit ─────────────────────────────────────────────────────────────────────
-            $("session-exit").addEventListener("click", () => {
+            $("session-exit").addEventListener("click", async () => {
                 if (
                     !confirm(
                         "Exit session? Your question mastery is already saved.",
@@ -1362,7 +1391,12 @@
                 )
                     return;
                 if (sessionStartTime) {
-                    endSession().catch(() => {});
+                    try {
+                        await endSession();
+                    } catch (error) {
+                        showError("Your session could not be saved, so it remains open. Please retry.");
+                        return;
+                    }
                     sessionStartTime = null;
                 }
                 viewSession.style.display = "none";
@@ -1414,16 +1448,16 @@
             }
 
             // ─── Question bank (localStorage) ─────────────────────────────────────────────
-            function getQBank(code) {
+            function getQBank(eventId, code) {
                 try {
-                    return JSON.parse(localStorage.getItem("ct_qb_" + code));
+                    return JSON.parse(localStorage.getItem(`ct_qb_${eventId}_${code}`));
                 } catch (e) {
                     return null;
                 }
             }
-            function saveQBank(code, data) {
+            function saveQBank(eventId, code, data) {
                 try {
-                    localStorage.setItem("ct_qb_" + code, JSON.stringify(data));
+                    localStorage.setItem(`ct_qb_${eventId}_${code}`, JSON.stringify(data));
                 } catch (e) {}
             }
             function getCorrectQs() {
@@ -1715,20 +1749,21 @@
                     "Loading due questions\u2026";
                 showState("loading");
 
-                // Start server session record (non-blocking)
-                apiFetch("/api/learn/session/start", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event_id: currentEventId,
-                        session_type: "review",
-                    }),
-                })
-                    .then((r) => r.json())
-                    .then((d) => {
-                        sessionId = d.session_id || null;
-                    })
-                    .catch(() => {});
+                try {
+                    const response = await apiFetch("/api/learn/session/start", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({event_id: currentEventId, session_type: "review"}),
+                    });
+                    const data = await response.json().catch(() => ({}));
+                    sessionId = response.ok ? data.session_id || null : null;
+                } catch (error) {
+                    sessionId = null;
+                }
+                if (!sessionId) {
+                    showError("The review session could not be saved. Check your connection and try again.");
+                    return;
+                }
 
                 try {
                     const url =
@@ -1768,28 +1803,33 @@
                 const kpisStudied = isReviewMode ? 0 : sessionIdx;
 
                 if (sessionId) {
-                    try {
-                        await apiFetch("/api/learn/session/end", {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                                session_id: sessionId,
-                                kpis_studied: kpisStudied,
-                                questions_answered: sessionQAnswered,
-                                questions_correct: sessionQCorrect,
-                                vocab_total: sessionVocabTotal,
-                                vocab_correct: sessionVocabCorrect,
-                                roleplay_score: sessionRoleplayScore,
-                                duration_seconds: duration,
-                                ar_answers: sessionArAnswers,
-                                recog_answered: sessionRecogAnswered,
-                                recog_correct: sessionRecogCorrect,
-                                app_answered: sessionAppAnswered,
-                                app_correct: sessionAppCorrect,
-                                learn_mode: currentLearnMode,
-                            }),
-                        });
-                    } catch (e) {}
+                    const response = await apiFetch("/api/learn/session/end", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            session_id: sessionId,
+                            kpis_studied: kpisStudied,
+                            questions_answered: sessionQAnswered,
+                            questions_correct: sessionQCorrect,
+                            vocab_total: sessionVocabTotal,
+                            vocab_correct: sessionVocabCorrect,
+                            roleplay_score: sessionRoleplayScore,
+                            duration_seconds: duration,
+                            ar_answers: sessionArAnswers,
+                            recog_answered: sessionRecogAnswered,
+                            recog_correct: sessionRecogCorrect,
+                            app_answered: sessionAppAnswered,
+                            app_correct: sessionAppCorrect,
+                            learn_mode: currentLearnMode,
+                        }),
+                    });
+                    if (!response.ok) {
+                        const detail = await response.json().catch(() => ({}));
+                        throw new Error(detail.error || "Session persistence failed");
+                    }
+                    const savedSession = await response.json();
+                    sessionQAnswered = Number(savedSession.questions_answered ?? sessionQAnswered);
+                    sessionQCorrect = Number(savedSession.questions_correct ?? sessionQCorrect);
                 }
 
                 // Refresh analytics

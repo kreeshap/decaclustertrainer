@@ -1290,7 +1290,7 @@
       codes.map(async (code) => {
         try {
           const res = await apiFetch(
-            `/api/learn/questions?kpi_code=${encodeURIComponent(code)}`,
+            `/api/learn/questions?kpi_code=${encodeURIComponent(code)}&event_id=${encodeURIComponent(UserPrefs.getEventId())}`,
           );
           if (!res.ok) return [];
           const data = await res.json();
@@ -1483,6 +1483,9 @@
 
   function showSessionQuestion(question) {
     state.currentQuestion = question;
+    question._attemptId = (window.crypto && typeof window.crypto.randomUUID === "function")
+      ? window.crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     state.selectedChoice = null;
     state.answerLocked = false;
     state.questionStartAt = Date.now();
@@ -1680,8 +1683,8 @@
     });
   }
 
-  async function submitAnswer(question, correct, responseTimeMs) {
-    if (!question.id) return;
+  async function submitAnswer(question, selectedIndex, responseTimeMs) {
+    if (!question.id) return false;
 
     try {
       const res = await apiFetch("/api/learn/answer", {
@@ -1689,9 +1692,10 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           question_id: question.id,
+          attempt_id: question._attemptId,
           kpi_code: question.kpi_code || "",
           question_type: question.question_type || "recognition",
-          correct,
+          selected_index: selectedIndex,
           response_time_ms: Math.max(1, Math.round(responseTimeMs)),
           time_to_first_ms: state.firstSelectionAt
             ? Math.max(1, Math.round(state.firstSelectionAt - state.questionStartAt))
@@ -1703,11 +1707,12 @@
           event_id: question.event_id || state.currentEventId || "",
         }),
       });
-      if (!res.ok) return;
+      if (!res.ok) return false;
       const data = await res.json().catch(() => ({}));
       applyEngineHints(data.queue_actions || []);
+      return true;
     } catch (error) {
-      // The local session still progresses even if telemetry fails.
+      return false;
     }
   }
 
@@ -1734,7 +1739,11 @@
     recordReviewEntry(question, correct, chosenIndex, responseTimeMs);
     appendLiveQuestionHistory(question, correct, responseTimeMs);
     renderFeedback(question, correct, chosenIndex);
-    await submitAnswer(question, correct, responseTimeMs);
+    const persisted = await submitAnswer(question, chosenIndex, responseTimeMs);
+    if (!persisted) {
+      window.alert("Your answer could not be saved. Check your connection, then reload and try again before continuing.");
+      return;
+    }
     state.benchmarkCache.delete(getQuestionBenchmarkKey(question));
     const benchmark = await loadQuestionBenchmark(question);
     if (state.reviewEntries.length) {
@@ -1789,8 +1798,7 @@
 
     if (!state.sessionId) return;
 
-    try {
-      await apiFetch("/api/learn/session/end", {
+    const response = await apiFetch("/api/learn/session/end", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -1804,9 +1812,11 @@
           ar_answers: state.reviewMode ? state.reviewEntries : [],
         }),
       });
-    } catch (error) {
-      // Summary still renders if the session record cannot be finalized.
+    if (!response.ok) {
+      const detail = await response.json().catch(() => ({}));
+      throw new Error(detail.error || "Session persistence failed");
     }
+    return response.json();
   }
 
   function buildSummaryNote() {
@@ -1926,9 +1936,16 @@
     state._finishing = true;
     try {
       clearSessionTimer();
-      await finalizeServerSession();
+      const savedSession = await finalizeServerSession();
+      if (savedSession) {
+        state.stats.answered = Number(savedSession.questions_answered ?? state.stats.answered);
+        state.stats.correct = Number(savedSession.questions_correct ?? state.stats.correct);
+      }
       renderSummary();
       showView(el.summary);
+    } catch (error) {
+      setStatus("Your session could not be saved. Check your connection and retry before leaving.");
+      window.alert("Your session could not be saved. Check your connection and retry before leaving.");
     } finally {
       state._finishing = false;
     }
@@ -1950,6 +1967,11 @@
       `${state.reviewMode ? "Review mode on. " : ""}${state.timedMode ? "Timed session started. " : "Untimed session started. "}Practice started with ${state.queue.length} question(s).`,
     );
     await startServerSession();
+    if (!state.sessionId) {
+      setStatus("The study session could not be saved. Check your connection and try again.");
+      showView(el.home);
+      return;
+    }
     startSessionTimer();
     renderSessionIntelligence();
     renderQuestion();

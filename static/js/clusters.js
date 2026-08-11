@@ -28,6 +28,23 @@ const EVENT_ID_ALIASES = {
   "financial services team decision making": "financial_services_tdm",
 };
 
+const BETA_EVENT_IDS = Object.freeze([
+  "accounting_application_series",
+  "business_finance_series",
+  "financial_services_tdm",
+]);
+
+function isSupportedBetaEventId(value) {
+  return BETA_EVENT_IDS.includes(getEventIdByName(value));
+}
+
+function supportedBetaEvents(cluster) {
+  return (cluster?.events || []).filter((ev) => {
+    const name = typeof ev === "string" ? ev : ev.name;
+    return isSupportedBetaEventId(name);
+  });
+}
+
 const CLUSTERS = [
   {
     name: "Business Administration Core",

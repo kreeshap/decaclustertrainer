@@ -5,6 +5,13 @@ from datetime import datetime
 from ..ai import call_gemini, call_gemini_json, call_groq
 from ..auth_utils import get_bearer_token, get_current_user
 from ..db import supabase_rest_request
+from ..events import canonical_event_id
+from ..learn_validation import (
+    LearnContentError,
+    validate_lesson,
+    validate_roleplay_grade,
+    validate_roleplay_prompt,
+)
 from ..learn_helpers import (
     _compute_streak,
     _fetch_kpi_questions,
@@ -16,6 +23,7 @@ from ..learn_helpers import (
     _upsert_daily_activity,
     compute_sm2,
     get_due_kpis,
+    get_kpi_catalog,
     _get_kpi_meta,
 )
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
@@ -29,6 +37,10 @@ def api_kpis():
     if not event_filter:
         event_filter = request.args.get("event", "").strip()
 
+    event_filter = canonical_event_id(event_filter)
+    if request.args.get("event_id") and not event_filter:
+        return jsonify({"error": "Unsupported beta event"}), 400
+
     if event_filter:
         all_kpis = [k for k in all_kpis if k["event"] == event_filter]
     else:
@@ -39,9 +51,13 @@ def api_kpis():
     user = get_current_user()
     if user and event_filter:
         token = get_bearer_token()
-        all_kpis = get_due_kpis(user["id"], token, event_filter)
+        try:
+            catalog = get_kpi_catalog(user["id"], token, event_filter)
+        except RuntimeError as error:
+            return jsonify({"error": str(error)}), 502
+        return jsonify({**catalog, "events": events})
 
-    return jsonify({"kpis": all_kpis, "events": events})
+    return jsonify({"kpis": all_kpis, "unstarted": all_kpis, "due": [], "mastered": [], "in_progress": [], "events": events})
 
 @learn_bp.post("/api/learn/generate")
 def learn_generate():
@@ -55,10 +71,17 @@ def learn_generate():
     cluster = (body.get("cluster") or "").strip()
     standard = (body.get("standard") or "").strip()
     deca_cluster = (body.get("deca_cluster") or "").strip()
-    event_id = (body.get("event_id") or "").strip()
+    event_id = canonical_event_id(body.get("event_id"))
 
-    if not code or not text:
+    if not code or not text or not event_id:
         return jsonify({"error": "Missing required fields: code, text"}), 400
+    kpi = next((k for k in _load_all_kpis()[0] if k["code"] == code and k["event"] == event_id), None)
+    if not kpi:
+        return jsonify({"error": "KPI does not belong to the selected beta event"}), 400
+    text = kpi["text"]
+    cluster = kpi["cluster"]
+    standard = kpi["standard"]
+    deca_cluster = kpi["deca_cluster"]
 
     prompt = f"""You are a DECA exam coach creating study materials for high school business students.
 
@@ -133,8 +156,10 @@ Rules:
     if err:
         return jsonify({"error": err}), 500
 
-    if not isinstance(result, dict) or "concept" not in result:
-        return jsonify({"error": "Model returned unexpected format. Please try again."}), 500
+    try:
+        result = validate_lesson(result)
+    except LearnContentError as error:
+        return jsonify({"error": "Model returned invalid lesson content.", "detail": str(error)}), 502
 
     # ── Normalise into a unified questions list for storage ───────────────────
     # recognition_questions (list) + application_question (single) → questions[]
@@ -163,11 +188,9 @@ Rules:
     saved = _save_questions_supabase(
         all_questions, code, text, cluster, deca_cluster, event_id
     )
-    if saved:
-        by_text = {s["text"]: s["id"] for s in saved}
-        for q in all_questions:
-            q["id"] = by_text.get(q.get("text", ""), "")
-        all_questions = saved
+    if len(saved) != 6:
+        return jsonify({"error": "Generated questions could not be persisted reliably."}), 502
+    all_questions = saved
 
     # ── Return structured response the frontend expects ───────────────────────
     result["recognition_questions"] = [q for q in all_questions if q.get("question_type") == "recognition"]
@@ -187,13 +210,14 @@ def learn_get_questions():
         return jsonify({"error": "Unauthorized"}), 401
 
     kpi_code = request.args.get("kpi_code", "").strip()
-    if not kpi_code:
-        return jsonify({"error": "Missing kpi_code"}), 400
+    event_id = canonical_event_id(request.args.get("event_id"))
+    if not kpi_code or not event_id:
+        return jsonify({"error": "Missing kpi_code or supported event_id"}), 400
 
     token = get_bearer_token()
     user_id = user.get("id", "")
 
-    rows = _fetch_kpi_questions(kpi_code)
+    rows = _fetch_kpi_questions(kpi_code, event_id)
     questions = [_normalise_db_question(r) for r in rows]
 
     # Fetch this user's answer history for these question IDs
@@ -203,12 +227,13 @@ def learn_get_questions():
         # PostgREST "in" filter: ?question_id=in.(uuid1,uuid2,...)
         id_list = ",".join(q_ids)
         status, results = supabase_rest_request(
-            "/user_question_results",
+            "/user_srs_state",
             token=token,
             params={
                 "user_id": f"eq.{user_id}",
                 "question_id": f"in.({id_list})",
-                "correct": "eq.true",
+                "event_id": f"eq.{event_id}",
+                "interval_days": "gte.7",
                 "select": "question_id",
             },
             prefer="",
@@ -392,27 +417,6 @@ def learn_record_answer():
     Record a question answer. Runs the full adaptive learning engine:
     behavioral feature extraction → inference → dampened SM-2 → evaluation log.
     """
-    from datetime import timezone
-    from ..learning_engine import (
-        apply_dampened_quality,
-        classify_tensions,
-        compute_confidence_volatility,
-        compute_dampening,
-        compute_stability_confidence,
-        compute_uncertainty,
-        extract_features,
-        get_queue_adjustments,
-        infer_instant_confidence,
-        make_idempotency_hash,
-        reconcile_mastery,
-        srs_quality_score,
-        update_application_mastery,
-        update_baseline,
-        update_confidence_ema,
-        update_mastery,
-        update_recognition_mastery,
-    )
-
     user = get_current_user()
     if not user:
         return jsonify({"error": "Unauthorized"}), 401
@@ -421,23 +425,77 @@ def learn_record_answer():
     user_id = user.get("id", "")
     body    = request.get_json(silent=True) or {}
 
+    question_id = str(body.get("question_id") or "").strip()
+    session_id = str(body.get("session_id") or "").strip()
+    attempt_id = str(body.get("attempt_id") or "").strip()
+    try:
+        selected_index = int(body.get("selected_index"))
+        response_time_ms = max(0, int(body.get("response_time_ms", 12000)))
+        time_to_first_ms = body.get("time_to_first_ms")
+        time_to_first_ms = None if time_to_first_ms is None else max(0, int(time_to_first_ms))
+        answer_change_count = max(0, int(body.get("answer_change_count", 0)))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid answer telemetry"}), 400
+    if not question_id or not session_id or not attempt_id or not 0 <= selected_index <= 3:
+        return jsonify({"error": "question_id, session_id, attempt_id, and selected_index are required"}), 400
+
+    status, result = supabase_rest_request(
+        "/rpc/record_beta_answer", method="POST", token=token,
+        payload={
+            "p_session_id": session_id,
+            "p_question_id": question_id,
+            "p_selected_index": selected_index,
+            "p_response_time_ms": response_time_ms,
+            "p_time_to_first_ms": time_to_first_ms,
+            "p_answer_change_count": answer_change_count,
+            "p_idempotency_key": f"{user_id}:{attempt_id}",
+        },
+        prefer="return=representation",
+    )
+    if status not in (200, 201) or not isinstance(result, dict) or not result.get("ok"):
+        return jsonify({"error": "Answer transaction failed", "detail": result}), 502
+    return jsonify(result)
+
     question_id         = (body.get("question_id") or "").strip()
-    kpi_code            = (body.get("kpi_code") or "").strip()
-    question_type       = body.get("question_type", "recognition")
-    correct             = bool(body.get("correct", False))
+    selected_index      = body.get("selected_index")
     response_time_ms    = int(body.get("response_time_ms", 12000))
     time_to_first_ms    = body.get("time_to_first_ms")
     answer_change_count = int(body.get("answer_change_count", 0))
     session_id          = body.get("session_id", "")
     kpi_cluster_arg     = (body.get("cluster") or "").strip()
     deca_cluster        = (body.get("deca_cluster") or "").strip()
-    event_id            = (body.get("event_id") or "").strip()
+    event_id            = canonical_event_id(body.get("event_id"))
 
-    if not question_id:
-        return jsonify({"error": "Missing question_id"}), 400
+    if not question_id or selected_index is None or not event_id or not session_id:
+        return jsonify({"error": "Missing question_id, selected_index, session_id, or supported event_id"}), 400
 
-    meta        = _get_kpi_meta(kpi_code) if kpi_code else {}
-    kpi_cluster = meta.get("cluster", kpi_cluster_arg)
+    session_status, session_rows = supabase_rest_request(
+        "/user_study_sessions", token=token,
+        params={"id": f"eq.{session_id}", "user_id": f"eq.{user_id}", "event_id": f"eq.{event_id}", "select": "id", "limit": "1"},
+        prefer="",
+    )
+    if session_status != 200 or not isinstance(session_rows, list) or not session_rows:
+        return jsonify({"error": "Session does not belong to this user and event"}), 400
+
+    q_status, q_rows = _supabase_svc("/kpi_questions", params={
+        "id": f"eq.{question_id}", "event_id": f"eq.{event_id}",
+        "select": "id,kpi_code,kpi_cluster,deca_cluster,event_id,question_type,correct_index", "limit": "1",
+    })
+    if q_status != 200 or not isinstance(q_rows, list) or not q_rows:
+        return jsonify({"error": "Question is not part of the selected event"}), 400
+    question = q_rows[0]
+    try:
+        selected_index = int(selected_index)
+    except (TypeError, ValueError):
+        return jsonify({"error": "selected_index must be an integer"}), 400
+    kpi_code = question["kpi_code"]
+    question_type = question.get("question_type") or "recognition"
+    kpi_cluster_arg = question.get("kpi_cluster") or kpi_cluster_arg
+    deca_cluster = question.get("deca_cluster") or deca_cluster
+    correct = selected_index == int(question["correct_index"])
+
+    meta = {"cluster": kpi_cluster_arg, "deca_cluster": deca_cluster, "event_id": event_id}
+    kpi_cluster = kpi_cluster_arg
 
     answered_at = datetime.now(timezone.utc)
     idem_hash   = make_idempotency_hash(user_id, session_id, question_id, correct, answered_at)
@@ -448,6 +506,7 @@ def learn_record_answer():
         params={
             "user_id":     f"eq.{user_id}",
             "question_id": f"eq.{question_id}",
+            "event_id": f"eq.{event_id}",
             "select":      "ease_factor,interval_days,repetitions,correct_attempts,total_attempts",
             "limit":       "1",
         },
@@ -466,6 +525,7 @@ def learn_record_answer():
         params={
             "user_id":  f"eq.{user_id}",
             "kpi_code": f"eq.{kpi_code}",
+            "event_id": f"eq.{event_id}",
             "select":   ("mastery_prob,recognition_mastery,application_mastery,"
                          "confidence_est,sample_count"),
         },
@@ -485,6 +545,7 @@ def learn_record_answer():
             "user_id":       f"eq.{user_id}",
             "question_type": f"eq.{question_type}",
             "kpi_cluster":   f"eq.{kpi_cluster}",
+            "event_id":      f"eq.{event_id}",
             "select":        "median_ms,sample_count",
         },
         prefer="",
@@ -503,6 +564,7 @@ def learn_record_answer():
         params={
             "user_id":       f"eq.{user_id}",
             "question_type": f"eq.{question_type}",
+            "event_id":      f"eq.{event_id}",
             "select":        "instant_confidence",
             "order":         "answered_at.desc",
             "limit":         "8",
@@ -543,11 +605,13 @@ def learn_record_answer():
 
     new_ef, new_iv, new_reps, next_review = compute_sm2(ef, iv, reps, dampened_quality)
 
-    supabase_rest_request(
+    srs_status, srs_data = supabase_rest_request(
         "/user_srs_state", method="POST", token=token,
+        params={"on_conflict": "user_id,event_id,question_id"},
         payload={
             "user_id":          user_id,
             "question_id":      question_id,
+            "event_id":         event_id,
             "ease_factor":      new_ef,
             "interval_days":    new_iv,
             "repetitions":      new_reps,
@@ -559,13 +623,16 @@ def learn_record_answer():
     )
 
     # ── 9. Response event ────────────────────────────────────────────────────
-    supabase_rest_request(
+    response_status, response_data = supabase_rest_request(
         "/responses", method="POST", token=token,
         payload={
             "user_id":             user_id,
             "question_id":         question_id,
+            "event_id":            event_id,
+            "session_id":          session_id,
             "kpi_code":            kpi_code,
             "question_type":       question_type,
+            "selected_index":      selected_index,
             "correct":             correct,
             "response_time_ms":    response_time_ms,
             "time_to_first_ms":    time_to_first_ms,
@@ -578,14 +645,18 @@ def learn_record_answer():
         },
         prefer="resolution=ignore,return=minimal",
     )
+    if srs_status not in (200, 201, 204) or response_status not in (200, 201, 204):
+        return jsonify({"error": "Answer persistence failed", "detail": {"srs": srs_data, "response": response_data}}), 502
 
     # ── 10. Inference state ───────────────────────────────────────────────────
     if kpi_code:
         supabase_rest_request(
             "/kpi_inference_state", method="POST", token=token,
+            params={"on_conflict": "user_id,event_id,kpi_code"},
             payload={
                 "user_id":                 user_id,
                 "kpi_code":                kpi_code,
+                "event_id":                event_id,
                 "mastery_prob":            new_mastery,
                 "recognition_mastery":     new_recog_mastery,
                 "application_mastery":     new_app_mastery,
@@ -604,6 +675,7 @@ def learn_record_answer():
         payload={
             "user_id":              user_id,
             "kpi_code":             kpi_code,
+            "event_id":             event_id,
             "kpi_cluster":          kpi_cluster,
             "question_type":        question_type,
             "recognition_mastery":  new_recog_mastery,
@@ -624,10 +696,12 @@ def learn_record_answer():
     new_baseline = update_baseline(baseline_ms, response_time_ms, baseline_count)
     supabase_rest_request(
         "/user_timing_profile", method="POST", token=token,
+        params={"on_conflict": "user_id,event_id,question_type,kpi_cluster"},
         payload={
             "user_id":       user_id,
             "question_type": question_type,
             "kpi_cluster":   kpi_cluster,
+            "event_id":      event_id,
             "median_ms":     new_baseline,
             "sample_count":  baseline_count + 1,
             "updated_at":    answered_at.isoformat(),
@@ -640,7 +714,7 @@ def learn_record_answer():
         _update_kpi_mastery(user_id, token, kpi_code, kpi_cluster,
                             meta.get("deca_cluster", deca_cluster),
                             meta.get("event_id", event_id))
-    _upsert_daily_activity(user_id, token, q_answered=1, q_correct=1 if correct else 0)
+    _upsert_daily_activity(user_id, token, event_id, q_answered=1, q_correct=1 if correct else 0)
 
     return jsonify({
         "ok":                  True,
@@ -672,7 +746,9 @@ def learn_session_start():
         return jsonify({"error": "Unauthorized"}), 401
 
     body = request.get_json(silent=True) or {}
-    event_id = (body.get("event_id") or "").strip()
+    event_id = canonical_event_id(body.get("event_id"))
+    if not event_id:
+        return jsonify({"error": "Unsupported beta event"}), 400
     session_type = (body.get("session_type") or "full").strip()
     token = get_bearer_token()
     user_id = user.get("id", "")
@@ -704,20 +780,51 @@ def learn_session_end():
 
     body = request.get_json(silent=True) or {}
     session_id = (body.get("session_id") or "").strip()
-    kpis_studied = int(body.get("kpis_studied", 0))
-    questions_answered = int(body.get("questions_answered", 0))
-    questions_correct = int(body.get("questions_correct", 0))
-    vocab_total = int(body.get("vocab_total", 0))
-    vocab_correct = int(body.get("vocab_correct", 0))
-    roleplay_score = body.get("roleplay_score")  # int or None
-    duration_seconds = int(body.get("duration_seconds", 0))
+    try:
+        kpis_studied = int(body.get("kpis_studied", 0))
+        vocab_total = int(body.get("vocab_total", 0))
+        vocab_correct = int(body.get("vocab_correct", 0))
+        roleplay_score = body.get("roleplay_score")
+        roleplay_score = None if roleplay_score is None else int(roleplay_score)
+        duration_seconds = int(body.get("duration_seconds", 0))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid session summary"}), 400
     ar_answers = body.get("ar_answers", [])  # list of {kpi_code, kpi_text, answer, timestamp}
 
     if not session_id:
         return jsonify({"error": "Missing session_id"}), 400
 
     token = get_bearer_token()
+    status, result = supabase_rest_request(
+        "/rpc/finish_beta_session", method="POST", token=token,
+        payload={
+            "p_session_id": session_id,
+            "p_duration_seconds": duration_seconds,
+            "p_kpis_studied": kpis_studied,
+            "p_vocab_total": vocab_total,
+            "p_vocab_correct": vocab_correct,
+            "p_roleplay_score": roleplay_score,
+            "p_ar_answers": ar_answers if isinstance(ar_answers, list) else [],
+        },
+        prefer="return=representation",
+    )
+    if status not in (200, 201) or not isinstance(result, dict) or not result.get("ok"):
+        return jsonify({"error": "Session completion transaction failed", "detail": result}), 502
+    return jsonify(result)
+
+    token = get_bearer_token()
     user_id = user.get("id", "")
+
+    session_status, session_rows = supabase_rest_request(
+        "/user_study_sessions", token=token,
+        params={"id": f"eq.{session_id}", "user_id": f"eq.{user_id}", "select": "event_id", "limit": "1"},
+        prefer="",
+    )
+    if session_status != 200 or not isinstance(session_rows, list) or not session_rows:
+        return jsonify({"error": "Study session not found"}), 404
+    event_id = canonical_event_id(session_rows[0].get("event_id"))
+    if not event_id:
+        return jsonify({"error": "Study session has an unsupported event"}), 400
 
     acc = round(questions_correct / max(questions_answered, 1) * 100, 1)
 
@@ -736,7 +843,7 @@ def learn_session_end():
     if ar_answers:
         payload["ar_answers"] = ar_answers
 
-    supabase_rest_request(
+    end_status, end_data = supabase_rest_request(
         f"/user_study_sessions",
         method="PATCH",
         token=token,
@@ -744,11 +851,14 @@ def learn_session_end():
         params={"id": f"eq.{session_id}", "user_id": f"eq.{user_id}"},
         prefer="return=minimal",
     )
+    if end_status not in (200, 204):
+        return jsonify({"error": "Could not finish session", "detail": end_data}), 502
 
     # Update daily activity with session-level deltas
     _upsert_daily_activity(
         user_id,
         token,
+        event_id,
         kpis_delta=kpis_studied,
         minutes=duration_seconds // 60,
     )
@@ -769,12 +879,12 @@ def learn_analytics():
 
     token = get_bearer_token()
     user_id = user.get("id", "")
-    event_id = request.args.get("event_id", "").strip()
+    event_id = canonical_event_id(request.args.get("event_id"))
+    if not event_id:
+        return jsonify({"error": "Supported event_id is required"}), 400
 
     # KPI mastery rows
-    mastery_params: dict = {"user_id": f"eq.{user_id}", "select": "*"}
-    if event_id:
-        mastery_params["event_id"] = f"eq.{event_id}"
+    mastery_params: dict = {"user_id": f"eq.{user_id}", "event_id": f"eq.{event_id}", "select": "*"}
     _, mastery_rows = supabase_rest_request(
         "/user_kpi_mastery", token=token, params=mastery_params, prefer="",
     )
@@ -786,6 +896,7 @@ def learn_analytics():
         token=token,
         params={
             "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
             "select": "*",
             "order": "started_at.desc",
             "limit": "20",
@@ -800,6 +911,7 @@ def learn_analytics():
         token=token,
         params={
             "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
             "select": "*",
             "order": "activity_date.desc",
             "limit": "30",
@@ -812,6 +924,7 @@ def learn_analytics():
     now_iso = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     due_params: dict = {
         "user_id": f"eq.{user_id}",
+        "event_id": f"eq.{event_id}",
         "next_review": f"lte.{now_iso}",
         "select": "question_id",
     }
@@ -823,6 +936,7 @@ def learn_analytics():
     # ── SRS state for question-type breakdown ──────────────────────────────
     srs_params: dict = {
         "user_id": f"eq.{user_id}",
+        "event_id": f"eq.{event_id}",
         "select": "question_id,correct_attempts,total_attempts",
     }
     _, srs_rows = supabase_rest_request(
@@ -907,6 +1021,7 @@ def learn_analytics():
         token=token,
         params={
             "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
             "select": "question_id,kpi_code,question_type,correct,response_time_ms,time_to_first_ms,answer_change_count,instant_confidence,answered_at,session_id,event_id",
             "order": "answered_at.desc",
             "limit": "1000",
@@ -914,8 +1029,6 @@ def learn_analytics():
         prefer="",
     )
     response_rows = response_rows if isinstance(response_rows, list) else []
-    if event_id:
-        response_rows = [r for r in response_rows if r.get("event_id") == event_id]
 
     history_rows = []
     if response_rows:
@@ -1017,7 +1130,9 @@ def learn_due_questions():
 
     token = get_bearer_token()
     user_id = user.get("id", "")
-    event_id = request.args.get("event_id", "").strip()
+    event_id = canonical_event_id(request.args.get("event_id"))
+    if not event_id:
+        return jsonify({"error": "Supported event_id is required"}), 400
     limit = min(int(request.args.get("limit", "50")), 200)
 
     now_iso = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -1025,6 +1140,7 @@ def learn_due_questions():
     # Fetch due SRS states
     due_params: dict = {
         "user_id": f"eq.{user_id}",
+        "event_id": f"eq.{event_id}",
         "next_review": f"lte.{now_iso}",
         "select": "question_id,ease_factor,interval_days,repetitions,next_review,total_attempts,correct_attempts",
         "order": "next_review.asc",
@@ -1100,9 +1216,13 @@ def learn_roleplay_prompt():
 
     body = request.get_json(silent=True) or {}
     kpis = body.get("kpis", [])  # list of {code, text, cluster}
+    event_id = canonical_event_id(body.get("event_id"))
 
-    if not kpis:
-        return jsonify({"error": "No KPIs provided"}), 400
+    if not kpis or not event_id:
+        return jsonify({"error": "No KPIs or supported event provided"}), 400
+    allowed = {(k["code"], k["text"]): k for k in _load_all_kpis()[0] if k["event"] == event_id}
+    if any((str(k.get("code", "")), str(k.get("text", ""))) not in allowed for k in kpis):
+        return jsonify({"error": "Roleplay KPIs do not belong to the selected event"}), 400
 
     kpi_lines = "\n".join(f"- {k.get('code', '')}: {k.get('text', '')}" for k in kpis)
 
@@ -1127,7 +1247,10 @@ Return ONLY valid JSON:
     if err:
         return jsonify({"error": err}), 500
 
-    return jsonify(result)
+    try:
+        return jsonify(validate_roleplay_prompt(result))
+    except LearnContentError as error:
+        return jsonify({"error": "Model returned invalid roleplay content.", "detail": str(error)}), 502
 
 
 @learn_bp.post("/api/learn/grade")
@@ -1140,9 +1263,15 @@ def learn_grade():
     scenario = (body.get("scenario") or "").strip()
     response_text = (body.get("response") or "").strip()
     kpis = body.get("kpis", [])
+    event_id = canonical_event_id(body.get("event_id"))
+    session_id = str(body.get("session_id") or "").strip()
 
-    if not scenario or not response_text:
-        return jsonify({"error": "Missing scenario or response"}), 400
+    if not scenario or not response_text or not event_id or not session_id:
+        return jsonify({"error": "Missing scenario, response, session, or supported event"}), 400
+    allowed_codes = {k["code"] for k in _load_all_kpis()[0] if k["event"] == event_id}
+    kpi_codes = [str(k.get("code") or "") for k in kpis]
+    if not kpi_codes or any(code not in allowed_codes for code in kpi_codes):
+        return jsonify({"error": "Roleplay KPIs do not belong to the selected event"}), 400
 
     kpi_lines = "\n".join(f"- {k.get('code', '')}: {k.get('text', '')}" for k in kpis)
 
@@ -1198,6 +1327,21 @@ Grade letter: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 1-2=F."""
             {"error": "Failed to parse grading response", "raw": text[:500]}
         ), 500
 
+    try:
+        result = validate_roleplay_grade(result, kpi_codes)
+    except LearnContentError as error:
+        return jsonify({"error": "Model returned an invalid roleplay grade.", "detail": str(error)}), 502
+
+    token = get_bearer_token()
+    user_id = user.get("id", "")
+    status, saved = supabase_rest_request(
+        "/user_study_sessions", method="PATCH", token=token,
+        params={"id": f"eq.{session_id}", "user_id": f"eq.{user_id}", "event_id": f"eq.{event_id}"},
+        payload={"roleplay_score": result["score"], "roleplay_result": {"scenario": scenario, "response": response_text, **result}},
+        prefer="return=representation",
+    )
+    if status not in (200, 204) or not isinstance(saved, list) or not saved:
+        return jsonify({"error": "Roleplay grade could not be saved."}), 502
     return jsonify(result)
 
 

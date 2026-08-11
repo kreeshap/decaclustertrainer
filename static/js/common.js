@@ -412,7 +412,7 @@ const UserPrefs = {
   // clusterName = display name of the cluster (optional)
   // Saves to server first; only updates cache on success.
   async setEvent(eventId, eventName, clusterName) {
-    if (!eventId) return null;
+    if (!eventId || (typeof isSupportedBetaEventId === 'function' && !isSupportedBetaEventId(eventId))) return null;
     const token = Auth.getToken();
     if (!token) {
       // Not logged in — cache only (opening screen before signup completes)
@@ -461,9 +461,7 @@ const UserPrefs = {
           const name = typeof ev === 'string' ? ev : ev.name;
           if (name === eventName) {
             // Derive slug using the shared canonicalizer
-            eventId = (typeof getEventIdByName === 'function')
-              ? getEventIdByName(name)
-              : name.toLowerCase().replace(/ /g, '_');
+            eventId = getEventIdByName(name);
             break;
           }
         }
@@ -471,8 +469,11 @@ const UserPrefs = {
       }
     }
 
+    if (typeof isSupportedBetaEventId === 'function' && !isSupportedBetaEventId(eventId)) {
+      eventId = '';
+    }
     if (eventId) this._writeCache(eventId, eventName, clusterName);
-    // If server has nothing, leave existing cache alone
+    else this.clearEvent();
   },
 
   // Internal — the only place localStorage gets written
@@ -481,6 +482,14 @@ const UserPrefs = {
       if (eventId)     localStorage.setItem(this._eventIdKey,   eventId);
       if (eventName)   localStorage.setItem(this._eventNameKey, eventName);
       if (clusterName) localStorage.setItem(this._clusterKey,   clusterName);
+    } catch(e) {}
+  },
+
+  clearEvent() {
+    try {
+      localStorage.removeItem(this._eventIdKey);
+      localStorage.removeItem(this._eventNameKey);
+      localStorage.removeItem(this._clusterKey);
     } catch(e) {}
   },
 };

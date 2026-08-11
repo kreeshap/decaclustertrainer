@@ -30,7 +30,7 @@
                 }
             }
 
-            function setSavedTier(tier) {
+            async function setSavedTier(tier) {
                 try {
                     if (tier) {
                         localStorage.setItem(
@@ -40,6 +40,19 @@
                     }
                 } catch (error) {
                     // ignore storage errors
+                }
+                const token = getStoredAuthToken();
+                if (!token || !tier) return true;
+                try {
+                    const response = await fetch("/auth/profile", {
+                        method: "PUT",
+                        headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`},
+                        credentials: "same-origin",
+                        body: JSON.stringify({competition_tier: tier.toLowerCase()}),
+                    });
+                    return response.ok;
+                } catch (error) {
+                    return false;
                 }
             }
 
@@ -123,14 +136,14 @@
                             Authorization: `Bearer ${token}`,
                         },
                         credentials: "same-origin",
-                        body: JSON.stringify({ cluster: clusterName }),
+                        body: JSON.stringify({ default_cluster: clusterName }),
                     });
                     if (!res.ok) return false;
                     const data = await res.json().catch(() => null);
                     if (!data?.user) return false;
                     OPENING_STATE.user = data.user;
                     OPENING_STATE.clusterObj =
-                        findClusterByName(data.user.cluster) ||
+                        findClusterByName(data.user.default_cluster) ||
                         OPENING_STATE.clusterObj;
                     return true;
                 } catch (error) {
@@ -142,9 +155,7 @@
             // NOTE: kept for saveUserCluster backward compat only. Event writes go through UserPrefs.setEvent().
             async function saveUserEvent(clusterName, eventName) {
                 // Delegate entirely to UserPrefs — it owns this write path
-                const eventId = (typeof getEventIdByName === "function")
-                    ? getEventIdByName(eventName)
-                    : String(eventName || "").toLowerCase().replace(/ /g, "_");
+                const eventId = getEventIdByName(eventName);
                 await UserPrefs.setEvent(
                     eventId,
                     eventName,
@@ -156,12 +167,20 @@
                 OPENING_STATE.source = getOpeningSource();
                 OPENING_STATE.user = await fetchCurrentUser();
                 if (OPENING_STATE.user) {
+                    if (OPENING_STATE.user.competition_tier) {
+                        try {
+                            localStorage.setItem(STORAGE_KEYS.competitionTier,
+                                OPENING_STATE.user.competition_tier.toUpperCase() === "SCDC" || OPENING_STATE.user.competition_tier.toUpperCase() === "ICDC"
+                                    ? OPENING_STATE.user.competition_tier.toUpperCase()
+                                    : "Districts");
+                        } catch (error) {}
+                    }
                     OPENING_STATE.clusterObj =
-                        findClusterByName(OPENING_STATE.user.cluster || "") ||
+                        findClusterByName(OPENING_STATE.user.default_cluster || "") ||
                         null;
                     // For sign-in users, skip cluster selection if user exists
                     // For sign-up users, only skip if they have a saved cluster
-                    if (OPENING_STATE.source === 'signin' || OPENING_STATE.clusterObj) {
+                    if (typeof isSupportedBetaEventId === "function" && isSupportedBetaEventId(OPENING_STATE.user.default_event_id || OPENING_STATE.user.default_event)) {
                         OPENING_STATE.skipCluster = true;
                     }
                 }
@@ -324,13 +343,15 @@
             // ── BUILD CLUSTER GRID ────────────────────────────────────────────────────────
             const gridEl = document.getElementById("cluster-grid");
             CLUSTERS.forEach((c, i) => {
+                const betaEvents = supportedBetaEvents(c);
+                if (!betaEvents.length) return;
                 const card = document.createElement("div");
                 card.className = "cluster-card";
                 card.style.setProperty("--accent", c.color);
                 card.style.setProperty("--glow", c.glow);
                 card.innerHTML = `
     <div class="cluster-name">${c.name}</div>
-    <div class="cluster-count">${c.events.length ? c.events.length + " events" : "Core event"}</div>
+    <div class="cluster-count">${betaEvents.length} supported events</div>
   `;
                 card.addEventListener("click", () => openCluster(i));
                 gridEl.appendChild(card);
@@ -415,7 +436,7 @@
                 const cluster = CLUSTERS[index];
                 hideOpeningTip(true);
 
-                if (OPENING_STATE.user && !OPENING_STATE.user.cluster) {
+                if (OPENING_STATE.user && !OPENING_STATE.user.default_cluster) {
                     await saveUserCluster(cluster.name);
                 }
 
@@ -443,7 +464,7 @@
                 window.setTimeout(() => {
                     clearSkeletonList(list);
                     list.innerHTML = "";
-                    cluster.events.forEach((ev) => {
+                    supportedBetaEvents(cluster).forEach((ev) => {
                         // events are objects { name, type } — extract the name
                         const evName = (typeof ev === "string") ? ev : ev.name;
                         const item = document.createElement("div");
@@ -454,11 +475,10 @@
                             "--active-accent",
                             cluster.color,
                         );
-                        item.addEventListener("click", () => {
-                            // Derive slug the same way the server does: lowercase + underscores
-                            const evSlug = evName.toLowerCase().replace(/ /g, '_');
-                            UserPrefs.setEvent(evSlug, evName, cluster.name);
-                            openLevelSelection(cluster, phEvents);
+                        item.addEventListener("click", async () => {
+                            const evSlug = getEventIdByName(evName);
+                            const saved = await UserPrefs.setEvent(evSlug, evName, cluster.name);
+                            if (saved) openLevelSelection(cluster, phEvents);
                         });
                         list.appendChild(item);
                     });
@@ -493,11 +513,12 @@
                     item.textContent =
                         tier + (tier === currentTier ? " ✓" : "");
                     item.style.setProperty("--active-accent", cluster.color);
-                    const chooseTier = () => {
-                        setSavedTier(tier);
-                        showWelcome(cluster, phLevel, tier);
+                    const chooseTier = async () => {
+                        item.disabled = true;
+                        const saved = await setSavedTier(tier);
+                        item.disabled = false;
+                        if (saved) showWelcome(cluster, phLevel, tier);
                     };
-                    item.addEventListener("pointerdown", chooseTier);
                     item.addEventListener("click", chooseTier);
                     list.appendChild(item);
                 });
