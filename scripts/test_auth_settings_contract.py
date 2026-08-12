@@ -16,6 +16,11 @@ SETTINGS_CSS = (ROOT / "static" / "styles" / "settings.css").read_text(
 )
 SIGNON_HTML = (ROOT / "templates" / "signon.html").read_text(encoding="utf-8")
 AUTH_CSS = (ROOT / "static" / "styles" / "auth.css").read_text(encoding="utf-8")
+OPENING_HTML = (ROOT / "templates" / "opening.html").read_text(encoding="utf-8")
+OPENING_JS = (ROOT / "static" / "js" / "opening.js").read_text(encoding="utf-8")
+OPENING_CSS = (ROOT / "static" / "styles" / "opening.css").read_text(
+    encoding="utf-8"
+)
 
 
 class PasswordRecoveryContracts(unittest.TestCase):
@@ -47,6 +52,33 @@ class EmailPasswordOnlySignInContracts(unittest.TestCase):
             "social-apple",
         ):
             self.assertNotIn(marker, combined)
+
+
+class OnboardingContracts(unittest.TestCase):
+    def test_onboarding_quick_tips_are_removed(self):
+        combined = OPENING_HTML + OPENING_JS + OPENING_CSS
+        for marker in (
+            "Quick tip",
+            "opening-tip",
+            "showOpeningTip",
+            "hideOpeningTip",
+            "hasSeenOpeningTour",
+            "markOpeningTourSeen",
+            "ct_openingTourSeen",
+        ):
+            self.assertNotIn(marker, combined)
+
+    def test_onboarding_displays_all_clusters_and_events(self):
+        self.assertNotIn("supportedBetaEvents(cluster).forEach", OPENING_JS)
+        self.assertNotIn("supported events", OPENING_JS)
+        self.assertIn("CLUSTERS.forEach((c, i) =>", OPENING_JS)
+        self.assertIn("const eventCount = c.events.length", OPENING_JS)
+        self.assertIn("cluster.events.forEach((ev) =>", OPENING_JS)
+
+    def test_non_beta_onboarding_event_does_not_invent_server_event_id(self):
+        self.assertIn('body: JSON.stringify({\n              default_event:', COMMON_JS)
+        self.assertIn('profile_patch["default_event_id"] = None', AUTH_PY)
+        self.assertIn('elif "default_event" in payload:', AUTH_PY)
 
 
 class DarkOnlySettingsContracts(unittest.TestCase):

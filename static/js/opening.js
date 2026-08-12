@@ -12,12 +12,10 @@
 
             const STORAGE_KEYS = {
                 competitionTier: "ct_competitionTier",
-                openingTourSeen: "ct_openingTourSeen",
             };
 
             let openingLoadError = false;
             let openingStatusTimer = null;
-            let openingTipTimer = null;
 
             function getSavedTier() {
                 try {
@@ -53,25 +51,6 @@
                     return response.ok;
                 } catch (error) {
                     return false;
-                }
-            }
-
-            function hasSeenOpeningTour() {
-                try {
-                    return (
-                        localStorage.getItem(STORAGE_KEYS.openingTourSeen) ===
-                        "1"
-                    );
-                } catch (error) {
-                    return true;
-                }
-            }
-
-            function markOpeningTourSeen() {
-                try {
-                    localStorage.setItem(STORAGE_KEYS.openingTourSeen, "1");
-                } catch (error) {
-                    // ignore storage errors
                 }
             }
 
@@ -297,35 +276,6 @@
                 }
             }
 
-            function showOpeningTip(message, duration = 5000) {
-                const el = document.getElementById("opening-tip");
-                const text = document.getElementById("opening-tip-text");
-                if (!el || !text) return;
-                if (hasSeenOpeningTour()) return;
-
-                window.clearTimeout(openingTipTimer);
-                text.textContent = message || "";
-                el.classList.remove("hidden");
-                el.classList.add("show");
-
-                if (duration > 0) {
-                    openingTipTimer = window.setTimeout(
-                        () => hideOpeningTip(true),
-                        duration,
-                    );
-                }
-            }
-
-            function hideOpeningTip(markSeen = false) {
-                const el = document.getElementById("opening-tip");
-                if (!el) return;
-
-                window.clearTimeout(openingTipTimer);
-                el.classList.remove("show");
-                window.setTimeout(() => el.classList.add("hidden"), 200);
-                if (markSeen) markOpeningTourSeen();
-            }
-
             function renderSkeletonList(listEl, count = 3, compact = false) {
                 if (!listEl) return;
                 listEl.innerHTML = "";
@@ -349,15 +299,14 @@
             // ── BUILD CLUSTER GRID ────────────────────────────────────────────────────────
             const gridEl = document.getElementById("cluster-grid");
             CLUSTERS.forEach((c, i) => {
-                const betaEvents = supportedBetaEvents(c);
-                if (!betaEvents.length) return;
+                const eventCount = c.events.length;
                 const card = document.createElement("div");
                 card.className = "cluster-card";
                 card.style.setProperty("--accent", c.color);
                 card.style.setProperty("--glow", c.glow);
                 card.innerHTML = `
     <div class="cluster-name">${c.name}</div>
-    <div class="cluster-count">${betaEvents.length} supported events</div>
+    <div class="cluster-count">${eventCount} ${eventCount === 1 ? "event" : "events"}</div>
   `;
                 card.addEventListener("click", () => openCluster(i));
                 gridEl.appendChild(card);
@@ -425,11 +374,6 @@
                                     );
                                 } else {
                                     activatePhase(phGrid);
-                                    if (!hasSeenOpeningTour()) {
-                                        showOpeningTip(
-                                            "Choose your cluster to begin.",
-                                        );
-                                    }
                                 }
                             }, 800);
                         }, 3500);
@@ -440,7 +384,6 @@
                 // ── OPEN CLUSTER ───────────────────────────────────────────────────────────────
             async function openCluster(index) {
                 const cluster = CLUSTERS[index];
-                hideOpeningTip(true);
 
                 if (OPENING_STATE.user && !OPENING_STATE.user.default_cluster) {
                     await saveUserCluster(cluster.name);
@@ -470,7 +413,7 @@
                 window.setTimeout(() => {
                     clearSkeletonList(list);
                     list.innerHTML = "";
-                    supportedBetaEvents(cluster).forEach((ev) => {
+                    cluster.events.forEach((ev) => {
                         // events are objects { name, type } — extract the name
                         const evName = (typeof ev === "string") ? ev : ev.name;
                         const item = document.createElement("div");
@@ -502,7 +445,6 @@
 
             function openLevelSelection(cluster, fromPhase) {
                 const currentTier = getSavedTier();
-                hideOpeningTip(true);
 
                 document.getElementById("level-title").textContent =
                     "Competition Tier";
@@ -580,7 +522,6 @@
             }
 
             phWelcome.addEventListener("click", () => {
-                markOpeningTourSeen();
                 window.location.href = "/app/dashboard.html";
             });
 
@@ -600,9 +541,6 @@
                         );
                     } else {
                         activatePhase(phGrid);
-                        if (!hasSeenOpeningTour()) {
-                            showOpeningTip("Choose your cluster to begin.");
-                        }
                     }
                 } else {
                     startSequence();

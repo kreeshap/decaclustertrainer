@@ -416,8 +416,7 @@ body::after {
     animation: blink 1.6s ease infinite;
 }
 
-.opening-status,
-.opening-tip {
+.opening-status {
     position: fixed;
     left: 50%;
     transform: translateX(-50%) translateY(8px);
@@ -437,8 +436,7 @@ body::after {
         border-color 180ms ease;
 }
 
-.opening-status.show,
-.opening-tip.show {
+.opening-status.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
@@ -455,27 +453,6 @@ body::after {
 }
 .opening-status[data-kind="success"] {
     border-color: rgba(74, 222, 128, 0.45);
-}
-
-.opening-tip {
-    bottom: 1rem;
-    top: auto;
-    max-width: 520px;
-}
-
-.opening-tip-label {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: 0.35rem;
-}
-
-.opening-tip-text {
-    font-size: 0.92rem;
-    line-height: 1.5;
-    color: var(--white);
 }
 
 .opening-skeleton {

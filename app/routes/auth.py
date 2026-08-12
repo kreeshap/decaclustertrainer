@@ -242,7 +242,7 @@ def update_profile():
     auth_meta: dict = {}
     profile_patch: dict = {}
 
-    if "default_event_id" in payload or "default_event" in payload:
+    if "default_event_id" in payload:
         event_id = canonical_event_id(payload.get("default_event_id") or payload.get("default_event"))
         if not event_id:
             return jsonify({"detail": "Select one of the three supported beta events."}), 400
@@ -250,6 +250,17 @@ def update_profile():
         if str(payload.get("default_cluster") or event["cluster"]).strip() != event["cluster"]:
             return jsonify({"detail": "The selected event does not belong to that cluster."}), 400
         profile_patch.update(default_event_id=event_id, default_event=event["name"], default_cluster=event["cluster"])
+    elif "default_event" in payload:
+        event_id = canonical_event_id(payload.get("default_event"))
+        if event_id:
+            event = BETA_EVENTS[event_id]
+            if str(payload.get("default_cluster") or event["cluster"]).strip() != event["cluster"]:
+                return jsonify({"detail": "The selected event does not belong to that cluster."}), 400
+            profile_patch.update(default_event_id=event_id, default_event=event["name"], default_cluster=event["cluster"])
+        else:
+            profile_patch["default_event"] = str(payload.get("default_event") or "").strip()
+            profile_patch["default_cluster"] = str(payload.get("default_cluster") or "").strip()
+            profile_patch["default_event_id"] = None
 
     if "competition_tier" in payload:
         competition_tier = str(payload.get("competition_tier") or "").strip().lower()

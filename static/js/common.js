@@ -406,12 +406,34 @@ const UserPrefs = {
   // eventId   = slug, e.g. "accounting_application_series"  (required)
   // eventName = display name, e.g. "Accounting Application Series" (required for UI)
   // clusterName = display name of the cluster (optional)
-  // Saves to server first; only updates cache on success.
+  // Beta events save to the server profile. Non-beta events save display state
+  // without assigning an unsupported server event id.
   async setEvent(eventId, eventName, clusterName) {
-    if (!eventId || (typeof isSupportedBetaEventId === 'function' && !isSupportedBetaEventId(eventId))) return null;
+    if (!eventId) return null;
     const token = Auth.getToken();
     if (!token) {
       // Not logged in — cache only (opening screen before signup completes)
+      this._writeCache(eventId, eventName, clusterName);
+      return { eventId, eventName, clusterName };
+    }
+    const isBetaEvent = typeof isSupportedBetaEventId !== 'function' || isSupportedBetaEventId(eventId);
+    if (!isBetaEvent) {
+      try {
+        if (clusterName) {
+          await fetch('/auth/profile', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+            credentials: 'same-origin',
+            body: JSON.stringify({
+              default_event: eventName || '',
+              default_cluster: clusterName || '',
+            }),
+          });
+        }
+      } catch(e) {}
       this._writeCache(eventId, eventName, clusterName);
       return { eventId, eventName, clusterName };
     }
@@ -469,9 +491,6 @@ const UserPrefs = {
       }
     }
 
-    if (typeof isSupportedBetaEventId === 'function' && !isSupportedBetaEventId(eventId)) {
-      eventId = '';
-    }
     if (eventId) this._writeCache(eventId, eventName, clusterName);
     else this.clearEvent();
   },

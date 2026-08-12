@@ -203,7 +203,7 @@ function getEventIdByName(eventName) {
 function getEventNameById(eventId) {
   const canonicalId = getEventIdByName(eventId);
   for (const cluster of CLUSTERS) {
-    for (const event of supportedBetaEvents(cluster)) {
+    for (const event of cluster.events) {
       const name = typeof event === "string" ? event : event.name;
       if (getEventIdByName(name) === canonicalId) return name;
     }
