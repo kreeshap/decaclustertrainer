@@ -452,8 +452,14 @@
             }
 
             /* ──────────────────────────────────────────────────────────────
-       RESET ALL PROGRESS
+       COMPETITION LOCATION
     ────────────────────────────────────────────────────────────── */
+            const locationSelectionState = {
+                stateCode: "",
+                subdivisionId: "",
+                status: "unknown",
+            };
+
             function initLocationSelection() {
                 const stateSel = document.getElementById("select-deca-state");
                 if (!stateSel || typeof DECA_LOCATION_CONFIG === "undefined") return;
@@ -482,6 +488,9 @@
                 const reminder = document.getElementById("location-reminder");
                 if (!heading || !subtitle || !list || !reminder) return;
 
+                locationSelectionState.stateCode = stateCode || "";
+                locationSelectionState.subdivisionId = selectedSubdivisionId || "";
+                locationSelectionState.status = status || "unknown";
                 list.innerHTML = "";
                 reminder.classList.toggle("hidden", status !== "unknown" || !stateCode);
 
@@ -527,6 +536,8 @@
                 const stateSel = document.getElementById("select-deca-state");
                 const list = document.getElementById("location-subdivision-list");
                 if (!stateCode) return;
+                const previous = { ...locationSelectionState };
+                renderLocationSubdivisions(stateCode, subdivisionId || "", status);
                 if (stateSel) stateSel.disabled = true;
                 if (list) list.setAttribute("aria-busy", "true");
                 try {
@@ -541,7 +552,19 @@
                     });
                     const data = await res.json().catch(() => ({}));
                     if (!res.ok) {
-                        ErrorManager.show(data.detail || "Failed to save competition location.", "error");
+                        renderLocationSubdivisions(
+                            previous.stateCode,
+                            previous.subdivisionId,
+                            previous.status,
+                        );
+                        const detail = data.detail || data.message || "";
+                        const schemaMissing = /column|schema|cache|deca_subdivision_id|subdivision_status|state_code/i.test(detail);
+                        ErrorManager.show(
+                            schemaMissing
+                                ? "District could not be saved because the live database migration is not applied yet."
+                                : detail || "Failed to save competition location.",
+                            "error",
+                        );
                         return;
                     }
                     renderLocationSubdivisions(stateCode, subdivisionId || "", status);
@@ -550,6 +573,11 @@
                         "success",
                     );
                 } catch (error) {
+                    renderLocationSubdivisions(
+                        previous.stateCode,
+                        previous.subdivisionId,
+                        previous.status,
+                    );
                     ErrorManager.show("Failed to save competition location.", "error");
                 } finally {
                     if (stateSel) stateSel.disabled = false;

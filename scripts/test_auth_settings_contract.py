@@ -204,6 +204,9 @@ class DarkOnlySettingsContracts(unittest.TestCase):
         self.assertIn("initLocationSelection()", SETTINGS_JS)
         self.assertIn("renderLocationSubdivisions(", SETTINGS_JS)
         self.assertIn('subdivision_status: status', SETTINGS_JS)
+        self.assertIn("const locationSelectionState", SETTINGS_JS)
+        self.assertIn("const previous = { ...locationSelectionState }", SETTINGS_JS)
+        self.assertIn("District could not be saved because the live database migration is not applied yet.", SETTINGS_JS)
 
 
 if __name__ == "__main__":
