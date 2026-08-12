@@ -142,6 +142,15 @@ class DarkOnlySettingsContracts(unittest.TestCase):
         self.assertIn('function getEventNameById(eventId)', CLUSTERS_JS)
         self.assertIn('eventName = getEventNameById(eventId) || eventName', COMMON_JS)
 
+    def test_password_change_sends_confirmation_and_confirms_after_close(self):
+        self.assertIn("confirm_password: confirmPw", SETTINGS_JS)
+        close_index = SETTINGS_JS.index(
+            '.getElementById("password-change-form")\n                        .classList.remove("open")'
+        )
+        success_index = SETTINGS_JS.index('"Password updated successfully."')
+        self.assertLess(close_index, success_index)
+        self.assertIn("{ duration: 6000 }", SETTINGS_JS)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -270,7 +270,10 @@
                     const res = await apiFetch("/auth/change-password", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ new_password: newPw }),
+                        body: JSON.stringify({
+                            new_password: newPw,
+                            confirm_password: confirmPw,
+                        }),
                     });
                     const data = await res.json().catch(() => ({}));
                     if (!res.ok) {
@@ -280,10 +283,6 @@
                         );
                         return false;
                     }
-                    ErrorManager.show(
-                        "Password updated successfully.",
-                        "success",
-                    );
                     return true;
                 });
                 if (ok) {
@@ -294,6 +293,11 @@
                     document.getElementById("input-confirm-password").value =
                         "";
                     updatePwStrength("");
+                    ErrorManager.show(
+                        "Password updated successfully.",
+                        "success",
+                        { duration: 6000 },
+                    );
                 }
             }
 
