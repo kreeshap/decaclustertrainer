@@ -14,6 +14,8 @@ SETTINGS_HTML = (ROOT / "templates" / "settings.html").read_text(encoding="utf-8
 SETTINGS_CSS = (ROOT / "static" / "styles" / "settings.css").read_text(
     encoding="utf-8"
 )
+SIGNON_HTML = (ROOT / "templates" / "signon.html").read_text(encoding="utf-8")
+AUTH_CSS = (ROOT / "static" / "styles" / "auth.css").read_text(encoding="utf-8")
 
 
 class PasswordRecoveryContracts(unittest.TestCase):
@@ -29,6 +31,22 @@ class PasswordRecoveryContracts(unittest.TestCase):
     def test_invalid_recovery_link_stays_on_reset_form(self):
         self.assertIn("url.pathname === '/reset-password'", AUTH_JS)
         self.assertIn("showPage('reset')", AUTH_JS)
+
+
+class EmailPasswordOnlySignInContracts(unittest.TestCase):
+    def test_google_and_apple_sign_in_controls_are_removed(self):
+        combined = SIGNON_HTML + AUTH_JS + AUTH_CSS
+        for marker in (
+            "Sign in with Google",
+            "Sign in with Apple",
+            "btn-google",
+            "btn-apple",
+            "handleSocialLogin",
+            "social-login",
+            "social-google",
+            "social-apple",
+        ):
+            self.assertNotIn(marker, combined)
 
 
 class DarkOnlySettingsContracts(unittest.TestCase):

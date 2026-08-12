@@ -79,8 +79,6 @@ function setBusy(prefix, busy, label) {
     su: 'btn-signup',
     fo: 'btn-forgot',
     rp: 'btn-reset',
-    google: 'btn-google',
-    apple: 'btn-apple',
   };
 
   const spinner = byId(`${prefix}-spinner`);
@@ -501,38 +499,6 @@ function bindNavigation() {
   }
 }
 
-async function handleSocialLogin(provider) {
-  setBusy(provider, true, `Sign in with ${provider === 'google' ? 'Google' : 'Apple'}`);
-
-  try {
-    const res = await fetchJsonWithTimeout(`/auth/oauth/${provider}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.detail || `${provider} sign in failed`);
-    }
-
-    if (data.url) {
-      window.location.href = data.url;
-    }
-  } catch (error) {
-    const errorMessage = typeof ErrorManager !== 'undefined'
-      ? ((error.name === 'AbortError' || String(error.message || '').toLowerCase().includes('fetch'))
-          ? ErrorManager.formatNetworkError(error)
-          : ErrorManager.formatAuthError(error))
-      : (error.name === 'AbortError' ? 'Connection error, please try again.' : error.message);
-    setBox('si-err', 'si-err-text', errorMessage, true);
-  } finally {
-    setBusy(provider, false, `Sign in with ${provider === 'google' ? 'Google' : 'Apple'}`);
-  }
-}
-
 async function handleSignIn(event) {
   event.preventDefault();
   if (!validateSignIn()) return;
@@ -872,8 +838,6 @@ function setupSigninForm() {
   byId('form-forgot').addEventListener('submit', handleForgot);
   byId('form-reset').addEventListener('submit', handleReset);
   byId('su-pass').addEventListener('input', updatePasswordStrength);
-  byId('btn-google').addEventListener('click', () => handleSocialLogin('google'));
-  byId('btn-apple').addEventListener('click', () => handleSocialLogin('apple'));
   const resendBtn = byId('btn-resend-confirm');
   if (resendBtn) resendBtn.addEventListener('click', handleResendConfirmation);
 
