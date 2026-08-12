@@ -372,7 +372,6 @@
                 // Populate cluster dropdown from CLUSTERS constant (clusters.js)
                 if (typeof CLUSTERS !== "undefined") {
                     CLUSTERS.forEach((c) => {
-                        if (!supportedBetaEvents(c).length) return;
                         const opt = document.createElement("option");
                         opt.value = c.name;
                         opt.textContent = c.name;
@@ -400,7 +399,7 @@
                     placeholder.value = "";
                     placeholder.textContent = "— Select an event —";
                     eventSel.appendChild(placeholder);
-                    supportedBetaEvents(cluster).forEach((ev) => {
+                    cluster.events.forEach((ev) => {
                         // events are objects { name, type } — extract the name
                         const evName = (typeof ev === "string") ? ev : ev.name;
                         const opt = document.createElement("option");
@@ -433,7 +432,7 @@
                 clusterSel.disabled = true;
                 try {
                     const clusterName = clusterSel.value;
-                    // UserPrefs.setEvent owns all event writes — server first, cache on confirm
+                    // UserPrefs.setEvent owns beta server writes and non-beta display persistence.
                     const result = await UserPrefs.setEvent(
                         eventId,
                         eventName,
@@ -804,7 +803,7 @@
                                     const ph = document.createElement("option");
                                     ph.value = ""; ph.textContent = "— Select an event —";
                                     eventSel.appendChild(ph);
-                                    supportedBetaEvents(cluster).forEach(ev => {
+                                    cluster.events.forEach(ev => {
                                         const evName = (typeof ev === "string") ? ev : ev.name;
                                         const opt = document.createElement("option");
                                         opt.value = getEventIdByName(evName); opt.textContent = evName;

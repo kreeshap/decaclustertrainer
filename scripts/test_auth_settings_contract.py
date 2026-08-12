@@ -134,6 +134,10 @@ class DarkOnlySettingsContracts(unittest.TestCase):
     def test_event_dropdown_uses_canonical_ids_and_auto_saves(self):
         self.assertNotIn("event-current-label", SETTINGS_HTML + SETTINGS_JS)
         self.assertNotIn("btn-save-event", SETTINGS_HTML + SETTINGS_JS)
+        self.assertNotIn("supportedBetaEvents(c).length", SETTINGS_JS)
+        self.assertNotIn("supportedBetaEvents(cluster).forEach", SETTINGS_JS)
+        self.assertIn("CLUSTERS.forEach((c) =>", SETTINGS_JS)
+        self.assertIn("cluster.events.forEach((ev) =>", SETTINGS_JS)
         self.assertIn('opt.value = getEventIdByName(evName)', SETTINGS_JS)
         self.assertIn('void saveEventSelection()', SETTINGS_JS)
         self.assertIn('const resolvedEventId = UserPrefs.getEventId()', SETTINGS_JS)
