@@ -315,6 +315,13 @@ def serialize_user(user: dict, profile: dict | None = None) -> dict:
         "default_event_id": p.get("default_event_id")
         or user_metadata.get("default_event_id")
         or "",
+        "state_code": p.get("state_code") or user_metadata.get("state_code") or "",
+        "deca_subdivision_id": p.get("deca_subdivision_id")
+        or user_metadata.get("deca_subdivision_id")
+        or "",
+        "subdivision_status": p.get("subdivision_status")
+        or user_metadata.get("subdivision_status")
+        or "unknown",
         "session_time_pref": p.get("session_time_pref")
         or user_metadata.get("session_time_pref")
         or "morning",

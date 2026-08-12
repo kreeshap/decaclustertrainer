@@ -10,6 +10,7 @@
             rel="stylesheet"
         />
         <script src="/static/js/clusters.js"></script>
+        <script src="/static/js/deca_locations.js"></script>
         <script src="/static/js/common.js"></script>
         <link rel="stylesheet" href="/static/styles/settings.css" />
     </head>
@@ -112,6 +113,17 @@
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
                     Event Selection
+                </a>
+                <a
+                    class="sidebar-item"
+                    href="#competition-location"
+                    onclick="navTo(event, 'competition-location')"
+                >
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Competition Location
                 </a>
                 <a
                     class="sidebar-item"
@@ -497,6 +509,25 @@
                 <!-- ════════════════════════════════════════
        STUDY GOALS  (NEW)
   ════════════════════════════════════════ -->
+                <div class="settings-section" id="competition-location">
+                    <div class="settings-section-title">Competition Location</div>
+                    <div class="location-panel">
+                        <div class="field-group">
+                            <label for="select-deca-state">State</label>
+                            <select class="field-select" id="select-deca-state">
+                                <option value="">— Select a state —</option>
+                            </select>
+                        </div>
+                        <div class="location-reminder hidden" id="location-reminder">
+                            <strong>District not set</strong>
+                            <span>Add your district to see your competition countdown and district-specific information.</span>
+                        </div>
+                        <div class="location-heading" id="location-subdivision-heading"></div>
+                        <div class="location-subtitle" id="location-subdivision-subtitle"></div>
+                        <div class="location-card-list" id="location-subdivision-list"></div>
+                    </div>
+                </div>
+
                 <div class="settings-section" id="study-goals">
                     <div class="settings-section-title">Study Goals</div>
                     <div

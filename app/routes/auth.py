@@ -268,6 +268,27 @@ def update_profile():
             return jsonify({"detail": "Competition tier must be Districts, SCDC, or ICDC."}), 400
         profile_patch["competition_tier"] = competition_tier
 
+    if "state_code" in payload or "deca_subdivision_id" in payload or "subdivision_status" in payload:
+        state_code = str(payload.get("state_code") or "").strip().upper()
+        subdivision_id_raw = payload.get("deca_subdivision_id")
+        subdivision_id = str(subdivision_id_raw or "").strip() or None
+        subdivision_status = str(payload.get("subdivision_status") or "").strip().lower()
+
+        if state_code and len(state_code) != 2:
+            return jsonify({"detail": "Select a valid state."}), 400
+        if subdivision_status not in {"user_selected", "auto_detected", "unknown"}:
+            return jsonify({"detail": "Select a valid district status."}), 400
+        if subdivision_status == "unknown":
+            subdivision_id = None
+        elif not subdivision_id:
+            return jsonify({"detail": "Select a district or choose that you are not sure yet."}), 400
+        elif state_code and not subdivision_id.startswith(f"{state_code}-"):
+            return jsonify({"detail": "The selected district does not belong to that state."}), 400
+
+        profile_patch["state_code"] = state_code or None
+        profile_patch["deca_subdivision_id"] = subdivision_id
+        profile_patch["subdivision_status"] = subdivision_status
+
     # Display name
     display_name = str(payload.get("display_name") or "").strip()
     if display_name:
@@ -300,9 +321,16 @@ def update_profile():
         "default_cluster",
         "default_event",
         "default_event_id",
+        "state_code",
+        "deca_subdivision_id",
+        "subdivision_status",
         "session_time_pref",
         "theme",
     ):
+        if str_field in {"state_code", "deca_subdivision_id", "subdivision_status"} and any(
+            key in payload for key in ("state_code", "deca_subdivision_id", "subdivision_status")
+        ):
+            continue
         if str_field == "competition_tier" and "competition_tier" in profile_patch:
             continue
         if str_field in {"default_cluster", "default_event", "default_event_id"} and profile_patch.get("default_event_id"):

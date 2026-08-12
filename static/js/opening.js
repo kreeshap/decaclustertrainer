@@ -54,11 +54,39 @@
                 }
             }
 
+            async function saveUserLocation(stateCode, subdivisionId, status) {
+                const token = getStoredAuthToken();
+                if (!token) return true;
+                try {
+                    const response = await fetch("/auth/profile", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                        },
+                        credentials: "same-origin",
+                        body: JSON.stringify({
+                            state_code: stateCode,
+                            deca_subdivision_id: subdivisionId || null,
+                            subdivision_status: status,
+                        }),
+                    });
+                    if (!response.ok) return false;
+                    const data = await response.json().catch(() => null);
+                    if (data?.user) OPENING_STATE.user = data.user;
+                    return true;
+                } catch (error) {
+                    return false;
+                }
+            }
+
             const OPENING_STATE = {
                 source: null,
                 user: null,
                 skipCluster: false,
                 clusterObj: null,
+                selectedCluster: null,
+                selectedStateCode: "",
             };
 
             function getOpeningSource() {
@@ -318,6 +346,9 @@
             const phGrid = document.getElementById("phase-grid");
             const phEvents = document.getElementById("phase-events");
             const phLevel = document.getElementById("phase-level");
+            const phState = document.getElementById("phase-state");
+            const phSubdivision = document.getElementById("phase-subdivision");
+            const phSubdivisionHelp = document.getElementById("phase-subdivision-help");
             const phWelcome = document.getElementById("phase-welcome");
 
             const welcomeToEl = document.getElementById("welcome-to");
@@ -443,6 +474,7 @@
 
             function openLevelSelection(cluster, fromPhase) {
                 const currentTier = getSavedTier();
+                OPENING_STATE.selectedCluster = cluster;
 
                 document.getElementById("level-title").textContent =
                     "Competition Tier";
@@ -474,12 +506,156 @@
                             selectionVersion === phaseNavigationVersion &&
                             phLevel.classList.contains("active")
                         ) {
-                            showWelcome(cluster, phLevel, tier);
+                            openStateSelection(cluster, phLevel);
                         }
                     };
                     item.addEventListener("click", chooseTier);
                     list.appendChild(item);
                 });
+            }
+
+            function openStateSelection(cluster, fromPhase) {
+                document.getElementById("state-accent-bar").style.background =
+                    cluster.color;
+                document.body.style.setProperty(
+                    "--active-accent",
+                    cluster.color,
+                );
+
+                const list = document.getElementById("state-list");
+                list.innerHTML = "";
+                DECA_LOCATION_CONFIG.states.forEach((state) => {
+                    const item = document.createElement("button");
+                    item.type = "button";
+                    item.className = "event-item";
+                    item.disabled = !state.isActive;
+                    item.innerHTML = state.isActive
+                        ? `<span class="event-item-main">${state.name}</span>`
+                        : `<span class="event-item-main">${state.name}</span><span class="event-item-meta">More states will be added later</span>`;
+                    item.style.setProperty("--active-accent", cluster.color);
+                    if (state.isActive) {
+                        item.addEventListener("click", () => {
+                            OPENING_STATE.selectedStateCode = state.code;
+                            openSubdivisionSelection(cluster, state, phState);
+                        });
+                    }
+                    list.appendChild(item);
+                });
+
+                transitionPhase(fromPhase, phState);
+            }
+
+            function openSubdivisionSelection(cluster, state, fromPhase) {
+                const label = state.subdivisionLabel || "District";
+                document.getElementById("subdivision-title").textContent =
+                    `Which DECA ${label} are you in?`;
+                document.getElementById("subdivision-subtitle").textContent =
+                    `Not sure? Your conference date or location might help.`;
+                document.getElementById("subdivision-accent-bar").style.background =
+                    cluster.color;
+                document.body.style.setProperty(
+                    "--active-accent",
+                    cluster.color,
+                );
+
+                const list = document.getElementById("subdivision-list");
+                list.innerHTML = "";
+                getDecaSubdivisions(state.code).forEach((subdivision) => {
+                    const item = document.createElement("button");
+                    item.type = "button";
+                    item.className = "event-item";
+                    item.innerHTML =
+                        `<span class="event-item-main">${subdivision.displayName}</span>` +
+                        `<span class="event-item-meta">${subdivisionConferenceLine(subdivision.id)}</span>`;
+                    item.style.setProperty("--active-accent", cluster.color);
+                    item.addEventListener("click", async () => {
+                        const selectionVersion = phaseNavigationVersion;
+                        item.disabled = true;
+                        const saved = await saveUserLocation(
+                            state.code,
+                            subdivision.id,
+                            "user_selected",
+                        );
+                        item.disabled = false;
+                        if (
+                            saved &&
+                            selectionVersion === phaseNavigationVersion &&
+                            phSubdivision.classList.contains("active")
+                        ) {
+                            showWelcome(cluster, phSubdivision, null);
+                        } else if (!saved) {
+                            setOpeningStatus(
+                                "We could not save your district. Please try again.",
+                                "warning",
+                                5000,
+                            );
+                        }
+                    });
+                    list.appendChild(item);
+                });
+
+                const unknown = document.createElement("button");
+                unknown.type = "button";
+                unknown.className = "event-item";
+                unknown.innerHTML =
+                    `<span class="event-item-main">I'm not sure</span>` +
+                    `<span class="event-item-meta">You can add your ${label.toLowerCase()} later.</span>`;
+                unknown.style.setProperty("--active-accent", cluster.color);
+                unknown.addEventListener("click", () => {
+                    openSubdivisionHelp(cluster, state, phSubdivision);
+                });
+                list.appendChild(unknown);
+
+                transitionPhase(fromPhase, phSubdivision);
+            }
+
+            function openSubdivisionHelp(cluster, state, fromPhase) {
+                document.getElementById("subdivision-help-accent-bar").style.background =
+                    cluster.color;
+                const list = document.getElementById("subdivision-help-list");
+                list.innerHTML = "";
+
+                const find = document.createElement("button");
+                find.type = "button";
+                find.className = "event-item";
+                find.innerHTML =
+                    `<span class="event-item-main">Find my district</span>` +
+                    `<span class="event-item-meta">Your DECA advisor can tell you your district. You may also recognize it from your district conference date or location.</span>`;
+                find.style.setProperty("--active-accent", cluster.color);
+                find.addEventListener("click", () => {
+                    openSubdivisionSelection(cluster, state, phSubdivisionHelp);
+                });
+                list.appendChild(find);
+
+                const later = document.createElement("button");
+                later.type = "button";
+                later.className = "event-item";
+                later.innerHTML =
+                    `<span class="event-item-main">I'll add it later</span>` +
+                    `<span class="event-item-meta">You will still have complete access to studying KPIs.</span>`;
+                later.style.setProperty("--active-accent", cluster.color);
+                later.addEventListener("click", async () => {
+                    const selectionVersion = phaseNavigationVersion;
+                    later.disabled = true;
+                    const saved = await saveUserLocation(state.code, null, "unknown");
+                    later.disabled = false;
+                    if (
+                        saved &&
+                        selectionVersion === phaseNavigationVersion &&
+                        phSubdivisionHelp.classList.contains("active")
+                    ) {
+                        showWelcome(cluster, phSubdivisionHelp, null);
+                    } else if (!saved) {
+                        setOpeningStatus(
+                            "We could not save your district status. Please try again.",
+                            "warning",
+                            5000,
+                        );
+                    }
+                });
+                list.appendChild(later);
+
+                transitionPhase(fromPhase, phSubdivisionHelp);
             }
 
             document
@@ -492,6 +668,33 @@
                 .getElementById("level-back-btn")
                 .addEventListener("click", () => {
                     transitionPhase(phLevel, phGrid, 800);
+                });
+
+            document
+                .getElementById("state-back-btn")
+                .addEventListener("click", () => {
+                    transitionPhase(phState, phLevel, 800);
+                });
+
+            document
+                .getElementById("subdivision-back-btn")
+                .addEventListener("click", () => {
+                    transitionPhase(phSubdivision, phState, 800);
+                });
+
+            document
+                .getElementById("subdivision-help-back-btn")
+                .addEventListener("click", () => {
+                    const state = getDecaState(OPENING_STATE.selectedStateCode);
+                    if (state && OPENING_STATE.selectedCluster) {
+                        openSubdivisionSelection(
+                            OPENING_STATE.selectedCluster,
+                            state,
+                            phSubdivisionHelp,
+                        );
+                    } else {
+                        transitionPhase(phSubdivisionHelp, phState, 800);
+                    }
                 });
 
             // ── WELCOME SPLASH ─────────────────────────────────────────────────────────────

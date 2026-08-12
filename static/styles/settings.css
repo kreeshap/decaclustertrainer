@@ -535,6 +535,96 @@ body {
     color: var(--white);
 }
 
+.location-panel {
+    padding: 16px 18px;
+    background: rgba(19, 47, 47, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.location-heading {
+    margin-top: 16px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.location-subtitle {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.84rem;
+}
+
+.location-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.location-card {
+    appearance: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 13px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: var(--input);
+    color: var(--white);
+    cursor: pointer;
+    font-family: "Barlow", sans-serif;
+}
+
+.location-card:hover,
+.location-card.selected {
+    border-color: var(--cyan);
+    background: var(--cyan-glow);
+}
+
+.location-card-main {
+    display: block;
+    font-weight: 700;
+}
+
+.location-card-meta {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.location-card-note {
+    display: block;
+    margin-top: 6px;
+    color: var(--cyan);
+    font-size: 0.78rem;
+}
+
+.location-reminder {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: rgba(0, 194, 224, 0.05);
+    color: var(--muted);
+    font-size: 0.84rem;
+}
+
+.location-reminder strong,
+.location-reminder span {
+    display: block;
+}
+
+.location-reminder strong {
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
 /* ── Inline forms (email change, password) ── */
 .inline-form {
     margin-top: 12px;

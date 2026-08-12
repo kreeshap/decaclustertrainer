@@ -270,6 +270,12 @@ body::after {
     padding: 2rem;
     z-index: 999;
 }
+#phase-state,
+#phase-subdivision,
+#phase-subdivision-help {
+    padding: 2rem;
+    z-index: 999;
+}
 
 .events-inner {
     max-width: 640px;
@@ -316,6 +322,13 @@ body::after {
     letter-spacing: 0.04em;
     line-height: 1;
     color: var(--white);
+}
+
+.events-subtitle {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
 }
 
 .events-accent-bar {
@@ -378,6 +391,33 @@ body::after {
     background: var(--input);
     color: var(--white);
     transform: translateX(4px);
+}
+
+.event-item:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.event-item-main {
+    display: block;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.event-item-meta {
+    display: block;
+    margin-top: 0.18rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.event-item-note {
+    display: block;
+    margin-top: 0.28rem;
+    color: var(--cyan);
+    font-size: 0.78rem;
 }
 
 /* ────────────────────────────────

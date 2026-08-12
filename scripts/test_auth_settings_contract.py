@@ -9,6 +9,9 @@ AUTH_PY = (ROOT / "app" / "routes" / "auth.py").read_text(encoding="utf-8")
 AUTH_JS = (ROOT / "static" / "js" / "auth.js").read_text(encoding="utf-8")
 COMMON_JS = (ROOT / "static" / "js" / "common.js").read_text(encoding="utf-8")
 CLUSTERS_JS = (ROOT / "static" / "js" / "clusters.js").read_text(encoding="utf-8")
+DECA_LOCATIONS_JS = (ROOT / "static" / "js" / "deca_locations.js").read_text(
+    encoding="utf-8"
+)
 SETTINGS_JS = (ROOT / "static" / "js" / "settings.js").read_text(encoding="utf-8")
 SETTINGS_HTML = (ROOT / "templates" / "settings.html").read_text(encoding="utf-8")
 SETTINGS_CSS = (ROOT / "static" / "styles" / "settings.css").read_text(
@@ -19,6 +22,9 @@ AUTH_CSS = (ROOT / "static" / "styles" / "auth.css").read_text(encoding="utf-8")
 OPENING_HTML = (ROOT / "templates" / "opening.html").read_text(encoding="utf-8")
 OPENING_JS = (ROOT / "static" / "js" / "opening.js").read_text(encoding="utf-8")
 OPENING_CSS = (ROOT / "static" / "styles" / "opening.css").read_text(
+    encoding="utf-8"
+)
+LOCATION_MIGRATION = (ROOT / "supabase" / "migrations" / "0015_competition_locations.sql").read_text(
     encoding="utf-8"
 )
 
@@ -95,6 +101,41 @@ class OnboardingContracts(unittest.TestCase):
         ):
             self.assertNotIn(marker, OPENING_JS)
 
+    def test_onboarding_collects_state_and_subdivision_after_tier(self):
+        self.assertIn('id="phase-state"', OPENING_HTML)
+        self.assertIn('id="phase-subdivision"', OPENING_HTML)
+        self.assertIn('id="phase-subdivision-help"', OPENING_HTML)
+        self.assertIn("openStateSelection(cluster, phLevel)", OPENING_JS)
+        self.assertIn("openSubdivisionSelection(cluster, state, phState)", OPENING_JS)
+        self.assertIn('saveUserLocation(state.code, null, "unknown")', OPENING_JS)
+        self.assertIn("I'm not sure", OPENING_JS)
+
+    def test_location_config_contains_michigan_district_conferences(self):
+        for marker in (
+            'code: "MI"',
+            'subdivisionLabel: "District"',
+            'id: "MI-D1"',
+            'id: "MI-D9"',
+            "Saginaw Valley State University",
+            "Macomb Community College",
+            "Wayne County Community College Taylor Campus",
+            "Date TBA",
+        ):
+            self.assertIn(marker, DECA_LOCATIONS_JS)
+
+    def test_location_schema_is_generic_and_granted(self):
+        for marker in (
+            "create table if not exists public.states",
+            "create table if not exists public.deca_subdivisions",
+            "create table if not exists public.deca_conferences",
+            "alter table public.profiles add column if not exists state_code",
+            "alter table public.profiles add column if not exists deca_subdivision_id",
+            "alter table public.profiles add column if not exists subdivision_status",
+            "grant select on table public.states, public.deca_subdivisions, public.deca_conferences",
+        ):
+            self.assertIn(marker, LOCATION_MIGRATION)
+        self.assertNotIn("michigan_district", LOCATION_MIGRATION.lower())
+
 
 class DarkOnlySettingsContracts(unittest.TestCase):
     def test_global_theme_is_forced_to_dark(self):
@@ -154,6 +195,15 @@ class DarkOnlySettingsContracts(unittest.TestCase):
         success_index = SETTINGS_JS.index('"Password updated successfully."')
         self.assertLess(close_index, success_index)
         self.assertIn("{ duration: 6000 }", SETTINGS_JS)
+
+    def test_settings_supports_competition_location_selection(self):
+        self.assertIn("/static/js/deca_locations.js", SETTINGS_HTML)
+        self.assertIn('href="#competition-location"', SETTINGS_HTML)
+        self.assertIn('id="select-deca-state"', SETTINGS_HTML)
+        self.assertIn('id="location-subdivision-list"', SETTINGS_HTML)
+        self.assertIn("initLocationSelection()", SETTINGS_JS)
+        self.assertIn("renderLocationSubdivisions(", SETTINGS_JS)
+        self.assertIn('subdivision_status: status', SETTINGS_JS)
 
 
 if __name__ == "__main__":

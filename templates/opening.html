@@ -10,6 +10,7 @@
             rel="stylesheet"
         />
         <script src="/static/js/clusters.js"></script>
+        <script src="/static/js/deca_locations.js"></script>
         <script src="/static/js/common.js"></script>
         <link rel="stylesheet" href="/static/styles/opening.css" />
     </head>
@@ -65,6 +66,54 @@
         </div>
 
         <!-- PHASE 6 -->
+        <div class="phase" id="phase-state">
+            <div class="events-inner">
+                <div class="events-header">
+                    <button class="back-btn" id="state-back-btn">
+                        &#8592;
+                    </button>
+                    <div class="events-title" id="state-title">
+                        Where is your DECA chapter?
+                    </div>
+                </div>
+                <div class="events-accent-bar" id="state-accent-bar"></div>
+                <div class="events-list" id="state-list"></div>
+            </div>
+        </div>
+
+        <!-- PHASE 7 -->
+        <div class="phase" id="phase-subdivision">
+            <div class="events-inner">
+                <div class="events-header">
+                    <button class="back-btn" id="subdivision-back-btn">
+                        &#8592;
+                    </button>
+                    <div class="events-title" id="subdivision-title"></div>
+                </div>
+                <p class="events-subtitle" id="subdivision-subtitle"></p>
+                <div class="events-accent-bar" id="subdivision-accent-bar"></div>
+                <div class="events-list" id="subdivision-list"></div>
+            </div>
+        </div>
+
+        <!-- PHASE 8 -->
+        <div class="phase" id="phase-subdivision-help">
+            <div class="events-inner">
+                <div class="events-header">
+                    <button class="back-btn" id="subdivision-help-back-btn">
+                        &#8592;
+                    </button>
+                    <div class="events-title">District not set</div>
+                </div>
+                <p class="events-subtitle">
+                    That's okay. You can finish setting up your account and add your district later.
+                </p>
+                <div class="events-accent-bar" id="subdivision-help-accent-bar"></div>
+                <div class="events-list" id="subdivision-help-list"></div>
+            </div>
+        </div>
+
+        <!-- PHASE 9 -->
         <div class="phase" id="phase-welcome">
             <div class="welcome-sub" id="welcome-sub">Let's get started,</div>
             <div class="welcome-name" id="welcome-name"></div>

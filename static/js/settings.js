@@ -454,6 +454,109 @@
             /* ──────────────────────────────────────────────────────────────
        RESET ALL PROGRESS
     ────────────────────────────────────────────────────────────── */
+            function initLocationSelection() {
+                const stateSel = document.getElementById("select-deca-state");
+                if (!stateSel || typeof DECA_LOCATION_CONFIG === "undefined") return;
+
+                DECA_LOCATION_CONFIG.states.forEach((state) => {
+                    const opt = document.createElement("option");
+                    opt.value = state.code;
+                    opt.textContent = state.name;
+                    opt.disabled = !state.isActive;
+                    stateSel.appendChild(opt);
+                });
+
+                stateSel.addEventListener("change", () => {
+                    renderLocationSubdivisions(stateSel.value, "", "unknown");
+                    if (stateSel.value) {
+                        void saveLocationSelection(stateSel.value, null, "unknown");
+                    }
+                });
+            }
+
+            function renderLocationSubdivisions(stateCode, selectedSubdivisionId = "", status = "unknown") {
+                const state = getDecaState(stateCode);
+                const heading = document.getElementById("location-subdivision-heading");
+                const subtitle = document.getElementById("location-subdivision-subtitle");
+                const list = document.getElementById("location-subdivision-list");
+                const reminder = document.getElementById("location-reminder");
+                if (!heading || !subtitle || !list || !reminder) return;
+
+                list.innerHTML = "";
+                reminder.classList.toggle("hidden", status !== "unknown" || !stateCode);
+
+                if (!state) {
+                    heading.textContent = "";
+                    subtitle.textContent = "";
+                    return;
+                }
+
+                const label = state.subdivisionLabel || "District";
+                heading.textContent = `Select your ${label}`;
+                subtitle.textContent = "Not sure? Your conference date or location might help.";
+
+                getDecaSubdivisions(state.code).forEach((subdivision) => {
+                    const card = document.createElement("button");
+                    card.type = "button";
+                    card.className = "location-card";
+                    card.classList.toggle("selected", subdivision.id === selectedSubdivisionId);
+                    card.innerHTML =
+                        `<span class="location-card-main">${subdivision.displayName}</span>` +
+                        `<span class="location-card-meta">${subdivisionConferenceLine(subdivision.id)}</span>`;
+                    card.addEventListener("click", () => {
+                        void saveLocationSelection(state.code, subdivision.id, "user_selected");
+                    });
+                    list.appendChild(card);
+                });
+
+                const unknown = document.createElement("button");
+                unknown.type = "button";
+                unknown.className = "location-card";
+                unknown.classList.toggle("selected", status === "unknown");
+                unknown.innerHTML =
+                    `<span class="location-card-main">I'm not sure</span>` +
+                    `<span class="location-card-meta">You can add your ${label.toLowerCase()} later.</span>` +
+                    `<span class="location-card-note">Your advisor or conference location can help identify it.</span>`;
+                unknown.addEventListener("click", () => {
+                    void saveLocationSelection(state.code, null, "unknown");
+                });
+                list.appendChild(unknown);
+            }
+
+            async function saveLocationSelection(stateCode, subdivisionId, status) {
+                const stateSel = document.getElementById("select-deca-state");
+                const list = document.getElementById("location-subdivision-list");
+                if (!stateCode) return;
+                if (stateSel) stateSel.disabled = true;
+                if (list) list.setAttribute("aria-busy", "true");
+                try {
+                    const res = await apiFetch("/auth/profile", {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            state_code: stateCode,
+                            deca_subdivision_id: subdivisionId || null,
+                            subdivision_status: status,
+                        }),
+                    });
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) {
+                        ErrorManager.show(data.detail || "Failed to save competition location.", "error");
+                        return;
+                    }
+                    renderLocationSubdivisions(stateCode, subdivisionId || "", status);
+                    ErrorManager.show(
+                        status === "unknown" ? "District can be added later." : "Competition location saved.",
+                        "success",
+                    );
+                } catch (error) {
+                    ErrorManager.show("Failed to save competition location.", "error");
+                } finally {
+                    if (stateSel) stateSel.disabled = false;
+                    if (list) list.removeAttribute("aria-busy");
+                }
+            }
+
             async function resetProgress() {
                 if (!confirm("Reset all progress? This will wipe your session history, scores, and KPI records. This cannot be undone.")) {
                     return;
@@ -817,6 +920,19 @@
                     }
 
                     // ── Local-only prefs (login notifications) ────────────────
+                    const stateSel = document.getElementById("select-deca-state");
+                    const stateCode = u.state_code || "";
+                    const subdivisionId = u.deca_subdivision_id || "";
+                    const subdivisionStatus = u.subdivision_status || "unknown";
+                    if (stateSel && stateCode) {
+                        stateSel.value = stateCode;
+                        renderLocationSubdivisions(
+                            stateCode,
+                            subdivisionId,
+                            subdivisionStatus,
+                        );
+                    }
+
                     const savedLoginNotif =
                         localStorage.getItem("ct_login_notif");
                     if (savedLoginNotif !== null) {
@@ -840,5 +956,6 @@
             requireAuth().then(async (user) => {
                 if (!user) return;
                 initTopbar(user);
+                initLocationSelection();
                 await loadSettings();
             });
