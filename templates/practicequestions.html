@@ -35,19 +35,12 @@
         <div class="questions-dashboard">
           <div class="dashboard-hero panel">
             <div class="dashboard-hero-copy">
-              <div class="panel-kicker">Recommended</div>
-              <h1 class="dash-title"><em id="practice-hero-title">Continue Practice</em></h1>
-              <p class="hero-text" id="practice-hero-subtitle">
-                0 questions | Adaptive | All | -- min
-              </p>
+              <div class="panel-kicker">Practice questions</div>
+              <h1 class="dash-title">Quiz</h1>
               <div class="hero-metrics" aria-label="Practice snapshot">
                 <div class="hero-metric">
                   <div class="hero-metric-label">Questions Due</div>
                   <div class="hero-metric-value" id="practice-due-count">0</div>
-                </div>
-                <div class="hero-metric">
-                  <div class="hero-metric-label">Estimated Time</div>
-                  <div class="hero-metric-value" id="practice-estimated-time">--</div>
                 </div>
                 <div class="hero-metric">
                   <div class="hero-metric-label">Avg Mastery</div>
@@ -66,7 +59,9 @@
                   Refresh Data
                 </button>
               </div>
-              <div class="dashboard-ring-note" id="practice-focus">Loading focus...</div>
+              <p class="quiz-status" id="practice-status">
+                Loading your questions...
+              </p>
             </div>
           </div>
 
@@ -99,9 +94,6 @@
                 <div class="overview-value" id="practice-overview-streak">--</div>
               </div>
             </div>
-            <p class="panel-copy overview-note" id="practice-status">
-              We are loading your current event and question bank.
-            </p>
           </aside>
 
           <div class="dashboard-row">

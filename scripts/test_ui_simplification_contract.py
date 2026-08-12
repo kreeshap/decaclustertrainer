@@ -64,6 +64,25 @@ class UiSimplificationContractTests(unittest.TestCase):
         self.assertIn(".mastery-summary-row", styles)
         self.assertIn("display: none !important", styles)
 
+    def test_quiz_dashboard_is_compact_without_duplicate_cards(self) -> None:
+        template = (ROOT / "templates/practicequestions.html").read_text(encoding="utf-8")
+        styles = (ROOT / "static/styles/practicequestions.css").read_text(encoding="utf-8")
+        self.assertIn('<h1 class="dash-title">Quiz</h1>', template)
+        self.assertEqual(template.count('id="practice-status"'), 1)
+        for removed_text in ("Recommended", "practice-hero-title", "practice-hero-subtitle"):
+            self.assertNotIn(removed_text, template)
+        self.assertNotIn('id="practice-estimated-time"', template)
+        self.assertIn("/* Compact quiz layout */", styles)
+        self.assertRegex(
+            styles,
+            r"\.dashboard-overview,\s*\.dashboard-row,\s*\.tracking-panel\s*\{\s*display: none;",
+        )
+        self.assertRegex(
+            styles,
+            re.compile(r"\.dashboard-hero\s*\{[^}]*border-radius: 0;[^}]*background: transparent;", re.DOTALL),
+        )
+        self.assertRegex(styles, re.compile(r"\.choice-btn\s*\{[^}]*border-radius: 6px;", re.DOTALL))
+
     def test_styles_do_not_use_gradients(self) -> None:
         pattern = re.compile(r"(?:linear|radial|conic)-gradient", re.IGNORECASE)
         for stylesheet in (ROOT / "static" / "styles").glob("*.css"):
