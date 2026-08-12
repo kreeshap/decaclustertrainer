@@ -2125,6 +2125,114 @@ body {
     line-height: 1.5;
 }
 
+.lesson-hook {
+    margin-top: 12px;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 780px;
+}
+
+.lesson-design-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0;
+}
+
+.lesson-design-chip {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    padding: 5px 8px;
+    text-transform: uppercase;
+}
+
+.learning-blocks {
+    display: grid;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.learning-block,
+.realistic-example,
+.mini-decision,
+.key-takeaways,
+.concept-check-container {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    background: rgba(17, 41, 41, 0.26);
+}
+
+.learning-block-title,
+.lesson-section-label,
+.mini-roleplay-meta,
+.question-stage {
+    color: var(--cyan);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.learning-block-body,
+.lesson-example-story,
+.mini-roleplay-setup,
+.mini-roleplay-question,
+.mini-roleplay-feedback,
+.mini-roleplay-why {
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.lesson-flow,
+.mini-roleplay-choices {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.lesson-flow span {
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--white);
+    padding: 6px 8px;
+}
+
+.lesson-flow b {
+    color: var(--muted);
+}
+
+.mini-roleplay-choice,
+.mini-roleplay-next {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(18, 50, 50, 0.7);
+    color: var(--white);
+    cursor: pointer;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.mini-roleplay-choice.correct {
+    border-color: var(--green);
+}
+
+.mini-roleplay-choice.wrong {
+    border-color: var(--red);
+}
+
+.mini-roleplay-feedback,
+.mini-roleplay-why {
+    margin-top: 10px;
+}
+
 /* Compact Learn dashboard */
 :root {
     --radius-sm: 6px;

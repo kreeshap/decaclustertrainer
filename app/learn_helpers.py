@@ -360,6 +360,15 @@ def _normalise_db_question(row: dict) -> dict:
     }
 
 
+def _select_final_practice_questions(rows: list[dict]) -> list[dict]:
+    """Return the app's final 3-question shape: Check, Apply, DECA Challenge."""
+    recognition = [r for r in rows if r.get("question_type") == "recognition"]
+    application = [r for r in rows if r.get("question_type") == "application"]
+    if len(recognition) < 1 or len(application) < 2:
+        return []
+    return [_normalise_db_question(recognition[0]), *[_normalise_db_question(r) for r in application[:2]]]
+
+
 def _save_questions_supabase(
     questions: list,
     kpi_code: str,
@@ -370,14 +379,16 @@ def _save_questions_supabase(
 ) -> list[dict]:
     """
     Persist generated questions to kpi_questions.
-    If questions already exist for this KPI (>= 6 rows, at least 1 application)
+    If questions already exist for this KPI (>= 3 rows, at least 1 recognition
+    and 2 application rows) returns existing rows. Otherwise inserts missing
+    stable slots and returns the first three normalized rows.
     returns existing rows. Otherwise inserts new ones and returns them with UUIDs.
     """
     existing = _fetch_kpi_questions(kpi_code, event_id)
     recognition_count = sum(r.get("question_type") == "recognition" for r in existing)
     application_count = sum(r.get("question_type") == "application" for r in existing)
-    if len(existing) == 6 and recognition_count == 5 and application_count == 1:
-        return [_normalise_db_question(r) for r in existing]
+    if len(existing) >= 3 and recognition_count >= 1 and application_count >= 2:
+        return _select_final_practice_questions(existing)
 
     rows = []
     type_slots = {"recognition": 0, "application": 0}
@@ -430,8 +441,10 @@ def _save_questions_supabase(
     )
     if status in (200, 201, 204):
         saved = _fetch_kpi_questions(kpi_code, event_id)
-        if len(saved) == 6:
-            return [_normalise_db_question(r) for r in saved]
+        recognition_count = sum(r.get("question_type") == "recognition" for r in saved)
+        application_count = sum(r.get("question_type") == "application" for r in saved)
+        if len(saved) >= 3 and recognition_count >= 1 and application_count >= 2:
+            return _select_final_practice_questions(saved)
     return []
 
 

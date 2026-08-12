@@ -264,6 +264,12 @@ function renderTopNav(user) {
       href: '/app/practiceroleplays.html',
       active: currentPath.endsWith('/app/practiceroleplays.html'),
     },
+    {
+      label: 'Feedback',
+      href: 'https://docs.google.com/forms/d/e/1FAIpQLSeouiq1tUXzDAxxhkAuqZHDcO23iEY5nuC4ID5-MU3Nol_mjQ/viewform?usp=publish-editor',
+      active: false,
+      external: true,
+    },
   ];
 
   if (isAdminEmail(user && user.email)) {
@@ -275,7 +281,7 @@ function renderTopNav(user) {
   }
 
   nav.innerHTML = items.map((item) => (
-    `<a class="topbar-link${item.active ? ' active' : ''}" href="${item.href}" data-nav-label="${item.label}">${item.label}</a>`
+    `<a class="topbar-link${item.active ? ' active' : ''}${item.external ? ' feedback-link' : ''}" href="${item.href}" data-nav-label="${item.label}"${item.external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${item.label}</a>`
   )).join('');
 
   const links = Array.from(nav.querySelectorAll('.topbar-link'));

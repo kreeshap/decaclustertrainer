@@ -6,6 +6,7 @@ from ..ai import call_gemini, call_gemini_json, call_groq
 from ..auth_utils import get_bearer_token, get_current_user
 from ..db import supabase_rest_request
 from ..events import canonical_event_id
+from ..lesson_design import build_lesson_prompt, classify_kpi
 from ..learn_validation import (
     LearnContentError,
     validate_lesson,
@@ -149,10 +150,20 @@ Rules:
 - All questions: 4 plausible choices (A–D), only one correct. Distribute correct index (0–3) across the 5 recognition questions.
 - Do NOT repeat the same scenario angle in both recognition and application questions."""
 
+    lesson_design = classify_kpi(text)
+    prompt = build_lesson_prompt(
+        code=code,
+        text=text,
+        cluster=cluster,
+        standard=standard,
+        deca_cluster=deca_cluster,
+        lesson_design=lesson_design,
+    )
+
     # Try Groq first; fall back to Gemini
-    result, err = call_groq([{"role": "user", "content": prompt}], max_tokens=3500)
+    result, err = call_groq([{"role": "user", "content": prompt}], max_tokens=5500)
     if err:
-        result, err = call_gemini_json(prompt, max_tokens=3500)
+        result, err = call_gemini_json(prompt, max_tokens=5500)
     if err:
         return jsonify({"error": err}), 500
 
@@ -163,8 +174,9 @@ Rules:
 
     # ── Normalise into a unified questions list for storage ───────────────────
     # recognition_questions (list) + application_question (single) → questions[]
-    recognition = result.get("recognition_questions") or result.get("questions") or []
-    application = result.get("application_question")
+    practice = result.get("practice_questions") or []
+    recognition = practice[:1] or result.get("recognition_questions") or []
+    application = practice[1:] or result.get("application_questions") or []
 
     # Tag each question with its type
     for q in recognition:
@@ -176,29 +188,35 @@ Rules:
 
     all_questions = list(recognition)
 
-    if isinstance(application, dict) and application.get("text"):
-        application["question_type"] = "application"
-        application["kpi_code"] = code
-        application["kpi_text"] = text
-        application["cluster"] = cluster
-        application["deca_cluster"] = deca_cluster
-        all_questions.append(application)
+    if isinstance(application, dict):
+        application = [application]
+    for q in application:
+        if not isinstance(q, dict) or not q.get("text"):
+            continue
+        q["question_type"] = "application"
+        q["kpi_code"] = code
+        q["kpi_text"] = text
+        q["cluster"] = cluster
+        q["deca_cluster"] = deca_cluster
+        all_questions.append(q)
 
     # ── Persist to Supabase with UUIDs ────────────────────────────────────────
     saved = _save_questions_supabase(
         all_questions, code, text, cluster, deca_cluster, event_id
     )
-    if len(saved) != 6:
+    if len(saved) < 3:
         return jsonify({"error": "Generated questions could not be persisted reliably."}), 502
-    all_questions = saved
+    all_questions = saved[:3]
 
     # ── Return structured response the frontend expects ───────────────────────
     result["recognition_questions"] = [q for q in all_questions if q.get("question_type") == "recognition"]
-    result["application_question"] = next(
-        (q for q in all_questions if q.get("question_type") == "application"), None
-    )
+    application_questions = [q for q in all_questions if q.get("question_type") == "application"]
+    result["application_question"] = application_questions[0] if application_questions else None
+    result["application_questions"] = application_questions
+    result["practice_questions"] = all_questions
     # Keep a flat "questions" list for backward compat with cached clients
     result["questions"] = all_questions
+    result["lesson_version"] = 2
     return jsonify(result)
 
 

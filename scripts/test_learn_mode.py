@@ -169,7 +169,7 @@ def test_question_structure():
     
     print("\nExpected question structure:")
     print("""
-    Recognition Question:
+    Check Question:
     {
       "text": "...",
       "choices": ["A", "B", "C", "D"],
@@ -180,7 +180,7 @@ def test_question_structure():
       "id": "uuid"
     }
     
-    Application Question:
+    Apply / DECA Challenge Question:
     {
       "text": "...",
       "choices": ["A", "B", "C", "D"],
@@ -193,8 +193,9 @@ def test_question_structure():
     """)
     
     print("✓ Frontend expects:")
-    print("  - 5 recognition questions per KPI")
-    print("  - 1 application question per KPI")
+    print("  - 1 Check question per KPI")
+    print("  - 1 Apply question per KPI")
+    print("  - 1 DECA Challenge question per KPI")
     print("  - Each question must have text, 4 choices, and correct index")
     print("  - Application questions show 📋 badge")
 

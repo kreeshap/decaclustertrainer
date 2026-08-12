@@ -27,17 +27,60 @@ def question(index: int = 0) -> dict:
 
 def lesson() -> dict:
     return {
+        "lesson_design": {
+            "complexity": "standard",
+            "skill_type": "concept",
+            "target_minutes": "8-10",
+        },
+        "hook": "You are helping a school store decide how to sell to different student groups.",
         "vocab": [
             {"term": f"Term {i}", "definition": f"Definition for finance term number {i}."}
             for i in range(6)
+        ],
+        "learning_blocks": [
+            {"title": "The idea", "body": "This block explains the concept in plain English with enough detail for a student to understand it."},
+            {"title": "Why it matters", "body": "This block connects the concept to a realistic DECA business decision the student might face."},
         ],
         "concept": {
             "summary": "A concise finance summary.",
             "explanation": "A sufficiently detailed explanation of the finance concept and how it is applied in a DECA setting.",
             "bullets": ["First concept", "Second concept", "Third concept"],
         },
-        "recognition_questions": [question(i % 4) for i in range(5)],
-        "application_question": question(2),
+        "interactive_check": {
+            "question": "Which action best matches the concept?",
+            "choices": ["Guess randomly", "Use the concept", "Ignore the data"],
+            "correct": 1,
+            "explanation": "Using the concept is the action that fits the lesson.",
+        },
+        "realistic_example": {
+            "story": "A student-run hoodie shop notices athletes and theater students buy for different reasons, so it changes messages for each group.",
+            "flow": ["Observation", "Customer groups", "Different offer"],
+        },
+        "mini_roleplay": {
+            "role": "Store manager",
+            "setup": "A customer group is not responding to your usual promotion.",
+            "decisions": [
+                {
+                    "situation": "Sales are slow with one group.",
+                    "question": "What should you do?",
+                    "choices": ["Ignore them", "Learn what they need", "Raise every price"],
+                    "correct": 1,
+                    "explanation": "Learning what they need lets you adapt the business decision.",
+                    "consequence": "You find the group values convenience more than discounts.",
+                },
+                {
+                    "situation": "You now know what the group values.",
+                    "question": "What comes next?",
+                    "choices": ["Adjust the offer", "Stop selling", "Use the old ad"],
+                    "correct": 0,
+                    "explanation": "The offer should match the customer insight.",
+                    "consequence": "The promotion becomes more relevant.",
+                },
+            ],
+            "why_it_matters": "The roleplay shows how the KPI changes a real business choice.",
+        },
+        "key_takeaways": ["Use the concept in context", "Look for business evidence", "Choose the best action"],
+        "practice_questions": [question(0), question(1), question(2)],
     }
 
 
@@ -45,18 +88,20 @@ class Phase3ContractTests(unittest.TestCase):
     def test_complete_lesson_is_normalized(self) -> None:
         clean = validation.validate_lesson(lesson())
         self.assertEqual(len(clean["vocab"]), 6)
-        self.assertEqual(len(clean["recognition_questions"]), 5)
+        self.assertEqual(len(clean["practice_questions"]), 3)
+        self.assertEqual(len(clean["recognition_questions"]), 1)
+        self.assertEqual(len(clean["application_questions"]), 2)
         self.assertEqual(len(clean["concepts"]), 3)
 
     def test_malformed_lessons_are_rejected_before_persistence(self) -> None:
         cases = []
         missing_vocab = lesson(); missing_vocab["vocab"] = []
         cases.append(missing_vocab)
-        duplicate_choices = lesson(); duplicate_choices["recognition_questions"][0]["choices"][1] = "Choice A"
+        duplicate_choices = lesson(); duplicate_choices["practice_questions"][0]["choices"][1] = "Choice A"
         cases.append(duplicate_choices)
-        invalid_answer = lesson(); invalid_answer["application_question"]["correct"] = 4
+        invalid_answer = lesson(); invalid_answer["practice_questions"][1]["correct"] = 4
         cases.append(invalid_answer)
-        missing_application = lesson(); missing_application["application_question"] = None
+        missing_application = lesson(); missing_application["practice_questions"] = []
         cases.append(missing_application)
         for case in cases:
             with self.subTest(case=case), self.assertRaises(validation.LearnContentError):

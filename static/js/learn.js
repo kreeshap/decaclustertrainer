@@ -1,5 +1,6 @@
             // ─── Constants ────────────────────────────────────────────────────────────────
-            const QUESTIONS_PER_KPI = 5;
+            const QUESTIONS_PER_KPI = 3;
+            const LESSON_VERSION = 2;
             const ROLEPLAY_EVERY = 7; // show a mini roleplay every N KPIs (standard/tdm only)
 
             // ─── State ────────────────────────────────────────────────────────────────────
@@ -635,6 +636,119 @@
                 return sessionQueue[sessionIdx];
             }
 
+            function clearNode(id) {
+                const el = $(id);
+                if (el) el.innerHTML = "";
+                return el;
+            }
+
+            function renderLessonDesign(data) {
+                const row = clearNode("lesson-design-row");
+                if (!row) return;
+                const design = data.lesson_design || {};
+                const chips = [
+                    design.complexity ? `${design.complexity} KPI` : "",
+                    design.skill_type ? String(design.skill_type).replace("_", " ") : "",
+                    design.target_minutes ? `~${design.target_minutes} min` : "",
+                ].filter(Boolean);
+                chips.forEach((text) => {
+                    const chip = document.createElement("span");
+                    chip.className = "lesson-design-chip";
+                    chip.textContent = text;
+                    row.appendChild(chip);
+                });
+            }
+
+            function renderLearningBlocks(blocks) {
+                const wrap = clearNode("learning-blocks");
+                if (!wrap) return;
+                (blocks || []).forEach((block) => {
+                    const card = document.createElement("div");
+                    card.className = "learning-block";
+                    card.innerHTML =
+                        `<div class="learning-block-title">${escHtml(block.title || "")}</div>` +
+                        `<div class="learning-block-body">${escHtml(block.body || "")}</div>`;
+                    wrap.appendChild(card);
+                });
+            }
+
+            function renderRealisticExample(example) {
+                const wrap = clearNode("realistic-example");
+                if (!wrap || !example) return;
+                const flow = Array.isArray(example.flow) ? example.flow : [];
+                wrap.innerHTML =
+                    `<div class="lesson-section-label">See it happen</div>` +
+                    `<div class="lesson-example-story">${escHtml(example.story || "")}</div>` +
+                    `<div class="lesson-flow">${flow.map((step) => `<span>${escHtml(step)}</span>`).join("<b>→</b>")}</div>`;
+            }
+
+            function renderKeyTakeaways(takeaways) {
+                const wrap = clearNode("key-takeaways");
+                if (!wrap || !Array.isArray(takeaways) || !takeaways.length) return;
+                wrap.innerHTML = `<div class="lesson-section-label">Remember this</div>`;
+                const list = document.createElement("ul");
+                takeaways.forEach((item) => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    list.appendChild(li);
+                });
+                wrap.appendChild(list);
+            }
+
+            function renderMiniRoleplay(roleplay) {
+                const wrap = clearNode("mini-roleplay");
+                if (!wrap || !roleplay || !Array.isArray(roleplay.decisions) || !roleplay.decisions.length) return;
+                let step = 0;
+                const renderStep = () => {
+                    const decision = roleplay.decisions[step];
+                    wrap.innerHTML =
+                        `<div class="lesson-section-label">Mini roleplay</div>` +
+                        `<div class="mini-roleplay-meta">${escHtml(roleplay.role || "Your role")}</div>` +
+                        `<div class="mini-roleplay-setup">${escHtml(step === 0 ? roleplay.setup || "" : decision.situation || "")}</div>` +
+                        `<div class="mini-roleplay-question">${escHtml(decision.question || "What should you do?")}</div>`;
+                    const choices = document.createElement("div");
+                    choices.className = "mini-roleplay-choices";
+                    (decision.choices || []).forEach((choice, index) => {
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.className = "mini-roleplay-choice";
+                        btn.textContent = choice;
+                        btn.addEventListener("click", () => {
+                            choices.querySelectorAll("button").forEach((b, i) => {
+                                b.disabled = true;
+                                if (i === decision.correct) b.classList.add("correct");
+                                else if (i === index) b.classList.add("wrong");
+                            });
+                            const feedback = document.createElement("div");
+                            feedback.className = "mini-roleplay-feedback";
+                            feedback.innerHTML =
+                                `<strong>${index === decision.correct ? "Good call." : "Not quite."}</strong> ` +
+                                `${escHtml(decision.explanation || "")}` +
+                                `<div>${escHtml(decision.consequence || "")}</div>`;
+                            wrap.appendChild(feedback);
+                            const next = document.createElement("button");
+                            next.type = "button";
+                            next.className = "mini-roleplay-next";
+                            const last = step + 1 >= roleplay.decisions.length;
+                            next.textContent = last ? "Finish mini roleplay" : "Next decision";
+                            next.addEventListener("click", () => {
+                                if (last) {
+                                    wrap.innerHTML += `<div class="mini-roleplay-why">${escHtml(roleplay.why_it_matters || "")}</div>`;
+                                    next.remove();
+                                    return;
+                                }
+                                step++;
+                                renderStep();
+                            });
+                            wrap.appendChild(next);
+                        });
+                        choices.appendChild(btn);
+                    });
+                    wrap.appendChild(choices);
+                };
+                renderStep();
+            }
+
             // ─── CONCEPT phase ────────────────────────────────────────────────────────────
             function startConcept(kpi) {
                 setPhase("concept", "active");
@@ -644,6 +758,9 @@
                 $("concept-cluster").textContent = kpi.cluster;
                 $("concept-kpi-text").textContent = kpi.text;
                 $("concept-summary").textContent = c.summary || "";
+                if ($("lesson-hook")) $("lesson-hook").textContent = sessionData.hook || "";
+                renderLessonDesign(sessionData || {});
+                renderLearningBlocks(sessionData.learning_blocks || []);
                 $("concept-explanation").textContent = c.explanation || "";
 
                 const bullets = $("concept-bullets");
@@ -661,11 +778,14 @@
                     tr.innerHTML = `<td>${escHtml(row.term || "")}</td><td>${escHtml(row.definition || "")}</td>`;
                     tbody.appendChild(tr);
                 });
+                renderRealisticExample(sessionData.realistic_example);
+                renderMiniRoleplay(sessionData.mini_roleplay);
+                renderKeyTakeaways(sessionData.key_takeaways);
 
                 // ── Concept check — locks "I understand" until answered ───────────────────
                 // One question testing the core idea. Just enough to verify engagement.
                 // If the model didn't generate one (older cache), fall through silently.
-                const check = c.concept_check;
+                const check = sessionData.interactive_check || c.concept_check;
                 const understandBtn = $("understand-btn");
                 const checkContainer = $("concept-check-container");
 
@@ -674,7 +794,7 @@
                 understandBtn.disabled = false;
                 understandBtn.textContent = "I understand →";
 
-                if (check && check.question && check.choices && check.choices.length === 4) {
+                if (check && check.question && check.choices && check.choices.length >= 3) {
                     understandBtn.disabled = true;
                     understandBtn.textContent = "Answer the question below to continue →";
 
@@ -741,8 +861,24 @@
                 setPhase("questions", "active");
                 missed = [];
 
-                // Separate recognition from application questions
+                // Prefer the app-owned final 3-question challenge when present.
                 const all = sessionData.questions || [];
+                const practiceQuestions = (sessionData.practice_questions || [])
+                    .map((q, index) => ({
+                        ...q,
+                        stage_label: q.stage_label || ["Check", "Apply", "DECA Challenge"][index] || "Practice",
+                    }));
+                if (practiceQuestions.length >= 3) {
+                    qShown = practiceQuestions.filter(q => !getCorrectQs().has(q.id)).slice(0, 3);
+                    if (!qShown.length) { kpiDone(); return; }
+                    qIdx = 0;
+                    $("qs-total").textContent = qShown.length;
+                    showQuestion();
+                    showState("questions");
+                    return;
+                }
+
+                // Backward-compatible fallback for older cached lessons.
                 const recognition = all.filter(q => (q.question_type || "recognition") === "recognition");
                 const application = all.filter(q => q.question_type === "application");
 
@@ -836,6 +972,10 @@
                     if (badge) badge.remove();
                 }
 
+                if ($("question-stage")) {
+                    const labels = ["Check", "Apply", "DECA Challenge"];
+                    $("question-stage").textContent = q.stage_label || labels[qIdx] || "";
+                }
                 $("question-text").textContent = q.text;
 
                 const list = $("choices-list");
@@ -1215,14 +1355,15 @@
             // ─── Question bank (localStorage) ─────────────────────────────────────────────
             function getQBank(eventId, code) {
                 try {
-                    return JSON.parse(localStorage.getItem(`ct_qb_${eventId}_${code}`));
+                    const cached = JSON.parse(localStorage.getItem(`ct_qb_${eventId}_${code}`));
+                    return cached && cached.lesson_version === LESSON_VERSION ? cached : null;
                 } catch (e) {
                     return null;
                 }
             }
             function saveQBank(eventId, code, data) {
                 try {
-                    localStorage.setItem(`ct_qb_${eventId}_${code}`, JSON.stringify(data));
+                    localStorage.setItem(`ct_qb_${eventId}_${code}`, JSON.stringify({...data, lesson_version: LESSON_VERSION}));
                 } catch (e) {}
             }
             function getCorrectQs() {
