@@ -445,11 +445,7 @@
                                 event_id: kpi.event || "",
                             }),
                         });
-                        const data = await res.json();
-                        if (!res.ok || data.error) {
-                            showError(data.error || "Groq failed.");
-                            return;
-                        }
+                        const data = await readJsonOrThrow(res, "Lesson generation failed");
 
                         // Preserve server UUID; fall back to local id for offline cache
                         (data.questions || []).forEach((q, i) => {
@@ -640,6 +636,25 @@
                 const el = $(id);
                 if (el) el.innerHTML = "";
                 return el;
+            }
+
+            async function readJsonOrThrow(response, fallbackMessage) {
+                const text = await response.text();
+                let data = {};
+                try {
+                    data = text ? JSON.parse(text) : {};
+                } catch (error) {
+                    const looksHtml = text.trim().startsWith("<");
+                    throw new Error(
+                        looksHtml
+                            ? `${fallbackMessage || "Request failed"} (server returned HTML, HTTP ${response.status})`
+                            : `${fallbackMessage || "Request failed"} (invalid JSON, HTTP ${response.status})`,
+                    );
+                }
+                if (!response.ok || data.error) {
+                    throw new Error(data.detail || data.error || `${fallbackMessage || "Request failed"} (HTTP ${response.status})`);
+                }
+                return data;
             }
 
             function renderLessonDesign(data) {

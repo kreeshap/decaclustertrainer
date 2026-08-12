@@ -158,8 +158,8 @@ def validate_lesson(raw: Any) -> dict:
         clean["stage_label"] = expected_labels[index]
         clean_practice.append(clean)
 
-    clean_recognition = [clean_practice[0]]
-    application = clean_practice[1:]
+    clean_recognition = clean_practice[:2]
+    application = clean_practice[2:]
 
     return {
         **raw,

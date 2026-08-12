@@ -89,8 +89,8 @@ class Phase3ContractTests(unittest.TestCase):
         clean = validation.validate_lesson(lesson())
         self.assertEqual(len(clean["vocab"]), 6)
         self.assertEqual(len(clean["practice_questions"]), 3)
-        self.assertEqual(len(clean["recognition_questions"]), 1)
-        self.assertEqual(len(clean["application_questions"]), 2)
+        self.assertEqual(len(clean["recognition_questions"]), 2)
+        self.assertEqual(len(clean["application_questions"]), 1)
         self.assertEqual(len(clean["concepts"]), 3)
 
     def test_malformed_lessons_are_rejected_before_persistence(self) -> None:

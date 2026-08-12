@@ -175,8 +175,8 @@ Rules:
     # ── Normalise into a unified questions list for storage ───────────────────
     # recognition_questions (list) + application_question (single) → questions[]
     practice = result.get("practice_questions") or []
-    recognition = practice[:1] or result.get("recognition_questions") or []
-    application = practice[1:] or result.get("application_questions") or []
+    recognition = practice[:2] or result.get("recognition_questions") or []
+    application = practice[2:] or result.get("application_questions") or []
 
     # Tag each question with its type
     for q in recognition:
