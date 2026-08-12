@@ -80,6 +80,21 @@ class OnboardingContracts(unittest.TestCase):
         self.assertIn('profile_patch["default_event_id"] = None', AUTH_PY)
         self.assertIn('elif "default_event" in payload:', AUTH_PY)
 
+    def test_onboarding_welcome_copy_is_not_tier_or_event_based(self):
+        self.assertIn('welcomeSubEl.textContent = "Welcome back"', OPENING_JS)
+        self.assertIn(
+            'welcomeSubEl.textContent = "Welcome to Cluster Trainer,"',
+            OPENING_JS,
+        )
+        self.assertIn("transitionPhase(fromPhase, phWelcome, 160)", OPENING_JS)
+        for marker in (
+            "Studying for",
+            "Ready to study",
+            "Good to see you again",
+            "forceWelcomeBack",
+        ):
+            self.assertNotIn(marker, OPENING_JS)
+
 
 class DarkOnlySettingsContracts(unittest.TestCase):
     def test_global_theme_is_forced_to_dark(self):

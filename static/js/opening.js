@@ -364,13 +364,11 @@
                             deactivatePhase(phBrand);
                             setTimeout(() => {
                                 if (OPENING_STATE.skipCluster) {
-                                    // Returning user — swap "Welcome to" for "Welcome back"
-                                    welcomeToEl.textContent = "Welcome back,";
                                     showWelcome(
                                         OPENING_STATE.clusterObj || CLUSTERS[0],
                                         phBrand,
                                         null,
-                                        { forceWelcomeBack: true },
+                                        { returning: true },
                                     );
                                 } else {
                                     activatePhase(phGrid);
@@ -498,19 +496,14 @@
 
             // ── WELCOME SPLASH ─────────────────────────────────────────────────────────────
             function showWelcome(cluster, fromPhase, tier, options = {}) {
-                const selectedTier = tier || getSavedTier();
                 const displayName = (
                     OPENING_STATE.user?.display_name || DISPLAY_NAME
                 ).split(" ")[0];
 
-                if (options.forceWelcomeBack) {
-                    // Show their saved event name as context, not a redundant "welcome back"
-                    const savedEvent = UserPrefs.getEvent();
-                    welcomeSubEl.textContent = savedEvent ? `Ready to study ${savedEvent},` : "Good to see you again,";
+                if (options.returning) {
+                    welcomeSubEl.textContent = "Welcome back";
                 } else {
-                    welcomeSubEl.textContent = selectedTier
-                        ? `Studying for ${selectedTier},`
-                        : "Let's get started,";
+                    welcomeSubEl.textContent = "Welcome to Cluster Trainer,";
                 }
 
                 document.getElementById("welcome-name").textContent =
@@ -518,7 +511,7 @@
                 document.getElementById("welcome-name").style.color =
                     cluster.color;
 
-                transitionPhase(fromPhase, phWelcome, 800);
+                transitionPhase(fromPhase, phWelcome, 160);
             }
 
             phWelcome.addEventListener("click", () => {
@@ -537,7 +530,7 @@
                             OPENING_STATE.clusterObj || CLUSTERS[0],
                             phExplode,
                             null,
-                            { forceWelcomeBack: true },
+                            { returning: true },
                         );
                     } else {
                         activatePhase(phGrid);
