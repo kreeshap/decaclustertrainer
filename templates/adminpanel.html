@@ -81,8 +81,7 @@
           <label>PDF<input name="file" type="file" accept="application/pdf" required></label>
           <label>Source type<select name="source_type"><option value="deca_sample">DECA sample exam</option><option value="owned">My own questions</option><option value="licensed">Licensed material</option><option value="other">Other reference</option></select></label>
           <label>Usage rights<select name="usage_rights"><option value="reference_only">Reference only</option><option value="licensed_for_student_use">Licensed for student use</option></select></label>
-          <label>Event ID<input name="event_id" placeholder="financial_services_tdm" required></label>
-          <label>Career cluster<input name="career_cluster" placeholder="Finance"></label>
+          <label>Career cluster<input name="career_cluster" placeholder="Finance" required></label>
           <label>Exam year<input name="exam_year" type="number" min="1990" max="2100"></label>
           <button class="primary-action" type="submit">Parse PDF</button>
         </form>

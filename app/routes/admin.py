@@ -475,40 +475,51 @@ def _question_kpi(kpi_code: str, event_id: str) -> dict | None:
                  if kpi.get("code") == kpi_code and kpi.get("event") == event_id), None)
 
 
+def _cluster_question_kpis(kpi_code: str, career_cluster: str) -> list[dict]:
+    target = career_cluster.strip().lower()
+    matches = [kpi for kpi in _load_all_kpis()[0]
+               if kpi.get("code") == kpi_code and kpi.get("deca_cluster", "").strip().lower() == target]
+    return list({kpi["event"]: kpi for kpi in matches}.values())
+
+
 def _import_staged_question(item: dict, document: dict, user_id: str) -> tuple[bool, object]:
     if document.get("usage_rights") != "licensed_for_student_use":
         return False, "Reference-only sources cannot be published to Practice Mode."
-    kpi = _question_kpi(item.get("kpi_code", ""), document.get("event_id", ""))
-    if not kpi:
-        return False, "Choose a KPI that belongs to the selected event."
+    matching_kpis = _cluster_question_kpis(item.get("kpi_code", ""), document.get("career_cluster", ""))
+    if not matching_kpis:
+        return False, "Choose a KPI that belongs to the selected career cluster."
     if item.get("correct_index") not in range(4) or len(item.get("choices") or []) != 4:
         return False, "A complete answer key and four choices are required."
-    _, slots = _supabase_svc("/kpi_questions", params={
-        "event_id": f"eq.{document['event_id']}", "kpi_code": f"eq.{item['kpi_code']}",
-        "question_type": "eq.application", "select": "question_slot", "order": "question_slot.desc", "limit": "1",
-    })
-    slot = int(slots[0]["question_slot"]) + 1 if slots else 0
-    payload = {
-        "kpi_code": item["kpi_code"], "kpi_text": kpi.get("text", ""),
-        "kpi_cluster": kpi.get("cluster", ""), "deca_cluster": kpi.get("deca_cluster", ""),
-        "event_id": document["event_id"], "question_text": item["question_text"],
-        "choices": item["choices"], "correct_index": item["correct_index"],
-        "explanation": item.get("explanation", ""), "question_type": "application", "question_slot": slot,
-        "source_type": "imported_reference", "source_document_id": document["id"],
-        "source_question_number": item["question_number"], "source_page": item.get("page_number"),
-        "usage_rights": document["usage_rights"], "normalized_hash": item["normalized_hash"],
-        "review_status": "approved",
-    }
-    status, data = _supabase_svc("/kpi_questions", method="POST", payload=payload, prefer="return=representation")
-    if status not in (200, 201) or not isinstance(data, list) or not data:
-        return False, data
+    saved_questions = []
+    for kpi in matching_kpis:
+        _, slots = _supabase_svc("/kpi_questions", params={
+            "event_id": f"eq.{kpi['event']}", "kpi_code": f"eq.{item['kpi_code']}",
+            "question_type": "eq.application", "select": "question_slot", "order": "question_slot.desc", "limit": "1",
+        })
+        slot = int(slots[0]["question_slot"]) + 1 if slots else 0
+        payload = {
+            "kpi_code": item["kpi_code"], "kpi_text": kpi.get("text", ""),
+            "kpi_cluster": kpi.get("cluster", ""), "deca_cluster": kpi.get("deca_cluster", ""),
+            "event_id": kpi["event"], "question_text": item["question_text"],
+            "choices": item["choices"], "correct_index": item["correct_index"],
+            "explanation": item.get("explanation", ""), "question_type": "application", "question_slot": slot,
+            "source_type": "imported_reference", "source_document_id": document["id"],
+            "source_question_number": item["question_number"], "source_page": item.get("page_number"),
+            "usage_rights": document["usage_rights"], "normalized_hash": item["normalized_hash"],
+            "review_status": "approved",
+        }
+        status, data = _supabase_svc("/kpi_questions", method="POST", payload=payload, prefer="return=representation")
+        if status not in (200, 201) or not isinstance(data, list) or not data:
+            return False, data
+        saved_questions.extend(data)
+    representative = saved_questions[0]
     _supabase_svc("/question_import_items", method="PATCH", payload={
-        "review_status": "imported", "imported_question_id": data[0]["id"],
+        "review_status": "imported", "imported_question_id": representative["id"],
         "reviewed_by": user_id, "reviewed_at": utc_now(),
     }, params={"id": f"eq.{item['id']}"}, prefer="return=minimal")
-    _supabase_svc("/question_source_links", method="PATCH", payload={"imported_question_id": data[0]["id"]},
+    _supabase_svc("/question_source_links", method="PATCH", payload={"imported_question_id": representative["id"]},
                   params={"import_item_id": f"eq.{item['id']}"}, prefer="return=minimal")
-    return True, data[0]
+    return True, saved_questions
 
 
 def _link_reference_sources(document: dict, items: list[dict]) -> None:
@@ -529,7 +540,7 @@ def _link_reference_sources(document: dict, items: list[dict]) -> None:
                 source_id = created[0]["id"]
             _supabase_svc("/question_source_links", method="POST", payload={
                 "source_id": source_id, "import_item_id": item["id"], "document_id": document["id"],
-                "kpi_id": f"{document['event_id']}:{item['kpi_code']}" if item.get("kpi_code") else None,
+                "kpi_id": None,
                 "kpi_code": item.get("kpi_code", ""), "pages": parsed["pages"], "raw_citation": raw,
             }, params={"on_conflict": "source_id,import_item_id"}, prefer="resolution=ignore-duplicates,return=minimal")
 
@@ -547,10 +558,13 @@ def admin_upload_question_pdf():
         return jsonify({"error": "PDF must be between 1 byte and 20 MB."}), 400
     usage_rights = request.form.get("usage_rights", "reference_only")
     source_type = request.form.get("source_type", "other")
+    career_cluster = request.form.get("career_cluster", "").strip()
     if usage_rights not in {"reference_only", "licensed_for_student_use"}:
         return jsonify({"error": "Unsupported usage rights."}), 400
     if source_type not in {"deca_sample", "owned", "licensed", "other"}:
         return jsonify({"error": "Unsupported source type."}), 400
+    if not career_cluster:
+        return jsonify({"error": "Career cluster is required."}), 400
     sync_kpi_catalog()
     digest = hashlib.sha256(file_bytes).hexdigest()
     existing_status, existing = _supabase_svc("/question_source_documents", params={
@@ -565,8 +579,8 @@ def admin_upload_question_pdf():
     doc_payload = {
         "filename": secure_filename(uploaded.filename), "file_sha256": digest,
         "source_type": source_type, "usage_rights": usage_rights,
-        "career_cluster": request.form.get("career_cluster", "")[:120],
-        "event_id": request.form.get("event_id", "")[:120],
+        "career_cluster": career_cluster[:120],
+        "event_id": "",
         "exam_year": int(request.form["exam_year"]) if request.form.get("exam_year", "").isdigit() else None,
         "page_count": stats["page_count"], "detected_count": len(questions), "created_by": user["id"],
     }
@@ -577,16 +591,16 @@ def admin_upload_question_pdf():
     _, bank = _supabase_svc("/kpi_questions", params={
         "select": "id,question_text,normalized_hash", "limit": "10000",
     })
-    event_id = doc_payload["event_id"]
-    kpi_lookup = {(kpi.get("event"), kpi.get("code")): kpi for kpi in _load_all_kpis()[0]}
+    career_cluster = doc_payload["career_cluster"]
     assessed = []
     for question in questions:
-        matched_kpi = kpi_lookup.get((event_id, question.get("kpi_code")))
+        matches = _cluster_question_kpis(question.get("kpi_code", ""), career_cluster)
+        matched_kpi = matches[0] if matches else None
         question["kpi_cluster"] = matched_kpi.get("cluster", "") if matched_kpi else ""
         question["deca_cluster"] = matched_kpi.get("deca_cluster", "") if matched_kpi else doc_payload["career_cluster"]
         item = assess_item(question, bank or [], assessed, usage_rights == "licensed_for_student_use")
         if question.get("kpi_code") and not matched_kpi:
-            item["review_reasons"].append("kpi_not_in_selected_event")
+            item["review_reasons"].append("kpi_not_in_selected_cluster")
             item["review_status"] = "pending"
         assessed.append(item)
     rows = [{**item, "document_id": document["id"], "kpi_source": "document" if item["kpi_code"] else "unknown"}
@@ -598,14 +612,15 @@ def admin_upload_question_pdf():
     for item in item_data:
         if not item.get("kpi_code") or not item.get("explanation") or not item.get("kpi_cluster"):
             continue
-        knowledge_rows.append({
-            "kpi_id": f"{event_id}:{item['kpi_code']}", "kpi_code": item["kpi_code"],
-            "kpi_cluster": item["kpi_cluster"], "deca_cluster": item["deca_cluster"],
-            "knowledge_type": "source_explanation", "content": item["explanation"],
-            "importance": "important", "content_hash": hashlib.sha256(item["explanation"].lower().encode("utf-8")).hexdigest(),
-            "source_document_id": document["id"], "source_import_item_id": item["id"],
-            "source_references": item.get("source_references") or [],
-        })
+        for kpi in _cluster_question_kpis(item["kpi_code"], career_cluster):
+            knowledge_rows.append({
+                "kpi_id": f"{kpi['event']}:{item['kpi_code']}", "kpi_code": item["kpi_code"],
+                "kpi_cluster": item["kpi_cluster"], "deca_cluster": item["deca_cluster"],
+                "knowledge_type": "source_explanation", "content": item["explanation"],
+                "importance": "important", "content_hash": hashlib.sha256(item["explanation"].lower().encode("utf-8")).hexdigest(),
+                "source_document_id": document["id"], "source_import_item_id": item["id"],
+                "source_references": item.get("source_references") or [],
+            })
     if knowledge_rows:
         _supabase_svc("/kpi_knowledge_items", method="POST", payload=knowledge_rows,
                       params={"on_conflict": "kpi_id,content_hash"}, prefer="resolution=ignore-duplicates,return=minimal")
@@ -710,8 +725,8 @@ def admin_question_style_profile():
     _, err = require_admin()
     if err:
         return err
-    event_id = request.args.get("event_id", "").strip()
-    _, docs = _supabase_svc("/question_source_documents", params={"event_id": f"eq.{event_id}", "select": "id", "limit": "1000"})
+    career_cluster = request.args.get("career_cluster", "").strip()
+    _, docs = _supabase_svc("/question_source_documents", params={"career_cluster": f"eq.{career_cluster}", "select": "id", "limit": "1000"})
     ids = [doc["id"] for doc in docs or []]
     if not ids:
         return jsonify({"profile": {"corpus_size": 0}})
@@ -732,7 +747,7 @@ def admin_generate_original_questions():
     kpi = _question_kpi(kpi_code, event_id)
     if not kpi:
         return jsonify({"error": "Choose a KPI that belongs to the selected event."}), 400
-    _, docs = _supabase_svc("/question_source_documents", params={"event_id": f"eq.{event_id}", "select": "id", "limit": "1000"})
+    _, docs = _supabase_svc("/question_source_documents", params={"career_cluster": f"eq.{kpi['deca_cluster']}", "select": "id", "limit": "1000"})
     ids = [doc["id"] for doc in docs or []]
     _, corpus = _supabase_svc("/question_import_items", params={"document_id": f"in.({','.join(ids)})", "select": "question_text,correct_index,review_reasons,review_status", "limit": "10000"}) if ids else (200, [])
     corpus = [item for item in corpus or [] if item.get("review_status") != "skipped" and "exact_duplicate" not in (item.get("review_reasons") or [])]

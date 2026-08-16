@@ -79,6 +79,11 @@ SOURCE: Finance textbook, p. 22.
         self.assertIn('question["kpi_cluster"]', ADMIN)
         self.assertIn('"cluster_breakdown"', ADMIN)
         self.assertIn('id="question-cluster-breakdown"', HTML)
+        upload_form = HTML.split('id="question-import-form"', 1)[1].split("</form>", 1)[0]
+        self.assertNotIn('name="event_id"', upload_form)
+        self.assertIn('name="career_cluster"', upload_form)
+        self.assertIn("def _cluster_question_kpis", ADMIN)
+        self.assertIn('"event_id": ""', ADMIN)
 
     def test_style_profile_contains_patterns_not_source_text(self):
         profile = build_style_profile([{"question_text": "A manager helps a customer select a service.", "correct_index": 1}])
