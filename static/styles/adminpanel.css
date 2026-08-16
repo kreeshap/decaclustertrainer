@@ -54,6 +54,11 @@ body { background: var(--bg); color: var(--white); font-family: 'Barlow', sans-s
 .keyboard-help { color: var(--muted); font-size: .72rem; margin-top: 16px; }
 kbd { background: var(--border); border-radius: 3px; color: var(--white); padding: 2px 5px; }
 .ops-message { color: var(--cyan); min-height: 20px; }
+.admin-tabs { position:sticky; top:56px; z-index:20; display:flex; gap:4px; padding:8px; border:1px solid var(--border); border-radius:8px; background:#0b1f1ff2; }
+.admin-tab { border:0; border-radius:6px; background:transparent; color:var(--muted); cursor:pointer; font:700 .76rem 'Barlow'; letter-spacing:.06em; padding:10px 16px; text-transform:uppercase; }
+.admin-tab:hover { color:var(--white); }
+.admin-tab.active { background:var(--cyan); color:var(--bg); }
+.admin-tab-hidden { display:none !important; }
 @media (max-width: 700px) { .batch-grid, .classification-grid { grid-template-columns: repeat(2, 1fr); } .review-options { grid-template-columns: 1fr; } }
 
 .audit-launch-panel h2 { margin: 6px 0; color: var(--white); }

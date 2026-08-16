@@ -62,6 +62,13 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn('approved.get(catalog_id(kpi)) or classify_kpi(kpi["text"])', audit_ops)
         self.assertIn('"/generated_kpi_lessons"', LEARN)
 
+    def test_admin_tools_are_grouped_into_internal_tabs(self):
+        for tab in ("overview", "study", "questions", "sources"):
+            self.assertIn(f'data-admin-tab="{tab}"', HTML)
+            self.assertIn(f'data-admin-group="{tab}"', HTML)
+        self.assertIn("function showAdminTab(tabName)", JS)
+        self.assertIn("ct_admin_active_tab", JS)
+
 
 if __name__ == "__main__":
     unittest.main()

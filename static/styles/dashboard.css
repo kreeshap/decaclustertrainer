@@ -66,3 +66,20 @@
 .plan{padding-bottom:16px}
 .plan small{line-height:1.35}
 .welcome{height:auto;min-height:78px;padding-bottom:12px}
+
+/* Primary dashboard cards need more breathing room than the compact widgets. */
+.top-grid>.card{padding:24px 26px}
+.top-grid .card-label{margin-bottom:10px}
+.recommendation-body{gap:18px;margin:14px 0 16px}
+.recommendation h2{margin-bottom:7px}
+.recommendation-reason{margin-top:12px;line-height:1.5}
+.recommendation .primary-action{margin-top:2px}
+.recommendation .secondary-actions{gap:10px;margin-left:12px}
+.overview-body{gap:28px}
+.metric-stack{gap:20px}
+.metric>div{margin-bottom:8px}
+.overview-note{padding-top:13px;line-height:1.4}
+@media(min-width:901px){
+  .top-grid>.card{min-height:230px}
+  .overview-body{height:148px}
+}

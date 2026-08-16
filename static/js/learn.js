@@ -150,7 +150,7 @@
                 if (!source.length) {
                     const empty = document.createElement("div");
                     empty.className = "empty-state";
-                    empty.textContent = "Start a session to generate your next steps.";
+                    empty.textContent = "Study material for this event is still being prepared.";
                     list.appendChild(empty);
                     return;
                 }
@@ -175,7 +175,7 @@
                 if (startBtn) {
                     startBtn.textContent = allKpis.length
                         ? "Start Learning"
-                        : "No topics available yet";
+                        : "Content is being prepared";
                     startBtn.disabled = !allKpis.length;
                 }
 
@@ -263,7 +263,8 @@
                         btn.textContent = "Start Learning";
                         btn.disabled = false;
                     } else {
-                        btn.textContent = "No topics available yet";
+                        btn.textContent = "Content is being prepared";
+                        btn.disabled = true;
                     }
 
                     // Show/hide mode buttons based on event type

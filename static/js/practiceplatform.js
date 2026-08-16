@@ -7,10 +7,10 @@
   function show(view){["platform-home","platform-builder","platform-runner","platform-results"].forEach(id=>$(id).hidden=id!==view);}
   async function loadHome(){state.data=await json(await apiFetch(`/api/practice/platform?event_id=${encodeURIComponent(state.eventId)}`));renderHome();}
   function renderHome(){const d=state.data;$("platform-event").textContent=UserPrefs.getEventName?.()||state.eventId;$("platform-mock").disabled=d.available<100;
-    $("platform-mock").title=d.available<100?`Only ${d.available} approved unique questions are available.`:"";
+    $("platform-mock").title=d.available<100?`Only ${d.available} approved unique questions are available.`:"";$("platform-mock-copy").textContent=d.available<100?`Available after 100 approved unique questions. ${d.available} available now.`:"100 questions · 90 minutes · no feedback until submission.";
     const cont=$("platform-continue");cont.hidden=!d.continue;if(d.continue)cont.innerHTML=`<div class="panel-kicker">Continue</div><h2>${esc(d.continue.title)}</h2><p>Question ${Number(d.continue.current_index)+1} of ${d.continue.question_count}</p><button class="cta-btn" data-resume="${esc(d.continue.id)}">Resume</button>`;
     $("platform-analysis").innerHTML=d.analysis.slice(0,8).map(a=>`<button class="analysis-row" data-topic="${esc(a.topic)}"><span>${esc(a.topic)}</span><strong>${a.attempts<5?`${a.correct} / ${a.attempts} · Not enough data`:`${a.accuracy}% · ${a.status}`}</strong></button>`).join("")||"<p>Answer questions to build topic analysis.</p>";
-    $("platform-recent").innerHTML=d.recent.map(s=>`<div class="recent-row"><span>${esc(s.title)}</span><strong>${s.question_count} questions</strong></div>`).join("")||"<p>No completed sets yet.</p>";
+    $("platform-recent").innerHTML=d.recent.map(s=>`<div class="recent-row"><span>${esc(s.title)}</span><strong>${s.question_count} questions</strong></div>`).join("")||`<p>No completed practice sets yet.${d.history_counts.seen?` Your ${d.history_counts.seen} answered question${d.history_counts.seen===1?" is":"s are"} already informing Topic Analysis.`:""}</p>`;
   }
   function renderBuilder(){const d=state.data;$("builder-history").innerHTML=Object.entries(d.history_counts).map(([k,n])=>`<label><input type="checkbox" name="history" value="${k}"> ${k.replaceAll("_"," ")} <strong>${n} Q</strong></label>`).join("");
     $("builder-difficulty").innerHTML=Object.entries(d.difficulty_counts).map(([k,n])=>`<label><input type="checkbox" name="difficulty" value="${k}"> ${k} <strong>${n} Q</strong></label>`).join("");

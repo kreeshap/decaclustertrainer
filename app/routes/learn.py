@@ -1025,6 +1025,12 @@ def learn_analytics():
 
     weak = sorted(mastery_rows, key=lambda m: m.get("mastery_score", 0))[:5]
     strong = sorted(mastery_rows, key=lambda m: m.get("mastery_score", 0), reverse=True)[:5]
+    try:
+        ready_ids = get_ready_kpi_ids()
+    except RuntimeError:
+        ready_ids = set()
+    for row in weak + strong:
+        row["learn_ready"] = f"{event_id}:{row.get('kpi_code', '')}" in ready_ids
     streak = _compute_streak(daily)
 
     # Recent question history (latest attempts, joined with question text)

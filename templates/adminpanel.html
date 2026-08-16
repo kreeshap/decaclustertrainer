@@ -28,7 +28,13 @@
           <h1 class="dash-title">Content <em>Operations</em></h1>
         </div>
       </section>
-      <section class="panel ops-progress">
+      <nav class="admin-tabs" role="tablist" aria-label="Admin sections">
+        <button class="admin-tab active" type="button" role="tab" aria-selected="true" data-admin-tab="overview">Overview</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="study">Study materials</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="questions">Questions</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="sources">Sources</button>
+      </nav>
+      <section class="panel ops-progress" data-admin-group="overview">
         <div class="section-kicker">Classification</div>
         <div class="progress-heading"><strong id="ops-classified">—</strong> / <span id="ops-total">—</span></div>
         <div class="ops-track"><div id="ops-progress-fill"></div></div>
@@ -40,7 +46,7 @@
         <button class="primary-action" id="process-kpis" type="button">Process next 20 KPIs</button>
       </section>
 
-      <section class="panel attention-panel">
+      <section class="panel attention-panel" data-admin-group="overview">
         <div class="section-kicker">Needs attention</div>
         <button class="attention-row" id="review-items" type="button">
           <span>Classification review</span><strong id="ops-review-count">0</strong>
@@ -50,7 +56,7 @@
         </button>
       </section>
 
-      <section class="panel" id="latest-batch-panel">
+      <section class="panel" id="latest-batch-panel" data-admin-group="overview">
         <div class="section-kicker">Latest batch</div>
         <div class="batch-heading"><strong id="batch-id">No batches yet</strong><span id="batch-status"></span></div>
         <div class="batch-grid">
@@ -61,7 +67,7 @@
         </div>
       </section>
 
-      <section class="panel audit-launch-panel">
+      <section class="panel audit-launch-panel" data-admin-group="study">
         <div class="section-kicker">Study material generation</div>
         <h2>Generate and audit the next 20 KPIs</h2>
         <p>Inspect mission clarity, meaningful choices, vocabulary quality, learning value, difficulty progression, and pacing.</p>
@@ -73,7 +79,7 @@
         <div class="batch-heading"><strong id="lesson-audit-batch">No audit batches yet</strong><span id="lesson-audit-status"></span></div>
       </section>
 
-      <section class="panel question-import-panel">
+      <section class="panel question-import-panel" data-admin-group="questions">
         <div class="section-kicker">Question bank ingestion</div>
         <h2>Import exam questions from PDF</h2>
         <p>Uploaded PDFs may be used throughout the content pipeline. Selectable text is parsed deterministically, then answer keys, KPI alignment, and duplicates are checked before questions reach Practice Mode.</p>
@@ -101,7 +107,7 @@
         <div id="question-style-summary" class="import-summary">Style profile becomes available after 10 parsed reference questions.</div>
       </section>
 
-      <section class="panel question-import-review" id="kpi-knowledge-review" hidden>
+      <section class="panel question-import-review" id="kpi-knowledge-review" data-admin-group="questions" hidden>
         <div class="review-topline"><span id="kpi-knowledge-meta"></span><button id="close-kpi-knowledge" type="button">Close</button></div>
         <h2 id="kpi-knowledge-title"></h2>
         <label class="audit-notes">Proposed knowledge<textarea id="kpi-knowledge-content" rows="6"></textarea></label>
@@ -110,7 +116,7 @@
         <button class="text-action" id="ignore-kpi-knowledge" type="button">Ignore</button>
       </section>
 
-      <section class="panel question-import-review" id="question-import-review" hidden>
+      <section class="panel question-import-review" id="question-import-review" data-admin-group="questions" hidden>
         <div class="review-topline"><span id="question-import-review-meta"></span><button id="close-question-import-review" type="button">Close</button></div>
         <h2 id="question-import-review-stem"></h2>
         <ol class="import-choices" id="question-import-review-choices" type="A"></ol>
@@ -124,14 +130,14 @@
         <button class="text-action" id="skip-import-question" type="button">Skip question</button>
       </section>
 
-      <section class="panel sources-library">
+      <section class="panel sources-library" data-admin-group="sources">
         <div class="section-kicker">Sources library</div>
         <div class="batch-heading"><h2>Research queue</h2><span id="sources-stats">0 sources</span></div>
         <input class="source-search" id="source-search" type="search" placeholder="Search sources, authors, or citations…">
         <div id="sources-list" class="sources-list"></div>
       </section>
 
-      <section class="panel lesson-audit-review" id="lesson-audit-review" hidden>
+      <section class="panel lesson-audit-review" id="lesson-audit-review" data-admin-group="study" hidden>
         <div class="review-topline"><span id="lesson-audit-meta"></span><button id="close-lesson-audit" type="button">Close</button></div>
         <h2 id="lesson-audit-title"></h2>
         <div class="lesson-preview" id="lesson-audit-preview"></div>
@@ -140,7 +146,7 @@
         <button class="primary-action" id="save-lesson-audit" type="button">Save audit and continue →</button>
       </section>
 
-      <section class="panel review-panel" id="review-panel" hidden>
+      <section class="panel review-panel" id="review-panel" data-admin-group="overview" hidden>
         <div class="review-topline"><span id="review-remaining">0 need review</span><button id="close-review" type="button">Close</button></div>
         <div class="review-code" id="review-code"></div>
         <h2 id="review-name"></h2>

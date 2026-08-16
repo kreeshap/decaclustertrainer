@@ -373,6 +373,26 @@ async function saveReview(action) {
   } catch (error) { showMessage(error.message, true); }
 }
 
+function showAdminTab(tabName) {
+  const valid = ["overview", "study", "questions", "sources"];
+  const selected = valid.includes(tabName) ? tabName : "overview";
+  document.querySelectorAll("[data-admin-group]").forEach((panel) => {
+    panel.classList.toggle("admin-tab-hidden", panel.dataset.adminGroup !== selected);
+  });
+  document.querySelectorAll("[data-admin-tab]").forEach((button) => {
+    const active = button.dataset.adminTab === selected;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", String(active));
+  });
+  sessionStorage.setItem("ct_admin_active_tab", selected);
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+document.querySelectorAll("[data-admin-tab]").forEach((button) => {
+  button.addEventListener("click", () => showAdminTab(button.dataset.adminTab));
+});
+showAdminTab(sessionStorage.getItem("ct_admin_active_tab") || "overview");
+
 $("process-kpis").addEventListener("click", startBatch);
 $("retry-failed").addEventListener("click", retryFailed);
 $("review-items").addEventListener("click", loadNextReview);
