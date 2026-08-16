@@ -7,7 +7,8 @@ from datetime import datetime, timezone
 import json
 import threading
 
-from .ai import call_gemini_json, call_groq
+from .ai import call_cloudflare, call_gemini_json, call_groq, call_mistral
+from .ai_coordinator import coordinator
 from .config import GEMINI_MODEL
 from .learn_helpers import _load_all_kpis, _supabase_svc
 from .lesson_design import classify_kpi
@@ -172,19 +173,16 @@ def _validate_classification(raw: object) -> dict:
 
 def classify_with_ai(kpi: dict) -> tuple[dict, str]:
     prompt = _classification_prompt(kpi)
-    raw, error = call_groq(
-        [{"role": "user", "content": prompt}],
-        model=GROQ_CLASSIFIER_MODEL,
-        temperature=0.1,
-        max_tokens=1200,
-    )
-    model = GROQ_CLASSIFIER_MODEL
-    if error:
-        raw, error = call_gemini_json(prompt, max_tokens=1200, temperature=0.1)
-        model = GEMINI_MODEL
+    messages = [{"role": "user", "content": prompt}]
+    raw, error, model = coordinator.run([
+        ("Groq", lambda: call_groq(messages, model=GROQ_CLASSIFIER_MODEL, temperature=0.1, max_tokens=1200)),
+        ("Mistral", lambda: call_mistral(messages, temperature=0.1, max_tokens=1200)),
+        ("Cloudflare", lambda: call_cloudflare(messages, temperature=0.1, max_tokens=1200)),
+        ("Gemini", lambda: call_gemini_json(prompt, max_tokens=1200, temperature=0.1)),
+    ], "classification")
     if error:
         raise RuntimeError(error)
-    return _validate_classification(raw), model
+    return _validate_classification(raw), model or GEMINI_MODEL
 
 
 def deterministic_disagreements(kpi: dict, ai_result: dict) -> tuple[dict, list[str]]:
@@ -205,14 +203,13 @@ Disagreement fields: {json.dumps(disagreements)}
 
 Return only JSON:
 {{"verdict":"pass|review","issue":null,"recommended_archetype":null,"reason":"Concise reason"}}"""
-    raw, error = call_gemini_json(prompt, max_tokens=500, temperature=0.1)
-    if error:
-        raw, error = call_groq(
-            [{"role": "user", "content": prompt}],
-            model=GROQ_CLASSIFIER_MODEL,
-            temperature=0.1,
-            max_tokens=500,
-        )
+    messages = [{"role": "user", "content": prompt}]
+    raw, error, _ = coordinator.run([
+        ("Groq", lambda: call_groq(messages, model=GROQ_CLASSIFIER_MODEL, temperature=0.1, max_tokens=500)),
+        ("Mistral", lambda: call_mistral(messages, temperature=0.1, max_tokens=500)),
+        ("Cloudflare", lambda: call_cloudflare(messages, temperature=0.1, max_tokens=500)),
+        ("Gemini", lambda: call_gemini_json(prompt, max_tokens=500, temperature=0.1)),
+    ], "classification")
     if error or not isinstance(raw, dict):
         return {"verdict": "review" if disagreements else "pass", "issue": "reviewer_unavailable", "recommended_archetype": deterministic.get("primary_archetype"), "reason": error or "Reviewer returned invalid data"}
     verdict = str(raw.get("verdict") or "review").strip().lower()

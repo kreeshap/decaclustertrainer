@@ -56,6 +56,18 @@ GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "60"))
 GEMINI_API_KEY = first_env_value("GEMINI_API_KEY", "GOOGLE_API_KEY")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash").strip() or "gemini-3.6-flash"
 GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "60"))
+MISTRAL_API_KEY = first_env_value("MISTRAL_API_KEY")
+MISTRAL_MODEL = os.environ.get("MISTRAL_MODEL", "mistral-small-latest").strip() or "mistral-small-latest"
+MISTRAL_API_TIMEOUT = float(os.environ.get("MISTRAL_API_TIMEOUT", "60"))
+CLOUDFLARE_API_KEY = first_env_value("CLOUDFLARE_API_KEY", "CLOUDFLARE_API_TOKEN")
+CLOUDFLARE_ACCOUNT_ID = first_env_value("CLOUDFLARE_ACCOUNT_ID")
+CLOUDFLARE_MODEL = os.environ.get(
+    "CLOUDFLARE_MODEL", "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+).strip() or "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+CLOUDFLARE_API_TIMEOUT = float(os.environ.get("CLOUDFLARE_API_TIMEOUT", "60"))
+AI_MAX_CONCURRENT_REQUESTS = max(1, int(os.environ.get("AI_MAX_CONCURRENT_REQUESTS", "2")))
+AI_PROVIDER_RETRIES = max(0, int(os.environ.get("AI_PROVIDER_RETRIES", "1")))
+AI_RETRY_BASE_SECONDS = max(0.1, float(os.environ.get("AI_RETRY_BASE_SECONDS", "1")))
 LOGIN_LIMIT_MAX_FAILURES = int(os.environ.get("LOGIN_LIMIT_MAX_FAILURES", "5"))
 LOGIN_LIMIT_WINDOW_SECONDS = int(os.environ.get("LOGIN_LIMIT_WINDOW_SECONDS", "900"))
 LOGIN_LIMIT_COOLDOWN_SECONDS = int(

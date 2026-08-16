@@ -73,7 +73,7 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
         standard=kpi["standard"], deca_cluster=kpi.get("deca_cluster", ""),
         lesson_design=plan,
     )
-    lesson, errors = generate_valid_lesson(prompt, plan)
+    lesson, errors = generate_valid_lesson(prompt, plan, priority="audit")
     if lesson is None:
         _supabase_svc(
             "/lesson_content_audits", method="PATCH",

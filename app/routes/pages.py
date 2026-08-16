@@ -1,19 +1,21 @@
 from flask import Blueprint, jsonify, render_template
 
-from ..ai import call_gemini_json, call_groq
+from ..ai import call_cloudflare, call_gemini_json, call_groq, call_mistral
 
 pages_bp = Blueprint("pages", __name__)
 
 
 @pages_bp.get("/api/debug/ai")
 def debug_ai():
-    """Quick smoke-test for both AI keys. Hit /api/debug/ai in your browser."""
+    """Quick smoke-test for every configured AI provider."""
     probe = [{"role": "user", "content": 'Reply with valid JSON: {"ok": true}'}]
 
     groq_data, groq_err = call_groq(probe, max_tokens=20)
     gemini_data, gemini_err = call_gemini_json(
         'Reply with valid JSON: {"ok": true}', max_tokens=20
     )
+    mistral_data, mistral_err = call_mistral(probe, max_tokens=20)
+    cloudflare_data, cloudflare_err = call_cloudflare(probe, max_tokens=20)
 
     return jsonify(
         {
@@ -23,6 +25,8 @@ def debug_ai():
                 "result": gemini_data,
                 "error": gemini_err,
             },
+            "mistral": {"ok": mistral_err is None, "result": mistral_data, "error": mistral_err},
+            "cloudflare": {"ok": cloudflare_err is None, "result": cloudflare_data, "error": cloudflare_err},
         }
     )
 

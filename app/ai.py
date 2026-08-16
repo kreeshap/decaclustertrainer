@@ -1,12 +1,9 @@
-"""
-ai.py — Thin wrappers around the Groq and Gemini SDKs.
-
-Groq  : uses the official `groq` SDK
-Gemini: uses the new `google-genai` SDK (google.genai)
-"""
+"""Thin provider adapters. Routing and retries live in ai_coordinator.py."""
 
 import json
 import re
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 from .config import (
     GEMINI_API_KEY,
@@ -14,6 +11,13 @@ from .config import (
     GEMINI_MODEL,
     GROQ_API_KEY,
     GROQ_API_TIMEOUT,
+    MISTRAL_API_KEY,
+    MISTRAL_API_TIMEOUT,
+    MISTRAL_MODEL,
+    CLOUDFLARE_ACCOUNT_ID,
+    CLOUDFLARE_API_KEY,
+    CLOUDFLARE_API_TIMEOUT,
+    CLOUDFLARE_MODEL,
 )
 
 # ── Lazy clients ───────────────────────────────────────────────────────────────
@@ -161,3 +165,65 @@ def call_gemini(
         return resp.text, None
     except Exception as exc:
         return None, f"Gemini: {exc}"
+
+
+def _openai_compatible_call(*, provider: str, url: str, api_key: str, model: str,
+                            messages: list, timeout: float, temperature: float,
+                            max_tokens: int, response_json: bool) -> tuple:
+    payload = {"model": model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens}
+    if response_json:
+        payload["response_format"] = {"type": "json_object"}
+    request = Request(url, data=json.dumps(payload).encode("utf-8"), headers={
+        "Authorization": f"Bearer {api_key}", "Content-Type": "application/json",
+    }, method="POST")
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        content = body["choices"][0]["message"]["content"].strip()
+        return (json.loads(content), None) if response_json else (content, None)
+    except HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:800]
+        return None, f"{provider}: HTTP {exc.code}: {detail}"
+    except (URLError, TimeoutError, KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
+        return None, f"{provider}: {exc}"
+
+
+def call_mistral(messages: list, model: str = MISTRAL_MODEL, temperature: float = 0.2,
+                 response_json: bool = True, max_tokens: int = 6000) -> tuple:
+    if not MISTRAL_API_KEY:
+        return None, "MISTRAL_API_KEY is not configured."
+    return _openai_compatible_call(
+        provider="Mistral", url="https://api.mistral.ai/v1/chat/completions",
+        api_key=MISTRAL_API_KEY, model=model, messages=messages,
+        timeout=MISTRAL_API_TIMEOUT, temperature=temperature,
+        max_tokens=max_tokens, response_json=response_json,
+    )
+
+
+def call_cloudflare(messages: list, model: str = CLOUDFLARE_MODEL, temperature: float = 0.2,
+                    response_json: bool = True, max_tokens: int = 6000) -> tuple:
+    if not CLOUDFLARE_API_KEY:
+        return None, "CLOUDFLARE_API_KEY is not configured."
+    if not CLOUDFLARE_ACCOUNT_ID:
+        return None, "CLOUDFLARE_ACCOUNT_ID is not configured."
+    return _openai_compatible_call(
+        provider="Cloudflare",
+        url=f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/v1/chat/completions",
+        api_key=CLOUDFLARE_API_KEY, model=model, messages=messages,
+        timeout=CLOUDFLARE_API_TIMEOUT, temperature=temperature,
+        max_tokens=max_tokens, response_json=response_json,
+    )
+
+
+def call_json_with_fallback(prompt: str, *, priority: str = "student", temperature: float = 0.2,
+                            max_tokens: int = 2048) -> tuple:
+    """Return structured output using controlled, health-aware provider failover."""
+    from .ai_coordinator import coordinator
+    messages = [{"role": "user", "content": prompt}]
+    result, error, _ = coordinator.run([
+        ("Groq", lambda: call_groq(messages, temperature=temperature, max_tokens=max_tokens)),
+        ("Mistral", lambda: call_mistral(messages, temperature=temperature, max_tokens=max_tokens)),
+        ("Cloudflare", lambda: call_cloudflare(messages, temperature=temperature, max_tokens=max_tokens)),
+        ("Gemini", lambda: call_gemini_json(prompt, temperature=temperature, max_tokens=max_tokens, retry_invalid_json=True)),
+    ], priority)
+    return result, error

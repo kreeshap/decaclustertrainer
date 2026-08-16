@@ -29,6 +29,20 @@ class AiConfigurationContractTests(unittest.TestCase):
         self.assertIn("retry_invalid_json: bool = False", AI_SOURCE)
         self.assertIn("Gemini returned malformed JSON after", AI_SOURCE)
 
+    def test_all_configured_providers_have_adapters(self) -> None:
+        for provider in ("mistral", "cloudflare"):
+            self.assertIn(f"def call_{provider}", AI_SOURCE)
+        for key in ("MISTRAL_API_KEY", "CLOUDFLARE_API_KEY", "CLOUDFLARE_ACCOUNT_ID"):
+            self.assertIn(key, CONFIG_SOURCE)
+
+    def test_provider_failover_is_coordinated(self) -> None:
+        coordinator = (ROOT / "app" / "ai_coordinator.py").read_text(encoding="utf-8")
+        self.assertIn('"student": 0', coordinator)
+        self.assertIn('"audit": 3', coordinator)
+        self.assertIn('"classification": 4', coordinator)
+        self.assertIn("AI_MAX_CONCURRENT_REQUESTS", coordinator)
+        self.assertIn("temporarily cooling down", coordinator)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

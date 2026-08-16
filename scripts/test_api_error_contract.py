@@ -21,13 +21,13 @@ class ApiErrorContractTests(unittest.TestCase):
         self.assertNotIn("generate_valid_lesson(prompt, lesson_design)", LEARN_SOURCE)
 
     def test_admin_generation_remains_bounded(self) -> None:
-        self.assertEqual(GENERATION_SOURCE.count("max_tokens=4000"), 1)
-        self.assertIn("max_tokens=6000", GENERATION_SOURCE)
+        self.assertEqual(GENERATION_SOURCE.count("max_tokens=6000"), 4)
         self.assertIn("retry_invalid_json=True", GENERATION_SOURCE)
 
-    def test_generation_providers_run_concurrently(self) -> None:
-        self.assertIn("ThreadPoolExecutor", GENERATION_SOURCE)
-        self.assertIn("as_completed(futures)", GENERATION_SOURCE)
+    def test_generation_providers_use_coordinated_sequential_failover(self) -> None:
+        self.assertIn("with coordinator.slot(priority)", GENERATION_SOURCE)
+        self.assertIn("for name, call in providers", GENERATION_SOURCE)
+        self.assertNotIn("ThreadPoolExecutor", GENERATION_SOURCE)
 
 
 if __name__ == "__main__":

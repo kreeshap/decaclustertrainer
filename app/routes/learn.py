@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 import json
 from datetime import datetime
 
-from ..ai import call_gemini, call_gemini_json, call_groq
+from ..ai import call_json_with_fallback
 from ..auth_utils import get_bearer_token, get_current_user
 from ..db import supabase_rest_request
 from ..events import canonical_event_id
@@ -1253,9 +1253,9 @@ Return ONLY valid JSON:
   "focus": "One sentence on what aspect to emphasize in the response"
 }}"""
 
-    result, err = call_groq([{"role": "user", "content": prompt}])
-    if err:
-        result, err = call_gemini_json(prompt, max_tokens=512, temperature=0.9)
+    result, err = call_json_with_fallback(
+        prompt, priority="student", max_tokens=512, temperature=0.9
+    )
     if err:
         return jsonify({"error": err}), 500
 
@@ -1319,25 +1319,11 @@ Grade this response. Return ONLY valid JSON — no markdown, no extra text:
 Scoring guide: 9-10=Excellent, 7-8=Good, 5-6=Adequate, 3-4=Needs work, 1-2=Poor.
 Grade letter: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 1-2=F."""
 
-    text, err = call_gemini(prompt)
+    result, err = call_json_with_fallback(
+        prompt, priority="student", max_tokens=1600, temperature=0.3
+    )
     if err:
         return jsonify({"error": err}), 500
-
-    # Strip markdown code fences Gemini sometimes adds
-    clean = text.strip()
-    if clean.startswith("```"):
-        parts = clean.split("```")
-        clean = parts[1] if len(parts) > 1 else clean
-        if clean.startswith("json"):
-            clean = clean[4:]
-    clean = clean.strip()
-
-    try:
-        result = json.loads(clean)
-    except Exception:
-        return jsonify(
-            {"error": "Failed to parse grading response", "raw": text[:500]}
-        ), 500
 
     try:
         result = validate_roleplay_grade(result, kpi_codes)

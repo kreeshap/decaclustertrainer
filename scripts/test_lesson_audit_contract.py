@@ -25,6 +25,10 @@ class LessonAuditContractTests(unittest.TestCase):
         self.assertIn('targets = {"quick": 5, "standard": 10, "deep": 5}', OPS)
         self.assertIn("return selected[:limit]", OPS)
         self.assertIn("ThreadPoolExecutor(max_workers=2)", OPS)
+        generation = (ROOT / "app" / "lesson_generation.py").read_text(encoding="utf-8")
+        for provider in ("Groq", "Mistral", "Cloudflare", "Gemini"):
+            self.assertIn(f'("{provider}"', generation)
+        self.assertIn('priority="audit"', OPS)
         self.assertIn('if catalog_id(kpi) in ready_ids:', OPS)
 
     def test_admin_scores_the_six_usability_questions(self):
