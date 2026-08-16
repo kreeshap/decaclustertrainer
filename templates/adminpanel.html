@@ -76,12 +76,12 @@
       <section class="panel question-import-panel">
         <div class="section-kicker">Question bank ingestion</div>
         <h2>Import exam questions from PDF</h2>
-        <p>Selectable-text PDFs are parsed deterministically. Questions reach Practice Mode only after answer, KPI, duplicate, and usage-rights checks.</p>
+        <p>Uploaded PDFs may be used throughout the content pipeline. Selectable text is parsed deterministically, then answer keys, KPI alignment, and duplicates are checked before questions reach Practice Mode.</p>
         <form id="question-import-form" class="question-import-form">
           <label>PDF<input name="file" type="file" accept="application/pdf" required></label>
           <label>Source type<select name="source_type"><option value="deca_sample">DECA sample exam</option><option value="owned">My own questions</option><option value="licensed">Licensed material</option><option value="other">Other reference</option></select></label>
-          <label>Usage rights<select name="usage_rights"><option value="reference_only">Reference only</option><option value="licensed_for_student_use">Licensed for student use</option></select></label>
-          <label>Career cluster<input name="career_cluster" placeholder="Finance" required></label>
+          <input name="usage_rights" type="hidden" value="licensed_for_student_use">
+          <label>Career cluster<select name="career_cluster" required><option value="">Choose cluster</option><option value="Marketing">Marketing</option><option value="Finance">Finance</option><option value="Hospitality and Tourism">Hospitality and Tourism</option><option value="Business Management and Administration">Business Management and Administration</option></select></label>
           <label>Exam year<input name="exam_year" type="number" min="1990" max="2100"></label>
           <button class="primary-action" type="submit">Parse PDF</button>
         </form>
@@ -93,7 +93,7 @@
           <button class="attention-row" id="review-kpi-knowledge" type="button"><span>Learn enrichment proposals</span><strong id="kpi-knowledge-pending">0</strong></button>
         </div>
         <form id="question-generation-form" class="question-import-form">
-          <label>Generate for event<input name="event_id" placeholder="financial_services_tdm" required></label>
+          <label>Career cluster<select name="career_cluster" required><option value="">Choose cluster</option><option value="Marketing">Marketing</option><option value="Finance">Finance</option><option value="Hospitality and Tourism">Hospitality and Tourism</option><option value="Business Management and Administration">Business Management and Administration</option></select></label>
           <label>Target KPI<input name="kpi_code" placeholder="FI:000" required></label>
           <label>Question count<input name="count" type="number" min="1" max="10" value="3"></label>
           <button class="primary-action" type="submit">Generate original questions</button>

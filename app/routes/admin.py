@@ -469,6 +469,11 @@ def admin_delete_user(user_id):
 
 # ─── Questions ────────────────────────────────────────────────────────────────
 
+CAREER_CLUSTERS = {
+    "Marketing", "Finance", "Hospitality and Tourism",
+    "Business Management and Administration",
+}
+
 
 def _question_kpi(kpi_code: str, event_id: str) -> dict | None:
     return next((kpi for kpi in _load_all_kpis()[0]
@@ -476,9 +481,10 @@ def _question_kpi(kpi_code: str, event_id: str) -> dict | None:
 
 
 def _cluster_question_kpis(kpi_code: str, career_cluster: str) -> list[dict]:
-    target = career_cluster.strip().lower()
+    target = career_cluster.strip().lower().replace("&", "and")
     matches = [kpi for kpi in _load_all_kpis()[0]
-               if kpi.get("code") == kpi_code and kpi.get("deca_cluster", "").strip().lower() == target]
+               if kpi.get("code") == kpi_code
+               and kpi.get("deca_cluster", "").strip().lower().replace("&", "and") == target]
     return list({kpi["event"]: kpi for kpi in matches}.values())
 
 
@@ -556,15 +562,15 @@ def admin_upload_question_pdf():
     file_bytes = uploaded.read()
     if not file_bytes or len(file_bytes) > 20 * 1024 * 1024:
         return jsonify({"error": "PDF must be between 1 byte and 20 MB."}), 400
-    usage_rights = request.form.get("usage_rights", "reference_only")
+    # Admin uploads are authorized for the complete internal content pipeline:
+    # parsing, classification, Learn enrichment, and student-facing questions.
+    usage_rights = "licensed_for_student_use"
     source_type = request.form.get("source_type", "other")
     career_cluster = request.form.get("career_cluster", "").strip()
-    if usage_rights not in {"reference_only", "licensed_for_student_use"}:
-        return jsonify({"error": "Unsupported usage rights."}), 400
     if source_type not in {"deca_sample", "owned", "licensed", "other"}:
         return jsonify({"error": "Unsupported source type."}), 400
-    if not career_cluster:
-        return jsonify({"error": "Career cluster is required."}), 400
+    if career_cluster not in CAREER_CLUSTERS:
+        return jsonify({"error": "Choose one of the four DECA career clusters."}), 400
     sync_kpi_catalog()
     digest = hashlib.sha256(file_bytes).hexdigest()
     existing_status, existing = _supabase_svc("/question_source_documents", params={
@@ -741,19 +747,22 @@ def admin_generate_original_questions():
     if err:
         return err
     body = request.get_json(silent=True) or {}
-    event_id = str(body.get("event_id") or "").strip()
+    career_cluster = str(body.get("career_cluster") or "").strip()
     kpi_code = str(body.get("kpi_code") or "").strip().upper()
     count = max(1, min(int(body.get("count") or 3), 10))
-    kpi = _question_kpi(kpi_code, event_id)
-    if not kpi:
-        return jsonify({"error": "Choose a KPI that belongs to the selected event."}), 400
-    _, docs = _supabase_svc("/question_source_documents", params={"career_cluster": f"eq.{kpi['deca_cluster']}", "select": "id", "limit": "1000"})
+    if career_cluster not in CAREER_CLUSTERS:
+        return jsonify({"error": "Choose one of the four DECA career clusters."}), 400
+    matching_kpis = _cluster_question_kpis(kpi_code, career_cluster)
+    if not matching_kpis:
+        return jsonify({"error": "Choose a KPI that belongs to the selected career cluster."}), 400
+    kpi = matching_kpis[0]
+    _, docs = _supabase_svc("/question_source_documents", params={"career_cluster": f"eq.{career_cluster}", "select": "id", "limit": "1000"})
     ids = [doc["id"] for doc in docs or []]
     _, corpus = _supabase_svc("/question_import_items", params={"document_id": f"in.({','.join(ids)})", "select": "question_text,correct_index,review_reasons,review_status", "limit": "10000"}) if ids else (200, [])
     corpus = [item for item in corpus or [] if item.get("review_status") != "skipped" and "exact_duplicate" not in (item.get("review_reasons") or [])]
     profile = build_style_profile(corpus)
     if profile.get("corpus_size", 0) < 10:
-        return jsonify({"error": "Import at least 10 reference questions for this event before generating from its style profile."}), 400
+        return jsonify({"error": "Import at least 10 reference questions for this career cluster before generating from its style profile."}), 400
     prompt = f"""Create {count} completely original DECA-style multiple-choice questions for KPI {kpi_code}: {kpi['text']}.
 Use only this aggregate style profile: {json.dumps(profile)}
 Do not copy or paraphrase any source question. Use new scenarios, names, numbers, phrasing, and answer sets.
@@ -776,18 +785,26 @@ Return JSON only: {{"questions":[{{"question_text":"...","choices":["...","...",
         review, review_error = call_json_with_fallback(review_prompt, priority="admin_preview", temperature=0.1, max_tokens=400)
         if review_error or not isinstance(review, dict) or review.get("verdict") != "pass":
             rejected.append({"question_text": stem, "reason": (review or {}).get("reason", review_error or "review_failed")}); continue
-        _, slots = _supabase_svc("/kpi_questions", params={"event_id": f"eq.{event_id}", "kpi_code": f"eq.{kpi_code}", "question_type": "eq.application", "select": "question_slot", "order": "question_slot.desc", "limit": "1"})
-        slot = int(slots[0]["question_slot"]) + 1 if slots else 0
-        payload = {"kpi_code": kpi_code, "kpi_text": kpi["text"], "kpi_cluster": kpi["cluster"], "deca_cluster": kpi["deca_cluster"], "event_id": event_id,
-                   "question_text": stem, "choices": choices, "correct_index": correct, "explanation": str(candidate.get("explanation") or ""),
-                   "question_type": "application", "question_slot": slot, "source_type": "ai_generated", "usage_rights": "generated_original",
-                   "normalized_hash": question_hash(stem), "review_status": "approved"}
-        status, saved = _supabase_svc("/kpi_questions", method="POST", payload=payload, prefer="return=representation")
-        if status in (200, 201) and saved:
-            accepted.append(saved[0])
+        saved_for_events = []
+        for event_kpi in matching_kpis:
+            event_id = event_kpi["event"]
+            _, slots = _supabase_svc("/kpi_questions", params={"event_id": f"eq.{event_id}", "kpi_code": f"eq.{kpi_code}", "question_type": "eq.application", "select": "question_slot", "order": "question_slot.desc", "limit": "1"})
+            slot = int(slots[0]["question_slot"]) + 1 if slots else 0
+            payload = {"kpi_code": kpi_code, "kpi_text": event_kpi["text"], "kpi_cluster": event_kpi["cluster"], "deca_cluster": event_kpi["deca_cluster"], "event_id": event_id,
+                       "question_text": stem, "choices": choices, "correct_index": correct, "explanation": str(candidate.get("explanation") or ""),
+                       "question_type": "application", "question_slot": slot, "source_type": "ai_generated", "usage_rights": "generated_original",
+                       "normalized_hash": question_hash(stem), "review_status": "approved"}
+            status, saved = _supabase_svc("/kpi_questions", method="POST", payload=payload, prefer="return=representation")
+            if status not in (200, 201) or not saved:
+                saved_for_events = []
+                break
+            saved_for_events.extend(saved)
+        if saved_for_events:
+            accepted.append({"question": saved_for_events[0], "event_count": len(saved_for_events)})
         else:
             rejected.append({"question_text": stem, "reason": "save_failed"})
-    return jsonify({"generated": len(accepted), "questions": accepted, "rejected": rejected, "style_profile": profile})
+    return jsonify({"generated": len(accepted), "questions": accepted, "rejected": rejected, "style_profile": profile,
+                    "career_cluster": career_cluster, "events_populated": len(matching_kpis)})
 
 
 @admin_bp.get("/api/admin/kpi-knowledge/review-next")

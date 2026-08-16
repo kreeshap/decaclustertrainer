@@ -85,6 +85,17 @@ SOURCE: Finance textbook, p. 22.
         self.assertIn("def _cluster_question_kpis", ADMIN)
         self.assertIn('"event_id": ""', ADMIN)
 
+    def test_content_pipeline_uses_four_cluster_dropdowns_not_event_ids(self):
+        upload_form = HTML.split('id="question-import-form"', 1)[1].split("</form>", 1)[0]
+        generation_form = HTML.split('id="question-generation-form"', 1)[1].split("</form>", 1)[0]
+        for form in (upload_form, generation_form):
+            self.assertNotIn('name="event_id"', form)
+            self.assertIn('name="career_cluster"', form)
+            for cluster in ("Marketing", "Finance", "Hospitality and Tourism", "Business Management and Administration"):
+                self.assertIn(f'value="{cluster}"', form)
+        self.assertIn('usage_rights = "licensed_for_student_use"', ADMIN)
+        self.assertIn("for event_kpi in matching_kpis", ADMIN)
+
     def test_style_profile_contains_patterns_not_source_text(self):
         profile = build_style_profile([{"question_text": "A manager helps a customer select a service.", "correct_index": 1}])
         self.assertEqual(profile["corpus_size"], 1)

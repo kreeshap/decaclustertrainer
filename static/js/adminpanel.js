@@ -172,7 +172,7 @@ async function approveReadyImports() {
 async function generateOriginalQuestions(event) {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
-  const payload = { event_id: form.get("event_id"), kpi_code: form.get("kpi_code"), count: Number(form.get("count") || 3) };
+  const payload = { career_cluster: form.get("career_cluster"), kpi_code: form.get("kpi_code"), count: Number(form.get("count") || 3) };
   showMessage("Generating and independently reviewing original questions…");
   try {
     const data = await readJson(await apiFetch("/api/admin/questions/generate-original", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }));
