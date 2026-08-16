@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, jsonify, request
+from werkzeug.exceptions import HTTPException
 
 from .config import BASE_DIR
 from .routes.admin import admin_bp
@@ -17,6 +18,18 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(learn_bp)
     app.register_blueprint(admin_bp)
+
+    @app.errorhandler(Exception)
+    def handle_unexpected_error(error):
+        """Keep API failures machine-readable while preserving normal page errors."""
+        if isinstance(error, HTTPException):
+            return error
+        if request.path.startswith("/api/"):
+            app.logger.exception("Unhandled API error on %s", request.path)
+            return jsonify({"error": "Internal server error"}), 500
+        app.logger.exception("Unhandled page error on %s", request.path)
+        return "Internal server error", 500
+
     return app
 
 

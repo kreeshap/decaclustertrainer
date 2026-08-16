@@ -8,7 +8,13 @@ Gemini: uses the new `google-genai` SDK (google.genai)
 import json
 import re
 
-from .config import GEMINI_API_KEY, GEMINI_MODEL, GROQ_API_KEY
+from .config import (
+    GEMINI_API_KEY,
+    GEMINI_API_TIMEOUT,
+    GEMINI_MODEL,
+    GROQ_API_KEY,
+    GROQ_API_TIMEOUT,
+)
 
 # ── Lazy clients ───────────────────────────────────────────────────────────────
 _groq_client = None
@@ -20,7 +26,13 @@ def _get_groq():
     if _groq_client is None:
         from groq import Groq
 
-        _groq_client = Groq(api_key=GROQ_API_KEY)
+        # Disable SDK retries here: learn-generation already falls back to
+        # Gemini, and retries can outlive the web worker's request timeout.
+        _groq_client = Groq(
+            api_key=GROQ_API_KEY,
+            timeout=GROQ_API_TIMEOUT,
+            max_retries=0,
+        )
     return _groq_client
 
 
@@ -28,8 +40,13 @@ def _get_gemini():
     global _gemini_client
     if _gemini_client is None:
         from google import genai
+        from google.genai import types
 
-        _gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+        # google-genai expresses HttpOptions.timeout in milliseconds.
+        _gemini_client = genai.Client(
+            api_key=GEMINI_API_KEY,
+            http_options=types.HttpOptions(timeout=int(GEMINI_API_TIMEOUT * 1000)),
+        )
     return _gemini_client
 
 

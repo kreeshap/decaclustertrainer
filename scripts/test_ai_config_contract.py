@@ -16,6 +16,15 @@ class AiConfigurationContractTests(unittest.TestCase):
     def test_google_api_key_alias_is_supported(self) -> None:
         self.assertIn('first_env_value("GEMINI_API_KEY", "GOOGLE_API_KEY")', CONFIG_SOURCE)
 
+    def test_provider_timeouts_are_applied_to_sdk_clients(self) -> None:
+        self.assertIn("timeout=GROQ_API_TIMEOUT", AI_SOURCE)
+        self.assertIn("max_retries=0", AI_SOURCE)
+        self.assertIn("timeout=int(GEMINI_API_TIMEOUT * 1000)", AI_SOURCE)
+
+    def test_default_provider_timeouts_fit_inside_web_request_budget(self) -> None:
+        self.assertIn('GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "10"))', CONFIG_SOURCE)
+        self.assertIn('GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "10"))', CONFIG_SOURCE)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
