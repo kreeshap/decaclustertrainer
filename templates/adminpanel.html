@@ -25,12 +25,52 @@
       <section class="dash-header">
         <div>
           <div class="app-sec">Admin Panel</div>
-          <h1 class="dash-title"><em>Admin</em> page</h1>
+          <h1 class="dash-title">Content <em>Operations</em></h1>
         </div>
       </section>
-      <div class="panel">
-        <p>This page is for admin tools.</p>
-      </div>
+      <section class="panel ops-progress">
+        <div class="section-kicker">Classification</div>
+        <div class="progress-heading"><strong id="ops-classified">—</strong> / <span id="ops-total">—</span></div>
+        <div class="ops-track"><div id="ops-progress-fill"></div></div>
+        <div class="ops-remaining"><strong id="ops-remaining">—</strong> remaining</div>
+        <button class="primary-action" id="process-kpis" type="button">Process next 20 KPIs</button>
+      </section>
+
+      <section class="panel attention-panel">
+        <div class="section-kicker">Needs attention</div>
+        <button class="attention-row" id="review-items" type="button">
+          <span>Classification review</span><strong id="ops-review-count">0</strong>
+        </button>
+        <button class="attention-row" id="retry-failed" type="button">
+          <span>Failed processing</span><strong id="ops-failed-count">0</strong>
+        </button>
+      </section>
+
+      <section class="panel" id="latest-batch-panel">
+        <div class="section-kicker">Latest batch</div>
+        <div class="batch-heading"><strong id="batch-id">No batches yet</strong><span id="batch-status"></span></div>
+        <div class="batch-grid">
+          <div><strong id="batch-processed">0</strong><span>Processed</span></div>
+          <div><strong id="batch-approved">0</strong><span>Auto-approved</span></div>
+          <div><strong id="batch-review">0</strong><span>Need review</span></div>
+          <div><strong id="batch-failed">0</strong><span>Failed</span></div>
+        </div>
+      </section>
+
+      <section class="panel review-panel" id="review-panel" hidden>
+        <div class="review-topline"><span id="review-remaining">0 need review</span><button id="close-review" type="button">Close</button></div>
+        <div class="review-code" id="review-code"></div>
+        <h2 id="review-name"></h2>
+        <div class="review-meta" id="review-meta"></div>
+        <div class="classification-grid" id="classification-grid"></div>
+        <div class="flag-box"><strong>Why flagged</strong><p id="review-reason"></p></div>
+        <div class="review-options" id="review-options"></div>
+        <button class="primary-action" id="approve-review" type="button">Approve →</button>
+        <button class="text-action" id="skip-review" type="button">Skip for now <kbd>S</kbd></button>
+        <div class="keyboard-help"><kbd>A</kbd> approve · <kbd>1</kbd>/<kbd>2</kbd> choose · <kbd>S</kbd> later</div>
+      </section>
+
+      <div class="ops-message" id="ops-message" role="status" aria-live="polite"></div>
     </main>
     <script src="/static/js/adminpanel.js"></script>
   </body>

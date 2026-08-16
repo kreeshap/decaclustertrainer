@@ -18,7 +18,13 @@ class ApiErrorContractTests(unittest.TestCase):
         self.assertIn("}), 504", LEARN_SOURCE)
 
     def test_generation_output_is_bounded_for_web_requests(self) -> None:
-        self.assertEqual(LEARN_SOURCE.count("max_tokens=4000"), 2)
+        self.assertEqual(LEARN_SOURCE.count("max_tokens=4000"), 1)
+        self.assertIn("max_tokens=6000", LEARN_SOURCE)
+        self.assertIn("retry_invalid_json=True", LEARN_SOURCE)
+
+    def test_provider_diagnostics_are_not_exposed_to_students(self) -> None:
+        self.assertIn('logger.warning("Lesson generation failed validation:', LEARN_SOURCE)
+        self.assertNotIn('"detail": combined_error', LEARN_SOURCE)
 
     def test_generation_providers_run_concurrently(self) -> None:
         self.assertIn("ThreadPoolExecutor", LEARN_SOURCE)

@@ -93,6 +93,7 @@ def call_gemini_json(
     max_tokens: int = 8192,
     temperature: float = 0.7,
     model: str = GEMINI_MODEL,
+    retry_invalid_json: bool = False,
 ) -> tuple:
     """Call Gemini and return a parsed JSON dict. Returns (data, error)."""
     if not GEMINI_API_KEY:
@@ -101,22 +102,36 @@ def call_gemini_json(
         from google import genai
         from google.genai import types
 
-        resp = _get_gemini().models.generate_content(
-            model=model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=temperature,
-                max_output_tokens=max_tokens,
-                response_mime_type="application/json",
-            ),
-        )
-        text = resp.text.strip()
-        if text.startswith("```"):
-            parts = text.split("```")
-            text = parts[1] if len(parts) > 1 else text
-            if text.startswith("json"):
-                text = text[4:]
-        return json.loads(text.strip()), None
+        attempts = 2 if retry_invalid_json else 1
+        last_error = None
+        for attempt in range(attempts):
+            contents = prompt
+            if attempt:
+                contents += (
+                    "\n\nYour previous response was malformed or truncated. Regenerate the complete "
+                    "object from scratch. Use short sentences, stay well below the output limit, "
+                    "and return strict JSON only."
+                )
+            resp = _get_gemini().models.generate_content(
+                model=model,
+                contents=contents,
+                config=types.GenerateContentConfig(
+                    temperature=0.1 if attempt else temperature,
+                    max_output_tokens=max_tokens,
+                    response_mime_type="application/json",
+                ),
+            )
+            text = (resp.text or "").strip()
+            if text.startswith("```"):
+                parts = text.split("```")
+                text = parts[1] if len(parts) > 1 else text
+                if text.startswith("json"):
+                    text = text[4:]
+            try:
+                return json.loads(text.strip()), None
+            except json.JSONDecodeError as exc:
+                last_error = exc
+        return None, f"Gemini returned malformed JSON after {attempts} attempt(s): {last_error}"
     except Exception as exc:
         return None, f"Gemini: {exc}"
 

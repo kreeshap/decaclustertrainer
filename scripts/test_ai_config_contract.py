@@ -25,6 +25,10 @@ class AiConfigurationContractTests(unittest.TestCase):
         self.assertIn('GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "60"))', CONFIG_SOURCE)
         self.assertIn('GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "60"))', CONFIG_SOURCE)
 
+    def test_gemini_can_retry_malformed_json_for_structured_lessons(self) -> None:
+        self.assertIn("retry_invalid_json: bool = False", AI_SOURCE)
+        self.assertIn("Gemini returned malformed JSON after", AI_SOURCE)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

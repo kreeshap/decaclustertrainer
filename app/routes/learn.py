@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+import logging
 from datetime import datetime
 
 from ..ai import call_gemini, call_gemini_json, call_groq
@@ -8,6 +9,7 @@ from ..auth_utils import get_bearer_token, get_current_user
 from ..db import supabase_rest_request
 from ..events import canonical_event_id
 from ..lesson_design import build_lesson_prompt, classify_kpi
+from ..content_ops import catalog_id, get_approved_instructional_plan
 from ..learn_validation import (
     LearnContentError,
     validate_lesson,
@@ -31,13 +33,18 @@ from ..learn_helpers import (
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
 
 
+logger = logging.getLogger(__name__)
+
+
 def _generate_valid_lesson(prompt: str, expected_plan: dict) -> tuple[dict | None, list[str]]:
     """Race both providers and use the first response that passes validation."""
     providers = {
         "Groq": lambda: call_groq(
             [{"role": "user", "content": prompt}], max_tokens=4000
         ),
-        "Gemini": lambda: call_gemini_json(prompt, max_tokens=4000),
+        "Gemini": lambda: call_gemini_json(
+            prompt, max_tokens=6000, temperature=0.2, retry_invalid_json=True
+        ),
     }
     errors = []
     executor = ThreadPoolExecutor(max_workers=len(providers))
@@ -195,7 +202,7 @@ Rules:
 - All questions: 4 plausible choices (A–D), only one correct. Distribute correct index (0–3) across the 5 recognition questions.
 - Do NOT repeat the same scenario angle in both recognition and application questions."""
 
-    lesson_design = classify_kpi(text)
+    lesson_design = get_approved_instructional_plan(catalog_id(kpi)) or classify_kpi(text)
     prompt = build_lesson_prompt(
         code=code,
         text=text,
@@ -209,6 +216,7 @@ Rules:
     result, provider_errors = _generate_valid_lesson(prompt, lesson_design)
     if result is None:
         combined_error = " | ".join(provider_errors)
+        logger.warning("Lesson generation failed validation: %s", combined_error)
         timed_out = any(
             marker in combined_error.lower()
             for marker in ("deadline_exceeded", "deadline expired", "timed out", "timeout")
@@ -220,7 +228,7 @@ Rules:
             }), 504
         return jsonify({
             "error": "Lesson generation is temporarily unavailable.",
-            "detail": combined_error,
+            "detail": "The lesson could not be generated reliably. Please try again.",
         }), 502
 
     # ── Normalise into a unified questions list for storage ───────────────────

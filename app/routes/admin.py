@@ -4,6 +4,7 @@ from datetime import date, timedelta
 from flask import Blueprint, jsonify, request
 
 from ..auth_utils import get_current_user, is_admin
+from ..content_ops import ARCHETYPES, launch_batch, sync_kpi_catalog, utc_now
 from ..db import supabase_admin_request
 from ..learn_helpers import _load_all_kpis, _supabase_svc, KPI_DIR, _save_questions_supabase
 from werkzeug.utils import secure_filename
@@ -28,6 +29,187 @@ def require_admin():
     if not is_admin(user):
         return None, (jsonify({"error": "Forbidden"}), 403)
     return user, None
+
+
+def _classification_summary():
+    kpis, _ = _load_all_kpis()
+    status, rows = _supabase_svc(
+        "/kpi_classifications",
+        params={"select": "kpi_id,review_status", "limit": "10000"},
+    )
+    rows = rows if status == 200 and isinstance(rows, list) else []
+    counts = defaultdict(int)
+    for row in rows:
+        counts[row.get("review_status") or "unknown"] += 1
+    return {
+        "total": len(kpis),
+        "classified": len(rows),
+        "remaining": max(0, len(kpis) - len(rows)),
+        "auto_approved": counts["auto_approved"],
+        "approved": counts["approved"],
+        "needs_review": counts["needs_review"],
+        "blocked": counts["blocked"],
+    }
+
+
+@admin_bp.get("/api/admin/content-operations")
+def admin_content_operations():
+    _, err = require_admin()
+    if err:
+        return err
+    batch_status, batches = _supabase_svc(
+        "/kpi_classification_batches",
+        params={"select": "*", "order": "created_at.desc", "limit": "1"},
+    )
+    latest = batches[0] if batch_status == 200 and isinstance(batches, list) and batches else None
+    failed_status, failed = _supabase_svc(
+        "/kpi_classification_jobs",
+        params={"status": "eq.failed", "select": "id", "limit": "10000"},
+    )
+    return jsonify({
+        "classification": _classification_summary(),
+        "failed_processing": len(failed) if failed_status == 200 and isinstance(failed, list) else 0,
+        "latest_batch": latest,
+    })
+
+
+def _create_classification_batch(user_id: str, kpi_ids: list[str]):
+    batch_status, batches = _supabase_svc(
+        "/kpi_classification_batches", method="POST",
+        payload={"requested_count": len(kpi_ids), "created_by": user_id},
+        prefer="return=representation",
+    )
+    if batch_status not in (200, 201) or not isinstance(batches, list) or not batches:
+        raise RuntimeError(f"Batch creation failed: {batches}")
+    batch = batches[0]
+    jobs = [{"batch_id": batch["id"], "kpi_id": kpi_id} for kpi_id in kpi_ids]
+    job_status, job_data = _supabase_svc(
+        "/kpi_classification_jobs", method="POST", payload=jobs,
+        prefer="return=minimal",
+    )
+    if job_status not in (200, 201, 204):
+        raise RuntimeError(f"Job creation failed: {job_data}")
+    launch_batch(batch["id"])
+    return batch
+
+
+@admin_bp.post("/api/admin/content-operations/process")
+def admin_process_classifications():
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    try:
+        limit = max(1, min(int(body.get("limit") or 20), 20))
+    except (TypeError, ValueError):
+        return jsonify({"error": "limit must be an integer between 1 and 20"}), 400
+    try:
+        active_status, active = _supabase_svc(
+            "/kpi_classification_batches",
+            params={"status": "in.(queued,processing)", "select": "id,status", "limit": "1"},
+        )
+        if active_status != 200 or not isinstance(active, list):
+            raise RuntimeError(f"Could not inspect active batches: {active}")
+        if active:
+            return jsonify({"error": "A classification batch is already running.", "batch": active[0]}), 409
+        catalog = sync_kpi_catalog()
+        status, rows = _supabase_svc(
+            "/kpi_classifications", params={"select": "kpi_id", "limit": "10000"}
+        )
+        if status != 200 or not isinstance(rows, list):
+            raise RuntimeError(f"Could not load classification state: {rows}")
+        classified = {row["kpi_id"] for row in rows}
+        selected = [row["id"] for row in catalog if row["id"] not in classified][:limit]
+        if not selected:
+            return jsonify({"ok": True, "queued": 0, "message": "All KPIs are classified."})
+        batch = _create_classification_batch(user["id"], selected)
+        return jsonify({"ok": True, "queued": len(selected), "batch": batch}), 202
+    except Exception as error:
+        return jsonify({"error": "Classification batch could not be started.", "detail": str(error)}), 502
+
+
+@admin_bp.post("/api/admin/content-operations/retry-failed")
+def admin_retry_failed_classifications():
+    user, err = require_admin()
+    if err:
+        return err
+    status, rows = _supabase_svc(
+        "/kpi_classification_jobs",
+        params={"status": "eq.failed", "select": "kpi_id", "order": "completed_at.asc", "limit": "20"},
+    )
+    if status != 200 or not isinstance(rows, list):
+        return jsonify({"error": "Failed jobs could not be loaded."}), 502
+    kpi_ids = list(dict.fromkeys(row["kpi_id"] for row in rows))
+    if not kpi_ids:
+        return jsonify({"ok": True, "queued": 0})
+    try:
+        batch = _create_classification_batch(user["id"], kpi_ids)
+        return jsonify({"ok": True, "queued": len(kpi_ids), "batch": batch}), 202
+    except Exception as error:
+        return jsonify({"error": "Retry batch could not be started.", "detail": str(error)}), 502
+
+
+@admin_bp.get("/api/admin/content-operations/review-next")
+def admin_next_classification_review():
+    _, err = require_admin()
+    if err:
+        return err
+    status, rows = _supabase_svc(
+        "/kpi_classifications",
+        params={"review_status": "eq.needs_review", "select": "*", "order": "review_deferred_at.asc.nullsfirst,updated_at.asc", "limit": "1"},
+    )
+    if status != 200 or not isinstance(rows, list):
+        return jsonify({"error": "Review queue could not be loaded."}), 502
+    if not rows:
+        return jsonify({"item": None})
+    item = rows[0]
+    catalog_status, catalog = _supabase_svc(
+        "/kpi_catalog", params={"id": f"eq.{item['kpi_id']}", "select": "*", "limit": "1"}
+    )
+    item["kpi"] = catalog[0] if catalog_status == 200 and isinstance(catalog, list) and catalog else {}
+    return jsonify({"item": item, "remaining": _classification_summary()["needs_review"]})
+
+
+@admin_bp.patch("/api/admin/content-operations/review/<path:kpi_id>")
+def admin_review_classification(kpi_id):
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    action = str(body.get("action") or "approve").strip().lower()
+    if action == "skip":
+        status, data = _supabase_svc(
+            "/kpi_classifications", method="PATCH",
+            payload={"review_deferred_at": utc_now(), "updated_at": utc_now()},
+            params={"kpi_id": f"eq.{kpi_id}", "review_status": "eq.needs_review"},
+            prefer="return=minimal",
+        )
+        if status not in (200, 204):
+            return jsonify({"error": "Classification could not be deferred.", "detail": data}), 502
+        return jsonify({"ok": True})
+    if action != "approve":
+        return jsonify({"error": "action must be approve or skip"}), 400
+    payload = {
+        "review_status": "approved",
+        "reviewed_by": user["id"],
+        "reviewed_at": utc_now(),
+        "updated_at": utc_now(),
+        "review_deferred_at": None,
+    }
+    selected = str(body.get("primary_archetype") or "").strip()
+    if selected and selected not in ARCHETYPES:
+        return jsonify({"error": "Unsupported primary_archetype"}), 400
+    if selected:
+        payload["primary_archetype"] = selected
+        payload["manual_override"] = True
+    status, data = _supabase_svc(
+        "/kpi_classifications", method="PATCH", payload=payload,
+        params={"kpi_id": f"eq.{kpi_id}", "review_status": "eq.needs_review"},
+        prefer="return=representation",
+    )
+    if status != 200:
+        return jsonify({"error": "Classification review could not be saved.", "detail": data}), 502
+    return jsonify({"ok": True, "classification": data[0] if isinstance(data, list) and data else None})
 
 
 # ─── Dashboard ────────────────────────────────────────────────────────────────
