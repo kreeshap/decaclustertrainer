@@ -6,6 +6,7 @@ from .routes.admin import admin_bp
 from .routes.auth import auth_bp
 from .routes.learn import learn_bp
 from .routes.pages import pages_bp
+from .routes.practice import practice_bp
 
 
 def create_app():
@@ -18,6 +19,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(learn_bp)
     app.register_blueprint(admin_bp)
+    app.register_blueprint(practice_bp)
 
     @app.errorhandler(Exception)
     def handle_unexpected_error(error):

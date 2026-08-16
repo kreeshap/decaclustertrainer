@@ -1,4 +1,5 @@
 (function () {
+  if (document.getElementById("question-platform")) return;
   const MODE_STORAGE_KEY = "ct_practice_mode";
   const FILTER_STORAGE_KEY = "ct_practice_question_filter";
   const SESSION_LENGTH_STORAGE_KEY = "ct_practice_session_length";
