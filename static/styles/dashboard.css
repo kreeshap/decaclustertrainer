@@ -48,3 +48,20 @@
 .plan small{margin-top:8px;padding-top:8px}
 @media(min-width:901px){.top-grid>.card{height:220px}.overview-body{height:139px}.middle-grid>.card{height:194px}}
 @media(max-width:560px){.focus-row{grid-template-columns:1fr 70px 34px}.focus-row small{display:none}.recommendation .secondary-actions{display:grid;margin:8px 0 0}}
+
+/* Fluid desktop composition: use the screen, then let data determine height. */
+@media(min-width:901px){
+  .dashboard-shell{width:calc(100% - 40px);max-width:1600px;padding-left:0;padding-right:0}
+  .top-grid,.middle-grid,.bottom-grid{column-gap:22px}
+  .top-grid{align-items:stretch}
+  .top-grid>.card{height:auto;min-height:194px}
+  .middle-grid{align-items:start}
+  .middle-grid>.card{height:auto;min-height:130px}
+  .bottom-grid>.card{height:auto;min-height:132px}
+  .overview-body{height:120px}
+  .recommendation{padding-top:15px;padding-bottom:15px}
+  .recommendation-body{grid-template-columns:48px 1fr}
+  .recommendation-icon{width:46px;height:46px}
+}
+.plan{padding-bottom:16px}
+.plan small{line-height:1.35}
