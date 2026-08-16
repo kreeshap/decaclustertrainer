@@ -20,6 +20,11 @@ class ApiErrorContractTests(unittest.TestCase):
     def test_generation_output_is_bounded_for_web_requests(self) -> None:
         self.assertEqual(LEARN_SOURCE.count("max_tokens=4000"), 2)
 
+    def test_generation_providers_run_concurrently(self) -> None:
+        self.assertIn("ThreadPoolExecutor", LEARN_SOURCE)
+        self.assertIn("as_completed(futures)", LEARN_SOURCE)
+        self.assertIn("_generate_valid_lesson(prompt)", LEARN_SOURCE)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

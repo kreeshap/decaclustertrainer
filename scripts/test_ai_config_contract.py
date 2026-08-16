@@ -22,8 +22,8 @@ class AiConfigurationContractTests(unittest.TestCase):
         self.assertIn("timeout=int(GEMINI_API_TIMEOUT * 1000)", AI_SOURCE)
 
     def test_default_provider_timeouts_fit_inside_web_request_budget(self) -> None:
-        self.assertIn('GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "6"))', CONFIG_SOURCE)
-        self.assertIn('GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "18"))', CONFIG_SOURCE)
+        self.assertIn('GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "60"))', CONFIG_SOURCE)
+        self.assertIn('GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "60"))', CONFIG_SOURCE)
 
 
 if __name__ == "__main__":

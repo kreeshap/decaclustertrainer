@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from datetime import datetime
 
@@ -28,6 +29,41 @@ from ..learn_helpers import (
     _get_kpi_meta,
 )
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
+
+
+def _generate_valid_lesson(prompt: str) -> tuple[dict | None, list[str]]:
+    """Race both providers and use the first response that passes validation."""
+    providers = {
+        "Groq": lambda: call_groq(
+            [{"role": "user", "content": prompt}], max_tokens=4000
+        ),
+        "Gemini": lambda: call_gemini_json(prompt, max_tokens=4000),
+    }
+    errors = []
+    executor = ThreadPoolExecutor(max_workers=len(providers))
+    futures = {executor.submit(call): name for name, call in providers.items()}
+    for future in as_completed(futures):
+        name = futures[future]
+        try:
+            result, error = future.result()
+        except Exception as error:  # defensive boundary around provider SDKs
+            errors.append(f"{name}: {error}")
+            continue
+        if error:
+            errors.append(f"{name}: {error}")
+            continue
+        try:
+            lesson = validate_lesson(result)
+        except LearnContentError as error:
+            errors.append(f"{name}: invalid lesson content ({error})")
+            continue
+        for pending in futures:
+            if pending is not future:
+                pending.cancel()
+        executor.shutdown(wait=False, cancel_futures=True)
+        return lesson, errors
+    executor.shutdown(wait=True)
+    return None, errors
 
 @learn_bp.get("/api/kpis")
 def api_kpis():
@@ -160,14 +196,9 @@ Rules:
         lesson_design=lesson_design,
     )
 
-    # Try Groq first; fall back to Gemini
-    provider_errors = []
-    result, err = call_groq([{"role": "user", "content": prompt}], max_tokens=4000)
-    if err:
-        provider_errors.append(f"Groq: {err}")
-        result, err = call_gemini_json(prompt, max_tokens=4000)
-    if err:
-        provider_errors.append(f"Gemini: {err}")
+    # Generate concurrently so one slow provider does not consume the other's budget.
+    result, provider_errors = _generate_valid_lesson(prompt)
+    if result is None:
         combined_error = " | ".join(provider_errors)
         timed_out = any(
             marker in combined_error.lower()
@@ -182,11 +213,6 @@ Rules:
             "error": "Lesson generation is temporarily unavailable.",
             "detail": combined_error,
         }), 502
-
-    try:
-        result = validate_lesson(result)
-    except LearnContentError as error:
-        return jsonify({"error": "Model returned invalid lesson content.", "detail": str(error)}), 502
 
     # ── Normalise into a unified questions list for storage ───────────────────
     # recognition_questions (list) + application_question (single) → questions[]

@@ -52,10 +52,10 @@ SUPABASE_REST_URL = f"{SUPABASE_URL}/rest/v1" if SUPABASE_URL else ""
 
 SUPABASE_API_TIMEOUT = float(os.environ.get("SUPABASE_API_TIMEOUT", "6"))
 GROQ_API_KEY = first_env_value("GROQ_API_KEY")
-GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "6"))
+GROQ_API_TIMEOUT = float(os.environ.get("GROQ_API_TIMEOUT", "60"))
 GEMINI_API_KEY = first_env_value("GEMINI_API_KEY", "GOOGLE_API_KEY")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash").strip() or "gemini-3.6-flash"
-GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "18"))
+GEMINI_API_TIMEOUT = float(os.environ.get("GEMINI_API_TIMEOUT", "60"))
 LOGIN_LIMIT_MAX_FAILURES = int(os.environ.get("LOGIN_LIMIT_MAX_FAILURES", "5"))
 LOGIN_LIMIT_WINDOW_SECONDS = int(os.environ.get("LOGIN_LIMIT_WINDOW_SECONDS", "900"))
 LOGIN_LIMIT_COOLDOWN_SECONDS = int(
