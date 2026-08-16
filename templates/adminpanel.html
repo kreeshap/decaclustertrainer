@@ -73,6 +73,65 @@
         <div class="batch-heading"><strong id="lesson-audit-batch">No audit batches yet</strong><span id="lesson-audit-status"></span></div>
       </section>
 
+      <section class="panel question-import-panel">
+        <div class="section-kicker">Question bank ingestion</div>
+        <h2>Import exam questions from PDF</h2>
+        <p>Selectable-text PDFs are parsed deterministically. Questions reach Practice Mode only after answer, KPI, duplicate, and usage-rights checks.</p>
+        <form id="question-import-form" class="question-import-form">
+          <label>PDF<input name="file" type="file" accept="application/pdf" required></label>
+          <label>Source type<select name="source_type"><option value="deca_sample">DECA sample exam</option><option value="owned">My own questions</option><option value="licensed">Licensed material</option><option value="other">Other reference</option></select></label>
+          <label>Usage rights<select name="usage_rights"><option value="reference_only">Reference only</option><option value="licensed_for_student_use">Licensed for student use</option></select></label>
+          <label>Event ID<input name="event_id" placeholder="financial_services_tdm" required></label>
+          <label>Career cluster<input name="career_cluster" placeholder="Finance"></label>
+          <label>Exam year<input name="exam_year" type="number" min="1990" max="2100"></label>
+          <button class="primary-action" type="submit">Parse PDF</button>
+        </form>
+        <div id="question-import-summary" class="import-summary">No PDFs imported yet.</div>
+        <div id="question-cluster-breakdown" class="cluster-breakdown"></div>
+        <div class="audit-actions">
+          <button class="attention-row" id="review-question-imports" type="button"><span>Exceptions to review</span><strong id="question-import-pending">0</strong></button>
+          <button class="primary-action" id="approve-ready-imports" type="button" hidden>Approve clean questions</button>
+          <button class="attention-row" id="review-kpi-knowledge" type="button"><span>Learn enrichment proposals</span><strong id="kpi-knowledge-pending">0</strong></button>
+        </div>
+        <form id="question-generation-form" class="question-import-form">
+          <label>Generate for event<input name="event_id" placeholder="financial_services_tdm" required></label>
+          <label>Target KPI<input name="kpi_code" placeholder="FI:000" required></label>
+          <label>Question count<input name="count" type="number" min="1" max="10" value="3"></label>
+          <button class="primary-action" type="submit">Generate original questions</button>
+        </form>
+        <div id="question-style-summary" class="import-summary">Style profile becomes available after 10 parsed reference questions.</div>
+      </section>
+
+      <section class="panel question-import-review" id="kpi-knowledge-review" hidden>
+        <div class="review-topline"><span id="kpi-knowledge-meta"></span><button id="close-kpi-knowledge" type="button">Close</button></div>
+        <h2 id="kpi-knowledge-title"></h2>
+        <label class="audit-notes">Proposed knowledge<textarea id="kpi-knowledge-content" rows="6"></textarea></label>
+        <label class="audit-notes">Importance<select id="kpi-knowledge-importance"><option value="required">Required</option><option value="important">Important</option><option value="supporting">Supporting</option><option value="question_specific">Question specific</option></select></label>
+        <button class="primary-action" id="approve-kpi-knowledge" type="button">Add to Learn knowledge</button>
+        <button class="text-action" id="ignore-kpi-knowledge" type="button">Ignore</button>
+      </section>
+
+      <section class="panel question-import-review" id="question-import-review" hidden>
+        <div class="review-topline"><span id="question-import-review-meta"></span><button id="close-question-import-review" type="button">Close</button></div>
+        <h2 id="question-import-review-stem"></h2>
+        <ol class="import-choices" id="question-import-review-choices" type="A"></ol>
+        <div class="flag-box"><strong>Why flagged</strong><p id="question-import-review-reasons"></p></div>
+        <div class="question-import-fields">
+          <label>KPI code<input id="question-import-kpi" placeholder="FI:000"></label>
+          <label>Correct answer<select id="question-import-answer"><option value="">Choose answer</option><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></label>
+          <label>Explanation<textarea id="question-import-explanation" rows="3"></textarea></label>
+        </div>
+        <button class="primary-action" id="import-reviewed-question" type="button">Approve and import</button>
+        <button class="text-action" id="skip-import-question" type="button">Skip question</button>
+      </section>
+
+      <section class="panel sources-library">
+        <div class="section-kicker">Sources library</div>
+        <div class="batch-heading"><h2>Research queue</h2><span id="sources-stats">0 sources</span></div>
+        <input class="source-search" id="source-search" type="search" placeholder="Search sources, authors, or citations…">
+        <div id="sources-list" class="sources-list"></div>
+      </section>
+
       <section class="panel lesson-audit-review" id="lesson-audit-review" hidden>
         <div class="review-topline"><span id="lesson-audit-meta"></span><button id="close-lesson-audit" type="button">Close</button></div>
         <h2 id="lesson-audit-title"></h2>

@@ -73,6 +73,22 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
         standard=kpi["standard"], deca_cluster=kpi.get("deca_cluster", ""),
         lesson_design=plan,
     )
+    kpi_id = catalog_id(kpi)
+    _, knowledge_rows = _supabase_svc("/kpi_knowledge_items", params={
+        "kpi_id": f"eq.{kpi_id}", "review_status": "eq.approved",
+        "select": "knowledge_type,content,importance,evidence_count", "order": "importance.asc,evidence_count.desc", "limit": "30",
+    })
+    _, catalog_rows = _supabase_svc("/kpi_catalog", params={
+        "id": f"eq.{kpi_id}", "select": "knowledge_version", "limit": "1",
+    })
+    knowledge_version = int(catalog_rows[0].get("knowledge_version") or 1) if catalog_rows else 1
+    if knowledge_rows:
+        authoritative = "\n".join(
+            f"- [{row['importance']}/{row['knowledge_type']}] {row['content']}"
+            for row in knowledge_rows
+        )
+        prompt += f"""\n\nAPPROVED KPI KNOWLEDGE (authoritative):\n{authoritative}
+Cover required and important knowledge without exceeding the lesson's existing word cap. Combine overlapping items; do not paste citations or mechanically repeat every detail."""
     lesson, errors = generate_valid_lesson(prompt, plan, priority="audit")
     if lesson is None:
         _supabase_svc(
@@ -91,6 +107,7 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
         payload={
             "kpi_id": kpi["id"], "lesson": lesson, "status": "ready",
             "lesson_version": 4, "source_audit_id": item["id"],
+            "knowledge_version": knowledge_version,
             "generated_at": utc_now(), "updated_at": utc_now(),
         },
         params={"on_conflict": "kpi_id"},

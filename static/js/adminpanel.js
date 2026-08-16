@@ -2,6 +2,9 @@ let currentReview = null;
 let selectedArchetype = "";
 let refreshTimer = null;
 let currentLessonAudit = null;
+let currentQuestionImport = null;
+let latestQuestionDocument = null;
+let currentKnowledgeItem = null;
 const lessonAuditScores = {};
 const $ = (id) => document.getElementById(id);
 
@@ -53,6 +56,128 @@ async function loadDashboard() {
   try {
     renderDashboard(await readJson(await apiFetch("/api/admin/content-operations")));
     await loadLessonAuditDashboard();
+    await loadQuestionImports();
+    await loadSources();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function loadSources() {
+  const search = $("source-search").value.trim();
+  const data = await readJson(await apiFetch(`/api/admin/sources${search ? `?search=${encodeURIComponent(search)}` : ""}`));
+  $("sources-stats").textContent = `${data.total} sources · ${data.linked_multiple_kpis} multi-KPI · ${data.needs_locating} need locating`;
+  $("sources-list").innerHTML = data.sources.map((source) => `<article class="source-card" data-source-id="${escHtml(source.id)}">
+    <h3>${escHtml(source.title || source.raw_citation)}</h3>
+    <p>${escHtml([source.authors, source.edition, source.publication_year].filter(Boolean).join(" · "))}</p>
+    <p>${source.question_count} questions · ${source.kpi_count} KPIs · ${source.document_count} uploaded exams</p>
+    <p>KPIs: ${escHtml(source.kpis.join(", ") || "None mapped")}<br>Pages: ${escHtml(source.pages.join(", ") || "Not specified")}</p>
+    <div class="source-card-actions">
+      <button class="text-action source-search-web" type="button" data-query="${escHtml(source.search_query)}">Search Web</button>
+      ${source.url ? `<a class="text-action" href="${escHtml(source.url)}" target="_blank" rel="noopener noreferrer">Visit source</a>` : ""}
+      <input class="source-url" value="${escHtml(source.url || "")}" placeholder="Paste legitimate source URL">
+      <select class="source-status">${["unreviewed","located","accessible","paywalled","physical","unavailable","do_not_use"].map((status) => `<option value="${status}" ${status === source.status ? "selected" : ""}>${status.replaceAll("_", " ")}</option>`).join("")}</select>
+      <button class="primary-action source-save" type="button">Save</button>
+    </div></article>`).join("") || "<p>No sources found.</p>";
+}
+
+async function saveSource(card) {
+  try {
+    await readJson(await apiFetch(`/api/admin/sources/${encodeURIComponent(card.dataset.sourceId)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: card.querySelector(".source-url").value, status: card.querySelector(".source-status").value }) }));
+    await loadSources();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function loadQuestionImports() {
+  const data = await readJson(await apiFetch("/api/admin/question-imports"));
+  $("question-import-pending").textContent = data.pending || 0;
+  latestQuestionDocument = data.documents?.[0] || null;
+  $("kpi-knowledge-pending").textContent = data.knowledge_pending || 0;
+  $("question-cluster-breakdown").innerHTML = Object.entries(data.cluster_breakdown || {}).map(([cluster, count]) => `<span>${escHtml(cluster)} · ${count}</span>`).join("");
+  if (!latestQuestionDocument) return;
+  const doc = latestQuestionDocument;
+  $("question-import-summary").textContent = `${doc.filename}: ${doc.detected_count} detected · ${doc.ready_count} clean · ${doc.review_count} need review · ${doc.duplicate_count} possible duplicates`;
+  $("approve-ready-imports").hidden = !doc.ready_count || doc.usage_rights !== "licensed_for_student_use";
+}
+
+async function loadNextKnowledgeItem() {
+  try {
+    const data = await readJson(await apiFetch("/api/admin/kpi-knowledge/review-next"));
+    currentKnowledgeItem = data.item;
+    $("kpi-knowledge-review").hidden = !data.item;
+    if (!data.item) { showMessage("The Learn enrichment inbox is clear."); return; }
+    $("kpi-knowledge-meta").textContent = `${data.item.deca_cluster} · ${data.item.kpi_cluster}`;
+    $("kpi-knowledge-title").textContent = `${data.item.kpi_code} · ${data.item.knowledge_type.replaceAll("_", " ")}`;
+    $("kpi-knowledge-content").value = data.item.content;
+    $("kpi-knowledge-importance").value = data.item.importance;
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function reviewKnowledgeItem(action) {
+  if (!currentKnowledgeItem) return;
+  try {
+    await readJson(await apiFetch(`/api/admin/kpi-knowledge/${encodeURIComponent(currentKnowledgeItem.id)}`, {
+      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, content: $("kpi-knowledge-content").value, importance: $("kpi-knowledge-importance").value }),
+    }));
+    await loadNextKnowledgeItem(); await loadQuestionImports();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function uploadQuestionPdf(event) {
+  event.preventDefault();
+  showMessage("Parsing questions and answer keys…");
+  try {
+    const data = await readJson(await apiFetch("/api/admin/question-imports", { method: "POST", body: new FormData(event.currentTarget) }));
+    showMessage(`${data.document.detected_count} questions detected. ${data.document.review_count} need attention.`);
+    await loadQuestionImports();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+function renderQuestionImport(item, document) {
+  currentQuestionImport = item;
+  $("question-import-review").hidden = !item;
+  if (!item) { showMessage("The question import review inbox is clear."); return; }
+  $("question-import-review-meta").textContent = `${document.filename} · Question ${item.question_number} · Page ${item.page_number || "?"}`;
+  $("question-import-review-stem").textContent = item.question_text;
+  $("question-import-review-choices").innerHTML = (item.choices || []).map((choice) => `<li>${escHtml(choice)}</li>`).join("");
+  $("question-import-review-reasons").textContent = (item.review_reasons || []).map((reason) => reason.replaceAll("_", " ")).join(" · ");
+  $("question-import-kpi").value = item.kpi_code || "";
+  $("question-import-answer").value = Number.isInteger(item.correct_index) ? String(item.correct_index) : "";
+  $("question-import-explanation").value = item.explanation || "";
+}
+
+async function loadNextQuestionImport() {
+  try {
+    const data = await readJson(await apiFetch("/api/admin/question-imports/review-next"));
+    renderQuestionImport(data.item, data.document || {});
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function reviewQuestionImport(action) {
+  if (!currentQuestionImport) return;
+  const payload = action === "skip" ? { action } : { action: "approve", kpi_code: $("question-import-kpi").value, correct_index: $("question-import-answer").value, explanation: $("question-import-explanation").value };
+  try {
+    await readJson(await apiFetch(`/api/admin/question-imports/${encodeURIComponent(currentQuestionImport.id)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }));
+    await loadNextQuestionImport(); await loadQuestionImports();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function approveReadyImports() {
+  if (!latestQuestionDocument) return;
+  try {
+    const data = await readJson(await apiFetch(`/api/admin/question-imports/${encodeURIComponent(latestQuestionDocument.id)}/approve-ready`, { method: "POST" }));
+    showMessage(`${data.imported} clean questions added to Practice Mode${data.failures.length ? `; ${data.failures.length} need attention` : ""}.`, Boolean(data.failures.length));
+    await loadQuestionImports();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function generateOriginalQuestions(event) {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const payload = { event_id: form.get("event_id"), kpi_code: form.get("kpi_code"), count: Number(form.get("count") || 3) };
+  showMessage("Generating and independently reviewing original questions…");
+  try {
+    const data = await readJson(await apiFetch("/api/admin/questions/generate-original", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }));
+    $("question-style-summary").textContent = `Profile: ${data.style_profile.corpus_size} references · ${data.style_profile.scenario_percentage}% scenarios · ${data.style_profile.average_stem_words} average stem words`;
+    showMessage(`${data.generated} original questions approved${data.rejected.length ? `; ${data.rejected.length} rejected by quality checks` : ""}.`);
   } catch (error) { showMessage(error.message, true); }
 }
 
@@ -258,6 +383,24 @@ $("start-lesson-audit").addEventListener("click", startLessonAudit);
 $("review-lesson-audits").addEventListener("click", loadNextLessonAudit);
 $("save-lesson-audit").addEventListener("click", saveLessonAudit);
 $("close-lesson-audit").addEventListener("click", () => { $("lesson-audit-review").hidden = true; });
+$("question-import-form").addEventListener("submit", uploadQuestionPdf);
+$("review-question-imports").addEventListener("click", loadNextQuestionImport);
+$("approve-ready-imports").addEventListener("click", approveReadyImports);
+$("import-reviewed-question").addEventListener("click", () => reviewQuestionImport("approve"));
+$("skip-import-question").addEventListener("click", () => reviewQuestionImport("skip"));
+$("close-question-import-review").addEventListener("click", () => { $("question-import-review").hidden = true; });
+$("question-generation-form").addEventListener("submit", generateOriginalQuestions);
+$("review-kpi-knowledge").addEventListener("click", loadNextKnowledgeItem);
+$("approve-kpi-knowledge").addEventListener("click", () => reviewKnowledgeItem("approve"));
+$("ignore-kpi-knowledge").addEventListener("click", () => reviewKnowledgeItem("ignore"));
+$("close-kpi-knowledge").addEventListener("click", () => { $("kpi-knowledge-review").hidden = true; });
+$("source-search").addEventListener("input", () => { window.clearTimeout($("source-search")._timer); $("source-search")._timer = window.setTimeout(loadSources, 250); });
+$("sources-list").addEventListener("click", (event) => {
+  const searchButton = event.target.closest(".source-search-web");
+  if (searchButton) window.open(`https://www.google.com/search?q=${encodeURIComponent(searchButton.dataset.query)}`, "_blank", "noopener,noreferrer");
+  const saveButton = event.target.closest(".source-save");
+  if (saveButton) saveSource(saveButton.closest(".source-card"));
+});
 document.addEventListener("keydown", (event) => {
   if ($("review-panel").hidden || !currentReview) return;
   if (event.key.toLowerCase() === "a") saveReview("approve");
