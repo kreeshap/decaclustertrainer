@@ -161,11 +161,27 @@ Rules:
     )
 
     # Try Groq first; fall back to Gemini
-    result, err = call_groq([{"role": "user", "content": prompt}], max_tokens=5500)
+    provider_errors = []
+    result, err = call_groq([{"role": "user", "content": prompt}], max_tokens=4000)
     if err:
-        result, err = call_gemini_json(prompt, max_tokens=5500)
+        provider_errors.append(f"Groq: {err}")
+        result, err = call_gemini_json(prompt, max_tokens=4000)
     if err:
-        return jsonify({"error": err}), 500
+        provider_errors.append(f"Gemini: {err}")
+        combined_error = " | ".join(provider_errors)
+        timed_out = any(
+            marker in combined_error.lower()
+            for marker in ("deadline_exceeded", "deadline expired", "timed out", "timeout")
+        )
+        if timed_out:
+            return jsonify({
+                "error": "Lesson generation timed out. Please try again.",
+                "detail": "The AI providers did not finish before the request deadline.",
+            }), 504
+        return jsonify({
+            "error": "Lesson generation is temporarily unavailable.",
+            "detail": combined_error,
+        }), 502
 
     try:
         result = validate_lesson(result)
