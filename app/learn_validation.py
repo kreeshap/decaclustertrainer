@@ -72,16 +72,22 @@ def validate_lesson(raw: Any) -> dict:
         raise LearnContentError("lesson must be an object")
 
     vocab = raw.get("vocab")
-    if not isinstance(vocab, list) or len(vocab) != 6:
-        raise LearnContentError("vocab must contain exactly six terms")
+    if not isinstance(vocab, list) or not 3 <= len(vocab) <= 6:
+        raise LearnContentError("vocab must contain three to six terms")
     clean_vocab = []
     for index, item in enumerate(vocab):
         if not isinstance(item, dict):
             raise LearnContentError(f"vocab[{index}] must be an object")
+        importance = str(item.get("importance") or "supporting").strip().lower()
+        if importance not in {"essential", "supporting", "context"}:
+            raise LearnContentError(f"vocab[{index}].importance is unsupported")
         clean_vocab.append({
             "term": _text(item.get("term"), f"vocab[{index}].term"),
             "definition": _text(item.get("definition"), f"vocab[{index}].definition", 8),
+            "importance": importance,
         })
+    if len({item["term"].casefold() for item in clean_vocab}) != len(clean_vocab):
+        raise LearnContentError("vocab terms must be unique")
 
     design = raw.get("lesson_design") if isinstance(raw.get("lesson_design"), dict) else {}
     complexity = str(design.get("complexity") or raw.get("complexity") or "standard").strip().lower()
@@ -89,8 +95,37 @@ def validate_lesson(raw: Any) -> dict:
     target_minutes = str(design.get("target_minutes") or raw.get("target_minutes") or "8-10").strip()
     if complexity not in {"quick", "standard", "deep"}:
         raise LearnContentError("lesson_design.complexity must be quick, standard, or deep")
-    if skill_type not in {"concept", "decision", "communication", "process", "calculation_data"}:
+    if skill_type not in {"concept", "decision", "communication", "process", "calculation_data", "analysis"}:
         raise LearnContentError("lesson_design.skill_type is unsupported")
+
+    plan = raw.get("instructional_plan")
+    if not isinstance(plan, dict):
+        raise LearnContentError("instructional_plan must be an object")
+    archetype = str(plan.get("primary_archetype") or "").strip().lower()
+    if archetype not in {"concept_discovery", "decision_lab", "diagnose_problem", "build_process", "tradeoff_challenge", "communication_coach", "numbers_lab"}:
+        raise LearnContentError("instructional_plan.primary_archetype is unsupported")
+    clean_plan = {
+        "primary_archetype": archetype,
+        "learner_action": _text(plan.get("learner_action"), "instructional_plan.learner_action"),
+        "deca_action": _text(plan.get("deca_action"), "instructional_plan.deca_action"),
+        "recommended_interactions": [
+            _text(item, f"instructional_plan.recommended_interactions[{index}]")
+            for index, item in enumerate(plan.get("recommended_interactions") or [])
+        ][:4],
+    }
+    if not clean_plan["recommended_interactions"]:
+        raise LearnContentError("instructional_plan.recommended_interactions must not be empty")
+
+    mission = raw.get("mission")
+    if not isinstance(mission, dict):
+        raise LearnContentError("mission must be an object")
+    opening = _validate_three_choice(mission.get("opening_interaction"), "mission.opening_interaction")
+    opening["aha"] = _text((mission.get("opening_interaction") or {}).get("aha"), "mission.opening_interaction.aha", 12)
+    clean_mission = {
+        "title": _text(mission.get("title"), "mission.title", 4),
+        "brief": _text(mission.get("brief"), "mission.brief", 20),
+        "opening_interaction": opening,
+    }
 
     hook = _text(raw.get("hook"), "hook", 20)
 
@@ -120,6 +155,7 @@ def validate_lesson(raw: Any) -> dict:
         if not isinstance(block, dict):
             raise LearnContentError(f"learning_blocks[{index}] must be an object")
         clean_blocks.append({
+            "type": str(block.get("type") or "concept_reveal").strip().lower(),
             "title": _text(block.get("title"), f"learning_blocks[{index}].title", 3),
             "body": _text(block.get("body"), f"learning_blocks[{index}].body", 30),
         })
@@ -168,6 +204,8 @@ def validate_lesson(raw: Any) -> dict:
             "skill_type": skill_type,
             "target_minutes": target_minutes,
         },
+        "instructional_plan": clean_plan,
+        "mission": clean_mission,
         "hook": hook,
         "vocab": clean_vocab,
         "concept": clean_concept,

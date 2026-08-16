@@ -178,12 +178,15 @@
                     </div>
                 </div>
                 <div class="phase-pills">
+                    <span class="phase-pill" id="pp-mission">Mission</span>
+                    <span class="phase-arrow">›</span>
                     <span class="phase-pill" id="pp-vocab">Vocab</span>
                     <span class="phase-arrow">›</span>
                     <span class="phase-pill" id="pp-concept">Concept</span>
                     <span class="phase-arrow">›</span>
                     <span class="phase-pill" id="pp-questions">Questions</span>
                 </div>
+
             </div>
 
             <div class="session-content">
@@ -214,10 +217,10 @@
                         <strong id="vocab-total">6</strong>
                     </div>
                     <div class="vocab-card">
-                        <div class="vocab-card-label">Term</div>
+                        <div class="vocab-card-label" id="vocab-card-label">Term</div>
                         <div class="vocab-term-text" id="vocab-term"></div>
                     </div>
-                    <div class="vocab-choose-label">
+                    <div class="vocab-choose-label" id="vocab-choose-label">
                         Choose the correct definition
                     </div>
                     <div class="vocab-grid" id="vocab-grid"></div>
@@ -338,6 +341,37 @@
                     >
                         Next &rarr;
                     </button>
+                </div>
+
+                <!-- KPI FEEDBACK -->
+                <div id="state-kpi-feedback">
+                    <div class="feedback-kicker">Mission complete</div>
+                    <div class="feedback-title" id="kpi-feedback-title"></div>
+                    <div class="feedback-readiness" id="kpi-feedback-readiness"></div>
+                    <div class="feedback-grid">
+                        <div><strong id="kpi-feedback-accuracy">0%</strong><span>Accuracy</span></div>
+                        <div><strong id="kpi-feedback-mastery">0%</strong><span>Estimated readiness</span></div>
+                    </div>
+                    <div class="feedback-deca" id="kpi-feedback-deca"></div>
+                    <button class="next-btn" id="kpi-feedback-next" type="button">
+                        Next KPI &#x2192;
+                    </button>
+                </div>
+
+                <!-- MISSION -->
+                <div id="state-mission">
+                    <div class="mission-kicker" id="mission-archetype">Business mission</div>
+                    <h1 class="mission-title" id="mission-title"></h1>
+                    <p class="mission-brief" id="mission-brief"></p>
+                    <div class="mission-question" id="mission-question"></div>
+                    <div class="mission-choices" id="mission-choices"></div>
+                    <div class="mission-reveal" id="mission-reveal" hidden>
+                        <div class="mission-explanation" id="mission-explanation"></div>
+                        <div class="mission-aha" id="mission-aha"></div>
+                        <button class="understand-btn" id="mission-continue" type="button">
+                            Learn the tools &#x2192;
+                        </button>
+                    </div>
                 </div>
 
                 <!-- ROLEPLAY -->

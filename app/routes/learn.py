@@ -31,7 +31,7 @@ from ..learn_helpers import (
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
 
 
-def _generate_valid_lesson(prompt: str) -> tuple[dict | None, list[str]]:
+def _generate_valid_lesson(prompt: str, expected_plan: dict) -> tuple[dict | None, list[str]]:
     """Race both providers and use the first response that passes validation."""
     providers = {
         "Groq": lambda: call_groq(
@@ -56,6 +56,15 @@ def _generate_valid_lesson(prompt: str) -> tuple[dict | None, list[str]]:
             lesson = validate_lesson(result)
         except LearnContentError as error:
             errors.append(f"{name}: invalid lesson content ({error})")
+            continue
+        returned_plan = lesson["instructional_plan"]
+        mismatches = [
+            field
+            for field in ("primary_archetype", "learner_action", "deca_action")
+            if returned_plan.get(field) != expected_plan.get(field)
+        ]
+        if mismatches:
+            errors.append(f"{name}: instructional plan drifted on {', '.join(mismatches)}")
             continue
         for pending in futures:
             if pending is not future:
@@ -197,7 +206,7 @@ Rules:
     )
 
     # Generate concurrently so one slow provider does not consume the other's budget.
-    result, provider_errors = _generate_valid_lesson(prompt)
+    result, provider_errors = _generate_valid_lesson(prompt, lesson_design)
     if result is None:
         combined_error = " | ".join(provider_errors)
         timed_out = any(
@@ -258,7 +267,7 @@ Rules:
     result["practice_questions"] = all_questions
     # Keep a flat "questions" list for backward compat with cached clients
     result["questions"] = all_questions
-    result["lesson_version"] = 2
+    result["lesson_version"] = 3
     return jsonify(result)
 
 

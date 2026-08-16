@@ -23,7 +23,7 @@ class ApiErrorContractTests(unittest.TestCase):
     def test_generation_providers_run_concurrently(self) -> None:
         self.assertIn("ThreadPoolExecutor", LEARN_SOURCE)
         self.assertIn("as_completed(futures)", LEARN_SOURCE)
-        self.assertIn("_generate_valid_lesson(prompt)", LEARN_SOURCE)
+        self.assertIn("_generate_valid_lesson(prompt, lesson_design)", LEARN_SOURCE)
 
 
 if __name__ == "__main__":

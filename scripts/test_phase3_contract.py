@@ -32,6 +32,23 @@ def lesson() -> dict:
             "skill_type": "concept",
             "target_minutes": "8-10",
         },
+        "instructional_plan": {
+            "primary_archetype": "concept_discovery",
+            "learner_action": "classify",
+            "deca_action": "explain",
+            "recommended_interactions": ["predict", "classify", "choose"],
+        },
+        "mission": {
+            "title": "Find the right customer",
+            "brief": "A school store has one advertising budget and several customer groups with different reasons for buying.",
+            "opening_interaction": {
+                "question": "Which group should receive the first targeted message?",
+                "choices": ["Every student", "The group most likely to value the offer", "No one"],
+                "correct": 1,
+                "explanation": "Targeting works when the message fits a defined customer group.",
+                "aha": "This is why strong marketing starts by deciding who the offer is for.",
+            },
+        },
         "hook": "You are helping a school store decide how to sell to different student groups.",
         "vocab": [
             {"term": f"Term {i}", "definition": f"Definition for finance term number {i}."}

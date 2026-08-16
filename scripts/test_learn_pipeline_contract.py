@@ -27,6 +27,18 @@ class LearnPipelineContractTests(unittest.TestCase):
         self.assertIn("maximum 120 words", LESSON_DESIGN)
         self.assertIn("maximum 70 words", LESSON_DESIGN)
 
+    def test_mission_and_feedback_are_part_of_the_pipeline(self) -> None:
+        self.assertIn('id="state-mission"', LEARN_HTML)
+        self.assertIn('id="state-kpi-feedback"', LEARN_HTML)
+        self.assertIn("function startMission(kpi)", LEARN_JS)
+        self.assertIn('showState("kpi-feedback")', LEARN_JS)
+        self.assertIn("const LESSON_VERSION = 3", LEARN_JS)
+
+    def test_vocabulary_interaction_changes_direction(self) -> None:
+        self.assertIn("const definitionFirst = vocabIdx % 2 === 1", LEARN_JS)
+        self.assertIn('"Choose the matching term"', LEARN_JS)
+        self.assertIn('btn.dataset.correct = c.correct ? "1" : "0"', LEARN_JS)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

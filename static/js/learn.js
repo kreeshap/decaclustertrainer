@@ -1,6 +1,6 @@
             // ─── Constants ────────────────────────────────────────────────────────────────
             const QUESTIONS_PER_KPI = 3;
-            const LESSON_VERSION = 2;
+            const LESSON_VERSION = 3;
             const ROLEPLAY_EVERY = 7; // show a mini roleplay every N KPIs (standard/tdm only)
 
             // ─── State ────────────────────────────────────────────────────────────────────
@@ -9,6 +9,9 @@
             let sessionIdx = 0; // current position in sessionQueue
             let completedKpiCodes = new Set();
             let kpiLoadToken = 0;
+            let kpiQuestionStart = 0;
+            let kpiCorrectStart = 0;
+            let lastKpiMastery = null;
             let sessionData = null; // current KPI's Groq response {vocab,concept,questions}
             let vocabList = [];
             let vocabIdx = 0;
@@ -386,11 +389,16 @@
 
                 const kpi = sessionQueue[sessionIdx];
                 const loadToken = ++kpiLoadToken;
+                $("skip-kpi-btn").style.display = "";
                 updateProgress();
                 qAnswered = false;
                 sessionData = null;
+                kpiQuestionStart = sessionQAnswered;
+                kpiCorrectStart = sessionQCorrect;
+                lastKpiMastery = null;
 
                 $("loading-kpi-text").textContent = kpi.code + " — " + kpi.text;
+                setPhase("mission", "pending");
                 setPhase("vocab", "pending");
                 showState("loading");
 
@@ -437,12 +445,49 @@
                     startQuestions(kpi);
                 } else if (currentLearnMode === 'principles') {
                     // Principles: vocab → concept → application question only (no roleplay)
-                    startVocab(kpi);
+                    startMission(kpi);
                 } else {
                     // Standard / TDM: full flow (vocab → concept → questions → roleplay every 7)
-                    startVocab(kpi);
+                    startMission(kpi);
                 }
             }
+
+            function startMission(kpi) {
+                const mission = sessionData.mission || {};
+                const interaction = mission.opening_interaction || {};
+                const plan = sessionData.instructional_plan || {};
+                setPhase("mission", "active");
+                $("mission-archetype").textContent = String(plan.primary_archetype || "business mission").replaceAll("_", " ");
+                $("mission-title").textContent = mission.title || `Solve the ${kpi.code} challenge`;
+                $("mission-brief").textContent = mission.brief || sessionData.hook || kpi.text;
+                $("mission-question").textContent = interaction.question || "What would you do first?";
+                $("mission-reveal").hidden = true;
+                const choices = $("mission-choices");
+                choices.innerHTML = "";
+                (interaction.choices || []).forEach((choice, index) => {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "mission-choice";
+                    button.textContent = choice;
+                    button.addEventListener("click", () => {
+                        choices.querySelectorAll("button").forEach((item, itemIndex) => {
+                            item.disabled = true;
+                            if (itemIndex === interaction.correct) item.classList.add("correct");
+                            else if (itemIndex === index) item.classList.add("wrong");
+                        });
+                        $("mission-explanation").textContent = interaction.explanation || "Now inspect the business reasoning behind the decision.";
+                        $("mission-aha").textContent = interaction.aha || "This is why the strongest business choice depends on evidence, not instinct alone.";
+                        $("mission-reveal").hidden = false;
+                    });
+                    choices.appendChild(button);
+                });
+                showState("mission");
+            }
+
+            $("mission-continue").addEventListener("click", () => {
+                setPhase("mission", "done");
+                startVocab(currentKpi());
+            });
 
             // ─── VOCAB phase ──────────────────────────────────────────────────────────────
             function startVocab(kpi) {
@@ -462,15 +507,20 @@
             function showVocabCard(kpi) {
                 $("vocab-idx").textContent = vocabIdx + 1;
                 const card = vocabList[vocabIdx];
-                $("vocab-term").textContent = card.term;
+                const definitionFirst = vocabIdx % 2 === 1;
+                $("vocab-card-label").textContent = definitionFirst ? "Definition" : "Term";
+                $("vocab-choose-label").textContent = definitionFirst
+                    ? "Choose the matching term"
+                    : "Choose the correct definition";
+                $("vocab-term").textContent = definitionFirst ? card.definition : card.term;
 
                 // Build 4 choices: 1 correct + 3 distractors from other vocab
                 const others = vocabList.filter((_, i) => i !== vocabIdx);
                 const distractors = shuffle(others).slice(0, 3);
                 const choices = shuffle([
-                    { text: card.definition, correct: true },
+                    { text: definitionFirst ? card.term : card.definition, correct: true },
                     ...distractors.map((d) => ({
-                        text: d.definition,
+                        text: definitionFirst ? d.term : d.definition,
                         correct: false,
                     })),
                 ]);
@@ -481,6 +531,7 @@
                     const btn = document.createElement("button");
                     btn.className = "vchoice";
                     btn.type = "button";
+                    btn.dataset.correct = c.correct ? "1" : "0";
                     btn.innerHTML = `<span class="vchoice-num">${i + 1}</span><span>${escHtml(c.text)}</span>`;
                     btn.addEventListener("click", () =>
                         handleVocabAnswer(btn, c.correct, choices, kpi),
@@ -518,14 +569,8 @@
                 const allBtns = $("vocab-grid").querySelectorAll(".vchoice");
                 allBtns.forEach((b) => (b.disabled = true));
                 if (allBtns[0]) {
-                    // Find which button has the correct definition — re-derive from vocabList
-                    const correctDef = vocabList[vocabIdx]?.definition || "";
                     allBtns.forEach((b) => {
-                        if (
-                            b.querySelector("span:last-child")?.textContent ===
-                            correctDef
-                        )
-                            b.classList.add("correct");
+                        if (b.dataset.correct === "1") b.classList.add("correct");
                         else b.classList.add("neutral");
                     });
                 }
@@ -575,7 +620,10 @@
                 const row = clearNode("lesson-design-row");
                 if (!row) return;
                 const design = data.lesson_design || {};
+                const plan = data.instructional_plan || {};
                 const chips = [
+                    plan.primary_archetype ? String(plan.primary_archetype).replaceAll("_", " ") : "",
+                    plan.learner_action ? `you ${plan.learner_action}` : "",
                     design.complexity ? `${design.complexity} KPI` : "",
                     design.skill_type ? String(design.skill_type).replace("_", " ") : "",
                     design.target_minutes ? `~${design.target_minutes} min` : "",
@@ -591,14 +639,30 @@
             function renderLearningBlocks(blocks) {
                 const wrap = clearNode("learning-blocks");
                 if (!wrap) return;
-                (blocks || []).forEach((block) => {
+                let revealed = 0;
+                const cards = [];
+                (blocks || []).forEach((block, index) => {
                     const card = document.createElement("div");
-                    card.className = "learning-block";
+                    card.className = "learning-block" + (index > 0 ? " lesson-block-locked" : "");
                     card.innerHTML =
+                        `<div class="learning-block-type">${escHtml(String(block.type || "concept reveal").replaceAll("_", " "))}</div>` +
                         `<div class="learning-block-title">${escHtml(block.title || "")}</div>` +
                         `<div class="learning-block-body">${escHtml(block.body || "")}</div>`;
                     wrap.appendChild(card);
+                    cards.push(card);
                 });
+                if (cards.length > 1) {
+                    const reveal = document.createElement("button");
+                    reveal.type = "button";
+                    reveal.className = "lesson-reveal-btn";
+                    reveal.textContent = "Reveal next insight →";
+                    reveal.addEventListener("click", () => {
+                        revealed++;
+                        cards[revealed]?.classList.remove("lesson-block-locked");
+                        if (revealed + 1 >= cards.length) reveal.remove();
+                    });
+                    wrap.appendChild(reveal);
+                }
             }
 
             function renderRealisticExample(example) {
@@ -903,7 +967,9 @@
 
                 if ($("question-stage")) {
                     const labels = ["Check", "Apply", "DECA Challenge"];
-                    $("question-stage").textContent = q.stage_label || labels[qIdx] || "";
+                    const stage = q.stage_label || labels[qIdx] || "";
+                    $("question-stage").textContent = stage;
+                    questionBox.classList.toggle("boss-question", stage === "DECA Challenge");
                 }
                 $("question-text").textContent = q.text;
 
@@ -971,6 +1037,12 @@
                         }
                         const savedAnswer = await saved.json();
                         ok = Boolean(savedAnswer.correct);
+                        const serverMastery = savedAnswer.mastery_score ?? savedAnswer.mastery;
+                        if (Number.isFinite(Number(serverMastery))) {
+                            lastKpiMastery = Number(serverMastery) <= 1
+                                ? Math.round(Number(serverMastery) * 100)
+                                : Math.round(Number(serverMastery));
+                        }
                     } catch (error) {
                         showError("Your answer could not be saved. Check your connection, then reload and try again.");
                         return;
@@ -992,7 +1064,7 @@
                 banner.className =
                     "result-banner " + (ok ? "correct" : "wrong");
                 $("result-icon").textContent = ok ? "✓" : "✗";
-                $("result-label").textContent = ok ? "Correct!" : "Incorrect";
+                $("result-label").textContent = ok ? "Strong decision" : "Reconsider the evidence";
                 $("explanation-box").textContent = q.explanation || "";
                 $("result-panel").style.display = "block";
 
@@ -1041,18 +1113,38 @@
 
             // ─── KPI done — advance or trigger roleplay ───────────────────────────────────
             function kpiDone() {
-                chunkKpis.push(currentKpi());
-                completedKpiCodes.add(currentKpi().code);
+                const completedKpi = currentKpi();
+                chunkKpis.push(completedKpi);
+                completedKpiCodes.add(completedKpi.code);
                 sessionIdx++;
 
-                // Roleplay only for standard/TDM modes
+                const attempts = Math.max(0, sessionQAnswered - kpiQuestionStart);
+                const correct = Math.max(0, sessionQCorrect - kpiCorrectStart);
+                const accuracy = attempts ? Math.round((correct / attempts) * 100) : 100;
+                const priorMastery = Number(preMasteryMap[completedKpi.code]);
+                const readiness = lastKpiMastery ?? (Number.isFinite(priorMastery) ? Math.round(priorMastery) : accuracy);
+                const plan = sessionData.instructional_plan || {};
+                $("kpi-feedback-title").textContent = completedKpi.code + " — " + completedKpi.text;
+                $("kpi-feedback-accuracy").textContent = attempts ? accuracy + "%" : "—";
+                $("kpi-feedback-mastery").textContent = readiness + "%";
+                $("kpi-feedback-readiness").textContent = readiness >= 80
+                    ? "Competition ready on this concept"
+                    : readiness >= 60
+                        ? "Developing — one more review will sharpen it"
+                        : "Foundation built — this KPI needs another pass";
+                $("kpi-feedback-deca").textContent = `For DECA, be ready to ${plan.deca_action || "apply this idea"} and support the choice with business evidence.`;
+                $("skip-kpi-btn").style.display = "none";
+                showState("kpi-feedback");
+            }
+
+            $("kpi-feedback-next").addEventListener("click", () => {
                 const roleplayEnabled = currentLearnMode === 'teamDecision';
                 if (roleplayEnabled && chunkKpis.length >= ROLEPLAY_EVERY) {
                     startRoleplay();
                 } else {
                     loadCurrentKpi();
                 }
-            }
+            });
 
             // ─── ROLEPLAY phase ───────────────────────────────────────────────────────────
             async function startRoleplay() {
@@ -1202,6 +1294,7 @@
 
             // ─── Done ─────────────────────────────────────────────────────────────────────
             async function showDone() {
+                $("skip-kpi-btn").style.display = "none";
                 $("progress-fill").style.width = "100%";
                 try {
                     await endSession();
@@ -1251,9 +1344,11 @@
             const ALL_STATES = [
                 "loading",
                 "error",
+                "mission",
                 "vocab",
                 "concept",
                 "questions",
+                "kpi-feedback",
                 "roleplay",
                 "grading",
                 "grade-result",
@@ -1295,6 +1390,7 @@
                 if (isReviewMode || sessionIdx >= sessionQueue.length) return;
                 kpiLoadToken++;
                 sessionIdx++;
+                setPhase("mission", "pending");
                 setPhase("vocab", "pending");
                 setPhase("concept", "pending");
                 setPhase("questions", "pending");

@@ -35,10 +35,29 @@ DEEP_VERBS = {
     "prepare",
 }
 
-COMMUNICATION_HINTS = {"communicat", "customer", "relation", "objection", "presentation", "negot"}
+COMMUNICATION_HINTS = {"communicat", "demonstrate", "handle", "respond", "objection", "presentation", "negot"}
 PROCESS_HINTS = {"process", "procedure", "steps", "selling", "channel", "workflow"}
 DATA_HINTS = {"calculate", "financial statement", "gross profit", "ratio", "budget", "forecast", "cash flow"}
 DECISION_HINTS = {"decide", "determine", "select", "solve", "problem", "risk", "strategy"}
+ANALYSIS_HINTS = {"analyze", "assess", "diagnose", "evaluate", "interpret", "investigate"}
+
+ARCHETYPE_BY_SKILL = {
+    "concept": "concept_discovery",
+    "decision": "decision_lab",
+    "communication": "communication_coach",
+    "process": "build_process",
+    "calculation_data": "numbers_lab",
+    "analysis": "diagnose_problem",
+}
+
+ACTION_BY_SKILL = {
+    "concept": "classify",
+    "decision": "choose",
+    "communication": "respond",
+    "process": "sequence",
+    "calculation_data": "calculate",
+    "analysis": "diagnose",
+}
 
 
 def _first_word(text: str) -> str:
@@ -59,6 +78,8 @@ def classify_kpi(text: str) -> dict:
 
     if any(hint in normalized for hint in DATA_HINTS):
         skill_type = "calculation_data"
+    elif any(hint in normalized for hint in ANALYSIS_HINTS):
+        skill_type = "analysis"
     elif any(hint in normalized for hint in COMMUNICATION_HINTS):
         skill_type = "communication"
     elif any(hint in normalized for hint in PROCESS_HINTS):
@@ -69,10 +90,31 @@ def classify_kpi(text: str) -> dict:
         skill_type = "concept"
 
     target_minutes = {"quick": "5-7", "standard": "8-10", "deep": "10-13"}[complexity]
+    deca_action = {
+        "concept": "explain",
+        "decision": "recommend",
+        "communication": "demonstrate",
+        "process": "demonstrate",
+        "calculation_data": "calculate",
+        "analysis": "analyze",
+    }[skill_type]
+    primary_archetype = ARCHETYPE_BY_SKILL[skill_type]
+    interactions = {
+        "concept_discovery": ["predict", "classify", "choose"],
+        "decision_lab": ["predict", "choose", "compare"],
+        "communication_coach": ["choose", "respond", "compare"],
+        "build_process": ["sequence", "predict", "choose"],
+        "numbers_lab": ["predict", "calculate", "diagnose"],
+        "diagnose_problem": ["inspect", "diagnose", "choose"],
+    }[primary_archetype]
     return {
         "complexity": complexity,
         "skill_type": skill_type,
         "target_minutes": target_minutes,
+        "primary_archetype": primary_archetype,
+        "learner_action": ACTION_BY_SKILL[skill_type],
+        "deca_action": deca_action,
+        "recommended_interactions": interactions,
     }
 
 
@@ -89,6 +131,13 @@ def build_lesson_prompt(
     complexity = lesson_design["complexity"]
     skill_type = lesson_design["skill_type"]
     target_minutes = lesson_design["target_minutes"]
+    primary_archetype = lesson_design["primary_archetype"]
+    learner_action = lesson_design["learner_action"]
+    deca_action = lesson_design["deca_action"]
+    recommended_interactions = ", ".join(lesson_design["recommended_interactions"])
+    recommended_interactions_json = ", ".join(
+        f'"{interaction}"' for interaction in lesson_design["recommended_interactions"]
+    )
     deca_cluster = deca_cluster or "Business"
     return f"""You are a DECA competition coach creating a structured, interactive lesson for high school students.
 
@@ -103,6 +152,10 @@ KPI:
 - Complexity: {complexity}
 - Skill type: {skill_type}
 - Target time: {target_minutes} minutes
+- Learning archetype: {primary_archetype}
+- Learner action: {learner_action}
+- DECA transfer action: {deca_action}
+- Recommended interactions: {recommended_interactions}
 
 Return ONLY valid JSON with this exact structure:
 
@@ -112,18 +165,32 @@ Return ONLY valid JSON with this exact structure:
     "skill_type": "{skill_type}",
     "target_minutes": "{target_minutes}"
   }},
-  "hook": "A realistic student-relevant business situation, 40 words maximum. Do not claim it is a real story unless it is obviously generic.",
+  "instructional_plan": {{
+    "primary_archetype": "{primary_archetype}",
+    "learner_action": "{learner_action}",
+    "deca_action": "{deca_action}",
+    "recommended_interactions": [{recommended_interactions_json}]
+  }},
+  "mission": {{
+    "title": "A short action-oriented mission title.",
+    "brief": "A realistic business problem, 55 words maximum, that creates curiosity before naming or defining the KPI.",
+    "opening_interaction": {{
+      "question": "A prediction or decision the student can make immediately.",
+      "choices": ["Choice A", "Choice B", "Choice C"],
+      "correct": 1,
+      "explanation": "Explain the mechanism revealed by the decision, not just which answer is correct.",
+      "aha": "One memorable sentence beginning with This is why or That is why."
+    }}
+  }},
+  "hook": "A concise bridge from the opening decision to the KPI, 35 words maximum.",
   "vocab": [
-    {{"term": "Key Term 1", "definition": "Clear definition"}},
-    {{"term": "Key Term 2", "definition": "Clear definition"}},
-    {{"term": "Key Term 3", "definition": "Clear definition"}},
-    {{"term": "Key Term 4", "definition": "Clear definition"}},
-    {{"term": "Key Term 5", "definition": "Clear definition"}},
-    {{"term": "Key Term 6", "definition": "Clear definition"}}
+    {{"term": "Essential Term 1", "definition": "Clear one-sentence definition", "importance": "essential"}},
+    {{"term": "Essential Term 2", "definition": "Clear one-sentence definition", "importance": "essential"}},
+    {{"term": "Supporting Term", "definition": "Clear one-sentence definition", "importance": "supporting"}}
   ],
   "learning_blocks": [
-    {{"title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}},
-    {{"title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}}
+    {{"type": "concept_reveal", "title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}},
+    {{"type": "consequence", "title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}}
   ],
   "concept": {{
     "summary": "One clear sentence explaining what this KPI is about.",
@@ -214,6 +281,12 @@ Rules:
 - Prefer precise definitions, mechanisms, tradeoffs, and concrete examples over motivational filler.
 - Do not repeat the same idea across the hook, blocks, explanation, bullets, and takeaways.
 - Keep vocabulary definitions to one precise sentence each.
+- Generate 3–6 vocabulary terms according to actual instructional need; do not pad the list.
+- The mission must frame the KPI as a business problem, not announce a school lesson.
+- The opening interaction must come before the definition and make the learner predict, diagnose, or decide.
+- Match the lesson behavior to {primary_archetype}; changing only scenario nouns is not sufficient.
+- Label each learning block with one of: concept_reveal, evidence, compare, consequence, misconception, deca_tip.
+- The DECA Challenge must require the student to {deca_action}, at multiple-choice depth for this no-typing flow.
 - Do not pad easy KPIs. Target time is a guide, not a rule.
 - Teach through: situation -> discover -> decide -> see consequence -> prove it.
 - Make generated examples realistic, not falsely claimed as real.
