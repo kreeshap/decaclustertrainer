@@ -55,6 +55,7 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn('event.key.toLowerCase() === "a"', JS)
         self.assertIn('["1", "2"].includes(event.key)', JS)
         self.assertIn('event.key.toLowerCase() === "s"', JS)
+        self.assertIn("function escHtml(value)", JS)
 
     def test_approved_classification_drives_lessons_with_fallback(self):
         self.assertIn("get_approved_instructional_plan(catalog_id(kpi)) or classify_kpi(text)", LEARN)

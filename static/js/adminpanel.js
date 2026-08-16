@@ -5,6 +5,15 @@ let currentLessonAudit = null;
 const lessonAuditScores = {};
 const $ = (id) => document.getElementById(id);
 
+function escHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 function showMessage(message, error = false) {
   $("ops-message").textContent = message || "";
   $("ops-message").style.color = error ? "#f87171" : "var(--cyan)";
