@@ -676,6 +676,60 @@ body {
     gap: 14px;
 }
 
+/* Learn landing: curriculum coverage is primary; retention is secondary. */
+#view-home.learn-landing{width:calc(100% - 40px);max-width:980px;margin:0 auto;padding:26px 0 60px;display:block}
+#view-home .learn-landing-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}
+#view-home .learn-landing-head h1{margin:3px 0 0;font:700 2.25rem/1 "Barlow Condensed",sans-serif}
+#view-home .learn-landing-head>strong{color:var(--muted);font-size:.82rem}
+#view-home .learn-home-controls{display:grid;grid-template-columns:1fr auto auto;align-items:end;gap:10px;margin:0 0 14px;padding:0;border:0;background:transparent}
+#view-home .learn-search-panel{position:relative}
+#view-home .learn-search-input{height:40px}
+#view-home .learn-home-controls .ghost-btn,#view-home .learn-home-controls .mode-btn{height:40px;white-space:nowrap}
+#view-home .learn-section{margin:0 0 12px;padding:19px 21px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,.32)}
+#view-home .section-kicker{font:700 .68rem "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+#view-home .section-heading{display:flex;align-items:start;justify-content:space-between;margin-bottom:10px}
+#view-home .section-heading h2{margin:4px 0 0;font:700 1.35rem "Barlow Condensed",sans-serif}
+#view-home .text-btn{border:0;background:transparent;color:var(--cyan);font:600 .72rem Barlow,sans-serif;cursor:pointer}
+#view-home .coverage-head{display:grid;grid-template-columns:1.4fr 1fr .7fr;gap:20px;align-items:end;margin:12px 0}
+#view-home .coverage-head>div{display:grid;gap:3px}
+#view-home .coverage-head>div:first-child strong{font:700 1.8rem "Barlow Condensed",sans-serif;color:var(--white)}
+#view-home .coverage-head span{color:var(--muted);font-size:.7rem}
+#view-home .coverage-head>div:not(:first-child) strong{font:700 1.25rem "Barlow Condensed",sans-serif}
+#view-home .coverage-track{height:6px;border-radius:8px;background:#17383a;overflow:hidden}
+#view-home .coverage-track i{display:block;width:0;height:100%;border-radius:inherit;background:var(--cyan)}
+#view-home .continue-learning .widget-list{display:grid;gap:0;margin:10px 0 12px}
+#view-home .study-row{min-height:48px;padding:9px 2px;border-width:0 0 1px;border-radius:0;background:transparent}
+#view-home .study-row.primary{min-height:70px;padding:12px;border:1px solid #24585b;border-radius:7px;background:#0b2425}
+#view-home .study-row-text{display:grid;gap:3px}
+#view-home .study-row-text small{color:var(--muted);font-size:.68rem}
+#view-home .continue-learning>.start-btn{display:inline-block;width:auto;margin:0;padding:9px 18px}
+#view-home .curriculum-list{display:grid;gap:6px}
+#view-home .curriculum-group{border-bottom:1px solid #173b3d}
+#view-home .curriculum-group summary{display:flex;justify-content:space-between;padding:10px 2px;cursor:pointer;color:var(--white);font-size:.78rem}
+#view-home .curriculum-group summary strong{color:var(--muted)}
+#view-home .curriculum-group>div{padding:0 0 8px 12px}
+#view-home .curriculum-kpi{width:100%;display:grid;grid-template-columns:20px 1fr;gap:7px;padding:8px;border:0;border-bottom:1px solid #153638;background:transparent;color:var(--white);text-align:left;cursor:pointer}
+#view-home .curriculum-kpi:disabled{cursor:default;opacity:.55}
+#view-home .curriculum-kpi i{color:var(--cyan);font-style:normal}
+#view-home .curriculum-kpi span{display:grid;gap:2px}
+#view-home .curriculum-kpi small{color:var(--muted);font-size:.65rem;font-weight:400}
+#view-home .review-kpi-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #173b3d}
+#view-home .review-kpi-row>div{display:grid;gap:3px}
+#view-home .review-kpi-row span{color:var(--muted);font-size:.68rem}
+#view-home .review-kpi-row button{padding:6px 11px;border:1px solid var(--cyan);border-radius:5px;background:transparent;color:var(--cyan);cursor:pointer}
+#view-home .review-section>.review-btn{width:auto;margin-top:12px}
+#view-home .mastery-retention{display:flex;align-items:baseline;gap:16px;margin:11px 0}
+#view-home .mastery-retention strong{font:700 2rem "Barlow Condensed",sans-serif}
+#view-home .mastery-retention span,#view-home .learned-mastery-section>p{color:var(--muted);font-size:.7rem}
+#view-home .type-breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#view-home .type-breakdown>div{display:grid;grid-template-columns:1fr auto;gap:2px;padding:10px 12px;border:1px solid var(--border);border-radius:6px}
+#view-home .type-breakdown span,#view-home .type-breakdown small{color:var(--muted);font-size:.68rem}
+#view-home .type-breakdown strong{font:700 1.2rem "Barlow Condensed",sans-serif}
+#view-home .type-breakdown small{grid-column:1/-1}
+#view-home .preparation-state h2{margin:8px 0;font:700 1.4rem "Barlow Condensed",sans-serif}
+#view-home .preparation-state p{color:var(--muted);font-size:.78rem}
+@media(max-width:720px){#view-home.learn-landing{width:auto;margin:0 16px;padding-top:18px}#view-home .learn-home-controls,#view-home .coverage-head{grid-template-columns:1fr}#view-home .learn-landing-head{align-items:start;flex-direction:column;gap:5px}#view-home .type-breakdown{grid-template-columns:1fr}}
+
 .special-modes-dropdown[hidden] {
     display: none !important;
 }
@@ -2832,3 +2886,11 @@ body {
         grid-column: auto;
     }
 }
+
+/* Final cascade boundary for the redesigned landing page. */
+body #view-home.learn-landing{display:block!important;width:calc(100% - 40px);max-width:980px;margin:0 auto;padding:26px 0 60px}
+body #view-home.learn-landing .learn-home-controls{display:grid!important;grid-template-columns:1fr auto auto!important;align-items:end;gap:10px;margin:0 0 14px!important;padding:0!important;border:0!important;background:transparent!important}
+body #view-home.learn-landing .learn-section{display:block;grid-column:auto;margin:0 0 12px;padding:19px 21px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,.32)}
+body #view-home.learn-landing .continue-learning>.start-btn{display:inline-block!important;position:static!important;width:auto!important;margin:0!important}
+body #view-home.learn-landing #mastery-panel{margin:0 0 12px!important;padding:19px 21px!important;border:1px solid var(--border)!important}
+@media(max-width:720px){body #view-home.learn-landing{width:auto;margin:0 16px;padding-top:18px}body #view-home.learn-landing .learn-home-controls{grid-template-columns:1fr!important}}

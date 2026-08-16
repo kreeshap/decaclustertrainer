@@ -20,6 +20,7 @@ REQUIRED = {
     "user_kpi_mastery": ("user_id", "event_id", "kpi_code", "mastery_score"),
     "user_study_sessions": ("user_id", "event_id", "ar_answers", "roleplay_result"),
     "user_daily_activity": ("user_id", "event_id", "activity_date"),
+    "user_lesson_completions": ("user_id", "event_id", "kpi_code", "lesson_version", "completed_at"),
     "kpi_inference_state": ("user_id", "event_id", "kpi_code"),
     "user_timing_profile": ("user_id", "event_id", "question_type", "kpi_cluster"),
     "learning_evaluation_log": ("user_id", "event_id", "kpi_code"),

@@ -26,7 +26,7 @@ class UiSimplificationContractTests(unittest.TestCase):
         learn = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
         practice = (ROOT / "templates/practicequestions.html").read_text(encoding="utf-8")
         self.assertNotIn("admin-tools-panel", learn)
-        self.assertRegex(learn, r'<details class="special-modes-dropdown"[^>]*\bhidden\b')
+        self.assertNotIn("special-modes-dropdown", learn)
         self.assertRegex(practice, r'<details class="panel practice-panel practice-accordion"[^>]*\bhidden\b')
 
     def test_visual_map_is_removed(self) -> None:
@@ -41,7 +41,9 @@ class UiSimplificationContractTests(unittest.TestCase):
         template = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
         script = (ROOT / "static/js/learn.js").read_text(encoding="utf-8")
         styles = (ROOT / "static/styles/learn.css").read_text(encoding="utf-8")
-        self.assertIn("Next 3 KPIs to learn", template)
+        self.assertIn("Continue learning", template)
+        self.assertIn("Your event curriculum", template)
+        self.assertIn("Mastery of learned material", template)
         for removed_text in (
             "Current event",
             "Recommended for you",
@@ -54,9 +56,9 @@ class UiSimplificationContractTests(unittest.TestCase):
         for removed_status in ("Start here", '"Ready"', '"2 min"'):
             self.assertNotIn(removed_status, script)
         self.assertIn("source.length >= 3", script)
-        self.assertIn('<span class="study-row-score">Learn</span>', script)
-        self.assertIn('class="progress-title">Your progress</div>', template)
-        self.assertIn("max-width: 1240px", styles)
+        self.assertIn('index === 0 ? "Learn next" : "Up next"', script)
+        self.assertIn('id="learned-count">0 / 0 KPIs learned', template)
+        self.assertIn("max-width:980px", styles)
         self.assertIn("--radius-sm: 6px", styles)
         self.assertIn("--radius-md: 10px", styles)
         self.assertIn("--radius-lg: 14px", styles)

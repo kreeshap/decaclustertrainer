@@ -1744,3 +1744,47 @@ body {
     flex-direction: column;
   }
 }
+
+/* Compact, evidence-led Question Platform home. */
+.platform-shell{width:calc(100% - 32px);max-width:940px;margin:0 0 0 clamp(24px,7vw,110px)}
+.platform-heading{margin:12px 0 18px;align-items:start}
+.platform-heading h1{margin:3px 0 6px;font-size:clamp(2.5rem,4vw,2.9rem);line-height:1}
+.platform-heading p{display:grid;gap:3px;margin:0;font-size:.83rem}
+.platform-heading p strong{color:var(--white)}
+.platform-heading p span{color:var(--muted)}
+.platform-entry-grid{grid-template-columns:minmax(0,1.45fr) minmax(260px,.85fr);gap:12px;margin-bottom:12px}
+.platform-entry{min-height:188px;padding:20px 22px;border-radius:8px}
+.platform-entry>span{position:static;color:var(--cyan);font:700 .7rem "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.platform-entry h2{margin:9px 0 4px;font-size:1.65rem}
+.platform-entry p{margin:0 0 12px;line-height:1.4;font-size:.82rem}
+.platform-entry.recommended{border-color:#24737a;box-shadow:none}
+.platform-entry.recommended .cta-btn{margin-top:auto}
+.build-entry{background:#092122}
+.smart-signals{display:flex;flex-wrap:wrap;gap:7px 16px;margin:0 0 14px}
+.smart-signals div{display:flex;gap:6px;align-items:center;font-size:.72rem}
+.smart-signals span{color:var(--muted)}
+.smart-signals strong{color:var(--white)}
+.mock-entry{grid-column:1/-1;display:grid;grid-template-columns:minmax(190px,auto) 1fr auto;gap:16px;align-items:center;padding:11px 14px;border:1px solid var(--border);border-radius:7px;background:#081f20}
+.mock-entry>div:first-child{display:grid;gap:2px}
+.mock-entry span{font:700 .72rem "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mock-entry strong{font-size:.76rem;color:#b8cfd0}
+.mock-progress{height:5px;border-radius:8px;background:#16383a;overflow:hidden}
+.mock-progress i{display:block;height:100%;width:0;background:var(--cyan);border-radius:inherit}
+.mock-entry button{padding:6px 11px;font-size:.7rem}
+.platform-insights{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:12px;margin-top:12px}
+.platform-insights>.panel{margin:0;padding:18px 20px;border-radius:8px}
+.platform-insights .panel-heading h2{margin:4px 0 0;font-size:1.35rem}
+.analysis-row{display:grid;grid-template-columns:1fr auto;gap:3px 14px;padding:11px 0}
+.analysis-title{font-weight:600;color:var(--white)}
+.analysis-meta{grid-column:1;color:var(--muted);font-size:.7rem}
+.analysis-row i{grid-column:1;width:100%;height:4px;margin-top:4px;border-radius:4px;background:#153638;overflow:hidden}
+.analysis-row i b{display:block;height:100%;background:var(--cyan)}
+.analysis-row>strong{grid-column:2;grid-row:1;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+.analysis-row.qualified>strong{color:var(--cyan)}
+.analysis-row small{grid-column:1/-1;color:var(--muted);font-size:.66rem}
+.platform-empty{min-height:118px;display:flex;flex-direction:column;justify-content:center;padding:12px 0}
+.platform-empty strong{font:700 1.12rem "Barlow Condensed",sans-serif;color:var(--white)}
+.platform-empty p{margin:6px 0 12px;color:var(--muted);font-size:.76rem;line-height:1.45}
+.platform-empty span{color:var(--cyan);font-size:.72rem}
+.platform-continue{padding:14px 18px}
+@media(max-width:800px){.platform-shell{width:auto;margin:0 16px}.platform-entry-grid,.platform-insights{grid-template-columns:1fr}.mock-entry{grid-template-columns:1fr}.platform-entry{min-height:0}.platform-heading{margin-top:6px}}

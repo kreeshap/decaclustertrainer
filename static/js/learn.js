@@ -5,6 +5,8 @@
 
             // ─── State ────────────────────────────────────────────────────────────────────
             let allKpis = []; // all KPIs for the user's event (in order)
+            let curriculumKpis = []; // full event curriculum, including lessons still being prepared
+            let curriculumExpanded = false;
             let sessionQueue = []; // KPIs for this session (same as allKpis initially)
             let sessionIdx = 0; // current position in sessionQueue
             let completedKpiCodes = new Set();
@@ -87,7 +89,7 @@
                     return;
                 }
 
-                const matches = allKpis.filter((k) => {
+                const matches = curriculumKpis.filter((k) => {
                     const haystack = [
                         k.code,
                         k.text,
@@ -116,11 +118,13 @@
                     const row = document.createElement("button");
                     row.type = "button";
                     row.className = "search-row";
+                    const ready = !!findKpiByCode(kpi.code);
                     row.innerHTML =
                         `<strong>${escHtml(kpi.code || "")}</strong>` +
                         `<span>${escHtml(kpi.text || "")}</span>` +
-                        `<small>${escHtml(kpi.cluster || "")} · ${escHtml((kpi.learning_status || "unstarted").replace("_", " "))}</small>`;
-                    row.addEventListener("click", () => focusSessionOnKpi(kpi));
+                        `<small>${escHtml(kpi.cluster || "")} · ${ready ? escHtml((findKpiByCode(kpi.code).learning_status || "not learned").replace("_", " ")) : "lesson being prepared"}</small>`;
+                    row.disabled = !ready;
+                    if (ready) row.addEventListener("click", () => focusSessionOnKpi(kpi));
                     panel.appendChild(row);
                 });
             }
@@ -155,19 +159,55 @@
                     return;
                 }
 
-                source.forEach((item) => {
+                source.forEach((item, index) => {
                     const btn = document.createElement("button");
                     btn.type = "button";
-                    btn.className = "study-row";
+                    btn.className = "study-row" + (index === 0 ? " primary" : "");
                     btn.innerHTML =
                         `<span class="study-row-code">${escHtml(item.code || "")}</span>` +
                         `<span class="study-row-text">` +
                             `<strong>${escHtml(item.text || "")}</strong>` +
+                            `<small>${escHtml(findKpiByCode(item.code)?.cluster || "")} · Standard · ~4 min</small>` +
                         `</span>` +
-                        `<span class="study-row-score">Learn</span>`;
+                        `<span class="study-row-score">${index === 0 ? "Learn next" : "Up next"}</span>`;
                     btn.addEventListener("click", () => focusSessionOnKpi(item.code));
                     list.appendChild(btn);
                 });
+            }
+
+            function renderCurriculum() {
+                const container = $("curriculum-list");
+                if (!container) return;
+                const readyByCode = new Map(allKpis.map((kpi) => [kpi.code, kpi]));
+                const groups = new Map();
+                curriculumKpis.forEach((kpi) => {
+                    const name = kpi.cluster || "Other";
+                    if (!groups.has(name)) groups.set(name, []);
+                    groups.get(name).push(kpi);
+                });
+                const entries = [...groups.entries()];
+                container.innerHTML = entries.slice(0, curriculumExpanded ? entries.length : 6).map(([name, kpis]) => {
+                    const learned = kpis.filter((kpi) => readyByCode.get(kpi.code)?.current_lesson_completed).length;
+                    const rows = kpis.map((kpi) => {
+                        const ready = readyByCode.get(kpi.code);
+                        const learnedNow = !!ready?.current_lesson_completed;
+                        const history = ready?.previous_activity ? `<small>Previous performance: ${Math.round(ready.mastery_score || 0)}% · not completed in current Learn Mode</small>` : "";
+                        return `<button type="button" class="curriculum-kpi" data-curriculum-code="${escHtml(kpi.code)}" ${ready ? "" : "disabled"}><i>${learnedNow ? "✓" : "○"}</i><span><strong>${escHtml(kpi.code)} · ${escHtml(kpi.text)}</strong>${history || `<small>${ready ? (learnedNow ? "Learned" : "Not learned") : "Lesson being prepared"}</small>`}</span></button>`;
+                    }).join("");
+                    return `<details class="curriculum-group"><summary><span>${escHtml(name)}</span><strong>${learned} / ${kpis.length}</strong></summary><div>${rows}</div></details>`;
+                }).join("") || `<p class="empty-state">Curriculum data is being prepared.</p>`;
+                container.querySelectorAll("[data-curriculum-code]:not([disabled])").forEach((button) => button.addEventListener("click", () => focusSessionOnKpi(button.dataset.curriculumCode)));
+                $("curriculum-toggle").textContent = curriculumExpanded ? "Show less" : "Show all";
+            }
+
+            function renderReview() {
+                const due = kpiGroups.due || [];
+                const section = $("review-section");
+                section.hidden = !due.length;
+                if (!due.length) return;
+                $("due-summary-count").textContent = due.length;
+                $("review-kpi-list").innerHTML = due.slice(0,5).map((kpi) => `<div class="review-kpi-row"><div><strong>${escHtml(kpi.code)} · ${escHtml(kpi.text)}</strong><span>${Math.round(kpi.mastery_score || 0)}% mastery · previously learned · review recommended</span></div><button type="button" data-review-code="${escHtml(kpi.code)}">Review</button></div>`).join("");
+                $("review-kpi-list").querySelectorAll("[data-review-code]").forEach((button) => button.addEventListener("click", startReview));
             }
 
             function renderLearnHome() {
@@ -179,21 +219,23 @@
                     startBtn.disabled = !allKpis.length;
                 }
 
-                const dashSummary = $("dashboard-summary");
-                if (dashSummary) {
-                    dashSummary.style.display = "flex";
-                    const sum = analyticsData && analyticsData.summary ? analyticsData.summary : null;
-                    const mastery = sum ? Math.round(Number(sum.avg_mastery || 0)) : 0;
-                    const due = Number(sum?.questions_due ?? kpiGroups.due.length ?? 0);
-                    const streak = Number(sum?.streak_days || 0);
-                    const mastered = Number(sum?.mastered_kpis || 0);
-                    const learnedLabel = allKpis.length ? `${Math.min(100, Math.round((mastered / allKpis.length) * 100))}%` : "--";
-                    $("dash-mastery").textContent = mastery ? `${mastery}%` : learnedLabel;
-                    $("dash-due").textContent = due;
-                    $("dash-streak").textContent = streak ? `${streak}d` : "0d";
-                }
-
+                const sum = analyticsData?.summary || {};
+                const learned = Number(sum.completed_kpis ?? kpiGroups.mastered.length ?? 0);
+                const total = Number(sum.total_kpis_available || curriculumKpis.length || 0);
+                const coverage = total ? (100 * learned / total) : 0;
+                $("learn-event-name").textContent = currentEventName || "Your event";
+                $("learned-count").textContent = `${learned} / ${total} KPIs learned`;
+                $("coverage-percent").textContent = `${coverage < 1 && coverage > 0 ? "<1" : Math.round(coverage)}% of event content`;
+                $("coverage-fill").style.width = `${Math.min(100, coverage)}%`;
+                $("learned-mastery").textContent = learned && Number(sum.avg_mastery) ? `${Math.round(sum.avg_mastery)}%` : "No data";
+                $("dash-due").textContent = Number(sum.questions_due || 0);
                 renderRecommendedPath();
+                renderCurriculum();
+                renderReview();
+                const preparing = !allKpis.length;
+                $("content-preparation-state").hidden = !preparing;
+                $("learning-path-panel").hidden = preparing;
+                if (preparing) $("preparation-event-name").textContent = `We're preparing lessons for ${currentEventName}.`;
             }
 
             // ─── Auth ─────────────────────────────────────────────────────────────────────
@@ -251,6 +293,7 @@
                         : "series";
                     // KPIs from server are already scoped to this event — no client-side filter needed
                     allKpis = kpis;
+                    curriculumKpis = data.curriculum || kpis;
                     kpiGroups = {
                         unstarted: data.unstarted || [],
                         due: data.due || [],
@@ -501,6 +544,15 @@
             $("mission-continue").addEventListener("click", () => {
                 setPhase("mission", "done");
                 startVocab(currentKpi());
+            });
+            $("browse-kpis-btn").addEventListener("click", () => {
+                curriculumExpanded = true;
+                renderCurriculum();
+                $("curriculum-section").scrollIntoView({behavior: "smooth", block: "start"});
+            });
+            $("curriculum-toggle").addEventListener("click", () => {
+                curriculumExpanded = !curriculumExpanded;
+                renderCurriculum();
             });
 
             // ─── VOCAB phase ──────────────────────────────────────────────────────────────
@@ -1139,8 +1191,20 @@
             });
 
             // ─── KPI done — advance or trigger roleplay ───────────────────────────────────
-            function kpiDone() {
+            async function kpiDone() {
                 const completedKpi = currentKpi();
+                try {
+                    const completion = await apiFetch(`/api/learn/kpis/${encodeURIComponent(completedKpi.code)}/complete`, {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({event_id: currentEventId}),
+                    });
+                    if (!completion.ok) throw new Error("Lesson completion could not be saved");
+                    completedKpi.current_lesson_completed = true;
+                } catch (error) {
+                    showError("Your lesson was completed, but its curriculum progress could not be saved. Please retry.");
+                    return;
+                }
                 chunkKpis.push(completedKpi);
                 completedKpiCodes.add(completedKpi.code);
                 sessionIdx++;
@@ -1494,124 +1558,17 @@
 
             function renderMasteryDashboard(data) {
                 const sum = data.summary || {};
-                const avgMastery = sum.avg_mastery || 0;
-                const masteredKpis = sum.mastered_kpis || 0;
-                const dueCount = sum.questions_due || 0;
-                const streak = sum.streak_days || 0;
-                const hasActivity = !!(
-                    avgMastery > 0 ||
-                    masteredKpis > 0 ||
-                    dueCount > 0 ||
-                    streak > 0
-                );
-
-                // Populate top dashboard summary
-                const dashSummary = $("dashboard-summary");
-                if (dashSummary) {
-                    dashSummary.style.display = hasActivity ? "flex" : "none";
-                    if (hasActivity) {
-                        $("dash-mastery").textContent = avgMastery + "%";
-                        $("dash-due").textContent = dueCount;
-                        $("dash-streak").textContent = streak;
-                    }
-                }
-
-                $("m-mastery").textContent = avgMastery + "%";
-                $("m-mastery-bar").style.width = avgMastery + "%";
-                $("m-streak").textContent = streak;
-                $("m-mastered").textContent = masteredKpis;
-                $("m-due").textContent = dueCount;
-                $("mastery-summary-row").style.display = hasActivity ? "grid" : "none";
-
-                // ── Question type breakdown ───────────────────────────────────────────
+                const learned = Number(sum.completed_kpis || 0);
+                const avgMastery = Number(sum.avg_mastery || 0);
+                $("m-mastery").textContent = learned && avgMastery ? `${Math.round(avgMastery)}%` : "No data";
+                $("mastery-context").textContent = learned ? `Based on ${learned} completed Learn KPI${learned === 1 ? "" : "s"}.` : "Complete a current Learn lesson to begin measuring retention.";
                 const qtd = data.question_type_breakdown || {};
                 const recog = qtd.recognition;
                 const app = qtd.application;
-                if (recog && app && (recog.total > 0 || app.total > 0)) {
-                    let typeBreakdownEl = $("type-breakdown-section");
-                    if (!typeBreakdownEl) {
-                        typeBreakdownEl = document.createElement("div");
-                        typeBreakdownEl.id = "type-breakdown-section";
-                        typeBreakdownEl.style.cssText = "display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;";
-                        const masteryRow = $("mastery-summary-row");
-                        if (masteryRow && masteryRow.parentNode) {
-                            masteryRow.parentNode.insertBefore(typeBreakdownEl, masteryRow.nextSibling);
-                        }
-                    }
-                    typeBreakdownEl.innerHTML = "";
-                    const makeTypeCard = (label, acc, total) => {
-                        const color = acc >= 80 ? "var(--green)" : acc >= 60 ? "var(--yellow)" : "var(--red)";
-                        return `<div style="flex:1;min-width:110px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,0.3)">
-                            <div style="font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px">${label}</div>
-                            <div style="font-size:1.3rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;color:${color}">${acc}%</div>
-                            <div style="font-size:0.68rem;color:var(--muted)">${total} attempts</div>
-                        </div>`;
-                    };
-                    if (recog.total > 0) typeBreakdownEl.innerHTML += makeTypeCard("Recognition", Math.round(recog.accuracy), recog.total);
-                    if (app.total > 0) typeBreakdownEl.innerHTML += makeTypeCard("Application", Math.round(app.accuracy), app.total);
-                    typeBreakdownEl.style.display = "flex";
-                }
-
-                // Cluster breakdown bars
-                const clusterBreakdown = data.cluster_breakdown || [];
-                if (clusterBreakdown.length) {
-                    const container = $("cluster-bars");
-                    container.innerHTML = "";
-                    clusterBreakdown.forEach((c) => {
-                        const pct = Math.round(c.avg_mastery || 0);
-                        const color =
-                            pct >= 80
-                                ? "var(--green)"
-                                : pct >= 50
-                                  ? "var(--cyan)"
-                                  : "var(--yellow)";
-                        const row = document.createElement("div");
-                        row.className = "cluster-bar-row";
-                        row.innerHTML =
-                            `<span class="cluster-bar-name">${escHtml(c.cluster)}</span>` +
-                            `<div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:${pct}%;background:${color}"></div></div>` +
-                            `<span class="cluster-bar-pct">${pct}%</span>`;
-                        container.appendChild(row);
-                    });
-                    $("cluster-breakdown-section").style.display = "";
-                }
-
-                // Weak KPIs
-                const weak = data.weak_kpis || [];
-                if (weak.length) {
-                    const container = $("weak-kpis-list");
-                    container.innerHTML = "";
-                    weak.forEach((k) => {
-                        const score = Math.round(k.mastery_score || 0);
-                        const row = document.createElement("div");
-                        row.className = "weak-kpi-row";
-                        row.innerHTML =
-                            `<span class="weak-kpi-code">${escHtml(k.kpi_code || "")}</span>` +
-                            `<span class="weak-kpi-text">${escHtml(k.kpi_text || k.kpi_code || "")}</span>` +
-                            `<span class="weak-kpi-score">${score}%</span>`;
-                        container.appendChild(row);
-                    });
-                    $("weak-kpis-section").style.display = "";
-                }
-
-                // Activity heatmap
-                const daily = data.daily_activity || [];
-                if (daily.length) {
-                    renderHeatmap(daily);
-                    $("heatmap-section").style.display = "";
-                }
-
-                // Review button
-                if (dueCount > 0) {
-                    // template uses id="due-summary-count" and id="review-summary-btn"
-                    const dueCntEl = $("due-summary-count") || $("due-count");
-                    if (dueCntEl) dueCntEl.textContent = dueCount;
-                    const reviewBtnEl = $("review-summary-btn") || $("review-btn");
-                    if (reviewBtnEl) reviewBtnEl.style.display = "";
-                } else {
-                    const reviewBtnEl = $("review-summary-btn") || $("review-btn");
-                    if (reviewBtnEl) reviewBtnEl.style.display = "none";
-                }
+                const cards = [];
+                if (learned && recog?.total) cards.push(`<div><span>Recognition</span><strong>${Math.round(recog.accuracy)}%</strong><small>${recog.total} attempts</small></div>`);
+                if (learned && app?.total) cards.push(`<div><span>Application</span><strong>${Math.round(app.accuracy)}%</strong><small>${app.total} attempts</small></div>`);
+                $("type-breakdown-section").innerHTML = cards.join("");
 
                 renderLearnHome();
             }

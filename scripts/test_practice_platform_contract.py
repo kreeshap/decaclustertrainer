@@ -26,11 +26,21 @@ class PracticePlatformContract(unittest.TestCase):
     def test_student_ui_has_three_paths_and_distinct_modes(self):
         html = (ROOT / "templates/practicequestions.html").read_text(encoding="utf-8")
         js = (ROOT / "static/js/practiceplatform.js").read_text(encoding="utf-8")
-        for text in ("Smart Practice", "Build a Practice Set", "Mock Exam", "Tutor", "Exam"):
+        for text in ("Smart Practice Questions", "Build a Practice Question Set", "Mock Exam", "Tutor", "Exam"):
             self.assertIn(text, html)
         for behavior in ("startTimer", "Question review", "runner-previous", "practice/sets/preview"):
             self.assertIn(behavior, html + js)
         self.assertIn('state.set.mode==="tutor"', js)
+
+    def test_home_explains_recommendation_readiness_and_limited_data(self):
+        html = (ROOT / "templates/practicequestions.html").read_text(encoding="utf-8")
+        js = (ROOT / "static/js/practiceplatform.js").read_text(encoding="utf-8")
+        css = (ROOT / "static/styles/practicequestions.css").read_text(encoding="utf-8")
+        for text in ("platform-smart-signals", "platform-mock-progress", "platform-insights"):
+            self.assertIn(text, html)
+        for text in ("KPIs studied", "Limited data", "answered so far"):
+            self.assertIn(text, js)
+        self.assertIn("max-width:940px", css)
 
 
 if __name__ == "__main__":

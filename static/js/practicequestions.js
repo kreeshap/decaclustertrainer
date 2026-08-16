@@ -710,7 +710,7 @@
       }
     }
 
-    setFocus(`${modeLabel} · ${filterLabel} · Balanced practice`);
+    setFocus(`${modeLabel} · ${filterLabel} · Balanced practice questions`);
   }
 
   function renderRecentSessionCard() {
@@ -721,7 +721,7 @@
 
     if (!recent) {
       if (el.recentSessionTitle) el.recentSessionTitle.textContent = "No session yet";
-      if (el.recentSessionSubtitle) el.recentSessionSubtitle.textContent = "Start a practice run to populate this card.";
+      if (el.recentSessionSubtitle) el.recentSessionSubtitle.textContent = "Start a practice question run to populate this card.";
       if (el.recentAccuracy) el.recentAccuracy.textContent = "--";
       if (el.recentAnswered) el.recentAnswered.textContent = "--";
       if (el.recentCorrect) el.recentCorrect.textContent = "--";
@@ -736,7 +736,7 @@
     const started = formatDateLabel(recent.started_at);
     const title = recent.session_type
       ? recent.session_type.replaceAll("_", " ")
-      : "Latest practice session";
+      : "Latest practice question session";
 
     if (el.recentSessionTitle) el.recentSessionTitle.textContent = title;
     if (el.recentSessionSubtitle) {
@@ -790,7 +790,7 @@
       el.start.textContent = dueCount ? `Start ${lengthLabel}` : "No Questions Available";
     }
     if (el.heroTitle) {
-      el.heroTitle.textContent = state.currentEventName || "Continue Practice";
+      el.heroTitle.textContent = state.currentEventName || "Continue Practice Questions";
     }
     if (el.heroSubtitle) {
       const modeLabel = getPracticeModeLabel();
@@ -859,7 +859,7 @@
       }
     }
 
-    let focusMessage = `${modeLabel} · ${filterLabel} · Balanced practice`;
+    let focusMessage = `${modeLabel} · ${filterLabel} · Balanced practice questions`;
     if (weakKpis[0] && typeof weakKpis[0].kpi_code === "string") {
       focusMessage = `${modeLabel} · ${filterLabel} · Next focus: ${weakKpis[0].kpi_code}`;
     } else if (recogAcc !== null && appAcc !== null) {
@@ -1268,7 +1268,7 @@
         const weakKpi = (state.analytics?.weak_kpis || [])[0];
         el.intelNext.textContent = weakKpi
           ? `Focus next: ${weakKpi.kpi_code}`
-          : "Balanced practice with adaptive reordering.";
+          : "Balanced practice questions with adaptive reordering.";
       }
     }
   }
@@ -1341,7 +1341,7 @@
   async function loadPracticeBank() {
     syncFilterControls();
     setStatus(
-      `Loading your event and practice bank in ${getPracticeModeLabel()} mode with ${getQuestionFilterLabel().toLowerCase()} filter...`,
+      `Loading your event and practice question bank in ${getPracticeModeLabel()} mode with ${getQuestionFilterLabel().toLowerCase()} filter...`,
     );
 
     const eventId = UserPrefs.getEventId();
@@ -1386,7 +1386,7 @@
         dueQuestions = Array.isArray(dueData.questions) ? dueData.questions : [];
       }
     } catch (error) {
-      setStatus(`Could not load practice data: ${error.message}`);
+      setStatus(`Could not load practice question data: ${error.message}`);
       if (el.start) el.start.disabled = true;
       return;
     }
@@ -1845,7 +1845,7 @@
       return "Review mode captured each question so the learning feedback loop can show your choice, the keyed answer, and the explanation.";
     }
 
-    return "Solid run. The practice set finished cleanly with a feedback loop and updated session metrics.";
+    return "Solid run. The practice question set finished cleanly with a feedback loop and updated session metrics.";
   }
 
   function renderReviewSummary() {
@@ -1962,10 +1962,10 @@
     const builtQueue = buildPracticeQueue(state.allQuestions);
     state.queue = builtQueue.slice(0, getSessionLengthLimit(builtQueue.length));
     showView(el.session);
-    setSessionTitle(`${state.currentEventName || "Current event"} · ${getPracticeModeLabel()} practice`);
+    setSessionTitle(`${state.currentEventName || "Current event"} · ${getPracticeModeLabel()} practice questions`);
     if (el.progressTotal) el.progressTotal.textContent = String(state.queue.length);
     setStatus(
-      `${state.reviewMode ? "Review mode on. " : ""}${state.timedMode ? "Timed session started. " : "Untimed session started. "}Practice started with ${state.queue.length} question(s).`,
+      `${state.reviewMode ? "Review mode on. " : ""}${state.timedMode ? "Timed session started. " : "Untimed session started. "}Practice questions started with ${state.queue.length} question(s).`,
     );
     await startServerSession();
     if (!state.sessionId) {

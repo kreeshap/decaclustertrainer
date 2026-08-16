@@ -30,6 +30,9 @@ from ..learn_helpers import (
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
 
 
+CURRENT_LESSON_VERSION = 4
+
+
 @learn_bp.get("/api/kpis")
 def api_kpis():
     all_kpis, events = _load_all_kpis()
@@ -45,6 +48,7 @@ def api_kpis():
 
     if event_filter:
         all_kpis = [k for k in all_kpis if k["event"] == event_filter]
+        curriculum_kpis = list(all_kpis)
         try:
             ready_ids = get_ready_kpi_ids()
         except RuntimeError as error:
@@ -62,9 +66,77 @@ def api_kpis():
             catalog = get_kpi_catalog(user["id"], token, event_filter)
         except RuntimeError as error:
             return jsonify({"error": str(error)}), 502
-        return jsonify({**catalog, "events": events})
+        status, completions = supabase_rest_request(
+            "/user_lesson_completions",
+            token=token,
+            params={
+                "user_id": f"eq.{user['id']}",
+                "event_id": f"eq.{event_filter}",
+                "lesson_version": f"eq.{CURRENT_LESSON_VERSION}",
+                "select": "kpi_code,completed_at",
+            },
+            prefer="",
+        )
+        completions = completions if status == 200 and isinstance(completions, list) else []
+        completed_codes = {row["kpi_code"] for row in completions}
+        due_codes = {row.get("kpi_code") for row in catalog.get("due", [])} & completed_codes
+        ready = []
+        for kpi in catalog.get("kpis", []):
+            item = dict(kpi)
+            had_history = item.get("learning_status") != "unstarted"
+            item["current_lesson_completed"] = item.get("code") in completed_codes
+            item["previous_activity"] = had_history and not item["current_lesson_completed"]
+            item["learning_status"] = "due" if item.get("code") in due_codes else ("learned" if item["current_lesson_completed"] else "unstarted")
+            ready.append(item)
+        learned = [k for k in ready if k["learning_status"] == "learned"]
+        due = [k for k in ready if k["learning_status"] == "due"]
+        unstarted = [k for k in ready if k["learning_status"] == "unstarted"]
+        return jsonify({
+            "kpis": due + unstarted + learned,
+            "unstarted": unstarted,
+            "due": due,
+            "mastered": learned,
+            "learned": learned,
+            "in_progress": [],
+            "events": events,
+            "curriculum": curriculum_kpis,
+            "curriculum_total": len(curriculum_kpis),
+            "completed_count": len(completed_codes),
+        })
 
     return jsonify({"kpis": all_kpis, "unstarted": all_kpis, "due": [], "mastered": [], "in_progress": [], "events": events})
+
+
+@learn_bp.post("/api/learn/kpis/<kpi_code>/complete")
+def complete_current_lesson(kpi_code: str):
+    user = get_current_user()
+    if not user:
+        return jsonify({"error": "Unauthorized"}), 401
+    body = request.get_json(silent=True) or {}
+    event_id = canonical_event_id(body.get("event_id"))
+    if not event_id:
+        return jsonify({"error": "Supported event_id is required"}), 400
+    kpi = next((item for item in _load_all_kpis()[0] if item.get("event") == event_id and item.get("code") == kpi_code), None)
+    if not kpi:
+        return jsonify({"error": "KPI does not belong to this event"}), 400
+    token = get_bearer_token()
+    status, result = supabase_rest_request(
+        "/user_lesson_completions",
+        method="POST",
+        token=token,
+        payload={
+            "user_id": user["id"],
+            "event_id": event_id,
+            "kpi_code": kpi_code,
+            "lesson_version": CURRENT_LESSON_VERSION,
+            "completed_at": datetime.utcnow().isoformat() + "Z",
+        },
+        params={"on_conflict": "user_id,event_id,kpi_code,lesson_version"},
+        prefer="resolution=merge-duplicates,return=representation",
+    )
+    if status not in (200, 201):
+        return jsonify({"error": "Lesson completion could not be saved", "detail": result}), 502
+    return jsonify({"ok": True, "kpi_code": kpi_code, "lesson_version": CURRENT_LESSON_VERSION})
 
 @learn_bp.post("/api/learn/generate")
 def learn_generate():
@@ -902,6 +974,38 @@ def learn_analytics():
     )
     mastery_rows = mastery_rows if isinstance(mastery_rows, list) else []
 
+    completion_status, completion_rows = supabase_rest_request(
+        "/user_lesson_completions",
+        token=token,
+        params={
+            "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
+            "lesson_version": f"eq.{CURRENT_LESSON_VERSION}",
+            "select": "kpi_code,completed_at",
+        },
+        prefer="",
+    )
+    completion_rows = completion_rows if completion_status == 200 and isinstance(completion_rows, list) else []
+    completed_codes = {row.get("kpi_code") for row in completion_rows if row.get("kpi_code")}
+    learned_mastery_rows = [row for row in mastery_rows if row.get("kpi_code") in completed_codes]
+
+    # Curriculum coverage is a separate signal from mastery of studied material.
+    _, catalog_rows = _supabase_svc(
+        "/kpi_catalog",
+        params={
+            "event_id": f"eq.{event_id}",
+            "select": "code,cluster",
+            "limit": "10000",
+        },
+    )
+    catalog_rows = catalog_rows if isinstance(catalog_rows, list) else []
+    if not catalog_rows:
+        catalog_rows = [
+            {"code": kpi.get("code"), "cluster": kpi.get("cluster")}
+            for kpi in _load_all_kpis()[0]
+            if kpi.get("event") == event_id
+        ]
+
     # Recent sessions (last 20)
     _, sessions = supabase_rest_request(
         "/user_study_sessions",
@@ -943,7 +1047,14 @@ def learn_analytics():
     _, due_rows = supabase_rest_request(
         "/user_srs_state", token=token, params=due_params, prefer="",
     )
-    due_count = len(due_rows) if isinstance(due_rows, list) else 0
+    due_count = 0
+    if isinstance(due_rows, list) and due_rows and completed_codes:
+        due_ids = [row.get("question_id") for row in due_rows if row.get("question_id")]
+        _, due_meta = _supabase_svc(
+            "/kpi_questions",
+            params={"id": f"in.({','.join(due_ids)})", "select": "id,kpi_code", "limit": "10000"},
+        )
+        due_count = sum(1 for row in (due_meta or []) if row.get("kpi_code") in completed_codes)
 
     # ── SRS state for question-type breakdown ──────────────────────────────
     srs_params: dict = {
@@ -966,16 +1077,19 @@ def learn_analytics():
             "/kpi_questions",
             params={
                 "id": f"in.({id_list})",
-                "select": "id,question_type",
+                "select": "id,question_type,kpi_code",
             },
         )
         q_type_map = {}
         if isinstance(q_meta, list):
-            q_type_map = {r["id"]: r.get("question_type", "recognition") for r in q_meta}
+            q_type_map = {r["id"]: r for r in q_meta}
 
         recog_total = recog_correct = app_total = app_correct = 0
         for row in srs_rows:
-            qtype = q_type_map.get(row["question_id"], "recognition")
+            meta = q_type_map.get(row["question_id"], {})
+            if meta.get("kpi_code") not in completed_codes:
+                continue
+            qtype = meta.get("question_type", "recognition")
             total = int(row.get("total_attempts", 0))
             correct = int(row.get("correct_attempts", 0))
             if qtype == "application":
@@ -1000,31 +1114,40 @@ def learn_analytics():
 
     # ── Aggregates ────────────────────────────────────────────────────────────
     avg_mastery = round(
-        sum(m.get("mastery_score", 0) for m in mastery_rows) / max(len(mastery_rows), 1), 1,
+        sum(m.get("mastery_score", 0) for m in learned_mastery_rows) / max(len(learned_mastery_rows), 1), 1,
     )
-    mastered_kpis = sum(1 for m in mastery_rows if float(m.get("mastery_score", 0)) >= 80)
+    mastered_kpis = sum(1 for m in learned_mastery_rows if float(m.get("mastery_score", 0)) >= 80)
     total_q_ans = sum(s.get("questions_answered", 0) for s in sessions)
 
-    # Cluster breakdown
+    # Instructional-area breakdown: coverage and measured mastery stay separate.
     cluster_map: dict = {}
-    for m in mastery_rows:
+    for kpi in catalog_rows:
+        c = kpi.get("cluster") or "Other"
+        if c not in cluster_map:
+            cluster_map[c] = {"cluster": c, "scores": [], "studied_codes": set(), "total_codes": set()}
+        if kpi.get("code"):
+            cluster_map[c]["total_codes"].add(kpi["code"])
+    for m in learned_mastery_rows:
         c = m.get("kpi_cluster") or m.get("deca_cluster") or "Other"
         if c not in cluster_map:
-            cluster_map[c] = {"cluster": c, "scores": [], "kpi_count": 0}
+            cluster_map[c] = {"cluster": c, "scores": [], "studied_codes": set(), "total_codes": set()}
         cluster_map[c]["scores"].append(float(m.get("mastery_score", 0)))
-        cluster_map[c]["kpi_count"] += 1
+        if m.get("kpi_code"):
+            cluster_map[c]["studied_codes"].add(m["kpi_code"])
     cluster_breakdown = [
         {
             "cluster": v["cluster"],
-            "avg_mastery": round(sum(v["scores"]) / len(v["scores"]), 1),
-            "kpi_count": v["kpi_count"],
+            "avg_mastery": round(sum(v["scores"]) / len(v["scores"]), 1) if v["scores"] else None,
+            "kpis_studied": len(v["studied_codes"]),
+            "kpis_total": len(v["total_codes"]),
+            "coverage_pct": round(100 * len(v["studied_codes"]) / len(v["total_codes"]), 1) if v["total_codes"] else 0,
         }
         for v in cluster_map.values()
     ]
-    cluster_breakdown.sort(key=lambda x: x["avg_mastery"])
+    cluster_breakdown.sort(key=lambda x: (x["coverage_pct"], x["cluster"]))
 
-    weak = sorted(mastery_rows, key=lambda m: m.get("mastery_score", 0))[:5]
-    strong = sorted(mastery_rows, key=lambda m: m.get("mastery_score", 0), reverse=True)[:5]
+    weak = sorted(learned_mastery_rows, key=lambda m: m.get("mastery_score", 0))[:5]
+    strong = sorted(learned_mastery_rows, key=lambda m: m.get("mastery_score", 0), reverse=True)[:5]
     try:
         ready_ids = get_ready_kpi_ids()
     except RuntimeError:
@@ -1107,7 +1230,9 @@ def learn_analytics():
             "summary": {
                 "avg_mastery": avg_mastery,
                 "mastered_kpis": mastered_kpis,
-                "total_kpis_seen": len(mastery_rows),
+                "total_kpis_seen": len(completed_codes),
+                "completed_kpis": len(completed_codes),
+                "total_kpis_available": len({row.get("code") for row in catalog_rows if row.get("code")}),
                 "questions_due": due_count,
                 "streak_days": streak,
                 "total_questions_answered": total_q_ans,
@@ -1185,6 +1310,20 @@ def learn_due_questions():
         },
     )
     q_rows = q_rows if isinstance(q_rows, list) else []
+
+    completion_status, completion_rows = supabase_rest_request(
+        "/user_lesson_completions",
+        token=token,
+        params={
+            "user_id": f"eq.{user_id}",
+            "event_id": f"eq.{event_id}",
+            "lesson_version": f"eq.{CURRENT_LESSON_VERSION}",
+            "select": "kpi_code",
+        },
+        prefer="",
+    )
+    completed_codes = {row.get("kpi_code") for row in completion_rows or []} if completion_status == 200 else set()
+    q_rows = [q for q in q_rows if q.get("kpi_code") in completed_codes]
 
     # Filter by event if requested
     if event_id:

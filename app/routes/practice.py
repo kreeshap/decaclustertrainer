@@ -8,7 +8,7 @@ from flask import Blueprint, jsonify, request
 
 from ..auth_utils import get_current_user
 from ..events import canonical_event_id
-from ..learn_helpers import _supabase_svc
+from ..learn_helpers import _load_all_kpis, _supabase_svc
 
 practice_bp = Blueprint("practice_platform", __name__)
 
@@ -29,18 +29,32 @@ def _data(user_id: str, event_id: str):
     return questions or [], responses or [], {r["question_id"] for r in flags or []}, {r["question_id"] for r in due or []}
 
 
-def _analytics(questions, responses):
+def _analytics(questions, responses, catalog, mastery):
     qmap = {q["id"]: q for q in questions}; topics = defaultdict(lambda: {"correct": 0, "attempts": 0, "kpis": defaultdict(lambda: [0, 0])})
+    for row in catalog:
+        topic = row.get("cluster") or "Other"
+        if row.get("code"): topics[topic].setdefault("total_kpis", set()).add(row["code"])
+    for row in mastery:
+        topic = row.get("kpi_cluster") or row.get("deca_cluster") or "Other"
+        if row.get("kpi_code"): topics[topic].setdefault("studied_kpis", set()).add(row["kpi_code"])
     for row in responses:
         q = qmap.get(row["question_id"])
         if not q: continue
         topic = topics[q["kpi_cluster"]]; topic["attempts"] += 1; topic["correct"] += int(row["correct"])
         topic["kpis"][q["kpi_code"]][1] += 1; topic["kpis"][q["kpi_code"]][0] += int(row["correct"])
-    return [{"topic": name, "correct": data["correct"], "attempts": data["attempts"],
+    output = []
+    for name, data in topics.items():
+        total = len(data.get("total_kpis", set())); studied = len(data.get("studied_kpis", set()))
+        coverage = round(100 * studied / total) if total else 0
+        qualified = total > 0 and coverage >= 50 and data["attempts"] >= 10
+        output.append({"topic": name, "correct": data["correct"], "attempts": data["attempts"],
              "accuracy": round(100*data["correct"]/data["attempts"]) if data["attempts"] else None,
-             "status": "Not enough data" if data["attempts"] < 5 else ("Needs work" if data["correct"]/data["attempts"] < .65 else "Developing" if data["correct"]/data["attempts"] < .8 else "Strong"),
+             "kpis_studied": studied, "kpis_total": total, "coverage_pct": coverage,
+             "qualified": qualified,
+             "status": "Limited data" if not qualified else ("Needs work" if data["correct"]/data["attempts"] < .65 else "Developing" if data["correct"]/data["attempts"] < .8 else "Strong"),
              "kpis": [{"code": k, "correct": v[0], "attempts": v[1], "accuracy": round(100*v[0]/v[1])} for k,v in data["kpis"].items()]}
-            for name,data in topics.items()]
+        )
+    return output
 
 
 @practice_bp.get("/api/practice/platform")
@@ -50,6 +64,14 @@ def platform_home():
     event_id = canonical_event_id(request.args.get("event_id"))
     if not event_id: return jsonify({"error": "Unsupported event"}), 400
     questions, responses, flags, due = _data(user["id"], event_id)
+    _, catalog = _supabase_svc("/kpi_catalog", params={"event_id": f"eq.{event_id}", "select": "code,cluster", "limit": "10000"})
+    _, completions = _supabase_svc("/user_lesson_completions", params={"user_id": f"eq.{user['id']}", "event_id": f"eq.{event_id}", "lesson_version": "eq.4", "select": "kpi_code", "limit": "10000"})
+    catalog = catalog if isinstance(catalog, list) else []
+    if not catalog:
+        catalog = [{"code": k.get("code"), "cluster": k.get("cluster")} for k in _load_all_kpis()[0] if k.get("event") == event_id]
+    completion_codes = {row.get("kpi_code") for row in completions or [] if row.get("kpi_code")}
+    topic_by_code = {row.get("code"): row.get("cluster") for row in catalog}
+    mastery = [{"kpi_code": code, "kpi_cluster": topic_by_code.get(code, "Other")} for code in completion_codes]
     seen = defaultdict(list)
     for r in responses: seen[r["question_id"]].append(r)
     topics = defaultdict(lambda: {"questions": 0, "kpis": defaultdict(int)})
@@ -58,7 +80,7 @@ def platform_home():
     return jsonify({"available": len(questions), "topics": [{"name": k,"questions":v["questions"],"kpis":[{"code":c,"questions":n} for c,n in sorted(v["kpis"].items())]} for k,v in sorted(topics.items())],
                     "history_counts": {"new": sum(q["id"] not in seen for q in questions), "seen": len(seen), "incorrect": sum(bool(rows) and not rows[-1]["correct"] for rows in seen.values()), "flagged": len(flags), "due": len(due)},
                     "difficulty_counts": {d: sum((q.get("empirical_difficulty") or q.get("designed_difficulty")) == d for q in questions) for d in ("easy","medium","hard")},
-                    "analysis": sorted(_analytics(questions,responses), key=lambda x: (x["accuracy"] is not None, x["accuracy"] or 0)),
+                    "analysis": sorted(_analytics(questions,responses,catalog,mastery), key=lambda x: (not x["qualified"], x["accuracy"] if x["accuracy"] is not None else 101)),
                     "continue": next((s for s in sets or [] if s["status"] == "active"), None), "recent": [s for s in sets or [] if s["status"] == "completed"][:5]})
 
 
@@ -106,9 +128,9 @@ def create_set():
     random.shuffle(candidates)
     if set_type=="smart": candidates.sort(key=lambda q:("new" not in q["_states"],"due" not in q["_states"],"incorrect" not in q["_states"],len(attempts[q["id"]])))
     if len(candidates)<count: return jsonify({"error":f"Only {len(candidates)} unique questions match. Reduce the requested count.","available":len(candidates)}),400
-    selected=candidates[:count]; title=body.get("title") or ("Full Mock Exam" if set_type=="mock" else "Smart Practice" if set_type=="smart" else "Custom Practice")
+    selected=candidates[:count]; title=body.get("title") or ("Full Mock Exam" if set_type=="mock" else "Smart Practice Questions" if set_type=="smart" else "Custom Practice Questions")
     status,rows=_supabase_svc("/practice_sets",method="POST",payload={"user_id":user["id"],"event_id":event_id,"title":title,"set_type":set_type,"mode":"mock" if set_type=="mock" else mode,"filters":filters,"question_count":count,"time_limit_seconds":5400 if set_type=="mock" else None},prefer="return=representation")
-    if status not in (200,201) or not rows:return jsonify({"error":"Practice set could not be saved"}),502
+    if status not in (200,201) or not rows:return jsonify({"error":"Practice question set could not be saved"}),502
     practice_set=rows[0]; payload=[{"practice_set_id":practice_set["id"],"user_id":user["id"],"question_id":q["id"],"position":i} for i,q in enumerate(selected)]
     _supabase_svc("/practice_set_questions",method="POST",payload=payload,prefer="return=minimal")
     return jsonify({"set":practice_set}),201
@@ -119,7 +141,7 @@ def get_set(set_id):
     user,error=require_user()
     if error:return error
     _,sets=_supabase_svc("/practice_sets",params={"id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","limit":"1"})
-    if not sets:return jsonify({"error":"Practice set not found"}),404
+    if not sets:return jsonify({"error":"Practice question set not found"}),404
     _,items=_supabase_svc("/practice_set_questions",params={"practice_set_id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","order":"position.asc","limit":"100"})
     ids=[i["question_id"] for i in items or []]; _,questions=_supabase_svc("/kpi_questions",params={"id":f"in.({','.join(ids)})","select":"*","limit":"100"}) if ids else (200,[]); qmap={q["id"]:q for q in questions or []}
     return jsonify({"set":sets[0],"items":[{**item,"question":qmap.get(item["question_id"],{})} for item in items or []]})
@@ -140,7 +162,7 @@ def complete_set(set_id):
     user,error=require_user()
     if error:return error
     _,sets=_supabase_svc("/practice_sets",params={"id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","limit":"1"}); _,items=_supabase_svc("/practice_set_questions",params={"practice_set_id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","limit":"100"})
-    if not sets:return jsonify({"error":"Practice set not found"}),404
+    if not sets:return jsonify({"error":"Practice question set not found"}),404
     answered=[i for i in items or [] if i.get("selected_index") is not None]; correct=sum(bool(i.get("correct")) for i in answered)
     _supabase_svc("/practice_sets",method="PATCH",payload={"status":"completed","completed_at":now(),"duration_seconds":int((request.get_json(silent=True) or {}).get("duration_seconds") or 0)},params={"id":f"eq.{set_id}","user_id":f"eq.{user['id']}"},prefer="return=minimal")
     ids=[i["question_id"] for i in items or []]; _,questions=_supabase_svc("/kpi_questions",params={"id":f"in.({','.join(ids)})","select":"*","limit":"100"}) if ids else (200,[]); qmap={q["id"]:q for q in questions or []}

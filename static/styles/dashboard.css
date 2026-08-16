@@ -83,3 +83,30 @@
   .top-grid>.card{min-height:230px}
   .overview-body{height:148px}
 }
+
+/* Evidence-aware analytics: coverage and performance are separate signals. */
+.overview-body{grid-template-columns:132px 1fr;gap:24px}
+.metric-stack{gap:11px}
+.metric>div{margin-bottom:4px}
+.metric>div span{color:#c4d9da}
+.metric>div strong{font-size:.74rem}
+.mastery-ring{width:122px;height:122px;border-width:10px}
+.mastery-ring strong{font-size:1.18rem;line-height:1}
+.mastery-ring span{margin-top:4px}
+.overview-note{font-size:.7rem}
+.focus-list{display:grid;gap:7px}
+.focus-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:9px 10px;border:1px solid #173e40;border-left:3px solid var(--muted);border-radius:6px;background:#0a1f20;text-decoration:none}
+.focus-row>div{display:grid;gap:2px}
+.focus-row>div span{color:var(--white);font-weight:600}
+.focus-row>div small{color:var(--muted);font-size:.64rem;text-align:left}
+.focus-row>strong{align-self:start;color:var(--muted);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.focus-row>i{grid-column:1/-1;width:100%;height:4px;margin:3px 0 0}
+.focus-row>p{grid-column:1/-1;margin:3px 0 0;color:var(--muted);font-size:.63rem;line-height:1.3}
+.focus-row.needs{border-left-color:var(--red)}
+.focus-row.needs>strong{color:var(--red)}
+.focus-row.qualified{border-left-color:var(--cyan)}
+.focus-row.qualified>strong{color:var(--cyan)}
+.focus-row.limited{border-left-color:#557376}
+.focus-row:hover{border-color:#286063}
+.focus-note{margin:2px 0 0}
+@media(min-width:901px){.top-grid>.card{min-height:252px}.overview-body{height:167px}.middle-grid>.card{min-height:220px}}

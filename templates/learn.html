@@ -38,118 +38,47 @@
             </div>
         </header>
 
-        <main id="view-home" class="main-shell">
-            <div class="app-sec">Learn</div>
-            <div class="progress-title">Your progress</div>
-            <!-- Dashboard Summary -->
-            <div class="dashboard-summary" id="dashboard-summary">
-                <div class="dash-stat">
-                    <div class="dash-label">Mastery</div>
-                    <div class="dash-value" id="dash-mastery">—</div>
-                </div>
-                <div class="dash-divider"></div>
-                <div class="dash-stat">
-                    <div class="dash-label">Due Today</div>
-                    <div class="dash-value" id="dash-due">—</div>
-                </div>
-                <div class="dash-divider"></div>
-                <div class="dash-stat">
-                    <div class="dash-label">Streak</div>
-                    <div class="dash-value" id="dash-streak">—</div>
-                </div>
-            </div>
-            <button class="start-btn" id="start-btn" type="button" disabled>
-                Start Learning
-            </button>
-
-            <!-- Learning mode and search -->
+        <main id="view-home" class="main-shell learn-landing">
+            <div class="learn-landing-head"><div><div class="app-sec">Learn</div><h1>Event curriculum</h1></div><strong id="learn-event-name">Your event</strong></div>
             <div class="learn-home-controls">
-                <div class="learning-style-section">
-                    <div class="learn-control-label">Mode</div>
-                    <div class="mode-buttons" id="learn-mode-buttons">
-                        <button type="button" data-learn-mode="standard" class="mode-btn active">Learn Content</button>
-                    </div>
-                    <details class="special-modes-dropdown" hidden aria-hidden="true">
-                        <summary class="special-modes-toggle">Advanced modes</summary>
-                        <div class="special-modes-list">
-                            <button type="button" data-learn-mode="examOnly" class="mode-btn">Exam Mode</button>
-                            <button type="button" data-learn-mode="principles" class="mode-btn">Principles</button>
-                            <button type="button" data-learn-mode="teamDecision" class="mode-btn">Team Decision</button>
-                        </div>
-                    </details>
-                </div>
-
-                <!-- Single Search Panel -->
-                <div class="learn-search-panel">
-                    <div class="learn-control-label">Search</div>
-                    <input id="learn-search" class="learn-search-input" type="search" placeholder="Search topics, questions, or concepts" autocomplete="off" />
-                    <div id="search-results" class="search-results hidden"></div>
-                </div>
+                <div class="learn-search-panel"><div class="learn-control-label">Search curriculum</div><input id="learn-search" class="learn-search-input" type="search" placeholder="Search KPIs, topics, or concepts" autocomplete="off" /><div id="search-results" class="search-results hidden"></div></div>
+                <button class="ghost-btn" id="browse-kpis-btn" type="button">Browse KPIs</button>
+                <div class="mode-buttons" id="learn-mode-buttons"><button type="button" data-learn-mode="standard" class="mode-btn active">Learn Content</button></div>
             </div>
 
-            <!-- Recommended next steps -->
-            <div class="widgets-section">
-                <div class="widgets-section-title">Next 3 KPIs to learn</div>
-                <div class="learn-home-widgets">
-                    <section class="learn-widget" id="learning-path-panel">
-                        <div id="learning-path-list" class="widget-list"></div>
-                    </section>
-                </div>
-            </div>
+            <section class="learn-section learning-progress">
+                <div class="section-kicker">Learning progress</div>
+                <div class="coverage-head"><div><strong id="learned-count">0 / 0 KPIs learned</strong><span id="coverage-percent">0% of event content</span></div><div><span>Mastery of learned KPIs</span><strong id="learned-mastery">No data</strong></div><div><span>Due for review</span><strong id="dash-due">0</strong></div></div>
+                <div class="coverage-track"><i id="coverage-fill"></i></div>
+            </section>
 
-            <!-- Mastery Dashboard -->
-            <div id="mastery-panel" style="margin-top: 28px">
-                <button
-                    class="review-btn"
-                    id="review-summary-btn"
-                    style="display: none"
-                    type="button"
-                >
-                    &#x26A1; Review Due Questions &mdash;
-                    <span id="due-summary-count">0</span> cards ready
-                </button>
-                <div
-                    class="mastery-summary-row"
-                    id="mastery-summary-row"
-                    style="display: none"
-                >
-                    <div class="mastery-stat">
-                        <div class="mastery-stat-num" id="m-mastery">—</div>
-                        <div class="mastery-stat-label">Avg Mastery</div>
-                        <div class="mastery-bar-outer">
-                            <div
-                                class="mastery-bar-fill"
-                                id="m-mastery-bar"
-                                style="width: 0%"
-                            ></div>
-                        </div>
-                    </div>
-                    <div class="mastery-stat">
-                        <div class="mastery-stat-num" id="m-streak">—</div>
-                        <div class="mastery-stat-label">Day Streak</div>
-                    </div>
-                    <div class="mastery-stat">
-                        <div class="mastery-stat-num" id="m-mastered">—</div>
-                        <div class="mastery-stat-label">KPIs Mastered</div>
-                    </div>
-                    <div class="mastery-stat">
-                        <div class="mastery-stat-num" id="m-due">—</div>
-                        <div class="mastery-stat-label">Due Today</div>
-                    </div>
-                </div>
-                <div id="cluster-breakdown-section" style="display: none">
-                    <div class="mastery-section-label">Cluster Breakdown</div>
-                    <div id="cluster-bars"></div>
-                </div>
-                <div id="weak-kpis-section" style="display: none">
-                    <div class="mastery-section-label">Needs Work</div>
-                    <div id="weak-kpis-list"></div>
-                </div>
-                <div id="heatmap-section" style="display: none">
-                    <div class="mastery-section-label">30-Day Activity</div>
-                    <div class="activity-heatmap" id="activity-heatmap"></div>
-                </div>
-            </div>
+            <section class="learn-section continue-learning" id="learning-path-panel">
+                <div class="section-kicker">Continue learning</div>
+                <div id="learning-path-list" class="widget-list"></div>
+                <button class="start-btn" id="start-btn" type="button" disabled>Learn Next KPI</button>
+            </section>
+
+            <section class="learn-section curriculum-section" id="curriculum-section">
+                <div class="section-heading"><div><div class="section-kicker">Curriculum</div><h2>Your event curriculum</h2></div><button class="text-btn" id="curriculum-toggle" type="button">Show all</button></div>
+                <div id="curriculum-list" class="curriculum-list"></div>
+            </section>
+
+            <section class="learn-section review-section" id="review-section" hidden>
+                <div class="section-heading"><div><div class="section-kicker">Review</div><h2>Previously learned material due now</h2></div></div>
+                <div id="review-kpi-list"></div>
+                <button class="review-btn" id="review-summary-btn" type="button">Review <span id="due-summary-count">0</span> due questions</button>
+            </section>
+
+            <section class="learn-section learned-mastery-section" id="mastery-panel">
+                <div class="section-kicker">Mastery of learned material</div>
+                <div class="mastery-retention"><strong id="m-mastery">No data</strong><span id="mastery-context">Complete a current Learn lesson to begin measuring retention.</span></div>
+                <div id="type-breakdown-section" class="type-breakdown"></div>
+                <p>This measures retention of completed Learn lessons, not event coverage.</p>
+            </section>
+
+            <section class="learn-section preparation-state" id="content-preparation-state" hidden>
+                <div class="section-kicker">Learning content is being prepared</div><h2 id="preparation-event-name">We're preparing lessons for your event.</h2><p>Your existing progress and practice history are safe.</p><a class="ghost-btn" href="/app/practicequestions.html">Practice Questions</a>
+            </section>
         </main>
 
         <!-- SESSION -->
