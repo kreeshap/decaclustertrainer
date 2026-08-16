@@ -122,12 +122,12 @@ Return ONLY valid JSON with this exact structure:
     {{"term": "Key Term 6", "definition": "Clear definition"}}
   ],
   "learning_blocks": [
-    {{"title": "Short heading", "body": "Plain-English block, maximum 90 words."}},
-    {{"title": "Short heading", "body": "Plain-English block, maximum 90 words."}}
+    {{"title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}},
+    {{"title": "Short heading", "body": "Knowledge-dense plain-English block, maximum 70 words."}}
   ],
   "concept": {{
     "summary": "One clear sentence explaining what this KPI is about.",
-    "explanation": "A compact explanation that connects the KPI to the hook.",
+    "explanation": "A knowledge-rich explanation, maximum 120 words, that teaches the essential mechanism, why it matters, and connects the KPI to the hook without filler.",
     "bullets": ["Key insight 1", "Key insight 2", "Key insight 3"],
     "table": [
       {{"term": "Term 1", "definition": "Brief definition"}},
@@ -210,6 +210,10 @@ Return ONLY valid JSON with this exact structure:
 }}
 
 Rules:
+- Be concise but substantive: maximize useful business knowledge per sentence.
+- Prefer precise definitions, mechanisms, tradeoffs, and concrete examples over motivational filler.
+- Do not repeat the same idea across the hook, blocks, explanation, bullets, and takeaways.
+- Keep vocabulary definitions to one precise sentence each.
 - Do not pad easy KPIs. Target time is a guide, not a rule.
 - Teach through: situation -> discover -> decide -> see consequence -> prove it.
 - Make generated examples realistic, not falsely claimed as real.

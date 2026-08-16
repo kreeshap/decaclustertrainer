@@ -1181,6 +1181,24 @@ body {
     color: var(--white);
     border-color: var(--white);
 }
+.session-skip {
+    background: transparent;
+    border: 1.5px solid var(--cyan);
+    border-radius: 6px;
+    color: var(--cyan);
+    font-family: "Barlow", sans-serif;
+    font-size: 0.73rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.session-skip:hover {
+    background: rgba(0, 194, 209, 0.1);
+    color: var(--white);
+}
 .sess-kpi-info {
     flex: 1;
     min-width: 120px;

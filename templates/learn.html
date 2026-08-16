@@ -67,8 +67,7 @@
                 <div class="learning-style-section">
                     <div class="learn-control-label">Mode</div>
                     <div class="mode-buttons" id="learn-mode-buttons">
-                        <button type="button" data-learn-mode="activeRecall" class="mode-btn active">Active Recall</button>
-                        <button type="button" data-learn-mode="standard" class="mode-btn">Practice Mode</button>
+                        <button type="button" data-learn-mode="standard" class="mode-btn active">Learn Content</button>
                     </div>
                     <details class="special-modes-dropdown" hidden aria-hidden="true">
                         <summary class="special-modes-toggle">Advanced modes</summary>
@@ -158,6 +157,9 @@
             <div class="session-bar">
                 <button class="session-exit" id="session-exit" type="button">
                     &#x2190; Exit
+                </button>
+                <button class="session-skip" id="skip-kpi-btn" type="button">
+                    Skip KPI &#x2192;
                 </button>
                 <div class="sess-kpi-info">
                     <div class="sess-kpi-label">
@@ -283,16 +285,6 @@
                     <div class="realistic-example" id="realistic-example"></div>
                     <div class="mini-decision" id="mini-roleplay"></div>
                     <div class="key-takeaways" id="key-takeaways"></div>
-                    <div class="concept-recall-panel hidden" id="concept-recall-panel">
-                        <div class="widget-title">Active Recall</div>
-                        <div class="concept-recall-instruction">
-                            Type your answer first, then compare with the model explanation.
-                        </div>
-                        <textarea id="recall-input" class="recall-input" rows="4" placeholder="Write your answer here..."></textarea>
-                        <button class="admin-btn" id="recall-reveal-btn" type="button">
-                            Reveal the model explanation
-                        </button>
-                    </div>
                     <button
                         class="understand-btn"
                         id="understand-btn"
@@ -346,26 +338,6 @@
                     >
                         Next &rarr;
                     </button>
-                </div>
-
-                <!-- ACTIVE RECALL -->
-                <div id="state-active-recall" style="display:none">
-                    <div class="app-sec">Active Recall</div>
-                    <div class="kpi-term-box">
-                        <div class="kpi-term-code"><span id="ar-code"></span></div>
-                        <div class="kpi-term-text" id="ar-kpi-text"></div>
-                    </div>
-                    <div style="margin-top:12px">
-                        <textarea id="active-recall-text" rows="8" style="width:100%" placeholder="Type your answer here..."></textarea>
-                    </div>
-                    <div style="margin-top:8px">
-                        <button id="active-recall-submit" class="understand-btn" type="button">Submit Answer</button>
-                        <button id="active-recall-reveal" class="understand-btn" type="button" style="margin-left:8px;display:none">Reveal Model Answer</button>
-                    </div>
-                    <div id="active-recall-model" style="margin-top:12px;display:none">
-                        <div class="concept-explanation" id="ar-model-answer"></div>
-                        <ul class="concept-bullets" id="ar-model-bullets"></ul>
-                    </div>
                 </div>
 
                 <!-- ROLEPLAY -->

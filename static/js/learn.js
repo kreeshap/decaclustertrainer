@@ -7,6 +7,8 @@
             let allKpis = []; // all KPIs for the user's event (in order)
             let sessionQueue = []; // KPIs for this session (same as allKpis initially)
             let sessionIdx = 0; // current position in sessionQueue
+            let completedKpiCodes = new Set();
+            let kpiLoadToken = 0;
             let sessionData = null; // current KPI's Groq response {vocab,concept,questions}
             let vocabList = [];
             let vocabIdx = 0;
@@ -21,7 +23,7 @@
             let currentEventName = "";
             let currentEventType = "series"; // 'exam'|'tdm'|'series'|'principles'|'operations'
             let currentEvent = null;
-            let currentLearnMode = "standard"; // 'standard'|'examOnly'|'activeRecall'|'principles'
+            let currentLearnMode = "standard"; // 'standard'|'examOnly'|'principles'
             let sessionId = null;
             let sessionStartTime = null;
             let sessionQAnswered = 0;
@@ -37,7 +39,6 @@
             let preMasteryMap = {};
             let analyticsData = null;
             let isReviewMode = false;
-            let isActiveRecallMode = false;
             let kpiGroups = { unstarted: [], due: [], in_progress: [], mastered: [] };
 
             // ─── Per-question timing state (reset in showQuestion) ────────────────────────
@@ -297,40 +298,10 @@
 
             // ─── Mode button visibility based on event type ───────────────────────────────
             function _updateModeButtonsForEventType(eventType) {
-                // Wire all mode buttons
                 const modeButtons = document.querySelectorAll('.mode-btn');
-                modeButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        modeButtons.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                    });
-                });
-
-                // For principles events, default to principles mode and hide roleplay-related modes
-                if (eventType === 'principles') {
-                    modeButtons.forEach(b => {
-                        const mode = b.dataset.learnMode;
-                        if (mode === 'principles') {
-                            b.classList.add('active');
-                        } else if (mode === 'standard' || mode === 'teamDecision') {
-                            b.classList.remove('active');
-                        }
-                    });
-                    // Activate principles mode by default
-                    const principlesBtn = document.querySelector('[data-learn-mode="principles"]');
-                    if (principlesBtn) {
-                        modeButtons.forEach(b => b.classList.remove('active'));
-                        principlesBtn.classList.add('active');
-                    }
-                } else if (eventType === 'exam') {
-                    // Exam events: default to examOnly
-                    const examBtn = document.querySelector('[data-learn-mode="examOnly"]');
-                    if (examBtn) {
-                        modeButtons.forEach(b => b.classList.remove('active'));
-                        examBtn.classList.add('active');
-                    }
-                }
-                // tdm/series/operations: standard mode is fine as default
+                const standardBtn = document.querySelector('[data-learn-mode="standard"]');
+                modeButtons.forEach((button) => button.classList.remove('active'));
+                if (standardBtn) standardBtn.classList.add('active');
             }
 
             // ─── Session start ────────────────────────────────────────────────────────────
@@ -342,6 +313,8 @@
                     ? [focused, ...allKpis.filter((kpi) => kpi.code !== focused.code)]
                     : [...allKpis];
                 sessionIdx = 0;
+                completedKpiCodes = new Set();
+                kpiLoadToken++;
                 chunkKpis = [];
                 isReviewMode = false;
                 sessionQAnswered = 0;
@@ -365,17 +338,9 @@
                     });
                 }
 
-                // Determine learn mode from active button, falling back to event type
+                // Learn Content is the stable default. Advanced modes may opt in later.
                 const modeBtn = document.querySelector('.mode-btn.active');
                 currentLearnMode = (modeBtn && modeBtn.dataset.learnMode) || 'standard';
-
-                // Override with event type if no explicit mode chosen
-                if (currentLearnMode === 'standard') {
-                    if (currentEventType === 'principles') currentLearnMode = 'principles';
-                    else if (currentEventType === 'exam') currentLearnMode = 'examOnly';
-                }
-
-                isActiveRecallMode = currentLearnMode === 'activeRecall';
 
                 try {
                     const response = await apiFetch("/api/learn/session/start", {
@@ -395,6 +360,7 @@
 
                 viewHome.style.display = "none";
                 viewSession.style.display = "block";
+                $("skip-kpi-btn").style.display = "";
                 document.querySelector(".phase-pills").style.visibility = "visible";
 
                 $("prog-total").textContent = sessionQueue.length;
@@ -419,6 +385,7 @@
                 }
 
                 const kpi = sessionQueue[sessionIdx];
+                const loadToken = ++kpiLoadToken;
                 updateProgress();
                 qAnswered = false;
                 sessionData = null;
@@ -446,6 +413,7 @@
                             }),
                         });
                         const data = await readJsonOrThrow(res, "Lesson generation failed");
+                        if (loadToken !== kpiLoadToken) return;
 
                         // Preserve server UUID; fall back to local id for offline cache
                         (data.questions || []).forEach((q, i) => {
@@ -454,14 +422,15 @@
                         saveQBank(kpi.event, kpi.code, data);
                         sessionData = data;
                     } catch (e) {
+                        if (loadToken !== kpiLoadToken) return;
                         showError("Network error: " + e.message);
                         return;
                     }
                 }
 
-                if (isActiveRecallMode) {
-                    startActiveRecall(kpi);
-                } else if (currentLearnMode === 'examOnly') {
+                if (loadToken !== kpiLoadToken) return;
+
+                if (currentLearnMode === 'examOnly') {
                     // Exam Only: skip vocab and concept, go straight to questions
                     setPhase("vocab", "done");
                     setPhase("concept", "done");
@@ -473,61 +442,6 @@
                     // Standard / TDM: full flow (vocab → concept → questions → roleplay every 7)
                     startVocab(kpi);
                 }
-            }
-
-            // ─── Active Recall flow ───────────────────────────────────────────────────
-            function startActiveRecall(kpi) {
-                $("ar-code").textContent = kpi.code;
-                $("ar-kpi-text").textContent = kpi.text;
-                $("active-recall-text").value = "";
-                $("active-recall-model").style.display = "none";
-                $("active-recall-reveal").style.display = "none";
-                $("active-recall-submit").disabled = false;
-
-                // Remove any old continue button
-                const oldContinue = document.getElementById("ar-continue-btn");
-                if (oldContinue) oldContinue.remove();
-
-                showState("active-recall");
-
-                $("active-recall-submit").onclick = () => {
-                    const answer = $("active-recall-text").value.trim();
-                    sessionArAnswers.push({
-                        kpi_code: kpi.code,
-                        kpi_text: kpi.text,
-                        answer,
-                        timestamp: new Date().toISOString(),
-                    });
-                    $("active-recall-submit").disabled = true;
-                    $("active-recall-reveal").style.display = "";
-                };
-
-                $("active-recall-reveal").onclick = () => {
-                    const c = sessionData?.concept || {};
-                    $("ar-model-answer").textContent = c.explanation || "";
-                    const bulletsEl = $("ar-model-bullets");
-                    bulletsEl.innerHTML = "";
-                    (c.bullets || []).forEach(b => {
-                        const li = document.createElement("li");
-                        li.textContent = b;
-                        bulletsEl.appendChild(li);
-                    });
-                    $("active-recall-model").style.display = "block";
-                    $("active-recall-reveal").style.display = "none";
-
-                    // Add a continue button after reveal
-                    const btn = document.createElement("button");
-                    btn.id = "ar-continue-btn";
-                    btn.className = "understand-btn";
-                    btn.style.marginTop = "16px";
-                    btn.textContent = "Continue to Questions →";
-                    btn.onclick = () => {
-                        btn.remove();
-                        setPhase("concept", "done");
-                        startQuestions(kpi);
-                    };
-                    $("active-recall-model").insertAdjacentElement("afterend", btn);
-                };
             }
 
             // ─── VOCAB phase ──────────────────────────────────────────────────────────────
@@ -910,7 +824,7 @@
                     qShown = shuffle(availableRecognition).slice(0, QUESTIONS_PER_KPI);
 
                 } else {
-                    // Standard / TDM / activeRecall — with adaptive weighting
+                    // Standard / TDM — with adaptive weighting
                     if (!availableRecognition.length && !availableApplication.length) { kpiDone(); return; }
 
                     // Default: 5 recognition + 1 application
@@ -1128,10 +1042,11 @@
             // ─── KPI done — advance or trigger roleplay ───────────────────────────────────
             function kpiDone() {
                 chunkKpis.push(currentKpi());
+                completedKpiCodes.add(currentKpi().code);
                 sessionIdx++;
 
                 // Roleplay only for standard/TDM modes
-                const roleplayEnabled = (currentLearnMode === 'standard' || currentLearnMode === 'teamDecision');
+                const roleplayEnabled = currentLearnMode === 'teamDecision';
                 if (roleplayEnabled && chunkKpis.length >= ROLEPLAY_EVERY) {
                     startRoleplay();
                 } else {
@@ -1337,7 +1252,6 @@
                 "loading",
                 "error",
                 "vocab",
-                "active-recall",
                 "concept",
                 "questions",
                 "roleplay",
@@ -1376,6 +1290,18 @@
                     return null;
                 }
             }
+
+            function skipCurrentKpi() {
+                if (isReviewMode || sessionIdx >= sessionQueue.length) return;
+                kpiLoadToken++;
+                sessionIdx++;
+                setPhase("vocab", "pending");
+                setPhase("concept", "pending");
+                setPhase("questions", "pending");
+                loadCurrentKpi();
+            }
+
+            $("skip-kpi-btn").addEventListener("click", skipCurrentKpi);
             function saveQBank(eventId, code, data) {
                 try {
                     localStorage.setItem(`ct_qb_${eventId}_${code}`, JSON.stringify({...data, lesson_version: LESSON_VERSION}));
@@ -1595,6 +1521,7 @@
             // ─── Review Mode ────────────────────────────────────────────────────────────────────────────────────
             async function startReview() {
                 isReviewMode = true;
+                $("skip-kpi-btn").style.display = "none";
                 sessionQAnswered = 0;
                 sessionQCorrect = 0;
                 sessionVocabTotal = 0;
@@ -1666,7 +1593,7 @@
             async function endSession() {
                 if (!sessionStartTime) return;
                 const duration = Math.round((Date.now() - sessionStartTime) / 1000);
-                const kpisStudied = isReviewMode ? 0 : sessionIdx;
+                const kpisStudied = isReviewMode ? 0 : completedKpiCodes.size;
 
                 if (sessionId) {
                     const response = await apiFetch("/api/learn/session/end", {
@@ -1713,12 +1640,12 @@
                 const duration = sessionStartTime
                     ? Math.round((Date.now() - sessionStartTime) / 1000) : 0;
                 const minutes = Math.round(duration / 60);
-                const kpisStudied = isReviewMode ? 0 : sessionIdx;
+                const kpisStudied = isReviewMode ? 0 : completedKpiCodes.size;
 
                 $("sum-accuracy").textContent = acc + "%";
                 $("sum-q-breakdown").textContent = sessionQCorrect + " / " + sessionQAnswered + " correct";
                 $("sum-time").textContent = minutes + "m";
-                $("sum-kpis").textContent = kpisStudied || qShown.length;
+                $("sum-kpis").textContent = kpisStudied;
                 $("sum-vocab-line").textContent = isReviewMode
                     ? "review session"
                     : sessionVocabTotal > 0
@@ -1759,10 +1686,10 @@
                 }
 
                 // ── Per-KPI mastery gains ─────────────────────────────────────────────
-                if (!isReviewMode && analyticsData && analyticsData.kpi_mastery && sessionIdx > 0) {
+                if (!isReviewMode && analyticsData && analyticsData.kpi_mastery && completedKpiCodes.size > 0) {
                     gainsLabel.style.display = "";
                     // Also show next review recommendation for weakest KPI
-                    const studied = sessionQueue.slice(0, sessionIdx);
+                    const studied = sessionQueue.filter((kpi) => completedKpiCodes.has(kpi.code));
                     let weakestKpi = null, weakestScore = 101;
                     studied.forEach((kpi) => {
                         const newMastery = analyticsData.kpi_mastery.find(m => m.kpi_code === kpi.code);

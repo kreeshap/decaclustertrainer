@@ -1,0 +1,32 @@
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+LEARN_HTML = (ROOT / "templates" / "learn.html").read_text(encoding="utf-8")
+LEARN_JS = (ROOT / "static" / "js" / "learn.js").read_text(encoding="utf-8")
+LESSON_DESIGN = (ROOT / "app" / "lesson_design.py").read_text(encoding="utf-8")
+
+
+class LearnPipelineContractTests(unittest.TestCase):
+    def test_content_learning_is_default_without_recall_typing(self) -> None:
+        self.assertIn('data-learn-mode="standard" class="mode-btn active"', LEARN_HTML)
+        self.assertNotIn('data-learn-mode="activeRecall"', LEARN_HTML)
+        self.assertNotIn('id="active-recall-text"', LEARN_HTML)
+        self.assertNotIn('id="recall-input"', LEARN_HTML)
+
+    def test_skip_advances_without_marking_kpi_complete(self) -> None:
+        self.assertIn('id="skip-kpi-btn"', LEARN_HTML)
+        self.assertIn("function skipCurrentKpi()", LEARN_JS)
+        skip_body = LEARN_JS.split("function skipCurrentKpi()", 1)[1].split("}", 1)[0]
+        self.assertIn("sessionIdx++", skip_body)
+        self.assertNotIn("completedKpiCodes.add", skip_body)
+
+    def test_ai_copy_is_knowledge_dense_and_concise(self) -> None:
+        self.assertIn("concise but substantive", LESSON_DESIGN)
+        self.assertIn("maximum 120 words", LESSON_DESIGN)
+        self.assertIn("maximum 70 words", LESSON_DESIGN)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
