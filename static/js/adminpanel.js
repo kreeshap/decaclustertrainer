@@ -27,12 +27,17 @@ async function readJson(response) {
 
 function renderDashboard(data) {
   const summary = data.classification || {};
+  const generated = data.generated_content || {};
   $("ops-classified").textContent = summary.classified ?? 0;
   $("ops-total").textContent = summary.total ?? 0;
   $("ops-remaining").textContent = summary.remaining ?? 0;
   $("ops-review-count").textContent = summary.needs_review ?? 0;
   $("ops-failed-count").textContent = data.failed_processing ?? 0;
   $("ops-progress-fill").style.width = `${summary.total ? Math.round((summary.classified / summary.total) * 100) : 0}%`;
+  $("generated-ready").textContent = generated.ready ?? 0;
+  $("generated-total").textContent = generated.total ?? 0;
+  $("generated-percent").textContent = `${generated.percentage ?? 0}%`;
+  $("generated-progress-fill").style.width = `${generated.percentage ?? 0}%`;
   const batch = data.latest_batch;
   $("batch-id").textContent = batch ? `Batch ${String(batch.id).slice(0, 8)}` : "No batches yet";
   $("batch-status").textContent = batch?.status || "";
@@ -79,7 +84,7 @@ async function startLessonAudit() {
   showMessage("Building a balanced 20-KPI lesson audit…");
   try {
     const data = await readJson(await apiFetch("/api/admin/content-audits/process", { method: "POST" }));
-    showMessage(`${data.queued} lessons queued. You can leave this page.`);
+    showMessage(data.queued ? `${data.queued} lessons queued. You can leave this page.` : data.message);
     await loadDashboard();
   } catch (error) { showMessage(error.message, true); }
   finally { button.disabled = false; }

@@ -1,3 +1,4 @@
+-- Applied to production as migration 20260816210012.
 create table public.kpi_catalog (
   id text primary key,
   event_id text not null references public.deca_events(id) on delete cascade,

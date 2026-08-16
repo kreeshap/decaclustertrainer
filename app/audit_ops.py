@@ -10,6 +10,11 @@ from .lesson_generation import generate_valid_lesson
 
 
 def select_audit_kpis(limit: int = 20) -> list[tuple[dict, dict]]:
+    ready_status, ready_rows = _supabase_svc(
+        "/generated_kpi_lessons",
+        params={"status": "eq.ready", "select": "kpi_id", "limit": "10000"},
+    )
+    ready_ids = {row["kpi_id"] for row in ready_rows} if ready_status == 200 and isinstance(ready_rows, list) else set()
     status, approved_rows = _supabase_svc(
         "/kpi_classifications",
         params={
@@ -21,6 +26,8 @@ def select_audit_kpis(limit: int = 20) -> list[tuple[dict, dict]]:
     approved = {row["kpi_id"]: row for row in approved_rows} if status == 200 and isinstance(approved_rows, list) else {}
     candidates = []
     for kpi in _load_all_kpis()[0]:
+        if catalog_id(kpi) in ready_ids:
+            continue
         plan = approved.get(catalog_id(kpi)) or classify_kpi(kpi["text"])
         complexity = plan["complexity"]
         plan = {
@@ -79,6 +86,23 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
         payload={"generation_status": "ready", "generated_lesson": lesson, "failure_reason": None, "updated_at": utc_now()},
         params={"id": f"eq.{item['id']}"}, prefer="return=minimal",
     )
+    lesson_status, lesson_data = _supabase_svc(
+        "/generated_kpi_lessons", method="POST",
+        payload={
+            "kpi_id": kpi["id"], "lesson": lesson, "status": "ready",
+            "lesson_version": 4, "source_audit_id": item["id"],
+            "generated_at": utc_now(), "updated_at": utc_now(),
+        },
+        params={"on_conflict": "kpi_id"},
+        prefer="resolution=merge-duplicates,return=minimal",
+    )
+    if lesson_status not in (200, 201, 204):
+        _supabase_svc(
+            "/lesson_content_audits", method="PATCH",
+            payload={"generation_status": "failed", "failure_reason": f"ready lesson save failed: {lesson_data}"[:1500], "updated_at": utc_now()},
+            params={"id": f"eq.{item['id']}"}, prefer="return=minimal",
+        )
+        return "failed"
     return "ready"
 
 

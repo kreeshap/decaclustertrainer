@@ -14,23 +14,20 @@ class ApiErrorContractTests(unittest.TestCase):
         self.assertIn('request.path.startswith("/api/")', MAIN_SOURCE)
         self.assertIn('jsonify({"error": "Internal server error"})', MAIN_SOURCE)
 
-    def test_generation_deadlines_return_gateway_timeout_json(self) -> None:
-        self.assertIn('"Lesson generation timed out. Please try again."', LEARN_SOURCE)
-        self.assertIn("}), 504", LEARN_SOURCE)
+    def test_learn_serves_only_pregenerated_lessons(self) -> None:
+        self.assertIn('"/generated_kpi_lessons"', LEARN_SOURCE)
+        self.assertIn('"status": "eq.ready"', LEARN_SOURCE)
+        self.assertIn('"This KPI is not ready for Learn Mode yet."', LEARN_SOURCE)
+        self.assertNotIn("generate_valid_lesson(prompt, lesson_design)", LEARN_SOURCE)
 
-    def test_generation_output_is_bounded_for_web_requests(self) -> None:
+    def test_admin_generation_remains_bounded(self) -> None:
         self.assertEqual(GENERATION_SOURCE.count("max_tokens=4000"), 1)
         self.assertIn("max_tokens=6000", GENERATION_SOURCE)
         self.assertIn("retry_invalid_json=True", GENERATION_SOURCE)
 
-    def test_provider_diagnostics_are_not_exposed_to_students(self) -> None:
-        self.assertIn('logger.warning("Lesson generation failed validation:', LEARN_SOURCE)
-        self.assertNotIn('"detail": combined_error', LEARN_SOURCE)
-
     def test_generation_providers_run_concurrently(self) -> None:
         self.assertIn("ThreadPoolExecutor", GENERATION_SOURCE)
         self.assertIn("as_completed(futures)", GENERATION_SOURCE)
-        self.assertIn("generate_valid_lesson(prompt, lesson_design)", LEARN_SOURCE)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MIGRATION = (ROOT / "supabase" / "migrations" / "20260816194340_content_operations.sql").read_text(encoding="utf-8")
+MIGRATION = (ROOT / "supabase" / "migrations" / "20260816210012_content_operations.sql").read_text(encoding="utf-8")
 PIPELINE = (ROOT / "app" / "content_ops.py").read_text(encoding="utf-8")
 ADMIN = (ROOT / "app" / "routes" / "admin.py").read_text(encoding="utf-8")
 LEARN = (ROOT / "app" / "routes" / "learn.py").read_text(encoding="utf-8")
@@ -58,7 +58,9 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn("function escHtml(value)", JS)
 
     def test_approved_classification_drives_lessons_with_fallback(self):
-        self.assertIn("get_approved_instructional_plan(catalog_id(kpi)) or classify_kpi(text)", LEARN)
+        audit_ops = (ROOT / "app" / "audit_ops.py").read_text(encoding="utf-8")
+        self.assertIn('approved.get(catalog_id(kpi)) or classify_kpi(kpi["text"])', audit_ops)
+        self.assertIn('"/generated_kpi_lessons"', LEARN)
 
 
 if __name__ == "__main__":

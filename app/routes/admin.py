@@ -53,6 +53,22 @@ def _classification_summary():
     }
 
 
+def _generated_content_summary():
+    kpis, _ = _load_all_kpis()
+    status, rows = _supabase_svc(
+        "/generated_kpi_lessons",
+        params={"status": "eq.ready", "select": "kpi_id", "limit": "10000"},
+    )
+    ready = len(rows) if status == 200 and isinstance(rows, list) else 0
+    total = len(kpis)
+    return {
+        "ready": ready,
+        "total": total,
+        "remaining": max(0, total - ready),
+        "percentage": round((ready / total) * 100, 1) if total else 0,
+    }
+
+
 @admin_bp.get("/api/admin/content-operations")
 def admin_content_operations():
     _, err = require_admin()
@@ -69,6 +85,7 @@ def admin_content_operations():
     )
     return jsonify({
         "classification": _classification_summary(),
+        "generated_content": _generated_content_summary(),
         "failed_processing": len(failed) if failed_status == 200 and isinstance(failed, list) else 0,
         "latest_batch": latest,
     })
@@ -90,6 +107,8 @@ def admin_process_content_audit():
     try:
         sync_kpi_catalog()
         selected = select_audit_kpis(20)
+        if not selected:
+            return jsonify({"ok": True, "queued": 0, "message": "All KPI study lessons are generated."})
         status, batches = _supabase_svc(
             "/lesson_audit_batches", method="POST",
             payload={"requested_count": len(selected), "created_by": user["id"]},

@@ -695,11 +695,23 @@ def get_due_kpis(user_id: str, token: str, event_id: str) -> list[dict]:
     return due
 
 
+def get_ready_kpi_ids() -> set[str]:
+    status, rows = _supabase_svc(
+        "/generated_kpi_lessons",
+        params={"status": "eq.ready", "select": "kpi_id", "limit": "10000"},
+    )
+    if status != 200 or not isinstance(rows, list):
+        raise RuntimeError("Generated lesson readiness could not be loaded")
+    return {row["kpi_id"] for row in rows}
+
+
 def get_kpi_catalog(user_id: str, token: str, event_id: str) -> dict:
-    """Return every KPI for an event, classified for Learn/Resume UI."""
+    """Return student-ready KPIs for an event, classified for Learn/Resume UI."""
     from datetime import datetime, timezone
 
     kpis = [dict(k) for k in _load_all_kpis()[0] if k["event"] == event_id]
+    ready_ids = get_ready_kpi_ids()
+    kpis = [kpi for kpi in kpis if f"{kpi['event']}:{kpi['code']}" in ready_ids]
     status, rows = supabase_rest_request(
         "/user_kpi_mastery", token=token,
         params={"user_id": f"eq.{user_id}", "event_id": f"eq.{event_id}", "select": "kpi_code,mastery_score,next_review"},

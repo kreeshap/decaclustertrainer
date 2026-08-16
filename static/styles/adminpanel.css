@@ -26,6 +26,9 @@ body { background: var(--bg); color: var(--white); font-family: 'Barlow', sans-s
 .ops-track { background: var(--border); border-radius: 999px; height: 7px; margin: 10px 0; overflow: hidden; }
 .ops-track div { background: var(--cyan); height: 100%; width: 0; transition: width .2s; }
 .ops-remaining { color: var(--muted); margin-bottom: 16px; }
+.generated-readiness { border-top: 1px solid var(--border); margin: 16px 0; padding-top: 14px; }
+.generated-readiness > div:first-child { display: flex; justify-content: space-between; color: var(--muted); font-size: .82rem; }
+.generated-readiness strong { color: var(--white); }
 .primary-action { background: var(--cyan); border: 0; border-radius: 7px; color: var(--bg); cursor: pointer; font: 700 .82rem 'Barlow'; letter-spacing: .05em; padding: 11px 16px; text-transform: uppercase; }
 .primary-action:disabled { cursor: wait; opacity: .45; }
 .attention-row { align-items: center; background: transparent; border: 0; border-top: 1px solid var(--border); color: var(--white); cursor: pointer; display: flex; font: inherit; justify-content: space-between; padding: 13px 0; width: 100%; }

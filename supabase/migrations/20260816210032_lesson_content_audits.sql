@@ -1,3 +1,4 @@
+-- Applied to production as migration 20260816210032.
 create table public.lesson_audit_batches (
   id uuid primary key default gen_random_uuid(),
   status text not null default 'queued'
