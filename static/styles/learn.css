@@ -2231,6 +2231,26 @@ body {
     line-height: 1.5;
 }
 
+.error-skip-btn {
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px 14px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.error-skip-btn.prominent {
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 700;
+    padding: 10px 18px;
+    text-decoration: none;
+}
+
 .lesson-hook {
     margin-top: 12px;
     color: var(--white);

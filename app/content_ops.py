@@ -86,7 +86,10 @@ def get_approved_instructional_plan(kpi_id: str) -> dict | None:
     complexity = row["complexity"]
     return {
         **row,
-        "target_minutes": {"quick": "5-7", "standard": "8-10", "deep": "10-13"}[complexity],
+        "target_minutes": {"quick": "2-3", "standard": "3-5", "deep": "5-7"}[complexity],
+        "required_block_count": {"quick": 2, "standard": 3, "deep": 4}[complexity],
+        "vocab_mode": "embedded" if complexity == "quick" else "preteach",
+        "vocab_count": {"quick": 3, "standard": 4, "deep": 5}[complexity],
     }
 
 

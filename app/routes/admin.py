@@ -4,7 +4,8 @@ from datetime import date, timedelta
 from flask import Blueprint, jsonify, request
 
 from ..auth_utils import get_current_user, is_admin
-from ..content_ops import ARCHETYPES, launch_batch, sync_kpi_catalog, utc_now
+from ..content_ops import ARCHETYPES, catalog_id, launch_batch, sync_kpi_catalog, utc_now
+from ..audit_ops import launch_audit_batch, select_audit_kpis
 from ..db import supabase_admin_request
 from ..learn_helpers import _load_all_kpis, _supabase_svc, KPI_DIR, _save_questions_supabase
 from werkzeug.utils import secure_filename
@@ -71,6 +72,112 @@ def admin_content_operations():
         "failed_processing": len(failed) if failed_status == 200 and isinstance(failed, list) else 0,
         "latest_batch": latest,
     })
+
+
+@admin_bp.post("/api/admin/content-audits/process")
+def admin_process_content_audit():
+    user, err = require_admin()
+    if err:
+        return err
+    active_status, active = _supabase_svc(
+        "/lesson_audit_batches",
+        params={"status": "in.(queued,processing)", "select": "id,status", "limit": "1"},
+    )
+    if active_status != 200 or not isinstance(active, list):
+        return jsonify({"error": "Audit state could not be loaded."}), 502
+    if active:
+        return jsonify({"error": "A lesson audit is already running.", "batch": active[0]}), 409
+    try:
+        sync_kpi_catalog()
+        selected = select_audit_kpis(20)
+        status, batches = _supabase_svc(
+            "/lesson_audit_batches", method="POST",
+            payload={"requested_count": len(selected), "created_by": user["id"]},
+            prefer="return=representation",
+        )
+        if status not in (200, 201) or not batches:
+            raise RuntimeError(batches)
+        batch = batches[0]
+        rows = [{
+            "batch_id": batch["id"], "kpi_id": catalog_id(kpi),
+            "complexity": plan["complexity"], "skill_type": plan["skill_type"],
+        } for kpi, plan in selected]
+        item_status, item_data = _supabase_svc(
+            "/lesson_content_audits", method="POST", payload=rows, prefer="return=minimal",
+        )
+        if item_status not in (200, 201, 204):
+            raise RuntimeError(item_data)
+        launch_audit_batch(batch["id"], selected)
+        return jsonify({"ok": True, "queued": len(selected), "batch": batch}), 202
+    except Exception as error:
+        return jsonify({"error": "Lesson audit could not be started.", "detail": str(error)}), 502
+
+
+@admin_bp.get("/api/admin/content-audits")
+def admin_content_audits():
+    _, err = require_admin()
+    if err:
+        return err
+    _, batches = _supabase_svc(
+        "/lesson_audit_batches", params={"select": "*", "order": "created_at.desc", "limit": "1"},
+    )
+    _, pending = _supabase_svc(
+        "/lesson_content_audits",
+        params={"generation_status": "eq.ready", "review_status": "eq.pending", "select": "id", "limit": "1000"},
+    )
+    _, failures = _supabase_svc(
+        "/lesson_generation_failures", params={"select": "id", "limit": "10000"},
+    )
+    return jsonify({
+        "latest_batch": batches[0] if batches else None,
+        "pending": len(pending or []),
+        "generation_failures": len(failures or []),
+    })
+
+
+@admin_bp.get("/api/admin/content-audits/review-next")
+def admin_next_content_audit():
+    _, err = require_admin()
+    if err:
+        return err
+    status, rows = _supabase_svc(
+        "/lesson_content_audits",
+        params={"generation_status": "eq.ready", "review_status": "eq.pending", "select": "*", "order": "created_at.asc", "limit": "1"},
+    )
+    if status != 200 or not isinstance(rows, list):
+        return jsonify({"error": "Audit review queue could not be loaded."}), 502
+    if not rows:
+        return jsonify({"item": None})
+    item = rows[0]
+    _, catalog = _supabase_svc("/kpi_catalog", params={"id": f"eq.{item['kpi_id']}", "select": "*", "limit": "1"})
+    item["kpi"] = catalog[0] if catalog else {}
+    return jsonify({"item": item})
+
+
+@admin_bp.patch("/api/admin/content-audits/<audit_id>")
+def admin_review_content_audit(audit_id):
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    scores = {}
+    for field in ("mission_clarity", "choice_matters", "vocabulary_quality", "learning_value", "difficulty_progression", "pacing_quality"):
+        try:
+            value = int(body.get(field))
+        except (TypeError, ValueError):
+            return jsonify({"error": f"{field} must be scored from 1 to 5"}), 400
+        if not 1 <= value <= 5:
+            return jsonify({"error": f"{field} must be scored from 1 to 5"}), 400
+        scores[field] = value
+    review_status = "passed" if min(scores.values()) >= 4 else "needs_revision"
+    status, data = _supabase_svc(
+        "/lesson_content_audits", method="PATCH",
+        payload={**scores, "notes": str(body.get("notes") or "")[:3000], "review_status": review_status, "reviewed_by": user["id"], "reviewed_at": utc_now(), "updated_at": utc_now()},
+        params={"id": f"eq.{audit_id}", "review_status": "eq.pending"}, prefer="return=representation",
+    )
+    if status != 200:
+        return jsonify({"error": "Audit review could not be saved.", "detail": data}), 502
+    return jsonify({"ok": True, "review_status": review_status})
 
 
 def _create_classification_batch(user_id: str, kpi_ids: list[str]):

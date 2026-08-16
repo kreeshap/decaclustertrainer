@@ -1,6 +1,8 @@
 let currentReview = null;
 let selectedArchetype = "";
 let refreshTimer = null;
+let currentLessonAudit = null;
+const lessonAuditScores = {};
 const $ = (id) => document.getElementById(id);
 
 function showMessage(message, error = false) {
@@ -36,6 +38,117 @@ function renderDashboard(data) {
 async function loadDashboard() {
   try {
     renderDashboard(await readJson(await apiFetch("/api/admin/content-operations")));
+    await loadLessonAuditDashboard();
+  } catch (error) { showMessage(error.message, true); }
+}
+
+const AUDIT_CRITERIA = [
+  ["mission_clarity", "Mission made sense immediately"],
+  ["choice_matters", "First choice meaningfully affected teaching"],
+  ["vocabulary_quality", "Vocabulary was useful, not filler"],
+  ["learning_value", "Lesson taught reasoning, not definitions alone"],
+  ["difficulty_progression", "Final questions increased cognitive difficulty"],
+  ["pacing_quality", "Pacing stayed focused and usable"],
+];
+
+async function loadLessonAuditDashboard() {
+  const data = await readJson(await apiFetch("/api/admin/content-audits"));
+  $("lesson-audit-pending").textContent = data.pending || 0;
+  $("lesson-generation-failures").textContent = data.generation_failures || 0;
+  const batch = data.latest_batch;
+  $("lesson-audit-batch").textContent = batch ? `Audit ${String(batch.id).slice(0, 8)} · ${batch.processed_count}/${batch.requested_count}` : "No audit batches yet";
+  $("lesson-audit-status").textContent = batch?.status || "";
+  if (batch && ["queued", "processing"].includes(batch.status)) {
+    clearTimeout(refreshTimer);
+    refreshTimer = window.setTimeout(loadDashboard, 5000);
+  }
+}
+
+async function startLessonAudit() {
+  const button = $("start-lesson-audit");
+  button.disabled = true;
+  showMessage("Building a balanced 20-KPI lesson audit…");
+  try {
+    const data = await readJson(await apiFetch("/api/admin/content-audits/process", { method: "POST" }));
+    showMessage(`${data.queued} lessons queued. You can leave this page.`);
+    await loadDashboard();
+  } catch (error) { showMessage(error.message, true); }
+  finally { button.disabled = false; }
+}
+
+function appendPreviewSection(parent, title, body) {
+  if (!body) return;
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+  const textNode = document.createElement("p");
+  textNode.textContent = body;
+  parent.append(heading, textNode);
+}
+
+function renderLessonAudit(item) {
+  currentLessonAudit = item;
+  Object.keys(lessonAuditScores).forEach((key) => delete lessonAuditScores[key]);
+  if (!item) {
+    $("lesson-audit-review").hidden = true;
+    showMessage("The lesson audit inbox is clear.");
+    return;
+  }
+  $("lesson-audit-review").hidden = false;
+  $("lesson-audit-meta").textContent = `${item.complexity} · ${String(item.skill_type).replaceAll("_", " ")}`;
+  $("lesson-audit-title").textContent = `${item.kpi?.code || item.kpi_id} — ${item.kpi?.name || "Lesson preview"}`;
+  const lesson = item.generated_lesson || {};
+  const preview = $("lesson-audit-preview");
+  preview.innerHTML = "";
+  appendPreviewSection(preview, lesson.mission?.title || "Mission", lesson.mission?.brief);
+  appendPreviewSection(preview, "First move", lesson.mission?.opening_interaction?.question);
+  (lesson.learning_blocks || []).forEach((block) => appendPreviewSection(preview, block.title || "Learn", block.body));
+  appendPreviewSection(preview, "Concept", lesson.concept?.explanation);
+  appendPreviewSection(preview, "Scenario", lesson.realistic_example?.story);
+  (lesson.practice_questions || []).forEach((question, index) => appendPreviewSection(preview, question.stage_label || ["Check", "Apply", "DECA Challenge"][index], question.text));
+  const scores = $("lesson-audit-scores");
+  scores.innerHTML = "";
+  AUDIT_CRITERIA.forEach(([field, label]) => {
+    const row = document.createElement("div");
+    row.className = "audit-score-row";
+    const name = document.createElement("span");
+    name.textContent = label;
+    row.appendChild(name);
+    for (let score = 1; score <= 5; score++) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = score;
+      button.addEventListener("click", () => {
+        lessonAuditScores[field] = score;
+        row.querySelectorAll("button").forEach((candidate) => candidate.classList.toggle("selected", candidate === button));
+      });
+      row.appendChild(button);
+    }
+    scores.appendChild(row);
+  });
+  $("lesson-audit-notes").value = "";
+  window.scrollTo({ top: $("lesson-audit-review").offsetTop - 70, behavior: "smooth" });
+}
+
+async function loadNextLessonAudit() {
+  try {
+    const data = await readJson(await apiFetch("/api/admin/content-audits/review-next"));
+    renderLessonAudit(data.item);
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function saveLessonAudit() {
+  if (!currentLessonAudit) return;
+  if (AUDIT_CRITERIA.some(([field]) => !lessonAuditScores[field])) {
+    showMessage("Score all six criteria before continuing.", true);
+    return;
+  }
+  try {
+    await readJson(await apiFetch(`/api/admin/content-audits/${encodeURIComponent(currentLessonAudit.id)}`, {
+      method: "PATCH", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...lessonAuditScores, notes: $("lesson-audit-notes").value }),
+    }));
+    await loadNextLessonAudit();
+    await loadLessonAuditDashboard();
   } catch (error) { showMessage(error.message, true); }
 }
 
@@ -127,6 +240,10 @@ $("review-items").addEventListener("click", loadNextReview);
 $("approve-review").addEventListener("click", () => saveReview("approve"));
 $("skip-review").addEventListener("click", () => saveReview("skip"));
 $("close-review").addEventListener("click", () => { $("review-panel").hidden = true; });
+$("start-lesson-audit").addEventListener("click", startLessonAudit);
+$("review-lesson-audits").addEventListener("click", loadNextLessonAudit);
+$("save-lesson-audit").addEventListener("click", saveLessonAudit);
+$("close-lesson-audit").addEventListener("click", () => { $("lesson-audit-review").hidden = true; });
 document.addEventListener("keydown", (event) => {
   if ($("review-panel").hidden || !currentReview) return;
   if (event.key.toLowerCase() === "a") saveReview("approve");

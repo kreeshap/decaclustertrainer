@@ -26,18 +26,32 @@ class LearnPipelineContractTests(unittest.TestCase):
         self.assertIn("concise but substantive", LESSON_DESIGN)
         self.assertIn("maximum 120 words", LESSON_DESIGN)
         self.assertIn("maximum 70 words", LESSON_DESIGN)
+        self.assertIn("Generate exactly {required_block_count} learning_blocks", LESSON_DESIGN)
+        self.assertIn("Generate exactly {vocab_count} vocabulary terms", LESSON_DESIGN)
 
     def test_mission_and_feedback_are_part_of_the_pipeline(self) -> None:
         self.assertIn('id="state-mission"', LEARN_HTML)
         self.assertIn('id="state-kpi-feedback"', LEARN_HTML)
         self.assertIn("function startMission(kpi)", LEARN_JS)
         self.assertIn('showState("kpi-feedback")', LEARN_JS)
-        self.assertIn("const LESSON_VERSION = 3", LEARN_JS)
+        self.assertIn("const LESSON_VERSION = 4", LEARN_JS)
 
     def test_vocabulary_interaction_changes_direction(self) -> None:
         self.assertIn("const definitionFirst = vocabIdx % 2 === 1", LEARN_JS)
         self.assertIn('"Choose the matching term"', LEARN_JS)
         self.assertIn('btn.dataset.correct = c.correct ? "1" : "0"', LEARN_JS)
+
+    def test_lesson_ui_adapts_to_complexity(self) -> None:
+        self.assertIn("const vocabLimit = { quick: 3, standard: 4, deep: 5 }", LEARN_JS)
+        self.assertIn('complexity === "quick"', LEARN_JS)
+        self.assertIn("[practiceQuestions[0], practiceQuestions[2]]", LEARN_JS)
+
+    def test_failure_and_feedback_language_preserve_student_agency(self) -> None:
+        self.assertIn('id="error-skip-btn"', LEARN_HTML)
+        self.assertIn("Your progress is safe", LEARN_JS)
+        self.assertIn("Strong initial understanding", LEARN_JS)
+        self.assertIn("First-attempt lesson performance", LEARN_HTML)
+        self.assertIn("Mastery history", LEARN_HTML)
 
 
 if __name__ == "__main__":

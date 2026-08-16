@@ -17,8 +17,13 @@ SPEC.loader.exec_module(validation)
 
 
 def question(index: int = 0) -> dict:
+    stems = [
+        "Which statement accurately defines customer segmentation?",
+        "Which customer group should the school store target first?",
+        "What recommendation should you present to the marketing director?",
+    ]
     return {
-        "text": "Which finance choice best applies to this situation?",
+        "text": stems[index],
         "choices": ["Choice A", "Choice B", "Choice C", "Choice D"],
         "correct": index,
         "explanation": "This choice correctly applies the relevant finance principle.",
@@ -30,7 +35,7 @@ def lesson() -> dict:
         "lesson_design": {
             "complexity": "standard",
             "skill_type": "concept",
-            "target_minutes": "8-10",
+            "target_minutes": "3-5",
         },
         "instructional_plan": {
             "primary_archetype": "concept_discovery",
@@ -46,17 +51,23 @@ def lesson() -> dict:
                 "choices": ["Every student", "The group most likely to value the offer", "No one"],
                 "correct": 1,
                 "explanation": "Targeting works when the message fits a defined customer group.",
+                "choice_feedback": [
+                    "Reaching everyone usually weakens the relevance of the message.",
+                    "You chose the group whose needs best match the offer.",
+                    "Avoiding the audience does not solve the targeting decision.",
+                ],
                 "aha": "This is why strong marketing starts by deciding who the offer is for.",
             },
         },
         "hook": "You are helping a school store decide how to sell to different student groups.",
         "vocab": [
             {"term": f"Term {i}", "definition": f"Definition for finance term number {i}."}
-            for i in range(6)
+            for i in range(4)
         ],
         "learning_blocks": [
             {"title": "The idea", "body": "This block explains the concept in plain English with enough detail for a student to understand it."},
             {"title": "Why it matters", "body": "This block connects the concept to a realistic DECA business decision the student might face."},
+            {"title": "Use the evidence", "body": "This block shows how customer evidence supports a focused recommendation instead of a broad assumption."},
         ],
         "concept": {
             "summary": "A concise finance summary.",
@@ -104,7 +115,7 @@ def lesson() -> dict:
 class Phase3ContractTests(unittest.TestCase):
     def test_complete_lesson_is_normalized(self) -> None:
         clean = validation.validate_lesson(lesson())
-        self.assertEqual(len(clean["vocab"]), 6)
+        self.assertEqual(len(clean["vocab"]), 4)
         self.assertEqual(len(clean["practice_questions"]), 3)
         self.assertEqual(len(clean["recognition_questions"]), 2)
         self.assertEqual(len(clean["application_questions"]), 1)

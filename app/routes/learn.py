@@ -1,5 +1,4 @@
 from flask import Blueprint, jsonify, request
-from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import logging
 from datetime import datetime
@@ -12,10 +11,10 @@ from ..lesson_design import build_lesson_prompt, classify_kpi
 from ..content_ops import catalog_id, get_approved_instructional_plan
 from ..learn_validation import (
     LearnContentError,
-    validate_lesson,
     validate_roleplay_grade,
     validate_roleplay_prompt,
 )
+from ..lesson_generation import generate_valid_lesson
 from ..learn_helpers import (
     _compute_streak,
     _fetch_kpi_questions,
@@ -35,51 +34,6 @@ from .blueprint import learn_bp  # noqa: F401 — re-exported for app registrati
 
 logger = logging.getLogger(__name__)
 
-
-def _generate_valid_lesson(prompt: str, expected_plan: dict) -> tuple[dict | None, list[str]]:
-    """Race both providers and use the first response that passes validation."""
-    providers = {
-        "Groq": lambda: call_groq(
-            [{"role": "user", "content": prompt}], max_tokens=4000
-        ),
-        "Gemini": lambda: call_gemini_json(
-            prompt, max_tokens=6000, temperature=0.2, retry_invalid_json=True
-        ),
-    }
-    errors = []
-    executor = ThreadPoolExecutor(max_workers=len(providers))
-    futures = {executor.submit(call): name for name, call in providers.items()}
-    for future in as_completed(futures):
-        name = futures[future]
-        try:
-            result, error = future.result()
-        except Exception as error:  # defensive boundary around provider SDKs
-            errors.append(f"{name}: {error}")
-            continue
-        if error:
-            errors.append(f"{name}: {error}")
-            continue
-        try:
-            lesson = validate_lesson(result)
-        except LearnContentError as error:
-            errors.append(f"{name}: invalid lesson content ({error})")
-            continue
-        returned_plan = lesson["instructional_plan"]
-        mismatches = [
-            field
-            for field in ("primary_archetype", "learner_action", "deca_action")
-            if returned_plan.get(field) != expected_plan.get(field)
-        ]
-        if mismatches:
-            errors.append(f"{name}: instructional plan drifted on {', '.join(mismatches)}")
-            continue
-        for pending in futures:
-            if pending is not future:
-                pending.cancel()
-        executor.shutdown(wait=False, cancel_futures=True)
-        return lesson, errors
-    executor.shutdown(wait=True)
-    return None, errors
 
 @learn_bp.get("/api/kpis")
 def api_kpis():
@@ -213,10 +167,15 @@ Rules:
     )
 
     # Generate concurrently so one slow provider does not consume the other's budget.
-    result, provider_errors = _generate_valid_lesson(prompt, lesson_design)
+    result, provider_errors = generate_valid_lesson(prompt, lesson_design)
     if result is None:
         combined_error = " | ".join(provider_errors)
         logger.warning("Lesson generation failed validation: %s", combined_error)
+        _supabase_svc(
+            "/lesson_generation_failures", method="POST",
+            payload={"kpi_id": catalog_id(kpi), "user_id": user.get("id"), "provider_summary": combined_error[:1000]},
+            prefer="return=minimal",
+        )
         timed_out = any(
             marker in combined_error.lower()
             for marker in ("deadline_exceeded", "deadline expired", "timed out", "timeout")

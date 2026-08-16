@@ -89,7 +89,7 @@ def classify_kpi(text: str) -> dict:
     else:
         skill_type = "concept"
 
-    target_minutes = {"quick": "5-7", "standard": "8-10", "deep": "10-13"}[complexity]
+    target_minutes = {"quick": "2-3", "standard": "3-5", "deep": "5-7"}[complexity]
     deca_action = {
         "concept": "explain",
         "decision": "recommend",
@@ -115,6 +115,9 @@ def classify_kpi(text: str) -> dict:
         "learner_action": ACTION_BY_SKILL[skill_type],
         "deca_action": deca_action,
         "recommended_interactions": interactions,
+        "required_block_count": {"quick": 2, "standard": 3, "deep": 4}[complexity],
+        "vocab_mode": "embedded" if complexity == "quick" else "preteach",
+        "vocab_count": {"quick": 3, "standard": 4, "deep": 5}[complexity],
     }
 
 
@@ -138,6 +141,8 @@ def build_lesson_prompt(
     recommended_interactions_json = ", ".join(
         f'"{interaction}"' for interaction in lesson_design["recommended_interactions"]
     )
+    required_block_count = int(lesson_design.get("required_block_count") or {"quick": 2, "standard": 3, "deep": 4}[complexity])
+    vocab_count = int(lesson_design.get("vocab_count") or {"quick": 3, "standard": 4, "deep": 5}[complexity])
     deca_cluster = deca_cluster or "Business"
     return f"""You are a DECA competition coach creating a structured, interactive lesson for high school students.
 
@@ -179,6 +184,7 @@ Return ONLY valid JSON with this exact structure:
       "choices": ["Choice A", "Choice B", "Choice C"],
       "correct": 1,
       "explanation": "Explain the mechanism revealed by the decision, not just which answer is correct.",
+      "choice_feedback": ["Specific response to choice A", "Specific response to choice B", "Specific response to choice C"],
       "aha": "One memorable sentence beginning with This is why or That is why."
     }}
   }},
@@ -281,7 +287,7 @@ Rules:
 - Prefer precise definitions, mechanisms, tradeoffs, and concrete examples over motivational filler.
 - Do not repeat the same idea across the hook, blocks, explanation, bullets, and takeaways.
 - Keep vocabulary definitions to one precise sentence each.
-- Generate 3–6 vocabulary terms according to actual instructional need; do not pad the list.
+- Generate exactly {vocab_count} vocabulary terms; do not pad the list.
 - The mission must frame the KPI as a business problem, not announce a school lesson.
 - The opening interaction must come before the definition and make the learner predict, diagnose, or decide.
 - Match the lesson behavior to {primary_archetype}; changing only scenario nouns is not sufficient.
@@ -290,7 +296,7 @@ Rules:
 - Do not pad easy KPIs. Target time is a guide, not a rule.
 - Teach through: situation -> discover -> decide -> see consequence -> prove it.
 - Make generated examples realistic, not falsely claimed as real.
-- learning_blocks: quick=2 blocks, standard=2-3 blocks, deep=3-4 blocks.
+- Generate exactly {required_block_count} learning_blocks. The app, not the model, owns this count.
 - mini_roleplay: quick=1 decision, standard=2 decisions, deep=2-3 decisions.
 - practice_questions: generate EXACTLY 3 final questions:
   1. Check / understanding / recognition

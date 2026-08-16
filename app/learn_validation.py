@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from typing import Any
+import re
 
 
 class LearnContentError(ValueError):
@@ -20,6 +21,8 @@ def validate_question(raw: Any, field: str) -> dict:
         raise LearnContentError(f"{field} must be an object")
     text = _text(raw.get("text"), f"{field}.text", 8)
     explanation = _text(raw.get("explanation"), f"{field}.explanation", 8)
+    if _word_count(explanation) > 55:
+        raise LearnContentError(f"{field}.explanation must be 55 words or fewer")
     choices = raw.get("choices")
     if not isinstance(choices, list) or len(choices) != 4:
         raise LearnContentError(f"{field}.choices must contain exactly four choices")
@@ -67,7 +70,24 @@ def _validate_mini_roleplay(raw: Any) -> dict:
     }
 
 
-def validate_lesson(raw: Any) -> dict:
+def _word_count(value: Any) -> int:
+    if isinstance(value, str):
+        return len(re.findall(r"\b[\w'-]+\b", value))
+    if isinstance(value, list):
+        return sum(_word_count(item) for item in value)
+    if isinstance(value, dict):
+        return sum(_word_count(item) for item in value.values())
+    return 0
+
+
+def _question_overlap(first: str, second: str) -> float:
+    ignored = {"a", "an", "and", "best", "is", "of", "the", "this", "to", "what", "which"}
+    left = {word for word in re.findall(r"[a-z0-9]+", first.lower()) if word not in ignored}
+    right = {word for word in re.findall(r"[a-z0-9]+", second.lower()) if word not in ignored}
+    return len(left & right) / max(1, len(left | right))
+
+
+def validate_lesson(raw: Any, expected_plan: dict | None = None) -> dict:
     if not isinstance(raw, dict):
         raise LearnContentError("lesson must be an object")
 
@@ -97,6 +117,9 @@ def validate_lesson(raw: Any) -> dict:
         raise LearnContentError("lesson_design.complexity must be quick, standard, or deep")
     if skill_type not in {"concept", "decision", "communication", "process", "calculation_data", "analysis"}:
         raise LearnContentError("lesson_design.skill_type is unsupported")
+    expected_vocab = int((expected_plan or {}).get("vocab_count") or {"quick": 3, "standard": 4, "deep": 5}[complexity])
+    if len(clean_vocab) != expected_vocab:
+        raise LearnContentError(f"vocab must contain exactly {expected_vocab} terms for a {complexity} KPI")
 
     plan = raw.get("instructional_plan")
     if not isinstance(plan, dict):
@@ -121,6 +144,13 @@ def validate_lesson(raw: Any) -> dict:
         raise LearnContentError("mission must be an object")
     opening = _validate_three_choice(mission.get("opening_interaction"), "mission.opening_interaction")
     opening["aha"] = _text((mission.get("opening_interaction") or {}).get("aha"), "mission.opening_interaction.aha", 12)
+    choice_feedback = opening.get("choice_feedback")
+    if not isinstance(choice_feedback, list) or len(choice_feedback) != 3:
+        raise LearnContentError("mission.opening_interaction.choice_feedback must contain three responses")
+    opening["choice_feedback"] = [
+        _text(item, f"mission.opening_interaction.choice_feedback[{index}]", 8)
+        for index, item in enumerate(choice_feedback)
+    ]
     clean_mission = {
         "title": _text(mission.get("title"), "mission.title", 4),
         "brief": _text(mission.get("brief"), "mission.brief", 20),
@@ -150,6 +180,9 @@ def validate_lesson(raw: Any) -> dict:
     learning_blocks = raw.get("learning_blocks")
     if not isinstance(learning_blocks, list) or len(learning_blocks) < 2:
         raise LearnContentError("learning_blocks must contain at least two blocks")
+    required_blocks = int((expected_plan or {}).get("required_block_count") or {"quick": 2, "standard": 3, "deep": 4}[complexity])
+    if len(learning_blocks) != required_blocks:
+        raise LearnContentError(f"learning_blocks must contain exactly {required_blocks} blocks for a {complexity} KPI")
     clean_blocks = []
     for index, block in enumerate(learning_blocks[:4]):
         if not isinstance(block, dict):
@@ -193,6 +226,14 @@ def validate_lesson(raw: Any) -> dict:
         clean = validate_question(item, f"practice_questions[{index}]")
         clean["stage_label"] = expected_labels[index]
         clean_practice.append(clean)
+    for first in range(len(clean_practice)):
+        for second in range(first + 1, len(clean_practice)):
+            if _question_overlap(clean_practice[first]["text"], clean_practice[second]["text"]) > 0.68:
+                raise LearnContentError("practice questions are too semantically repetitive")
+
+    lesson_word_cap = {"quick": 550, "standard": 850, "deep": 1200}[complexity]
+    if _word_count(raw) > lesson_word_cap:
+        raise LearnContentError(f"lesson exceeds the {lesson_word_cap}-word cap for {complexity} KPIs")
 
     clean_recognition = clean_practice[:2]
     application = clean_practice[2:]

@@ -57,6 +57,27 @@
         </div>
       </section>
 
+      <section class="panel audit-launch-panel">
+        <div class="section-kicker">Lesson quality audit</div>
+        <h2>20-KPI adversarial sample</h2>
+        <p>Inspect mission clarity, meaningful choices, vocabulary quality, learning value, difficulty progression, and pacing.</p>
+        <div class="audit-actions">
+          <button class="primary-action" id="start-lesson-audit" type="button">Generate 20-lesson audit</button>
+          <button class="attention-row" id="review-lesson-audits" type="button"><span>Ready to inspect</span><strong id="lesson-audit-pending">0</strong></button>
+        </div>
+        <div class="ops-remaining"><strong id="lesson-generation-failures">0</strong> recorded student generation failures</div>
+        <div class="batch-heading"><strong id="lesson-audit-batch">No audit batches yet</strong><span id="lesson-audit-status"></span></div>
+      </section>
+
+      <section class="panel lesson-audit-review" id="lesson-audit-review" hidden>
+        <div class="review-topline"><span id="lesson-audit-meta"></span><button id="close-lesson-audit" type="button">Close</button></div>
+        <h2 id="lesson-audit-title"></h2>
+        <div class="lesson-preview" id="lesson-audit-preview"></div>
+        <div class="audit-score-grid" id="lesson-audit-scores"></div>
+        <label class="audit-notes">Audit notes<textarea id="lesson-audit-notes" rows="4" placeholder="Where did the lesson feel boring, padded, confusing, or fake?"></textarea></label>
+        <button class="primary-action" id="save-lesson-audit" type="button">Save audit and continue →</button>
+      </section>
+
       <section class="panel review-panel" id="review-panel" hidden>
         <div class="review-topline"><span id="review-remaining">0 need review</span><button id="close-review" type="button">Close</button></div>
         <div class="review-code" id="review-code"></div>

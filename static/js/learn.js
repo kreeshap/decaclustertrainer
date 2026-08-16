@@ -1,6 +1,6 @@
             // ─── Constants ────────────────────────────────────────────────────────────────
             const QUESTIONS_PER_KPI = 3;
-            const LESSON_VERSION = 3;
+            const LESSON_VERSION = 4;
             const ROLEPLAY_EVERY = 7; // show a mini roleplay every N KPIs (standard/tdm only)
 
             // ─── State ────────────────────────────────────────────────────────────────────
@@ -12,6 +12,8 @@
             let kpiQuestionStart = 0;
             let kpiCorrectStart = 0;
             let lastKpiMastery = null;
+            let kpiFirstPassAnswered = 0;
+            let kpiFirstPassCorrect = 0;
             let sessionData = null; // current KPI's Groq response {vocab,concept,questions}
             let vocabList = [];
             let vocabIdx = 0;
@@ -396,6 +398,8 @@
                 kpiQuestionStart = sessionQAnswered;
                 kpiCorrectStart = sessionQCorrect;
                 lastKpiMastery = null;
+                kpiFirstPassAnswered = 0;
+                kpiFirstPassCorrect = 0;
 
                 $("loading-kpi-text").textContent = kpi.code + " — " + kpi.text;
                 setPhase("mission", "pending");
@@ -429,9 +433,15 @@
                         });
                         saveQBank(kpi.event, kpi.code, data);
                         sessionData = data;
+                        localStorage.removeItem(`ct_lesson_failures_${kpi.event}_${kpi.code}`);
+                        $("error-skip-btn").classList.remove("prominent");
                     } catch (e) {
                         if (loadToken !== kpiLoadToken) return;
-                        showError("Network error: " + e.message);
+                        const failureKey = `ct_lesson_failures_${kpi.event}_${kpi.code}`;
+                        const failureCount = Number(localStorage.getItem(failureKey) || 0) + 1;
+                        localStorage.setItem(failureKey, String(failureCount));
+                        $("error-skip-btn").classList.toggle("prominent", failureCount >= 2);
+                        showError("We couldn't load this lesson right now. Your progress is safe.");
                         return;
                     }
                 }
@@ -475,7 +485,10 @@
                             if (itemIndex === interaction.correct) item.classList.add("correct");
                             else if (itemIndex === index) item.classList.add("wrong");
                         });
-                        $("mission-explanation").textContent = interaction.explanation || "Now inspect the business reasoning behind the decision.";
+                        const tailored = Array.isArray(interaction.choice_feedback)
+                            ? interaction.choice_feedback[index]
+                            : "";
+                        $("mission-explanation").textContent = tailored || interaction.explanation || "Now inspect the business reasoning behind the decision.";
                         $("mission-aha").textContent = interaction.aha || "This is why the strongest business choice depends on evidence, not instinct alone.";
                         $("mission-reveal").hidden = false;
                     });
@@ -491,7 +504,9 @@
 
             // ─── VOCAB phase ──────────────────────────────────────────────────────────────
             function startVocab(kpi) {
-                vocabList = sessionData.vocab || [];
+                const complexity = sessionData.lesson_design?.complexity || "standard";
+                const vocabLimit = { quick: 3, standard: 4, deep: 5 }[complexity] || 4;
+                vocabList = (sessionData.vocab || []).slice(0, vocabLimit);
                 vocabIdx = 0;
                 setPhase("vocab", "active");
 
@@ -746,6 +761,7 @@
             function startConcept(kpi) {
                 setPhase("concept", "active");
                 const c = sessionData.concept || {};
+                const complexity = sessionData.lesson_design?.complexity || "standard";
 
                 $("concept-code").textContent = kpi.code;
                 $("concept-cluster").textContent = kpi.cluster;
@@ -771,14 +787,16 @@
                     tr.innerHTML = `<td>${escHtml(row.term || "")}</td><td>${escHtml(row.definition || "")}</td>`;
                     tbody.appendChild(tr);
                 });
-                renderRealisticExample(sessionData.realistic_example);
-                renderMiniRoleplay(sessionData.mini_roleplay);
+                renderRealisticExample(complexity === "quick" ? null : sessionData.realistic_example);
+                renderMiniRoleplay(complexity === "quick" ? null : sessionData.mini_roleplay);
                 renderKeyTakeaways(sessionData.key_takeaways);
 
                 // ── Concept check — locks "I understand" until answered ───────────────────
                 // One question testing the core idea. Just enough to verify engagement.
                 // If the model didn't generate one (older cache), fall through silently.
-                const check = sessionData.interactive_check || c.concept_check;
+                const check = complexity === "quick"
+                    ? null
+                    : sessionData.interactive_check || c.concept_check;
                 const understandBtn = $("understand-btn");
                 const checkContainer = $("concept-check-container");
 
@@ -862,7 +880,11 @@
                         stage_label: q.stage_label || ["Check", "Apply", "DECA Challenge"][index] || "Practice",
                     }));
                 if (practiceQuestions.length >= 3) {
-                    qShown = practiceQuestions.filter(q => !getCorrectQs().has(q.id)).slice(0, 3);
+                    const complexity = sessionData.lesson_design?.complexity || "standard";
+                    const shapedQuestions = complexity === "quick"
+                        ? [practiceQuestions[0], practiceQuestions[2]]
+                        : practiceQuestions.slice(0, 3);
+                    qShown = shapedQuestions.filter(q => !getCorrectQs().has(q.id));
                     if (!qShown.length) { kpiDone(); return; }
                     qIdx = 0;
                     $("qs-total").textContent = qShown.length;
@@ -1002,6 +1024,10 @@
                 });
 
                 let ok = chosen === q.correct;
+                if (!q._isRetry) {
+                    kpiFirstPassAnswered++;
+                    if (ok) kpiFirstPassCorrect++;
+                }
                 // Persist to Supabase (cross-device, permanent)
                 const sbId = q.id || "";
                 if (!sbId) {
@@ -1081,7 +1107,7 @@
                 if (qIdx >= qShown.length) {
                     // If any were missed, replay them before finishing
                     if (missed.length > 0) {
-                        qShown = shuffle(missed);
+                        qShown = shuffle(missed).map((question) => ({ ...question, _isRetry: true }));
                         missed = [];
                         qIdx = 0;
                         $("qs-total").textContent = qShown.length;
@@ -1118,8 +1144,8 @@
                 completedKpiCodes.add(completedKpi.code);
                 sessionIdx++;
 
-                const attempts = Math.max(0, sessionQAnswered - kpiQuestionStart);
-                const correct = Math.max(0, sessionQCorrect - kpiCorrectStart);
+                const attempts = kpiFirstPassAnswered;
+                const correct = kpiFirstPassCorrect;
                 const accuracy = attempts ? Math.round((correct / attempts) * 100) : 100;
                 const priorMastery = Number(preMasteryMap[completedKpi.code]);
                 const readiness = lastKpiMastery ?? (Number.isFinite(priorMastery) ? Math.round(priorMastery) : accuracy);
@@ -1127,12 +1153,15 @@
                 $("kpi-feedback-title").textContent = completedKpi.code + " — " + completedKpi.text;
                 $("kpi-feedback-accuracy").textContent = attempts ? accuracy + "%" : "—";
                 $("kpi-feedback-mastery").textContent = readiness + "%";
-                $("kpi-feedback-readiness").textContent = readiness >= 80
-                    ? "Competition ready on this concept"
-                    : readiness >= 60
-                        ? "Developing — one more review will sharpen it"
-                        : "Foundation built — this KPI needs another pass";
-                $("kpi-feedback-deca").textContent = `For DECA, be ready to ${plan.deca_action || "apply this idea"} and support the choice with business evidence.`;
+                $("kpi-feedback-readiness").textContent = accuracy === 100
+                    ? "Strong initial understanding"
+                    : accuracy >= 67
+                        ? "Developing — one targeted review will sharpen it"
+                        : "Needs another review";
+                const retryNote = correct < attempts
+                    ? " You needed a retry, so we'll bring this KPI back later."
+                    : " You handled each question correctly on the first try.";
+                $("kpi-feedback-deca").textContent = `For DECA, be ready to ${plan.deca_action || "apply this idea"} and support the choice with business evidence.${retryNote}`;
                 $("skip-kpi-btn").style.display = "none";
                 showState("kpi-feedback");
             }
@@ -1339,6 +1368,7 @@
                 showState("error");
             }
             $("retry-btn").addEventListener("click", loadCurrentKpi);
+            $("error-skip-btn").addEventListener("click", skipCurrentKpi);
 
             // ─── State machine ────────────────────────────────────────────────────────────
             const ALL_STATES = [

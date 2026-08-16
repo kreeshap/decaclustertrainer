@@ -52,3 +52,19 @@ body { background: var(--bg); color: var(--white); font-family: 'Barlow', sans-s
 kbd { background: var(--border); border-radius: 3px; color: var(--white); padding: 2px 5px; }
 .ops-message { color: var(--cyan); min-height: 20px; }
 @media (max-width: 700px) { .batch-grid, .classification-grid { grid-template-columns: repeat(2, 1fr); } .review-options { grid-template-columns: 1fr; } }
+
+.audit-launch-panel h2 { margin: 6px 0; color: var(--white); }
+.audit-launch-panel p { color: var(--muted); max-width: 720px; }
+.audit-actions { display: flex; gap: 12px; align-items: stretch; margin: 18px 0; flex-wrap: wrap; }
+.audit-actions .attention-row { width: min(280px, 100%); }
+.lesson-preview { max-height: 520px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: rgba(8, 27, 27, .55); }
+.lesson-preview h3 { color: var(--cyan); margin: 14px 0 5px; }
+.lesson-preview p, .lesson-preview li { color: var(--white); line-height: 1.5; }
+.audit-score-grid { display: grid; gap: 10px; margin: 18px 0; }
+.audit-score-row { display: grid; grid-template-columns: minmax(180px, 1fr) repeat(5, 42px); gap: 7px; align-items: center; }
+.audit-score-row span { color: var(--white); }
+.audit-score-row button { border: 1px solid var(--border); background: transparent; color: var(--muted); border-radius: 7px; padding: 7px; cursor: pointer; }
+.audit-score-row button.selected { border-color: var(--cyan); color: var(--bg); background: var(--cyan); }
+.audit-notes { display: grid; gap: 7px; color: var(--muted); margin-bottom: 16px; }
+.audit-notes textarea { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--white); padding: 10px; resize: vertical; }
+@media (max-width: 700px) { .audit-score-row { grid-template-columns: 1fr repeat(5, 36px); } }

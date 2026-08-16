@@ -30,6 +30,15 @@ class LessonDesignContractTests(unittest.TestCase):
         self.assertTrue(plan["deca_action"])
         self.assertGreaterEqual(len(plan["recommended_interactions"]), 2)
 
+    def test_complexity_owns_duration_and_section_counts(self) -> None:
+        quick = lesson_design.classify_kpi("Explain the nature of customer loyalty")
+        deep = lesson_design.classify_kpi("Analyze company financial information")
+        self.assertEqual(quick["target_minutes"], "2-3")
+        self.assertEqual(quick["required_block_count"], 2)
+        self.assertEqual(quick["vocab_mode"], "embedded")
+        self.assertEqual(deep["target_minutes"], "5-7")
+        self.assertEqual(deep["required_block_count"], 4)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
