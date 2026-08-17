@@ -198,7 +198,7 @@ body {
 }
 
 .main-shell {
-  max-width: 1240px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 24px 24px 48px;
 }
@@ -1746,7 +1746,7 @@ body {
 }
 
 /* Compact, evidence-led Question Platform home. */
-.platform-shell{width:calc(100% - 32px);max-width:940px;margin:0 0 0 clamp(24px,7vw,110px)}
+.platform-shell{width:100%;max-width:none;margin:0}
 .platform-heading{margin:12px 0 18px;align-items:start}
 .platform-heading h1{margin:3px 0 6px;font-size:clamp(2.5rem,4vw,2.9rem);line-height:1}
 .platform-heading p{display:grid;gap:3px;margin:0;font-size:.83rem}
@@ -1787,4 +1787,5 @@ body {
 .platform-empty p{margin:6px 0 12px;color:var(--muted);font-size:.76rem;line-height:1.45}
 .platform-empty span{color:var(--cyan);font-size:.72rem}
 .platform-continue{padding:14px 18px}
+.platform-runner,#platform-results{max-width:980px;margin-left:auto!important;margin-right:auto!important}
 @media(max-width:800px){.platform-shell{width:auto;margin:0 16px}.platform-entry-grid,.platform-insights{grid-template-columns:1fr}.mock-entry{grid-template-columns:1fr}.platform-entry{min-height:0}.platform-heading{margin-top:6px}}

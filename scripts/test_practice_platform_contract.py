@@ -40,7 +40,8 @@ class PracticePlatformContract(unittest.TestCase):
             self.assertIn(text, html)
         for text in ("KPIs studied", "Limited data", "answered so far"):
             self.assertIn(text, js)
-        self.assertIn("max-width:940px", css)
+        self.assertIn("max-width: 1500px", css)
+        self.assertIn(".platform-shell{width:100%;max-width:none;margin:0}", css)
 
 
 if __name__ == "__main__":
