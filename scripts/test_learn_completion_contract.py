@@ -22,6 +22,8 @@ class LearnCompletionContractTests(unittest.TestCase):
         script = (ROOT / "static/js/learn.js").read_text(encoding="utf-8")
         for label in ("Learning progress", "Continue learning", "Curriculum", "Review", "Mastery of learned material"):
             self.assertIn(label, html)
+        for label in ("Today", "Review &amp; Progress", "data-learn-panel"):
+            self.assertIn(label, html)
         self.assertIn("Search KPIs, topics, or concepts", html)
         self.assertNotIn("30-Day Activity", html)
         self.assertNotIn("Day Streak", html)

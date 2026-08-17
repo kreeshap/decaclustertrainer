@@ -40,6 +40,7 @@
 .recommendation .primary-action{display:inline-block;width:auto;min-width:150px;padding:8px 18px}
 .recommendation .secondary-actions{display:inline-grid;grid-template-columns:auto auto;margin:0 0 0 8px;vertical-align:middle}
 .recommendation .secondary-actions a{padding:7px 12px}
+.why-button{margin-top:8px;padding:0;border:0;background:transparent;color:var(--cyan);font:600 .72rem "Barlow";cursor:pointer}.why-panel{margin-top:7px;padding:8px 10px;border-left:2px solid var(--cyan);color:var(--muted);font-size:.72rem;line-height:1.45}.why-panel p{margin:0}
 .mastery-ring strong{max-width:94px;font-size:1.35rem;line-height:1.05}
 .focus-row{grid-template-columns:minmax(160px,1fr) 105px 38px 72px;color:var(--white);text-decoration:none;border-bottom:1px solid #173e40}
 .focus-row:hover span{color:var(--cyan)}
@@ -75,6 +76,7 @@
 .recommendation-reason{margin-top:12px;line-height:1.5}
 .recommendation .primary-action{margin-top:2px}
 .recommendation .secondary-actions{gap:10px;margin-left:12px}
+.session-modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(1,12,13,.78);backdrop-filter:blur(3px)}.session-modal[hidden]{display:none}.session-dialog{position:relative;width:min(480px,100%);padding:26px;border:1px solid #24646a;border-radius:10px;background:#0b2224;box-shadow:0 24px 70px rgba(0,0,0,.45)}.session-dialog h2{margin:7px 0 16px;font:700 1.7rem "Barlow Condensed"}.session-close{position:absolute;right:14px;top:10px;border:0;background:transparent;color:var(--muted);font-size:1.6rem;cursor:pointer}.session-checklist{display:grid;gap:8px;margin:0 0 18px;padding:0;list-style:none}.session-checklist li{display:grid;grid-template-columns:18px 1fr auto;gap:9px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:6px;color:#d5e5e5}.session-checklist li.done{color:var(--muted)}.session-checklist i{width:10px;height:10px;border:1px solid #5e7b7e;border-radius:50%}.session-checklist li.done i{background:var(--green);border-color:var(--green)}.session-checklist small{color:var(--muted)}.session-progress{height:5px;margin:12px 0 7px;border-radius:10px;background:#18383b;overflow:hidden}.session-progress b{display:block;height:100%;background:var(--cyan)}.session-note{margin:0 0 18px;color:var(--muted);font-size:.8rem;line-height:1.45}.session-dialog-actions{display:flex;gap:10px;align-items:center}.session-dialog-actions .primary-action{min-width:150px}.secondary-button{padding:9px 14px;border:1px solid #365358;border-radius:5px;background:transparent;color:#d7e5e5;cursor:pointer}.good-stop{padding:13px;border:1px solid #24785c;border-radius:7px;background:#0d2d27}.good-stop strong{display:block;color:var(--green);font:700 1.2rem "Barlow Condensed"}.good-stop p{margin:6px 0 0;color:#c2d8d4;font-size:.82rem}
 .overview-body{gap:28px}
 .metric-stack{gap:20px}
 .metric>div{margin-bottom:8px}

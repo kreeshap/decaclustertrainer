@@ -2887,10 +2887,32 @@ body {
     }
 }
 
-/* Final cascade boundary for the redesigned landing page. */
-body #view-home.learn-landing{display:block!important;width:calc(100% - 40px);max-width:980px;margin:0 auto;padding:26px 0 60px}
-body #view-home.learn-landing .learn-home-controls{display:grid!important;grid-template-columns:1fr auto auto!important;align-items:end;gap:10px;margin:0 0 14px!important;padding:0!important;border:0!important;background:transparent!important}
-body #view-home.learn-landing .learn-section{display:block;grid-column:auto;margin:0 0 12px;padding:19px 21px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,.32)}
-body #view-home.learn-landing .continue-learning>.start-btn{display:inline-block!important;position:static!important;width:auto!important;margin:0!important}
-body #view-home.learn-landing #mastery-panel{margin:0 0 12px!important;padding:19px 21px!important;border:1px solid var(--border)!important}
-@media(max-width:720px){body #view-home.learn-landing{width:auto;margin:0 16px;padding-top:18px}body #view-home.learn-landing .learn-home-controls{grid-template-columns:1fr!important}}
+/* Final cascade boundary for the laptop Learn landing page. */
+body #view-home.learn-landing{display:block!important;width:calc(100% - 64px);max-width:1480px;margin:0 auto;padding:24px 0 54px}
+body #view-home.learn-landing .learn-landing-head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid var(--border)}
+body #view-home.learn-landing .learn-landing-head h1{margin:3px 0 0;font-size:2.15rem;line-height:1}
+body #view-home.learn-landing .learn-landing-head>strong{max-width:48%;color:var(--muted);font-size:.82rem;text-align:right}
+body #view-home.learn-landing .learn-home-controls{display:grid!important;grid-template-columns:minmax(420px,1fr) auto auto!important;align-items:end;gap:12px;margin:0 0 17px!important;padding:0!important;border:0!important;background:transparent!important}
+body #view-home.learn-landing .learn-search-input{width:100%;height:44px}
+body #view-home.learn-landing #browse-kpis-btn,body #view-home.learn-landing .mode-btn{height:44px;min-width:138px}
+body #view-home.learn-landing .learn-tabs{display:flex;gap:4px;margin-bottom:15px;border-bottom:1px solid var(--border)}
+body #view-home.learn-landing .learn-tab{position:relative;padding:10px 18px 12px;border:0;background:transparent;color:var(--muted);font:700 .78rem "Barlow";letter-spacing:.04em;cursor:pointer}
+body #view-home.learn-landing .learn-tab:hover{color:var(--white)}
+body #view-home.learn-landing .learn-tab.active{color:var(--cyan)}
+body #view-home.learn-landing .learn-tab.active:after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:var(--cyan)}
+body #view-home.learn-landing .learn-tab-panel[hidden]{display:none!important}
+body #view-home.learn-landing .learn-section[hidden]{display:none!important}
+body #view-home.learn-landing .learn-tab-panel{min-width:0}
+body #view-home.learn-landing .today-panel{display:grid;grid-template-columns:minmax(360px,.78fr) minmax(520px,1.22fr);gap:15px;align-items:stretch}
+body #view-home.learn-landing .today-panel>.learning-progress{grid-column:1}
+body #view-home.learn-landing .today-panel>.continue-learning,body #view-home.learn-landing .today-panel>.preparation-state{grid-column:2;grid-row:1}
+body #view-home.learn-landing .progress-panel{display:grid;grid-template-columns:minmax(360px,.8fr) minmax(520px,1.2fr);gap:15px;align-items:start}
+body #view-home.learn-landing .progress-panel.no-review>#mastery-panel{grid-column:1/-1}
+body #view-home.learn-landing .learn-section{display:block;grid-column:auto;margin:0;padding:22px 24px;border:1px solid var(--border);border-radius:8px;background:rgba(17,41,41,.32)}
+body #view-home.learn-landing .curriculum-section{min-height:470px}
+body #view-home.learn-landing .curriculum-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+body #view-home.learn-landing .continue-learning>.start-btn{display:inline-block!important;position:static!important;width:auto!important;margin:12px 0 0!important}
+body #view-home.learn-landing #mastery-panel{margin:0!important;padding:22px 24px!important;border:1px solid var(--border)!important}
+body #view-home.learn-landing .coverage-head{grid-template-columns:1.2fr .8fr .65fr;gap:22px}
+@media(max-width:1050px){body #view-home.learn-landing{width:calc(100% - 36px)}body #view-home.learn-landing .today-panel,body #view-home.learn-landing .progress-panel{grid-template-columns:1fr}body #view-home.learn-landing .today-panel>.continue-learning,body #view-home.learn-landing .today-panel>.preparation-state{grid-column:1;grid-row:auto}body #view-home.learn-landing .curriculum-list{grid-template-columns:1fr}}
+@media(max-width:720px){body #view-home.learn-landing{width:auto;margin:0 16px;padding-top:18px}body #view-home.learn-landing .learn-landing-head{display:block}body #view-home.learn-landing .learn-landing-head>strong{display:block;max-width:none;margin-top:10px;text-align:left}body #view-home.learn-landing .learn-home-controls{grid-template-columns:1fr!important}body #view-home.learn-landing .learn-tabs{overflow-x:auto}body #view-home.learn-landing .learn-tab{white-space:nowrap;padding-inline:13px}body #view-home.learn-landing .coverage-head{grid-template-columns:1fr}}

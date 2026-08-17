@@ -46,6 +46,14 @@
                 <div class="mode-buttons" id="learn-mode-buttons"><button type="button" data-learn-mode="standard" class="mode-btn active">Learn Content</button></div>
             </div>
 
+            <nav class="learn-tabs" role="tablist" aria-label="Learn sections">
+                <button class="learn-tab active" type="button" role="tab" aria-selected="true" data-learn-tab="today">Today</button>
+                <button class="learn-tab" type="button" role="tab" aria-selected="false" data-learn-tab="curriculum">Curriculum</button>
+                <button class="learn-tab" type="button" role="tab" aria-selected="false" data-learn-tab="progress">Review &amp; Progress</button>
+            </nav>
+
+            <div class="learn-tab-panel today-panel" data-learn-panel="today">
+
             <section class="learn-section learning-progress">
                 <div class="section-kicker">Learning progress</div>
                 <div class="coverage-head"><div><strong id="learned-count">0 / 0 KPIs learned</strong><span id="coverage-percent">0% of event content</span></div><div><span>Mastery of learned KPIs</span><strong id="learned-mastery">No data</strong></div><div><span>Due for review</span><strong id="dash-due">0</strong></div></div>
@@ -58,11 +66,19 @@
                 <button class="start-btn" id="start-btn" type="button" disabled>Learn Next KPI</button>
             </section>
 
+            <section class="learn-section preparation-state" id="content-preparation-state" hidden>
+                <div class="section-kicker">Learning content is being prepared</div><h2 id="preparation-event-name">We're preparing lessons for your event.</h2><p>Your existing progress and practice history are safe.</p><a class="ghost-btn" href="/app/practicequestions.html">Practice Questions</a>
+            </section>
+            </div>
+
+            <div class="learn-tab-panel curriculum-panel" data-learn-panel="curriculum" hidden>
             <section class="learn-section curriculum-section" id="curriculum-section">
                 <div class="section-heading"><div><div class="section-kicker">Curriculum</div><h2>Your event curriculum</h2></div><button class="text-btn" id="curriculum-toggle" type="button">Show all</button></div>
                 <div id="curriculum-list" class="curriculum-list"></div>
             </section>
+            </div>
 
+            <div class="learn-tab-panel progress-panel" data-learn-panel="progress" hidden>
             <section class="learn-section review-section" id="review-section" hidden>
                 <div class="section-heading"><div><div class="section-kicker">Review</div><h2>Previously learned material due now</h2></div></div>
                 <div id="review-kpi-list"></div>
@@ -75,10 +91,7 @@
                 <div id="type-breakdown-section" class="type-breakdown"></div>
                 <p>This measures retention of completed Learn lessons, not event coverage.</p>
             </section>
-
-            <section class="learn-section preparation-state" id="content-preparation-state" hidden>
-                <div class="section-kicker">Learning content is being prepared</div><h2 id="preparation-event-name">We're preparing lessons for your event.</h2><p>Your existing progress and practice history are safe.</p><a class="ghost-btn" href="/app/practicequestions.html">Practice Questions</a>
-            </section>
+            </div>
         </main>
 
         <!-- SESSION -->

@@ -59,6 +59,24 @@
             const viewHome = $("view-home");
             const viewSession = $("view-session");
 
+            function showLearnTab(name, options = {}) {
+                const selected = ["today", "curriculum", "progress"].includes(name) ? name : "today";
+                document.querySelectorAll("[data-learn-tab]").forEach((button) => {
+                    const active = button.dataset.learnTab === selected;
+                    button.classList.toggle("active", active);
+                    button.setAttribute("aria-selected", String(active));
+                });
+                document.querySelectorAll("[data-learn-panel]").forEach((panel) => {
+                    panel.hidden = panel.dataset.learnPanel !== selected;
+                });
+                if (options.remember !== false) sessionStorage.setItem("ct_learn_active_tab", selected);
+            }
+
+            document.querySelectorAll("[data-learn-tab]").forEach((button) => {
+                button.addEventListener("click", () => showLearnTab(button.dataset.learnTab));
+            });
+            showLearnTab(sessionStorage.getItem("ct_learn_active_tab") || "today", { remember: false });
+
             function createAttemptId() {
                 if (window.crypto && typeof window.crypto.randomUUID === "function") {
                     return window.crypto.randomUUID();
@@ -204,6 +222,7 @@
                 const due = kpiGroups.due || [];
                 const section = $("review-section");
                 section.hidden = !due.length;
+                section.closest("[data-learn-panel]")?.classList.toggle("no-review", !due.length);
                 if (!due.length) return;
                 $("due-summary-count").textContent = due.length;
                 $("review-kpi-list").innerHTML = due.slice(0,5).map((kpi) => `<div class="review-kpi-row"><div><strong>${escHtml(kpi.code)} · ${escHtml(kpi.text)}</strong><span>${Math.round(kpi.mastery_score || 0)}% mastery · previously learned · review recommended</span></div><button type="button" data-review-code="${escHtml(kpi.code)}">Review</button></div>`).join("");
@@ -548,6 +567,7 @@
             $("browse-kpis-btn").addEventListener("click", () => {
                 curriculumExpanded = true;
                 renderCurriculum();
+                showLearnTab("curriculum");
                 $("curriculum-section").scrollIntoView({behavior: "smooth", block: "start"});
             });
             $("curriculum-toggle").addEventListener("click", () => {
