@@ -3,6 +3,7 @@ from werkzeug.exceptions import HTTPException
 
 from .config import BASE_DIR
 from .routes.admin import admin_bp
+from .routes.adaptive import adaptive_bp
 from .routes.auth import auth_bp
 from .routes.learn import learn_bp
 from .routes.pages import pages_bp
@@ -19,6 +20,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(learn_bp)
     app.register_blueprint(admin_bp)
+    app.register_blueprint(adaptive_bp)
     app.register_blueprint(practice_bp)
 
     @app.errorhandler(Exception)

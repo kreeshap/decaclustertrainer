@@ -24,7 +24,8 @@ class LearnCompletionContractTests(unittest.TestCase):
             self.assertIn(label, html)
         for label in ("Today", "Review &amp; Progress", "data-learn-panel"):
             self.assertIn(label, html)
-        self.assertIn("Search KPIs, topics, or concepts", html)
+        self.assertIn("Filter curriculum", html)
+        self.assertNotIn("Browse KPIs", html)
         self.assertNotIn("30-Day Activity", html)
         self.assertNotIn("Day Streak", html)
         self.assertIn("Previous performance", script)

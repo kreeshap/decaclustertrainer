@@ -5,6 +5,8 @@ with required(table_name,column_name) as (values
  ('responses','user_id'),('responses','event_id'),('responses','session_id'),('responses','question_id'),('responses','selected_index'),
  ('user_srs_state','event_id'),('user_srs_state','question_id'),('user_kpi_mastery','event_id'),('user_kpi_mastery','kpi_code'),
  ('user_study_sessions','event_id'),('user_study_sessions','ar_answers'),('user_study_sessions','roleplay_result'),('user_daily_activity','event_id'),
+ ('user_adaptive_state','user_id'),('user_adaptive_state','event_id'),('user_adaptive_state','state'),
+ ('user_today_plans','user_id'),('user_today_plans','event_id'),('user_today_plans','plan_date'),('user_today_plans','tasks'),
  ('kpi_inference_state','event_id'),('user_timing_profile','event_id'),('learning_evaluation_log','event_id'),
  ('system_announcements','title')
 ), missing_columns as (

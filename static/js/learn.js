@@ -564,12 +564,6 @@
                 setPhase("mission", "done");
                 startVocab(currentKpi());
             });
-            $("browse-kpis-btn").addEventListener("click", () => {
-                curriculumExpanded = true;
-                renderCurriculum();
-                showLearnTab("curriculum");
-                $("curriculum-section").scrollIntoView({behavior: "smooth", block: "start"});
-            });
             $("curriculum-toggle").addEventListener("click", () => {
                 curriculumExpanded = !curriculumExpanded;
                 renderCurriculum();

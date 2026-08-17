@@ -10,7 +10,8 @@ LESSON_DESIGN = (ROOT / "app" / "lesson_design.py").read_text(encoding="utf-8")
 
 class LearnPipelineContractTests(unittest.TestCase):
     def test_content_learning_is_default_without_recall_typing(self) -> None:
-        self.assertIn('data-learn-mode="standard" class="mode-btn active"', LEARN_HTML)
+        self.assertIn('let currentLearnMode = "standard"', LEARN_JS)
+        self.assertNotIn('data-learn-mode="standard"', LEARN_HTML)
         self.assertNotIn('data-learn-mode="activeRecall"', LEARN_HTML)
         self.assertNotIn('id="active-recall-text"', LEARN_HTML)
         self.assertNotIn('id="recall-input"', LEARN_HTML)

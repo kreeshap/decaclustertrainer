@@ -40,12 +40,6 @@
 
         <main id="view-home" class="main-shell learn-landing">
             <div class="learn-landing-head"><div><div class="app-sec">Learn</div><h1>Event curriculum</h1></div><strong id="learn-event-name">Your event</strong></div>
-            <div class="learn-home-controls">
-                <div class="learn-search-panel"><div class="learn-control-label">Search curriculum</div><input id="learn-search" class="learn-search-input" type="search" placeholder="Search KPIs, topics, or concepts" autocomplete="off" /><div id="search-results" class="search-results hidden"></div></div>
-                <button class="ghost-btn" id="browse-kpis-btn" type="button">Browse KPIs</button>
-                <div class="mode-buttons" id="learn-mode-buttons"><button type="button" data-learn-mode="standard" class="mode-btn active">Learn Content</button></div>
-            </div>
-
             <nav class="learn-tabs" role="tablist" aria-label="Learn sections">
                 <button class="learn-tab active" type="button" role="tab" aria-selected="true" data-learn-tab="today">Today</button>
                 <button class="learn-tab" type="button" role="tab" aria-selected="false" data-learn-tab="curriculum">Curriculum</button>
@@ -73,7 +67,7 @@
 
             <div class="learn-tab-panel curriculum-panel" data-learn-panel="curriculum" hidden>
             <section class="learn-section curriculum-section" id="curriculum-section">
-                <div class="section-heading"><div><div class="section-kicker">Curriculum</div><h2>Your event curriculum</h2></div><button class="text-btn" id="curriculum-toggle" type="button">Show all</button></div>
+                <div class="section-heading curriculum-heading"><div><div class="section-kicker">Curriculum</div><h2>Your event curriculum</h2></div><div class="curriculum-tools"><div class="learn-search-panel"><input id="learn-search" class="learn-search-input" type="search" placeholder="Filter curriculum" aria-label="Filter curriculum" autocomplete="off" /><div id="search-results" class="search-results hidden"></div></div><button class="text-btn" id="curriculum-toggle" type="button">Show all</button></div></div>
                 <div id="curriculum-list" class="curriculum-list"></div>
             </section>
             </div>

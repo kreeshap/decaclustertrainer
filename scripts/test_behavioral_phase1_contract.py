@@ -10,17 +10,21 @@ class BehavioralPhaseOneContractTests(unittest.TestCase):
         html = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
         js = (ROOT / "static" / "js" / "dashboard.js").read_text(encoding="utf-8")
 
-        for phrase in ("Today's session", "Why this?", "session-modal", "Finish session"):
+        for phrase in ("Today's session", "session-modal", "Finish session"):
             self.assertIn(phrase, html)
-        for behavior in ("ct_today_session_v1", "makePlan", "updatePlan", "nextTask", "Good stopping point"):
+        self.assertNotIn("Why this?", html)
+        for behavior in ("/api/adaptive/today", "nextTask", "Good stopping point"):
             self.assertIn(behavior, js)
+        self.assertNotIn("localStorage", js)
 
     def test_plan_progress_uses_measured_work_not_clicks(self):
         js = (ROOT / "static" / "js" / "dashboard.js").read_text(encoding="utf-8")
+        planner = (ROOT / "app" / "adaptive_planner.py").read_text(encoding="utf-8")
 
-        self.assertIn("seen-t.baseline", js)
-        self.assertIn("answers-t.baseline", js)
-        self.assertIn("t.baseline-due", js)
+        self.assertIn('state["coverage"]["studied"] - int(item.get("baseline", 0))', planner)
+        self.assertIn('state["practice_attempt_count"] - int(item.get("baseline", 0))', planner)
+        self.assertIn('int(item.get("baseline", 0)) - state["due_review_count"]', planner)
+        self.assertNotIn("writePlan", js)
         self.assertNotIn("hours studied", js.lower())
 
     def test_consistency_uses_a_forgiving_seven_day_window(self):
