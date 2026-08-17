@@ -6,10 +6,17 @@ Tests the full flow: Events → KPIs → Generate Questions → Answer Questions
 
 import requests
 import json
+import os
+import sys
 import time
 from datetime import datetime
 
-BASE_URL = "http://localhost:5000"
+BASE_URL = os.getenv("INTEGRATION_BASE_URL", "http://localhost:5000").rstrip("/")
+REQUEST_TIMEOUT = float(os.getenv("INTEGRATION_REQUEST_TIMEOUT", "20"))
+TEST_EVENT_ID = os.getenv("INTEGRATION_EVENT_ID", "financial_services_tdm")
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 def test_api_kpis():
     """Test that /api/kpis endpoint returns proper event and KPI data."""
@@ -17,7 +24,11 @@ def test_api_kpis():
     print("TEST: /api/kpis endpoint")
     print("="*60)
     
-    resp = requests.get(f"{BASE_URL}/api/kpis")
+    resp = requests.get(
+        f"{BASE_URL}/api/kpis",
+        params={"event_id": TEST_EVENT_ID},
+        timeout=REQUEST_TIMEOUT,
+    )
     print(f"Status: {resp.status_code}")
     
     if resp.status_code != 200:
@@ -34,6 +45,8 @@ def test_api_kpis():
         print(f"  - {ev['id']}: {ev['name']}")
     
     print(f"✓ KPIs available: {len(kpis)}")
+    if not kpis:
+        raise AssertionError(f"No ready KPIs returned for {TEST_EVENT_ID}")
     
     # Show breakdown by event
     kpis_by_event = {}
@@ -74,7 +87,8 @@ def test_generate_questions(kpi_code, kpi_text, cluster, deca_cluster, event_id)
     resp = requests.post(
         f"{BASE_URL}/api/learn/generate",
         json=payload,
-        headers={"Authorization": "Bearer fake-token-for-testing"}
+        headers={"Authorization": "Bearer fake-token-for-testing"},
+        timeout=REQUEST_TIMEOUT,
     )
     
     print(f"Status: {resp.status_code}")
@@ -181,7 +195,8 @@ def test_session_endpoints():
             method,
             f"{BASE_URL}{path}",
             json=payload,
-            headers={"Authorization": "Bearer fake-token"}
+            headers={"Authorization": "Bearer fake-token"},
+            timeout=REQUEST_TIMEOUT,
         )
         auth_required = resp.status_code == 401
         print(f"  {method:4} {path:30} → {resp.status_code} {'(Auth required)' if auth_required else ''}")
@@ -192,7 +207,11 @@ def test_event_mode_routing():
     print("TEST: Event Mode Routing")
     print("="*60)
     
-    data = requests.get(f"{BASE_URL}/api/kpis").json()
+    data = requests.get(
+        f"{BASE_URL}/api/kpis",
+        params={"event_id": TEST_EVENT_ID},
+        timeout=REQUEST_TIMEOUT,
+    ).json()
     events = {e["id"]: e for e in data.get("events", [])}
     
     # Expected routing based on clusters.js
