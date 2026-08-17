@@ -164,8 +164,6 @@ async function loadCorpusDocuments() {
     ${doc.content_type === "roleplay" ? `<label>Event code<input class="corpus-events" value="${escHtml((doc.event_codes || []).join(", "))}"></label>` : ""}
     <label>Competition level<select class="corpus-level">${["district","association","icdc","practice_sample"].map((value) => `<option value="${value}" ${value === doc.competition_level ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>
     ${doc.content_type === "roleplay" ? `<label>Instructional area<input class="corpus-area" value="${escHtml(doc.instructional_area || "")}"></label>` : ""}
-    <label>Source<input class="corpus-source" value="${escHtml(doc.source_name || "")}"></label>
-    <label>Source URL<input class="corpus-url" value="${escHtml(doc.source_url || "")}"></label>
     ${doc.content_type === "roleplay" ? `<label>Rights<select class="corpus-rights">${["unknown","reference_only","owned","licensed_for_student_use","public_domain","do_not_use"].map((value) => `<option value="${value}" ${value === doc.rights_status ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>` : ""}
     <label><input class="corpus-official" type="checkbox" ${doc.official_deca ? "checked" : ""}> Official DECA</label>
     <label><input class="corpus-benchmark" type="checkbox"> Benchmark eligible</label>
@@ -200,8 +198,7 @@ async function verifyCorpus(card) {
   const metadata = { title: card.querySelector(".corpus-title").value, competitive_year: card.querySelector(".corpus-year").value,
     cluster: card.querySelector(".corpus-cluster")?.value || "", event_codes: events,
     competition_level: card.querySelector(".corpus-level").value, instructional_area: card.querySelector(".corpus-area")?.value || "",
-    source_name: card.querySelector(".corpus-source").value,
-    source_url: card.querySelector(".corpus-url").value, official_deca: card.querySelector(".corpus-official").checked };
+    official_deca: card.querySelector(".corpus-official").checked };
   let structuredRoleplay = null;
   if (card.querySelector(".corpus-roleplay-json")) {
     try { structuredRoleplay = JSON.parse(card.querySelector(".corpus-roleplay-json").value); }

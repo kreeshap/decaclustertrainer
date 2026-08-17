@@ -63,11 +63,15 @@ Applies the performance indicators to the business problem.
     assert "Learn enrichment proposals" not in template
     assert "Career cluster" in template and "Event code" in template
     assert "data-corpus-type" not in template
+    assert 'name="source_name"' not in template
+    assert 'name="source_url"' not in template
     assert "all exams are free" not in template.lower()  # behavior belongs in the server contract, not UI copy
     assert 'rights = "licensed_for_student_use" if content_type == "exam"' in admin
     css = (ROOT / "static" / "styles" / "adminpanel.css").read_text(encoding="utf-8")
     assert "[hidden] { display:none !important; }" in css
-    assert "data-question-filter" in (ROOT / "static" / "js" / "adminpanel.js").read_text(encoding="utf-8")
+    admin_js = (ROOT / "static" / "js" / "adminpanel.js").read_text(encoding="utf-8")
+    assert "data-question-filter" in admin_js
+    assert "corpus-source" not in admin_js and "corpus-url" not in admin_js
     pilot_migration = (ROOT / "supabase" / "migrations" / "20260817015000_real_corpus_pilot.sql").read_text(encoding="utf-8").lower()
     for requirement in ("corpus_parser_failures", "field_confidence", "review_priority", "gold_reference", "stability_delta"):
         assert requirement in pilot_migration
