@@ -20,7 +20,7 @@ class LearnCompletionContractTests(unittest.TestCase):
     def test_landing_separates_coverage_retention_curriculum_and_review(self):
         html = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
         script = (ROOT / "static/js/learn.js").read_text(encoding="utf-8")
-        for label in ("Learning progress", "Continue learning", "Curriculum", "Review", "Mastery of learned material"):
+        for label in ("Progress", "Today", "Curriculum", "Due for review", "Mastery"):
             self.assertIn(label, html)
         for label in ("Today", "Review &amp; Progress", "data-learn-panel"):
             self.assertIn(label, html)

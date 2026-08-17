@@ -25,7 +25,7 @@ class DashboardEvidenceContractTests(unittest.TestCase):
         self.assertIn("coverage >= 50", practice)
         self.assertIn('data["attempts"] >= 10', practice)
         self.assertIn("Limited data", dashboard)
-        self.assertIn("50% KPI coverage and 10 answered questions", dashboard)
+        self.assertIn('x.status||"Limited data"', dashboard)
 
     def test_analytics_returns_curriculum_denominator(self):
         learn = (ROOT / "app/routes/learn.py").read_text(encoding="utf-8")

@@ -41,9 +41,9 @@ class UiSimplificationContractTests(unittest.TestCase):
         template = (ROOT / "templates/learn.html").read_text(encoding="utf-8")
         script = (ROOT / "static/js/learn.js").read_text(encoding="utf-8")
         styles = (ROOT / "static/styles/learn.css").read_text(encoding="utf-8")
-        self.assertIn("Continue learning", template)
-        self.assertIn("Your event curriculum", template)
-        self.assertIn("Mastery of learned material", template)
+        self.assertIn('data-learn-tab="today">Today', template)
+        self.assertIn("<h2>Curriculum</h2>", template)
+        self.assertIn('<div class="section-kicker">Mastery</div>', template)
         for removed_text in (
             "Current event",
             "Recommended for you",

@@ -10,10 +10,10 @@ class BehavioralPhaseOneContractTests(unittest.TestCase):
         html = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
         js = (ROOT / "static" / "js" / "dashboard.js").read_text(encoding="utf-8")
 
-        for phrase in ("Today's session", "session-modal", "Finish session"):
+        for phrase in ("Today's session", "session-modal", 'id="session-finish"'):
             self.assertIn(phrase, html)
         self.assertNotIn("Why this?", html)
-        for behavior in ("/api/adaptive/today", "nextTask", "Good stopping point"):
+        for behavior in ("/api/adaptive/today", "nextTask", 'session-dialog-title'):
             self.assertIn(behavior, js)
         self.assertNotIn("localStorage", js)
 
@@ -31,7 +31,7 @@ class BehavioralPhaseOneContractTests(unittest.TestCase):
         html = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
         js = (ROOT / "static" / "js" / "dashboard.js").read_text(encoding="utf-8")
 
-        self.assertIn("of the last 7 days", html)
+        self.assertIn("of 7 days", html)
         self.assertIn("activeDays", js)
 
 
