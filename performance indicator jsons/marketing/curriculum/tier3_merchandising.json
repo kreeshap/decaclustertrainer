@@ -1,0 +1,2539 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "marketing_tier3_merchandising",
+  "name": "Merchandising Pathway",
+  "cluster": "Marketing",
+  "tier": 3,
+  "curriculum_section": "Merchandising Pathway",
+  "pathway": "Merchandising",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Marketing",
+    "pages": [
+      43,
+      48
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "EC:094",
+      "level": "SP",
+      "official_text": "Identify the effects of global trade on retailing",
+      "display_text": "Identify the effects of global trade on retailing",
+      "text": "Identify the effects of global trade on retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand global trade's impact to aid business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "EC:102",
+      "level": "SP",
+      "official_text": "Explain current retail trends driven by global trade",
+      "display_text": "Explain current retail trends driven by global trade",
+      "text": "Explain current retail trends driven by global trade",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand global trade's impact to aid business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "MK:003",
+      "level": "CS",
+      "official_text": "Distinguish between retailing and marketing",
+      "display_text": "Distinguish between retailing and marketing",
+      "text": "Distinguish between retailing and marketing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire an understanding of marketing's role and function in business to facilitate work among departments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "MK:020",
+      "level": "CS",
+      "official_text": "Explain the importance of merchandising to retailers",
+      "display_text": "Explain the importance of merchandising to retailers",
+      "text": "Explain the importance of merchandising to retailers",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire an understanding of marketing's role and function in business to facilitate work among departments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:041",
+      "level": "SP",
+      "official_text": "Analyze the impact of technology on retailing",
+      "display_text": "Analyze the impact of technology on retailing",
+      "text": "Analyze the impact of technology on retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform merchandising responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:107",
+      "level": "SP",
+      "official_text": "Utilize merchandising software",
+      "display_text": "Utilize merchandising software",
+      "text": "Utilize merchandising software",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform merchandising responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:104",
+      "level": "SP",
+      "official_text": "Obtain information from retail databases to aid in product planning and control",
+      "display_text": "Obtain information from retail databases to aid in product planning and control",
+      "text": "Obtain information from retail databases to aid in product planning and control",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform merchandising responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:102",
+      "level": "SP",
+      "official_text": "Maintain purchase orders",
+      "display_text": "Maintain purchase orders",
+      "text": "Maintain purchase orders",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain marketing information to facilitate merchandising activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:108",
+      "level": "SP",
+      "official_text": "Maintain order logs",
+      "display_text": "Maintain order logs",
+      "text": "Maintain order logs",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain marketing information to facilitate merchandising activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "OP:122",
+      "level": "CS",
+      "official_text": "Explain policies/procedures for handling shoplifters",
+      "display_text": "Explain policies/procedures for handling shoplifters",
+      "text": "Explain policies/procedures for handling shoplifters",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "OP:172",
+      "level": "SP",
+      "official_text": "Devise/Enact merchandise security measures to minimize inventory shrinkage",
+      "display_text": "Devise/Enact merchandise security measures to minimize inventory shrinkage",
+      "text": "Devise/Enact merchandise security measures to minimize inventory shrinkage",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "OP:040",
+      "level": "CS",
+      "official_text": "Follow up orders",
+      "display_text": "Follow up orders",
+      "text": "Follow up orders",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement organizational skills to improve efficiency and work flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 43
+      }
+    },
+    {
+      "code": "OP:194",
+      "level": "CS",
+      "official_text": "Prepare cash drawers/banks",
+      "display_text": "Prepare cash drawers/banks",
+      "text": "Prepare cash drawers/banks",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Prepare registers/terminals for sales operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:195",
+      "level": "CS",
+      "official_text": "Open/Close register/terminal",
+      "display_text": "Open/Close register/terminal",
+      "text": "Open/Close register/terminal",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Prepare registers/terminals for sales operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:522",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of distribution",
+      "display_text": "Explain the nature and scope of distribution",
+      "text": "Explain the nature and scope of distribution",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:523",
+      "level": "CS",
+      "official_text": "Explain the relationship between customer service and distribution",
+      "display_text": "Explain the relationship between customer service and distribution",
+      "text": "Explain the relationship between customer service and distribution",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:524",
+      "level": "SP",
+      "official_text": "Describe the use of technology in distribution",
+      "display_text": "Describe the use of technology in distribution",
+      "text": "Describe the use of technology in distribution",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:525",
+      "level": "SP",
+      "official_text": "Explain legal considerations in distribution",
+      "display_text": "Explain legal considerations in distribution",
+      "text": "Explain legal considerations in distribution",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:526",
+      "level": "SP",
+      "official_text": "Describe ethical considerations in distribution",
+      "display_text": "Describe ethical considerations in distribution",
+      "text": "Describe ethical considerations in distribution",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:377",
+      "level": "SP",
+      "official_text": "Explain distribution issues and trends",
+      "display_text": "Explain distribution issues and trends",
+      "text": "Explain distribution issues and trends",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:378",
+      "level": "SP",
+      "official_text": "Discuss the use of electronic data interchange (EDI)",
+      "display_text": "Discuss the use of electronic data interchange (EDI)",
+      "text": "Discuss the use of electronic data interchange (EDI)",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:380",
+      "level": "CS",
+      "official_text": "Use an information system for order fulfillment",
+      "display_text": "Use an information system for order fulfillment",
+      "text": "Use an information system for order fulfillment",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize order-fulfillment processes to move product through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:381",
+      "level": "CS",
+      "official_text": "Fulfill orders",
+      "display_text": "Fulfill orders",
+      "text": "Fulfill orders",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize order-fulfillment processes to move product through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:384",
+      "level": "CS",
+      "official_text": "Explain the receiving process",
+      "display_text": "Explain the receiving process",
+      "text": "Explain the receiving process",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:385",
+      "level": "CS",
+      "official_text": "Explain stock-handling techniques used in receiving deliveries",
+      "display_text": "Explain stock-handling techniques used in receiving deliveries",
+      "text": "Explain stock-handling techniques used in receiving deliveries",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:386",
+      "level": "CS",
+      "official_text": "Process incoming merchandise",
+      "display_text": "Process incoming merchandise",
+      "text": "Process incoming merchandise",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:387",
+      "level": "CS",
+      "official_text": "Resolve problems with incoming shipments",
+      "display_text": "Resolve problems with incoming shipments",
+      "text": "Resolve problems with incoming shipments",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:389",
+      "level": "CS",
+      "official_text": "Attach source and anti-theft tags",
+      "display_text": "Attach source and anti-theft tags",
+      "text": "Attach source and anti-theft tags",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:390",
+      "level": "CS",
+      "official_text": "Price mark merchandise",
+      "display_text": "Price mark merchandise",
+      "text": "Price mark merchandise",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:391",
+      "level": "SP",
+      "official_text": "Make and record price changes",
+      "display_text": "Make and record price changes",
+      "text": "Make and record price changes",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:392",
+      "level": "SP",
+      "official_text": "Identify hang-tag needs",
+      "display_text": "Identify hang-tag needs",
+      "text": "Identify hang-tag needs",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:393",
+      "level": "SP",
+      "official_text": "Assign codes to each product item",
+      "display_text": "Assign codes to each product item",
+      "text": "Assign codes to each product item",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:394",
+      "level": "CS",
+      "official_text": "Route stock to sales floor",
+      "display_text": "Route stock to sales floor",
+      "text": "Route stock to sales floor",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:395",
+      "level": "CS",
+      "official_text": "Rotate stock",
+      "display_text": "Rotate stock",
+      "text": "Rotate stock",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:396",
+      "level": "CS",
+      "official_text": "Process returned/damaged product",
+      "display_text": "Process returned/damaged product",
+      "text": "Process returned/damaged product",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:397",
+      "level": "SP",
+      "official_text": "Transfer stock to/from branches",
+      "display_text": "Transfer stock to/from branches",
+      "text": "Transfer stock to/from branches",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:398",
+      "level": "SP",
+      "official_text": "Enter product descriptions into a PoS system",
+      "display_text": "Enter product descriptions into a PoS system",
+      "text": "Enter product descriptions into a PoS system",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:400",
+      "level": "CS",
+      "official_text": "Explain storing considerations",
+      "display_text": "Explain storing considerations",
+      "text": "Explain storing considerations",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:401",
+      "level": "CS",
+      "official_text": "Explain the nature of warehousing",
+      "display_text": "Explain the nature of warehousing",
+      "text": "Explain the nature of warehousing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:402",
+      "level": "CS",
+      "official_text": "Store inventory",
+      "display_text": "Store inventory",
+      "text": "Store inventory",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:405",
+      "level": "CS",
+      "official_text": "Explain shipping processes",
+      "display_text": "Explain shipping processes",
+      "text": "Explain shipping processes",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand transportation processes to move products through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:406",
+      "level": "SP",
+      "official_text": "Identify factors considered when selecting best shipping method",
+      "display_text": "Identify factors considered when selecting best shipping method",
+      "text": "Identify factors considered when selecting best shipping method",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand transportation processes to move products through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:407",
+      "level": "CS",
+      "official_text": "Maintain inventory levels",
+      "display_text": "Maintain inventory levels",
+      "text": "Maintain inventory levels",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:408",
+      "level": "CS",
+      "official_text": "Report out-of-stocks",
+      "display_text": "Report out-of-stocks",
+      "text": "Report out-of-stocks",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:409",
+      "level": "CS",
+      "official_text": "Complete inventory counts",
+      "display_text": "Complete inventory counts",
+      "text": "Complete inventory counts",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:410",
+      "level": "SP",
+      "official_text": "Monitor merchandise classification system",
+      "display_text": "Monitor merchandise classification system",
+      "text": "Monitor merchandise classification system",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:411",
+      "level": "SP",
+      "official_text": "Allocate merchandise to stores/regions",
+      "display_text": "Allocate merchandise to stores/regions",
+      "text": "Allocate merchandise to stores/regions",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:412",
+      "level": "SP",
+      "official_text": "Track stock by location for department/class/vendor level",
+      "display_text": "Track stock by location for department/class/vendor level",
+      "text": "Track stock by location for department/class/vendor level",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:413",
+      "level": "CS",
+      "official_text": "Describe inventory control systems",
+      "display_text": "Describe inventory control systems",
+      "text": "Describe inventory control systems",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:414",
+      "level": "SP",
+      "official_text": "Explain types of unit inventory-control systems",
+      "display_text": "Explain types of unit inventory-control systems",
+      "text": "Explain types of unit inventory-control systems",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:415",
+      "level": "SP",
+      "official_text": "Determine inventory shrinkage",
+      "display_text": "Determine inventory shrinkage",
+      "text": "Determine inventory shrinkage",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:416",
+      "level": "SP",
+      "official_text": "Maintain inventory-control systems",
+      "display_text": "Maintain inventory-control systems",
+      "text": "Maintain inventory-control systems",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:417",
+      "level": "SP",
+      "official_text": "Implement category management process",
+      "display_text": "Implement category management process",
+      "text": "Implement category management process",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:420",
+      "level": "SP",
+      "official_text": "Ensure timely delivery of advertised merchandise",
+      "display_text": "Ensure timely delivery of advertised merchandise",
+      "text": "Ensure timely delivery of advertised merchandise",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage distribution activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PD:148",
+      "level": "CS",
+      "official_text": "Explain the evolution of retailing",
+      "display_text": "Explain the evolution of retailing",
+      "text": "Explain the evolution of retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about merchandising to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PD:128",
+      "level": "CS",
+      "official_text": "Describe the role of merchandisers in retailing",
+      "display_text": "Describe the role of merchandisers in retailing",
+      "text": "Describe the role of merchandisers in retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about merchandising to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PD:038",
+      "level": "CS",
+      "official_text": "Identify career opportunities in retailing",
+      "display_text": "Identify career opportunities in retailing",
+      "text": "Identify career opportunities in retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand career opportunities in retailing to make career decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PD:134",
+      "level": "CS",
+      "official_text": "Explain career opportunities in merchandising",
+      "display_text": "Explain career opportunities in merchandising",
+      "text": "Explain career opportunities in merchandising",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand career opportunities in retailing to make career decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PM:278",
+      "level": "SP",
+      "official_text": "Determine the impact of product standards' issues associated with global business",
+      "display_text": "Determine the impact of product standards' issues associated with global business",
+      "text": "Determine the impact of product standards' issues associated with global business",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 45
+      }
+    },
+    {
+      "code": "PM:253",
+      "level": "SP",
+      "official_text": "Obtain samples",
+      "display_text": "Obtain samples",
+      "text": "Obtain samples",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Utilize assortment-mix strategies to create maximum mix of products at minimum cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:223",
+      "level": "SP",
+      "official_text": "Determine quality of merchandise to offer",
+      "display_text": "Determine quality of merchandise to offer",
+      "text": "Determine quality of merchandise to offer",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Utilize assortment-mix strategies to create maximum mix of products at minimum cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:254",
+      "level": "SP",
+      "official_text": "Plan merchandise assortment (e.g., styling, sizes, quantities, colors)",
+      "display_text": "Plan merchandise assortment (e.g., styling, sizes, quantities, colors)",
+      "text": "Plan merchandise assortment (e.g., styling, sizes, quantities, colors)",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Utilize assortment-mix strategies to create maximum mix of products at minimum cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:061",
+      "level": "SP",
+      "official_text": "Explain the nature of merchandise plans (budgets)",
+      "display_text": "Explain the nature of merchandise plans (budgets)",
+      "text": "Explain the nature of merchandise plans (budgets)",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:058",
+      "level": "SP",
+      "official_text": "Calculate open-to-buy",
+      "display_text": "Calculate open-to-buy",
+      "text": "Calculate open-to-buy",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:219",
+      "level": "SP",
+      "official_text": "Create/maintain daily sales plan",
+      "display_text": "Create/maintain daily sales plan",
+      "text": "Create/maintain daily sales plan",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:257",
+      "level": "SP",
+      "official_text": "Identify emerging trends",
+      "display_text": "Identify emerging trends",
+      "text": "Identify emerging trends",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:062",
+      "level": "SP",
+      "official_text": "Plan stock",
+      "display_text": "Plan stock",
+      "text": "Plan stock",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:063",
+      "level": "SP",
+      "official_text": "Plan reductions (e.g., anticipated markdowns, employee/other discounts, stock shortages)",
+      "display_text": "Plan reductions (e.g., anticipated markdowns, employee/other discounts, stock shortages)",
+      "text": "Plan reductions (e.g., anticipated markdowns, employee/other discounts, stock shortages)",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:064",
+      "level": "SP",
+      "official_text": "Plan purchases",
+      "display_text": "Plan purchases",
+      "text": "Plan purchases",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:192",
+      "level": "SP",
+      "official_text": "Compare and contrast buying from domestic sources with that of foreign sources",
+      "display_text": "Compare and contrast buying from domestic sources with that of foreign sources",
+      "text": "Compare and contrast buying from domestic sources with that of foreign sources",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:193",
+      "level": "SP",
+      "official_text": "Determine final cost of purchases from domestic and international sources",
+      "display_text": "Determine final cost of purchases from domestic and international sources",
+      "text": "Determine final cost of purchases from domestic and international sources",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Develop merchandise plans (budgets) to guide selection of retail products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:258",
+      "level": "SP",
+      "official_text": "Write purchase orders",
+      "display_text": "Write purchase orders",
+      "text": "Write purchase orders",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:259",
+      "level": "SP",
+      "official_text": "Analyze the use of central buying",
+      "display_text": "Analyze the use of central buying",
+      "text": "Analyze the use of central buying",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:224",
+      "level": "SP",
+      "official_text": "Determine stock turnover",
+      "display_text": "Determine stock turnover",
+      "text": "Determine stock turnover",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:260",
+      "level": "SP",
+      "official_text": "Determine what to buy/reorder",
+      "display_text": "Determine what to buy/reorder",
+      "text": "Determine what to buy/reorder",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:261",
+      "level": "SP",
+      "official_text": "Determine quantities to buy/reorder",
+      "display_text": "Determine quantities to buy/reorder",
+      "text": "Determine quantities to buy/reorder",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:262",
+      "level": "SP",
+      "official_text": "Determine when to buy/reorder",
+      "display_text": "Determine when to buy/reorder",
+      "text": "Determine when to buy/reorder",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:232",
+      "level": "SP",
+      "official_text": "Establish reorder points",
+      "display_text": "Establish reorder points",
+      "text": "Establish reorder points",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Perform buying activities to obtain products for resale.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:239",
+      "level": "SP",
+      "official_text": "Evaluate vendors' goods and services",
+      "display_text": "Evaluate vendors' goods and services",
+      "text": "Evaluate vendors' goods and services",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:263",
+      "level": "SP",
+      "official_text": "Choose vendors",
+      "display_text": "Choose vendors",
+      "text": "Choose vendors",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:264",
+      "level": "SP",
+      "official_text": "Negotiate terms with suppliers",
+      "display_text": "Negotiate terms with suppliers",
+      "text": "Negotiate terms with suppliers",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PM:243",
+      "level": "SP",
+      "official_text": "Identify components of a retail image",
+      "display_text": "Identify components of a retail image",
+      "text": "Identify components of a retail image",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "IM:300",
+      "level": "SP",
+      "official_text": "Analyze information from suppliers",
+      "display_text": "Analyze information from suppliers",
+      "text": "Analyze information from suppliers",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Utilize marketing information to drive merchandising activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "IM:396",
+      "level": "SP",
+      "official_text": "Scan marketplace to identify factors that could influence merchandising decisions",
+      "display_text": "Scan marketplace to identify factors that could influence merchandising decisions",
+      "text": "Scan marketplace to identify factors that could influence merchandising decisions",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Utilize marketing information to drive merchandising activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "IM:298",
+      "level": "SP",
+      "official_text": "Analyze competitors' offerings",
+      "display_text": "Analyze competitors' offerings",
+      "text": "Analyze competitors' offerings",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Utilize marketing information to drive merchandising activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 46
+      }
+    },
+    {
+      "code": "PR:346",
+      "level": "SP",
+      "official_text": "Proof ads",
+      "display_text": "Proof ads",
+      "text": "Proof ads",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Advertise to communicate promotional messages to targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:360",
+      "level": "SP",
+      "official_text": "Plan special events",
+      "display_text": "Plan special events",
+      "text": "Plan special events",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize special events to increase sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:068",
+      "level": "SP",
+      "official_text": "Prepare store/department for special event",
+      "display_text": "Prepare store/department for special event",
+      "text": "Prepare store/department for special event",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize special events to increase sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:023",
+      "level": "CS",
+      "official_text": "Explain the use of visual merchandising in retailing",
+      "display_text": "Explain the use of visual merchandising in retailing",
+      "text": "Explain the use of visual merchandising in retailing",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:302",
+      "level": "CS",
+      "official_text": "Distinguish between visual merchandising and display",
+      "display_text": "Distinguish between visual merchandising and display",
+      "text": "Distinguish between visual merchandising and display",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:342",
+      "level": "SP",
+      "official_text": "Place merchandise for impact",
+      "display_text": "Place merchandise for impact",
+      "text": "Place merchandise for impact",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:284",
+      "level": "SP",
+      "official_text": "Determine on-floor assortments",
+      "display_text": "Determine on-floor assortments",
+      "text": "Determine on-floor assortments",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:358",
+      "level": "SP",
+      "official_text": "Use cross-merchandising techniques",
+      "display_text": "Use cross-merchandising techniques",
+      "text": "Use cross-merchandising techniques",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:349",
+      "level": "SP",
+      "official_text": "Read/Implement planograms",
+      "display_text": "Read/Implement planograms",
+      "text": "Read/Implement planograms",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ visual merchandising techniques to increase interest in product offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:026",
+      "level": "CS",
+      "official_text": "Explain types of display arrangements",
+      "display_text": "Explain types of display arrangements",
+      "text": "Explain types of display arrangements",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:052",
+      "level": "CS",
+      "official_text": "Maintain displays",
+      "display_text": "Maintain displays",
+      "text": "Maintain displays",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:054",
+      "level": "CS",
+      "official_text": "Dismantle/Store displays/display fixtures/forms",
+      "display_text": "Dismantle/Store displays/display fixtures/forms",
+      "text": "Dismantle/Store displays/display fixtures/forms",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:109",
+      "level": "SP",
+      "official_text": "Create promotional signs",
+      "display_text": "Create promotional signs",
+      "text": "Create promotional signs",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:031",
+      "level": "SP",
+      "official_text": "Select and use display fixtures/forms",
+      "display_text": "Select and use display fixtures/forms",
+      "text": "Select and use display fixtures/forms",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:359",
+      "level": "SP",
+      "official_text": "Use lighting to highlight products",
+      "display_text": "Use lighting to highlight products",
+      "text": "Use lighting to highlight products",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:114",
+      "level": "SP",
+      "official_text": "Set up point-of-sale displays and handouts",
+      "display_text": "Set up point-of-sale displays and handouts",
+      "text": "Set up point-of-sale displays and handouts",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:047",
+      "level": "SP",
+      "official_text": "Create displays",
+      "display_text": "Create displays",
+      "text": "Create displays",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:209",
+      "level": "SP",
+      "official_text": "Develop promotional calendar",
+      "display_text": "Develop promotional calendar",
+      "text": "Develop promotional calendar",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage promotional activities to maximize return on promotional efforts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "PR:077",
+      "level": "SP",
+      "official_text": "Plan/Schedule displays/themes with management",
+      "display_text": "Plan/Schedule displays/themes with management",
+      "text": "Plan/Schedule displays/themes with management",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage promotional activities to maximize return on promotional efforts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 47
+      }
+    },
+    {
+      "code": "SE:019",
+      "level": "CS",
+      "official_text": "Explain the use of brand names in selling",
+      "display_text": "Explain the use of brand names in selling",
+      "text": "Explain the use of brand names in selling",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:110",
+      "level": "CS",
+      "official_text": "Establish relationship with customer/client",
+      "display_text": "Establish relationship with customer/client",
+      "text": "Establish relationship with customer/client",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:111",
+      "level": "CS",
+      "official_text": "Determine customer/client needs",
+      "display_text": "Determine customer/client needs",
+      "text": "Determine customer/client needs",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:114",
+      "level": "CS",
+      "official_text": "Recommend specific products",
+      "display_text": "Recommend specific products",
+      "text": "Recommend specific products",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:374",
+      "level": "SP",
+      "official_text": "Demonstrate good/service",
+      "display_text": "Demonstrate good/service",
+      "text": "Demonstrate good/service",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:874",
+      "level": "SP",
+      "official_text": "Convert customer/client objections into selling points",
+      "display_text": "Convert customer/client objections into selling points",
+      "text": "Convert customer/client objections into selling points",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:895",
+      "level": "SP",
+      "official_text": "Close the sale",
+      "display_text": "Close the sale",
+      "text": "Close the sale",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:875",
+      "level": "SP",
+      "official_text": "Demonstrate suggestion selling",
+      "display_text": "Demonstrate suggestion selling",
+      "text": "Demonstrate suggestion selling",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:489",
+      "level": "SP",
+      "official_text": "Plan follow-up strategies for use in retail selling",
+      "display_text": "Plan follow-up strategies for use in retail selling",
+      "text": "Plan follow-up strategies for use in retail selling",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:023",
+      "level": "CS",
+      "official_text": "Arrange delivery of purchases",
+      "display_text": "Arrange delivery of purchases",
+      "text": "Arrange delivery of purchases",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:887",
+      "level": "CS",
+      "official_text": "Pack and wrap purchases",
+      "display_text": "Pack and wrap purchases",
+      "text": "Pack and wrap purchases",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:009",
+      "level": "CS",
+      "official_text": "Process special orders for retail sales",
+      "display_text": "Process special orders for retail sales",
+      "text": "Process special orders for retail sales",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:016",
+      "level": "CS",
+      "official_text": "Sell gift certificates",
+      "display_text": "Sell gift certificates",
+      "text": "Sell gift certificates",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:835",
+      "level": "CS",
+      "official_text": "Process retail telephone orders",
+      "display_text": "Process retail telephone orders",
+      "text": "Process retail telephone orders",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:162",
+      "level": "CS",
+      "official_text": "Process returns/exchanges",
+      "display_text": "Process returns/exchanges",
+      "text": "Process returns/exchanges",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:117",
+      "level": "SP",
+      "official_text": "Process retail sales documentation",
+      "display_text": "Process retail sales documentation",
+      "text": "Process retail sales documentation",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:116",
+      "level": "CS",
+      "official_text": "Calculate miscellaneous charges for retail sales",
+      "display_text": "Calculate miscellaneous charges for retail sales",
+      "text": "Calculate miscellaneous charges for retail sales",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:329",
+      "level": "CS",
+      "official_text": "Process sales transactions (e.g., cash, credit, check)",
+      "display_text": "Process sales transactions (e.g., cash, credit, check)",
+      "text": "Process sales transactions (e.g., cash, credit, check)",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:152",
+      "level": "CS",
+      "official_text": "Accept checks from customers",
+      "display_text": "Accept checks from customers",
+      "text": "Accept checks from customers",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:153",
+      "level": "CS",
+      "official_text": "Operate register/terminal",
+      "display_text": "Operate register/terminal",
+      "text": "Operate register/terminal",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:396",
+      "level": "SP",
+      "official_text": "Provide information about incoming merchandise to sales staff",
+      "display_text": "Provide information about incoming merchandise to sales staff",
+      "text": "Provide information about incoming merchandise to sales staff",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Guide sales staff to improve their success rate and to minimize staff turnover.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    },
+    {
+      "code": "SE:389",
+      "level": "SP",
+      "official_text": "Monitor on-floor selling activities",
+      "display_text": "Monitor on-floor selling activities",
+      "text": "Monitor on-floor selling activities",
+      "tier": 3,
+      "curriculum_section": "Merchandising Pathway",
+      "cluster": "Marketing",
+      "pathway": "Merchandising",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Guide sales staff to improve their success rate and to minimize staff turnover.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 48
+      }
+    }
+  ]
+}

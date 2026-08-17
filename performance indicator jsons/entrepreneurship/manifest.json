@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "cluster": "Entrepreneurship",
+  "curriculum_family": "sectioned",
+  "competitive_year": "2026-27",
+  "source_document": "source/2026-27-HS-DECA-Entrepreneurship.pdf",
+  "exam_blueprint": "exam_blueprint.json",
+  "curriculum": [
+    "curriculum/business_administration_core.json",
+    "curriculum/business_management_administration_core.json",
+    "curriculum/finance_core.json",
+    "curriculum/marketing_core.json"
+  ],
+  "events": [
+    "events/ENT.json",
+    "events/ETDM.json"
+  ],
+  "counts": {
+    "entrepreneurship_business_administration_core": 175,
+    "entrepreneurship_business_management_core": 14,
+    "entrepreneurship_finance_core": 13,
+    "entrepreneurship_marketing_core": 44
+  }
+}

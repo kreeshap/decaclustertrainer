@@ -30,7 +30,7 @@
       <nav class="admin-tabs" role="tablist" aria-label="Admin sections">
         <button class="admin-tab active" type="button" role="tab" aria-selected="true" data-admin-tab="overview">Overview</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="study">Study materials</button>
-        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="questions">Questions</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="questions">Practice Corpus</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="sources">Sources</button>
       </nav>
       <section class="panel ops-progress" data-admin-group="overview">
@@ -78,44 +78,136 @@
         <div class="batch-heading"><strong id="lesson-audit-batch">No audit batches yet</strong><span id="lesson-audit-status"></span></div>
       </section>
 
-      <section class="panel question-import-panel" data-admin-group="questions">
-        <div class="section-kicker">Question bank ingestion</div>
-        <h2>Import exam questions from PDF</h2>
-        <p>Uploaded PDFs may be used throughout the content pipeline. Selectable text is parsed deterministically, then answer keys, KPI alignment, and duplicates are checked before questions reach Practice Mode.</p>
-        <form id="question-import-form" class="question-import-form">
+      <section class="panel" data-admin-group="study">
+        <div class="section-kicker">Verified factual knowledge</div>
+        <h2>Factual evidence review</h2>
+        <p>DECA material establishes relevance and alignment. Claims are approved here only after separate current, authoritative factual evidence is supplied.</p>
+        <button class="attention-row" id="review-kpi-knowledge" type="button"><span>Factual claims awaiting curation</span><strong id="kpi-knowledge-pending">0</strong></button>
+      </section>
+
+      <section class="panel corpus-header" data-admin-group="questions">
+        <div class="section-kicker">Practice Corpus</div>
+        <h2>Verified DECA reference material</h2>
+        <p>Collect authentic exams and roleplays, parse them, verify them, and measure the corpus before generation unlocks.</p>
+        <nav class="corpus-nav" aria-label="Practice corpus sections">
+          <button class="corpus-nav-button active" type="button" data-corpus-view="overview">Overview</button>
+          <button class="corpus-nav-button" type="button" data-corpus-view="exams">Exams</button>
+          <button class="corpus-nav-button" type="button" data-corpus-view="roleplays">Roleplays / Case Studies</button>
+          <button class="corpus-nav-button" type="button" data-corpus-view="review">Review Queue</button>
+        </nav>
+      </section>
+
+      <section class="panel question-import-panel" data-admin-group="questions" data-corpus-panel="overview">
+        <div class="section-kicker">Practice Corpus v1</div>
+        <h2>Reference corpus</h2>
+        <p>Original PDFs remain private. Extraction proposes metadata; only reviewer-confirmed documents can become benchmark eligible. Student publication is a separate rights decision.</p>
+        <div class="batch-grid corpus-summary-grid">
+          <div><strong id="corpus-documents">0</strong><span>Uploaded documents</span></div>
+          <div><strong id="corpus-verified">0</strong><span>Verified references</span></div>
+          <div><strong id="corpus-questions">0</strong><span>Verified questions</span></div>
+          <div><strong id="corpus-roleplays">0</strong><span>Verified roleplays</span></div>
+        </div>
+        <div id="corpus-coverage" class="sources-list"></div>
+        <div class="section-kicker">Corpus quality</div>
+        <div id="corpus-quality" class="sources-list"></div>
+        <div class="section-kicker">Real Corpus Pilot</div>
+        <div id="corpus-pilot-report" class="sources-list"></div>
+        <div id="corpus-readiness" class="sources-list"></div>
+        <article class="generation-lock-card">
+          <div><span class="lock-icon">🔒</span><strong>AI generation locked</strong></div>
+          <p>Reference-corpus and factual-knowledge requirements have not been met. Collect, parse, verify, and analyze the corpus first.</p>
+          <button class="text-action" id="view-corpus-readiness" type="button">View readiness details →</button>
+        </article>
+      </section>
+
+      <section class="panel question-import-panel" data-admin-group="questions" data-corpus-panel="exams roleplays">
+        <div class="section-kicker" id="corpus-upload-kicker">Exam reference upload</div>
+        <h2 id="corpus-upload-heading">Upload exam PDF</h2>
+        <div class="admin-tabs corpus-type-tabs" hidden>
+          <button type="button" class="admin-tab active" data-corpus-type="exam">Exam</button>
+          <button type="button" class="admin-tab" data-corpus-type="roleplay">Roleplay / Case Study</button>
+        </div>
+        <form id="corpus-upload-form" class="question-import-form">
+          <input name="content_type" id="corpus-content-type" type="hidden" value="exam">
+          <label class="corpus-dropzone">Drop PDF here or choose file<input name="file" type="file" accept="application/pdf" required></label>
+          <label>Title<input name="title" placeholder="Suggested from PDF if blank"></label>
+          <label>Competitive year<input name="competitive_year" placeholder="2026-27"></label>
+          <label>Cluster<select name="cluster"><option value="">Suggest / unspecified</option><option>Finance</option><option>Marketing</option><option>Hospitality and Tourism</option><option>Business Management and Administration</option><option>Entrepreneurship</option></select></label>
+          <label>Event code(s)<input name="event_codes" placeholder="ACT (one per upload in v1)"></label>
+          <label class="roleplay-only" hidden>Event type<select name="event_type"><option value="">Suggest / unspecified</option><option value="individual_series">Individual Series</option><option value="team_decision_making">Team Decision Making</option></select></label>
+          <label>Competition level<select name="competition_level"><option value="practice_sample">Practice / Sample</option><option value="district">District</option><option value="association">Association</option><option value="icdc">ICDC</option></select></label>
+          <label class="roleplay-only" hidden>Instructional area<input name="instructional_area"></label>
+          <label>Source<input name="source_name"></label>
+          <label>Source URL<input name="source_url" type="url"></label>
+          <label>Source organization<input name="source_organization"></label>
+          <label>Rights/use status<select name="rights_status"><option value="unknown">Unknown - review required</option><option value="reference_only">Reference only</option><option value="owned">Owned</option><option value="licensed_for_student_use">Licensed for student use</option><option value="public_domain">Public domain</option><option value="do_not_use">Do not use</option></select></label>
+          <label><input name="official_deca" type="checkbox" value="true"> Official DECA source</label>
+          <label class="audit-notes">Notes<textarea name="notes" rows="3"></textarea></label>
+          <button class="primary-action" type="submit">Store privately and parse</button>
+        </form>
+        <div id="corpus-upload-status" class="import-summary">Uploaded material starts as reference-only and needs review.</div>
+        <div id="corpus-review-list" class="sources-list"></div>
+        <div class="audit-actions"><button class="attention-row" id="review-corpus-question" type="button"><span>Review next extracted exam item</span><strong>→</strong></button></div>
+      </section>
+
+      <section class="panel question-import-review" id="corpus-question-review" data-admin-group="questions" data-corpus-panel="review" data-corpus-conditional hidden>
+        <div class="review-topline"><span id="corpus-question-meta"></span><button id="close-corpus-question" type="button">Close</button></div>
+        <h2 id="corpus-question-stem"></h2>
+        <ol class="import-choices" id="corpus-question-choices" type="A"></ol>
+        <div class="flag-box"><strong>Parser review priority</strong><p id="corpus-question-flags"></p></div>
+        <div class="question-import-fields">
+          <label>Official answer<select id="corpus-question-answer"><option value="">Unknown</option><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></label>
+          <label>PI code (leave blank if unspecified)<input id="corpus-question-pi"></label>
+          <label>Instructional area<input id="corpus-question-area"></label>
+          <label>Cognitive demand<select id="corpus-question-demand"><option value="">Unspecified</option><option value="recall">Recall</option><option value="comprehension">Comprehension</option><option value="application">Application</option><option value="analysis">Analysis</option><option value="calculation">Calculation</option></select></label>
+          <label><input id="corpus-question-gold" type="checkbox"> Gold reference</label>
+        </div>
+        <button class="primary-action" id="verify-corpus-question" type="button">Verify item</button>
+      </section>
+
+      <section class="panel question-import-panel" data-admin-group="questions" data-corpus-panel="review">
+        <div class="section-kicker">Review queue</div>
+        <h2>Verify parsed exam items</h2>
+        <p>Every item is reviewed explicitly. Blank PI assignments remain blank instead of being guessed.</p>
+        <form id="question-import-form" class="question-import-form" hidden>
           <label>PDF<input name="file" type="file" accept="application/pdf" required></label>
           <label>Source type<select name="source_type"><option value="deca_sample">DECA sample exam</option><option value="owned">My own questions</option><option value="licensed">Licensed material</option><option value="other">Other reference</option></select></label>
-          <input name="usage_rights" type="hidden" value="licensed_for_student_use">
+          <input name="usage_rights" type="hidden" value="reference_only">
           <label>Career cluster<select name="career_cluster" required><option value="">Choose cluster</option><option value="Marketing">Marketing</option><option value="Finance">Finance</option><option value="Hospitality and Tourism">Hospitality and Tourism</option><option value="Business Management and Administration">Business Management and Administration</option></select></label>
           <label>Exam year<input name="exam_year" type="number" min="1990" max="2100"></label>
           <button class="primary-action" type="submit">Parse PDF</button>
         </form>
         <div id="question-import-summary" class="import-summary">No PDFs imported yet.</div>
-        <div id="question-cluster-breakdown" class="cluster-breakdown"></div>
+        <div id="question-status-filters" class="corpus-filter-row"></div>
+        <div id="question-cluster-breakdown" class="cluster-breakdown corpus-filter-row"></div>
         <div class="audit-actions">
-          <button class="attention-row" id="review-question-imports" type="button"><span>Exceptions to review</span><strong id="question-import-pending">0</strong></button>
-          <button class="primary-action" id="approve-ready-imports" type="button" hidden>Approve clean questions</button>
-          <button class="attention-row" id="review-kpi-knowledge" type="button"><span>Learn enrichment proposals</span><strong id="kpi-knowledge-pending">0</strong></button>
+          <button class="attention-row" id="review-question-imports" type="button"><span>Continue explicit review</span><strong id="question-import-pending">0</strong></button>
         </div>
-        <form id="question-generation-form" class="question-import-form">
-          <label>Career cluster<select name="career_cluster" required><option value="">Choose cluster</option><option value="Marketing">Marketing</option><option value="Finance">Finance</option><option value="Hospitality and Tourism">Hospitality and Tourism</option><option value="Business Management and Administration">Business Management and Administration</option></select></label>
-          <label>Target KPI<input name="kpi_code" placeholder="FI:000" required></label>
-          <label>Question count<input name="count" type="number" min="1" max="10" value="3"></label>
-          <button class="primary-action" type="submit">Generate original questions</button>
-        </form>
-        <div id="question-style-summary" class="import-summary">Style profile becomes available after 10 parsed reference questions.</div>
+        <div id="question-style-summary" class="import-summary">AI question and roleplay generation is disabled until corpus readiness is verified.</div>
       </section>
 
-      <section class="panel question-import-review" id="kpi-knowledge-review" data-admin-group="questions" hidden>
+      <section class="panel question-import-review" id="kpi-knowledge-review" data-admin-group="study" hidden>
         <div class="review-topline"><span id="kpi-knowledge-meta"></span><button id="close-kpi-knowledge" type="button">Close</button></div>
         <h2 id="kpi-knowledge-title"></h2>
         <label class="audit-notes">Proposed knowledge<textarea id="kpi-knowledge-content" rows="6"></textarea></label>
         <label class="audit-notes">Importance<select id="kpi-knowledge-importance"><option value="required">Required</option><option value="important">Important</option><option value="supporting">Supporting</option><option value="question_specific">Question specific</option></select></label>
-        <button class="primary-action" id="approve-kpi-knowledge" type="button">Add to Learn knowledge</button>
+        <div class="flag-box"><strong>DECA evidence (alignment/style only)</strong><p id="kpi-deca-evidence"></p></div>
+        <label class="audit-notes">Current authoritative factual evidence (JSON array)<textarea id="kpi-factual-evidence" rows="6" placeholder='[{"source_type":"government","title":"…","url":"https://…","status":"approved"}]'></textarea></label>
+        <label>Verification class<select id="kpi-verification-class"><option value="time_sensitive">Time sensitive</option><option value="stable">Stable</option></select></label>
+        <label>Reverify after<input id="kpi-reverify-after" type="date"></label>
+        <fieldset><legend>Approval checklist</legend>
+          <label><input type="checkbox" data-knowledge-check="direct_support"> Source directly supports the claim</label>
+          <label><input type="checkbox" data-knowledge-check="no_overclaim"> Claim does not say more than the source</label>
+          <label><input type="checkbox" data-knowledge-check="subject_authority"> Source is authoritative for this subject</label>
+          <label><input type="checkbox" data-knowledge-check="current"> Information is current</label>
+          <label><input type="checkbox" data-knowledge-check="atomic"> Claim is independently verifiable</label>
+          <label><input type="checkbox" data-knowledge-check="deca_connection"> DECA PI connection is legitimate</label>
+        </fieldset>
+        <button class="primary-action" id="approve-kpi-knowledge" type="button">Approve factual claim</button>
         <button class="text-action" id="ignore-kpi-knowledge" type="button">Ignore</button>
       </section>
 
-      <section class="panel question-import-review" id="question-import-review" data-admin-group="questions" hidden>
+      <section class="panel question-import-review" id="question-import-review" data-admin-group="questions" data-corpus-panel="review" data-corpus-conditional hidden>
         <div class="review-topline"><span id="question-import-review-meta"></span><button id="close-question-import-review" type="button">Close</button></div>
         <h2 id="question-import-review-stem"></h2>
         <ol class="import-choices" id="question-import-review-choices" type="A"></ol>

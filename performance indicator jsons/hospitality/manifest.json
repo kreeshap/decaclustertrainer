@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "source_document": "source/2026-27-HS-DECA-Hospitality.pdf",
+  "exam_blueprint": "exam_blueprint.json",
+  "curriculum": [
+    "../shared/business_administration_core_2026_27.json",
+    "curriculum/tier2_hospitality.json",
+    "curriculum/tier3_event_management.json",
+    "curriculum/tier3_lodging.json",
+    "curriculum/tier3_restaurant_management.json",
+    "curriculum/tier3_travel_tourism.json"
+  ],
+  "events": [
+    "events/HLM.json",
+    "events/QSRM.json",
+    "events/RFSM.json",
+    "events/HTDM.json",
+    "events/TTDM.json",
+    "events/PHT.json",
+    "events/HTPS.json"
+  ],
+  "counts": {
+    "business_administration_core_2026_27": 367,
+    "hospitality_tier2": 123,
+    "hospitality_tier3_event_management": 127,
+    "hospitality_tier3_lodging": 89,
+    "hospitality_tier3_restaurant": 115,
+    "hospitality_tier3_travel_tourism": 153
+  }
+}

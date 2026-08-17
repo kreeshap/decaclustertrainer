@@ -1,0 +1,1099 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier2",
+  "name": "Business Management and Administration Career Cluster",
+  "cluster": "Business Management + Administration",
+  "tier": 2,
+  "curriculum_section": "Business Management and Administration Career Cluster",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      21,
+      24
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:159",
+      "level": "SP",
+      "official_text": "Describe factors affecting the settlement of legal matters",
+      "display_text": "Describe factors affecting the settlement of legal matters",
+      "text": "Describe factors affecting the settlement of legal matters",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of the legal environment in which businesses operate to protect the company's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:160",
+      "level": "SP",
+      "official_text": "Describe the litigation process",
+      "display_text": "Describe the litigation process",
+      "text": "Describe the litigation process",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of the legal environment in which businesses operate to protect the company's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:161",
+      "level": "SP",
+      "official_text": "Discuss the arbitration/mediation process",
+      "display_text": "Discuss the arbitration/mediation process",
+      "text": "Discuss the arbitration/mediation process",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of the legal environment in which businesses operate to protect the company's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "CO:185",
+      "level": "SP",
+      "official_text": "Write analytical reports (i.e., reports that examine a problem/issue and recommend an action)",
+      "display_text": "Write analytical reports (i.e., reports that examine a problem/issue and recommend an action)",
+      "text": "Write analytical reports (i.e., reports that examine a problem/issue and recommend an action)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "CO:186",
+      "level": "SP",
+      "official_text": "Write research reports",
+      "display_text": "Write research reports",
+      "text": "Write research reports",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:541",
+      "level": "SP",
+      "official_text": "Interpret cash-flow statements",
+      "display_text": "Interpret cash-flow statements",
+      "text": "Interpret cash-flow statements",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "NF:130",
+      "level": "SP",
+      "official_text": "Utilize project-management software",
+      "display_text": "Utilize project-management software",
+      "text": "Utilize project-management software",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "NF:264",
+      "level": "SP",
+      "official_text": "Adhere to data change best practices",
+      "display_text": "Adhere to data change best practices",
+      "text": "Adhere to data change best practices",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to support business strategies and operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 21
+      }
+    },
+    {
+      "code": "OP:339",
+      "level": "SP",
+      "official_text": "Discuss legal considerations in operations",
+      "display_text": "Discuss legal considerations in operations",
+      "text": "Discuss legal considerations in operations",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand operation's role and function in business to value its contribution to a company.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:517",
+      "level": "SP",
+      "official_text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "display_text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Comply with security rules, regulations, and codes (e.g., property, privacy, access, confidentiality) to protect customer and company information, reputation, and image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:518",
+      "level": "SP",
+      "official_text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "display_text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Comply with security rules, regulations, and codes (e.g., property, privacy, access, confidentiality) to protect customer and company information, reputation, and image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:250",
+      "level": "CS",
+      "official_text": "Describe types of purchase orders",
+      "display_text": "Describe types of purchase orders",
+      "text": "Describe types of purchase orders",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:336",
+      "level": "CS",
+      "official_text": "Discuss types of inventory",
+      "display_text": "Discuss types of inventory",
+      "text": "Discuss types of inventory",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:327",
+      "level": "SP",
+      "official_text": "Discuss the nature of business analysis",
+      "display_text": "Discuss the nature of business analysis",
+      "text": "Discuss the nature of business analysis",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:474",
+      "level": "SP",
+      "official_text": "Discuss business process thinking and its impact",
+      "display_text": "Discuss business process thinking and its impact",
+      "text": "Discuss business process thinking and its impact",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:475",
+      "level": "SP",
+      "official_text": "Describe the factors that influence business process design",
+      "display_text": "Describe the factors that influence business process design",
+      "text": "Describe the factors that influence business process design",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:476",
+      "level": "SP",
+      "official_text": "Explain the causes of business process changes",
+      "display_text": "Explain the causes of business process changes",
+      "text": "Explain the causes of business process changes",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:477",
+      "level": "SP",
+      "official_text": "Explain the impact of supply chains on business performance",
+      "display_text": "Explain the impact of supply chains on business performance",
+      "text": "Explain the impact of supply chains on business performance",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:479",
+      "level": "SP",
+      "official_text": "Describe supply chain networks",
+      "display_text": "Describe supply chain networks",
+      "text": "Describe supply chain networks",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:480",
+      "level": "SP",
+      "official_text": "Discuss global supply chain issues",
+      "display_text": "Discuss global supply chain issues",
+      "text": "Discuss global supply chain issues",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:303",
+      "level": "SP",
+      "official_text": "Discuss the nature of supply chain management",
+      "display_text": "Discuss the nature of supply chain management",
+      "text": "Discuss the nature of supply chain management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:677",
+      "level": "SP",
+      "official_text": "Discuss ethical considerations in supply chain management",
+      "display_text": "Discuss ethical considerations in supply chain management",
+      "text": "Discuss ethical considerations in supply chain management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:478",
+      "level": "SP",
+      "official_text": "Describe the impact of technology on supply chain management",
+      "display_text": "Describe the impact of technology on supply chain management",
+      "text": "Describe the impact of technology on supply chain management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management's role in business to appreciate its contributions to efficiency and profitability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:241",
+      "level": "SP",
+      "official_text": "Maintain vendor/supplier relationships",
+      "display_text": "Maintain vendor/supplier relationships",
+      "text": "Maintain vendor/supplier relationships",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "OP:337",
+      "level": "SP",
+      "official_text": "Negotiate terms with vendors in business",
+      "display_text": "Negotiate terms with vendors in business",
+      "text": "Negotiate terms with vendors in business",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:297",
+      "level": "CS",
+      "official_text": "Discuss employment opportunities in business management and administration",
+      "display_text": "Discuss employment opportunities in business management and administration",
+      "text": "Discuss employment opportunities in business management and administration",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:063",
+      "level": "SP",
+      "official_text": "Discuss the nature of managerial planning",
+      "display_text": "Discuss the nature of managerial planning",
+      "text": "Discuss the nature of managerial planning",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:064",
+      "level": "SP",
+      "official_text": "Explain managerial considerations in organizing",
+      "display_text": "Explain managerial considerations in organizing",
+      "text": "Explain managerial considerations in organizing",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:065",
+      "level": "SP",
+      "official_text": "Describe managerial considerations in staffing",
+      "display_text": "Describe managerial considerations in staffing",
+      "text": "Describe managerial considerations in staffing",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:066",
+      "level": "SP",
+      "official_text": "Discuss managerial considerations in directing",
+      "display_text": "Discuss managerial considerations in directing",
+      "text": "Discuss managerial considerations in directing",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:004",
+      "level": "SP",
+      "official_text": "Describe the nature of managerial control (control process, types of control, what is controlled)",
+      "display_text": "Describe the nature of managerial control (control process, types of control, what is controlled)",
+      "text": "Describe the nature of managerial control (control process, types of control, what is controlled)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:094",
+      "level": "CS",
+      "official_text": "Describe relationship among innovation, learning, and change",
+      "display_text": "Describe relationship among innovation, learning, and change",
+      "text": "Describe relationship among innovation, learning, and change",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:095",
+      "level": "SP",
+      "official_text": "Explain the nature of change management",
+      "display_text": "Explain the nature of change management",
+      "text": "Explain the nature of change management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "SM:096",
+      "level": "SP",
+      "official_text": "Explain the change-management lifecycle",
+      "display_text": "Explain the change-management lifecycle",
+      "text": "Explain the change-management lifecycle",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:001",
+      "level": "SP",
+      "official_text": "Explain the nature of knowledge management",
+      "display_text": "Explain the nature of knowledge management",
+      "text": "Explain the nature of knowledge management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Acquire a foundational understanding of knowledge management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:002",
+      "level": "SP",
+      "official_text": "Discuss the role of ethics in knowledge management",
+      "display_text": "Discuss the role of ethics in knowledge management",
+      "text": "Discuss the role of ethics in knowledge management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Acquire a foundational understanding of knowledge management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:003",
+      "level": "SP",
+      "official_text": "Explain the use of technology in knowledge management",
+      "display_text": "Explain the use of technology in knowledge management",
+      "text": "Explain the use of technology in knowledge management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Acquire a foundational understanding of knowledge management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:004",
+      "level": "SP",
+      "official_text": "Explain legal considerations for knowledge management",
+      "display_text": "Explain legal considerations for knowledge management",
+      "text": "Explain legal considerations for knowledge management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Acquire a foundational understanding of knowledge management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:005",
+      "level": "SP",
+      "official_text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "display_text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "KM:018",
+      "level": "SP",
+      "official_text": "Apply knowledge management processes",
+      "display_text": "Apply knowledge management processes",
+      "text": "Apply knowledge management processes",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 23
+      }
+    },
+    {
+      "code": "PJ:005",
+      "level": "SP",
+      "official_text": "Initiate project",
+      "display_text": "Initiate project",
+      "text": "Initiate project",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "PJ:006",
+      "level": "SP",
+      "official_text": "Prepare work breakdown structure (WBS)",
+      "display_text": "Prepare work breakdown structure (WBS)",
+      "text": "Prepare work breakdown structure (WBS)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "PJ:009",
+      "level": "SP",
+      "official_text": "Execute and control projects",
+      "display_text": "Execute and control projects",
+      "text": "Execute and control projects",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "PJ:007",
+      "level": "SP",
+      "official_text": "Manage project team",
+      "display_text": "Manage project team",
+      "text": "Manage project team",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "PJ:010",
+      "level": "SP",
+      "official_text": "Manage project schedule",
+      "display_text": "Manage project schedule",
+      "text": "Manage project schedule",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "PJ:008",
+      "level": "SP",
+      "official_text": "Close project",
+      "display_text": "Close project",
+      "text": "Close project",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Utilize project management skills to start, run, and end projects.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "QM:001",
+      "level": "SP",
+      "official_text": "Explain the nature of quality management",
+      "display_text": "Explain the nature of quality management",
+      "text": "Explain the nature of quality management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "QM:002",
+      "level": "SP",
+      "official_text": "Describe the nature of quality management frameworks (e.g., Six Sigma, ITIL, CMMI)",
+      "display_text": "Describe the nature of quality management frameworks (e.g., Six Sigma, ITIL, CMMI)",
+      "text": "Describe the nature of quality management frameworks (e.g., Six Sigma, ITIL, CMMI)",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "QM:003",
+      "level": "SP",
+      "official_text": "Discuss the need for continuous improvement of the quality process",
+      "display_text": "Discuss the need for continuous improvement of the quality process",
+      "text": "Discuss the need for continuous improvement of the quality process",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "QM:012",
+      "level": "SP",
+      "official_text": "Discuss ethical considerations in quality management",
+      "display_text": "Discuss ethical considerations in quality management",
+      "text": "Discuss ethical considerations in quality management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "RM:041",
+      "level": "SP",
+      "official_text": "Explain the role of ethics in risk management",
+      "display_text": "Explain the role of ethics in risk management",
+      "text": "Explain the role of ethics in risk management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "RM:042",
+      "level": "SP",
+      "official_text": "Describe the use of technology in risk management",
+      "display_text": "Describe the use of technology in risk management",
+      "text": "Describe the use of technology in risk management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "RM:043",
+      "level": "SP",
+      "official_text": "Discuss legal considerations affecting risk management",
+      "display_text": "Discuss legal considerations affecting risk management",
+      "text": "Discuss legal considerations affecting risk management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    },
+    {
+      "code": "RM:092",
+      "level": "SP",
+      "official_text": "Describe international considerations affecting risk management",
+      "display_text": "Describe international considerations affecting risk management",
+      "text": "Describe international considerations affecting risk management",
+      "tier": 2,
+      "curriculum_section": "Business Management and Administration Career Cluster",
+      "cluster": "Business Management + Administration",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 24
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "cluster": "Finance",
+  "competitive_year": "2026-27",
+  "source_document": "source/2026-27-HS-DECA-Finance.pdf",
+  "exam_blueprint": "exam_blueprint.json",
+  "curriculum": [
+    "../shared/business_administration_core_2026_27.json",
+    "curriculum/tier2_finance.json",
+    "curriculum/tier3_accounting.json",
+    "curriculum/tier3_corporate_finance.json"
+  ],
+  "events": [
+    "events/ACT.json",
+    "events/BFS.json",
+    "events/FTDM.json"
+  ],
+  "counts": {
+    "business_administration_core_2026_27": 367,
+    "finance_tier2": 41,
+    "finance_tier3_accounting": 109,
+    "finance_tier3_corporate_finance": 92,
+    "tier1_and_tier2": 408
+  }
+}

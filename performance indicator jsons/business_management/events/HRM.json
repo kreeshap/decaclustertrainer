@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cluster": "Business Management + Administration",
+  "competitive_year": "2026-27",
+  "event_id": "human_resources_management_series",
+  "event_code": "HRM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Human Resources Management Series",
+  "event_type": "individual_series",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "bma_tier2"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "bma_tier2",
+        "bma_tier3_human_resources"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "bma_tier2",
+    "bma_tier3_human_resources"
+  ]
+}

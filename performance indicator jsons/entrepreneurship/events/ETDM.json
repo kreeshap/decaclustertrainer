@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "cluster": "Entrepreneurship",
+  "competitive_year": "2026-27",
+  "event_id": "entrepreneurship_team_decision_making",
+  "event_code": "ETDM",
+  "name": "Entrepreneurship Team Decision Making",
+  "event_type": "team_decision_making",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "entrepreneurship_business_administration_core",
+        "entrepreneurship_business_management_core",
+        "entrepreneurship_finance_core",
+        "entrepreneurship_marketing_core"
+      ]
+    },
+    "case_study": {
+      "curriculum": [
+        "entrepreneurship_business_administration_core",
+        "entrepreneurship_business_management_core",
+        "entrepreneurship_finance_core",
+        "entrepreneurship_marketing_core"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "entrepreneurship_business_administration_core",
+    "entrepreneurship_business_management_core",
+    "entrepreneurship_finance_core",
+    "entrepreneurship_marketing_core"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "cluster": "Finance",
+  "competitive_year": "2026-27",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "event_id": "financial_services_tdm",
+  "event_code": "FTDM",
+  "name": "Financial Services Team Decision Making",
+  "event_type": "team_decision_making",
+  "exam": {
+    "curriculum": [
+      "business_administration_core_2026_27",
+      "finance_tier2"
+    ]
+  },
+  "case_study": {
+    "curriculum": [
+      "business_administration_core_2026_27",
+      "finance_tier2"
+    ]
+  },
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "finance_tier2"
+      ]
+    },
+    "case_study": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "finance_tier2"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "finance_tier2"
+  ]
+}

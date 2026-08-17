@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "event_id": "principles_of_hospitality_and_tourism",
+  "event_code": "PHT",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Principles of Hospitality and Tourism",
+  "event_type": "principles",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27"
+  ]
+}

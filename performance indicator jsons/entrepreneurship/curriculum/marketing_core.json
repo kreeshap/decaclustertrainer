@@ -1,0 +1,899 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "entrepreneurship_marketing_core",
+  "name": "Marketing Core",
+  "cluster": "Entrepreneurship",
+  "tier": null,
+  "curriculum_section": "Marketing Core",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Entrepreneurship",
+    "pages": [
+      14,
+      16
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "CM:001",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of channel management",
+      "display_text": "Explain the nature and scope of channel management",
+      "text": "Explain the nature and scope of channel management",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "CM:003",
+      "level": "CS",
+      "official_text": "Explain the nature of channels of distribution",
+      "display_text": "Explain the nature of channels of distribution",
+      "text": "Explain the nature of channels of distribution",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "CM:009",
+      "level": "MN",
+      "official_text": "Explain the nature of channel strategies",
+      "display_text": "Explain the nature of channel strategies",
+      "text": "Explain the nature of channel strategies",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "CM:010",
+      "level": "MN",
+      "official_text": "Select channels of distribution",
+      "display_text": "Select channels of distribution",
+      "text": "Select channels of distribution",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "CM:011",
+      "level": "MN",
+      "official_text": "Evaluate channel members",
+      "display_text": "Evaluate channel members",
+      "text": "Evaluate channel members",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "IM:012",
+      "level": "CS",
+      "official_text": "Describe the need for marketing data",
+      "display_text": "Describe the need for marketing data",
+      "text": "Describe the need for marketing data",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "IM:010",
+      "level": "SP",
+      "official_text": "Explain the nature of marketing research",
+      "display_text": "Explain the nature of marketing research",
+      "text": "Explain the nature of marketing research",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research activities to show command of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:001",
+      "level": "CS",
+      "official_text": "Explain the concept of marketing strategies",
+      "display_text": "Explain the concept of marketing strategies",
+      "text": "Explain the concept of marketing strategies",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Develop marketing strategies to guide marketing tactics.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:003",
+      "level": "CS",
+      "official_text": "Explain the concept of market and market identification",
+      "display_text": "Explain the concept of market and market identification",
+      "text": "Explain the concept of market and market identification",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:004",
+      "level": "MN",
+      "official_text": "Identify market segments",
+      "display_text": "Identify market segments",
+      "text": "Identify market segments",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:031",
+      "level": "MN",
+      "official_text": "Develop customer profile",
+      "display_text": "Develop customer profile",
+      "text": "Develop customer profile",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:005",
+      "level": "MN",
+      "official_text": "Select target market",
+      "display_text": "Select target market",
+      "text": "Select target market",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 14
+      }
+    },
+    {
+      "code": "MP:009",
+      "level": "MN",
+      "official_text": "Conduct market analysis (market size, area, potential, etc.)",
+      "display_text": "Conduct market analysis (market size, area, potential, etc.)",
+      "text": "Conduct market analysis (market size, area, potential, etc.)",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:010",
+      "level": "MN",
+      "official_text": "Conduct SWOT analysis for use in the marketing planning process",
+      "display_text": "Conduct SWOT analysis for use in the marketing planning process",
+      "text": "Conduct SWOT analysis for use in the marketing planning process",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:012",
+      "level": "MN",
+      "official_text": "Conduct competitive analysis",
+      "display_text": "Conduct competitive analysis",
+      "text": "Conduct competitive analysis",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:014",
+      "level": "MN",
+      "official_text": "Forecast sales for marketing plan",
+      "display_text": "Forecast sales for marketing plan",
+      "text": "Forecast sales for marketing plan",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:015",
+      "level": "MN",
+      "official_text": "Set marketing goals and objectives",
+      "display_text": "Set marketing goals and objectives",
+      "text": "Set marketing goals and objectives",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:018",
+      "level": "MN",
+      "official_text": "Develop marketing plan",
+      "display_text": "Develop marketing plan",
+      "text": "Develop marketing plan",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:020",
+      "level": "MN",
+      "official_text": "Explain strategies for linking performance measures to financial outcomes",
+      "display_text": "Explain strategies for linking performance measures to financial outcomes",
+      "text": "Explain strategies for linking performance measures to financial outcomes",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Assess marketing strategies to improve return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "MP:021",
+      "level": "MN",
+      "official_text": "Translate performance measures into financial outcomes",
+      "display_text": "Translate performance measures into financial outcomes",
+      "text": "Translate performance measures into financial outcomes",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Assess marketing strategies to improve return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PI:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the pricing function",
+      "display_text": "Explain the nature and scope of the pricing function",
+      "text": "Explain the nature and scope of the pricing function",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PI:002",
+      "level": "SP",
+      "official_text": "Explain factors affecting pricing decisions",
+      "display_text": "Explain factors affecting pricing decisions",
+      "text": "Explain factors affecting pricing decisions",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:129",
+      "level": "MN",
+      "official_text": "Determine initial feasibility of product idea",
+      "display_text": "Determine initial feasibility of product idea",
+      "text": "Determine initial feasibility of product idea",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:204",
+      "level": "MN",
+      "official_text": "Adjust idea to create functional product",
+      "display_text": "Adjust idea to create functional product",
+      "text": "Adjust idea to create functional product",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:136",
+      "level": "MN",
+      "official_text": "Create processes for ongoing opportunity recognition",
+      "display_text": "Create processes for ongoing opportunity recognition",
+      "text": "Create processes for ongoing opportunity recognition",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:138",
+      "level": "MN",
+      "official_text": "Evaluate customer experience",
+      "display_text": "Evaluate customer experience",
+      "text": "Evaluate customer experience",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:003",
+      "level": "SP",
+      "official_text": "Explain the concept of product mix",
+      "display_text": "Explain the concept of product mix",
+      "text": "Explain the concept of product mix",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:006",
+      "level": "MN",
+      "official_text": "Plan product mix",
+      "display_text": "Plan product mix",
+      "text": "Plan product mix",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:036",
+      "level": "MN",
+      "official_text": "Determine services to provide customers",
+      "display_text": "Determine services to provide customers",
+      "text": "Determine services to provide customers",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:273",
+      "level": "MN",
+      "official_text": "Identify internal and external service standards",
+      "display_text": "Identify internal and external service standards",
+      "text": "Identify internal and external service standards",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:126",
+      "level": "ON",
+      "official_text": "Build corporate brands",
+      "display_text": "Build corporate brands",
+      "text": "Build corporate brands",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 15
+      }
+    },
+    {
+      "code": "PM:013",
+      "level": "MN",
+      "official_text": "Explain the role of customer service in positioning/image",
+      "display_text": "Explain the role of customer service in positioning/image",
+      "text": "Explain the role of customer service in positioning/image",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PM:272",
+      "level": "MN",
+      "official_text": "Identify company's unique selling proposition",
+      "display_text": "Identify company's unique selling proposition",
+      "text": "Identify company's unique selling proposition",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PM:209",
+      "level": "MN",
+      "official_text": "Build product/service brand",
+      "display_text": "Build product/service brand",
+      "text": "Build product/service brand",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:001",
+      "level": "CS",
+      "official_text": "Explain the role of promotion as a marketing function",
+      "display_text": "Explain the role of promotion as a marketing function",
+      "text": "Explain the role of promotion as a marketing function",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:002",
+      "level": "CS",
+      "official_text": "Explain the types of promotion (i.e., institutional, product)",
+      "display_text": "Explain the types of promotion (i.e., institutional, product)",
+      "text": "Explain the types of promotion (i.e., institutional, product)",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:003",
+      "level": "SP",
+      "official_text": "Identify the elements of the promotional mix",
+      "display_text": "Identify the elements of the promotional mix",
+      "text": "Identify the elements of the promotional mix",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:007",
+      "level": "SP",
+      "official_text": "Explain types of advertising media",
+      "display_text": "Explain types of advertising media",
+      "text": "Explain types of advertising media",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:247",
+      "level": "SP",
+      "official_text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "display_text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:089",
+      "level": "SP",
+      "official_text": "Explain the nature of direct marketing channels",
+      "display_text": "Explain the nature of direct marketing channels",
+      "text": "Explain the nature of direct marketing channels",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:249",
+      "level": "SP",
+      "official_text": "Identify communications channels used in sales promotion",
+      "display_text": "Identify communications channels used in sales promotion",
+      "text": "Identify communications channels used in sales promotion",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:250",
+      "level": "SP",
+      "official_text": "Explain communications channels used in public-relations activities",
+      "display_text": "Explain communications channels used in public-relations activities",
+      "text": "Explain communications channels used in public-relations activities",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "PR:252",
+      "level": "SP",
+      "official_text": "Identify types of public-relations activities",
+      "display_text": "Identify types of public-relations activities",
+      "text": "Identify types of public-relations activities",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of public-relations activities to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    },
+    {
+      "code": "SE:017",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of the selling function",
+      "display_text": "Explain the nature and scope of the selling function",
+      "text": "Explain the nature and scope of the selling function",
+      "tier": null,
+      "curriculum_section": "Marketing Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 16
+      }
+    }
+  ]
+}

@@ -137,15 +137,15 @@ class Phase3ContractTests(unittest.TestCase):
 
     def test_only_three_beta_event_sources_are_authoritative(self) -> None:
         event_ids = {
-            "accounting_application_series": "Accounting Application Series.json",
-            "business_finance_series": "Business Finance Series.json",
-            "financial_services_tdm": "Financial Services Team Decision Making.json",
+            "accounting_application_series": "ACT.json",
+            "business_finance_series": "BFS.json",
+            "financial_services_tdm": "FTDM.json",
         }
         events_source = (ROOT / "app" / "events.py").read_text(encoding="utf-8")
         for event_id, filename in event_ids.items():
             self.assertIn(event_id, events_source)
-            payload = json.loads((ROOT / "performance indicator jsons" / "finance" / filename).read_text(encoding="utf-8"))
-            self.assertTrue(payload)
+            payload = json.loads((ROOT / "performance indicator jsons" / "finance" / "events" / filename).read_text(encoding="utf-8"))
+            self.assertEqual(payload["event_id"], event_id)
 
     def test_answer_and_session_writes_are_atomic_and_server_authoritative(self) -> None:
         sql = (ROOT / "supabase" / "migrations" / "0014_atomic_learn_transactions.sql").read_text(encoding="utf-8").lower()

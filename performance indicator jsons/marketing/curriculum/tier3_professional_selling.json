@@ -1,0 +1,1039 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "marketing_tier3_professional_selling",
+  "name": "Professional Selling Pathway",
+  "cluster": "Marketing",
+  "tier": 3,
+  "curriculum_section": "Professional Selling Pathway",
+  "pathway": "Professional Selling",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Marketing",
+    "pages": [
+      49,
+      51
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "CR:028",
+      "level": "SP",
+      "official_text": "Use digital media to enhance customer post-sales experience",
+      "display_text": "Use digital media to enhance customer post-sales experience",
+      "text": "Use digital media to enhance customer post-sales experience",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:522",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of distribution",
+      "display_text": "Explain the nature and scope of distribution",
+      "text": "Explain the nature and scope of distribution",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:523",
+      "level": "CS",
+      "official_text": "Explain the relationship between customer service and distribution",
+      "display_text": "Explain the relationship between customer service and distribution",
+      "text": "Explain the relationship between customer service and distribution",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:120",
+      "level": "SP",
+      "official_text": "Explain the nature of professional selling",
+      "display_text": "Explain the nature of professional selling",
+      "text": "Explain the nature of professional selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about the sales industry to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:055",
+      "level": "SP",
+      "official_text": "Explain employment opportunities in professional selling",
+      "display_text": "Explain employment opportunities in professional selling",
+      "text": "Explain employment opportunities in professional selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about the sales industry to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:131",
+      "level": "SP",
+      "official_text": "Discuss the economic and social effects of professional selling",
+      "display_text": "Discuss the economic and social effects of professional selling",
+      "text": "Discuss the economic and social effects of professional selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about the sales industry to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:141",
+      "level": "SP",
+      "official_text": "Identify professional certification requirements available for professional salespeople",
+      "display_text": "Identify professional certification requirements available for professional salespeople",
+      "text": "Identify professional certification requirements available for professional salespeople",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in professional selling.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:062",
+      "level": "SP",
+      "official_text": "Assess the services of professional organizations in selling",
+      "display_text": "Assess the services of professional organizations in selling",
+      "text": "Assess the services of professional organizations in selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in professional selling.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "IM:301",
+      "level": "SP",
+      "official_text": "Analyze market information",
+      "display_text": "Analyze market information",
+      "text": "Analyze market information",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process marketing information to test hypotheses and/or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "IM:334",
+      "level": "SP",
+      "official_text": "Describe the use of target marketing in professional selling",
+      "display_text": "Describe the use of target marketing in professional selling",
+      "text": "Describe the use of target marketing in professional selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Employ marketing information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 49
+      }
+    },
+    {
+      "code": "SE:380",
+      "level": "SP",
+      "official_text": "Explain the impact of sales and buying cycles",
+      "display_text": "Explain the impact of sales and buying cycles",
+      "text": "Explain the impact of sales and buying cycles",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Understand sales activities to show command of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:490",
+      "level": "SP",
+      "official_text": "Describe the impact that digital communication is having on selling",
+      "display_text": "Describe the impact that digital communication is having on selling",
+      "text": "Describe the impact that digital communication is having on selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Understand sales activities to show command of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:404",
+      "level": "SP",
+      "official_text": "Identify emerging trends for use in selling",
+      "display_text": "Identify emerging trends for use in selling",
+      "text": "Identify emerging trends for use in selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:112",
+      "level": "SP",
+      "official_text": "Differentiate between consumer and organizational buying behavior",
+      "display_text": "Differentiate between consumer and organizational buying behavior",
+      "text": "Differentiate between consumer and organizational buying behavior",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:383",
+      "level": "SP",
+      "official_text": "Explain the use of marketing-research information in professional selling",
+      "display_text": "Explain the use of marketing-research information in professional selling",
+      "text": "Explain the use of marketing-research information in professional selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:001",
+      "level": "SP",
+      "official_text": "Prospect for customers",
+      "display_text": "Prospect for customers",
+      "text": "Prospect for customers",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:400",
+      "level": "SP",
+      "official_text": "Conduct preliminary customer/client qualification",
+      "display_text": "Conduct preliminary customer/client qualification",
+      "text": "Conduct preliminary customer/client qualification",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:369",
+      "level": "SP",
+      "official_text": "Conduct pre-visit research (e.g., customer's markets/products, customer's competitors, and competitors' offerings)",
+      "display_text": "Conduct pre-visit research (e.g., customer's markets/products, customer's competitors, and competitors' offerings)",
+      "text": "Conduct pre-visit research (e.g., customer's markets/products, customer's competitors, and competitors' offerings)",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:377",
+      "level": "SP",
+      "official_text": "Determine sales strategies",
+      "display_text": "Determine sales strategies",
+      "text": "Determine sales strategies",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:366",
+      "level": "SP",
+      "official_text": "Book appointments with prospective clients",
+      "display_text": "Book appointments with prospective clients",
+      "text": "Book appointments with prospective clients",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:067",
+      "level": "SP",
+      "official_text": "Prepare sales presentation",
+      "display_text": "Prepare sales presentation",
+      "text": "Prepare sales presentation",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:482",
+      "level": "SP",
+      "official_text": "Prepare and/or assemble sales materials",
+      "display_text": "Prepare and/or assemble sales materials",
+      "text": "Prepare and/or assemble sales materials",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Perform pre-sales activities to facilitate sales presentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:483",
+      "level": "SP",
+      "official_text": "Build rapport and credibility with prospect",
+      "display_text": "Build rapport and credibility with prospect",
+      "text": "Build rapport and credibility with prospect",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:810",
+      "level": "SP",
+      "official_text": "Respond appropriately to prospect's individual personality type",
+      "display_text": "Respond appropriately to prospect's individual personality type",
+      "text": "Respond appropriately to prospect's individual personality type",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:883",
+      "level": "SP",
+      "official_text": "Determine prospect's buying motives for use in selling",
+      "display_text": "Determine prospect's buying motives for use in selling",
+      "text": "Determine prospect's buying motives for use in selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:811",
+      "level": "SP",
+      "official_text": "Facilitate prospect's buying decisions",
+      "display_text": "Facilitate prospect's buying decisions",
+      "text": "Facilitate prospect's buying decisions",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:484",
+      "level": "SP",
+      "official_text": "Question/probe to acquire understanding of prospect [priorities, problems, trends, issues, corporate aims and objectives, processes, buying process and criteria, and trading preferences]",
+      "display_text": "Question/probe to acquire understanding of prospect [priorities, problems, trends, issues, corporate aims and objectives, processes, buying process and criteria, and trading preferences]",
+      "text": "Question/probe to acquire understanding of prospect [priorities, problems, trends, issues, corporate aims and objectives, processes, buying process and criteria, and trading preferences]",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:113",
+      "level": "SP",
+      "official_text": "Assess prospect's needs in relation to product offering",
+      "display_text": "Assess prospect's needs in relation to product offering",
+      "text": "Assess prospect's needs in relation to product offering",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:115",
+      "level": "SP",
+      "official_text": "Propose solution to prospect's needs/challenges (sales talk, sales proposal presentation)",
+      "display_text": "Propose solution to prospect's needs/challenges (sales talk, sales proposal presentation)",
+      "text": "Propose solution to prospect's needs/challenges (sales talk, sales proposal presentation)",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:893",
+      "level": "SP",
+      "official_text": "Demonstrate product solution for prospect's needs",
+      "display_text": "Demonstrate product solution for prospect's needs",
+      "text": "Demonstrate product solution for prospect's needs",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:874",
+      "level": "SP",
+      "official_text": "Convert customer/client objections into selling points",
+      "display_text": "Convert customer/client objections into selling points",
+      "text": "Convert customer/client objections into selling points",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:895",
+      "level": "SP",
+      "official_text": "Close the sale",
+      "display_text": "Close the sale",
+      "text": "Close the sale",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:392",
+      "level": "SP",
+      "official_text": "Negotiate sales terms/agreement",
+      "display_text": "Negotiate sales terms/agreement",
+      "text": "Negotiate sales terms/agreement",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:485",
+      "level": "SP",
+      "official_text": "Oversee fulfillment/completion of sale",
+      "display_text": "Oversee fulfillment/completion of sale",
+      "text": "Oversee fulfillment/completion of sale",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:046",
+      "level": "SP",
+      "official_text": "Sell good/service/idea to individuals",
+      "display_text": "Sell good/service/idea to individuals",
+      "text": "Sell good/service/idea to individuals",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:073",
+      "level": "SP",
+      "official_text": "Sell good/service/idea to groups",
+      "display_text": "Sell good/service/idea to groups",
+      "text": "Sell good/service/idea to groups",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 50
+      }
+    },
+    {
+      "code": "SE:475",
+      "level": "CS",
+      "official_text": "Calculate miscellaneous charges",
+      "display_text": "Calculate miscellaneous charges",
+      "text": "Calculate miscellaneous charges",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Process the sale to complete the exchange.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:459",
+      "level": "SP",
+      "official_text": "Process special orders",
+      "display_text": "Process special orders",
+      "text": "Process special orders",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Process the sale to complete the exchange.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:461",
+      "level": "CS",
+      "official_text": "Process telephone orders",
+      "display_text": "Process telephone orders",
+      "text": "Process telephone orders",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Process the sale to complete the exchange.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:474",
+      "level": "SP",
+      "official_text": "Process sales documentation",
+      "display_text": "Process sales documentation",
+      "text": "Process sales documentation",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Process the sale to complete the exchange.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:486",
+      "level": "SP",
+      "official_text": "Write product/service proposal",
+      "display_text": "Write product/service proposal",
+      "text": "Write product/service proposal",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct sales-support activities to meet prospect's needs/requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:487",
+      "level": "SP",
+      "official_text": "Present proposal",
+      "display_text": "Present proposal",
+      "text": "Present proposal",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct sales-support activities to meet prospect's needs/requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:057",
+      "level": "SP",
+      "official_text": "Plan follow-up strategies for use in selling",
+      "display_text": "Plan follow-up strategies for use in selling",
+      "text": "Plan follow-up strategies for use in selling",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:283",
+      "level": "SP",
+      "official_text": "Prepare sales reports",
+      "display_text": "Prepare sales reports",
+      "text": "Prepare sales reports",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:397",
+      "level": "SP",
+      "official_text": "Provide post-sales service",
+      "display_text": "Provide post-sales service",
+      "text": "Provide post-sales service",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:384",
+      "level": "SP",
+      "official_text": "Gather customer/client feedback to improve service",
+      "display_text": "Gather customer/client feedback to improve service",
+      "text": "Gather customer/client feedback to improve service",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:372",
+      "level": "SP",
+      "official_text": "Conduct self-assessment of sales performance",
+      "display_text": "Conduct self-assessment of sales performance",
+      "text": "Conduct self-assessment of sales performance",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:488",
+      "level": "SP",
+      "official_text": "Maintain ongoing relationship with client",
+      "display_text": "Maintain ongoing relationship with client",
+      "text": "Maintain ongoing relationship with client",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Conduct post-sales follow-up activities to foster ongoing relationships with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:864",
+      "level": "SP",
+      "official_text": "Plan strategies for meeting sales quotas",
+      "display_text": "Plan strategies for meeting sales quotas",
+      "text": "Plan strategies for meeting sales quotas",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Plan sales activities to increase sales efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:379",
+      "level": "SP",
+      "official_text": "Develop strategies to win back former customers",
+      "display_text": "Develop strategies to win back former customers",
+      "text": "Develop strategies to win back former customers",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Plan sales activities to increase sales efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    },
+    {
+      "code": "SE:381",
+      "level": "SP",
+      "official_text": "Explain the nature of key account management",
+      "display_text": "Explain the nature of key account management",
+      "text": "Explain the nature of key account management",
+      "tier": 3,
+      "curriculum_section": "Professional Selling Pathway",
+      "cluster": "Marketing",
+      "pathway": "Professional Selling",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Plan sales activities to increase sales efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 51
+      }
+    }
+  ]
+}

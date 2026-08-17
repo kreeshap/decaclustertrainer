@@ -1,0 +1,879 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier3_general_management",
+  "name": "General Management Pathway",
+  "cluster": "Business Management + Administration",
+  "tier": 3,
+  "curriculum_section": "General Management Pathway",
+  "pathway": "General Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      36,
+      39
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:084",
+      "level": "SP",
+      "official_text": "Discuss the nature of contract suspensions",
+      "display_text": "Discuss the nature of contract suspensions",
+      "text": "Discuss the nature of contract suspensions",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business contracts to establish business relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "BL:085",
+      "level": "SP",
+      "official_text": "Explain the nature of contract terminations",
+      "display_text": "Explain the nature of contract terminations",
+      "text": "Explain the nature of contract terminations",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business contracts to establish business relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "BL:156",
+      "level": "SP",
+      "official_text": "Explain regulations restricting customer trade (e.g., OFAC, FCPA, anti-bribery)",
+      "display_text": "Explain regulations restricting customer trade (e.g., OFAC, FCPA, anti-bribery)",
+      "text": "Explain regulations restricting customer trade (e.g., OFAC, FCPA, anti-bribery)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand government/legal activities that affect global trade to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "BL:127",
+      "level": "SP",
+      "official_text": "Comply with export licensing regulations",
+      "display_text": "Comply with export licensing regulations",
+      "text": "Comply with export licensing regulations",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand government/legal activities that affect global trade to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "BL:128",
+      "level": "SP",
+      "official_text": "Obtain releases and clearances to export products",
+      "display_text": "Obtain releases and clearances to export products",
+      "text": "Obtain releases and clearances to export products",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand government/legal activities that affect global trade to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "BL:162",
+      "level": "SP",
+      "official_text": "Explain the nature of a compliance program",
+      "display_text": "Explain the nature of a compliance program",
+      "text": "Explain the nature of a compliance program",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Develop a compliance program to protect the company wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:210",
+      "level": "SP",
+      "official_text": "Repurpose content for social media",
+      "display_text": "Repurpose content for social media",
+      "text": "Repurpose content for social media",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:195",
+      "level": "SP",
+      "official_text": "Explain the nature of communications plans",
+      "display_text": "Explain the nature of communications plans",
+      "text": "Explain the nature of communications plans",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Manage communications efforts to protect brand viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:196",
+      "level": "SP",
+      "official_text": "Implement a communications plan",
+      "display_text": "Implement a communications plan",
+      "text": "Implement a communications plan",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Manage communications efforts to protect brand viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:197",
+      "level": "SP",
+      "official_text": "Monitor communications plan",
+      "display_text": "Monitor communications plan",
+      "text": "Monitor communications plan",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Manage communications efforts to protect brand viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:198",
+      "level": "SP",
+      "official_text": "Develop communications plan",
+      "display_text": "Develop communications plan",
+      "text": "Develop communications plan",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Manage communications efforts to protect brand viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "CO:199",
+      "level": "SP",
+      "official_text": "Adjust communications plan",
+      "display_text": "Adjust communications plan",
+      "text": "Adjust communications plan",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Manage communications efforts to protect brand viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 36
+      }
+    },
+    {
+      "code": "EI:082",
+      "level": "SP",
+      "official_text": "Explain the impact of business customs and practices on global trade",
+      "display_text": "Explain the impact of business customs and practices on global trade",
+      "text": "Explain the impact of business customs and practices on global trade",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:083",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the North American market",
+      "display_text": "Describe the nature of business customs and practices in the North American market",
+      "text": "Describe the nature of business customs and practices in the North American market",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:084",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Western Europe",
+      "display_text": "Explain the nature of business customs and practices in Western Europe",
+      "text": "Explain the nature of business customs and practices in Western Europe",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:117",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "display_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "text": "Explain the nature of business customs and practices in Eastern Europe",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:085",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Latin America",
+      "display_text": "Explain the nature of business customs and practices in Latin America",
+      "text": "Explain the nature of business customs and practices in Latin America",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:086",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "display_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:087",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in the Middle East",
+      "display_text": "Discuss the nature of business customs and practices in the Middle East",
+      "text": "Discuss the nature of business customs and practices in the Middle East",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:118",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in South Asia",
+      "display_text": "Explain the nature of business customs and practices in South Asia",
+      "text": "Explain the nature of business customs and practices in South Asia",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:119",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in Northern Africa",
+      "display_text": "Describe the nature of business customs and practices in Northern Africa",
+      "text": "Describe the nature of business customs and practices in Northern Africa",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "EI:120",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "display_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:658",
+      "level": "SP",
+      "official_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "display_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:659",
+      "level": "SP",
+      "official_text": "Describe marginal analysis techniques and applications",
+      "display_text": "Describe marginal analysis techniques and applications",
+      "text": "Describe marginal analysis techniques and applications",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:660",
+      "level": "SP",
+      "official_text": "Explain the nature of managerial accounting",
+      "display_text": "Explain the nature of managerial accounting",
+      "text": "Explain the nature of managerial accounting",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:661",
+      "level": "SP",
+      "official_text": "Discuss the use of variance analysis in managerial accounting",
+      "display_text": "Discuss the use of variance analysis in managerial accounting",
+      "text": "Discuss the use of variance analysis in managerial accounting",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "HR:452",
+      "level": "SP",
+      "official_text": "Explain labor-relations issues",
+      "display_text": "Explain labor-relations issues",
+      "text": "Explain labor-relations issues",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "HR:515",
+      "level": "SP",
+      "official_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "display_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 37
+      }
+    },
+    {
+      "code": "OP:466",
+      "level": "SP",
+      "official_text": "Explain the nature of facilities management",
+      "display_text": "Explain the nature of facilities management",
+      "text": "Explain the nature of facilities management",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "OP:447",
+      "level": "SP",
+      "official_text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "display_text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage operational risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "OP:448",
+      "level": "SP",
+      "official_text": "Discuss the nature of operational risk management",
+      "display_text": "Discuss the nature of operational risk management",
+      "text": "Discuss the nature of operational risk management",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage operational risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "PD:258",
+      "level": "SP",
+      "official_text": "Identify continuing education courses or programs available to enhance management skills",
+      "display_text": "Identify continuing education courses or programs available to enhance management skills",
+      "text": "Identify continuing education courses or programs available to enhance management skills",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "PD:259",
+      "level": "SP",
+      "official_text": "Describe certifications for management professionals (e.g., American Management Association [AMA], American National Standards Institute [ANSI])",
+      "display_text": "Describe certifications for management professionals (e.g., American Management Association [AMA], American National Standards Institute [ANSI])",
+      "text": "Describe certifications for management professionals (e.g., American Management Association [AMA], American National Standards Institute [ANSI])",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "PD:260",
+      "level": "SP",
+      "official_text": "Identify professional association opportunities for management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "display_text": "Identify professional association opportunities for management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "text": "Identify professional association opportunities for management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "SM:082",
+      "level": "SP",
+      "official_text": "Explain the nature of corporate social responsibility",
+      "display_text": "Explain the nature of corporate social responsibility",
+      "text": "Explain the nature of corporate social responsibility",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Implement corporate social responsibility to achieve business objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "SM:083",
+      "level": "SP",
+      "official_text": "Monitor compliance with corporate social responsibility policies",
+      "display_text": "Monitor compliance with corporate social responsibility policies",
+      "text": "Monitor compliance with corporate social responsibility policies",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Implement corporate social responsibility to achieve business objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "SM:084",
+      "level": "SP",
+      "official_text": "Measure corporate social responsibility impact",
+      "display_text": "Measure corporate social responsibility impact",
+      "text": "Measure corporate social responsibility impact",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Implement corporate social responsibility to achieve business objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "SM:087",
+      "level": "SP",
+      "official_text": "Explain the impact of organizational change on organizational development",
+      "display_text": "Explain the impact of organizational change on organizational development",
+      "text": "Explain the impact of organizational change on organizational development",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "SM:088",
+      "level": "SP",
+      "official_text": "Describe strategies and approaches for leading change",
+      "display_text": "Describe strategies and approaches for leading change",
+      "text": "Describe strategies and approaches for leading change",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 38
+      }
+    },
+    {
+      "code": "KM:017",
+      "level": "SP",
+      "official_text": "Identify ways to use crowdsourcing in business",
+      "display_text": "Identify ways to use crowdsourcing in business",
+      "text": "Identify ways to use crowdsourcing in business",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 39
+      }
+    },
+    {
+      "code": "QM:008",
+      "level": "SP",
+      "official_text": "Describe product standards' issues associated with global business",
+      "display_text": "Describe product standards' issues associated with global business",
+      "text": "Describe product standards' issues associated with global business",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 39
+      }
+    },
+    {
+      "code": "RM:065",
+      "level": "SP",
+      "official_text": "Discuss the nature of global risk",
+      "display_text": "Discuss the nature of global risk",
+      "text": "Discuss the nature of global risk",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 39
+      }
+    },
+    {
+      "code": "RM:088",
+      "level": "SP",
+      "official_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "display_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "tier": 3,
+      "curriculum_section": "General Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "General Management",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 39
+      }
+    }
+  ]
+}

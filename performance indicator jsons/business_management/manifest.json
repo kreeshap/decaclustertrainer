@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cluster": "Business Management + Administration",
+  "competitive_year": "2026-27",
+  "source_document": "source/2026-27-HS-DECA-BMA.pdf",
+  "exam_blueprint": "exam_blueprint.json",
+  "curriculum": [
+    "../shared/business_administration_core_2026_27.json",
+    "curriculum/tier2_bma.json",
+    "curriculum/tier3_administrative_services.json",
+    "curriculum/tier3_business_information_management.json",
+    "curriculum/tier3_general_management.json",
+    "curriculum/tier3_human_resources.json",
+    "curriculum/tier3_operations.json"
+  ],
+  "events": [
+    "events/BLTDM.json",
+    "events/HRM.json",
+    "events/PBM.json"
+  ],
+  "counts": {
+    "business_administration_core_2026_27": 367,
+    "bma_tier2": 54,
+    "bma_tier3_administrative_services": 97,
+    "bma_tier3_business_information_management": 74,
+    "bma_tier3_general_management": 43,
+    "bma_tier3_human_resources": 93,
+    "bma_tier3_operations": 134
+  }
+}

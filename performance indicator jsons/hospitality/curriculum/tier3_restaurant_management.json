@@ -1,0 +1,2319 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "hospitality_tier3_restaurant",
+  "name": "Restaurant Management Pathway",
+  "cluster": "Hospitality + Tourism",
+  "tier": 3,
+  "curriculum_section": "Restaurant Management Pathway",
+  "pathway": "Restaurant Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Hospitality",
+    "pages": [
+      44,
+      49
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:172",
+      "level": "SP",
+      "official_text": "Explain the nature of regulations affecting food establishments",
+      "display_text": "Explain the nature of regulations affecting food establishments",
+      "text": "Explain the nature of regulations affecting food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "BL:173",
+      "level": "SP",
+      "official_text": "Describe liability issues in food establishments serving alcohol",
+      "display_text": "Describe liability issues in food establishments serving alcohol",
+      "text": "Describe liability issues in food establishments serving alcohol",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "BL:174",
+      "level": "SP",
+      "official_text": "Describe the nature and scope of government agencies that oversee the food industry",
+      "display_text": "Describe the nature and scope of government agencies that oversee the food industry",
+      "text": "Describe the nature and scope of government agencies that oversee the food industry",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in the food industry to adhere to regulatory requirements",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "BL:175",
+      "level": "SP",
+      "official_text": "Discuss local regulation of food establishments",
+      "display_text": "Discuss local regulation of food establishments",
+      "text": "Discuss local regulation of food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in the food industry to adhere to regulatory requirements",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "BL:176",
+      "level": "SP",
+      "official_text": "Identify food-safety guidelines/requirements",
+      "display_text": "Identify food-safety guidelines/requirements",
+      "text": "Identify food-safety guidelines/requirements",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in the food industry to adhere to regulatory requirements",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "CR:062",
+      "level": "SP",
+      "official_text": "Provide table service",
+      "display_text": "Provide table service",
+      "text": "Provide table service",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "CR:063",
+      "level": "SP",
+      "official_text": "Provide beverage service",
+      "display_text": "Provide beverage service",
+      "text": "Provide beverage service",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "CR:065",
+      "level": "SP",
+      "official_text": "Identify customer dynamics affecting food establishments",
+      "display_text": "Identify customer dynamics affecting food establishments",
+      "text": "Identify customer dynamics affecting food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "CR:066",
+      "level": "SP",
+      "official_text": "Describe strategies for managing customer dynamics",
+      "display_text": "Describe strategies for managing customer dynamics",
+      "text": "Describe strategies for managing customer dynamics",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:819",
+      "level": "SP",
+      "official_text": "Discuss the use of make-or-buy analysis in food establishments",
+      "display_text": "Discuss the use of make-or-buy analysis in food establishments",
+      "text": "Discuss the use of make-or-buy analysis in food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:820",
+      "level": "SP",
+      "official_text": "Describe factors influencing make-or-buy decisions",
+      "display_text": "Describe factors influencing make-or-buy decisions",
+      "text": "Describe factors influencing make-or-buy decisions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:821",
+      "level": "SP",
+      "official_text": "Calculate food product unit costs",
+      "display_text": "Calculate food product unit costs",
+      "text": "Calculate food product unit costs",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:822",
+      "level": "SP",
+      "official_text": "Calculate food product total cost",
+      "display_text": "Calculate food product total cost",
+      "text": "Calculate food product total cost",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:823",
+      "level": "SP",
+      "official_text": "Calculate standard recipe yield measure",
+      "display_text": "Calculate standard recipe yield measure",
+      "text": "Calculate standard recipe yield measure",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:824",
+      "level": "SP",
+      "official_text": "Calculate per plate costs",
+      "display_text": "Calculate per plate costs",
+      "text": "Calculate per plate costs",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "FI:825",
+      "level": "SP",
+      "official_text": "Calculate per person buffet/salad bar costs",
+      "display_text": "Calculate per person buffet/salad bar costs",
+      "text": "Calculate per person buffet/salad bar costs",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 44
+      }
+    },
+    {
+      "code": "MK:029",
+      "level": "SP",
+      "official_text": "Explain factors that influence customer selection of food places and menu items",
+      "display_text": "Explain factors that influence customer selection of food places and menu items",
+      "text": "Explain factors that influence customer selection of food places and menu items",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire foundational knowledge of customer/client/business behavior to understand what motivates decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:306",
+      "level": "SP",
+      "official_text": "Explain the role of restaurant management systems",
+      "display_text": "Explain the role of restaurant management systems",
+      "text": "Explain the role of restaurant management systems",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:307",
+      "level": "SP",
+      "official_text": "Discuss online reservation systems",
+      "display_text": "Discuss online reservation systems",
+      "text": "Discuss online reservation systems",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:308",
+      "level": "SP",
+      "official_text": "Utilize restaurant management system applications",
+      "display_text": "Utilize restaurant management system applications",
+      "text": "Utilize restaurant management system applications",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:309",
+      "level": "SP",
+      "official_text": "Describe system integration challenges in restaurant management",
+      "display_text": "Describe system integration challenges in restaurant management",
+      "text": "Describe system integration challenges in restaurant management",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:310",
+      "level": "SP",
+      "official_text": "Assess trends affecting food preparation",
+      "display_text": "Assess trends affecting food preparation",
+      "text": "Assess trends affecting food preparation",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Analyze trends to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:311",
+      "level": "SP",
+      "official_text": "Evaluate trends affecting food presentation",
+      "display_text": "Evaluate trends affecting food presentation",
+      "text": "Evaluate trends affecting food presentation",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Analyze trends to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "NF:312",
+      "level": "SP",
+      "official_text": "Analyze trends in food habits/preferences",
+      "display_text": "Analyze trends in food habits/preferences",
+      "text": "Analyze trends in food habits/preferences",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Analyze trends to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:582",
+      "level": "PQ",
+      "official_text": "Discuss the role of personal hygiene in food safety",
+      "display_text": "Discuss the role of personal hygiene in food safety",
+      "text": "Discuss the role of personal hygiene in food safety",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:583",
+      "level": "PQ",
+      "official_text": "Identify personal health conditions that affect food safety",
+      "display_text": "Identify personal health conditions that affect food safety",
+      "text": "Identify personal health conditions that affect food safety",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:584",
+      "level": "PQ",
+      "official_text": "Demonstrate proper hand-washing technique",
+      "display_text": "Demonstrate proper hand-washing technique",
+      "text": "Demonstrate proper hand-washing technique",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:585",
+      "level": "PQ",
+      "official_text": "Use proper work attire",
+      "display_text": "Use proper work attire",
+      "text": "Use proper work attire",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:586",
+      "level": "PQ",
+      "official_text": "Follow safety precautions for lifting/moving materials",
+      "display_text": "Follow safety precautions for lifting/moving materials",
+      "text": "Follow safety precautions for lifting/moving materials",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:587",
+      "level": "PQ",
+      "official_text": "Comply with policies and procedures for handling bodily fluids",
+      "display_text": "Comply with policies and procedures for handling bodily fluids",
+      "text": "Comply with policies and procedures for handling bodily fluids",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:588",
+      "level": "CS",
+      "official_text": "Explain the relationship between personal safety/sanitation and allergen exposure",
+      "display_text": "Explain the relationship between personal safety/sanitation and allergen exposure",
+      "text": "Explain the relationship between personal safety/sanitation and allergen exposure",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adhere to health and safety regulations to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:113",
+      "level": "CS",
+      "official_text": "Explain procedures for handling robbery situations",
+      "display_text": "Explain procedures for handling robbery situations",
+      "text": "Explain procedures for handling robbery situations",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 45
+      }
+    },
+    {
+      "code": "OP:589",
+      "level": "CS",
+      "official_text": "Identify restaurants' hazardous chemicals/waste",
+      "display_text": "Identify restaurants' hazardous chemicals/waste",
+      "text": "Identify restaurants' hazardous chemicals/waste",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:590",
+      "level": "CS",
+      "official_text": "Label/store restaurants' hazardous chemicals/waste",
+      "display_text": "Label/store restaurants' hazardous chemicals/waste",
+      "text": "Label/store restaurants' hazardous chemicals/waste",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:591",
+      "level": "SP",
+      "official_text": "Describe strategies for responding to biohazard incidents at restaurants",
+      "display_text": "Describe strategies for responding to biohazard incidents at restaurants",
+      "text": "Describe strategies for responding to biohazard incidents at restaurants",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:592",
+      "level": "SP",
+      "official_text": "Identify physical hazards",
+      "display_text": "Identify physical hazards",
+      "text": "Identify physical hazards",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:593",
+      "level": "SP",
+      "official_text": "Assess fire hazards",
+      "display_text": "Assess fire hazards",
+      "text": "Assess fire hazards",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:594",
+      "level": "SP",
+      "official_text": "Identify fire prevention strategies",
+      "display_text": "Identify fire prevention strategies",
+      "text": "Identify fire prevention strategies",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:595",
+      "level": "SP",
+      "official_text": "Identify equipment safety requirements",
+      "display_text": "Identify equipment safety requirements",
+      "text": "Identify equipment safety requirements",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:596",
+      "level": "SP",
+      "official_text": "Analyze the cause of accidents",
+      "display_text": "Analyze the cause of accidents",
+      "text": "Analyze the cause of accidents",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement restaurant safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:599",
+      "level": "CS",
+      "official_text": "Describe the nature and scope of the Hazard Analysis and Critical Control Point (HAACP) food safety management system",
+      "display_text": "Describe the nature and scope of the Hazard Analysis and Critical Control Point (HAACP) food safety management system",
+      "text": "Describe the nature and scope of the Hazard Analysis and Critical Control Point (HAACP) food safety management system",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:600",
+      "level": "CS",
+      "official_text": "Identify methods/practices used to control/eliminate food contamination",
+      "display_text": "Identify methods/practices used to control/eliminate food contamination",
+      "text": "Identify methods/practices used to control/eliminate food contamination",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:601",
+      "level": "SP",
+      "official_text": "Monitor food temperatures",
+      "display_text": "Monitor food temperatures",
+      "text": "Monitor food temperatures",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:602",
+      "level": "SP",
+      "official_text": "Monitor consumer self-service food stations",
+      "display_text": "Monitor consumer self-service food stations",
+      "text": "Monitor consumer self-service food stations",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:603",
+      "level": "SP",
+      "official_text": "Mark/label foods properly",
+      "display_text": "Mark/label foods properly",
+      "text": "Mark/label foods properly",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:604",
+      "level": "SP",
+      "official_text": "Store foods properly",
+      "display_text": "Store foods properly",
+      "text": "Store foods properly",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:605",
+      "level": "SP",
+      "official_text": "Identify critical control points",
+      "display_text": "Identify critical control points",
+      "text": "Identify critical control points",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:606",
+      "level": "SP",
+      "official_text": "Identify biological hazards",
+      "display_text": "Identify biological hazards",
+      "text": "Identify biological hazards",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:607",
+      "level": "SP",
+      "official_text": "Identify potentially hazardous foods (PHF)",
+      "display_text": "Identify potentially hazardous foods (PHF)",
+      "text": "Identify potentially hazardous foods (PHF)",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:608",
+      "level": "SP",
+      "official_text": "Identify time and temperature control for food safety (TCS)",
+      "display_text": "Identify time and temperature control for food safety (TCS)",
+      "text": "Identify time and temperature control for food safety (TCS)",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:609",
+      "level": "SP",
+      "official_text": "Identify temperature danger zone (TDZ) foods",
+      "display_text": "Identify temperature danger zone (TDZ) foods",
+      "text": "Identify temperature danger zone (TDZ) foods",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:610",
+      "level": "SP",
+      "official_text": "Adjust equipment/workstations to prevent cross-contamination",
+      "display_text": "Adjust equipment/workstations to prevent cross-contamination",
+      "text": "Adjust equipment/workstations to prevent cross-contamination",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement food safety procedures to minimize chance for contamination.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:620",
+      "level": "SP",
+      "official_text": "Identify quality-control measures in food establishments",
+      "display_text": "Identify quality-control measures in food establishments",
+      "text": "Identify quality-control measures in food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement quality-control processes to minimize errors and to expedite workflow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:621",
+      "level": "SP",
+      "official_text": "Utilize quality control methods in food establishments",
+      "display_text": "Utilize quality control methods in food establishments",
+      "text": "Utilize quality control methods in food establishments",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement quality-control processes to minimize errors and to expedite workflow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:617",
+      "level": "SP",
+      "official_text": "Identify factors affecting wait time",
+      "display_text": "Identify factors affecting wait time",
+      "text": "Identify factors affecting wait time",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement organizational skills to improve efficiency and work flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:618",
+      "level": "SP",
+      "official_text": "Describe strategies for managing table turns",
+      "display_text": "Describe strategies for managing table turns",
+      "text": "Describe strategies for managing table turns",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement organizational skills to improve efficiency and work flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 46
+      }
+    },
+    {
+      "code": "OP:629",
+      "level": "CS",
+      "official_text": "Dispose of food and food by-products",
+      "display_text": "Dispose of food and food by-products",
+      "text": "Dispose of food and food by-products",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:630",
+      "level": "CS",
+      "official_text": "Distinguish among cleaning, sterilizing, and sanitizing",
+      "display_text": "Distinguish among cleaning, sterilizing, and sanitizing",
+      "text": "Distinguish among cleaning, sterilizing, and sanitizing",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:631",
+      "level": "CS",
+      "official_text": "Label cleaning/sanitation solutions",
+      "display_text": "Label cleaning/sanitation solutions",
+      "text": "Label cleaning/sanitation solutions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:632",
+      "level": "CS",
+      "official_text": "Follow sanitization procedures",
+      "display_text": "Follow sanitization procedures",
+      "text": "Follow sanitization procedures",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:633",
+      "level": "SP",
+      "official_text": "Mix cleaning/sanitation solutions",
+      "display_text": "Mix cleaning/sanitation solutions",
+      "text": "Mix cleaning/sanitation solutions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:634",
+      "level": "SP",
+      "official_text": "Determine cleaning requirements",
+      "display_text": "Determine cleaning requirements",
+      "text": "Determine cleaning requirements",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:561",
+      "level": "SP",
+      "official_text": "Identify signs of pest infestations",
+      "display_text": "Identify signs of pest infestations",
+      "text": "Identify signs of pest infestations",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:562",
+      "level": "SP",
+      "official_text": "Describe pest control strategies",
+      "display_text": "Describe pest control strategies",
+      "text": "Describe pest control strategies",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:637",
+      "level": "SP",
+      "official_text": "Set up and maintain commercial equipment/machines",
+      "display_text": "Set up and maintain commercial equipment/machines",
+      "text": "Set up and maintain commercial equipment/machines",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:638",
+      "level": "SP",
+      "official_text": "Break down commercial equipment/machines",
+      "display_text": "Break down commercial equipment/machines",
+      "text": "Break down commercial equipment/machines",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:642",
+      "level": "SP",
+      "official_text": "Discuss the nature of restaurant property management",
+      "display_text": "Discuss the nature of restaurant property management",
+      "text": "Discuss the nature of restaurant property management",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:643",
+      "level": "SP",
+      "official_text": "Identify factors influencing food and beverage purchasing decisions",
+      "display_text": "Identify factors influencing food and beverage purchasing decisions",
+      "text": "Identify factors influencing food and beverage purchasing decisions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:644",
+      "level": "SP",
+      "official_text": "Identify sustainability factors affecting the purchase of food and nonfood products",
+      "display_text": "Identify sustainability factors affecting the purchase of food and nonfood products",
+      "text": "Identify sustainability factors affecting the purchase of food and nonfood products",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:645",
+      "level": "SP",
+      "official_text": "Identify alternative sources for food products",
+      "display_text": "Identify alternative sources for food products",
+      "text": "Identify alternative sources for food products",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:407",
+      "level": "CS",
+      "official_text": "Maintain inventory levels",
+      "display_text": "Maintain inventory levels",
+      "text": "Maintain inventory levels",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:489",
+      "level": "SP",
+      "official_text": "Describe strategies to minimize the cost of maintaining inventory",
+      "display_text": "Describe strategies to minimize the cost of maintaining inventory",
+      "text": "Describe strategies to minimize the cost of maintaining inventory",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:415",
+      "level": "SP",
+      "official_text": "Determine inventory shrinkage",
+      "display_text": "Determine inventory shrinkage",
+      "text": "Determine inventory shrinkage",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:622",
+      "level": "SP",
+      "official_text": "Identify common sources of food loss",
+      "display_text": "Identify common sources of food loss",
+      "text": "Identify common sources of food loss",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to reduce costs and to minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:623",
+      "level": "SP",
+      "official_text": "Describe strategies for reducing food loss",
+      "display_text": "Describe strategies for reducing food loss",
+      "text": "Describe strategies for reducing food loss",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to reduce costs and to minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "OP:659",
+      "level": "SP",
+      "official_text": "Identify waste management opportunities at restaurant",
+      "display_text": "Identify waste management opportunities at restaurant",
+      "text": "Identify waste management opportunities at restaurant",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to reduce costs and to minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 47
+      }
+    },
+    {
+      "code": "PD:366",
+      "level": "SP",
+      "official_text": "Differentiate among segments of the culinary and foodservice operations industry",
+      "display_text": "Differentiate among segments of the culinary and foodservice operations industry",
+      "text": "Differentiate among segments of the culinary and foodservice operations industry",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:367",
+      "level": "SP",
+      "official_text": "Discuss types of table service",
+      "display_text": "Discuss types of table service",
+      "text": "Discuss types of table service",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:368",
+      "level": "SP",
+      "official_text": "Identify types of food service in different segments of the culinary and foodservice operations industry",
+      "display_text": "Identify types of food service in different segments of the culinary and foodservice operations industry",
+      "text": "Identify types of food service in different segments of the culinary and foodservice operations industry",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:369",
+      "level": "SP",
+      "official_text": "Identify domestic cuisines",
+      "display_text": "Identify domestic cuisines",
+      "text": "Identify domestic cuisines",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:370",
+      "level": "SP",
+      "official_text": "Identify international cuisines",
+      "display_text": "Identify international cuisines",
+      "text": "Identify international cuisines",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:371",
+      "level": "SP",
+      "official_text": "Identify cuisines common to different regions",
+      "display_text": "Identify cuisines common to different regions",
+      "text": "Identify cuisines common to different regions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:373",
+      "level": "SP",
+      "official_text": "Identify food requirements applicable to special populations",
+      "display_text": "Identify food requirements applicable to special populations",
+      "text": "Identify food requirements applicable to special populations",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in obtaining a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:374",
+      "level": "CS",
+      "official_text": "Explain the nature of pathogens",
+      "display_text": "Explain the nature of pathogens",
+      "text": "Explain the nature of pathogens",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:375",
+      "level": "CS",
+      "official_text": "Identify types of harmful bacteria",
+      "display_text": "Identify types of harmful bacteria",
+      "text": "Identify types of harmful bacteria",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:376",
+      "level": "CS",
+      "official_text": "Identify types of viruses",
+      "display_text": "Identify types of viruses",
+      "text": "Identify types of viruses",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:377",
+      "level": "CS",
+      "official_text": "Identify types of parasites",
+      "display_text": "Identify types of parasites",
+      "text": "Identify types of parasites",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:378",
+      "level": "CS",
+      "official_text": "Identify types of fungi",
+      "display_text": "Identify types of fungi",
+      "text": "Identify types of fungi",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:379",
+      "level": "CS",
+      "official_text": "Identify types of toxins",
+      "display_text": "Identify types of toxins",
+      "text": "Identify types of toxins",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:380",
+      "level": "CS",
+      "official_text": "Identify foodborne illnesses and their causes",
+      "display_text": "Identify foodborne illnesses and their causes",
+      "text": "Identify foodborne illnesses and their causes",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:381",
+      "level": "CS",
+      "official_text": "Identify conditions affecting the rate of multiplication in bacteria",
+      "display_text": "Identify conditions affecting the rate of multiplication in bacteria",
+      "text": "Identify conditions affecting the rate of multiplication in bacteria",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food-related illnesses and diseases to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:382",
+      "level": "CS",
+      "official_text": "Identify common food allergies",
+      "display_text": "Identify common food allergies",
+      "text": "Identify common food allergies",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundational knowledge of allergens and intolerances to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:383",
+      "level": "CS",
+      "official_text": "Identify common food intolerances",
+      "display_text": "Identify common food intolerances",
+      "text": "Identify common food intolerances",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundational knowledge of allergens and intolerances to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:384",
+      "level": "CS",
+      "official_text": "Describe consequences of exposure to food allergens",
+      "display_text": "Describe consequences of exposure to food allergens",
+      "text": "Describe consequences of exposure to food allergens",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundational knowledge of allergens and intolerances to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:385",
+      "level": "CS",
+      "official_text": "Describe consequences of exposure to food intolerances",
+      "display_text": "Describe consequences of exposure to food intolerances",
+      "text": "Describe consequences of exposure to food intolerances",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundational knowledge of allergens and intolerances to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:386",
+      "level": "SP",
+      "official_text": "Discuss strategies for preventing exposure to food allergens",
+      "display_text": "Discuss strategies for preventing exposure to food allergens",
+      "text": "Discuss strategies for preventing exposure to food allergens",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundational knowledge of allergens and intolerances to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:387",
+      "level": "CS",
+      "official_text": "Describe strategies for preventing bacteria multiplication in food",
+      "display_text": "Describe strategies for preventing bacteria multiplication in food",
+      "text": "Describe strategies for preventing bacteria multiplication in food",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:388",
+      "level": "CS",
+      "official_text": "Describe the effect of water characteristics on food safety and sanitation",
+      "display_text": "Describe the effect of water characteristics on food safety and sanitation",
+      "text": "Describe the effect of water characteristics on food safety and sanitation",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:389",
+      "level": "CS",
+      "official_text": "Describe the effect of food pH levels on food safety and sanitation",
+      "display_text": "Describe the effect of food pH levels on food safety and sanitation",
+      "text": "Describe the effect of food pH levels on food safety and sanitation",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:390",
+      "level": "CS",
+      "official_text": "Describe the effect of moisture levels of food safety and sanitation",
+      "display_text": "Describe the effect of moisture levels of food safety and sanitation",
+      "text": "Describe the effect of moisture levels of food safety and sanitation",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:391",
+      "level": "CS",
+      "official_text": "Identify food-safety warning signs observable during the receiving and storing processes",
+      "display_text": "Identify food-safety warning signs observable during the receiving and storing processes",
+      "text": "Identify food-safety warning signs observable during the receiving and storing processes",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:392",
+      "level": "CS",
+      "official_text": "Identify food-safety warning signs observable during the storing process",
+      "display_text": "Identify food-safety warning signs observable during the storing process",
+      "text": "Identify food-safety warning signs observable during the storing process",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:393",
+      "level": "CS",
+      "official_text": "Identify food-safety warning signs observable during the serving process",
+      "display_text": "Identify food-safety warning signs observable during the serving process",
+      "text": "Identify food-safety warning signs observable during the serving process",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:394",
+      "level": "CS",
+      "official_text": "Explain the purpose of temperature probes",
+      "display_text": "Explain the purpose of temperature probes",
+      "text": "Explain the purpose of temperature probes",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of food safety and sanitation practices to obtain a foundation for employment in food establishments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 48
+      }
+    },
+    {
+      "code": "PD:395",
+      "level": "CS",
+      "official_text": "Explain employment opportunities in the foodservice industry",
+      "display_text": "Explain employment opportunities in the foodservice industry",
+      "text": "Explain employment opportunities in the foodservice industry",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:396",
+      "level": "SP",
+      "official_text": "Describe culinary certifications",
+      "display_text": "Describe culinary certifications",
+      "text": "Describe culinary certifications",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PD:397",
+      "level": "SP",
+      "official_text": "Explain restaurant-management certifications",
+      "display_text": "Explain restaurant-management certifications",
+      "text": "Explain restaurant-management certifications",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PM:306",
+      "level": "CS",
+      "official_text": "Describe the uses of grades and standards in foodservice",
+      "display_text": "Describe the uses of grades and standards in foodservice",
+      "text": "Describe the uses of grades and standards in foodservice",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PM:307",
+      "level": "SP",
+      "official_text": "Determine effect of changes in nutritional guidelines",
+      "display_text": "Determine effect of changes in nutritional guidelines",
+      "text": "Determine effect of changes in nutritional guidelines",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PM:308",
+      "level": "SP",
+      "official_text": "Discuss the nature of the menu as a management tool",
+      "display_text": "Discuss the nature of the menu as a management tool",
+      "text": "Discuss the nature of the menu as a management tool",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PM:313",
+      "level": "SP",
+      "official_text": "Describe foodservice branding strategies (e.g., retail-item, restaurant, in-house/signature, branded concept)",
+      "display_text": "Describe foodservice branding strategies (e.g., retail-item, restaurant, in-house/signature, branded concept)",
+      "text": "Describe foodservice branding strategies (e.g., retail-item, restaurant, in-house/signature, branded concept)",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PI:084",
+      "level": "SP",
+      "official_text": "Explain considerations in meal pricing",
+      "display_text": "Explain considerations in meal pricing",
+      "text": "Explain considerations in meal pricing",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Employ pricing strategies to determine optimal pricing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PR:425",
+      "level": "SP",
+      "official_text": "Describe the use of design principles in menu development",
+      "display_text": "Describe the use of design principles in menu development",
+      "text": "Describe the use of design principles in menu development",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize menus to increase sales potential and build brand",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PR:426",
+      "level": "SP",
+      "official_text": "Identify effective menu descriptions",
+      "display_text": "Identify effective menu descriptions",
+      "text": "Identify effective menu descriptions",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize menus to increase sales potential and build brand",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    },
+    {
+      "code": "PR:427",
+      "level": "SP",
+      "official_text": "Explain the nature of effective nutritional disclosures",
+      "display_text": "Explain the nature of effective nutritional disclosures",
+      "text": "Explain the nature of effective nutritional disclosures",
+      "tier": 3,
+      "curriculum_section": "Restaurant Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Restaurant Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize menus to increase sales potential and build brand",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 49
+      }
+    }
+  ]
+}

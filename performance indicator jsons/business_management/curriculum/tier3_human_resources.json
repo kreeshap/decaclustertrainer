@@ -1,0 +1,1879 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier3_human_resources",
+  "name": "Human Resources Management Pathway",
+  "cluster": "Business Management + Administration",
+  "tier": 3,
+  "curriculum_section": "Human Resources Management Pathway",
+  "pathway": "Human Resources Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      40,
+      45
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:119",
+      "level": "SP",
+      "official_text": "Explain unfair labor practices",
+      "display_text": "Explain unfair labor practices",
+      "text": "Explain unfair labor practices",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement human-resources laws and regulations to ensure equitable treatment of employees and to meet government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "BL:120",
+      "level": "SP",
+      "official_text": "Comply with compensation and benefit laws",
+      "display_text": "Comply with compensation and benefit laws",
+      "text": "Comply with compensation and benefit laws",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement human-resources laws and regulations to ensure equitable treatment of employees and to meet government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "CO:210",
+      "level": "SP",
+      "official_text": "Repurpose content for social media",
+      "display_text": "Repurpose content for social media",
+      "text": "Repurpose content for social media",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "CO:187",
+      "level": "SP",
+      "official_text": "Maintain confidentiality in dealing with personnel",
+      "display_text": "Maintain confidentiality in dealing with personnel",
+      "text": "Maintain confidentiality in dealing with personnel",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Communicate with staff to clarify workplace expectations and benefits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "CO:188",
+      "level": "SP",
+      "official_text": "Describe elements of a human resources management's communications program",
+      "display_text": "Describe elements of a human resources management's communications program",
+      "text": "Describe elements of a human resources management's communications program",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Communicate with staff to clarify workplace expectations and benefits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "HR:413",
+      "level": "SP",
+      "official_text": "Explain human resources management functions",
+      "display_text": "Explain human resources management functions",
+      "text": "Explain human resources management functions",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand human resources management models to demonstrate knowledge of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "HR:415",
+      "level": "SP",
+      "official_text": "Discuss factors that impact human resources management (e.g., availability of qualified employees, alternative staffing methods, employment laws/regulations, company policies/procedures, compensation and benefit programs, staff diversity, etc.)",
+      "display_text": "Discuss factors that impact human resources management (e.g., availability of qualified employees, alternative staffing methods, employment laws/regulations, company policies/procedures, compensation and benefit programs, staff diversity, etc.)",
+      "text": "Discuss factors that impact human resources management (e.g., availability of qualified employees, alternative staffing methods, employment laws/regulations, company policies/procedures, compensation and benefit programs, staff diversity, etc.)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand human resources management models to demonstrate knowledge of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "HR:416",
+      "level": "SP",
+      "official_text": "Describe planning techniques used in the hiring process (e.g., succession planning, forecasting)",
+      "display_text": "Describe planning techniques used in the hiring process (e.g., succession planning, forecasting)",
+      "text": "Describe planning techniques used in the hiring process (e.g., succession planning, forecasting)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Plan talent-acquisition activities to guide human resources management decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 40
+      }
+    },
+    {
+      "code": "HR:522",
+      "level": "SP",
+      "official_text": "Explain assessment methods used in the hiring process",
+      "display_text": "Explain assessment methods used in the hiring process",
+      "text": "Explain assessment methods used in the hiring process",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Implement talent-acquisition activities to obtain qualified staff.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:426",
+      "level": "SP",
+      "official_text": "Explain contingency factors affecting job offer (e.g., background checks, drug tests, physical results, etc.)",
+      "display_text": "Explain contingency factors affecting job offer (e.g., background checks, drug tests, physical results, etc.)",
+      "text": "Explain contingency factors affecting job offer (e.g., background checks, drug tests, physical results, etc.)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Implement talent-acquisition activities to obtain qualified staff.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:523",
+      "level": "SP",
+      "official_text": "Track job applicants",
+      "display_text": "Track job applicants",
+      "text": "Track job applicants",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Implement talent-acquisition activities to obtain qualified staff.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:423",
+      "level": "SP",
+      "official_text": "Administer and interpret employee selection tests",
+      "display_text": "Administer and interpret employee selection tests",
+      "text": "Administer and interpret employee selection tests",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Implement talent-acquisition activities to obtain qualified staff.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:431",
+      "level": "SP",
+      "official_text": "Perform post-employment offer activities",
+      "display_text": "Perform post-employment offer activities",
+      "text": "Perform post-employment offer activities",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Conduct on-boarding activities to facilitate employee start-up.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:432",
+      "level": "SP",
+      "official_text": "Explain the use of employment contracts",
+      "display_text": "Explain the use of employment contracts",
+      "text": "Explain the use of employment contracts",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Conduct on-boarding activities to facilitate employee start-up.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:433",
+      "level": "SP",
+      "official_text": "Explain standard relocation practices",
+      "display_text": "Explain standard relocation practices",
+      "text": "Explain standard relocation practices",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Conduct on-boarding activities to facilitate employee start-up.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:434",
+      "level": "SP",
+      "official_text": "Assist with employee relocation",
+      "display_text": "Assist with employee relocation",
+      "text": "Assist with employee relocation",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Conduct on-boarding activities to facilitate employee start-up.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:435",
+      "level": "SP",
+      "official_text": "Describe expatriation and repatriation issues and practices",
+      "display_text": "Describe expatriation and repatriation issues and practices",
+      "text": "Describe expatriation and repatriation issues and practices",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Conduct on-boarding activities to facilitate employee start-up.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:438",
+      "level": "SP",
+      "official_text": "Assess employee skills",
+      "display_text": "Assess employee skills",
+      "text": "Assess employee skills",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Determine employee-development needs to foster staff's growth and professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:439",
+      "level": "SP",
+      "official_text": "Conduct task/process analysis",
+      "display_text": "Conduct task/process analysis",
+      "text": "Conduct task/process analysis",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Determine employee-development needs to foster staff's growth and professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:443",
+      "level": "SP",
+      "official_text": "Conduct gap and/or needs analysis to identify human-resources development needs",
+      "display_text": "Conduct gap and/or needs analysis to identify human-resources development needs",
+      "text": "Conduct gap and/or needs analysis to identify human-resources development needs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Determine employee-development needs to foster staff's growth and professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:440",
+      "level": "SP",
+      "official_text": "Assess company's learning needs",
+      "display_text": "Assess company's learning needs",
+      "text": "Assess company's learning needs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Determine employee-development needs to foster staff's growth and professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:527",
+      "level": "SP",
+      "official_text": "Determine learning objectives",
+      "display_text": "Determine learning objectives",
+      "text": "Determine learning objectives",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:528",
+      "level": "SP",
+      "official_text": "Choose learning methods",
+      "display_text": "Choose learning methods",
+      "text": "Choose learning methods",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:441",
+      "level": "SP",
+      "official_text": "Write training activities",
+      "display_text": "Write training activities",
+      "text": "Write training activities",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:529",
+      "level": "SP",
+      "official_text": "Prepare a training plan",
+      "display_text": "Prepare a training plan",
+      "text": "Prepare a training plan",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:530",
+      "level": "SP",
+      "official_text": "Design a learning module",
+      "display_text": "Design a learning module",
+      "text": "Design a learning module",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:442",
+      "level": "SP",
+      "official_text": "Select experts for employee development",
+      "display_text": "Select experts for employee development",
+      "text": "Select experts for employee development",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:531",
+      "level": "SP",
+      "official_text": "Facilitate employee learning",
+      "display_text": "Facilitate employee learning",
+      "text": "Facilitate employee learning",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:532",
+      "level": "SP",
+      "official_text": "Evaluate learning",
+      "display_text": "Evaluate learning",
+      "text": "Evaluate learning",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:444",
+      "level": "SP",
+      "official_text": "Determine issues impacting human-resources development (e.g., organizational culture and policies, societal norms, etc.)",
+      "display_text": "Determine issues impacting human-resources development (e.g., organizational culture and policies, societal norms, etc.)",
+      "text": "Determine issues impacting human-resources development (e.g., organizational culture and policies, societal norms, etc.)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:445",
+      "level": "SP",
+      "official_text": "Apply human-resources development theories",
+      "display_text": "Apply human-resources development theories",
+      "text": "Apply human-resources development theories",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:446",
+      "level": "SP",
+      "official_text": "Implement employee-development program",
+      "display_text": "Implement employee-development program",
+      "text": "Implement employee-development program",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Perform talent-development activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:460",
+      "level": "SP",
+      "official_text": "Assist with establishment of work rules",
+      "display_text": "Assist with establishment of work rules",
+      "text": "Assist with establishment of work rules",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Control human resources management activities to maintain workforce standards.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 41
+      }
+    },
+    {
+      "code": "HR:450",
+      "level": "SP",
+      "official_text": "Assess effectiveness of employee-relations activities",
+      "display_text": "Assess effectiveness of employee-relations activities",
+      "text": "Assess effectiveness of employee-relations activities",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Assess employer-employee relationships to foster productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:452",
+      "level": "SP",
+      "official_text": "Explain labor-relations issues",
+      "display_text": "Explain labor-relations issues",
+      "text": "Explain labor-relations issues",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:543",
+      "level": "SP",
+      "official_text": "Describe talent management issues associated with organizational changes (e.g., right-sizing, downsizing, talent relocation, organizational restructuring or redesign)",
+      "display_text": "Describe talent management issues associated with organizational changes (e.g., right-sizing, downsizing, talent relocation, organizational restructuring or redesign)",
+      "text": "Describe talent management issues associated with organizational changes (e.g., right-sizing, downsizing, talent relocation, organizational restructuring or redesign)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:515",
+      "level": "SP",
+      "official_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "display_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:453",
+      "level": "SP",
+      "official_text": "Describe out-placement procedures and activities used in layoffs",
+      "display_text": "Describe out-placement procedures and activities used in layoffs",
+      "text": "Describe out-placement procedures and activities used in layoffs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:454",
+      "level": "SP",
+      "official_text": "Document employee issues (e.g., reasonable suspicion, harassment, attendance) and recommend solutions",
+      "display_text": "Document employee issues (e.g., reasonable suspicion, harassment, attendance) and recommend solutions",
+      "text": "Document employee issues (e.g., reasonable suspicion, harassment, attendance) and recommend solutions",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Resolve staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:475",
+      "level": "SP",
+      "official_text": "Explain the nature of benefit plans (e.g., health insurance, life insurance, educational assistance, health club membership, etc.)",
+      "display_text": "Explain the nature of benefit plans (e.g., health insurance, life insurance, educational assistance, health club membership, etc.)",
+      "text": "Explain the nature of benefit plans (e.g., health insurance, life insurance, educational assistance, health club membership, etc.)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:482",
+      "level": "SP",
+      "official_text": "Explain the nature of fitness/wellness programs offered by businesses",
+      "display_text": "Explain the nature of fitness/wellness programs offered by businesses",
+      "text": "Explain the nature of fitness/wellness programs offered by businesses",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:476",
+      "level": "SP",
+      "official_text": "Explain the nature of retirement plans",
+      "display_text": "Explain the nature of retirement plans",
+      "text": "Explain the nature of retirement plans",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:467",
+      "level": "SP",
+      "official_text": "Explain components of total rewards system",
+      "display_text": "Explain components of total rewards system",
+      "text": "Explain components of total rewards system",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:469",
+      "level": "SP",
+      "official_text": "Discuss the nature of executive compensation",
+      "display_text": "Discuss the nature of executive compensation",
+      "text": "Discuss the nature of executive compensation",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:465",
+      "level": "SP",
+      "official_text": "Explain payroll functions",
+      "display_text": "Explain payroll functions",
+      "text": "Explain payroll functions",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:547",
+      "level": "SP",
+      "official_text": "Manage flexible work arrangements",
+      "display_text": "Manage flexible work arrangements",
+      "text": "Manage flexible work arrangements",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Administer total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:548",
+      "level": "SP",
+      "official_text": "Administer leave management procedures",
+      "display_text": "Administer leave management procedures",
+      "text": "Administer leave management procedures",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Administer total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:549",
+      "level": "SP",
+      "official_text": "Administer employee fitness/wellness programs",
+      "display_text": "Administer employee fitness/wellness programs",
+      "text": "Administer employee fitness/wellness programs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Administer total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:550",
+      "level": "SP",
+      "official_text": "Arrange pension/retirement benefits for employees",
+      "display_text": "Arrange pension/retirement benefits for employees",
+      "text": "Arrange pension/retirement benefits for employees",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Administer total reward strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:472",
+      "level": "SP",
+      "official_text": "Identify emerging compensation issues",
+      "display_text": "Identify emerging compensation issues",
+      "text": "Identify emerging compensation issues",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Analyze total rewards strategies to meet employee expectations and to remain competitive with other employers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:480",
+      "level": "SP",
+      "official_text": "Explain methods that can be used to analyze total rewards programs",
+      "display_text": "Explain methods that can be used to analyze total rewards programs",
+      "text": "Explain methods that can be used to analyze total rewards programs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Analyze total rewards strategies to meet employee expectations and to remain competitive with other employers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:552",
+      "level": "SP",
+      "official_text": "Benchmark total rewards practices by successful organizations",
+      "display_text": "Benchmark total rewards practices by successful organizations",
+      "text": "Benchmark total rewards practices by successful organizations",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Analyze total rewards strategies to meet employee expectations and to remain competitive with other employers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:477",
+      "level": "SP",
+      "official_text": "Conduct benefits need assessment",
+      "display_text": "Conduct benefits need assessment",
+      "text": "Conduct benefits need assessment",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Analyze total rewards strategies to meet employee expectations and to remain competitive with other employers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:483",
+      "level": "SP",
+      "official_text": "Assess company's employee fitness/wellness program",
+      "display_text": "Assess company's employee fitness/wellness program",
+      "text": "Assess company's employee fitness/wellness program",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Analyze total rewards strategies to meet employee expectations and to remain competitive with other employers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 42
+      }
+    },
+    {
+      "code": "HR:485",
+      "level": "SP",
+      "official_text": "Evaluate effectiveness of company's injury/occupational illness prevention programs",
+      "display_text": "Evaluate effectiveness of company's injury/occupational illness prevention programs",
+      "text": "Evaluate effectiveness of company's injury/occupational illness prevention programs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Develop and assess company's health and safety programs to ensure compliance and protect employees.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:554",
+      "level": "MN",
+      "official_text": "Set up company's safety training program",
+      "display_text": "Set up company's safety training program",
+      "text": "Set up company's safety training program",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Develop and assess company's health and safety programs to ensure compliance and protect employees.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:486",
+      "level": "MN",
+      "official_text": "Set up company's injury/occupational illness prevention programs",
+      "display_text": "Set up company's injury/occupational illness prevention programs",
+      "text": "Set up company's injury/occupational illness prevention programs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Develop and assess company's health and safety programs to ensure compliance and protect employees.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:487",
+      "level": "SP",
+      "official_text": "Explain the nature of organizational development",
+      "display_text": "Explain the nature of organizational development",
+      "text": "Explain the nature of organizational development",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Contribute to organizational development to change the beliefs, attitudes, values, and structure of organizations so that they can better adapt to new technologies, markets, and challenges.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:488",
+      "level": "MN",
+      "official_text": "Apply organizational-development theories",
+      "display_text": "Apply organizational-development theories",
+      "text": "Apply organizational-development theories",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Contribute to organizational development to change the beliefs, attitudes, values, and structure of organizations so that they can better adapt to new technologies, markets, and challenges.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:555",
+      "level": "MN",
+      "official_text": "Leverage workplace diversity and inclusion to achieve organizational objectives",
+      "display_text": "Leverage workplace diversity and inclusion to achieve organizational objectives",
+      "text": "Leverage workplace diversity and inclusion to achieve organizational objectives",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Contribute to organizational development to change the beliefs, attitudes, values, and structure of organizations so that they can better adapt to new technologies, markets, and challenges.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:489",
+      "level": "MN",
+      "official_text": "Evaluate human resources management's contribution to organizational effectiveness",
+      "display_text": "Evaluate human resources management's contribution to organizational effectiveness",
+      "text": "Evaluate human resources management's contribution to organizational effectiveness",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Contribute to organizational development to change the beliefs, attitudes, values, and structure of organizations so that they can better adapt to new technologies, markets, and challenges.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "HR:556",
+      "level": "MN",
+      "official_text": "Handle HR requirements for a merger or acquisition",
+      "display_text": "Handle HR requirements for a merger or acquisition",
+      "text": "Handle HR requirements for a merger or acquisition",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Contribute to organizational development to change the beliefs, attitudes, values, and structure of organizations so that they can better adapt to new technologies, markets, and challenges.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:269",
+      "level": "SP",
+      "official_text": "Verify new hire's employment eligibility",
+      "display_text": "Verify new hire's employment eligibility",
+      "text": "Verify new hire's employment eligibility",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:270",
+      "level": "SP",
+      "official_text": "Process immigration-related records",
+      "display_text": "Process immigration-related records",
+      "text": "Process immigration-related records",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:271",
+      "level": "SP",
+      "official_text": "Administer worker's compensation claim",
+      "display_text": "Administer worker's compensation claim",
+      "text": "Administer worker's compensation claim",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:272",
+      "level": "SP",
+      "official_text": "Process OSHA documentation",
+      "display_text": "Process OSHA documentation",
+      "text": "Process OSHA documentation",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:273",
+      "level": "SP",
+      "official_text": "Complete new hire documentation and reporting",
+      "display_text": "Complete new hire documentation and reporting",
+      "text": "Complete new hire documentation and reporting",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:275",
+      "level": "SP",
+      "official_text": "Explain trends in human resources management",
+      "display_text": "Explain trends in human resources management",
+      "text": "Explain trends in human resources management",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:276",
+      "level": "SP",
+      "official_text": "Determine turnover rate and its causes",
+      "display_text": "Determine turnover rate and its causes",
+      "text": "Determine turnover rate and its causes",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:277",
+      "level": "SP",
+      "official_text": "Identify and report factors negatively impacting productivity",
+      "display_text": "Identify and report factors negatively impacting productivity",
+      "text": "Identify and report factors negatively impacting productivity",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:159",
+      "level": "SP",
+      "official_text": "Explain the nature of a human resource information system (HRIS)",
+      "display_text": "Explain the nature of a human resource information system (HRIS)",
+      "text": "Explain the nature of a human resource information system (HRIS)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a human resource information system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:160",
+      "level": "SP",
+      "official_text": "Capture and store data in a human resource information system (HRIS)",
+      "display_text": "Capture and store data in a human resource information system (HRIS)",
+      "text": "Capture and store data in a human resource information system (HRIS)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a human resource information system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:161",
+      "level": "SP",
+      "official_text": "Mine data in human resource information system",
+      "display_text": "Mine data in human resource information system",
+      "text": "Mine data in human resource information system",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a human resource information system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:265",
+      "level": "SP",
+      "official_text": "Explain the nature of a learning management system (LMS)",
+      "display_text": "Explain the nature of a learning management system (LMS)",
+      "text": "Explain the nature of a learning management system (LMS)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a learning management system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:266",
+      "level": "SP",
+      "official_text": "Capture and store data in a learning management system (LMS)",
+      "display_text": "Capture and store data in a learning management system (LMS)",
+      "text": "Capture and store data in a learning management system (LMS)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a learning management system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "NF:267",
+      "level": "SP",
+      "official_text": "Mine data in learning management systems",
+      "display_text": "Mine data in learning management systems",
+      "text": "Mine data in learning management systems",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize a learning management system to increase organizational efficiency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 43
+      }
+    },
+    {
+      "code": "OP:212",
+      "level": "SP",
+      "official_text": "Describe general health and safety practices monitored and assessed by human resources management",
+      "display_text": "Describe general health and safety practices monitored and assessed by human resources management",
+      "text": "Describe general health and safety practices monitored and assessed by human resources management",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand health and safety issues to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:213",
+      "level": "SP",
+      "official_text": "Discuss the nature of incident and emergency response plans",
+      "display_text": "Discuss the nature of incident and emergency response plans",
+      "text": "Discuss the nature of incident and emergency response plans",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand health and safety issues to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:214",
+      "level": "SP",
+      "official_text": "Describe the nature of employee-assistance programs",
+      "display_text": "Describe the nature of employee-assistance programs",
+      "text": "Describe the nature of employee-assistance programs",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand health and safety issues to support a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:481",
+      "level": "SP",
+      "official_text": "Conduct an accident investigation",
+      "display_text": "Conduct an accident investigation",
+      "text": "Conduct an accident investigation",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot health and safety problems to foster a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:223",
+      "level": "SP",
+      "official_text": "Identify potential workplace violence conditions",
+      "display_text": "Identify potential workplace violence conditions",
+      "text": "Identify potential workplace violence conditions",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot health and safety problems to foster a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:482",
+      "level": "SP",
+      "official_text": "Monitor drug and alcohol testing",
+      "display_text": "Monitor drug and alcohol testing",
+      "text": "Monitor drug and alcohol testing",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot health and safety problems to foster a safe work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:483",
+      "level": "SP",
+      "official_text": "Identify opportunities to \"green\" the workplace",
+      "display_text": "Identify opportunities to \"green\" the workplace",
+      "text": "Identify opportunities to \"green\" the workplace",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop and analyze human-resources programs, practices, and services that promote the physical and mental well-being of individuals in the workplace to protect individuals and the workplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:317",
+      "level": "SP",
+      "official_text": "Recommend an emergency response plan",
+      "display_text": "Recommend an emergency response plan",
+      "text": "Recommend an emergency response plan",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop and analyze human-resources programs, practices, and services that promote the physical and mental well-being of individuals in the workplace to protect individuals and the workplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:318",
+      "level": "SP",
+      "official_text": "Recommend an incidence response plan",
+      "display_text": "Recommend an incidence response plan",
+      "text": "Recommend an incidence response plan",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop and analyze human-resources programs, practices, and services that promote the physical and mental well-being of individuals in the workplace to protect individuals and the workplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "OP:320",
+      "level": "SP",
+      "official_text": "Recommend a security plan for a business",
+      "display_text": "Recommend a security plan for a business",
+      "text": "Recommend a security plan for a business",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop and analyze human-resources programs, practices, and services that promote the physical and mental well-being of individuals in the workplace to protect individuals and the workplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "PD:187",
+      "level": "SP",
+      "official_text": "Explain career opportunities in human resources management",
+      "display_text": "Explain career opportunities in human resources management",
+      "text": "Explain career opportunities in human resources management",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "PD:188",
+      "level": "SP",
+      "official_text": "Describe certifications for human resources-management professionals (e.g., Professional in Human Resources [PHR], Senior Professional in Human Resources [SPHR], Global Professional in Human Resources [GPHR], etc.)",
+      "display_text": "Describe certifications for human resources-management professionals (e.g., Professional in Human Resources [PHR], Senior Professional in Human Resources [SPHR], Global Professional in Human Resources [GPHR], etc.)",
+      "text": "Describe certifications for human resources-management professionals (e.g., Professional in Human Resources [PHR], Senior Professional in Human Resources [SPHR], Global Professional in Human Resources [GPHR], etc.)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "PD:263",
+      "level": "SP",
+      "official_text": "Identify continuing education courses or programs available to enhance human resources management skills",
+      "display_text": "Identify continuing education courses or programs available to enhance human resources management skills",
+      "text": "Identify continuing education courses or programs available to enhance human resources management skills",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance skills needed in human resources management.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "PD:264",
+      "level": "SP",
+      "official_text": "Identify professional association opportunities for human resources management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "display_text": "Identify professional association opportunities for human resources management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "text": "Identify professional association opportunities for human resources management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance skills needed in human resources management.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 44
+      }
+    },
+    {
+      "code": "SM:050",
+      "level": "SP",
+      "official_text": "Explain how human resources management participates in a company's strategic planning process",
+      "display_text": "Explain how human resources management participates in a company's strategic planning process",
+      "text": "Explain how human resources management participates in a company's strategic planning process",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Implement strategic-planning processes to guide human-resources-management decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 45
+      }
+    },
+    {
+      "code": "SM:097",
+      "level": "SP",
+      "official_text": "Describe the impact of organizational factors on human-resource management strategies (e.g., global business strategy, organizational structure, organizational culture)",
+      "display_text": "Describe the impact of organizational factors on human-resource management strategies (e.g., global business strategy, organizational structure, organizational culture)",
+      "text": "Describe the impact of organizational factors on human-resource management strategies (e.g., global business strategy, organizational structure, organizational culture)",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Implement strategic-planning processes to guide human-resources-management decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 45
+      }
+    },
+    {
+      "code": "KM:017",
+      "level": "SP",
+      "official_text": "Identify ways to use crowdsourcing in business",
+      "display_text": "Identify ways to use crowdsourcing in business",
+      "text": "Identify ways to use crowdsourcing in business",
+      "tier": 3,
+      "curriculum_section": "Human Resources Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Human Resources Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 45
+      }
+    }
+  ]
+}

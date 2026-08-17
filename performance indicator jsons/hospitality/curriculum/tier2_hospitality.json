@@ -1,0 +1,2479 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "hospitality_tier2",
+  "name": "Hospitality and Tourism Career Cluster",
+  "cluster": "Hospitality + Tourism",
+  "tier": 2,
+  "curriculum_section": "Hospitality and Tourism Career Cluster",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Hospitality",
+    "pages": [
+      21,
+      29
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:065",
+      "level": "SP",
+      "official_text": "Explain the nature of regulations affecting the hospitality and tourism industry",
+      "display_text": "Explain the nature of regulations affecting the hospitality and tourism industry",
+      "text": "Explain the nature of regulations affecting the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:135",
+      "level": "SP",
+      "official_text": "Describe the rights of customers in the hospitality and tourism industry",
+      "display_text": "Describe the rights of customers in the hospitality and tourism industry",
+      "text": "Describe the rights of customers in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:067",
+      "level": "CS",
+      "official_text": "Explain the importance of meeting and exceeding customer/guest expectations",
+      "display_text": "Explain the importance of meeting and exceeding customer/guest expectations",
+      "text": "Explain the importance of meeting and exceeding customer/guest expectations",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:053",
+      "level": "CS",
+      "official_text": "Anticipate unspoken customer needs",
+      "display_text": "Anticipate unspoken customer needs",
+      "text": "Anticipate unspoken customer needs",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:054",
+      "level": "CS",
+      "official_text": "Accommodate special needs/specific requests of customers",
+      "display_text": "Accommodate special needs/specific requests of customers",
+      "text": "Accommodate special needs/specific requests of customers",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:021",
+      "level": "CS",
+      "official_text": "Process customer/guest orders",
+      "display_text": "Process customer/guest orders",
+      "text": "Process customer/guest orders",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:038",
+      "level": "CS",
+      "official_text": "Identify strategies to manage customer experience during peaks in demand",
+      "display_text": "Identify strategies to manage customer experience during peaks in demand",
+      "text": "Identify strategies to manage customer experience during peaks in demand",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:039",
+      "level": "CS",
+      "official_text": "Maintain service standards during peaks in demand",
+      "display_text": "Maintain service standards during peaks in demand",
+      "text": "Maintain service standards during peaks in demand",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:028",
+      "level": "SP",
+      "official_text": "Use digital media to enhance customer post-sales experience",
+      "display_text": "Use digital media to enhance customer post-sales experience",
+      "text": "Use digital media to enhance customer post-sales experience",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:043",
+      "level": "CS",
+      "official_text": "Describe customer-service challenges in the hospitality and tourism industry",
+      "display_text": "Describe customer-service challenges in the hospitality and tourism industry",
+      "text": "Describe customer-service challenges in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:044",
+      "level": "CS",
+      "official_text": "Resolve hospitality and tourism related conflicts for customers",
+      "display_text": "Resolve hospitality and tourism related conflicts for customers",
+      "text": "Resolve hospitality and tourism related conflicts for customers",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:045",
+      "level": "CS",
+      "official_text": "Explain the nature of guest recovery",
+      "display_text": "Explain the nature of guest recovery",
+      "text": "Explain the nature of guest recovery",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:046",
+      "level": "SP",
+      "official_text": "Determine strategies for resolving customer-service situations",
+      "display_text": "Determine strategies for resolving customer-service situations",
+      "text": "Determine strategies for resolving customer-service situations",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:049",
+      "level": "CS",
+      "official_text": "Explain the nature of customer service in the hospitality and tourism industry",
+      "display_text": "Explain the nature of customer service in the hospitality and tourism industry",
+      "text": "Explain the nature of customer service in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Reinforce company's image to exhibit the company's brand promise.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:051",
+      "level": "CS",
+      "official_text": "Identify factors affecting customer-service practices in hospitality and tourism",
+      "display_text": "Identify factors affecting customer-service practices in hospitality and tourism",
+      "text": "Identify factors affecting customer-service practices in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Reinforce company's image to exhibit the company's brand promise.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:052",
+      "level": "CS",
+      "official_text": "Identify factors associated with positive customer experiences",
+      "display_text": "Identify factors associated with positive customer experiences",
+      "text": "Identify factors associated with positive customer experiences",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Reinforce company's image to exhibit the company's brand promise.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:055",
+      "level": "CS",
+      "official_text": "Deliver positive moments of truth",
+      "display_text": "Deliver positive moments of truth",
+      "text": "Deliver positive moments of truth",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Reinforce company's image to exhibit the company's brand promise.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "EC:136",
+      "level": "SP",
+      "official_text": "Explain the relationship between the economy and hospitality and tourism",
+      "display_text": "Explain the relationship between the economy and hospitality and tourism",
+      "text": "Explain the relationship between the economy and hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand the nature of business to show its contributions to society.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 21
+      }
+    },
+    {
+      "code": "EI:090",
+      "level": "PQ",
+      "official_text": "Describe personal traits important to success in hospitality and tourism",
+      "display_text": "Describe personal traits important to success in hospitality and tourism",
+      "text": "Describe personal traits important to success in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Develop personal traits to foster career advancement.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:789",
+      "level": "SP",
+      "official_text": "Discuss considerations in accepting credit-card payments",
+      "display_text": "Discuss considerations in accepting credit-card payments",
+      "text": "Discuss considerations in accepting credit-card payments",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:790",
+      "level": "SP",
+      "official_text": "Calculate credit-card processing costs",
+      "display_text": "Calculate credit-card processing costs",
+      "text": "Calculate credit-card processing costs",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:541",
+      "level": "SP",
+      "official_text": "Interpret cash-flow statements",
+      "display_text": "Interpret cash-flow statements",
+      "text": "Interpret cash-flow statements",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:113",
+      "level": "CS",
+      "official_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "display_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:396",
+      "level": "CS",
+      "official_text": "Reconcile cash",
+      "display_text": "Reconcile cash",
+      "text": "Reconcile cash",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "HR:452",
+      "level": "SP",
+      "official_text": "Explain labor-relations issues",
+      "display_text": "Explain labor-relations issues",
+      "text": "Explain labor-relations issues",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "HR:515",
+      "level": "SP",
+      "official_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "display_text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "text": "Discuss issues associated with workplace diversity (e.g., ethnic, generational, religious, gender)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "MK:008",
+      "level": "CS",
+      "official_text": "Differentiate between service marketing and product marketing",
+      "display_text": "Differentiate between service marketing and product marketing",
+      "text": "Differentiate between service marketing and product marketing",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Understand marketing's role and function in business to facilitate economic exchanges with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 22
+      }
+    },
+    {
+      "code": "NF:060",
+      "level": "PQ",
+      "official_text": "Explain ways that technology impacts the hospitality and tourism industry",
+      "display_text": "Explain ways that technology impacts the hospitality and tourism industry",
+      "text": "Explain ways that technology impacts the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:313",
+      "level": "SP",
+      "official_text": "Describe the impact of mobile technology on the hospitality and tourism industry",
+      "display_text": "Describe the impact of mobile technology on the hospitality and tourism industry",
+      "text": "Describe the impact of mobile technology on the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:185",
+      "level": "SP",
+      "official_text": "Use database for information analysis",
+      "display_text": "Use database for information analysis",
+      "text": "Use database for information analysis",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:106",
+      "level": "SP",
+      "official_text": "Use software to automate services",
+      "display_text": "Use software to automate services",
+      "text": "Use software to automate services",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:205",
+      "level": "SP",
+      "official_text": "Use analytical tracking tools",
+      "display_text": "Use analytical tracking tools",
+      "text": "Use analytical tracking tools",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:279",
+      "level": "CS",
+      "official_text": "Explain the need for hospitality and tourism business information",
+      "display_text": "Explain the need for hospitality and tourism business information",
+      "text": "Explain the need for hospitality and tourism business information",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:048",
+      "level": "SP",
+      "official_text": "Describe current issues and trends in the hospitality and tourism industry",
+      "display_text": "Describe current issues and trends in the hospitality and tourism industry",
+      "text": "Describe current issues and trends in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:280",
+      "level": "SP",
+      "official_text": "Identify information monitored for business decision making",
+      "display_text": "Identify information monitored for business decision making",
+      "text": "Identify information monitored for business decision making",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:281",
+      "level": "SP",
+      "official_text": "Explain sources of secondary hospitality and tourism information",
+      "display_text": "Explain sources of secondary hospitality and tourism information",
+      "text": "Explain sources of secondary hospitality and tourism information",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:282",
+      "level": "SP",
+      "official_text": "Explain types of primary hospitality and tourism market information",
+      "display_text": "Explain types of primary hospitality and tourism market information",
+      "text": "Explain types of primary hospitality and tourism market information",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:283",
+      "level": "SP",
+      "official_text": "Describe methods used to collect hospitality and tourism business information (e.g., observations, mail, telephone, Internet, discussion groups, interviews)",
+      "display_text": "Describe methods used to collect hospitality and tourism business information (e.g., observations, mail, telephone, Internet, discussion groups, interviews)",
+      "text": "Describe methods used to collect hospitality and tourism business information (e.g., observations, mail, telephone, Internet, discussion groups, interviews)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Understand data-collection methods to evaluate their appropriateness for a business problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:284",
+      "level": "CS",
+      "official_text": "Obtain business information from customer databases",
+      "display_text": "Obtain business information from customer databases",
+      "text": "Obtain business information from customer databases",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Collect secondary business data to ensure accuracy and adequacy of information for hospitality and tourism decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:285",
+      "level": "SP",
+      "official_text": "Identify challenges with the use of unstructured business data",
+      "display_text": "Identify challenges with the use of unstructured business data",
+      "text": "Identify challenges with the use of unstructured business data",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Collect secondary business data to ensure accuracy and adequacy of information for hospitality and tourism decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:286",
+      "level": "SP",
+      "official_text": "Obtain hospitality and tourism information from online sources (e.g., search engines, online databases, blogs, forums, listservs, web analytics, social media, geolocation services)",
+      "display_text": "Obtain hospitality and tourism information from online sources (e.g., search engines, online databases, blogs, forums, listservs, web analytics, social media, geolocation services)",
+      "text": "Obtain hospitality and tourism information from online sources (e.g., search engines, online databases, blogs, forums, listservs, web analytics, social media, geolocation services)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Collect secondary business data to ensure accuracy and adequacy of information for hospitality and tourism decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:287",
+      "level": "SP",
+      "official_text": "Track environmental changes that impact hospitality and tourism (e.g., technological changes, guest trends, economic changes, regulatory changes)",
+      "display_text": "Track environmental changes that impact hospitality and tourism (e.g., technological changes, guest trends, economic changes, regulatory changes)",
+      "text": "Track environmental changes that impact hospitality and tourism (e.g., technological changes, guest trends, economic changes, regulatory changes)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Collect secondary business data to ensure accuracy and adequacy of information for hospitality and tourism decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:288",
+      "level": "SP",
+      "official_text": "Monitor hospitality and tourism sales data",
+      "display_text": "Monitor hospitality and tourism sales data",
+      "text": "Monitor hospitality and tourism sales data",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Collect secondary business data to ensure accuracy and adequacy of information for hospitality and tourism decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:236",
+      "level": "SP",
+      "official_text": "Explain the use of descriptive statistics in business decision making",
+      "display_text": "Explain the use of descriptive statistics in business decision making",
+      "text": "Explain the use of descriptive statistics in business decision making",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:237",
+      "level": "SP",
+      "official_text": "Interpret descriptive statistics for business decision making",
+      "display_text": "Interpret descriptive statistics for business decision making",
+      "text": "Interpret descriptive statistics for business decision making",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:289",
+      "level": "SP",
+      "official_text": "Display hospitality and tourism data in charts/graphs or in tables",
+      "display_text": "Display hospitality and tourism data in charts/graphs or in tables",
+      "text": "Display hospitality and tourism data in charts/graphs or in tables",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Report findings to communicate information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:290",
+      "level": "SP",
+      "official_text": "Prepare and use presentation software to aid in making oral reports",
+      "display_text": "Prepare and use presentation software to aid in making oral reports",
+      "text": "Prepare and use presentation software to aid in making oral reports",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Report findings to communicate information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:291",
+      "level": "SP",
+      "official_text": "Present hospitality and tourism findings orally",
+      "display_text": "Present hospitality and tourism findings orally",
+      "text": "Present hospitality and tourism findings orally",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Report findings to communicate information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "NF:292",
+      "level": "SP",
+      "official_text": "Prepare written reports for hospitality and tourism decision-making",
+      "display_text": "Prepare written reports for hospitality and tourism decision-making",
+      "text": "Prepare written reports for hospitality and tourism decision-making",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Report findings to communicate information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 23
+      }
+    },
+    {
+      "code": "OP:119",
+      "level": "CS",
+      "official_text": "Handle emergency situations in hospitality and tourism",
+      "display_text": "Handle emergency situations in hospitality and tourism",
+      "text": "Handle emergency situations in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:657",
+      "level": "CS",
+      "official_text": "Provide first-aid",
+      "display_text": "Provide first-aid",
+      "text": "Provide first-aid",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:527",
+      "level": "SP",
+      "official_text": "Identify factors affecting evacuation procedures/protocols",
+      "display_text": "Identify factors affecting evacuation procedures/protocols",
+      "text": "Identify factors affecting evacuation procedures/protocols",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:115",
+      "level": "CS",
+      "official_text": "Explain security considerations in the hospitality and tourism industry",
+      "display_text": "Explain security considerations in the hospitality and tourism industry",
+      "text": "Explain security considerations in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:653",
+      "level": "CS",
+      "official_text": "Identify credit card fraud prevention methods",
+      "display_text": "Identify credit card fraud prevention methods",
+      "text": "Identify credit card fraud prevention methods",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:654",
+      "level": "CS",
+      "official_text": "Explain the nature of identity theft controls",
+      "display_text": "Explain the nature of identity theft controls",
+      "text": "Explain the nature of identity theft controls",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:517",
+      "level": "SP",
+      "official_text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "display_text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "text": "Comply with strategies for protecting business' digital assets (e.g., website, social media, email, etc.)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Comply with security rules, regulations, and codes (e.g., property, privacy, access, confidentiality) to protect customer and company information, reputation, and image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:518",
+      "level": "SP",
+      "official_text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "display_text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "text": "Comply with strategies to protect digital customer data (e.g., information about customers, customers' credit-card numbers, passwords, customer transactions)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Comply with security rules, regulations, and codes (e.g., property, privacy, access, confidentiality) to protect customer and company information, reputation, and image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:250",
+      "level": "CS",
+      "official_text": "Describe types of purchase orders",
+      "display_text": "Describe types of purchase orders",
+      "text": "Describe types of purchase orders",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:336",
+      "level": "CS",
+      "official_text": "Discuss types of inventory",
+      "display_text": "Discuss types of inventory",
+      "text": "Discuss types of inventory",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:184",
+      "level": "CS",
+      "official_text": "Track invoices",
+      "display_text": "Track invoices",
+      "text": "Track invoices",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:522",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of distribution",
+      "display_text": "Explain the nature and scope of distribution",
+      "text": "Explain the nature and scope of distribution",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:529",
+      "level": "CS",
+      "official_text": "Explain the concept of place (distribution) in the hospitality and tourism industry",
+      "display_text": "Explain the concept of place (distribution) in the hospitality and tourism industry",
+      "text": "Explain the concept of place (distribution) in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:523",
+      "level": "CS",
+      "official_text": "Explain the relationship between customer service and distribution",
+      "display_text": "Explain the relationship between customer service and distribution",
+      "text": "Explain the relationship between customer service and distribution",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:134",
+      "level": "PQ",
+      "official_text": "Practice safe and sanitary handling/disposal of wastes/recyclables",
+      "display_text": "Practice safe and sanitary handling/disposal of wastes/recyclables",
+      "text": "Practice safe and sanitary handling/disposal of wastes/recyclables",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "OP:658",
+      "level": "SP",
+      "official_text": "Identify environmental sustainability issues in hospitality and tourism",
+      "display_text": "Identify environmental sustainability issues in hospitality and tourism",
+      "text": "Identify environmental sustainability issues in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 24
+      }
+    },
+    {
+      "code": "PD:111",
+      "level": "CS",
+      "official_text": "Describe the nature of the hospitality and tourism industry",
+      "display_text": "Describe the nature of the hospitality and tourism industry",
+      "text": "Describe the nature of the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PD:105",
+      "level": "CS",
+      "official_text": "Describe the development of the hospitality and tourism industry",
+      "display_text": "Describe the development of the hospitality and tourism industry",
+      "text": "Describe the development of the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PD:398",
+      "level": "CS",
+      "official_text": "Explain the roles and responsibilities of hospitality and tourism organizations",
+      "display_text": "Explain the roles and responsibilities of hospitality and tourism organizations",
+      "text": "Explain the roles and responsibilities of hospitality and tourism organizations",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PD:399",
+      "level": "SP",
+      "official_text": "Describe the interdependence of segments of the hospitality and tourism industry",
+      "display_text": "Describe the interdependence of segments of the hospitality and tourism industry",
+      "text": "Describe the interdependence of segments of the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PD:400",
+      "level": "SP",
+      "official_text": "Discuss the role of ethics in hospitality and tourism",
+      "display_text": "Discuss the role of ethics in hospitality and tourism",
+      "text": "Discuss the role of ethics in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire foundation knowledge of hospitality and tourism processes and activities to facilitate workplace activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PD:272",
+      "level": "CS",
+      "official_text": "Explain career opportunities in hospitality and tourism",
+      "display_text": "Explain career opportunities in hospitality and tourism",
+      "text": "Explain career opportunities in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about hospitality and tourism to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "SM:063",
+      "level": "SP",
+      "official_text": "Discuss the nature of managerial planning",
+      "display_text": "Discuss the nature of managerial planning",
+      "text": "Discuss the nature of managerial planning",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "SM:064",
+      "level": "SP",
+      "official_text": "Explain managerial considerations in organizing",
+      "display_text": "Explain managerial considerations in organizing",
+      "text": "Explain managerial considerations in organizing",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "SM:065",
+      "level": "SP",
+      "official_text": "Describe managerial considerations in staffing",
+      "display_text": "Describe managerial considerations in staffing",
+      "text": "Describe managerial considerations in staffing",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "SM:066",
+      "level": "SP",
+      "official_text": "Discuss managerial considerations in directing",
+      "display_text": "Discuss managerial considerations in directing",
+      "text": "Discuss managerial considerations in directing",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "KM:005",
+      "level": "SP",
+      "official_text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "display_text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "text": "Identify techniques that can be used to capture and transfer knowledge in an organization",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 25
+      }
+    },
+    {
+      "code": "PM:081",
+      "level": "CS",
+      "official_text": "Explain the concept of product in the hospitality and tourism industry",
+      "display_text": "Explain the concept of product in the hospitality and tourism industry",
+      "text": "Explain the concept of product in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the product/service management function",
+      "display_text": "Explain the nature and scope of the product/service management function",
+      "text": "Explain the nature and scope of the product/service management function",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:314",
+      "level": "CS",
+      "official_text": "Explain guarantees in hospitality and tourism",
+      "display_text": "Explain guarantees in hospitality and tourism",
+      "text": "Explain guarantees in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:095",
+      "level": "CS",
+      "official_text": "Describe services offered by the hospitality and tourism industry",
+      "display_text": "Describe services offered by the hospitality and tourism industry",
+      "text": "Describe services offered by the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:003",
+      "level": "SP",
+      "official_text": "Explain the concept of product mix",
+      "display_text": "Explain the concept of product mix",
+      "text": "Explain the concept of product mix",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:041",
+      "level": "SP",
+      "official_text": "Describe the nature of product bundling",
+      "display_text": "Describe the nature of product bundling",
+      "text": "Describe the nature of product bundling",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:099",
+      "level": "SP",
+      "official_text": "Explain the nature of product extensions in the hospitality and tourism industry",
+      "display_text": "Explain the nature of product extensions in the hospitality and tourism industry",
+      "text": "Explain the nature of product extensions in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:206",
+      "level": "SP",
+      "official_text": "Explain the nature of corporate branding",
+      "display_text": "Explain the nature of corporate branding",
+      "text": "Explain the nature of corporate branding",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:317",
+      "level": "SP",
+      "official_text": "Describe the role of customer voice in hospitality and tourism branding",
+      "display_text": "Describe the role of customer voice in hospitality and tourism branding",
+      "text": "Describe the role of customer voice in hospitality and tourism branding",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:239",
+      "level": "SP",
+      "official_text": "Evaluate vendors' goods and services",
+      "display_text": "Evaluate vendors' goods and services",
+      "text": "Evaluate vendors' goods and services",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:318",
+      "level": "SP",
+      "official_text": "Choose hospitality and tourism vendors",
+      "display_text": "Choose hospitality and tourism vendors",
+      "text": "Choose hospitality and tourism vendors",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:319",
+      "level": "SP",
+      "official_text": "Negotiate terms with hospitality and tourism suppliers",
+      "display_text": "Negotiate terms with hospitality and tourism suppliers",
+      "text": "Negotiate terms with hospitality and tourism suppliers",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Analyze vendor performance to choose vendors and goods/services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:021",
+      "level": "SP",
+      "official_text": "Explain the nature of product/service branding",
+      "display_text": "Explain the nature of product/service branding",
+      "text": "Explain the nature of product/service branding",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:214",
+      "level": "SP",
+      "official_text": "Communicate core values of product/service",
+      "display_text": "Communicate core values of product/service",
+      "text": "Communicate core values of product/service",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "PM:246",
+      "level": "SP",
+      "official_text": "Identify product's/service's competitive advantage",
+      "display_text": "Identify product's/service's competitive advantage",
+      "text": "Identify product's/service's competitive advantage",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 26
+      }
+    },
+    {
+      "code": "MP:003",
+      "level": "CS",
+      "official_text": "Explain the concept of market and market identification",
+      "display_text": "Explain the concept of market and market identification",
+      "text": "Explain the concept of market and market identification",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "MP:035",
+      "level": "CS",
+      "official_text": "Identify ways to segment hospitality and tourism markets",
+      "display_text": "Identify ways to segment hospitality and tourism markets",
+      "text": "Identify ways to segment hospitality and tourism markets",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "MP:041",
+      "level": "SP",
+      "official_text": "Explain the use of marketing strategies in hospitality and tourism",
+      "display_text": "Explain the use of marketing strategies in hospitality and tourism",
+      "text": "Explain the use of marketing strategies in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PI:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the pricing function",
+      "display_text": "Explain the nature and scope of the pricing function",
+      "text": "Explain the nature and scope of the pricing function",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PI:029",
+      "level": "CS",
+      "official_text": "Explain the concept of price in the hospitality and tourism industry",
+      "display_text": "Explain the concept of price in the hospitality and tourism industry",
+      "text": "Explain the concept of price in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:001",
+      "level": "CS",
+      "official_text": "Explain the role of promotion as a marketing function",
+      "display_text": "Explain the role of promotion as a marketing function",
+      "text": "Explain the role of promotion as a marketing function",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:002",
+      "level": "CS",
+      "official_text": "Explain the types of promotion (i.e., institutional, product)",
+      "display_text": "Explain the types of promotion (i.e., institutional, product)",
+      "text": "Explain the types of promotion (i.e., institutional, product)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:003",
+      "level": "SP",
+      "official_text": "Identify the elements of the promotional mix",
+      "display_text": "Identify the elements of the promotional mix",
+      "text": "Identify the elements of the promotional mix",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:121",
+      "level": "CS",
+      "official_text": "Describe the concept of promotion in the hospitality and tourism industry",
+      "display_text": "Describe the concept of promotion in the hospitality and tourism industry",
+      "text": "Describe the concept of promotion in the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:082",
+      "level": "SP",
+      "official_text": "Explain promotional methods used by the hospitality and tourism industry",
+      "display_text": "Explain promotional methods used by the hospitality and tourism industry",
+      "text": "Explain promotional methods used by the hospitality and tourism industry",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "PR:422",
+      "level": "SP",
+      "official_text": "Explain the relationship between promotion and brand",
+      "display_text": "Explain the relationship between promotion and brand",
+      "text": "Explain the relationship between promotion and brand",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "QM:001",
+      "level": "SP",
+      "official_text": "Explain the nature of quality management",
+      "display_text": "Explain the nature of quality management",
+      "text": "Explain the nature of quality management",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "QM:003",
+      "level": "SP",
+      "official_text": "Discuss the need for continuous improvement of the quality process",
+      "display_text": "Discuss the need for continuous improvement of the quality process",
+      "text": "Discuss the need for continuous improvement of the quality process",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 27
+      }
+    },
+    {
+      "code": "RM:058",
+      "level": "SP",
+      "official_text": "Discuss the nature of risk control (i.e., internal and external)",
+      "display_text": "Discuss the nature of risk control (i.e., internal and external)",
+      "text": "Discuss the nature of risk control (i.e., internal and external)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Explore risk control to understand its relationship to risk management.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "RM:088",
+      "level": "SP",
+      "official_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "display_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "RM:062",
+      "level": "SP",
+      "official_text": "Discuss the nature of enterprise risk management (ERM)",
+      "display_text": "Discuss the nature of enterprise risk management (ERM)",
+      "text": "Discuss the nature of enterprise risk management (ERM)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:017",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of the selling function",
+      "display_text": "Explain the nature and scope of the selling function",
+      "text": "Explain the nature and scope of the selling function",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:076",
+      "level": "CS",
+      "official_text": "Explain the role of customer service as a component of selling relationships",
+      "display_text": "Explain the role of customer service as a component of selling relationships",
+      "text": "Explain the role of customer service as a component of selling relationships",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:932",
+      "level": "CS",
+      "official_text": "Explain company selling policies",
+      "display_text": "Explain company selling policies",
+      "text": "Explain company selling policies",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:828",
+      "level": "SP",
+      "official_text": "Explain key factors in building a clientele",
+      "display_text": "Explain key factors in building a clientele",
+      "text": "Explain key factors in building a clientele",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:062",
+      "level": "CS",
+      "official_text": "Acquire product information for use in selling",
+      "display_text": "Acquire product information for use in selling",
+      "text": "Acquire product information for use in selling",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:048",
+      "level": "CS",
+      "official_text": "Explain the selling process",
+      "display_text": "Explain the selling process",
+      "text": "Explain the selling process",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Understand sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:499",
+      "level": "CS",
+      "official_text": "Establish relationship with hospitality and tourism customer/guest",
+      "display_text": "Establish relationship with hospitality and tourism customer/guest",
+      "text": "Establish relationship with hospitality and tourism customer/guest",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:500",
+      "level": "CS",
+      "official_text": "Determine hospitality and tourism customer/guest needs",
+      "display_text": "Determine hospitality and tourism customer/guest needs",
+      "text": "Determine hospitality and tourism customer/guest needs",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:220",
+      "level": "SP",
+      "official_text": "Explain factors that motivate people to choose a hospitality and tourism site",
+      "display_text": "Explain factors that motivate people to choose a hospitality and tourism site",
+      "text": "Explain factors that motivate people to choose a hospitality and tourism site",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:221",
+      "level": "SP",
+      "official_text": "Recommend hospitality and tourism services",
+      "display_text": "Recommend hospitality and tourism services",
+      "text": "Recommend hospitality and tourism services",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:476",
+      "level": "SP",
+      "official_text": "Up-sell to enhance customer experience",
+      "display_text": "Up-sell to enhance customer experience",
+      "text": "Up-sell to enhance customer experience",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 28
+      }
+    },
+    {
+      "code": "SE:477",
+      "level": "CS",
+      "official_text": "Process telephone orders in hospitality and tourism",
+      "display_text": "Process telephone orders in hospitality and tourism",
+      "text": "Process telephone orders in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 29
+      }
+    },
+    {
+      "code": "SE:478",
+      "level": "CS",
+      "official_text": "Process special orders in hospitality and tourism",
+      "display_text": "Process special orders in hospitality and tourism",
+      "text": "Process special orders in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 29
+      }
+    },
+    {
+      "code": "SE:479",
+      "level": "CS",
+      "official_text": "Sell gift certificates in hospitality and tourism",
+      "display_text": "Sell gift certificates in hospitality and tourism",
+      "text": "Sell gift certificates in hospitality and tourism",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Implement support activities to facilitate the selling process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 29
+      }
+    },
+    {
+      "code": "SE:149",
+      "level": "CS",
+      "official_text": "Process complimentary offers and coupons/discounts",
+      "display_text": "Process complimentary offers and coupons/discounts",
+      "text": "Process complimentary offers and coupons/discounts",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 29
+      }
+    },
+    {
+      "code": "SE:329",
+      "level": "CS",
+      "official_text": "Process sales transactions (e.g., cash, credit, check)",
+      "display_text": "Process sales transactions (e.g., cash, credit, check)",
+      "text": "Process sales transactions (e.g., cash, credit, check)",
+      "tier": 2,
+      "curriculum_section": "Hospitality and Tourism Career Cluster",
+      "cluster": "Hospitality + Tourism",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Collect payment from customer to complete customer transaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 29
+      }
+    }
+  ]
+}

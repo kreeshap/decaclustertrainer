@@ -1,0 +1,1499 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier3_business_information_management",
+  "name": "Business Information Management Pathway",
+  "cluster": "Business Management + Administration",
+  "tier": 3,
+  "curriculum_section": "Business Information Management Pathway",
+  "pathway": "Business Information Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      31,
+      35
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "FI:343",
+      "level": "SP",
+      "official_text": "Explain the purpose of internal accounting controls",
+      "display_text": "Explain the purpose of internal accounting controls",
+      "text": "Explain the purpose of internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:136",
+      "level": "SP",
+      "official_text": "Explain issues involved in designing systems for different environments",
+      "display_text": "Explain issues involved in designing systems for different environments",
+      "text": "Explain issues involved in designing systems for different environments",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Facilitate computer system operations to enhance usability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:137",
+      "level": "SP",
+      "official_text": "Explain usability engineering methods",
+      "display_text": "Explain usability engineering methods",
+      "text": "Explain usability engineering methods",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Facilitate computer system operations to enhance usability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:138",
+      "level": "SP",
+      "official_text": "Support and maintain a multimedia website",
+      "display_text": "Support and maintain a multimedia website",
+      "text": "Support and maintain a multimedia website",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Facilitate computer system operations to enhance usability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:142",
+      "level": "SP",
+      "official_text": "Build data in a data warehouse",
+      "display_text": "Build data in a data warehouse",
+      "text": "Build data in a data warehouse",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:143",
+      "level": "SP",
+      "official_text": "Create a meaningful data set",
+      "display_text": "Create a meaningful data set",
+      "text": "Create a meaningful data set",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:144",
+      "level": "SP",
+      "official_text": "Manipulate data in the database management system",
+      "display_text": "Manipulate data in the database management system",
+      "text": "Manipulate data in the database management system",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:145",
+      "level": "SP",
+      "official_text": "Analyze company's data requirements",
+      "display_text": "Analyze company's data requirements",
+      "text": "Analyze company's data requirements",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:146",
+      "level": "SP",
+      "official_text": "Design a database to meet business requirements",
+      "display_text": "Design a database to meet business requirements",
+      "text": "Design a database to meet business requirements",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:147",
+      "level": "SP",
+      "official_text": "Identify database trends",
+      "display_text": "Identify database trends",
+      "text": "Identify database trends",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:245",
+      "level": "SP",
+      "official_text": "Demonstrate advanced data mining techniques",
+      "display_text": "Demonstrate advanced data mining techniques",
+      "text": "Demonstrate advanced data mining techniques",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:246",
+      "level": "SP",
+      "official_text": "Discuss challenges associated with data mining",
+      "display_text": "Discuss challenges associated with data mining",
+      "text": "Discuss challenges associated with data mining",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:247",
+      "level": "SP",
+      "official_text": "Explain factors used to select the appropriate data mining technique",
+      "display_text": "Explain factors used to select the appropriate data mining technique",
+      "text": "Explain factors used to select the appropriate data mining technique",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:248",
+      "level": "SP",
+      "official_text": "Explain factors used to establish data mining rules",
+      "display_text": "Explain factors used to establish data mining rules",
+      "text": "Explain factors used to establish data mining rules",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:249",
+      "level": "SP",
+      "official_text": "Discuss the nature of mining unstructured data",
+      "display_text": "Discuss the nature of mining unstructured data",
+      "text": "Discuss the nature of mining unstructured data",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:153",
+      "level": "CS",
+      "official_text": "Move files in the computer operating system",
+      "display_text": "Move files in the computer operating system",
+      "text": "Move files in the computer operating system",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:154",
+      "level": "CS",
+      "official_text": "Create directories",
+      "display_text": "Create directories",
+      "text": "Create directories",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:251",
+      "level": "CS",
+      "official_text": "Maintain data files in appropriate format (i.e., preserve, convert, or migrate)",
+      "display_text": "Maintain data files in appropriate format (i.e., preserve, convert, or migrate)",
+      "text": "Maintain data files in appropriate format (i.e., preserve, convert, or migrate)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:252",
+      "level": "CS",
+      "official_text": "Utilize cloud computing applications",
+      "display_text": "Utilize cloud computing applications",
+      "text": "Utilize cloud computing applications",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:253",
+      "level": "SP",
+      "official_text": "Implement version control",
+      "display_text": "Implement version control",
+      "text": "Implement version control",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:254",
+      "level": "SP",
+      "official_text": "Explain the use of computer systems in problem solving (e.g., computer programs, scripts, algorithms, data structure)",
+      "display_text": "Explain the use of computer systems in problem solving (e.g., computer programs, scripts, algorithms, data structure)",
+      "text": "Explain the use of computer systems in problem solving (e.g., computer programs, scripts, algorithms, data structure)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:255",
+      "level": "SP",
+      "official_text": "Explain how programming techniques are used to solve problems (e.g., paradigms, languages, attribute definition)",
+      "display_text": "Explain how programming techniques are used to solve problems (e.g., paradigms, languages, attribute definition)",
+      "text": "Explain how programming techniques are used to solve problems (e.g., paradigms, languages, attribute definition)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:256",
+      "level": "SP",
+      "official_text": "Explain methods of constructing programs",
+      "display_text": "Explain methods of constructing programs",
+      "text": "Explain methods of constructing programs",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize computer's operating system to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:155",
+      "level": "SP",
+      "official_text": "Explain methods used to develop the technological infrastructure",
+      "display_text": "Explain methods used to develop the technological infrastructure",
+      "text": "Explain methods used to develop the technological infrastructure",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to support business strategies and operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:262",
+      "level": "SP",
+      "official_text": "Explain the nature of enterprise-resource systems",
+      "display_text": "Explain the nature of enterprise-resource systems",
+      "text": "Explain the nature of enterprise-resource systems",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to support business strategies and operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:156",
+      "level": "SP",
+      "official_text": "Identify management information requirements",
+      "display_text": "Identify management information requirements",
+      "text": "Identify management information requirements",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to support business strategies and operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:263",
+      "level": "SP",
+      "official_text": "Evaluate data structures",
+      "display_text": "Evaluate data structures",
+      "text": "Evaluate data structures",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to support business strategies and operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:228",
+      "level": "SP",
+      "official_text": "Select confidence levels",
+      "display_text": "Select confidence levels",
+      "text": "Select confidence levels",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:229",
+      "level": "SP",
+      "official_text": "Test data for definitive relationships",
+      "display_text": "Test data for definitive relationships",
+      "text": "Test data for definitive relationships",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:230",
+      "level": "SP",
+      "official_text": "Test data for definitive associations",
+      "display_text": "Test data for definitive associations",
+      "text": "Test data for definitive associations",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:231",
+      "level": "SP",
+      "official_text": "Test data for meaningful differences",
+      "display_text": "Test data for meaningful differences",
+      "text": "Test data for meaningful differences",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:232",
+      "level": "SP",
+      "official_text": "Use statistical data inferences to draw preliminary conclusions",
+      "display_text": "Use statistical data inferences to draw preliminary conclusions",
+      "text": "Use statistical data inferences to draw preliminary conclusions",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:233",
+      "level": "SP",
+      "official_text": "Identify types of data analysis modeling techniques",
+      "display_text": "Identify types of data analysis modeling techniques",
+      "text": "Identify types of data analysis modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:234",
+      "level": "SP",
+      "official_text": "Apply mathematical data analysis modeling techniques",
+      "display_text": "Apply mathematical data analysis modeling techniques",
+      "text": "Apply mathematical data analysis modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:235",
+      "level": "SP",
+      "official_text": "Use data analysis software",
+      "display_text": "Use data analysis software",
+      "text": "Use data analysis software",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:236",
+      "level": "SP",
+      "official_text": "Explain the use of descriptive statistics in business decision making",
+      "display_text": "Explain the use of descriptive statistics in business decision making",
+      "text": "Explain the use of descriptive statistics in business decision making",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:237",
+      "level": "SP",
+      "official_text": "Interpret descriptive statistics for business decision making",
+      "display_text": "Interpret descriptive statistics for business decision making",
+      "text": "Interpret descriptive statistics for business decision making",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:238",
+      "level": "SP",
+      "official_text": "Interpret business data correlations",
+      "display_text": "Interpret business data correlations",
+      "text": "Interpret business data correlations",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:239",
+      "level": "SP",
+      "official_text": "Draw conclusions on the research question/issue",
+      "display_text": "Draw conclusions on the research question/issue",
+      "text": "Draw conclusions on the research question/issue",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:243",
+      "level": "CS",
+      "official_text": "Describe methods of securely transmitting data",
+      "display_text": "Describe methods of securely transmitting data",
+      "text": "Describe methods of securely transmitting data",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire data to facilitate issue identification and analysis.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:244",
+      "level": "CS",
+      "official_text": "Formulate data validation strategies and methods (e.g., system edits, reports, audits)",
+      "display_text": "Formulate data validation strategies and methods (e.g., system edits, reports, audits)",
+      "text": "Formulate data validation strategies and methods (e.g., system edits, reports, audits)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire data to facilitate issue identification and analysis.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:257",
+      "level": "SP",
+      "official_text": "Identify the scope of data (e.g., structured, unstructured, data types)",
+      "display_text": "Identify the scope of data (e.g., structured, unstructured, data types)",
+      "text": "Identify the scope of data (e.g., structured, unstructured, data types)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Develop code to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "NF:258",
+      "level": "SP",
+      "official_text": "Explain Boolean logic",
+      "display_text": "Explain Boolean logic",
+      "text": "Explain Boolean logic",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Develop code to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "NF:259",
+      "level": "SP",
+      "official_text": "Write code that performs data analysis (e.g., mathematical operations, string operations, truth tables, operators, control structures, call functions)",
+      "display_text": "Write code that performs data analysis (e.g., mathematical operations, string operations, truth tables, operators, control structures, call functions)",
+      "text": "Write code that performs data analysis (e.g., mathematical operations, string operations, truth tables, operators, control structures, call functions)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Develop code to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "NF:260",
+      "level": "SP",
+      "official_text": "Write code to access data repositories",
+      "display_text": "Write code to access data repositories",
+      "text": "Write code to access data repositories",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Develop code to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "NF:261",
+      "level": "SP",
+      "official_text": "Write code to create information categories for analysis",
+      "display_text": "Write code to create information categories for analysis",
+      "text": "Write code to create information categories for analysis",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Develop code to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:328",
+      "level": "SP",
+      "official_text": "Discuss the connection between business analysis and business process management",
+      "display_text": "Discuss the connection between business analysis and business process management",
+      "text": "Discuss the connection between business analysis and business process management",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:329",
+      "level": "SP",
+      "official_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "display_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:457",
+      "level": "SP",
+      "official_text": "Document business processes",
+      "display_text": "Document business processes",
+      "text": "Document business processes",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:458",
+      "level": "SP",
+      "official_text": "Identify the business process problem/issue",
+      "display_text": "Identify the business process problem/issue",
+      "text": "Identify the business process problem/issue",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:459",
+      "level": "SP",
+      "official_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "display_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:460",
+      "level": "SP",
+      "official_text": "Identify data acquisition strategies",
+      "display_text": "Identify data acquisition strategies",
+      "text": "Identify data acquisition strategies",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:330",
+      "level": "SP",
+      "official_text": "Plan the requirements for data analysis",
+      "display_text": "Plan the requirements for data analysis",
+      "text": "Plan the requirements for data analysis",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:461",
+      "level": "SP",
+      "official_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "display_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:462",
+      "level": "SP",
+      "official_text": "Recommend improvements to business processes",
+      "display_text": "Recommend improvements to business processes",
+      "text": "Recommend improvements to business processes",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "OP:463",
+      "level": "SP",
+      "official_text": "Explain the purpose of operational controls",
+      "display_text": "Explain the purpose of operational controls",
+      "text": "Explain the purpose of operational controls",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement suitable operational controls to achieve goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:180",
+      "level": "SP",
+      "official_text": "Explain professional responsibilities in business information management",
+      "display_text": "Explain professional responsibilities in business information management",
+      "text": "Explain professional responsibilities in business information management",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:181",
+      "level": "SP",
+      "official_text": "Discuss the role and responsibilities of project managers",
+      "display_text": "Discuss the role and responsibilities of project managers",
+      "text": "Discuss the role and responsibilities of project managers",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:182",
+      "level": "SP",
+      "official_text": "Describe the role and responsibilities of business analysts",
+      "display_text": "Describe the role and responsibilities of business analysts",
+      "text": "Describe the role and responsibilities of business analysts",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:185",
+      "level": "SP",
+      "official_text": "Explain career opportunities in business information management",
+      "display_text": "Explain career opportunities in business information management",
+      "text": "Explain career opportunities in business information management",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "PD:186",
+      "level": "SP",
+      "official_text": "Describe certifications in business information management",
+      "display_text": "Describe certifications in business information management",
+      "text": "Describe certifications in business information management",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "PD:343",
+      "level": "SP",
+      "official_text": "Identify continuing education courses or program available to enhance business information management skills",
+      "display_text": "Identify continuing education courses or program available to enhance business information management skills",
+      "text": "Identify continuing education courses or program available to enhance business information management skills",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "PD:344",
+      "level": "SP",
+      "official_text": "Identify professional association opportunities in business information management",
+      "display_text": "Identify professional association opportunities in business information management",
+      "text": "Identify professional association opportunities in business information management",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "SM:037",
+      "level": "SP",
+      "official_text": "Explain the strategic role of information systems/information communication technology within an organization",
+      "display_text": "Explain the strategic role of information systems/information communication technology within an organization",
+      "text": "Explain the strategic role of information systems/information communication technology within an organization",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Coordinate information management and business management to aid in business planning.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "SM:079",
+      "level": "SP",
+      "official_text": "Describe requirements for aligning information technology and business strategy to leverage data as a strategic asset",
+      "display_text": "Describe requirements for aligning information technology and business strategy to leverage data as a strategic asset",
+      "text": "Describe requirements for aligning information technology and business strategy to leverage data as a strategic asset",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Coordinate information management and business management to aid in business planning.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:010",
+      "level": "SP",
+      "official_text": "Establish uniform definitions of data",
+      "display_text": "Establish uniform definitions of data",
+      "text": "Establish uniform definitions of data",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:011",
+      "level": "SP",
+      "official_text": "Create a reference tool (data dictionary)",
+      "display_text": "Create a reference tool (data dictionary)",
+      "text": "Create a reference tool (data dictionary)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:012",
+      "level": "SP",
+      "official_text": "Explain enterprise search design principles",
+      "display_text": "Explain enterprise search design principles",
+      "text": "Explain enterprise search design principles",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:013",
+      "level": "SP",
+      "official_text": "Analyze content management structures (e.g., taxonomies, metadata, retention)",
+      "display_text": "Analyze content management structures (e.g., taxonomies, metadata, retention)",
+      "text": "Analyze content management structures (e.g., taxonomies, metadata, retention)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:015",
+      "level": "SP",
+      "official_text": "Maintain knowledge management systems",
+      "display_text": "Maintain knowledge management systems",
+      "text": "Maintain knowledge management systems",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "KM:016",
+      "level": "SP",
+      "official_text": "Update knowledge management systems",
+      "display_text": "Update knowledge management systems",
+      "text": "Update knowledge management systems",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "QM:010",
+      "level": "SP",
+      "official_text": "Discuss the implications of quality costs",
+      "display_text": "Discuss the implications of quality costs",
+      "text": "Discuss the implications of quality costs",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "QM:004",
+      "level": "SP",
+      "official_text": "Test product/service for quality",
+      "display_text": "Test product/service for quality",
+      "text": "Test product/service for quality",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 34
+      }
+    },
+    {
+      "code": "RM:062",
+      "level": "SP",
+      "official_text": "Discuss the nature of enterprise risk management (ERM)",
+      "display_text": "Discuss the nature of enterprise risk management (ERM)",
+      "text": "Discuss the nature of enterprise risk management (ERM)",
+      "tier": 3,
+      "curriculum_section": "Business Information Management Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Business Information Management",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 35
+      }
+    }
+  ]
+}

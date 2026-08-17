@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "cluster": "Marketing",
+  "competitive_year": "2026-27",
+  "event_id": "integrated_marketing_campaign_service",
+  "event_code": "IMCS",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Integrated Marketing Campaign-Service",
+  "event_type": "exam_only",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "marketing_tier2"
+      ]
+    },
+    "roleplay": null
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "marketing_tier2"
+  ]
+}

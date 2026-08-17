@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cluster": "Marketing",
+  "competitive_year": "2026-27",
+  "event_id": "automotive_services_marketing_series",
+  "event_code": "ASM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Automotive Services Marketing Series",
+  "event_type": "individual_series",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "marketing_tier2"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "marketing_tier2",
+        "marketing_tier3_management"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "marketing_tier2",
+    "marketing_tier3_management"
+  ]
+}

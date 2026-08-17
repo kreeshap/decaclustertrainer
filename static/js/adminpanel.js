@@ -5,6 +5,10 @@ let currentLessonAudit = null;
 let currentQuestionImport = null;
 let latestQuestionDocument = null;
 let currentKnowledgeItem = null;
+let currentCorpusQuestion = null;
+let activeQuestionFilter = "needs_review";
+let activeQuestionCluster = "";
+let activeCorpusView = "overview";
 const lessonAuditScores = {};
 const $ = (id) => document.getElementById(id);
 
@@ -57,6 +61,8 @@ async function loadDashboard() {
     renderDashboard(await readJson(await apiFetch("/api/admin/content-operations")));
     await loadLessonAuditDashboard();
     await loadQuestionImports();
+    await loadCorpusDashboard();
+    await loadCorpusDocuments();
     await loadSources();
   } catch (error) { showMessage(error.message, true); }
 }
@@ -91,11 +97,164 @@ async function loadQuestionImports() {
   $("question-import-pending").textContent = data.pending || 0;
   latestQuestionDocument = data.documents?.[0] || null;
   $("kpi-knowledge-pending").textContent = data.knowledge_pending || 0;
-  $("question-cluster-breakdown").innerHTML = Object.entries(data.cluster_breakdown || {}).map(([cluster, count]) => `<span>${escHtml(cluster)} · ${count}</span>`).join("");
+  const statuses = data.status_breakdown || {};
+  const statusLabels = { all: "All", verified: "Verified", needs_review: "Needs review", unassigned: "Unassigned", possible_duplicates: "Possible duplicates" };
+  $("question-status-filters").innerHTML = Object.entries(statusLabels).map(([key, label]) => `<button type="button" class="corpus-filter ${activeQuestionFilter === key ? "active" : ""}" data-question-filter="${key}">${label} <strong>${statuses[key] || 0}</strong></button>`).join("");
+  $("question-cluster-breakdown").innerHTML = Object.entries(data.cluster_breakdown || {}).map(([cluster, count]) => `<button type="button" class="corpus-filter ${activeQuestionCluster === cluster ? "active" : ""}" data-question-cluster="${escHtml(cluster)}">${escHtml(cluster)} <strong>${count}</strong></button>`).join("");
   if (!latestQuestionDocument) return;
   const doc = latestQuestionDocument;
-  $("question-import-summary").textContent = `${doc.filename}: ${doc.detected_count} detected · ${doc.ready_count} clean · ${doc.review_count} need review · ${doc.duplicate_count} possible duplicates`;
-  $("approve-ready-imports").hidden = !doc.ready_count || doc.usage_rights !== "licensed_for_student_use";
+  $("question-import-summary").textContent = `${doc.filename}: ${doc.detected_count} detected · ${statuses.verified || 0} verified · ${statuses.needs_review || 0} awaiting review · ${statuses.unassigned || 0} unassigned · ${statuses.possible_duplicates || 0} possible duplicates`;
+}
+
+function showCorpusView(view) {
+  activeCorpusView = view;
+  document.querySelectorAll("[data-corpus-panel]").forEach((panel) => {
+    const inView = String(panel.dataset.corpusPanel || "").split(/\s+/).includes(view);
+    if (!inView) panel.hidden = true;
+    else if (!panel.hasAttribute("data-corpus-conditional")) panel.hidden = false;
+  });
+  document.querySelectorAll("[data-corpus-view]").forEach((button) => button.classList.toggle("active", button.dataset.corpusView === view));
+  if (["exams", "roleplays"].includes(view)) {
+    const type = view === "exams" ? "exam" : "roleplay";
+    $("corpus-content-type").value = type;
+    $("corpus-upload-kicker").textContent = type === "exam" ? "Exam reference upload" : "Roleplay / case study upload";
+    $("corpus-upload-heading").textContent = type === "exam" ? "Upload exam PDF" : "Upload roleplay / case study PDF";
+    document.querySelectorAll(".roleplay-only").forEach((field) => { field.hidden = type !== "roleplay"; });
+  }
+  sessionStorage.setItem("ct_corpus_view", view);
+}
+
+function corpusCoverageBlock(title, values) {
+  const entries = Object.entries(values || {});
+  return `<article class="source-card"><h3>${escHtml(title)}</h3>${entries.length ? entries.map(([key, value]) => `<p><strong>${escHtml(key)}</strong> · ${value.documents} documents · ${value.items} items</p>`).join("") : "<p>No verified benchmark material yet.</p>"}</article>`;
+}
+
+async function loadCorpusDashboard() {
+  const data = await readJson(await apiFetch("/api/admin/practice-corpus/dashboard"));
+  $("corpus-documents").textContent = data.summary.documents || 0;
+  $("corpus-verified").textContent = data.summary.verified_documents || 0;
+  $("corpus-questions").textContent = data.summary.verified_questions || 0;
+  $("corpus-roleplays").textContent = data.summary.verified_roleplays || 0;
+  const exam = data.exam_style_profile || {}, roleplay = data.roleplay_style_profile || {};
+  $("corpus-coverage").innerHTML = corpusCoverageBlock("Exam coverage by cluster", data.exams_by_cluster) + corpusCoverageBlock("Roleplay coverage by event", data.roleplays_by_event) +
+    `<article class="source-card"><h3>Measured exam profile</h3><p>${exam.sample_size || 0} items · ${Math.round(100 * (exam.scenario_rate || 0))}% scenarios · ${Math.round(100 * (exam.calculation_rate || 0))}% calculations · ${exam.mean_stem_words || 0} mean stem words</p></article>` +
+    `<article class="source-card"><h3>Measured roleplay profile</h3><p>${roleplay.sample_size || 0} scenarios · ${roleplay.mean_scenario_words || 0} mean scenario words · ${roleplay.mean_assigned_pis || 0} mean PIs · ${roleplay.mean_judge_questions || 0} mean judge questions</p></article>`;
+  $("corpus-readiness").innerHTML = (data.readiness || []).map((row) => `<article class="source-card"><h3>${escHtml(row.event_code || row.cluster || "Corpus")} ${escHtml(row.content_type)}</h3><p>${row.documents} documents · ${row.items} verified items · ${row.years_represented} years · ${row.competition_levels} levels</p><p><strong>${row.status === "generator_ready" ? "READY" : "INSUFFICIENT"}</strong>${row.reasons?.length ? ` · ${escHtml(row.reasons.join(" "))}` : ""}</p></article>`).join("") || "<p>No event-specific readiness can be calculated yet.</p>";
+  const quality = data.quality || {};
+  $("corpus-quality").innerHTML = `<article class="source-card quality-metric-grid">
+    ${[["Verified documents", `${quality.verified_documents_pct || 0}%`],["Verified items", `${quality.verified_items_pct || 0}%`],["Official sources", `${quality.official_source_pct || 0}%`],["Duplicate-adjusted", quality.duplicate_adjusted_documents || 0],["Years", quality.years_represented || 0],["Events", quality.events_represented || 0],["Instructional areas", quality.instructional_areas_represented || 0],["Answer-key coverage", `${quality.answer_key_coverage_pct || 0}%`],["Explicit PI labels", `${quality.explicit_pi_label_pct || 0}%`],["Benchmark eligible", `${quality.benchmark_eligible_pct || 0}%`],["Student publishable", `${quality.student_publishable_pct || 0}%`],["Gold references", `${quality.gold_exam_items || 0} exam · ${quality.gold_roleplays || 0} roleplay`]].map(([label,value]) => `<div><span>${escHtml(label)}</span><strong>${escHtml(value)}</strong></div>`).join("")}
+  </article>`;
+  const pilot = data.pilot_report || {};
+  $("corpus-pilot-report").innerHTML = `<article class="source-card"><h3>${pilot.audited_documents || 0} documents fully audited</h3><p>Document audit coverage: ${pilot.document_detection_pct || 0}% · Item-count accuracy: ${pilot.item_count_accuracy_pct == null ? "Awaiting expected counts" : `${pilot.item_count_accuracy_pct}%`} · Silent corruption: ${pilot.silent_data_corruption || 0}</p><p>${Object.entries(pilot.failure_counts || {}).map(([code,count]) => `${escHtml(code)} · ${count}`).join(" | ") || "No parser failures recorded yet."}</p></article>`;
+}
+
+async function loadCorpusDocuments() {
+  const data = await readJson(await apiFetch("/api/admin/practice-corpus"));
+  const pending = (data.documents || []).filter((doc) => doc.processing_state !== "verified_reference");
+  $("corpus-review-list").innerHTML = pending.map((doc) => `<article class="source-card corpus-document" data-document-id="${escHtml(doc.id)}">
+    <h3>${escHtml(doc.title)}</h3>
+    <p>${escHtml(doc.content_type)} · ${escHtml(doc.original_filename)} · ${escHtml(doc.processing_state)}</p>
+    <p>${doc.duplicate_of ? "⚠ Likely duplicate of another corpus document." : "No exact normalized-text duplicate detected."}</p>
+    <p><strong>Review priority: ${escHtml(doc.review_priority || "normal")}</strong> · ${escHtml((doc.review_flags || []).join(", ") || "No deterministic flags")}</p>
+    <details><summary>Field confidence</summary><pre>${escHtml(JSON.stringify(doc.field_confidence || {}, null, 2))}</pre></details>
+    <label>Confirmed title<input class="corpus-title" value="${escHtml(doc.title)}"></label>
+    <label>Year<input class="corpus-year" value="${escHtml(doc.competitive_year || "")}"></label>
+    <label>Cluster<input class="corpus-cluster" value="${escHtml(doc.cluster || "")}"></label>
+    <label>Event codes<input class="corpus-events" value="${escHtml((doc.event_codes || []).join(", "))}"></label>
+    <label>Competition level<select class="corpus-level">${["district","association","icdc","practice_sample"].map((value) => `<option value="${value}" ${value === doc.competition_level ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>
+    <label>Instructional area<input class="corpus-area" value="${escHtml(doc.instructional_area || "")}"></label>
+    <label>Source<input class="corpus-source" value="${escHtml(doc.source_name || "")}"></label>
+    <label>Source organization<input class="corpus-org" value="${escHtml(doc.source_organization || "")}"></label>
+    <label>Source URL<input class="corpus-url" value="${escHtml(doc.source_url || "")}"></label>
+    <label>Rights<select class="corpus-rights">${["unknown","reference_only","owned","licensed_for_student_use","public_domain","do_not_use"].map((value) => `<option value="${value}" ${value === doc.rights_status ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>
+    <label><input class="corpus-official" type="checkbox" ${doc.official_deca ? "checked" : ""}> Official DECA</label>
+    <label><input class="corpus-benchmark" type="checkbox"> Benchmark eligible</label>
+    <label><input class="corpus-publishable" type="checkbox"> Student publishable</label>
+    ${doc.content_type === "roleplay" ? `<label><input class="corpus-gold" type="checkbox"> Gold reference</label>` : ""}
+    ${doc.content_type === "roleplay" ? `<label class="audit-notes">Structured roleplay JSON<textarea class="corpus-roleplay-json" rows="12">${escHtml(JSON.stringify(doc.structured_roleplay || {}, null, 2))}</textarea></label>` : ""}
+    <button class="primary-action corpus-verify" type="button">Verify reference</button>
+    <fieldset class="pilot-audit-box"><legend>Pilot PDF comparison</legend>
+      <label>Expected item count<input class="pilot-expected-count" type="number" min="0"></label>
+      <label>Failure category<select class="pilot-failure-code"><option value="">No failure</option>${["exam_choice_split","exam_answer_key_mismatch","exam_multiline_stem","header_contamination","roleplay_pi_detection","roleplay_section_boundary","roleplay_judge_question_split","metadata_year_unknown","metadata_event_unknown","metadata_competition_level_unknown","table_or_special_format","page_break_split","other"].map((code) => `<option value="${code}">${code.replaceAll("_", " ")}</option>`).join("")}</select></label>
+      <label>Failure detail<input class="pilot-failure-detail"></label>
+      <label><input class="pilot-silent-corruption" type="checkbox"> Silent data corruption found</label>
+      <button class="text-action corpus-pilot-audit" type="button">Record pilot audit</button>
+    </fieldset>
+  </article>`).join("") || "<p>No corpus documents need review.</p>";
+}
+
+async function uploadCorpus(event) {
+  event.preventDefault();
+  showMessage("Storing the private PDF and extracting corpus structure…");
+  try {
+    const data = await readJson(await apiFetch("/api/admin/practice-corpus", { method: "POST", body: new FormData(event.currentTarget) }));
+    $("corpus-upload-status").textContent = data.likely_duplicate ? "Parsed with a likely-duplicate warning; reviewer confirmation required." : "Parsed successfully; metadata and rights require review.";
+    event.currentTarget.reset();
+    $("corpus-content-type").value = document.querySelector("[data-corpus-type].active")?.dataset.corpusType || "exam";
+    await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function verifyCorpus(card) {
+  const events = card.querySelector(".corpus-events").value.split(",").map((value) => value.trim().toUpperCase()).filter(Boolean);
+  const metadata = { title: card.querySelector(".corpus-title").value, competitive_year: card.querySelector(".corpus-year").value,
+    cluster: card.querySelector(".corpus-cluster").value, event_codes: events,
+    competition_level: card.querySelector(".corpus-level").value, instructional_area: card.querySelector(".corpus-area").value,
+    source_name: card.querySelector(".corpus-source").value, source_organization: card.querySelector(".corpus-org").value,
+    source_url: card.querySelector(".corpus-url").value, official_deca: card.querySelector(".corpus-official").checked };
+  let structuredRoleplay = null;
+  if (card.querySelector(".corpus-roleplay-json")) {
+    try { structuredRoleplay = JSON.parse(card.querySelector(".corpus-roleplay-json").value); }
+    catch { showMessage("Structured roleplay must be valid JSON.", true); return; }
+  }
+  try {
+    await readJson(await apiFetch(`/api/admin/practice-corpus/${encodeURIComponent(card.dataset.documentId)}/verify`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ confirmed_metadata: metadata, structured_roleplay: structuredRoleplay, gold_reference: card.querySelector(".corpus-gold")?.checked === true, rights_status: card.querySelector(".corpus-rights").value, benchmark_eligible: card.querySelector(".corpus-benchmark").checked, student_publishable: card.querySelector(".corpus-publishable").checked }) }));
+    await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function recordPilotAudit(card) {
+  const code = card.querySelector(".pilot-failure-code").value;
+  const failures = code ? [{ failure_code: code, item_type: card.querySelector(".corpus-roleplay-json") ? "roleplay" : "document", detail: card.querySelector(".pilot-failure-detail").value }] : [];
+  try {
+    await readJson(await apiFetch(`/api/admin/practice-corpus/${encodeURIComponent(card.dataset.documentId)}/pilot-audit`, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+        expected_item_count: Number(card.querySelector(".pilot-expected-count").value || 0) || null,
+        silent_data_corruption: card.querySelector(".pilot-silent-corruption").checked,
+        failures,
+        checklist: { pdf_compared: true },
+      }),
+    }));
+    showMessage("Pilot audit recorded."); await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function loadNextCorpusQuestion() {
+  try {
+    showCorpusView("review");
+    const data = await readJson(await apiFetch("/api/admin/practice-corpus/questions/review-next"));
+    currentCorpusQuestion = data.question;
+    $("corpus-question-review").hidden = !data.question;
+    if (!data.question) { showMessage("All extracted exam items are reviewed."); return; }
+    $("corpus-question-meta").textContent = `Question ${data.question.question_number} · Page ${data.question.page_number || "?"}`;
+    $("corpus-question-stem").textContent = data.question.stem;
+    $("corpus-question-choices").innerHTML = (data.question.choices || []).map((choice) => `<li>${escHtml(choice)}</li>`).join("");
+    $("corpus-question-answer").value = Number.isInteger(data.question.official_answer) ? String(data.question.official_answer) : "";
+    $("corpus-question-pi").value = data.question.pi_code || "";
+    $("corpus-question-area").value = data.question.instructional_area || "";
+    $("corpus-question-demand").value = data.question.cognitive_demand || "";
+    $("corpus-question-gold").checked = data.question.gold_reference === true;
+    $("corpus-question-flags").textContent = `${(data.question.review_flags || []).join(" · ") || "No deterministic flags"}\n${JSON.stringify(data.question.field_confidence || {}, null, 2)}`;
+  } catch (error) { showMessage(error.message, true); }
+}
+
+async function verifyCorpusQuestion() {
+  if (!currentCorpusQuestion) return;
+  const answer = $("corpus-question-answer").value;
+  try {
+    await readJson(await apiFetch(`/api/admin/practice-corpus/questions/${encodeURIComponent(currentCorpusQuestion.id)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ official_answer: answer === "" ? null : Number(answer), pi_code: $("corpus-question-pi").value, instructional_area: $("corpus-question-area").value, cognitive_demand: $("corpus-question-demand").value, gold_reference: $("corpus-question-gold").checked }) }));
+    await loadNextCorpusQuestion(); await loadCorpusDashboard();
+  } catch (error) { showMessage(error.message, true); }
 }
 
 async function loadNextKnowledgeItem() {
@@ -108,14 +267,25 @@ async function loadNextKnowledgeItem() {
     $("kpi-knowledge-title").textContent = `${data.item.kpi_code} · ${data.item.knowledge_type.replaceAll("_", " ")}`;
     $("kpi-knowledge-content").value = data.item.content;
     $("kpi-knowledge-importance").value = data.item.importance;
+    $("kpi-deca-evidence").textContent = JSON.stringify(data.item.deca_evidence || data.item.source_references || [], null, 2);
+    $("kpi-factual-evidence").value = JSON.stringify(data.item.factual_evidence || [], null, 2);
+    $("kpi-verification-class").value = data.item.verification_class || "time_sensitive";
+    $("kpi-reverify-after").value = data.item.reverify_after || "";
+    document.querySelectorAll("[data-knowledge-check]").forEach((input) => { input.checked = false; });
   } catch (error) { showMessage(error.message, true); }
 }
 
 async function reviewKnowledgeItem(action) {
   if (!currentKnowledgeItem) return;
   try {
+    let factualEvidence = [];
+    if (action === "approve") {
+      try { factualEvidence = JSON.parse($("kpi-factual-evidence").value); }
+      catch { throw new Error("Factual evidence must be a valid JSON array."); }
+    }
+    const reviewChecklist = Object.fromEntries([...document.querySelectorAll("[data-knowledge-check]")].map((input) => [input.dataset.knowledgeCheck, input.checked]));
     await readJson(await apiFetch(`/api/admin/kpi-knowledge/${encodeURIComponent(currentKnowledgeItem.id)}`, {
-      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, content: $("kpi-knowledge-content").value, importance: $("kpi-knowledge-importance").value }),
+      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, content: $("kpi-knowledge-content").value, importance: $("kpi-knowledge-importance").value, factual_evidence: factualEvidence, review_checklist: reviewChecklist, verification_class: $("kpi-verification-class").value, reverify_after: $("kpi-reverify-after").value }),
     }));
     await loadNextKnowledgeItem(); await loadQuestionImports();
   } catch (error) { showMessage(error.message, true); }
@@ -146,8 +316,13 @@ function renderQuestionImport(item, document) {
 
 async function loadNextQuestionImport() {
   try {
-    const data = await readJson(await apiFetch("/api/admin/question-imports/review-next"));
+    showCorpusView("review");
+    if (activeQuestionFilter === "verified") { showMessage("Verified items are read-only in this queue."); return; }
+    const query = new URLSearchParams({ filter: activeQuestionFilter || "needs_review" });
+    if (activeQuestionCluster) query.set("cluster", activeQuestionCluster);
+    const data = await readJson(await apiFetch(`/api/admin/question-imports/review-next?${query}`));
     renderQuestionImport(data.item, data.document || {});
+    if (!data.item) showMessage("No reviewable items match this filter.");
   } catch (error) { showMessage(error.message, true); }
 }
 
@@ -389,9 +564,14 @@ function showAdminTab(tabName) {
 }
 
 document.querySelectorAll("[data-admin-tab]").forEach((button) => {
-  button.addEventListener("click", () => showAdminTab(button.dataset.adminTab));
+  button.addEventListener("click", () => {
+    showAdminTab(button.dataset.adminTab);
+    if (button.dataset.adminTab === "questions") showCorpusView(activeCorpusView);
+  });
 });
 showAdminTab(sessionStorage.getItem("ct_admin_active_tab") || "overview");
+document.querySelectorAll("[data-corpus-view]").forEach((button) => button.addEventListener("click", () => showCorpusView(button.dataset.corpusView)));
+showCorpusView(sessionStorage.getItem("ct_corpus_view") || "overview");
 
 $("process-kpis").addEventListener("click", startBatch);
 $("retry-failed").addEventListener("click", retryFailed);
@@ -404,12 +584,40 @@ $("review-lesson-audits").addEventListener("click", loadNextLessonAudit);
 $("save-lesson-audit").addEventListener("click", saveLessonAudit);
 $("close-lesson-audit").addEventListener("click", () => { $("lesson-audit-review").hidden = true; });
 $("question-import-form").addEventListener("submit", uploadQuestionPdf);
+$("corpus-upload-form").addEventListener("submit", uploadCorpus);
+document.querySelectorAll("[data-corpus-type]").forEach((button) => button.addEventListener("click", () => {
+  document.querySelectorAll("[data-corpus-type]").forEach((item) => item.classList.toggle("active", item === button));
+  $("corpus-content-type").value = button.dataset.corpusType;
+  document.querySelectorAll(".roleplay-only").forEach((field) => { field.hidden = button.dataset.corpusType !== "roleplay"; });
+}));
+$("corpus-review-list").addEventListener("click", (event) => {
+  const button = event.target.closest(".corpus-verify");
+  if (button) verifyCorpus(button.closest(".corpus-document"));
+  const auditButton = event.target.closest(".corpus-pilot-audit");
+  if (auditButton) recordPilotAudit(auditButton.closest(".corpus-document"));
+});
+$("question-status-filters").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-question-filter]");
+  if (!button) return;
+  activeQuestionFilter = button.dataset.questionFilter;
+  loadQuestionImports();
+  if (activeQuestionFilter !== "verified") loadNextQuestionImport();
+});
+$("question-cluster-breakdown").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-question-cluster]");
+  if (!button) return;
+  activeQuestionCluster = activeQuestionCluster === button.dataset.questionCluster ? "" : button.dataset.questionCluster;
+  loadQuestionImports();
+  loadNextQuestionImport();
+});
+$("view-corpus-readiness").addEventListener("click", () => $("corpus-readiness").scrollIntoView({ behavior: "smooth", block: "start" }));
+$("review-corpus-question").addEventListener("click", loadNextCorpusQuestion);
+$("verify-corpus-question").addEventListener("click", verifyCorpusQuestion);
+$("close-corpus-question").addEventListener("click", () => { $("corpus-question-review").hidden = true; });
 $("review-question-imports").addEventListener("click", loadNextQuestionImport);
-$("approve-ready-imports").addEventListener("click", approveReadyImports);
 $("import-reviewed-question").addEventListener("click", () => reviewQuestionImport("approve"));
 $("skip-import-question").addEventListener("click", () => reviewQuestionImport("skip"));
 $("close-question-import-review").addEventListener("click", () => { $("question-import-review").hidden = true; });
-$("question-generation-form").addEventListener("submit", generateOriginalQuestions);
 $("review-kpi-knowledge").addEventListener("click", loadNextKnowledgeItem);
 $("approve-kpi-knowledge").addEventListener("click", () => reviewKnowledgeItem("approve"));
 $("ignore-kpi-knowledge").addEventListener("click", () => reviewKnowledgeItem("ignore"));

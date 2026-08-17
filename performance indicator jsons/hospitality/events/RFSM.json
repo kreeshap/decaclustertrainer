@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "event_id": "restaurant_and_food_service_management_series",
+  "event_code": "RFSM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Restaurant and Food Service Management Series",
+  "event_type": "individual_series",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2",
+        "hospitality_tier3_restaurant"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "hospitality_tier2",
+    "hospitality_tier3_restaurant"
+  ]
+}

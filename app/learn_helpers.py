@@ -24,11 +24,69 @@ _EVENT_META: dict[tuple[str, str], dict | None] = {
 _KPI_CACHE: tuple[list[dict], list[dict]] | None = None
 
 
+def _load_normalized_curriculum() -> tuple[list[dict], list[dict]] | None:
+    """Load manifest-based curriculum without duplicating source KPIs per event."""
+    manifests = sorted(KPI_DIR.glob("*/manifest.json"))
+    if not manifests:
+        return None
+
+    all_kpis: list[dict] = []
+    events: list[dict] = []
+    for manifest_file in manifests:
+        manifest = json.loads(manifest_file.read_text(encoding="utf-8"))
+        base = manifest_file.parent
+        curricula: dict[str, list[dict]] = {}
+        for relative_path in manifest.get("curriculum", []):
+            data = json.loads((base / relative_path).read_text(encoding="utf-8"))
+            curricula[data["curriculum_id"]] = data.get("performance_indicators", [])
+
+        for relative_path in manifest.get("events", []):
+            event = json.loads((base / relative_path).read_text(encoding="utf-8"))
+            event_id = event["event_id"]
+            events.append({
+                "id": event_id,
+                "name": event["name"],
+                "cluster": event["cluster"],
+                "folder": base.name,
+                "event_code": event.get("event_code", ""),
+            })
+            # A KPI code is an identity within an event. If a shared KPI is also
+            # listed in a pathway, retain the more specific (later) occurrence.
+            event_kpis: dict[str, dict] = {}
+            eligible_by_curriculum: dict[str, set[str]] = {}
+            for component, usage in event.get("curriculum_usage", {}).items():
+                if usage:
+                    for curriculum_id in usage.get("curriculum", []):
+                        eligible_by_curriculum.setdefault(curriculum_id, set()).add(component)
+            for curriculum_id in event.get("study_curriculum", []):
+                for indicator in curricula[curriculum_id]:
+                    item = dict(indicator)
+                    item.update({
+                        "text": indicator.get("official_text", indicator.get("text", "")),
+                        "cluster": indicator.get("instructional_area_name", ""),
+                        "event": event_id,
+                        "event_name": event["name"],
+                        "deca_cluster": event["cluster"],
+                        "folder": base.name,
+                        "tier": f"Tier {indicator['tier']}" if indicator.get("tier") is not None else None,
+                        "curriculum_id": curriculum_id,
+                        "eligible_components": sorted(eligible_by_curriculum.get(curriculum_id, set())),
+                    })
+                    event_kpis[item["code"]] = item
+            all_kpis.extend(event_kpis.values())
+    return all_kpis, events
+
+
 def _load_all_kpis(force_reload: bool = False) -> tuple[list[dict], list[dict]]:
     """Load all KPIs from JSON files.  Returns (kpis, events).
     Results are cached in-process so disk is only read once per server start."""
     global _KPI_CACHE
     if _KPI_CACHE is not None and not force_reload:
+        return _KPI_CACHE
+
+    normalized = _load_normalized_curriculum()
+    if normalized is not None:
+        _KPI_CACHE = normalized
         return _KPI_CACHE
 
     all_kpis: list[dict] = []

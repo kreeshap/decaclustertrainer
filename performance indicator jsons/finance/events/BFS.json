@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "cluster": "Finance",
+  "competitive_year": "2026-27",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "event_id": "business_finance_series",
+  "event_code": "BFS",
+  "name": "Business Finance Series",
+  "event_type": "individual_series",
+  "exam": {
+    "curriculum": [
+      "business_administration_core_2026_27",
+      "finance_tier2"
+    ]
+  },
+  "roleplay": {
+    "curriculum": [
+      "business_administration_core_2026_27",
+      "finance_tier2",
+      "finance_tier3_corporate_finance"
+    ]
+  },
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "finance_tier2"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "finance_tier2",
+        "finance_tier3_corporate_finance"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "finance_tier2",
+    "finance_tier3_corporate_finance"
+  ]
+}

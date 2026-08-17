@@ -1,0 +1,1959 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier3_administrative_services",
+  "name": "Administrative Services Pathway",
+  "cluster": "Business Management + Administration",
+  "tier": 3,
+  "curriculum_section": "Administrative Services Pathway",
+  "pathway": "Administrative Services",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      25,
+      30
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "CO:181",
+      "level": "CS",
+      "official_text": "Greet and direct visitors",
+      "display_text": "Greet and direct visitors",
+      "text": "Greet and direct visitors",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Facilitate internal/external office communications to support work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "CO:182",
+      "level": "CS",
+      "official_text": "Take and relay messages",
+      "display_text": "Take and relay messages",
+      "text": "Take and relay messages",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Facilitate internal/external office communications to support work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "CO:183",
+      "level": "CS",
+      "official_text": "Field telephone calls",
+      "display_text": "Field telephone calls",
+      "text": "Field telephone calls",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Facilitate internal/external office communications to support work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "CO:191",
+      "level": "CS",
+      "official_text": "Arrange call-backs",
+      "display_text": "Arrange call-backs",
+      "text": "Arrange call-backs",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Facilitate internal/external office communications to support work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "CO:184",
+      "level": "CS",
+      "official_text": "Screen telephone calls",
+      "display_text": "Screen telephone calls",
+      "text": "Screen telephone calls",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Facilitate internal/external office communications to support work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "CO:192",
+      "level": "CS",
+      "official_text": "Adapt to communications styles (written, verbal, formal/informal)",
+      "display_text": "Adapt to communications styles (written, verbal, formal/informal)",
+      "text": "Adapt to communications styles (written, verbal, formal/informal)",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Communicate with staff to clarify workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:076",
+      "level": "CS",
+      "official_text": "Exercise confidentiality",
+      "display_text": "Exercise confidentiality",
+      "text": "Exercise confidentiality",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Apply ethics to demonstrate trustworthiness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:094",
+      "level": "CS",
+      "official_text": "Act as the office \"gatekeeper\"",
+      "display_text": "Act as the office \"gatekeeper\"",
+      "text": "Act as the office \"gatekeeper\"",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:096",
+      "level": "SP",
+      "official_text": "Initiate and facilitate social interactions in a business environment",
+      "display_text": "Initiate and facilitate social interactions in a business environment",
+      "text": "Initiate and facilitate social interactions in a business environment",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:097",
+      "level": "SP",
+      "official_text": "Handle the social and protocol aspects of business",
+      "display_text": "Handle the social and protocol aspects of business",
+      "text": "Handle the social and protocol aspects of business",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:098",
+      "level": "SP",
+      "official_text": "Maintain contact with key clients/customers",
+      "display_text": "Maintain contact with key clients/customers",
+      "text": "Maintain contact with key clients/customers",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:099",
+      "level": "SP",
+      "official_text": "Entertain customers at the office",
+      "display_text": "Entertain customers at the office",
+      "text": "Entertain customers at the office",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "EI:100",
+      "level": "SP",
+      "official_text": "Act as the liaison between departments",
+      "display_text": "Act as the liaison between departments",
+      "text": "Act as the liaison between departments",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:604",
+      "level": "SP",
+      "official_text": "Track expenses",
+      "display_text": "Track expenses",
+      "text": "Track expenses",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement accounting procedures to track money flow and to determine financial status.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:113",
+      "level": "CS",
+      "official_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "display_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:310",
+      "level": "SP",
+      "official_text": "Maintain petty-cash fund",
+      "display_text": "Maintain petty-cash fund",
+      "text": "Maintain petty-cash fund",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:603",
+      "level": "SP",
+      "official_text": "Arrange advance travel cash",
+      "display_text": "Arrange advance travel cash",
+      "text": "Arrange advance travel cash",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:778",
+      "level": "SP",
+      "official_text": "Manage purchasing cards",
+      "display_text": "Manage purchasing cards",
+      "text": "Manage purchasing cards",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:277",
+      "level": "SP",
+      "official_text": "Describe information that can be obtained from annual reports",
+      "display_text": "Describe information that can be obtained from annual reports",
+      "text": "Describe information that can be obtained from annual reports",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Acquire fundamental knowledge of investment analysis and selection to make prudent investment decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:197",
+      "level": "SP",
+      "official_text": "Prepare expense report tools",
+      "display_text": "Prepare expense report tools",
+      "text": "Prepare expense report tools",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:121",
+      "level": "SP",
+      "official_text": "Demonstrate advanced web-search skills",
+      "display_text": "Demonstrate advanced web-search skills",
+      "text": "Demonstrate advanced web-search skills",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:122",
+      "level": "SP",
+      "official_text": "Demonstrate advanced word-processing skills",
+      "display_text": "Demonstrate advanced word-processing skills",
+      "text": "Demonstrate advanced word-processing skills",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:123",
+      "level": "SP",
+      "official_text": "Demonstrate advanced presentation applications",
+      "display_text": "Demonstrate advanced presentation applications",
+      "text": "Demonstrate advanced presentation applications",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:124",
+      "level": "SP",
+      "official_text": "Demonstrate advanced database applications",
+      "display_text": "Demonstrate advanced database applications",
+      "text": "Demonstrate advanced database applications",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:125",
+      "level": "SP",
+      "official_text": "Mine databases for information",
+      "display_text": "Mine databases for information",
+      "text": "Mine databases for information",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:126",
+      "level": "SP",
+      "official_text": "Demonstrate advanced spreadsheet applications",
+      "display_text": "Demonstrate advanced spreadsheet applications",
+      "text": "Demonstrate advanced spreadsheet applications",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:127",
+      "level": "SP",
+      "official_text": "Create a web page for business applications",
+      "display_text": "Create a web page for business applications",
+      "text": "Create a web page for business applications",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:198",
+      "level": "SP",
+      "official_text": "Manage website's content",
+      "display_text": "Manage website's content",
+      "text": "Manage website's content",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:199",
+      "level": "SP",
+      "official_text": "Prepare for cyber- and video-conferencing",
+      "display_text": "Prepare for cyber- and video-conferencing",
+      "text": "Prepare for cyber- and video-conferencing",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:128",
+      "level": "SP",
+      "official_text": "Capture text using OCR (optical character reader) software",
+      "display_text": "Capture text using OCR (optical character reader) software",
+      "text": "Capture text using OCR (optical character reader) software",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:129",
+      "level": "SP",
+      "official_text": "Use voice recognition technology to prepare documents",
+      "display_text": "Use voice recognition technology to prepare documents",
+      "text": "Use voice recognition technology to prepare documents",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:131",
+      "level": "SP",
+      "official_text": "Utilize imaging software",
+      "display_text": "Utilize imaging software",
+      "text": "Utilize imaging software",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:200",
+      "level": "SP",
+      "official_text": "Use accounting software",
+      "display_text": "Use accounting software",
+      "text": "Use accounting software",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 26
+      }
+    },
+    {
+      "code": "NF:164",
+      "level": "CS",
+      "official_text": "Create calendar/schedule",
+      "display_text": "Create calendar/schedule",
+      "text": "Create calendar/schedule",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:165",
+      "level": "CS",
+      "official_text": "Maintain appointment calendar",
+      "display_text": "Maintain appointment calendar",
+      "text": "Maintain appointment calendar",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:166",
+      "level": "CS",
+      "official_text": "Verify appointments",
+      "display_text": "Verify appointments",
+      "text": "Verify appointments",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:188",
+      "level": "SP",
+      "official_text": "Schedule appointments",
+      "display_text": "Schedule appointments",
+      "text": "Schedule appointments",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:189",
+      "level": "SP",
+      "official_text": "Prepare itinerary",
+      "display_text": "Prepare itinerary",
+      "text": "Prepare itinerary",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:190",
+      "level": "SP",
+      "official_text": "Arrange accommodations and entertainment for visitors",
+      "display_text": "Arrange accommodations and entertainment for visitors",
+      "text": "Arrange accommodations and entertainment for visitors",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:167",
+      "level": "SP",
+      "official_text": "Make travel arrangements",
+      "display_text": "Make travel arrangements",
+      "text": "Make travel arrangements",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:168",
+      "level": "SP",
+      "official_text": "Make meeting arrangements",
+      "display_text": "Make meeting arrangements",
+      "text": "Make meeting arrangements",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Perform scheduling functions to facilitate on-time, prompt completion of work activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:180",
+      "level": "CS",
+      "official_text": "Proofread documents",
+      "display_text": "Proofread documents",
+      "text": "Proofread documents",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:192",
+      "level": "CS",
+      "official_text": "Prepare company correspondence",
+      "display_text": "Prepare company correspondence",
+      "text": "Prepare company correspondence",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:194",
+      "level": "CS",
+      "official_text": "Prepare agendas",
+      "display_text": "Prepare agendas",
+      "text": "Prepare agendas",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:195",
+      "level": "CS",
+      "official_text": "Prepare materials for presentations",
+      "display_text": "Prepare materials for presentations",
+      "text": "Prepare materials for presentations",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:181",
+      "level": "CS",
+      "official_text": "Prepare reports",
+      "display_text": "Prepare reports",
+      "text": "Prepare reports",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:196",
+      "level": "SP",
+      "official_text": "Edit documents",
+      "display_text": "Edit documents",
+      "text": "Edit documents",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:182",
+      "level": "SP",
+      "official_text": "Prepare financial data",
+      "display_text": "Prepare financial data",
+      "text": "Prepare financial data",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Prepare documentation to communicate with internal/external clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:169",
+      "level": "CS",
+      "official_text": "Process customer orders",
+      "display_text": "Process customer orders",
+      "text": "Process customer orders",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:170",
+      "level": "CS",
+      "official_text": "Route orders",
+      "display_text": "Route orders",
+      "text": "Route orders",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:171",
+      "level": "CS",
+      "official_text": "File records electronically/manually",
+      "display_text": "File records electronically/manually",
+      "text": "File records electronically/manually",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:172",
+      "level": "CS",
+      "official_text": "Organize and maintain files",
+      "display_text": "Organize and maintain files",
+      "text": "Organize and maintain files",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:173",
+      "level": "CS",
+      "official_text": "Collect documentation needed to compile reports",
+      "display_text": "Collect documentation needed to compile reports",
+      "text": "Collect documentation needed to compile reports",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:174",
+      "level": "CS",
+      "official_text": "Track shipping practices",
+      "display_text": "Track shipping practices",
+      "text": "Track shipping practices",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:191",
+      "level": "SP",
+      "official_text": "Complete boss's expense reports after trips",
+      "display_text": "Complete boss's expense reports after trips",
+      "text": "Complete boss's expense reports after trips",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:175",
+      "level": "SP",
+      "official_text": "Set up filing system appropriate for media/documents being stored",
+      "display_text": "Set up filing system appropriate for media/documents being stored",
+      "text": "Set up filing system appropriate for media/documents being stored",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:176",
+      "level": "SP",
+      "official_text": "Control incoming/outgoing documentation process",
+      "display_text": "Control incoming/outgoing documentation process",
+      "text": "Control incoming/outgoing documentation process",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:177",
+      "level": "SP",
+      "official_text": "Develop retention system appropriate for media/documents being stored",
+      "display_text": "Develop retention system appropriate for media/documents being stored",
+      "text": "Develop retention system appropriate for media/documents being stored",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:178",
+      "level": "SP",
+      "official_text": "Archive information according to retention procedures",
+      "display_text": "Archive information according to retention procedures",
+      "text": "Archive information according to retention procedures",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "OP:357",
+      "level": "SP",
+      "official_text": "Organize and track project resources",
+      "display_text": "Organize and track project resources",
+      "text": "Organize and track project resources",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize organizational skills to support business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "OP:233",
+      "level": "SP",
+      "official_text": "Plan meetings",
+      "display_text": "Plan meetings",
+      "text": "Plan meetings",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize organizational skills to support business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 27
+      }
+    },
+    {
+      "code": "OP:360",
+      "level": "CS",
+      "official_text": "Re-order/purchase office supplies",
+      "display_text": "Re-order/purchase office supplies",
+      "text": "Re-order/purchase office supplies",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:362",
+      "level": "SP",
+      "official_text": "Implement process improvement techniques",
+      "display_text": "Implement process improvement techniques",
+      "text": "Implement process improvement techniques",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement quality-control processes to minimize errors and to expedite workflow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:231",
+      "level": "CS",
+      "official_text": "Assist with overflow work",
+      "display_text": "Assist with overflow work",
+      "text": "Assist with overflow work",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:351",
+      "level": "CS",
+      "official_text": "Support staff with assigned project-based work",
+      "display_text": "Support staff with assigned project-based work",
+      "text": "Support staff with assigned project-based work",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:352",
+      "level": "CS",
+      "official_text": "Chunk and sequence tasks for timely completion of job responsibilities",
+      "display_text": "Chunk and sequence tasks for timely completion of job responsibilities",
+      "text": "Chunk and sequence tasks for timely completion of job responsibilities",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:353",
+      "level": "SP",
+      "official_text": "Solve information flow problems",
+      "display_text": "Solve information flow problems",
+      "text": "Solve information flow problems",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:232",
+      "level": "SP",
+      "official_text": "Coordinate submission of proposals",
+      "display_text": "Coordinate submission of proposals",
+      "text": "Coordinate submission of proposals",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:356",
+      "level": "SP",
+      "official_text": "Manage work from multiple bosses",
+      "display_text": "Manage work from multiple bosses",
+      "text": "Manage work from multiple bosses",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain work flow to enhance productivity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:197",
+      "level": "PQ",
+      "official_text": "Operate calculator",
+      "display_text": "Operate calculator",
+      "text": "Operate calculator",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:198",
+      "level": "PQ",
+      "official_text": "Operate copier",
+      "display_text": "Operate copier",
+      "text": "Operate copier",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:199",
+      "level": "PQ",
+      "official_text": "Operate printer",
+      "display_text": "Operate printer",
+      "text": "Operate printer",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:200",
+      "level": "PQ",
+      "official_text": "Operate fax machines",
+      "display_text": "Operate fax machines",
+      "text": "Operate fax machines",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:201",
+      "level": "CS",
+      "official_text": "Operate postage meter",
+      "display_text": "Operate postage meter",
+      "text": "Operate postage meter",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:202",
+      "level": "CS",
+      "official_text": "Operate scanner",
+      "display_text": "Operate scanner",
+      "text": "Operate scanner",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize office equipment to accomplish job assignments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:347",
+      "level": "CS",
+      "official_text": "Code and enter data",
+      "display_text": "Code and enter data",
+      "text": "Code and enter data",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform routine/daily office assignments to support others and/or to maintain smooth office operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:348",
+      "level": "CS",
+      "official_text": "Open and distribute office mail/parcels",
+      "display_text": "Open and distribute office mail/parcels",
+      "text": "Open and distribute office mail/parcels",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform routine/daily office assignments to support others and/or to maintain smooth office operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:349",
+      "level": "CS",
+      "official_text": "Update mail/telephone directories",
+      "display_text": "Update mail/telephone directories",
+      "text": "Update mail/telephone directories",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform routine/daily office assignments to support others and/or to maintain smooth office operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:350",
+      "level": "SP",
+      "official_text": "Coordinate direct mailings",
+      "display_text": "Coordinate direct mailings",
+      "text": "Coordinate direct mailings",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform routine/daily office assignments to support others and/or to maintain smooth office operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:203",
+      "level": "CS",
+      "official_text": "Isolate and identify source of technical problem",
+      "display_text": "Isolate and identify source of technical problem",
+      "text": "Isolate and identify source of technical problem",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot problems with office equipment to make repairs and/or to obtain technical support.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:204",
+      "level": "CS",
+      "official_text": "Follow manufacturer's written procedures to fix the technical problem",
+      "display_text": "Follow manufacturer's written procedures to fix the technical problem",
+      "text": "Follow manufacturer's written procedures to fix the technical problem",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot problems with office equipment to make repairs and/or to obtain technical support.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:205",
+      "level": "CS",
+      "official_text": "Obtain technical support services",
+      "display_text": "Obtain technical support services",
+      "text": "Obtain technical support services",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Troubleshoot problems with office equipment to make repairs and/or to obtain technical support.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:206",
+      "level": "CS",
+      "official_text": "Adhere to technology safety and security policies (e.g., acceptable use policy, web page policies)",
+      "display_text": "Adhere to technology safety and security policies (e.g., acceptable use policy, web page policies)",
+      "text": "Adhere to technology safety and security policies (e.g., acceptable use policy, web page policies)",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:207",
+      "level": "CS",
+      "official_text": "Apply ergonomic techniques to technology tasks",
+      "display_text": "Apply ergonomic techniques to technology tasks",
+      "text": "Apply ergonomic techniques to technology tasks",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:208",
+      "level": "CS",
+      "official_text": "Adhere to laws pertaining to computer crime, fraud, and abuse",
+      "display_text": "Adhere to laws pertaining to computer crime, fraud, and abuse",
+      "text": "Adhere to laws pertaining to computer crime, fraud, and abuse",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:209",
+      "level": "CS",
+      "official_text": "Follow procedures used to restart and recover from situations (e.g., system failure, virus infection)",
+      "display_text": "Follow procedures used to restart and recover from situations (e.g., system failure, virus infection)",
+      "text": "Follow procedures used to restart and recover from situations (e.g., system failure, virus infection)",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:210",
+      "level": "CS",
+      "official_text": "Follow policies to prevent loss of data integrity",
+      "display_text": "Follow policies to prevent loss of data integrity",
+      "text": "Follow policies to prevent loss of data integrity",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "OP:211",
+      "level": "CS",
+      "official_text": "Adhere to organization's policies for technology use",
+      "display_text": "Adhere to organization's policies for technology use",
+      "text": "Adhere to organization's policies for technology use",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Abide by risk-management policies and procedures for technology to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:178",
+      "level": "CS",
+      "official_text": "Explain professional responsibilities in administrative services",
+      "display_text": "Explain professional responsibilities in administrative services",
+      "text": "Explain professional responsibilities in administrative services",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:280",
+      "level": "CS",
+      "official_text": "Exhibit a professional image",
+      "display_text": "Exhibit a professional image",
+      "text": "Exhibit a professional image",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:281",
+      "level": "CS",
+      "official_text": "Demonstrate effective organizational skills",
+      "display_text": "Demonstrate effective organizational skills",
+      "text": "Demonstrate effective organizational skills",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:282",
+      "level": "SP",
+      "official_text": "Use advanced memory/recall methods",
+      "display_text": "Use advanced memory/recall methods",
+      "text": "Use advanced memory/recall methods",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire self-development skills to enhance relationships and improve efficiency in the work environment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:283",
+      "level": "SP",
+      "official_text": "Anticipate boss's needs",
+      "display_text": "Anticipate boss's needs",
+      "text": "Anticipate boss's needs",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:284",
+      "level": "SP",
+      "official_text": "Confront difficult situations",
+      "display_text": "Confront difficult situations",
+      "text": "Confront difficult situations",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:183",
+      "level": "CS",
+      "official_text": "Explain career opportunities in administrative services",
+      "display_text": "Explain career opportunities in administrative services",
+      "text": "Explain career opportunities in administrative services",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 30
+      }
+    },
+    {
+      "code": "PD:184",
+      "level": "CS",
+      "official_text": "Describe certifications in administrative services",
+      "display_text": "Describe certifications in administrative services",
+      "text": "Describe certifications in administrative services",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 30
+      }
+    },
+    {
+      "code": "KM:008",
+      "level": "SP",
+      "official_text": "Take minutes of meetings",
+      "display_text": "Take minutes of meetings",
+      "text": "Take minutes of meetings",
+      "tier": 3,
+      "curriculum_section": "Administrative Services Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Administrative Services",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 30
+      }
+    }
+  ]
+}

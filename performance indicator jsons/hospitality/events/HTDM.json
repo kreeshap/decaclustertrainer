@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "event_id": "hospitality_services_team_decision_making",
+  "event_code": "HTDM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Hospitality Services Team Decision Making",
+  "event_type": "team_decision_making",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    },
+    "case_study": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "hospitality_tier2"
+  ]
+}

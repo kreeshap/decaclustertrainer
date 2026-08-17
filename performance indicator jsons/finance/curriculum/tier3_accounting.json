@@ -1,0 +1,2199 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "finance_tier3_accounting",
+  "name": "Accounting Pathway",
+  "cluster": "Finance",
+  "tier": 3,
+  "curriculum_section": "Accounting Pathway",
+  "pathway": "Accounting",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Finance",
+    "pages": [
+      24,
+      29
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:153",
+      "level": "SP",
+      "official_text": "Explain financial disclosure regulations and policies",
+      "display_text": "Explain financial disclosure regulations and policies",
+      "text": "Explain financial disclosure regulations and policies",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in accounting to adhere to regulatory requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "BL:088",
+      "level": "SP",
+      "official_text": "Comply with financial reporting and internal control regulations in accounting",
+      "display_text": "Comply with financial reporting and internal control regulations in accounting",
+      "text": "Comply with financial reporting and internal control regulations in accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in accounting to adhere to regulatory requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "BL:090",
+      "level": "SP",
+      "official_text": "Discuss state regulation of the accounting industry",
+      "display_text": "Discuss state regulation of the accounting industry",
+      "text": "Discuss state regulation of the accounting industry",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in accounting to adhere to regulatory requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "BL:154",
+      "level": "SP",
+      "official_text": "Comply with state regulations",
+      "display_text": "Comply with state regulations",
+      "text": "Comply with state regulations",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in accounting to adhere to regulatory requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:342",
+      "level": "CS",
+      "official_text": "Discuss the nature of the accounting cycle",
+      "display_text": "Discuss the nature of the accounting cycle",
+      "text": "Discuss the nature of the accounting cycle",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:673",
+      "level": "CS",
+      "official_text": "Distinguish among types of business transactions",
+      "display_text": "Distinguish among types of business transactions",
+      "text": "Distinguish among types of business transactions",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:674",
+      "level": "CS",
+      "official_text": "Distinguish among types of business documentation",
+      "display_text": "Distinguish among types of business documentation",
+      "text": "Distinguish among types of business documentation",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:378",
+      "level": "CS",
+      "official_text": "Demonstrate the effects of transactions on the accounting equation",
+      "display_text": "Demonstrate the effects of transactions on the accounting equation",
+      "text": "Demonstrate the effects of transactions on the accounting equation",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:379",
+      "level": "CS",
+      "official_text": "Prepare a chart of accounts",
+      "display_text": "Prepare a chart of accounts",
+      "text": "Prepare a chart of accounts",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:407",
+      "level": "CS",
+      "official_text": "Explain the nature of special journals",
+      "display_text": "Explain the nature of special journals",
+      "text": "Explain the nature of special journals",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:381",
+      "level": "CS",
+      "official_text": "Journalize business transactions",
+      "display_text": "Journalize business transactions",
+      "text": "Journalize business transactions",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:382",
+      "level": "CS",
+      "official_text": "Post journal entries to general ledger accounts",
+      "display_text": "Post journal entries to general ledger accounts",
+      "text": "Post journal entries to general ledger accounts",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:383",
+      "level": "CS",
+      "official_text": "Prepare a trial balance",
+      "display_text": "Prepare a trial balance",
+      "text": "Prepare a trial balance",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:384",
+      "level": "CS",
+      "official_text": "Journalize and post adjusting entries",
+      "display_text": "Journalize and post adjusting entries",
+      "text": "Journalize and post adjusting entries",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:385",
+      "level": "CS",
+      "official_text": "Journalize and post closing entries",
+      "display_text": "Journalize and post closing entries",
+      "text": "Journalize and post closing entries",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:386",
+      "level": "CS",
+      "official_text": "Prepare a post-closing trial balance",
+      "display_text": "Prepare a post-closing trial balance",
+      "text": "Prepare a post-closing trial balance",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:675",
+      "level": "SP",
+      "official_text": "Identify and correct accounting errors",
+      "display_text": "Identify and correct accounting errors",
+      "text": "Identify and correct accounting errors",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:387",
+      "level": "SP",
+      "official_text": "Prepare worksheets",
+      "display_text": "Prepare worksheets",
+      "text": "Prepare worksheets",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:113",
+      "level": "CS",
+      "official_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "display_text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "text": "Explain cash control procedures (e.g., signature cards, deposit slips, internal/external controls, cash clearing, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:396",
+      "level": "CS",
+      "official_text": "Reconcile cash",
+      "display_text": "Reconcile cash",
+      "text": "Reconcile cash",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:676",
+      "level": "CS",
+      "official_text": "Account for petty cash",
+      "display_text": "Account for petty cash",
+      "text": "Account for petty cash",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:677",
+      "level": "CS",
+      "official_text": "Account for cash receipts (e.g., record cash, record income)",
+      "display_text": "Account for cash receipts (e.g., record cash, record income)",
+      "text": "Account for cash receipts (e.g., record cash, record income)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:678",
+      "level": "CS",
+      "official_text": "Account for cash payments (e.g., record cash, record expenses)",
+      "display_text": "Account for cash payments (e.g., record cash, record expenses)",
+      "text": "Account for cash payments (e.g., record cash, record expenses)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain cash controls to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 24
+      }
+    },
+    {
+      "code": "FI:409",
+      "level": "CS",
+      "official_text": "Explain the nature of accounts payable",
+      "display_text": "Explain the nature of accounts payable",
+      "text": "Explain the nature of accounts payable",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts payable functions to record, control, and disburse payments to vendors.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:679",
+      "level": "CS",
+      "official_text": "Account for purchases (e.g., purchase requisitions, purchase orders, invoices, vouchers, etc.)",
+      "display_text": "Account for purchases (e.g., purchase requisitions, purchase orders, invoices, vouchers, etc.)",
+      "text": "Account for purchases (e.g., purchase requisitions, purchase orders, invoices, vouchers, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts payable functions to record, control, and disburse payments to vendors.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:680",
+      "level": "SP",
+      "official_text": "Process accounts payable (e.g., maintain vendor file, post to ledger, process invoices and checks)",
+      "display_text": "Process accounts payable (e.g., maintain vendor file, post to ledger, process invoices and checks)",
+      "text": "Process accounts payable (e.g., maintain vendor file, post to ledger, process invoices and checks)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts payable functions to record, control, and disburse payments to vendors.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:424",
+      "level": "CS",
+      "official_text": "Explain the nature of accounts receivable",
+      "display_text": "Explain the nature of accounts receivable",
+      "text": "Explain the nature of accounts receivable",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:682",
+      "level": "CS",
+      "official_text": "Account for sales (e.g., invoices, sales receipts, etc.)",
+      "display_text": "Account for sales (e.g., invoices, sales receipts, etc.)",
+      "text": "Account for sales (e.g., invoices, sales receipts, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:683",
+      "level": "SP",
+      "official_text": "Process accounts receivable (e.g., post to ledger, process payment, process uncollectible account, etc.)",
+      "display_text": "Process accounts receivable (e.g., post to ledger, process payment, process uncollectible account, etc.)",
+      "text": "Process accounts receivable (e.g., post to ledger, process payment, process uncollectible account, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:432",
+      "level": "CS",
+      "official_text": "Record inventory transactions",
+      "display_text": "Record inventory transactions",
+      "text": "Record inventory transactions",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain inventory records to track the location, quantity, and value of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:435",
+      "level": "CS",
+      "official_text": "Process inventory adjustments (e.g., shrinkage, obsolescence, returns, etc.)",
+      "display_text": "Process inventory adjustments (e.g., shrinkage, obsolescence, returns, etc.)",
+      "text": "Process inventory adjustments (e.g., shrinkage, obsolescence, returns, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain inventory records to track the location, quantity, and value of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:586",
+      "level": "CS",
+      "official_text": "Explain methods used to value inventory (e.g., FIFO, LIFO, average cost, etc.)",
+      "display_text": "Explain methods used to value inventory (e.g., FIFO, LIFO, average cost, etc.)",
+      "text": "Explain methods used to value inventory (e.g., FIFO, LIFO, average cost, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain inventory records to track the location, quantity, and value of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:436",
+      "level": "SP",
+      "official_text": "Determine the cost/value of inventory",
+      "display_text": "Determine the cost/value of inventory",
+      "text": "Determine the cost/value of inventory",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Maintain inventory records to track the location, quantity, and value of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:638",
+      "level": "CS",
+      "official_text": "Explain the nature of payroll expenses (e.g., Social Security tax, Medicare tax, FUTA, SUTA, workers' compensation, etc.)",
+      "display_text": "Explain the nature of payroll expenses (e.g., Social Security tax, Medicare tax, FUTA, SUTA, workers' compensation, etc.)",
+      "text": "Explain the nature of payroll expenses (e.g., Social Security tax, Medicare tax, FUTA, SUTA, workers' compensation, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:134",
+      "level": "CS",
+      "official_text": "Maintain employee earnings records (e.g., timecards, time sheets, etc.)",
+      "display_text": "Maintain employee earnings records (e.g., timecards, time sheets, etc.)",
+      "text": "Maintain employee earnings records (e.g., timecards, time sheets, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:438",
+      "level": "SP",
+      "official_text": "Calculate employee earnings",
+      "display_text": "Calculate employee earnings",
+      "text": "Calculate employee earnings",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:439",
+      "level": "SP",
+      "official_text": "Calculate employee deductions",
+      "display_text": "Calculate employee deductions",
+      "text": "Calculate employee deductions",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:442",
+      "level": "SP",
+      "official_text": "Calculate payroll taxes",
+      "display_text": "Calculate payroll taxes",
+      "text": "Calculate payroll taxes",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:686",
+      "level": "SP",
+      "official_text": "Account for payroll transactions (e.g., earnings, taxes, benefits, other deductions)",
+      "display_text": "Account for payroll transactions (e.g., earnings, taxes, benefits, other deductions)",
+      "text": "Account for payroll transactions (e.g., earnings, taxes, benefits, other deductions)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:687",
+      "level": "SP",
+      "official_text": "Process payroll payments and remittances (e.g., employees, benefits, taxes)",
+      "display_text": "Process payroll payments and remittances (e.g., employees, benefits, taxes)",
+      "text": "Process payroll payments and remittances (e.g., employees, benefits, taxes)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:443",
+      "level": "SP",
+      "official_text": "Prepare federal, state, and local payroll tax returns and reports",
+      "display_text": "Prepare federal, state, and local payroll tax returns and reports",
+      "text": "Prepare federal, state, and local payroll tax returns and reports",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Complete payroll procedures to calculate, record, and distribute payroll.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:642",
+      "level": "SP",
+      "official_text": "Discuss the nature of long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "display_text": "Discuss the nature of long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "text": "Discuss the nature of long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform specialized accounting procedures to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:690",
+      "level": "SP",
+      "official_text": "Describe the methods used to value long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "display_text": "Describe the methods used to value long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "text": "Describe the methods used to value long-term assets (e.g., tangible assets, intangible assets, natural resources, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform specialized accounting procedures to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:691",
+      "level": "SP",
+      "official_text": "Account for long-term assets (e.g., record acquisition, record depreciation/amortization, record disposal)",
+      "display_text": "Account for long-term assets (e.g., record acquisition, record depreciation/amortization, record disposal)",
+      "text": "Account for long-term assets (e.g., record acquisition, record depreciation/amortization, record disposal)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform specialized accounting procedures to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:692",
+      "level": "SP",
+      "official_text": "Account for long-term liabilities (e.g., bonds payable, notes payable, leases, etc.)",
+      "display_text": "Account for long-term liabilities (e.g., bonds payable, notes payable, leases, etc.)",
+      "text": "Account for long-term liabilities (e.g., bonds payable, notes payable, leases, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform specialized accounting procedures to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:693",
+      "level": "SP",
+      "official_text": "Account for provisions (e.g., restructurings, warranties, customer refunds, etc.)",
+      "display_text": "Account for provisions (e.g., restructurings, warranties, customer refunds, etc.)",
+      "text": "Account for provisions (e.g., restructurings, warranties, customer refunds, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform specialized accounting procedures to track cash flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 25
+      }
+    },
+    {
+      "code": "FI:484",
+      "level": "SP",
+      "official_text": "Explain record keeping procedures for tax accounting",
+      "display_text": "Explain record keeping procedures for tax accounting",
+      "text": "Explain record keeping procedures for tax accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform tax accounting functions to lessen clients' tax burdens.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:696",
+      "level": "SP",
+      "official_text": "Calculate taxes owed by clients (i.e., individual and business)",
+      "display_text": "Calculate taxes owed by clients (i.e., individual and business)",
+      "text": "Calculate taxes owed by clients (i.e., individual and business)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform tax accounting functions to lessen clients' tax burdens.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:697",
+      "level": "SP",
+      "official_text": "Account for taxes",
+      "display_text": "Account for taxes",
+      "text": "Account for taxes",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform tax accounting functions to lessen clients' tax burdens.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:698",
+      "level": "SP",
+      "official_text": "Prepare tax returns for clients (i.e., individuals and business)",
+      "display_text": "Prepare tax returns for clients (i.e., individuals and business)",
+      "text": "Prepare tax returns for clients (i.e., individuals and business)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform tax accounting functions to lessen clients' tax burdens.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:485",
+      "level": "SP",
+      "official_text": "Identify tax issues for clients",
+      "display_text": "Identify tax issues for clients",
+      "text": "Identify tax issues for clients",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform tax accounting functions to lessen clients' tax burdens.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:717",
+      "level": "SP",
+      "official_text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "display_text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:718",
+      "level": "SP",
+      "official_text": "Discuss the use of cost-volume-profit analysis",
+      "display_text": "Discuss the use of cost-volume-profit analysis",
+      "text": "Discuss the use of cost-volume-profit analysis",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:719",
+      "level": "SP",
+      "official_text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "display_text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:720",
+      "level": "SP",
+      "official_text": "Distinguish between variable costing and absorption costing",
+      "display_text": "Distinguish between variable costing and absorption costing",
+      "text": "Distinguish between variable costing and absorption costing",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:721",
+      "level": "SP",
+      "official_text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "display_text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:722",
+      "level": "SP",
+      "official_text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "display_text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:723",
+      "level": "SP",
+      "official_text": "Describe the nature of flexible budgets",
+      "display_text": "Describe the nature of flexible budgets",
+      "text": "Describe the nature of flexible budgets",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:724",
+      "level": "SP",
+      "official_text": "Explain the role of transfer pricing in managerial accounting",
+      "display_text": "Explain the role of transfer pricing in managerial accounting",
+      "text": "Explain the role of transfer pricing in managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:725",
+      "level": "SP",
+      "official_text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "display_text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:388",
+      "level": "SP",
+      "official_text": "Discuss the nature of annual reports",
+      "display_text": "Discuss the nature of annual reports",
+      "text": "Discuss the nature of annual reports",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Produce financial reports to communicate the results of business activity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:449",
+      "level": "SP",
+      "official_text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "display_text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Produce financial reports to communicate the results of business activity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:343",
+      "level": "SP",
+      "official_text": "Explain the purpose of internal accounting controls",
+      "display_text": "Explain the purpose of internal accounting controls",
+      "text": "Explain the purpose of internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:706",
+      "level": "SP",
+      "official_text": "Assess financial accounting fraud risk",
+      "display_text": "Assess financial accounting fraud risk",
+      "text": "Assess financial accounting fraud risk",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:479",
+      "level": "SP",
+      "official_text": "Determine the components of internal accounting control procedures for a business",
+      "display_text": "Determine the components of internal accounting control procedures for a business",
+      "text": "Determine the components of internal accounting control procedures for a business",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:480",
+      "level": "SP",
+      "official_text": "Maintain internal accounting controls",
+      "display_text": "Maintain internal accounting controls",
+      "text": "Maintain internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:344",
+      "level": "SP",
+      "official_text": "Explain the nature of audits and assurance engagements",
+      "display_text": "Explain the nature of audits and assurance engagements",
+      "text": "Explain the nature of audits and assurance engagements",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct an audit to verify the integrity of a business's financial reporting process, accounting functions, and internal controls.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:713",
+      "level": "SP",
+      "official_text": "Distinguish between internal and external audits",
+      "display_text": "Distinguish between internal and external audits",
+      "text": "Distinguish between internal and external audits",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct an audit to verify the integrity of a business's financial reporting process, accounting functions, and internal controls.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:714",
+      "level": "SP",
+      "official_text": "Describe auditing techniques/procedures",
+      "display_text": "Describe auditing techniques/procedures",
+      "text": "Describe auditing techniques/procedures",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct an audit to verify the integrity of a business's financial reporting process, accounting functions, and internal controls.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:482",
+      "level": "SP",
+      "official_text": "Conduct audit engagements",
+      "display_text": "Conduct audit engagements",
+      "text": "Conduct audit engagements",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct an audit to verify the integrity of a business's financial reporting process, accounting functions, and internal controls.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 26
+      }
+    },
+    {
+      "code": "FI:450",
+      "level": "SP",
+      "official_text": "Maintain job order cost sheets",
+      "display_text": "Maintain job order cost sheets",
+      "text": "Maintain job order cost sheets",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize managerial accounting methods to track, record, and analyze business costs.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "FI:451",
+      "level": "SP",
+      "official_text": "Calculate the cost of goods sold",
+      "display_text": "Calculate the cost of goods sold",
+      "text": "Calculate the cost of goods sold",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize managerial accounting methods to track, record, and analyze business costs.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "FI:726",
+      "level": "SP",
+      "official_text": "Apply cost accounting techniques (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "display_text": "Apply cost accounting techniques (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "text": "Apply cost accounting techniques (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize managerial accounting methods to track, record, and analyze business costs.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "FI:728",
+      "level": "SP",
+      "official_text": "Explain types of budgeting systems (e.g., top-down, bottom-up, incremental, etc.)",
+      "display_text": "Explain types of budgeting systems (e.g., top-down, bottom-up, incremental, etc.)",
+      "text": "Explain types of budgeting systems (e.g., top-down, bottom-up, incremental, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Prepare budget reports to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "FI:394",
+      "level": "SP",
+      "official_text": "Project future revenues and expenses",
+      "display_text": "Project future revenues and expenses",
+      "text": "Project future revenues and expenses",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Prepare budget reports to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "FI:460",
+      "level": "SP",
+      "official_text": "Process preliminary budget detail",
+      "display_text": "Process preliminary budget detail",
+      "text": "Process preliminary budget detail",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Prepare budget reports to make business decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:225",
+      "level": "CS",
+      "official_text": "Use accounting applications and systems",
+      "display_text": "Use accounting applications and systems",
+      "text": "Use accounting applications and systems",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to record and analyze accounting transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:226",
+      "level": "SP",
+      "official_text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "display_text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to record and analyze accounting transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:133",
+      "level": "SP",
+      "official_text": "Integrate technology into accounting",
+      "display_text": "Integrate technology into accounting",
+      "text": "Integrate technology into accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to record and analyze accounting transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:227",
+      "level": "SP",
+      "official_text": "Preserve automated accounting records",
+      "display_text": "Preserve automated accounting records",
+      "text": "Preserve automated accounting records",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to record and analyze accounting transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:228",
+      "level": "SP",
+      "official_text": "Select confidence levels",
+      "display_text": "Select confidence levels",
+      "text": "Select confidence levels",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:229",
+      "level": "SP",
+      "official_text": "Test data for definitive relationships",
+      "display_text": "Test data for definitive relationships",
+      "text": "Test data for definitive relationships",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:230",
+      "level": "SP",
+      "official_text": "Test data for definitive associations",
+      "display_text": "Test data for definitive associations",
+      "text": "Test data for definitive associations",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:231",
+      "level": "SP",
+      "official_text": "Test data for meaningful differences",
+      "display_text": "Test data for meaningful differences",
+      "text": "Test data for meaningful differences",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:232",
+      "level": "SP",
+      "official_text": "Use statistical data inferences to draw preliminary conclusions",
+      "display_text": "Use statistical data inferences to draw preliminary conclusions",
+      "text": "Use statistical data inferences to draw preliminary conclusions",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:233",
+      "level": "SP",
+      "official_text": "Identify types of data analysis modeling techniques",
+      "display_text": "Identify types of data analysis modeling techniques",
+      "text": "Identify types of data analysis modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:234",
+      "level": "SP",
+      "official_text": "Apply mathematical data analysis modeling techniques",
+      "display_text": "Apply mathematical data analysis modeling techniques",
+      "text": "Apply mathematical data analysis modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:235",
+      "level": "SP",
+      "official_text": "Use data analysis software",
+      "display_text": "Use data analysis software",
+      "text": "Use data analysis software",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply statistical data analysis methods to aid in business data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:236",
+      "level": "SP",
+      "official_text": "Explain the use of descriptive statistics in business decision making",
+      "display_text": "Explain the use of descriptive statistics in business decision making",
+      "text": "Explain the use of descriptive statistics in business decision making",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:237",
+      "level": "SP",
+      "official_text": "Interpret descriptive statistics for business decision making",
+      "display_text": "Interpret descriptive statistics for business decision making",
+      "text": "Interpret descriptive statistics for business decision making",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:238",
+      "level": "SP",
+      "official_text": "Interpret business data correlations",
+      "display_text": "Interpret business data correlations",
+      "text": "Interpret business data correlations",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "NF:239",
+      "level": "SP",
+      "official_text": "Draw conclusions on the research question/issue",
+      "display_text": "Draw conclusions on the research question/issue",
+      "text": "Draw conclusions on the research question/issue",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Interpret research data into information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 27
+      }
+    },
+    {
+      "code": "OP:328",
+      "level": "SP",
+      "official_text": "Discuss the connection between business analysis and business process management",
+      "display_text": "Discuss the connection between business analysis and business process management",
+      "text": "Discuss the connection between business analysis and business process management",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:329",
+      "level": "SP",
+      "official_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "display_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:457",
+      "level": "SP",
+      "official_text": "Document business processes",
+      "display_text": "Document business processes",
+      "text": "Document business processes",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:458",
+      "level": "SP",
+      "official_text": "Identify the business process problem/issue",
+      "display_text": "Identify the business process problem/issue",
+      "text": "Identify the business process problem/issue",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:459",
+      "level": "SP",
+      "official_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "display_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:460",
+      "level": "SP",
+      "official_text": "Identify data acquisition strategies",
+      "display_text": "Identify data acquisition strategies",
+      "text": "Identify data acquisition strategies",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:461",
+      "level": "SP",
+      "official_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "display_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "OP:462",
+      "level": "SP",
+      "official_text": "Recommend improvements to business processes",
+      "display_text": "Recommend improvements to business processes",
+      "text": "Recommend improvements to business processes",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "PD:337",
+      "level": "SP",
+      "official_text": "Identify career opportunities in accounting",
+      "display_text": "Identify career opportunities in accounting",
+      "text": "Identify career opportunities in accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand careers in accounting to determine which role and responsibilities best match personal abilities and traits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "PD:338",
+      "level": "SP",
+      "official_text": "Explain the roles and responsibilities of accounting professionals",
+      "display_text": "Explain the roles and responsibilities of accounting professionals",
+      "text": "Explain the roles and responsibilities of accounting professionals",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand careers in accounting to determine which role and responsibilities best match personal abilities and traits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "PD:168",
+      "level": "SP",
+      "official_text": "Discuss professional designations for accountants (e.g., CPA, CMA, CIA, CFE, etc.)",
+      "display_text": "Discuss professional designations for accountants (e.g., CPA, CMA, CIA, CFE, etc.)",
+      "text": "Discuss professional designations for accountants (e.g., CPA, CMA, CIA, CFE, etc.)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore career-advancement activities in the accounting industry to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "PD:339",
+      "level": "SP",
+      "official_text": "Describe the services of professional organizations in accounting",
+      "display_text": "Describe the services of professional organizations in accounting",
+      "text": "Describe the services of professional organizations in accounting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore career-advancement activities in the accounting industry to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 28
+      }
+    },
+    {
+      "code": "PD:158",
+      "level": "CS",
+      "official_text": "Explain the nature of accounting standards",
+      "display_text": "Explain the nature of accounting standards",
+      "text": "Explain the nature of accounting standards",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:295",
+      "level": "SP",
+      "official_text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "display_text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:296",
+      "level": "SP",
+      "official_text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "display_text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:340",
+      "level": "SP",
+      "official_text": "Discuss the levels and types of external financial reporting",
+      "display_text": "Discuss the levels and types of external financial reporting",
+      "text": "Discuss the levels and types of external financial reporting",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 29
+      }
+    },
+    {
+      "code": "PD:341",
+      "level": "SP",
+      "official_text": "Discuss the nature of auditing/attestation standards",
+      "display_text": "Discuss the nature of auditing/attestation standards",
+      "text": "Discuss the nature of auditing/attestation standards",
+      "tier": 3,
+      "curriculum_section": "Accounting Pathway",
+      "cluster": "Finance",
+      "pathway": "Accounting",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of auditing standards to attest to the integrity of a business's finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 29
+      }
+    }
+  ]
+}

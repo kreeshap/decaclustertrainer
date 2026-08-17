@@ -1,12 +1,14 @@
 from collections import defaultdict
 from datetime import date, timedelta
+import uuid
 
 from flask import Blueprint, jsonify, request
 
 from ..auth_utils import get_current_user, is_admin
 from ..content_ops import ARCHETYPES, catalog_id, launch_batch, sync_kpi_catalog, utc_now
+from ..content_quality import ContentQualityError, validate_exam_item
 from ..audit_ops import launch_audit_batch, select_audit_kpis
-from ..db import supabase_admin_request
+from ..db import supabase_admin_request, supabase_storage_upload
 from ..learn_helpers import _load_all_kpis, _supabase_svc, KPI_DIR, _save_questions_supabase
 from werkzeug.utils import secure_filename
 import json
@@ -15,8 +17,12 @@ from pathlib import Path
 
 from ..ai import call_json_with_fallback
 from ..question_ingestion import assess_item, build_style_profile, extract_pdf_questions, max_similarity, parse_reference_citation, question_hash
+from ..practice_corpus import (PARSER_VERSION, exam_metrics, extract_pdf_text, normalized_text,
+                               parse_exam, parse_roleplay, readiness, suggest_metadata, text_fingerprint)
 
 admin_bp = Blueprint("admin", __name__)
+
+CORPUS_BUCKET = "practice-corpus-private"
 
 
 def require_admin():
@@ -551,8 +557,357 @@ def _link_reference_sources(document: dict, items: list[dict]) -> None:
             }, params={"on_conflict": "source_id,import_item_id"}, prefer="resolution=ignore-duplicates,return=minimal")
 
 
+def _form_bool(name: str) -> bool:
+    return str(request.form.get(name) or "").lower() in {"1", "true", "yes", "on"}
+
+
+@admin_bp.post("/api/admin/practice-corpus")
+def admin_upload_practice_corpus():
+    user, err = require_admin()
+    if err:
+        return err
+    uploaded = request.files.get("file")
+    content_type = str(request.form.get("content_type") or "").strip().lower()
+    if content_type not in {"exam", "roleplay"}:
+        return jsonify({"error": "content_type must be exam or roleplay."}), 400
+    if not uploaded or not (uploaded.filename or "").lower().endswith(".pdf"):
+        return jsonify({"error": "Upload a PDF file."}), 400
+    file_bytes = uploaded.read()
+    if not file_bytes or len(file_bytes) > 25 * 1024 * 1024:
+        return jsonify({"error": "PDF must be between 1 byte and 25 MB."}), 400
+    digest = hashlib.sha256(file_bytes).hexdigest()
+    _, exact = _supabase_svc("/practice_corpus_documents", params={"file_sha256": f"eq.{digest}", "select": "*", "limit": "1"})
+    if exact:
+        return jsonify({"error": "This exact PDF already exists in the corpus.", "duplicate": exact[0]}), 409
+    try:
+        text, page_count = extract_pdf_text(file_bytes)
+        suggestions = suggest_metadata(text, uploaded.filename or "upload.pdf", content_type)
+        text_hash = hashlib.sha256(normalized_text(text).encode()).hexdigest()
+        fingerprint = text_fingerprint(text)
+        _, similar = _supabase_svc("/practice_corpus_documents", params={"normalized_text_hash": f"eq.{text_hash}", "select": "id,title,original_filename", "limit": "1"})
+        parsed = parse_exam(file_bytes) if content_type == "exam" else (parse_roleplay(text, suggestions), {"page_count": page_count})
+    except Exception as error:
+        return jsonify({"error": "PDF could not be parsed.", "detail": str(error)}), 422
+    document_id = str(uuid.uuid4())
+    safe_name = secure_filename(uploaded.filename or f"{content_type}.pdf")
+    storage_path = f"{content_type}/{document_id}/{safe_name}"
+    storage_status, storage_result = supabase_storage_upload(CORPUS_BUCKET, storage_path, file_bytes)
+    if storage_status not in (200, 201):
+        return jsonify({"error": "The private original could not be stored.", "detail": storage_result}), 502
+    event_codes = [value.strip().upper() for value in request.form.getlist("event_codes") if value.strip()] or suggestions.get("event_codes", [])
+    rights = str(request.form.get("rights_status") or "unknown")
+    payload = {
+        "id": document_id, "content_type": content_type,
+        "title": str(request.form.get("title") or suggestions["title"])[:300],
+        "competitive_year": request.form.get("competitive_year") or suggestions.get("competitive_year"),
+        "cluster": request.form.get("cluster") or "", "event_codes": event_codes,
+        "event_type": request.form.get("event_type") or None,
+        "competition_level": request.form.get("competition_level") or suggestions.get("competition_level") or "practice_sample",
+        "instructional_area": request.form.get("instructional_area") or "",
+        "source_name": request.form.get("source_name") or "",
+        "source_url": request.form.get("source_url") or None,
+        "source_organization": request.form.get("source_organization") or "",
+        "rights_status": rights, "official_deca": _form_bool("official_deca") or suggestions.get("official_deca", False),
+        "notes": request.form.get("notes") or "", "original_filename": safe_name,
+        "storage_path": storage_path, "file_sha256": digest, "normalized_text_hash": text_hash,
+        "similarity_fingerprint": fingerprint, "extracted_text": text,
+        "metadata_suggestions": suggestions, "parser_version": PARSER_VERSION,
+        "field_confidence": suggestions.get("field_confidence") or {},
+        "review_flags": suggestions.get("review_flags") or [],
+        "review_priority": "high" if suggestions.get("review_flags") else "normal",
+        "processing_state": "needs_review", "duplicate_of": similar[0]["id"] if similar else None,
+        "created_by": user["id"], "parsed_at": utc_now(),
+    }
+    status, saved = _supabase_svc("/practice_corpus_documents", method="POST", payload=payload, prefer="return=representation")
+    if status not in (200, 201) or not saved:
+        return jsonify({"error": "Parsed corpus metadata could not be saved.", "detail": saved}), 502
+    if content_type == "exam":
+        questions, stats = parsed
+        rows = [{**row, "document_id": document_id} for row in questions]
+        if rows:
+            item_status, item_result = _supabase_svc("/reference_exam_questions", method="POST", payload=rows, prefer="return=representation")
+            if item_status not in (200, 201):
+                return jsonify({"error": "Exam metadata saved, but questions could not be staged.", "document": saved[0], "detail": item_result}), 502
+        failure_rows = [{"document_id": document_id, "item_type": "exam_question", "item_id": item["id"], "failure_code": code,
+                         "field_name": "parser", "detail": "Deterministic parser review flag."}
+                        for item in (item_result or []) for code in (item.get("review_flags") or [])]
+        result = {"document": saved[0], "question_count": len(rows), "analysis": stats}
+    else:
+        roleplay, stats = parsed
+        roleplay.update({"document_id": document_id, "event_type": payload["event_type"]})
+        roleplay_status, roleplay_result = _supabase_svc("/reference_roleplays", method="POST", payload=roleplay, prefer="return=representation")
+        if roleplay_status not in (200, 201):
+            return jsonify({"error": "Roleplay metadata saved, but structured sections could not be staged.", "document": saved[0], "detail": roleplay_result}), 502
+        failure_rows = [{"document_id": document_id, "item_type": "roleplay", "item_id": roleplay_result[0]["id"], "failure_code": code,
+                         "field_name": "parser", "detail": "Deterministic parser review flag."}
+                        for code in (roleplay_result[0].get("review_flags") or [])]
+        result = {"document": saved[0], "roleplay": roleplay_result[0], "analysis": stats}
+    failure_rows.extend({"document_id": document_id, "item_type": "document", "failure_code": code,
+                         "field_name": "metadata", "detail": "Metadata requires reviewer confirmation."}
+                        for code in (suggestions.get("review_flags") or []))
+    if failure_rows:
+        _supabase_svc("/corpus_parser_failures", method="POST", payload=failure_rows, prefer="return=minimal")
+    result["likely_duplicate"] = similar[0] if similar else None
+    return jsonify(result), 201
+
+
+@admin_bp.get("/api/admin/practice-corpus")
+def admin_list_practice_corpus():
+    _, err = require_admin()
+    if err:
+        return err
+    params = {"select": "*", "order": "uploaded_at.desc", "limit": "500"}
+    if request.args.get("content_type"):
+        params["content_type"] = f"eq.{request.args['content_type']}"
+    _, documents = _supabase_svc("/practice_corpus_documents", params=params)
+    _, roleplays = _supabase_svc("/reference_roleplays", params={"select": "*", "limit": "1000"})
+    roleplay_by_document = {row["document_id"]: row for row in roleplays or []}
+    result = [{**doc, "structured_roleplay": roleplay_by_document.get(doc["id"])} for doc in documents or []]
+    return jsonify({"documents": result})
+
+
+@admin_bp.patch("/api/admin/practice-corpus/<document_id>/verify")
+def admin_verify_practice_corpus(document_id):
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    _, rows = _supabase_svc("/practice_corpus_documents", params={"id": f"eq.{document_id}", "select": "*", "limit": "1"})
+    if not rows:
+        return jsonify({"error": "Corpus document not found."}), 404
+    document = rows[0]
+    rights = str(body.get("rights_status") or document["rights_status"])
+    benchmark = body.get("benchmark_eligible") is True
+    publishable = body.get("student_publishable") is True
+    if benchmark and rights in {"unknown", "do_not_use"}:
+        return jsonify({"error": "Resolve rights before enabling benchmark use."}), 400
+    if publishable and rights not in {"owned", "licensed_for_student_use", "public_domain"}:
+        return jsonify({"error": "Student publication requires owned, licensed, or public-domain rights."}), 400
+    metadata = body.get("confirmed_metadata")
+    if not isinstance(metadata, dict):
+        return jsonify({"error": "Reviewer-confirmed metadata is required."}), 400
+    payload = {"title": str(metadata.get("title") or document["title"])[:300],
+               "competitive_year": metadata.get("competitive_year") or document.get("competitive_year"),
+               "cluster": metadata.get("cluster") or document.get("cluster") or "",
+               "event_codes": metadata.get("event_codes") or document.get("event_codes") or [],
+               "competition_level": metadata.get("competition_level") or document["competition_level"],
+               "instructional_area": metadata.get("instructional_area") or document.get("instructional_area") or "",
+               "source_name": metadata.get("source_name") or document.get("source_name") or "",
+               "source_url": metadata.get("source_url") or document.get("source_url"),
+               "source_organization": metadata.get("source_organization") or document.get("source_organization") or "",
+               "official_deca": metadata.get("official_deca") is True,
+               "rights_status": rights, "confirmed_metadata": metadata,
+               "processing_state": "verified_reference", "benchmark_eligible": benchmark,
+               "student_publishable": publishable, "verified_at": utc_now(), "verified_by": user["id"], "updated_at": utc_now()}
+    status, result = _supabase_svc("/practice_corpus_documents", method="PATCH", payload=payload, params={"id": f"eq.{document_id}"}, prefer="return=representation")
+    if status not in (200, 204) or not result:
+        return jsonify({"error": "Verification could not be saved.", "detail": result}), 502
+    if document["content_type"] == "roleplay":
+        structured = body.get("structured_roleplay")
+        allowed = {"event_code", "event_type", "instructional_area", "performance_indicators", "participant_role", "judge_role",
+                   "prep_time_minutes", "presentation_time_minutes", "participant_instructions", "situation", "judge_instructions",
+                   "official_tasks", "judge_questions", "evaluation_criteria", "problem_archetype", "participant_authority", "expected_action"}
+        child_payload = {key: value for key, value in (structured or {}).items() if key in allowed}
+        child_payload.update({"human_verified": True, "gold_reference": body.get("gold_reference") is True,
+                              "verified_at": utc_now(), "verified_by": user["id"]})
+        _supabase_svc("/reference_roleplays", method="PATCH", payload=child_payload, params={"document_id": f"eq.{document_id}"}, prefer="return=minimal")
+    return jsonify({"document": result[0]})
+
+
+@admin_bp.get("/api/admin/practice-corpus/questions/review-next")
+def admin_next_reference_exam_question():
+    _, err = require_admin()
+    if err:
+        return err
+    _, rows = _supabase_svc("/reference_exam_questions", params={"human_verified": "eq.false", "select": "*", "order": "created_at.asc,question_number.asc", "limit": "1"})
+    return jsonify({"question": rows[0] if rows else None})
+
+
+@admin_bp.patch("/api/admin/practice-corpus/questions/<question_id>")
+def admin_verify_reference_exam_question(question_id):
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    answer = body.get("official_answer")
+    if answer is not None:
+        try:
+            answer = int(answer)
+        except (TypeError, ValueError):
+            return jsonify({"error": "official_answer must be 0-3 or null."}), 400
+        if answer not in range(4):
+            return jsonify({"error": "official_answer must be 0-3 or null."}), 400
+    pi_code = str(body.get("pi_code") or "").strip().upper() or None
+    payload = {"official_answer": answer, "pi_code": pi_code,
+               "pi_source": "human" if pi_code else "unknown",
+               "instructional_area": str(body.get("instructional_area") or "").strip(),
+               "cognitive_demand": str(body.get("cognitive_demand") or "").strip() or None,
+               "gold_reference": body.get("gold_reference") is True,
+               "human_verified": True, "verified_at": utc_now(), "verified_by": user["id"]}
+    status, rows = _supabase_svc("/reference_exam_questions", method="PATCH", payload=payload,
+                                 params={"id": f"eq.{question_id}"}, prefer="return=representation")
+    if status not in (200, 204) or not rows:
+        return jsonify({"error": "Question verification could not be saved."}), 502
+    return jsonify({"question": rows[0]})
+
+
+@admin_bp.post("/api/admin/practice-corpus/<document_id>/pilot-audit")
+def admin_audit_pilot_document(document_id):
+    user, err = require_admin()
+    if err:
+        return err
+    body = request.get_json(silent=True) or {}
+    _, rows = _supabase_svc("/practice_corpus_documents", params={"id": f"eq.{document_id}", "select": "*", "limit": "1"})
+    if not rows:
+        return jsonify({"error": "Corpus document not found."}), 404
+    allowed_codes = {"exam_choice_split", "exam_answer_key_mismatch", "exam_multiline_stem", "header_contamination",
+                     "roleplay_pi_detection", "roleplay_section_boundary", "roleplay_judge_question_split", "metadata_year_unknown",
+                     "metadata_event_unknown", "metadata_competition_level_unknown", "table_or_special_format", "page_break_split", "other"}
+    failures = body.get("failures") or []
+    if not isinstance(failures, list) or any(not isinstance(item, dict) or item.get("failure_code") not in allowed_codes for item in failures):
+        return jsonify({"error": "Pilot failures contain an unsupported failure code."}), 400
+    failure_rows = [{"document_id": document_id, "item_type": item.get("item_type") or "document",
+                     "item_id": item.get("item_id") or None, "failure_code": item["failure_code"],
+                     "field_name": str(item.get("field_name") or "")[:100], "detail": str(item.get("detail") or "")[:1000],
+                     "detected_by": "reviewer"} for item in failures]
+    if failure_rows:
+        _supabase_svc("/corpus_parser_failures", method="POST", payload=failure_rows, prefer="return=minimal")
+    metadata = dict(rows[0].get("confirmed_metadata") or {})
+    metadata["pilot_audit"] = {"expected_item_count": body.get("expected_item_count"),
+                               "silent_data_corruption": body.get("silent_data_corruption") is True,
+                               "checklist": body.get("checklist") or {}, "audited_at": utc_now()}
+    _supabase_svc("/practice_corpus_documents", method="PATCH",
+                  payload={"confirmed_metadata": metadata, "pilot_audited_at": utc_now(), "pilot_audited_by": user["id"],
+                           "review_priority": "critical" if body.get("silent_data_corruption") else ("high" if failures else "low")},
+                  params={"id": f"eq.{document_id}"}, prefer="return=minimal")
+    return jsonify({"ok": True, "failures_recorded": len(failure_rows)})
+
+
+@admin_bp.get("/api/admin/practice-corpus/dashboard")
+def admin_practice_corpus_dashboard():
+    _, err = require_admin()
+    if err:
+        return err
+    _, documents = _supabase_svc("/practice_corpus_documents", params={"select": "*", "limit": "10000"})
+    _, questions = _supabase_svc("/reference_exam_questions", params={"select": "document_id,human_verified,pi_code,official_answer,metrics,gold_reference,review_flags", "limit": "50000"})
+    _, roleplays = _supabase_svc("/reference_roleplays", params={"select": "document_id,human_verified,event_code,instructional_area,performance_indicators,metrics,gold_reference,problem_archetype,participant_authority,expected_action,review_flags", "limit": "10000"})
+    _, failures = _supabase_svc("/corpus_parser_failures", params={"resolved": "eq.false", "select": "failure_code,document_id,detected_by", "limit": "50000"})
+    _, knowledge = _supabase_svc("/kpi_knowledge_items", params={"review_status": "eq.approved", "authoritative": "eq.true", "select": "kpi_code", "limit": "10000"})
+    documents, questions, roleplays = documents or [], questions or [], roleplays or []
+    verified_docs = [doc for doc in documents if doc.get("processing_state") == "verified_reference"]
+    audited_docs = [doc for doc in documents if doc.get("pilot_audited_at")]
+    def grouped(field, content_type):
+        counts = defaultdict(lambda: {"documents": 0, "items": 0})
+        typed = [doc for doc in verified_docs if doc["content_type"] == content_type and doc.get("benchmark_eligible")]
+        for doc in typed:
+            keys = doc.get(field) if field == "event_codes" else [doc.get(field) or "Unspecified"]
+            for key in keys or ["Unspecified"]:
+                counts[key]["documents"] += 1
+                child = questions if content_type == "exam" else roleplays
+                counts[key]["items"] += sum(1 for item in child if item.get("document_id") == doc["id"] and item.get("human_verified"))
+        return dict(sorted(counts.items()))
+    events = sorted({event for doc in documents for event in (doc.get("event_codes") or [])})
+    readiness_rows = []
+    all_kpis, curriculum_events = _load_all_kpis()
+    event_ids_by_code = {str(item.get("event_code") or "").upper(): item.get("id") for item in curriculum_events}
+    for event in events:
+        readiness_rows.append(readiness("exam", documents, questions, event_code=event))
+        readiness_rows.append(readiness("roleplay", documents, roleplays, event_code=event,
+                                         cluster=next((d.get("cluster") or "" for d in documents if event in (d.get("event_codes") or [])), "")))
+    snapshots = []
+    for row in readiness_rows:
+        eligible_event_id = event_ids_by_code.get(row["event_code"])
+        eligible = {item["code"] for item in all_kpis if item.get("event") == eligible_event_id}
+        row["pi_coverage"] = round(len(set(row.pop("pi_codes", [])) & eligible) / len(eligible), 5) if eligible else None
+        snapshots.append({"content_type": row["content_type"], "event_code": row["event_code"], "cluster": row["cluster"],
+                          "documents": row["documents"], "items": row["items"], "years_represented": row["years_represented"],
+                          "competition_levels": row["competition_levels"], "pi_coverage": row["pi_coverage"],
+                          "readiness_status": row["status"], "readiness_reasons": row["reasons"]})
+    if snapshots:
+        _supabase_svc("/corpus_readiness_snapshots", method="POST", payload=snapshots, prefer="return=minimal")
+    verified_question_metrics = [q.get("metrics") or {} for q in questions if q.get("human_verified")]
+    exam_profile = {
+        "sample_size": len(verified_question_metrics),
+        "scenario_rate": round(sum(bool(m.get("scenario")) for m in verified_question_metrics) / max(1, len(verified_question_metrics)), 4),
+        "calculation_rate": round(sum(bool(m.get("calculation")) for m in verified_question_metrics) / max(1, len(verified_question_metrics)), 4),
+        "negative_stem_rate": round(sum(bool(m.get("negative_stem")) for m in verified_question_metrics) / max(1, len(verified_question_metrics)), 4),
+        "mean_stem_words": round(sum(int(m.get("stem_words") or 0) for m in verified_question_metrics) / max(1, len(verified_question_metrics)), 2),
+    }
+    verified_roleplay_metrics = [r.get("metrics") or {} for r in roleplays if r.get("human_verified")]
+    roleplay_profile = {"sample_size": len(verified_roleplay_metrics),
+                        "mean_scenario_words": round(sum(int(m.get("scenario_words") or 0) for m in verified_roleplay_metrics) / max(1, len(verified_roleplay_metrics)), 2),
+                        "mean_assigned_pis": round(sum(int(m.get("assigned_pi_count") or 0) for m in verified_roleplay_metrics) / max(1, len(verified_roleplay_metrics)), 2),
+                        "mean_explicit_tasks": round(sum(int(m.get("explicit_task_count") or 0) for m in verified_roleplay_metrics) / max(1, len(verified_roleplay_metrics)), 2),
+                        "mean_judge_questions": round(sum(int(m.get("judge_question_count") or 0) for m in verified_roleplay_metrics) / max(1, len(verified_roleplay_metrics)), 2)}
+    for content_type, profile, checkpoints in (("exam", exam_profile, {50, 100, 200, 300, 500}),
+                                                ("roleplay", roleplay_profile, {5, 10, 15, 25, 30})):
+        sample_size = int(profile.get("sample_size") or 0)
+        if sample_size not in checkpoints:
+            continue
+        _, existing_profiles = _supabase_svc("/corpus_style_profile_snapshots", params={
+            "content_type": f"eq.{content_type}", "event_code": "eq.", "verified_item_count": f"eq.{sample_size}", "select": "id", "limit": "1"})
+        if existing_profiles:
+            continue
+        _, previous_profiles = _supabase_svc("/corpus_style_profile_snapshots", params={
+            "content_type": f"eq.{content_type}", "event_code": "eq.", "select": "id,profile,verified_item_count",
+            "order": "verified_item_count.desc", "limit": "1"})
+        previous = previous_profiles[0] if previous_profiles else None
+        numeric_keys = [key for key, value in profile.items() if key != "sample_size" and isinstance(value, (int, float))]
+        delta = (sum(abs(float(profile[key]) - float((previous.get("profile") or {}).get(key, 0))) for key in numeric_keys) / max(1, len(numeric_keys))) if previous else None
+        _supabase_svc("/corpus_style_profile_snapshots", method="POST", payload={
+            "content_type": content_type, "event_code": "", "verified_item_count": sample_size, "checkpoint": sample_size,
+            "profile": profile, "previous_snapshot_id": previous.get("id") if previous else None,
+            "stability_delta": round(delta, 6) if delta is not None else None}, prefer="return=minimal")
+    benchmark_docs = [doc for doc in verified_docs if doc.get("benchmark_eligible")]
+    duplicate_adjusted = [doc for doc in benchmark_docs if not doc.get("duplicate_of")]
+    all_verified_items = [q for q in questions if q.get("human_verified")] + [r for r in roleplays if r.get("human_verified")]
+    quality = {
+        "verified_documents_pct": round(100 * len(verified_docs) / max(1, len(documents)), 1),
+        "verified_items_pct": round(100 * len(all_verified_items) / max(1, len(questions) + len(roleplays)), 1),
+        "official_source_pct": round(100 * sum(bool(doc.get("official_deca")) for doc in verified_docs) / max(1, len(verified_docs)), 1),
+        "duplicate_adjusted_documents": len(duplicate_adjusted),
+        "years_represented": len({doc.get("competitive_year") for doc in benchmark_docs if doc.get("competitive_year")}),
+        "events_represented": len({event for doc in benchmark_docs for event in (doc.get("event_codes") or [])}),
+        "instructional_areas_represented": len({r.get("instructional_area") for r in roleplays if r.get("human_verified") and r.get("instructional_area")}),
+        "answer_key_coverage_pct": round(100 * sum(q.get("official_answer") is not None for q in questions) / max(1, len(questions)), 1),
+        "explicit_pi_label_pct": round(100 * sum(bool(q.get("pi_code")) for q in questions) / max(1, len(questions)), 1),
+        "benchmark_eligible_pct": round(100 * len(benchmark_docs) / max(1, len(documents)), 1),
+        "student_publishable_pct": round(100 * sum(bool(doc.get("student_publishable")) for doc in documents) / max(1, len(documents)), 1),
+        "gold_exam_items": sum(bool(q.get("gold_reference")) for q in questions),
+        "gold_roleplays": sum(bool(r.get("gold_reference")) for r in roleplays),
+    }
+    failure_counts = defaultdict(int)
+    for failure in failures or []:
+        failure_counts[failure["failure_code"]] += 1
+    audited_expected = sum(int(((doc.get("confirmed_metadata") or {}).get("pilot_audit") or {}).get("expected_item_count") or 0) for doc in audited_docs)
+    audited_actual = sum(1 for item in questions + roleplays if item.get("document_id") in {doc["id"] for doc in audited_docs})
+    silent_corruption = sum(bool(((doc.get("confirmed_metadata") or {}).get("pilot_audit") or {}).get("silent_data_corruption")) for doc in audited_docs)
+    pilot_report = {"audited_documents": len(audited_docs), "failure_counts": dict(sorted(failure_counts.items())),
+                    "document_detection_pct": round(100 * len(audited_docs) / max(1, len(documents)), 2),
+                    "item_count_accuracy_pct": round(100 * min(audited_actual, audited_expected) / max(1, audited_expected), 2) if audited_expected else None,
+                    "silent_data_corruption": silent_corruption,
+                    "acceptance": {"document_detection_target": 100, "question_count_target": 99, "choice_parsing_target": 99,
+                                   "answer_key_mapping_target": 100, "explicit_pi_extraction_target": 100,
+                                   "roleplay_section_target": 98, "silent_corruption_target": 0}}
+    approved_codes = {row.get("kpi_code") for row in knowledge or []}
+    for row in readiness_rows:
+        row["gold_references"] = quality["gold_exam_items"] if row["content_type"] == "exam" else quality["gold_roleplays"]
+        row["approved_knowledge_claims"] = len(approved_codes)
+        row["generation_locked"] = True
+    return jsonify({"summary": {"documents": len(documents), "verified_documents": len(verified_docs),
+                                "verified_questions": sum(bool(q.get("human_verified")) for q in questions),
+                                "verified_roleplays": sum(bool(r.get("human_verified")) for r in roleplays)},
+                    "exams_by_cluster": grouped("cluster", "exam"), "roleplays_by_event": grouped("event_codes", "roleplay"),
+                    "readiness": readiness_rows,
+                    "exam_style_profile": exam_profile, "roleplay_style_profile": roleplay_profile,
+                    "quality": quality, "pilot_report": pilot_report,
+                    "coverage_dimensions": {"years": grouped("competitive_year", "exam"), "competition_levels": grouped("competition_level", "exam"), "instructional_areas": grouped("instructional_area", "roleplay")}})
+
+
 @admin_bp.post("/api/admin/question-imports")
 def admin_upload_question_pdf():
+    return jsonify({"error": "Legacy exam upload is closed. Use the unified Practice Content upload."}), 410
+    # Existing staged imports remain reviewable through the legacy endpoints.
     user, err = require_admin()
     if err:
         return err
@@ -626,6 +981,13 @@ def admin_upload_question_pdf():
                 "importance": "important", "content_hash": hashlib.sha256(item["explanation"].lower().encode("utf-8")).hexdigest(),
                 "source_document_id": document["id"], "source_import_item_id": item["id"],
                 "source_references": item.get("source_references") or [],
+                "deca_evidence": [{
+                    "source_type": "official_deca_sample_exam",
+                    "purpose": "alignment_or_style",
+                    "document_id": document["id"],
+                    "year": doc_payload.get("exam_year"),
+                    "references": item.get("source_references") or [],
+                }],
             })
     if knowledge_rows:
         _supabase_svc("/kpi_knowledge_items", method="POST", payload=knowledge_rows,
@@ -650,14 +1012,25 @@ def admin_question_imports():
     if err:
         return err
     _, docs = _supabase_svc("/question_source_documents", params={"select": "*", "order": "created_at.desc", "limit": "10"})
-    _, pending = _supabase_svc("/question_import_items", params={"review_status": "eq.pending", "select": "id", "limit": "10000"})
-    _, clustered = _supabase_svc("/question_import_items", params={"select": "kpi_cluster,deca_cluster", "limit": "10000"})
+    _, pending = _supabase_svc("/question_import_items", params={"review_status": "in.(pending,ready,approved)", "select": "id", "limit": "10000"})
+    _, clustered = _supabase_svc("/question_import_items", params={"select": "kpi_cluster,deca_cluster,kpi_code,review_status,review_reasons", "limit": "10000"})
     cluster_breakdown = defaultdict(int)
+    status_breakdown = defaultdict(int)
     for item in clustered or []:
         cluster_breakdown[item.get("kpi_cluster") or "Unassigned"] += 1
+        status_breakdown["all"] += 1
+        if item.get("review_status") in {"imported", "approved"}:
+            status_breakdown["verified"] += 1
+        if item.get("review_status") in {"pending", "ready", "approved"}:
+            status_breakdown["needs_review"] += 1
+        if not item.get("kpi_code"):
+            status_breakdown["unassigned"] += 1
+        if any(reason in {"exact_duplicate", "near_duplicate"} for reason in (item.get("review_reasons") or [])):
+            status_breakdown["possible_duplicates"] += 1
     _, knowledge = _supabase_svc("/kpi_knowledge_items", params={"review_status": "eq.pending", "select": "id", "limit": "10000"})
     return jsonify({"documents": docs or [], "pending": len(pending or []),
-                    "cluster_breakdown": dict(sorted(cluster_breakdown.items())), "knowledge_pending": len(knowledge or [])})
+                    "cluster_breakdown": dict(sorted(cluster_breakdown.items())), "status_breakdown": status_breakdown,
+                    "knowledge_pending": len(knowledge or [])})
 
 
 @admin_bp.get("/api/admin/question-imports/review-next")
@@ -666,8 +1039,20 @@ def admin_next_question_import():
     if err:
         return err
     _, rows = _supabase_svc("/question_import_items", params={
-        "review_status": "eq.pending", "select": "*", "order": "created_at.asc,question_number.asc", "limit": "1",
+        "review_status": "in.(pending,ready,approved)", "select": "*", "order": "created_at.asc,question_number.asc", "limit": "10000",
     })
+    cluster = request.args.get("cluster", "").strip()
+    queue_filter = request.args.get("filter", "needs_review").strip()
+    candidates = []
+    for item in rows or []:
+        if cluster and (item.get("kpi_cluster") or "Unassigned") != cluster:
+            continue
+        if queue_filter == "unassigned" and item.get("kpi_code"):
+            continue
+        if queue_filter == "possible_duplicates" and not any(reason in {"exact_duplicate", "near_duplicate"} for reason in (item.get("review_reasons") or [])):
+            continue
+        candidates.append(item)
+    rows = candidates[:1]
     if not rows:
         return jsonify({"item": None})
     item = rows[0]
@@ -746,6 +1131,13 @@ def admin_generate_original_questions():
     _, err = require_admin()
     if err:
         return err
+    return jsonify({
+        "error": "Original question generation is disabled during Practice Corpus v1.",
+        "gate": "corpus_readiness",
+        "required": "5 verified exams or 400 verified questions for the target event",
+    }), 423
+    # Retained below for the later generator phase; the readiness gate above is
+    # intentionally fail-closed until corpus analysis is approved for use.
     body = request.get_json(silent=True) or {}
     career_cluster = str(body.get("career_cluster") or "").strip()
     kpi_code = str(body.get("kpi_code") or "").strip().upper()
@@ -763,25 +1155,40 @@ def admin_generate_original_questions():
     profile = build_style_profile(corpus)
     if profile.get("corpus_size", 0) < 10:
         return jsonify({"error": "Import at least 10 reference questions for this career cluster before generating from its style profile."}), 400
+    kpi_ids = [catalog_id(item) for item in matching_kpis]
+    _, claims = _supabase_svc("/kpi_knowledge_items", params={
+        "kpi_id": f"in.({','.join(kpi_ids)})", "review_status": "eq.approved", "authoritative": "eq.true",
+        "select": "id,knowledge_type,content,source_references", "limit": "100",
+    })
+    if not claims:
+        return jsonify({"error": "Approve authoritative KPI knowledge before generating exam items."}), 409
+    claim_context = [{"id": row["id"], "type": row["knowledge_type"], "content": row["content"]} for row in claims]
     prompt = f"""Create {count} completely original DECA-style multiple-choice questions for KPI {kpi_code}: {kpi['text']}.
 Use only this aggregate style profile: {json.dumps(profile)}
+Use only these verified factual claims: {json.dumps(claim_context)}
 Do not copy or paraphrase any source question. Use new scenarios, names, numbers, phrasing, and answer sets.
-Each item must test application or analysis, have exactly four plausible choices, one defensible answer, concise rationale, and no trick wording.
-Return JSON only: {{"questions":[{{"question_text":"...","choices":["...","...","...","..."],"correct_index":0,"explanation":"..."}}]}}"""
+Each item must have exactly four plausible choices, one defensible answer, a rationale for every choice, and no trick wording.
+Return JSON only: {{"questions":[{{"stem":"...","choices":["...","...","...","..."],"correct_index":0,"choice_rationales":["...","...","...","..."],"cognitive_demand":"application","instructional_area":"{kpi['cluster']}","source_claim_ids":["verified claim UUID"]}}]}}"""
     generated, error = call_json_with_fallback(prompt, priority="admin_preview", temperature=0.5, max_tokens=5000)
     if error or not isinstance(generated, dict):
         return jsonify({"error": error or "Generator returned invalid data."}), 502
     accepted, rejected = [], []
     for candidate in (generated.get("questions") or [])[:count]:
-        choices = candidate.get("choices") if isinstance(candidate, dict) else None
-        correct = candidate.get("correct_index") if isinstance(candidate, dict) else None
-        stem = str(candidate.get("question_text") or "").strip() if isinstance(candidate, dict) else ""
-        if not stem or not isinstance(choices, list) or len(choices) != 4 or correct not in range(4):
-            rejected.append({"reason": "invalid_structure"}); continue
+        try:
+            candidate = validate_exam_item(
+                candidate,
+                kpi_code=kpi_code,
+                approved_claim_ids={str(row["id"]) for row in claims},
+            )
+        except ContentQualityError as error:
+            rejected.append({"reason": str(error)}); continue
+        choices, correct, stem = candidate["choices"], candidate["correct_index"], candidate["stem"]
+        if candidate["ambiguity_flags"]:
+            rejected.append({"question_text": stem, "reason": "ambiguity_check_failed", "flags": candidate["ambiguity_flags"]}); continue
         similarity = max_similarity(stem, corpus or [])
         if similarity >= 0.82:
             rejected.append({"question_text": stem, "reason": "too_similar_to_reference", "similarity": round(similarity, 3)}); continue
-        review_prompt = f"""Review this DECA-style question for one correct answer, KPI alignment, plausible distractors, sufficient context, factual accuracy, and no giveaway. KPI: {kpi['text']}. Question: {json.dumps(candidate)}. Return JSON only: {{"verdict":"pass|reject","reason":"concise reason"}}"""
+        review_prompt = f"""Skeptically review this DECA-style question for exactly one defensible answer, KPI alignment, plausible distractors, sufficient context, and support by its verified source claims. KPI: {kpi['text']}. Question: {json.dumps(candidate)}. Return JSON only: {{"verdict":"pass|reject","reason":"concise reason"}}"""
         review, review_error = call_json_with_fallback(review_prompt, priority="admin_preview", temperature=0.1, max_tokens=400)
         if review_error or not isinstance(review, dict) or review.get("verdict") != "pass":
             rejected.append({"question_text": stem, "reason": (review or {}).get("reason", review_error or "review_failed")}); continue
@@ -791,14 +1198,21 @@ Return JSON only: {{"questions":[{{"question_text":"...","choices":["...","...",
             _, slots = _supabase_svc("/kpi_questions", params={"event_id": f"eq.{event_id}", "kpi_code": f"eq.{kpi_code}", "question_type": "eq.application", "select": "question_slot", "order": "question_slot.desc", "limit": "1"})
             slot = int(slots[0]["question_slot"]) + 1 if slots else 0
             payload = {"kpi_code": kpi_code, "kpi_text": event_kpi["text"], "kpi_cluster": event_kpi["cluster"], "deca_cluster": event_kpi["deca_cluster"], "event_id": event_id,
-                       "question_text": stem, "choices": choices, "correct_index": correct, "explanation": str(candidate.get("explanation") or ""),
+                       "question_text": stem, "choices": choices, "correct_index": correct, "explanation": candidate["choice_rationales"][correct],
                        "question_type": "application", "question_slot": slot, "source_type": "ai_generated", "usage_rights": "generated_original",
-                       "normalized_hash": question_hash(stem), "review_status": "approved"}
+                       "normalized_hash": question_hash(stem), "review_status": "pending"}
             status, saved = _supabase_svc("/kpi_questions", method="POST", payload=payload, prefer="return=representation")
             if status not in (200, 201) or not saved:
                 saved_for_events = []
                 break
             saved_for_events.extend(saved)
+            for saved_question in saved:
+                _supabase_svc("/exam_item_quality_reviews", method="POST", payload={
+                    "question_id": saved_question["id"], "kpi_code": kpi_code,
+                    "cognitive_demand": candidate["cognitive_demand"], "choice_rationales": candidate["choice_rationales"],
+                    "source_claim_ids": candidate["source_claim_ids"], "ambiguity_flags": candidate["ambiguity_flags"],
+                    "style_metrics": profile, "review_status": "pending_review",
+                }, prefer="return=minimal")
         if saved_for_events:
             accepted.append({"question": saved_for_events[0], "event_count": len(saved_for_events)})
         else:
@@ -837,9 +1251,29 @@ def admin_review_kpi_knowledge(item_id):
     if importance not in {"required", "important", "supporting", "question_specific"}:
         return jsonify({"error": "Unsupported importance."}), 400
     review_status = "approved" if action == "approve" else "ignored"
-    _supabase_svc("/kpi_knowledge_items", method="PATCH", payload={"content": content, "importance": importance,
-                  "review_status": review_status, "reviewed_by": user["id"], "reviewed_at": utc_now()},
+    payload = {"content": content, "importance": importance, "review_status": review_status,
+               "reviewed_by": user["id"], "reviewed_at": utc_now()}
+    if action == "approve":
+        factual_evidence = body.get("factual_evidence")
+        checklist = body.get("review_checklist")
+        verification_class = str(body.get("verification_class") or "time_sensitive")
+        reverify_after = body.get("reverify_after") or None
+        required_checks = {"direct_support", "no_overclaim", "subject_authority", "current", "atomic", "deca_connection"}
+        if not isinstance(factual_evidence, list) or not factual_evidence:
+            return jsonify({"error": "Approval requires current authoritative factual evidence."}), 400
+        if not isinstance(checklist, dict) or not all(checklist.get(key) is True for key in required_checks):
+            return jsonify({"error": "Confirm every factual and DECA alignment review check before approval."}), 400
+        if verification_class not in {"stable", "time_sensitive"}:
+            return jsonify({"error": "verification_class must be stable or time_sensitive."}), 400
+        if verification_class == "time_sensitive" and not reverify_after:
+            return jsonify({"error": "Time-sensitive claims require a reverification date."}), 400
+        payload.update({"factual_evidence": factual_evidence, "review_checklist": checklist,
+                        "verification_class": verification_class, "reverify_after": reverify_after,
+                        "authoritative": True})
+    status, _ = _supabase_svc("/kpi_knowledge_items", method="PATCH", payload=payload,
                   params={"id": f"eq.{item_id}"}, prefer="return=minimal")
+    if status not in (200, 204):
+        return jsonify({"error": "Knowledge review could not be saved."}), 409
     if action == "approve":
         _, catalog = _supabase_svc("/kpi_catalog", params={"id": f"eq.{item['kpi_id']}", "select": "knowledge_version", "limit": "1"})
         version = int(catalog[0].get("knowledge_version") or 1) + 1 if catalog else 2

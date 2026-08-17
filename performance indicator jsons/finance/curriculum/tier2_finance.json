@@ -1,0 +1,839 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "finance_tier2",
+  "name": "Finance Career Cluster",
+  "cluster": "Finance",
+  "tier": 2,
+  "curriculum_section": "Finance Career Cluster",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Finance",
+    "pages": [
+      21,
+      23
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:133",
+      "level": "SP",
+      "official_text": "Discuss legal considerations in the finance industry",
+      "display_text": "Discuss legal considerations in the finance industry",
+      "text": "Discuss legal considerations in the finance industry",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand government regulations pertaining to the finance industry to protect the company wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:134",
+      "level": "SP",
+      "official_text": "Discuss the effect of tax laws and regulations on financial transactions",
+      "display_text": "Discuss the effect of tax laws and regulations on financial transactions",
+      "text": "Discuss the effect of tax laws and regulations on financial transactions",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand government regulations pertaining to the finance industry to protect the company wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:148",
+      "level": "SP",
+      "official_text": "Discuss the nature and scope of compliance in the finance industry",
+      "display_text": "Discuss the nature and scope of compliance in the finance industry",
+      "text": "Discuss the nature and scope of compliance in the finance industry",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire a foundational knowledge of compliance to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "BL:149",
+      "level": "SP",
+      "official_text": "Describe the use of technology in compliance",
+      "display_text": "Describe the use of technology in compliance",
+      "text": "Describe the use of technology in compliance",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire a foundational knowledge of compliance to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:012",
+      "level": "CS",
+      "official_text": "Explain the responsibilities of finance professionals in providing client services",
+      "display_text": "Explain the responsibilities of finance professionals in providing client services",
+      "text": "Explain the responsibilities of finance professionals in providing client services",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Understand characteristics, motivations, and behaviors of clients in finance to facilitate client interaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "CR:024",
+      "level": "SP",
+      "official_text": "Use Customer Relationship Management (CRM) technology",
+      "display_text": "Use Customer Relationship Management (CRM) technology",
+      "text": "Use Customer Relationship Management (CRM) technology",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Utilize technology to facilitate customer relationship management.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:336",
+      "level": "CS",
+      "official_text": "Describe the role of financial institutions",
+      "display_text": "Describe the role of financial institutions",
+      "text": "Describe the role of financial institutions",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial markets to recognize their importance in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:337",
+      "level": "SP",
+      "official_text": "Explain types of financial markets (e.g., money market, capital market, insurance market, commodities markets, etc.)",
+      "display_text": "Explain types of financial markets (e.g., money market, capital market, insurance market, commodities markets, etc.)",
+      "text": "Explain types of financial markets (e.g., money market, capital market, insurance market, commodities markets, etc.)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial markets to recognize their importance in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:573",
+      "level": "SP",
+      "official_text": "Discuss the nature of convergence/consolidation in the finance industry",
+      "display_text": "Discuss the nature of convergence/consolidation in the finance industry",
+      "text": "Discuss the nature of convergence/consolidation in the finance industry",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial markets to recognize their importance in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:574",
+      "level": "SP",
+      "official_text": "Describe the relationship between economic conditions and financial markets",
+      "display_text": "Describe the relationship between economic conditions and financial markets",
+      "text": "Describe the relationship between economic conditions and financial markets",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial markets to recognize their importance in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:575",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of financial globalization",
+      "display_text": "Explain the nature and scope of financial globalization",
+      "text": "Explain the nature and scope of financial globalization",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial markets to recognize their importance in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:274",
+      "level": "CS",
+      "official_text": "Describe sources of securities information",
+      "display_text": "Describe sources of securities information",
+      "text": "Describe sources of securities information",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize sources of securities information to make informed financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:275",
+      "level": "SP",
+      "official_text": "Interpret securities table",
+      "display_text": "Interpret securities table",
+      "text": "Interpret securities table",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize sources of securities information to make informed financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:630",
+      "level": "SP",
+      "official_text": "Explain the nature of statements of changes in equity",
+      "display_text": "Explain the nature of statements of changes in equity",
+      "text": "Explain the nature of statements of changes in equity",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize sources of securities information to make informed financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 21
+      }
+    },
+    {
+      "code": "FI:238",
+      "level": "SP",
+      "official_text": "Calculate the time value of money",
+      "display_text": "Calculate the time value of money",
+      "text": "Calculate the time value of money",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:658",
+      "level": "SP",
+      "official_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "display_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:659",
+      "level": "SP",
+      "official_text": "Describe marginal analysis techniques and applications",
+      "display_text": "Describe marginal analysis techniques and applications",
+      "text": "Describe marginal analysis techniques and applications",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:660",
+      "level": "SP",
+      "official_text": "Explain the nature of managerial accounting",
+      "display_text": "Explain the nature of managerial accounting",
+      "text": "Explain the nature of managerial accounting",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:661",
+      "level": "SP",
+      "official_text": "Discuss the use of variance analysis in managerial accounting",
+      "display_text": "Discuss the use of variance analysis in managerial accounting",
+      "text": "Discuss the use of variance analysis in managerial accounting",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:662",
+      "level": "SP",
+      "official_text": "Discuss the nature of cost accounting budgets",
+      "display_text": "Discuss the nature of cost accounting budgets",
+      "text": "Discuss the nature of cost accounting budgets",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FI:663",
+      "level": "SP",
+      "official_text": "Discuss the nature of cost allocation",
+      "display_text": "Discuss the nature of cost allocation",
+      "text": "Discuss the nature of cost allocation",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "NF:124",
+      "level": "SP",
+      "official_text": "Demonstrate advanced database applications",
+      "display_text": "Demonstrate advanced database applications",
+      "text": "Demonstrate advanced database applications",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:152",
+      "level": "CS",
+      "official_text": "Discuss employment opportunities in the finance industry",
+      "display_text": "Discuss employment opportunities in the finance industry",
+      "text": "Discuss employment opportunities in the finance industry",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:153",
+      "level": "SP",
+      "official_text": "Discuss opportunities for building professional relationships in finance",
+      "display_text": "Discuss opportunities for building professional relationships in finance",
+      "text": "Discuss opportunities for building professional relationships in finance",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:213",
+      "level": "CS",
+      "official_text": "Discuss the importance of corporate governance in business",
+      "display_text": "Discuss the importance of corporate governance in business",
+      "text": "Discuss the importance of corporate governance in business",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:301",
+      "level": "CS",
+      "official_text": "Ascertain employee's role in achieving governance objectives",
+      "display_text": "Ascertain employee's role in achieving governance objectives",
+      "text": "Ascertain employee's role in achieving governance objectives",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:302",
+      "level": "SP",
+      "official_text": "Identify the factors that impact governance structures",
+      "display_text": "Identify the factors that impact governance structures",
+      "text": "Identify the factors that impact governance structures",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:214",
+      "level": "SP",
+      "official_text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "display_text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "PD:303",
+      "level": "SP",
+      "official_text": "Describe the impact of governance processes on decision-making and management functions",
+      "display_text": "Describe the impact of governance processes on decision-making and management functions",
+      "text": "Describe the impact of governance processes on decision-making and management functions",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 22
+      }
+    },
+    {
+      "code": "FM:002",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the financial-information management function",
+      "display_text": "Explain the nature and scope of the financial-information management function",
+      "text": "Explain the nature and scope of the financial-information management function",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Acquire foundational knowledge of financial-information management to understand its scope and nature.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:003",
+      "level": "SP",
+      "official_text": "Explain the role of ethics in financial-information management",
+      "display_text": "Explain the role of ethics in financial-information management",
+      "text": "Explain the role of ethics in financial-information management",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Acquire foundational knowledge of financial-information management to understand its scope and nature.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:011",
+      "level": "SP",
+      "official_text": "Describe the use of technology in the financial-information management function",
+      "display_text": "Describe the use of technology in the financial-information management function",
+      "text": "Describe the use of technology in the financial-information management function",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Utilize financial information technology tools to manage financial information and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:013",
+      "level": "SP",
+      "official_text": "Demonstrate budgeting applications",
+      "display_text": "Demonstrate budgeting applications",
+      "text": "Demonstrate budgeting applications",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Utilize financial information technology tools to manage financial information and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:014",
+      "level": "SP",
+      "official_text": "Demonstrate financial analysis applications",
+      "display_text": "Demonstrate financial analysis applications",
+      "text": "Demonstrate financial analysis applications",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Utilize financial information technology tools to manage financial information and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:009",
+      "level": "SP",
+      "official_text": "Describe techniques used to analyze customer financial information",
+      "display_text": "Describe techniques used to analyze customer financial information",
+      "text": "Describe techniques used to analyze customer financial information",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Acquire foundational knowledge of financial information analysis to aid in financial decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "FM:016",
+      "level": "SP",
+      "official_text": "Discuss non-traditional uses for financial information (e.g., lean, sustainability reporting, activity-based costing [ABC], six sigma)",
+      "display_text": "Discuss non-traditional uses for financial information (e.g., lean, sustainability reporting, activity-based costing [ABC], six sigma)",
+      "text": "Discuss non-traditional uses for financial information (e.g., lean, sustainability reporting, activity-based costing [ABC], six sigma)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "FM",
+      "instructional_area_name": "Financial-Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate financial information to assist business decision-making",
+      "performance_element": "Acquire foundational knowledge of financial information analysis to aid in financial decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "RM:041",
+      "level": "SP",
+      "official_text": "Explain the role of ethics in risk management",
+      "display_text": "Explain the role of ethics in risk management",
+      "text": "Explain the role of ethics in risk management",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "RM:042",
+      "level": "SP",
+      "official_text": "Describe the use of technology in risk management",
+      "display_text": "Describe the use of technology in risk management",
+      "text": "Describe the use of technology in risk management",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "RM:043",
+      "level": "SP",
+      "official_text": "Discuss legal considerations affecting risk management",
+      "display_text": "Discuss legal considerations affecting risk management",
+      "text": "Discuss legal considerations affecting risk management",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Acquire a foundational understanding of risk management to demonstrate knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "RM:058",
+      "level": "SP",
+      "official_text": "Discuss the nature of risk control (i.e., internal and external)",
+      "display_text": "Discuss the nature of risk control (i.e., internal and external)",
+      "text": "Discuss the nature of risk control (i.e., internal and external)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Explore risk control to understand its relationship to risk management.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    },
+    {
+      "code": "RM:062",
+      "level": "SP",
+      "official_text": "Discuss the nature of enterprise risk management (ERM)",
+      "display_text": "Discuss the nature of enterprise risk management (ERM)",
+      "text": "Discuss the nature of enterprise risk management (ERM)",
+      "tier": 2,
+      "curriculum_section": "Finance Career Cluster",
+      "cluster": "Finance",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 23
+      }
+    }
+  ]
+}

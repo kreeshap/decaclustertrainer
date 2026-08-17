@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "entrepreneurship_business_management_core",
+  "name": "Business Management and Administration Core",
+  "cluster": "Entrepreneurship",
+  "tier": null,
+  "curriculum_section": "Business Management and Administration Core",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Entrepreneurship",
+    "pages": [
+      11,
+      12
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "FI:541",
+      "level": "SP",
+      "official_text": "Interpret cash-flow statements",
+      "display_text": "Interpret cash-flow statements",
+      "text": "Interpret cash-flow statements",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "FI:542",
+      "level": "MN",
+      "official_text": "Monitor business's profitability",
+      "display_text": "Monitor business's profitability",
+      "text": "Monitor business's profitability",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:473",
+      "level": "MN",
+      "official_text": "Evaluate strategies for protecting business' digital assets (e.g., website, social media, email, etc.), customer data, and other protected information",
+      "display_text": "Evaluate strategies for protecting business' digital assets (e.g., website, social media, email, etc.), customer data, and other protected information",
+      "text": "Evaluate strategies for protecting business' digital assets (e.g., website, social media, email, etc.), customer data, and other protected information",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine technology security strategies needed to protect customer information and company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:327",
+      "level": "SP",
+      "official_text": "Discuss the nature of business analysis",
+      "display_text": "Discuss the nature of business analysis",
+      "text": "Discuss the nature of business analysis",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:474",
+      "level": "SP",
+      "official_text": "Discuss business process thinking and its impact",
+      "display_text": "Discuss business process thinking and its impact",
+      "text": "Discuss business process thinking and its impact",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:475",
+      "level": "SP",
+      "official_text": "Describe the factors that influence business process design",
+      "display_text": "Describe the factors that influence business process design",
+      "text": "Describe the factors that influence business process design",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:476",
+      "level": "SP",
+      "official_text": "Explain the causes of business process changes",
+      "display_text": "Explain the causes of business process changes",
+      "text": "Explain the causes of business process changes",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:477",
+      "level": "SP",
+      "official_text": "Explain the impact of supply chains on business performance",
+      "display_text": "Explain the impact of supply chains on business performance",
+      "text": "Explain the impact of supply chains on business performance",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management role to recognize its need in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "OP:303",
+      "level": "SP",
+      "official_text": "Discuss the nature of supply chain management",
+      "display_text": "Discuss the nature of supply chain management",
+      "text": "Discuss the nature of supply chain management",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management role to recognize its need in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "SM:028",
+      "level": "MN",
+      "official_text": "Describe factors that influence management",
+      "display_text": "Describe factors that influence management",
+      "text": "Describe factors that influence management",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "SM:094",
+      "level": "CS",
+      "official_text": "Describe relationship among innovation, learning, and change",
+      "display_text": "Describe relationship among innovation, learning, and change",
+      "text": "Describe relationship among innovation, learning, and change",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "SM:095",
+      "level": "SP",
+      "official_text": "Explain the nature of change management",
+      "display_text": "Explain the nature of change management",
+      "text": "Explain the nature of change management",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Adapt to and manage change within an organization to accomplish organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 11
+      }
+    },
+    {
+      "code": "QM:001",
+      "level": "SP",
+      "official_text": "Explain the nature of quality management",
+      "display_text": "Explain the nature of quality management",
+      "text": "Explain the nature of quality management",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Understand the role and function of quality management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 12
+      }
+    },
+    {
+      "code": "RM:094",
+      "level": "MN",
+      "official_text": "Assess business risks",
+      "display_text": "Assess business risks",
+      "text": "Assess business risks",
+      "tier": null,
+      "curriculum_section": "Business Management and Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 12
+      }
+    }
+  ]
+}

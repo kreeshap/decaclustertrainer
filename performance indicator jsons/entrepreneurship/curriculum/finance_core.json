@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "entrepreneurship_finance_core",
+  "name": "Finance Core",
+  "cluster": "Entrepreneurship",
+  "tier": null,
+  "curriculum_section": "Finance Core",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Entrepreneurship",
+    "pages": [
+      13,
+      13
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "FI:334",
+      "level": "MN",
+      "official_text": "Describe types of financial statement analysis (e.g., ratio analysis, trend analysis, etc.)",
+      "display_text": "Describe types of financial statement analysis (e.g., ratio analysis, trend analysis, etc.)",
+      "text": "Describe types of financial statement analysis (e.g., ratio analysis, trend analysis, etc.)",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "FI:655",
+      "level": "MN",
+      "official_text": "Discuss limitations of using financial statements to assess business performance",
+      "display_text": "Discuss limitations of using financial statements to assess business performance",
+      "text": "Discuss limitations of using financial statements to assess business performance",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "FI:335",
+      "level": "MN",
+      "official_text": "Spot problems in/issues with financial statements",
+      "display_text": "Spot problems in/issues with financial statements",
+      "text": "Spot problems in/issues with financial statements",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "FI:339",
+      "level": "MN",
+      "official_text": "Describe the financial needs of a business at different stages of its development",
+      "display_text": "Describe the financial needs of a business at different stages of its development",
+      "text": "Describe the financial needs of a business at different stages of its development",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use debt and equity capital to raise funds for business growth.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "FI:340",
+      "level": "MN",
+      "official_text": "Discuss factors to consider in choosing between debt and equity capital",
+      "display_text": "Discuss factors to consider in choosing between debt and equity capital",
+      "text": "Discuss factors to consider in choosing between debt and equity capital",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use debt and equity capital to raise funds for business growth.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "PD:213",
+      "level": "CS",
+      "official_text": "Discuss the importance of corporate governance in business",
+      "display_text": "Discuss the importance of corporate governance in business",
+      "text": "Discuss the importance of corporate governance in business",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "PD:302",
+      "level": "SP",
+      "official_text": "Identify the factors that impact governance structures",
+      "display_text": "Identify the factors that impact governance structures",
+      "text": "Identify the factors that impact governance structures",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "PD:214",
+      "level": "SP",
+      "official_text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "display_text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "text": "Describe the components of a well-governed company (e.g., board of directors, reporting, transparency, internal and external audit functions)",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of corporate governance to be aware of the restraints imposed upon finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "RM:062",
+      "level": "SP",
+      "official_text": "Discuss the nature of enterprise risk management (ERM)",
+      "display_text": "Discuss the nature of enterprise risk management (ERM)",
+      "text": "Discuss the nature of enterprise risk management (ERM)",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "RM:044",
+      "level": "MN",
+      "official_text": "Discuss the relationship between risk and business objectives",
+      "display_text": "Discuss the relationship between risk and business objectives",
+      "text": "Discuss the relationship between risk and business objectives",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "RM:056",
+      "level": "MN",
+      "official_text": "Identify business risks",
+      "display_text": "Identify business risks",
+      "text": "Identify business risks",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "RM:059",
+      "level": "MN",
+      "official_text": "Explain ways to assess risk",
+      "display_text": "Explain ways to assess risk",
+      "text": "Explain ways to assess risk",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    },
+    {
+      "code": "RM:045",
+      "level": "MN",
+      "official_text": "Develop a risk management program",
+      "display_text": "Develop a risk management program",
+      "text": "Develop a risk management program",
+      "tier": null,
+      "curriculum_section": "Finance Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 13
+      }
+    }
+  ]
+}

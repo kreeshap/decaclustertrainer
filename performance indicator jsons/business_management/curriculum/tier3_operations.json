@@ -1,0 +1,2699 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "bma_tier3_operations",
+  "name": "Operations Pathway",
+  "cluster": "Business Management + Administration",
+  "tier": 3,
+  "curriculum_section": "Operations Pathway",
+  "pathway": "Operations",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-BMA",
+    "pages": [
+      46,
+      53
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:084",
+      "level": "SP",
+      "official_text": "Discuss the nature of contract suspensions",
+      "display_text": "Discuss the nature of contract suspensions",
+      "text": "Discuss the nature of contract suspensions",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business contracts to establish business relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "BL:085",
+      "level": "SP",
+      "official_text": "Explain the nature of contract terminations",
+      "display_text": "Explain the nature of contract terminations",
+      "text": "Explain the nature of contract terminations",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business contracts to establish business relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "BL:125",
+      "level": "SP",
+      "official_text": "Discuss regulations that affect the vendor/supplier bidding process",
+      "display_text": "Discuss regulations that affect the vendor/supplier bidding process",
+      "text": "Discuss regulations that affect the vendor/supplier bidding process",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand laws regulating the vendor/supplier bidding process to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "BL:162",
+      "level": "SP",
+      "official_text": "Explain the nature of a compliance program",
+      "display_text": "Explain the nature of a compliance program",
+      "text": "Explain the nature of a compliance program",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Develop a compliance program to protect the company wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "CO:210",
+      "level": "SP",
+      "official_text": "Repurpose content for social media",
+      "display_text": "Repurpose content for social media",
+      "text": "Repurpose content for social media",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "CR:028",
+      "level": "SP",
+      "official_text": "Use digital media to enhance customer post-sales experience",
+      "display_text": "Use digital media to enhance customer post-sales experience",
+      "text": "Use digital media to enhance customer post-sales experience",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "CR:027",
+      "level": "CS",
+      "official_text": "Explain the relationship between customer services and sales",
+      "display_text": "Explain the relationship between customer services and sales",
+      "text": "Explain the relationship between customer services and sales",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "CR:022",
+      "level": "CS",
+      "official_text": "Process customer returns",
+      "display_text": "Process customer returns",
+      "text": "Process customer returns",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 46
+      }
+    },
+    {
+      "code": "EI:082",
+      "level": "SP",
+      "official_text": "Explain the impact of business customs and practices on global trade",
+      "display_text": "Explain the impact of business customs and practices on global trade",
+      "text": "Explain the impact of business customs and practices on global trade",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:083",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the North American market",
+      "display_text": "Describe the nature of business customs and practices in the North American market",
+      "text": "Describe the nature of business customs and practices in the North American market",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:084",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Western Europe",
+      "display_text": "Explain the nature of business customs and practices in Western Europe",
+      "text": "Explain the nature of business customs and practices in Western Europe",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:117",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "display_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "text": "Explain the nature of business customs and practices in Eastern Europe",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:085",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Latin America",
+      "display_text": "Explain the nature of business customs and practices in Latin America",
+      "text": "Explain the nature of business customs and practices in Latin America",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:086",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "display_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:087",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in the Middle East",
+      "display_text": "Discuss the nature of business customs and practices in the Middle East",
+      "text": "Discuss the nature of business customs and practices in the Middle East",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:118",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in South Asia",
+      "display_text": "Explain the nature of business customs and practices in South Asia",
+      "text": "Explain the nature of business customs and practices in South Asia",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:119",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in Northern Africa",
+      "display_text": "Describe the nature of business customs and practices in Northern Africa",
+      "text": "Describe the nature of business customs and practices in Northern Africa",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "EI:120",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "display_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:658",
+      "level": "SP",
+      "official_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "display_text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "text": "Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:659",
+      "level": "SP",
+      "official_text": "Describe marginal analysis techniques and applications",
+      "display_text": "Describe marginal analysis techniques and applications",
+      "text": "Describe marginal analysis techniques and applications",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:660",
+      "level": "SP",
+      "official_text": "Explain the nature of managerial accounting",
+      "display_text": "Explain the nature of managerial accounting",
+      "text": "Explain the nature of managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:661",
+      "level": "SP",
+      "official_text": "Discuss the use of variance analysis in managerial accounting",
+      "display_text": "Discuss the use of variance analysis in managerial accounting",
+      "text": "Discuss the use of variance analysis in managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:343",
+      "level": "SP",
+      "official_text": "Explain the purpose of internal accounting controls",
+      "display_text": "Explain the purpose of internal accounting controls",
+      "text": "Explain the purpose of internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:479",
+      "level": "SP",
+      "official_text": "Determine the components of internal accounting control procedures for a business",
+      "display_text": "Determine the components of internal accounting control procedures for a business",
+      "text": "Determine the components of internal accounting control procedures for a business",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:480",
+      "level": "SP",
+      "official_text": "Maintain internal accounting controls",
+      "display_text": "Maintain internal accounting controls",
+      "text": "Maintain internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:416",
+      "level": "SP",
+      "official_text": "Discuss the relationship between operations management and accounting",
+      "display_text": "Discuss the relationship between operations management and accounting",
+      "text": "Discuss the relationship between operations management and accounting",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize cost accounting methods to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:417",
+      "level": "SP",
+      "official_text": "Describe the nature of cost accounting decision making",
+      "display_text": "Describe the nature of cost accounting decision making",
+      "text": "Describe the nature of cost accounting decision making",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize cost accounting methods to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:418",
+      "level": "SP",
+      "official_text": "Explain the nature of job costing",
+      "display_text": "Explain the nature of job costing",
+      "text": "Explain the nature of job costing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize cost accounting methods to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "FI:419",
+      "level": "SP",
+      "official_text": "Describe the nature of activity-based costing",
+      "display_text": "Describe the nature of activity-based costing",
+      "text": "Describe the nature of activity-based costing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize cost accounting methods to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 47
+      }
+    },
+    {
+      "code": "NF:214",
+      "level": "SP",
+      "official_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "display_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "NF:118",
+      "level": "CS",
+      "official_text": "Describe the impact of technology on order processing",
+      "display_text": "Describe the impact of technology on order processing",
+      "text": "Describe the impact of technology on order processing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Explain the role of technology to process and track customer orders.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "NF:119",
+      "level": "SP",
+      "official_text": "Explain the nature of universal product code (UPC) barcoding",
+      "display_text": "Explain the nature of universal product code (UPC) barcoding",
+      "text": "Explain the nature of universal product code (UPC) barcoding",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Explain the role of technology to process and track customer orders.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "NF:120",
+      "level": "SP",
+      "official_text": "Explain the nature of radio frequency identification (RFID) tags",
+      "display_text": "Explain the nature of radio frequency identification (RFID) tags",
+      "text": "Explain the nature of radio frequency identification (RFID) tags",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Explain the role of technology to process and track customer orders.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "NF:169",
+      "level": "CS",
+      "official_text": "Process customer orders",
+      "display_text": "Process customer orders",
+      "text": "Process customer orders",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Manage business records to maintain needed documentation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:328",
+      "level": "SP",
+      "official_text": "Discuss the connection between business analysis and business process management",
+      "display_text": "Discuss the connection between business analysis and business process management",
+      "text": "Discuss the connection between business analysis and business process management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:329",
+      "level": "SP",
+      "official_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "display_text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "text": "Explain types of requirements (e.g., business, system, functional, nonfunctional)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop an understanding of business analysis to improve business functions and activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:522",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of distribution",
+      "display_text": "Explain the nature and scope of distribution",
+      "text": "Explain the nature and scope of distribution",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:523",
+      "level": "CS",
+      "official_text": "Explain the relationship between customer service and distribution",
+      "display_text": "Explain the relationship between customer service and distribution",
+      "text": "Explain the relationship between customer service and distribution",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:524",
+      "level": "SP",
+      "official_text": "Describe the use of technology in distribution",
+      "display_text": "Describe the use of technology in distribution",
+      "text": "Describe the use of technology in distribution",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:525",
+      "level": "SP",
+      "official_text": "Explain legal considerations in distribution",
+      "display_text": "Explain legal considerations in distribution",
+      "text": "Explain legal considerations in distribution",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:526",
+      "level": "SP",
+      "official_text": "Describe ethical considerations in distribution",
+      "display_text": "Describe ethical considerations in distribution",
+      "text": "Describe ethical considerations in distribution",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:032",
+      "level": "SP",
+      "official_text": "Identify routine activities for maintaining business facilities and equipment",
+      "display_text": "Identify routine activities for maintaining business facilities and equipment",
+      "text": "Identify routine activities for maintaining business facilities and equipment",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:490",
+      "level": "SP",
+      "official_text": "Conduct safety inspections",
+      "display_text": "Conduct safety inspections",
+      "text": "Conduct safety inspections",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:491",
+      "level": "SP",
+      "official_text": "Monitor and evaluate maintenance program",
+      "display_text": "Monitor and evaluate maintenance program",
+      "text": "Monitor and evaluate maintenance program",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 48
+      }
+    },
+    {
+      "code": "OP:244",
+      "level": "SP",
+      "official_text": "Describe the role of solicitations used in the purchasing process",
+      "display_text": "Describe the role of solicitations used in the purchasing process",
+      "text": "Describe the role of solicitations used in the purchasing process",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand purchasing activities to obtain business materials and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:245",
+      "level": "SP",
+      "official_text": "Discuss the impact of vendor competition on purchasing",
+      "display_text": "Discuss the impact of vendor competition on purchasing",
+      "text": "Discuss the impact of vendor competition on purchasing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand purchasing activities to obtain business materials and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:248",
+      "level": "SP",
+      "official_text": "Discuss the nature of purchasing methods",
+      "display_text": "Discuss the nature of purchasing methods",
+      "text": "Discuss the nature of purchasing methods",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand purchasing activities to obtain business materials and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:249",
+      "level": "SP",
+      "official_text": "Describe business objectives/strategies that influence purchasing",
+      "display_text": "Describe business objectives/strategies that influence purchasing",
+      "text": "Describe business objectives/strategies that influence purchasing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand purchasing activities to obtain business materials and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:486",
+      "level": "SP",
+      "official_text": "Describe the relationship between procurement and operations management activities (e.g., strategic sourcing, supplier relationship management, supply chain management)",
+      "display_text": "Describe the relationship between procurement and operations management activities (e.g., strategic sourcing, supplier relationship management, supply chain management)",
+      "text": "Describe the relationship between procurement and operations management activities (e.g., strategic sourcing, supplier relationship management, supply chain management)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand purchasing activities to obtain business materials and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:487",
+      "level": "SP",
+      "official_text": "Coordinate corporate purchasing activities",
+      "display_text": "Coordinate corporate purchasing activities",
+      "text": "Coordinate corporate purchasing activities",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage purchasing activities to obtain the best service/product at the least cost.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:251",
+      "level": "SP",
+      "official_text": "Discuss organizational requirements for purchase authorizations",
+      "display_text": "Discuss organizational requirements for purchase authorizations",
+      "text": "Discuss organizational requirements for purchase authorizations",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire knowledge of organizational requirements to properly handle purchase activity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:252",
+      "level": "SP",
+      "official_text": "Discuss priority procedures used by businesses for purchases",
+      "display_text": "Discuss priority procedures used by businesses for purchases",
+      "text": "Discuss priority procedures used by businesses for purchases",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire knowledge of organizational requirements to properly handle purchase activity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:299",
+      "level": "SP",
+      "official_text": "Explain the nature of order cycle time",
+      "display_text": "Explain the nature of order cycle time",
+      "text": "Explain the nature of order cycle time",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:304",
+      "level": "SP",
+      "official_text": "Describe the relationship between supply chain management and operations management",
+      "display_text": "Describe the relationship between supply chain management and operations management",
+      "text": "Describe the relationship between supply chain management and operations management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:305",
+      "level": "SP",
+      "official_text": "Describe supply chain management strategies",
+      "display_text": "Describe supply chain management strategies",
+      "text": "Describe supply chain management strategies",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:498",
+      "level": "SP",
+      "official_text": "Use supply chain performance measures to evaluate achievement of goals (e.g., perfect order fulfillment, inventory turnover, cash-to-cash conversion cycle, fill rate)",
+      "display_text": "Use supply chain performance measures to evaluate achievement of goals (e.g., perfect order fulfillment, inventory turnover, cash-to-cash conversion cycle, fill rate)",
+      "text": "Use supply chain performance measures to evaluate achievement of goals (e.g., perfect order fulfillment, inventory turnover, cash-to-cash conversion cycle, fill rate)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:499",
+      "level": "SP",
+      "official_text": "Evaluate risk factors and trends affecting supply chain systems (e.g., sustainability, geopolitical volatility, cyber security, artificial intelligence, automation)",
+      "display_text": "Evaluate risk factors and trends affecting supply chain systems (e.g., sustainability, geopolitical volatility, cyber security, artificial intelligence, automation)",
+      "text": "Evaluate risk factors and trends affecting supply chain systems (e.g., sustainability, geopolitical volatility, cyber security, artificial intelligence, automation)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:500",
+      "level": "SP",
+      "official_text": "Identify supply chain process improvement opportunities",
+      "display_text": "Identify supply chain process improvement opportunities",
+      "text": "Identify supply chain process improvement opportunities",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:501",
+      "level": "SP",
+      "official_text": "Evaluate supplier performance and compliance",
+      "display_text": "Evaluate supplier performance and compliance",
+      "text": "Evaluate supplier performance and compliance",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:306",
+      "level": "SP",
+      "official_text": "Implement supply chain management strategies",
+      "display_text": "Implement supply chain management strategies",
+      "text": "Implement supply chain management strategies",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Conduct supply chain management activities to coordinate the movement of materials, information, and funds into an organization and the movement of finished products/services out of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:313",
+      "level": "SP",
+      "official_text": "Discuss the nature of capacity planning",
+      "display_text": "Discuss the nature of capacity planning",
+      "text": "Discuss the nature of capacity planning",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adjust the work capacity of an organization to meet predicted demands.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:314",
+      "level": "SP",
+      "official_text": "Describe factors impacting demand",
+      "display_text": "Describe factors impacting demand",
+      "text": "Describe factors impacting demand",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Adjust the work capacity of an organization to meet predicted demands.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:380",
+      "level": "CS",
+      "official_text": "Use an information system for order fulfillment",
+      "display_text": "Use an information system for order fulfillment",
+      "text": "Use an information system for order fulfillment",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize order-fulfillment processes to move product through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:381",
+      "level": "CS",
+      "official_text": "Fulfill orders",
+      "display_text": "Fulfill orders",
+      "text": "Fulfill orders",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize order-fulfillment processes to move product through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 49
+      }
+    },
+    {
+      "code": "OP:384",
+      "level": "CS",
+      "official_text": "Explain the receiving process",
+      "display_text": "Explain the receiving process",
+      "text": "Explain the receiving process",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:385",
+      "level": "CS",
+      "official_text": "Explain stock-handling techniques used in receiving deliveries",
+      "display_text": "Explain stock-handling techniques used in receiving deliveries",
+      "text": "Explain stock-handling techniques used in receiving deliveries",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:386",
+      "level": "CS",
+      "official_text": "Process incoming merchandise",
+      "display_text": "Process incoming merchandise",
+      "text": "Process incoming merchandise",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:387",
+      "level": "CS",
+      "official_text": "Resolve problems with incoming shipments",
+      "display_text": "Resolve problems with incoming shipments",
+      "text": "Resolve problems with incoming shipments",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement receiving processes to ensure accuracy and quality of incoming shipments.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:389",
+      "level": "CS",
+      "official_text": "Attach source and anti-theft tags",
+      "display_text": "Attach source and anti-theft tags",
+      "text": "Attach source and anti-theft tags",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:485",
+      "level": "CS",
+      "official_text": "Maintain evidence of material sources",
+      "display_text": "Maintain evidence of material sources",
+      "text": "Maintain evidence of material sources",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:396",
+      "level": "CS",
+      "official_text": "Process returned/damaged product",
+      "display_text": "Process returned/damaged product",
+      "text": "Process returned/damaged product",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:397",
+      "level": "SP",
+      "official_text": "Transfer stock to/from branches",
+      "display_text": "Transfer stock to/from branches",
+      "text": "Transfer stock to/from branches",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize stock-handling procedures to process incoming inventory.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:400",
+      "level": "CS",
+      "official_text": "Explain storing considerations",
+      "display_text": "Explain storing considerations",
+      "text": "Explain storing considerations",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:401",
+      "level": "CS",
+      "official_text": "Explain the nature of warehousing",
+      "display_text": "Explain the nature of warehousing",
+      "text": "Explain the nature of warehousing",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:402",
+      "level": "CS",
+      "official_text": "Store inventory",
+      "display_text": "Store inventory",
+      "text": "Store inventory",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize warehousing procedures to store inventory until needed.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:405",
+      "level": "CS",
+      "official_text": "Explain shipping processes",
+      "display_text": "Explain shipping processes",
+      "text": "Explain shipping processes",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand transportation processes to move products through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:406",
+      "level": "SP",
+      "official_text": "Identify factors considered when selecting best shipping method",
+      "display_text": "Identify factors considered when selecting best shipping method",
+      "text": "Identify factors considered when selecting best shipping method",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand transportation processes to move products through the supply chain.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:413",
+      "level": "CS",
+      "official_text": "Describe inventory control systems",
+      "display_text": "Describe inventory control systems",
+      "text": "Describe inventory control systems",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:414",
+      "level": "SP",
+      "official_text": "Explain types of unit inventory-control systems",
+      "display_text": "Explain types of unit inventory-control systems",
+      "text": "Explain types of unit inventory-control systems",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:489",
+      "level": "SP",
+      "official_text": "Describe strategies to minimize the cost of maintaining inventory",
+      "display_text": "Describe strategies to minimize the cost of maintaining inventory",
+      "text": "Describe strategies to minimize the cost of maintaining inventory",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:415",
+      "level": "SP",
+      "official_text": "Determine inventory shrinkage",
+      "display_text": "Determine inventory shrinkage",
+      "text": "Determine inventory shrinkage",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:416",
+      "level": "SP",
+      "official_text": "Maintain inventory-control systems",
+      "display_text": "Maintain inventory-control systems",
+      "text": "Maintain inventory-control systems",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize inventory-control methods to minimize costs and to meet customer demand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:466",
+      "level": "SP",
+      "official_text": "Explain the nature of facilities management",
+      "display_text": "Explain the nature of facilities management",
+      "text": "Explain the nature of facilities management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:494",
+      "level": "SP",
+      "official_text": "Identify waste management opportunities",
+      "display_text": "Identify waste management opportunities",
+      "text": "Identify waste management opportunities",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:495",
+      "level": "SP",
+      "official_text": "Identify sustainability opportunities",
+      "display_text": "Identify sustainability opportunities",
+      "text": "Identify sustainability opportunities",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:447",
+      "level": "SP",
+      "official_text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "display_text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "text": "Identify the factors that contribute to operational risk (e.g., insufficient training, lack of supervision, inadequate security, poor system design, poor HR policies)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage operational risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:448",
+      "level": "SP",
+      "official_text": "Discuss the nature of operational risk management",
+      "display_text": "Discuss the nature of operational risk management",
+      "text": "Discuss the nature of operational risk management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage operational risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 50
+      }
+    },
+    {
+      "code": "OP:457",
+      "level": "SP",
+      "official_text": "Document business processes",
+      "display_text": "Document business processes",
+      "text": "Document business processes",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:458",
+      "level": "SP",
+      "official_text": "Identify the business process problem/issue",
+      "display_text": "Identify the business process problem/issue",
+      "text": "Identify the business process problem/issue",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:459",
+      "level": "SP",
+      "official_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "display_text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "text": "Define data needs and limitations (e.g., data fields, constraints, assumptions, variations expectations)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:460",
+      "level": "SP",
+      "official_text": "Identify data acquisition strategies",
+      "display_text": "Identify data acquisition strategies",
+      "text": "Identify data acquisition strategies",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:330",
+      "level": "SP",
+      "official_text": "Plan the requirements for data analysis",
+      "display_text": "Plan the requirements for data analysis",
+      "text": "Plan the requirements for data analysis",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:461",
+      "level": "SP",
+      "official_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "display_text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "text": "Analyze business processes (e.g., measure efficiency, benchmark metrics)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:462",
+      "level": "SP",
+      "official_text": "Recommend improvements to business processes",
+      "display_text": "Recommend improvements to business processes",
+      "text": "Recommend improvements to business processes",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Analyze business processes to improve business performance.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:463",
+      "level": "SP",
+      "official_text": "Explain the purpose of operational controls",
+      "display_text": "Explain the purpose of operational controls",
+      "text": "Explain the purpose of operational controls",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement suitable operational controls to achieve goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:502",
+      "level": "SP",
+      "official_text": "Assess the impact of product packaging requirements on logistics",
+      "display_text": "Assess the impact of product packaging requirements on logistics",
+      "text": "Assess the impact of product packaging requirements on logistics",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Assess product packaging to improve supply chain",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:503",
+      "level": "SP",
+      "official_text": "Review product packaging to improve supply chain efficiency",
+      "display_text": "Review product packaging to improve supply chain efficiency",
+      "text": "Review product packaging to improve supply chain efficiency",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Assess product packaging to improve supply chain",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:505",
+      "level": "SP",
+      "official_text": "Describe the transportation modes",
+      "display_text": "Describe the transportation modes",
+      "text": "Describe the transportation modes",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:506",
+      "level": "SP",
+      "official_text": "Explain the scope of domestic and global transport systems",
+      "display_text": "Explain the scope of domestic and global transport systems",
+      "text": "Explain the scope of domestic and global transport systems",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:507",
+      "level": "SP",
+      "official_text": "Explain the impact of transportation costs on business performance (e.g., cost elements)",
+      "display_text": "Explain the impact of transportation costs on business performance (e.g., cost elements)",
+      "text": "Explain the impact of transportation costs on business performance (e.g., cost elements)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:508",
+      "level": "SP",
+      "official_text": "Describe trends in international distribution systems",
+      "display_text": "Describe trends in international distribution systems",
+      "text": "Describe trends in international distribution systems",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:509",
+      "level": "SP",
+      "official_text": "Describe the nature of channel intermediaries for foreign markets (e.g., customs brokers, shipping agents, freight forwarders)",
+      "display_text": "Describe the nature of channel intermediaries for foreign markets (e.g., customs brokers, shipping agents, freight forwarders)",
+      "text": "Describe the nature of channel intermediaries for foreign markets (e.g., customs brokers, shipping agents, freight forwarders)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:510",
+      "level": "SP",
+      "official_text": "Explain international transportation and delivery system elements",
+      "display_text": "Explain international transportation and delivery system elements",
+      "text": "Explain international transportation and delivery system elements",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:511",
+      "level": "SP",
+      "official_text": "Develop transportation plans",
+      "display_text": "Develop transportation plans",
+      "text": "Develop transportation plans",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:512",
+      "level": "SP",
+      "official_text": "Assess transportation processes",
+      "display_text": "Assess transportation processes",
+      "text": "Assess transportation processes",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:513",
+      "level": "SP",
+      "official_text": "Describe the nature and scope of reverse logistics",
+      "display_text": "Describe the nature and scope of reverse logistics",
+      "text": "Describe the nature and scope of reverse logistics",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "OP:514",
+      "level": "SP",
+      "official_text": "Explain the impact of import and export requirements on supply chain design (e.g., documentation requirements, handling requirements, trade policies, customs regulations)",
+      "display_text": "Explain the impact of import and export requirements on supply chain design (e.g., documentation requirements, handling requirements, trade policies, customs regulations)",
+      "text": "Explain the impact of import and export requirements on supply chain design (e.g., documentation requirements, handling requirements, trade policies, customs regulations)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Evaluate transportation strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "PD:189",
+      "level": "SP",
+      "official_text": "Explain career opportunities in operations and supply chain management",
+      "display_text": "Explain career opportunities in operations and supply chain management",
+      "text": "Explain career opportunities in operations and supply chain management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "PD:190",
+      "level": "SP",
+      "official_text": "Describe certifications for operations-management professionals",
+      "display_text": "Describe certifications for operations-management professionals",
+      "text": "Describe certifications for operations-management professionals",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "PD:345",
+      "level": "SP",
+      "official_text": "Describe certifications for supply chain management professionals (e.g., Association for Supply Chain Management [ASCM], Council of Supply Chain Management Professionals [CSCMP], Certified Six Sigma Black Belt [CSSBB])",
+      "display_text": "Describe certifications for supply chain management professionals (e.g., Association for Supply Chain Management [ASCM], Council of Supply Chain Management Professionals [CSCMP], Certified Six Sigma Black Belt [CSSBB])",
+      "text": "Describe certifications for supply chain management professionals (e.g., Association for Supply Chain Management [ASCM], Council of Supply Chain Management Professionals [CSCMP], Certified Six Sigma Black Belt [CSSBB])",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 51
+      }
+    },
+    {
+      "code": "PD:266",
+      "level": "SP",
+      "official_text": "Identify continuing education courses or programs available to enhance operations- and supply chain management skills",
+      "display_text": "Identify continuing education courses or programs available to enhance operations- and supply chain management skills",
+      "text": "Identify continuing education courses or programs available to enhance operations- and supply chain management skills",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance operations- management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "PD:267",
+      "level": "SP",
+      "official_text": "Identify professional association opportunities for operations- and supply chain management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "display_text": "Identify professional association opportunities for operations- and supply chain management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "text": "Identify professional association opportunities for operations- and supply chain management professionals (e.g., educational opportunities, networking, conferences, newsletters, publications)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance operations- management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "PD:268",
+      "level": "SP",
+      "official_text": "Utilize operations- and supply chain management publications (e.g., books, periodicals, newsletters) to update skills",
+      "display_text": "Utilize operations- and supply chain management publications (e.g., books, periodicals, newsletters) to update skills",
+      "text": "Utilize operations- and supply chain management publications (e.g., books, periodicals, newsletters) to update skills",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore professional development opportunities to enhance operations- management skills.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "KM:017",
+      "level": "SP",
+      "official_text": "Identify ways to use crowdsourcing in business",
+      "display_text": "Identify ways to use crowdsourcing in business",
+      "text": "Identify ways to use crowdsourcing in business",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Use knowledge management strategies to improve the performance and competitive advantage of an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "KM:020",
+      "level": "SP",
+      "official_text": "Describe the relationship among knowledge management, innovation, and talent development",
+      "display_text": "Describe the relationship among knowledge management, innovation, and talent development",
+      "text": "Describe the relationship among knowledge management, innovation, and talent development",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Evaluate knowledge management strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "KM:021",
+      "level": "SP",
+      "official_text": "Discuss the nature of records management",
+      "display_text": "Discuss the nature of records management",
+      "text": "Discuss the nature of records management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "KM",
+      "instructional_area_name": "Knowledge Management",
+      "standard": "Understands the systems, strategies, and techniques used to collect, organize, analyze, and share information known in an organization",
+      "performance_element": "Evaluate knowledge management strategies to improve the performance and competitive advantage of the organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:001",
+      "level": "SP",
+      "official_text": "Discuss the nature of product development",
+      "display_text": "Discuss the nature of product development",
+      "text": "Discuss the nature of product development",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Understand the use of innovation to gain competitive advantage in the marketplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:002",
+      "level": "SP",
+      "official_text": "Describe the relationship between innovation and product development",
+      "display_text": "Describe the relationship between innovation and product development",
+      "text": "Describe the relationship between innovation and product development",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Understand the use of innovation to gain competitive advantage in the marketplace.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:004",
+      "level": "SP",
+      "official_text": "Describe methods for recognizing opportunities for innovation",
+      "display_text": "Describe methods for recognizing opportunities for innovation",
+      "text": "Describe methods for recognizing opportunities for innovation",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Acquire a foundational knowledge of product design and development to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:006",
+      "level": "SP",
+      "official_text": "Identify the impact of product life cycles on operating decisions",
+      "display_text": "Identify the impact of product life cycles on operating decisions",
+      "text": "Identify the impact of product life cycles on operating decisions",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Acquire a foundational knowledge of product design and development to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:007",
+      "level": "SP",
+      "official_text": "Describe the use of technology in product-development management",
+      "display_text": "Describe the use of technology in product-development management",
+      "text": "Describe the use of technology in product-development management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Acquire a foundational knowledge of product design and development to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:008",
+      "level": "SP",
+      "official_text": "Explain business ethics in product-development management",
+      "display_text": "Explain business ethics in product-development management",
+      "text": "Explain business ethics in product-development management",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Acquire a foundational knowledge of product design and development to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 52
+      }
+    },
+    {
+      "code": "VM:009",
+      "level": "SP",
+      "official_text": "Identify opportunities for innovation",
+      "display_text": "Identify opportunities for innovation",
+      "text": "Identify opportunities for innovation",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "VM",
+      "instructional_area_name": "Innovation Management",
+      "standard": "Understand the strategies and techniques used in marketplace innovation.",
+      "performance_element": "Use innovation to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "QM:008",
+      "level": "SP",
+      "official_text": "Describe product standards' issues associated with global business",
+      "display_text": "Describe product standards' issues associated with global business",
+      "text": "Describe product standards' issues associated with global business",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "QM:010",
+      "level": "SP",
+      "official_text": "Discuss the implications of quality costs",
+      "display_text": "Discuss the implications of quality costs",
+      "text": "Discuss the implications of quality costs",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "QM:009",
+      "level": "SP",
+      "official_text": "Analyze materials and products to achieve quality goals",
+      "display_text": "Analyze materials and products to achieve quality goals",
+      "text": "Analyze materials and products to achieve quality goals",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "QM:004",
+      "level": "SP",
+      "official_text": "Test product/service for quality",
+      "display_text": "Test product/service for quality",
+      "text": "Test product/service for quality",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "QM",
+      "instructional_area_name": "Quality Management",
+      "standard": "Understands the need for standards and the strategies and techniques used to implement, monitor, and evaluate them",
+      "performance_element": "Manage quality to achieve organizational objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:078",
+      "level": "SP",
+      "official_text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "display_text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:096",
+      "level": "SP",
+      "official_text": "Identify operational risk factors associated with business contracts",
+      "display_text": "Identify operational risk factors associated with business contracts",
+      "text": "Identify operational risk factors associated with business contracts",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:082",
+      "level": "SP",
+      "official_text": "Develop monitoring programs for restrictive contract requirements",
+      "display_text": "Develop monitoring programs for restrictive contract requirements",
+      "text": "Develop monitoring programs for restrictive contract requirements",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:065",
+      "level": "SP",
+      "official_text": "Discuss the nature of global risk",
+      "display_text": "Discuss the nature of global risk",
+      "text": "Discuss the nature of global risk",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:088",
+      "level": "SP",
+      "official_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "display_text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "text": "Describe types of indicators used to manage business risk (e.g., key risk indicators, key performance indicators, key process indicators)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:066",
+      "level": "SP",
+      "official_text": "Monitor third-party relationships for potential risk",
+      "display_text": "Monitor third-party relationships for potential risk",
+      "text": "Monitor third-party relationships for potential risk",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    },
+    {
+      "code": "RM:062",
+      "level": "SP",
+      "official_text": "Discuss the nature of enterprise risk management (ERM)",
+      "display_text": "Discuss the nature of enterprise risk management (ERM)",
+      "text": "Discuss the nature of enterprise risk management (ERM)",
+      "tier": 3,
+      "curriculum_section": "Operations Pathway",
+      "cluster": "Business Management + Administration",
+      "pathway": "Operations",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-BMA",
+        "page": 53
+      }
+    }
+  ]
+}

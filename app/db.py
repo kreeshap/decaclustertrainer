@@ -113,6 +113,34 @@ def supabase_admin_request(path: str, method: str = "GET", payload: dict | None 
         return 502, {"detail": f"Supabase admin request failed: {error}"}
 
 
+def supabase_storage_upload(bucket: str, object_path: str, data: bytes, content_type: str = "application/pdf"):
+    """Upload a private object with the server-only service role."""
+    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+        return 500, {"detail": "Supabase admin storage is not configured."}
+    headers = {
+        "apikey": SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": f"Bearer {SUPABASE_SERVICE_ROLE_KEY}",
+        "Content-Type": content_type,
+        "x-upsert": "false",
+    }
+    safe_path = "/".join(quote(part, safe="") for part in object_path.split("/"))
+    req = Request(f"{SUPABASE_URL}/storage/v1/object/{quote(bucket, safe='')}/{safe_path}",
+                  data=data, headers=headers, method="POST")
+    try:
+        with urlopen(req, timeout=SUPABASE_API_TIMEOUT) as resp:
+            body = resp.read().decode("utf-8")
+            return resp.status, json.loads(body) if body else {}
+    except HTTPError as error:
+        body = error.read().decode("utf-8")
+        try:
+            parsed = json.loads(body) if body else {}
+        except json.JSONDecodeError:
+            parsed = {"detail": body}
+        return error.code, parsed
+    except Exception as error:
+        return 502, {"detail": f"Supabase storage upload failed: {error}"}
+
+
 def supabase_rest_request(
     path: str,
     method: str = "GET",

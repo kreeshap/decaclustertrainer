@@ -7,6 +7,7 @@ from ..auth_utils import get_bearer_token, get_current_user
 from ..db import supabase_rest_request
 from ..events import canonical_event_id
 from ..content_ops import catalog_id
+from ..content_quality import ContentQualityError, validate_roleplay_spec
 from ..learn_validation import (
     LearnContentError,
     validate_roleplay_grade,
@@ -161,6 +162,10 @@ def learn_generate():
     cluster = kpi["cluster"]
     standard = kpi["standard"]
     deca_cluster = kpi["deca_cluster"]
+    performance_element = kpi.get("performance_element", "")
+    tier = kpi.get("tier", "")
+    pathway = kpi.get("pathway") or "None"
+    level = kpi.get("level", "")
 
     prompt = f"""You are a DECA exam coach creating study materials for high school business students.
 
@@ -169,6 +174,11 @@ Generate educational content for this DECA Performance Indicator (KPI):
 - KPI: {text}
 - Subject Cluster: {cluster}
 - Standard: {standard}
+- Performance Element: {performance_element}
+- Competition Component: Learn Mode (use the event's full study curriculum)
+- Tier: {tier}
+- Pathway: {pathway}
+- Official PI Level: {level}
 - DECA Cluster: {deca_cluster or "Business"}
 
 Return ONLY valid JSON (no markdown, no extra text) with this exact structure:
@@ -1367,6 +1377,12 @@ def learn_due_questions():
 
 @learn_bp.post("/api/learn/roleplay-prompt")
 def learn_roleplay_prompt():
+    return jsonify({
+        "error": "Generated roleplays are disabled while the verified reference corpus is being built.",
+        "gate": "corpus_readiness",
+        "required": "15 verified event examples, or 30 cluster-family examples plus 3 event-specific examples",
+    }), 423
+    # The generator implementation remains below for the later readiness-gated phase.
     user = get_current_user()
     if not user:
         return jsonify({"error": "Unauthorized"}), 401
@@ -1377,15 +1393,26 @@ def learn_roleplay_prompt():
 
     if not kpis or not event_id:
         return jsonify({"error": "No KPIs or supported event provided"}), 400
-    allowed = {(k["code"], k["text"]): k for k in _load_all_kpis()[0] if k["event"] == event_id}
+    component = "case_study" if event_id.endswith("tdm") or "team_decision_making" in event_id else "roleplay"
+    allowed = {
+        (k["code"], k["text"]): k for k in _load_all_kpis()[0]
+        if k["event"] == event_id and component in k.get("eligible_components", [])
+    }
     if any((str(k.get("code", "")), str(k.get("text", ""))) not in allowed for k in kpis):
         return jsonify({"error": "Roleplay KPIs do not belong to the selected event"}), 400
 
-    kpi_lines = "\n".join(f"- {k.get('code', '')}: {k.get('text', '')}" for k in kpis)
+    kpi_lines = "\n".join(
+        f"- {item['code']} ({item.get('level', '')}, {item.get('tier', '')}, pathway: {item.get('pathway') or 'none'})\n"
+        f"  Instructional Area: {item.get('instructional_area_name', item.get('cluster', ''))}\n"
+        f"  Standard: {item.get('standard', '')}\n"
+        f"  Performance Element: {item.get('performance_element', '')}\n"
+        f"  Official PI: {item.get('official_text', item.get('text', ''))}"
+        for item in (allowed[(str(k.get("code", "")), str(k.get("text", "")))] for k in kpis)
+    )
 
     prompt = f"""You are a DECA judge creating a roleplay scenario for a high school business competition.
 
-Create a realistic business scenario that lets a student demonstrate understanding of these 7 DECA performance indicators:
+Build from the eligible KPIs outward. First infer the business skill required, then create a realistic problem that forces the student to apply it:
 {kpi_lines}
 
 The scenario should be a real business situation (consulting, management, sales, finance, etc.)
@@ -1393,9 +1420,12 @@ that naturally requires addressing all or most of these indicators.
 
 Return ONLY valid JSON:
 {{
-  "scenario": "You are a [specific role] at [specific company/situation]. [2-3 sentences describing the business problem or situation]. Your task is to [what they must do/address].",
-  "role": "The student's specific role (e.g. 'Financial Consultant')",
-  "focus": "One sentence on what aspect to emphasize in the response"
+  "business_skill": "The concrete business skill required by the KPIs",
+  "business_problem": "The realistic situation that forces those skills",
+  "participant_role": "The student's specific role",
+  "judge_role": "The judge's specific role",
+  "judge_questions": ["Question that probes application and justification"],
+  "kpis": [{"code": "XX:000"}]
 }}"""
 
     result, err = call_json_with_fallback(
@@ -1405,8 +1435,14 @@ Return ONLY valid JSON:
         return jsonify({"error": err}), 500
 
     try:
-        return jsonify(validate_roleplay_prompt(result))
-    except LearnContentError as error:
+        spec = validate_roleplay_spec(result, eligible_codes={item[0] for item in allowed})
+        return jsonify({
+            **spec,
+            "scenario": f"You are {spec['participant_role']}. {spec['business_problem']}",
+            "role": spec["participant_role"],
+            "focus": spec["business_skill"],
+        })
+    except (LearnContentError, ContentQualityError) as error:
         return jsonify({"error": "Model returned invalid roleplay content.", "detail": str(error)}), 502
 
 
@@ -1425,7 +1461,8 @@ def learn_grade():
 
     if not scenario or not response_text or not event_id or not session_id:
         return jsonify({"error": "Missing scenario, response, session, or supported event"}), 400
-    allowed_codes = {k["code"] for k in _load_all_kpis()[0] if k["event"] == event_id}
+    component = "case_study" if event_id.endswith("tdm") or "team_decision_making" in event_id else "roleplay"
+    allowed_codes = {k["code"] for k in _load_all_kpis()[0] if k["event"] == event_id and component in k.get("eligible_components", [])}
     kpi_codes = [str(k.get("code") or "") for k in kpis]
     if not kpi_codes or any(code not in allowed_codes for code in kpi_codes):
         return jsonify({"error": "Roleplay KPIs do not belong to the selected event"}), 400
@@ -1457,12 +1494,13 @@ Grade this response. Return ONLY valid JSON — no markdown, no extra text:
     "Specific improvement 2"
   ],
   "kpi_coverage": [
-    {{"code": "XX:000", "addressed": true, "note": "How they addressed it or why it was missed"}}
+    {{"code": "XX:000", "demonstration_level": 3, "applied_to_situation": true, "justified_recommendation": false, "tied_to_business_outcome": false, "evidence": "Specific evidence from the response", "feedback": "How to improve application"}}
   ]
 }}
 
 Scoring guide: 9-10=Excellent, 7-8=Good, 5-6=Adequate, 3-4=Needs work, 1-2=Poor.
-Grade letter: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 1-2=F."""
+Grade letter: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 1-2=F.
+For each KPI use demonstration_level: 0=not addressed, 1=mentioned, 2=explained correctly, 3=applied to this situation, 4=applied + justified + tied to a business outcome. Set the three evidence booleans independently. Vocabulary alone earns at most 1."""
 
     result, err = call_json_with_fallback(
         prompt, priority="student", max_tokens=1600, temperature=0.3
@@ -1485,6 +1523,14 @@ Grade letter: 9-10=A, 7-8=B, 5-6=C, 3-4=D, 1-2=F."""
     )
     if status not in (200, 204) or not isinstance(saved, list) or not saved:
         return jsonify({"error": "Roleplay grade could not be saved."}), 502
+    demonstration_rows = [{
+        "user_id": user_id, "event_id": event_id, "session_id": session_id,
+        "kpi_code": item["code"], "demonstration_level": item["demonstration_level"],
+        "evidence": item["evidence"], "feedback": item["feedback"],
+    } for item in result["kpi_coverage"]]
+    save_status, _ = _supabase_svc("/roleplay_kpi_demonstrations", method="POST", payload=demonstration_rows, prefer="return=minimal")
+    if save_status not in (200, 201, 204):
+        return jsonify({"error": "Roleplay evidence could not be saved."}), 502
     return jsonify(result)
 
 

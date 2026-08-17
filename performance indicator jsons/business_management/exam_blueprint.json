@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "competitive_year": "2026-27",
+  "exam": "Business Management + Administration",
+  "item_count": 100,
+  "actual_counts_may_vary_slightly": true,
+  "source": {
+    "document": "2026-27-HS-Competitive-Events-Exam-Blueprint",
+    "page": 39
+  },
+  "instructional_areas": [
+    {
+      "name": "Business Law",
+      "district": 5,
+      "association": 5,
+      "icdc": 5
+    },
+    {
+      "name": "Communications",
+      "district": 7,
+      "association": 6,
+      "icdc": 6
+    },
+    {
+      "name": "Customer Relations",
+      "district": 2,
+      "association": 2,
+      "icdc": 1
+    },
+    {
+      "name": "Economics",
+      "district": 6,
+      "association": 5,
+      "icdc": 4
+    },
+    {
+      "name": "Emotional Intelligence",
+      "district": 9,
+      "association": 8,
+      "icdc": 6
+    },
+    {
+      "name": "Entrepreneurship",
+      "district": 1,
+      "association": 0,
+      "icdc": 0
+    },
+    {
+      "name": "Financial Analysis",
+      "district": 7,
+      "association": 6,
+      "icdc": 5
+    },
+    {
+      "name": "Human Resources Management",
+      "district": 1,
+      "association": 0,
+      "icdc": 0
+    },
+    {
+      "name": "Information Management",
+      "district": 7,
+      "association": 6,
+      "icdc": 6
+    },
+    {
+      "name": "Knowledge Management",
+      "district": 6,
+      "association": 7,
+      "icdc": 8
+    },
+    {
+      "name": "Marketing",
+      "district": 1,
+      "association": 1,
+      "icdc": 1
+    },
+    {
+      "name": "Operations",
+      "district": 21,
+      "association": 24,
+      "icdc": 26
+    },
+    {
+      "name": "Professional Development",
+      "district": 6,
+      "association": 5,
+      "icdc": 4
+    },
+    {
+      "name": "Project Management",
+      "district": 6,
+      "association": 7,
+      "icdc": 8
+    },
+    {
+      "name": "Quality Management",
+      "district": 3,
+      "association": 4,
+      "icdc": 5
+    },
+    {
+      "name": "Risk Management",
+      "district": 4,
+      "association": 5,
+      "icdc": 5
+    },
+    {
+      "name": "Strategic Management",
+      "district": 8,
+      "association": 9,
+      "icdc": 10
+    }
+  ]
+}

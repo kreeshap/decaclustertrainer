@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cluster": "Marketing",
+  "competitive_year": "2026-27",
+  "event_id": "apparel_and_accessories_marketing_series",
+  "event_code": "AAM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Apparel and Accessories Marketing Series",
+  "event_type": "individual_series",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "marketing_tier2"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "marketing_tier2",
+        "marketing_tier3_merchandising"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "marketing_tier2",
+    "marketing_tier3_merchandising"
+  ]
+}

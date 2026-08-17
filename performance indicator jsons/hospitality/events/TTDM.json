@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "event_id": "travel_and_tourism_team_decision_making",
+  "event_code": "TTDM",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Travel and Tourism Team Decision Making",
+  "event_type": "team_decision_making",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    },
+    "case_study": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "hospitality_tier2"
+  ]
+}

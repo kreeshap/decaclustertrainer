@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "competitive_year": "2026-27",
+  "exam": "Hospitality + Tourism",
+  "item_count": 100,
+  "actual_counts_may_vary_slightly": true,
+  "source": {
+    "document": "2026-27-HS-Competitive-Events-Exam-Blueprint",
+    "page": 39
+  },
+  "instructional_areas": [
+    {
+      "name": "Business Law",
+      "district": 3,
+      "association": 3,
+      "icdc": 2
+    },
+    {
+      "name": "Communications",
+      "district": 5,
+      "association": 4,
+      "icdc": 3
+    },
+    {
+      "name": "Customer Relations",
+      "district": 8,
+      "association": 9,
+      "icdc": 9
+    },
+    {
+      "name": "Economics",
+      "district": 6,
+      "association": 6,
+      "icdc": 5
+    },
+    {
+      "name": "Emotional Intelligence",
+      "district": 9,
+      "association": 9,
+      "icdc": 7
+    },
+    {
+      "name": "Entrepreneurship",
+      "district": 1,
+      "association": 0,
+      "icdc": 0
+    },
+    {
+      "name": "Financial Analysis",
+      "district": 8,
+      "association": 7,
+      "icdc": 7
+    },
+    {
+      "name": "Human Resources Management",
+      "district": 2,
+      "association": 1,
+      "icdc": 1
+    },
+    {
+      "name": "Information Management",
+      "district": 14,
+      "association": 15,
+      "icdc": 15
+    },
+    {
+      "name": "Knowledge Management",
+      "district": 0,
+      "association": 1,
+      "icdc": 1
+    },
+    {
+      "name": "Market Planning",
+      "district": 1,
+      "association": 1,
+      "icdc": 2
+    },
+    {
+      "name": "Marketing",
+      "district": 1,
+      "association": 1,
+      "icdc": 2
+    },
+    {
+      "name": "Operations",
+      "district": 13,
+      "association": 13,
+      "icdc": 13
+    },
+    {
+      "name": "Pricing",
+      "district": 1,
+      "association": 1,
+      "icdc": 1
+    },
+    {
+      "name": "Product/Service Management",
+      "district": 6,
+      "association": 7,
+      "icdc": 9
+    },
+    {
+      "name": "Professional Development",
+      "district": 8,
+      "association": 7,
+      "icdc": 6
+    },
+    {
+      "name": "Promotion",
+      "district": 2,
+      "association": 3,
+      "icdc": 3
+    },
+    {
+      "name": "Quality Management",
+      "district": 1,
+      "association": 1,
+      "icdc": 1
+    },
+    {
+      "name": "Risk Management",
+      "district": 1,
+      "association": 1,
+      "icdc": 2
+    },
+    {
+      "name": "Selling",
+      "district": 7,
+      "association": 8,
+      "icdc": 9
+    },
+    {
+      "name": "Strategic Management",
+      "district": 3,
+      "association": 2,
+      "icdc": 2
+    }
+  ]
+}

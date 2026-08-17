@@ -1,0 +1,1679 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "marketing_tier2",
+  "name": "Marketing Career Cluster",
+  "cluster": "Marketing",
+  "tier": 2,
+  "curriculum_section": "Marketing Career Cluster",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Marketing",
+    "pages": [
+      21,
+      25
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "PD:137",
+      "level": "SP",
+      "official_text": "Explain the need for professional and ethical standards in marketing",
+      "display_text": "Explain the need for professional and ethical standards in marketing",
+      "text": "Explain the need for professional and ethical standards in marketing",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand responsibilities in marketing to demonstrate ethical/legal behavior.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PD:024",
+      "level": "CS",
+      "official_text": "Explain employment opportunities in marketing",
+      "display_text": "Explain employment opportunities in marketing",
+      "text": "Explain employment opportunities in marketing",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the product/service management function",
+      "display_text": "Explain the nature and scope of the product/service management function",
+      "text": "Explain the nature and scope of the product/service management function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:024",
+      "level": "SP",
+      "official_text": "Identify the impact of product life cycles on marketing decisions",
+      "display_text": "Identify the impact of product life cycles on marketing decisions",
+      "text": "Identify the impact of product life cycles on marketing decisions",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:039",
+      "level": "SP",
+      "official_text": "Describe the use of technology in the product/service management function",
+      "display_text": "Describe the use of technology in the product/service management function",
+      "text": "Describe the use of technology in the product/service management function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:040",
+      "level": "SP",
+      "official_text": "Explain business ethics in product/service management",
+      "display_text": "Explain business ethics in product/service management",
+      "text": "Explain business ethics in product/service management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Acquire a foundational knowledge of product/service management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:134",
+      "level": "SP",
+      "official_text": "Identify product opportunities",
+      "display_text": "Identify product opportunities",
+      "text": "Identify product opportunities",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:127",
+      "level": "SP",
+      "official_text": "Identify methods/techniques to generate a product idea",
+      "display_text": "Identify methods/techniques to generate a product idea",
+      "text": "Identify methods/techniques to generate a product idea",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:128",
+      "level": "SP",
+      "official_text": "Generate product ideas",
+      "display_text": "Generate product ideas",
+      "text": "Generate product ideas",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Generate product ideas to contribute to ongoing business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:019",
+      "level": "CS",
+      "official_text": "Describe the uses of grades and standards in marketing",
+      "display_text": "Describe the uses of grades and standards in marketing",
+      "text": "Describe the uses of grades and standards in marketing",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:020",
+      "level": "CS",
+      "official_text": "Explain warranties and guarantees",
+      "display_text": "Explain warranties and guarantees",
+      "text": "Explain warranties and guarantees",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:017",
+      "level": "SP",
+      "official_text": "Identify consumer protection provisions of appropriate agencies",
+      "display_text": "Identify consumer protection provisions of appropriate agencies",
+      "text": "Identify consumer protection provisions of appropriate agencies",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:003",
+      "level": "SP",
+      "official_text": "Explain the concept of product mix",
+      "display_text": "Explain the concept of product mix",
+      "text": "Explain the concept of product mix",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:041",
+      "level": "SP",
+      "official_text": "Describe the nature of product bundling",
+      "display_text": "Describe the nature of product bundling",
+      "text": "Describe the nature of product bundling",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:206",
+      "level": "SP",
+      "official_text": "Explain the nature of corporate branding",
+      "display_text": "Explain the nature of corporate branding",
+      "text": "Explain the nature of corporate branding",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:207",
+      "level": "SP",
+      "official_text": "Describe factors used by businesses to position corporate brands",
+      "display_text": "Describe factors used by businesses to position corporate brands",
+      "text": "Describe factors used by businesses to position corporate brands",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:277",
+      "level": "SP",
+      "official_text": "Identify customer touch points",
+      "display_text": "Identify customer touch points",
+      "text": "Identify customer touch points",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 21
+      }
+    },
+    {
+      "code": "PM:042",
+      "level": "SP",
+      "official_text": "Describe factors used by marketers to position products/services",
+      "display_text": "Describe factors used by marketers to position products/services",
+      "text": "Describe factors used by marketers to position products/services",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "PM:021",
+      "level": "SP",
+      "official_text": "Explain the nature of product/service branding",
+      "display_text": "Explain the nature of product/service branding",
+      "text": "Explain the nature of product/service branding",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "PM:276",
+      "level": "SP",
+      "official_text": "Describe the role of customer voice in branding",
+      "display_text": "Describe the role of customer voice in branding",
+      "text": "Describe the role of customer voice in branding",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:001",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of channel management",
+      "display_text": "Explain the nature and scope of channel management",
+      "text": "Explain the nature and scope of channel management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:003",
+      "level": "CS",
+      "official_text": "Explain the nature of channels of distribution",
+      "display_text": "Explain the nature of channels of distribution",
+      "text": "Explain the nature of channels of distribution",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:004",
+      "level": "CS",
+      "official_text": "Describe the use of technology in the channel management function",
+      "display_text": "Describe the use of technology in the channel management function",
+      "text": "Describe the use of technology in the channel management function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:005",
+      "level": "SP",
+      "official_text": "Explain legal considerations in channel management",
+      "display_text": "Explain legal considerations in channel management",
+      "text": "Explain legal considerations in channel management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:006",
+      "level": "SP",
+      "official_text": "Describe ethical considerations in channel management",
+      "display_text": "Describe ethical considerations in channel management",
+      "text": "Describe ethical considerations in channel management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:007",
+      "level": "SP",
+      "official_text": "Coordinate channel management with other marketing activities",
+      "display_text": "Coordinate channel management with other marketing activities",
+      "text": "Coordinate channel management with other marketing activities",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:008",
+      "level": "SP",
+      "official_text": "Explain the nature of channel-member relationships",
+      "display_text": "Explain the nature of channel-member relationships",
+      "text": "Explain the nature of channel-member relationships",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "CM:021",
+      "level": "SP",
+      "official_text": "Explain the nature of affinity partner relationships",
+      "display_text": "Explain the nature of affinity partner relationships",
+      "text": "Explain the nature of affinity partner relationships",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:012",
+      "level": "CS",
+      "official_text": "Describe the need for marketing data",
+      "display_text": "Describe the need for marketing data",
+      "text": "Describe the need for marketing data",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:184",
+      "level": "SP",
+      "official_text": "Identify data monitored for marketing decision making",
+      "display_text": "Identify data monitored for marketing decision making",
+      "text": "Identify data monitored for marketing decision making",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the marketing-information management function",
+      "display_text": "Explain the nature and scope of the marketing-information management function",
+      "text": "Explain the nature and scope of the marketing-information management function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:025",
+      "level": "SP",
+      "official_text": "Explain the role of ethics in marketing-information management",
+      "display_text": "Explain the role of ethics in marketing-information management",
+      "text": "Explain the role of ethics in marketing-information management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:183",
+      "level": "SP",
+      "official_text": "Describe the use of technology in the marketing-information management function",
+      "display_text": "Describe the use of technology in the marketing-information management function",
+      "text": "Describe the use of technology in the marketing-information management function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:419",
+      "level": "SP",
+      "official_text": "Describe the regulation of marketing-information management",
+      "display_text": "Describe the regulation of marketing-information management",
+      "text": "Describe the regulation of marketing-information management",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Acquire foundational knowledge of marketing-information management to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:010",
+      "level": "SP",
+      "official_text": "Explain the nature of marketing research",
+      "display_text": "Explain the nature of marketing research",
+      "text": "Explain the nature of marketing research",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research activities to show command of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:282",
+      "level": "SP",
+      "official_text": "Discuss the nature of marketing research problems/issues",
+      "display_text": "Discuss the nature of marketing research problems/issues",
+      "text": "Discuss the nature of marketing research problems/issues",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research activities to show command of their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 22
+      }
+    },
+    {
+      "code": "IM:284",
+      "level": "SP",
+      "official_text": "Describe methods used to design marketing research studies (i.e., descriptive, exploratory, and causal)",
+      "display_text": "Describe methods used to design marketing research studies (i.e., descriptive, exploratory, and causal)",
+      "text": "Describe methods used to design marketing research studies (i.e., descriptive, exploratory, and causal)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research design considerations to evaluate their appropriateness for the research problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:281",
+      "level": "SP",
+      "official_text": "Describe options businesses use to obtain marketing research data (i.e., primary and secondary research)",
+      "display_text": "Describe options businesses use to obtain marketing research data (i.e., primary and secondary research)",
+      "text": "Describe options businesses use to obtain marketing research data (i.e., primary and secondary research)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research design considerations to evaluate their appropriateness for the research problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:285",
+      "level": "SP",
+      "official_text": "Discuss the nature of sampling plans (i.e., who, how many, how chosen)",
+      "display_text": "Discuss the nature of sampling plans (i.e., who, how many, how chosen)",
+      "text": "Discuss the nature of sampling plans (i.e., who, how many, how chosen)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand marketing-research design considerations to evaluate their appropriateness for the research problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:289",
+      "level": "SP",
+      "official_text": "Describe data-collection methods (e.g., observations, mail, diaries, phone, internet, discussion groups, interviews, scanners, tracking tools)",
+      "display_text": "Describe data-collection methods (e.g., observations, mail, diaries, phone, internet, discussion groups, interviews, scanners, tracking tools)",
+      "text": "Describe data-collection methods (e.g., observations, mail, diaries, phone, internet, discussion groups, interviews, scanners, tracking tools)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand data-collection methods to evaluate their appropriateness for the research problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:418",
+      "level": "SP",
+      "official_text": "Explain characteristics of effective data-collection instruments",
+      "display_text": "Explain characteristics of effective data-collection instruments",
+      "text": "Explain characteristics of effective data-collection instruments",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Understand data-collection methods to evaluate their appropriateness for the research problem/issue.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:062",
+      "level": "SP",
+      "official_text": "Explain techniques for processing marketing data",
+      "display_text": "Explain techniques for processing marketing data",
+      "text": "Explain techniques for processing marketing data",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Interpret marketing information to test hypotheses and/or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:469",
+      "level": "SP",
+      "official_text": "Monitor/measure customer \"buzz\"",
+      "display_text": "Monitor/measure customer \"buzz\"",
+      "text": "Monitor/measure customer \"buzz\"",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Interpret marketing information to test hypotheses and/or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:191",
+      "level": "SP",
+      "official_text": "Explain the use of descriptive statistics in marketing decision making",
+      "display_text": "Explain the use of descriptive statistics in marketing decision making",
+      "text": "Explain the use of descriptive statistics in marketing decision making",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Interpret marketing information to test hypotheses and/or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:292",
+      "level": "SP",
+      "official_text": "Identify sources of error in a research project (e.g., response errors, interviewer errors, non-response errors, sample design)",
+      "display_text": "Identify sources of error in a research project (e.g., response errors, interviewer errors, non-response errors, sample design)",
+      "text": "Identify sources of error in a research project (e.g., response errors, interviewer errors, non-response errors, sample design)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Evaluate marketing research procedures and findings to assess their credibility.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:293",
+      "level": "SP",
+      "official_text": "Evaluate questionnaire design (e.g., types of questions, question wording, routing, sequencing, length, layout)",
+      "display_text": "Evaluate questionnaire design (e.g., types of questions, question wording, routing, sequencing, length, layout)",
+      "text": "Evaluate questionnaire design (e.g., types of questions, question wording, routing, sequencing, length, layout)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Evaluate marketing research procedures and findings to assess their credibility.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "IM:428",
+      "level": "SP",
+      "official_text": "Assess appropriateness of marketing research for the problem/issue (e.g., research methods, sources of information, timeliness of information, etc.)",
+      "display_text": "Assess appropriateness of marketing research for the problem/issue (e.g., research methods, sources of information, timeliness of information, etc.)",
+      "text": "Assess appropriateness of marketing research for the problem/issue (e.g., research methods, sources of information, timeliness of information, etc.)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Evaluate marketing research procedures and findings to assess their credibility.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "MP:001",
+      "level": "CS",
+      "official_text": "Explain the concept of marketing strategies",
+      "display_text": "Explain the concept of marketing strategies",
+      "text": "Explain the concept of marketing strategies",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Develop marketing strategies to guide marketing tactics.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "MP:003",
+      "level": "CS",
+      "official_text": "Explain the concept of market and market identification",
+      "display_text": "Explain the concept of market and market identification",
+      "text": "Explain the concept of market and market identification",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 23
+      }
+    },
+    {
+      "code": "MP:006",
+      "level": "SP",
+      "official_text": "Explain the nature of marketing planning",
+      "display_text": "Explain the nature of marketing planning",
+      "text": "Explain the nature of marketing planning",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "MP:007",
+      "level": "SP",
+      "official_text": "Explain the nature of marketing plans",
+      "display_text": "Explain the nature of marketing plans",
+      "text": "Explain the nature of marketing plans",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "MP:008",
+      "level": "SP",
+      "official_text": "Explain the role of situation analysis in the marketing planning process",
+      "display_text": "Explain the role of situation analysis in the marketing planning process",
+      "text": "Explain the role of situation analysis in the marketing planning process",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "MP:013",
+      "level": "SP",
+      "official_text": "Explain the nature of sales forecasts",
+      "display_text": "Explain the nature of sales forecasts",
+      "text": "Explain the nature of sales forecasts",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Employ marketing-information to plan marketing activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PI:001",
+      "level": "SP",
+      "official_text": "Explain the nature and scope of the pricing function",
+      "display_text": "Explain the nature and scope of the pricing function",
+      "text": "Explain the nature and scope of the pricing function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PI:015",
+      "level": "SP",
+      "official_text": "Describe the role of business ethics in pricing",
+      "display_text": "Describe the role of business ethics in pricing",
+      "text": "Describe the role of business ethics in pricing",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PI:016",
+      "level": "SP",
+      "official_text": "Explain the use of technology in the pricing function",
+      "display_text": "Explain the use of technology in the pricing function",
+      "text": "Explain the use of technology in the pricing function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PI:017",
+      "level": "SP",
+      "official_text": "Explain legal considerations for pricing",
+      "display_text": "Explain legal considerations for pricing",
+      "text": "Explain legal considerations for pricing",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PI:002",
+      "level": "SP",
+      "official_text": "Explain factors affecting pricing decisions",
+      "display_text": "Explain factors affecting pricing decisions",
+      "text": "Explain factors affecting pricing decisions",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:001",
+      "level": "CS",
+      "official_text": "Explain the role of promotion as a marketing function",
+      "display_text": "Explain the role of promotion as a marketing function",
+      "text": "Explain the role of promotion as a marketing function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:002",
+      "level": "CS",
+      "official_text": "Explain the types of promotion (i.e., institutional, product)",
+      "display_text": "Explain the types of promotion (i.e., institutional, product)",
+      "text": "Explain the types of promotion (i.e., institutional, product)",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:003",
+      "level": "SP",
+      "official_text": "Identify the elements of the promotional mix",
+      "display_text": "Identify the elements of the promotional mix",
+      "text": "Identify the elements of the promotional mix",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:099",
+      "level": "SP",
+      "official_text": "Describe the use of business ethics in promotion",
+      "display_text": "Describe the use of business ethics in promotion",
+      "text": "Describe the use of business ethics in promotion",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:100",
+      "level": "SP",
+      "official_text": "Describe the use of technology in the promotion function",
+      "display_text": "Describe the use of technology in the promotion function",
+      "text": "Describe the use of technology in the promotion function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:101",
+      "level": "SP",
+      "official_text": "Describe the regulation of promotion",
+      "display_text": "Describe the regulation of promotion",
+      "text": "Describe the regulation of promotion",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Acquire a foundational knowledge of promotion to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:007",
+      "level": "SP",
+      "official_text": "Explain types of advertising media",
+      "display_text": "Explain types of advertising media",
+      "text": "Explain types of advertising media",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:247",
+      "level": "SP",
+      "official_text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "display_text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "text": "Describe word-of-mouth channels used to communicate with targeted audiences",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:089",
+      "level": "SP",
+      "official_text": "Explain the nature of direct marketing channels",
+      "display_text": "Explain the nature of direct marketing channels",
+      "text": "Explain the nature of direct marketing channels",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:249",
+      "level": "SP",
+      "official_text": "Identify communications channels used in sales promotion",
+      "display_text": "Identify communications channels used in sales promotion",
+      "text": "Identify communications channels used in sales promotion",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:250",
+      "level": "SP",
+      "official_text": "Explain communications channels used in public-relations activities",
+      "display_text": "Explain communications channels used in public-relations activities",
+      "text": "Explain communications channels used in public-relations activities",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand promotional channels used to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:014",
+      "level": "SP",
+      "official_text": "Explain the components of advertisements",
+      "display_text": "Explain the components of advertisements",
+      "text": "Explain the components of advertisements",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of an advertisement's components to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:251",
+      "level": "SP",
+      "official_text": "Explain the importance of coordinating elements in advertisements",
+      "display_text": "Explain the importance of coordinating elements in advertisements",
+      "text": "Explain the importance of coordinating elements in advertisements",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of an advertisement's components to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 24
+      }
+    },
+    {
+      "code": "PR:252",
+      "level": "SP",
+      "official_text": "Identify types of public-relations activities",
+      "display_text": "Identify types of public-relations activities",
+      "text": "Identify types of public-relations activities",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of public-relations activities to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "PR:253",
+      "level": "SP",
+      "official_text": "Discuss internal and external audiences for public-relations activities",
+      "display_text": "Discuss internal and external audiences for public-relations activities",
+      "text": "Discuss internal and external audiences for public-relations activities",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of public-relations activities to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:017",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of the selling function",
+      "display_text": "Explain the nature and scope of the selling function",
+      "text": "Explain the nature and scope of the selling function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:076",
+      "level": "CS",
+      "official_text": "Explain the role of customer service as a component of selling relationships",
+      "display_text": "Explain the role of customer service as a component of selling relationships",
+      "text": "Explain the role of customer service as a component of selling relationships",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:932",
+      "level": "CS",
+      "official_text": "Explain company selling policies",
+      "display_text": "Explain company selling policies",
+      "text": "Explain company selling policies",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:828",
+      "level": "SP",
+      "official_text": "Explain key factors in building a clientele",
+      "display_text": "Explain key factors in building a clientele",
+      "text": "Explain key factors in building a clientele",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:106",
+      "level": "SP",
+      "official_text": "Explain legal and ethical considerations in selling",
+      "display_text": "Explain legal and ethical considerations in selling",
+      "text": "Explain legal and ethical considerations in selling",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:107",
+      "level": "SP",
+      "official_text": "Describe the use of technology in the selling function",
+      "display_text": "Describe the use of technology in the selling function",
+      "text": "Describe the use of technology in the selling function",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire a foundational knowledge of selling to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:062",
+      "level": "CS",
+      "official_text": "Acquire product information for use in selling",
+      "display_text": "Acquire product information for use in selling",
+      "text": "Acquire product information for use in selling",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:109",
+      "level": "SP",
+      "official_text": "Analyze product information to identify product features and benefits",
+      "display_text": "Analyze product information to identify product features and benefits",
+      "text": "Analyze product information to identify product features and benefits",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:048",
+      "level": "CS",
+      "official_text": "Explain the selling process",
+      "display_text": "Explain the selling process",
+      "text": "Explain the selling process",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Understand sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    },
+    {
+      "code": "SE:359",
+      "level": "SP",
+      "official_text": "Discuss motivational theories that impact buying behavior",
+      "display_text": "Discuss motivational theories that impact buying behavior",
+      "text": "Discuss motivational theories that impact buying behavior",
+      "tier": 2,
+      "curriculum_section": "Marketing Career Cluster",
+      "cluster": "Marketing",
+      "pathway": null,
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Understand sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 25
+      }
+    }
+  ]
+}

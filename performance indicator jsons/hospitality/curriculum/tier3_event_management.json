@@ -1,0 +1,2559 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "hospitality_tier3_event_management",
+  "name": "Event Management Pathway",
+  "cluster": "Hospitality + Tourism",
+  "tier": 3,
+  "curriculum_section": "Event Management Pathway",
+  "pathway": "Event Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Hospitality",
+    "pages": [
+      30,
+      37
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:165",
+      "level": "SP",
+      "official_text": "Describe legal issues affecting the event management industry",
+      "display_text": "Describe legal issues affecting the event management industry",
+      "text": "Describe legal issues affecting the event management industry",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of business laws and regulations to understand their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "BL:166",
+      "level": "SP",
+      "official_text": "Describe the nature of tax regulations affecting events",
+      "display_text": "Describe the nature of tax regulations affecting events",
+      "text": "Describe the nature of tax regulations affecting events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand tax laws and regulations to adhere to government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "CO:211",
+      "level": "SP",
+      "official_text": "Solicit event sponsors/vendors/speakers",
+      "display_text": "Solicit event sponsors/vendors/speakers",
+      "text": "Solicit event sponsors/vendors/speakers",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "CO:212",
+      "level": "SP",
+      "official_text": "Write funding requests",
+      "display_text": "Write funding requests",
+      "text": "Write funding requests",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "CR:056",
+      "level": "SP",
+      "official_text": "Identify factors affecting attendee satisfaction with events",
+      "display_text": "Identify factors affecting attendee satisfaction with events",
+      "text": "Identify factors affecting attendee satisfaction with events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "EC:053",
+      "level": "SP",
+      "official_text": "Describe the impact of unions on the event industry",
+      "display_text": "Describe the impact of unions on the event industry",
+      "text": "Describe the impact of unions on the event industry",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Analyze cost/profit relationships to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 30
+      }
+    },
+    {
+      "code": "FI:793",
+      "level": "SP",
+      "official_text": "Explain the need for event insurance",
+      "display_text": "Explain the need for event insurance",
+      "text": "Explain the need for event insurance",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use risk management products to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "FI:794",
+      "level": "SP",
+      "official_text": "Describe the nature of event budgeting",
+      "display_text": "Describe the nature of event budgeting",
+      "text": "Describe the nature of event budgeting",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "FI:795",
+      "level": "SP",
+      "official_text": "Develop event budget",
+      "display_text": "Develop event budget",
+      "text": "Develop event budget",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "HR:557",
+      "level": "SP",
+      "official_text": "Identify alternative staffing options",
+      "display_text": "Identify alternative staffing options",
+      "text": "Identify alternative staffing options",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Adjust the staffing capacity of an organization to meet predicted demands.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "HR:558",
+      "level": "SP",
+      "official_text": "Determine staffing needs for events",
+      "display_text": "Determine staffing needs for events",
+      "text": "Determine staffing needs for events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Adjust the staffing capacity of an organization to meet predicted demands.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "HR:563",
+      "level": "SP",
+      "official_text": "Evaluate event volunteer needs",
+      "display_text": "Evaluate event volunteer needs",
+      "text": "Evaluate event volunteer needs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Utilize techniques to staff an event",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "MK:024",
+      "level": "CS",
+      "official_text": "Explain the nature of event marketing",
+      "display_text": "Explain the nature of event marketing",
+      "text": "Explain the nature of event marketing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Understand marketing's role and function in business to facilitate economic exchanges with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 31
+      }
+    },
+    {
+      "code": "NF:130",
+      "level": "SP",
+      "official_text": "Utilize project-management software",
+      "display_text": "Utilize project-management software",
+      "text": "Utilize project-management software",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:293",
+      "level": "SP",
+      "official_text": "Explain the role of event management systems",
+      "display_text": "Explain the role of event management systems",
+      "text": "Explain the role of event management systems",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:294",
+      "level": "SP",
+      "official_text": "Discuss event registration and attendee management systems",
+      "display_text": "Discuss event registration and attendee management systems",
+      "text": "Discuss event registration and attendee management systems",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:295",
+      "level": "SP",
+      "official_text": "Demonstrate secure document sharing applications",
+      "display_text": "Demonstrate secure document sharing applications",
+      "text": "Demonstrate secure document sharing applications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:296",
+      "level": "SP",
+      "official_text": "Utilize mobile applications for event participation",
+      "display_text": "Utilize mobile applications for event participation",
+      "text": "Utilize mobile applications for event participation",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "NF:297",
+      "level": "SP",
+      "official_text": "Use event-management tools to monitor and communicate event planning progress",
+      "display_text": "Use event-management tools to monitor and communicate event planning progress",
+      "text": "Use event-management tools to monitor and communicate event planning progress",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "OP:534",
+      "level": "SP",
+      "official_text": "Determine event-hosted merchandise/products to buy",
+      "display_text": "Determine event-hosted merchandise/products to buy",
+      "text": "Determine event-hosted merchandise/products to buy",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "OP:535",
+      "level": "SP",
+      "official_text": "Determine quantities of event-hosted merchandise/products to buy",
+      "display_text": "Determine quantities of event-hosted merchandise/products to buy",
+      "text": "Determine quantities of event-hosted merchandise/products to buy",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "OP:536",
+      "level": "SP",
+      "official_text": "Purchase event-hosted merchandise/products for resale",
+      "display_text": "Purchase event-hosted merchandise/products for resale",
+      "text": "Purchase event-hosted merchandise/products for resale",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "OP:532",
+      "level": "SP",
+      "official_text": "Coordinate design of event-related activities",
+      "display_text": "Coordinate design of event-related activities",
+      "text": "Coordinate design of event-related activities",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement organizational skills to improve efficiency and work flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "OP:533",
+      "level": "SP",
+      "official_text": "Coordinate design of event-related materials",
+      "display_text": "Coordinate design of event-related materials",
+      "text": "Coordinate design of event-related materials",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement organizational skills to improve efficiency and work flow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:346",
+      "level": "SP",
+      "official_text": "Explain types of events",
+      "display_text": "Explain types of events",
+      "text": "Explain types of events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:347",
+      "level": "SP",
+      "official_text": "Describe the nature of the event industry",
+      "display_text": "Describe the nature of the event industry",
+      "text": "Describe the nature of the event industry",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:348",
+      "level": "SP",
+      "official_text": "Describe the duties of event planners",
+      "display_text": "Describe the duties of event planners",
+      "text": "Describe the duties of event planners",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:349",
+      "level": "SP",
+      "official_text": "Explain employment opportunities in event planning",
+      "display_text": "Explain employment opportunities in event planning",
+      "text": "Explain employment opportunities in event planning",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:350",
+      "level": "SP",
+      "official_text": "Describe the duties of event managers",
+      "display_text": "Describe the duties of event managers",
+      "text": "Describe the duties of event managers",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:351",
+      "level": "SP",
+      "official_text": "Explain employment opportunities in event management",
+      "display_text": "Explain employment opportunities in event management",
+      "text": "Explain employment opportunities in event management",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 32
+      }
+    },
+    {
+      "code": "PD:352",
+      "level": "SP",
+      "official_text": "Explain the services of professional organizations in event planning and management",
+      "display_text": "Explain the services of professional organizations in event planning and management",
+      "text": "Explain the services of professional organizations in event planning and management",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:353",
+      "level": "SP",
+      "official_text": "Employ career-advancement strategies in event planning and management",
+      "display_text": "Employ career-advancement strategies in event planning and management",
+      "text": "Employ career-advancement strategies in event planning and management",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PD:354",
+      "level": "SP",
+      "official_text": "Explain certifications available to event planners and managers",
+      "display_text": "Explain certifications available to event planners and managers",
+      "text": "Explain certifications available to event planners and managers",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PM:288",
+      "level": "SP",
+      "official_text": "Explain the nature of event branding",
+      "display_text": "Explain the nature of event branding",
+      "text": "Explain the nature of event branding",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PM:289",
+      "level": "SP",
+      "official_text": "Describe factors used to position events",
+      "display_text": "Describe factors used to position events",
+      "text": "Describe factors used to position events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PM:290",
+      "level": "SP",
+      "official_text": "Create social-media brand identity",
+      "display_text": "Create social-media brand identity",
+      "text": "Create social-media brand identity",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position company to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "MP:001",
+      "level": "CS",
+      "official_text": "Explain the concept of marketing strategies",
+      "display_text": "Explain the concept of marketing strategies",
+      "text": "Explain the concept of marketing strategies",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Develop marketing strategies to guide marketing tactics.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "MP:042",
+      "level": "CS",
+      "official_text": "Explain the concept of event market identification",
+      "display_text": "Explain the concept of event market identification",
+      "text": "Explain the concept of event market identification",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "MP:043",
+      "level": "SP",
+      "official_text": "Identify event market segments",
+      "display_text": "Identify event market segments",
+      "text": "Identify event market segments",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "MP:044",
+      "level": "SP",
+      "official_text": "Develop event participant profile",
+      "display_text": "Develop event participant profile",
+      "text": "Develop event participant profile",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PI:071",
+      "level": "SP",
+      "official_text": "Explain considerations in event pricing",
+      "display_text": "Explain considerations in event pricing",
+      "text": "Explain considerations in event pricing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Employ pricing strategies to determine optimal pricing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 33
+      }
+    },
+    {
+      "code": "PJ:011",
+      "level": "SP",
+      "official_text": "Explain the nature of event planning",
+      "display_text": "Explain the nature of event planning",
+      "text": "Explain the nature of event planning",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Understand the foundational principles of event planning and management to recognize their roles in event success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:012",
+      "level": "SP",
+      "official_text": "Describe the nature of event management",
+      "display_text": "Describe the nature of event management",
+      "text": "Describe the nature of event management",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Understand the foundational principles of event planning and management to recognize their roles in event success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:013",
+      "level": "SP",
+      "official_text": "Explain the role of situation analysis in the event planning process",
+      "display_text": "Explain the role of situation analysis in the event planning process",
+      "text": "Explain the role of situation analysis in the event planning process",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Understand the foundational principles of event planning and management to recognize their roles in event success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:014",
+      "level": "SP",
+      "official_text": "Explain the role of feasibility analysis in the event planning process",
+      "display_text": "Explain the role of feasibility analysis in the event planning process",
+      "text": "Explain the role of feasibility analysis in the event planning process",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Understand the foundational principles of event planning and management to recognize their roles in event success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:015",
+      "level": "SP",
+      "official_text": "Conduct pre-event research (e.g., event history, event brand image, event risks)",
+      "display_text": "Conduct pre-event research (e.g., event history, event brand image, event risks)",
+      "text": "Conduct pre-event research (e.g., event history, event brand image, event risks)",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Define the event to facilitate planning and to ensure event meets intended goals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:025",
+      "level": "SP",
+      "official_text": "Identify resources needed for event",
+      "display_text": "Identify resources needed for event",
+      "text": "Identify resources needed for event",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:026",
+      "level": "SP",
+      "official_text": "Determine accessibility needs",
+      "display_text": "Determine accessibility needs",
+      "text": "Determine accessibility needs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:027",
+      "level": "SP",
+      "official_text": "Determine signage needs",
+      "display_text": "Determine signage needs",
+      "text": "Determine signage needs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:028",
+      "level": "SP",
+      "official_text": "Identify audio/visual requirements",
+      "display_text": "Identify audio/visual requirements",
+      "text": "Identify audio/visual requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:029",
+      "level": "SP",
+      "official_text": "Identify transportation requirements",
+      "display_text": "Identify transportation requirements",
+      "text": "Identify transportation requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:030",
+      "level": "SP",
+      "official_text": "Determine on-site communication requirements",
+      "display_text": "Determine on-site communication requirements",
+      "text": "Determine on-site communication requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:031",
+      "level": "SP",
+      "official_text": "Define conference room/banquet room requirements",
+      "display_text": "Define conference room/banquet room requirements",
+      "text": "Define conference room/banquet room requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:032",
+      "level": "SP",
+      "official_text": "Determine guest transportation needs",
+      "display_text": "Determine guest transportation needs",
+      "text": "Determine guest transportation needs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:033",
+      "level": "SP",
+      "official_text": "Identify required guest services",
+      "display_text": "Identify required guest services",
+      "text": "Identify required guest services",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:034",
+      "level": "SP",
+      "official_text": "Determine event planning timeline",
+      "display_text": "Determine event planning timeline",
+      "text": "Determine event planning timeline",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:035",
+      "level": "SP",
+      "official_text": "Determine event registration process",
+      "display_text": "Determine event registration process",
+      "text": "Determine event registration process",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:036",
+      "level": "SP",
+      "official_text": "Identify health and safety requirements",
+      "display_text": "Identify health and safety requirements",
+      "text": "Identify health and safety requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:037",
+      "level": "SP",
+      "official_text": "Identify food and beverage requirements",
+      "display_text": "Identify food and beverage requirements",
+      "text": "Identify food and beverage requirements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Determine event needs to create actionable event plan.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:039",
+      "level": "SP",
+      "official_text": "Determine site selection criteria",
+      "display_text": "Determine site selection criteria",
+      "text": "Determine site selection criteria",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Create needed plans to guide event implementation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:040",
+      "level": "SP",
+      "official_text": "Determine site layout",
+      "display_text": "Determine site layout",
+      "text": "Determine site layout",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Create needed plans to guide event implementation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:041",
+      "level": "SP",
+      "official_text": "Select event décor",
+      "display_text": "Select event décor",
+      "text": "Select event décor",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Create needed plans to guide event implementation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:042",
+      "level": "SP",
+      "official_text": "Determine event amenities",
+      "display_text": "Determine event amenities",
+      "text": "Determine event amenities",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Create needed plans to guide event implementation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:054",
+      "level": "SP",
+      "official_text": "Secure guest services required to support events",
+      "display_text": "Secure guest services required to support events",
+      "text": "Secure guest services required to support events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Execute event plan to achieve desired outcomes",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:055",
+      "level": "SP",
+      "official_text": "Prepare materials for attendees",
+      "display_text": "Prepare materials for attendees",
+      "text": "Prepare materials for attendees",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Execute event plan to achieve desired outcomes",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:056",
+      "level": "SP",
+      "official_text": "Secure in-house/outsourced services to support events",
+      "display_text": "Secure in-house/outsourced services to support events",
+      "text": "Secure in-house/outsourced services to support events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Execute event plan to achieve desired outcomes",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:057",
+      "level": "SP",
+      "official_text": "Complete room specification sheets",
+      "display_text": "Complete room specification sheets",
+      "text": "Complete room specification sheets",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Execute event plan to achieve desired outcomes",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:058",
+      "level": "SP",
+      "official_text": "Document functional site specifications",
+      "display_text": "Document functional site specifications",
+      "text": "Document functional site specifications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Execute event plan to achieve desired outcomes",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 34
+      }
+    },
+    {
+      "code": "PJ:061",
+      "level": "CS",
+      "official_text": "Set up banquet/conference rooms",
+      "display_text": "Set up banquet/conference rooms",
+      "text": "Set up banquet/conference rooms",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage pre-event logistics to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:062",
+      "level": "CS",
+      "official_text": "Check audio-visual set up",
+      "display_text": "Check audio-visual set up",
+      "text": "Check audio-visual set up",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage pre-event logistics to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:063",
+      "level": "SP",
+      "official_text": "Confirm vendors/speakers/sponsors/transportation",
+      "display_text": "Confirm vendors/speakers/sponsors/transportation",
+      "text": "Confirm vendors/speakers/sponsors/transportation",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage pre-event logistics to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:064",
+      "level": "SP",
+      "official_text": "Verify site layout/specifications",
+      "display_text": "Verify site layout/specifications",
+      "text": "Verify site layout/specifications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage pre-event logistics to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:065",
+      "level": "SP",
+      "official_text": "Check signage/displays",
+      "display_text": "Check signage/displays",
+      "text": "Check signage/displays",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage pre-event logistics to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:066",
+      "level": "CS",
+      "official_text": "Maintain registration area",
+      "display_text": "Maintain registration area",
+      "text": "Maintain registration area",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:067",
+      "level": "CS",
+      "official_text": "Disseminate event materials",
+      "display_text": "Disseminate event materials",
+      "text": "Disseminate event materials",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:068",
+      "level": "CS",
+      "official_text": "Check people into the event",
+      "display_text": "Check people into the event",
+      "text": "Check people into the event",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:069",
+      "level": "CS",
+      "official_text": "Accept payments",
+      "display_text": "Accept payments",
+      "text": "Accept payments",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:070",
+      "level": "SP",
+      "official_text": "Use crowd management strategies",
+      "display_text": "Use crowd management strategies",
+      "text": "Use crowd management strategies",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:071",
+      "level": "SP",
+      "official_text": "Monitor event areas",
+      "display_text": "Monitor event areas",
+      "text": "Monitor event areas",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Conduct event to meet goals and objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:075",
+      "level": "CS",
+      "official_text": "Tear down event areas (banquet rooms, meeting rooms, tents, temporary seating, staging, carpeting, etc.)",
+      "display_text": "Tear down event areas (banquet rooms, meeting rooms, tents, temporary seating, staging, carpeting, etc.)",
+      "text": "Tear down event areas (banquet rooms, meeting rooms, tents, temporary seating, staging, carpeting, etc.)",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage post-event activities to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PJ:076",
+      "level": "CS",
+      "official_text": "Box and ship exhibition materials",
+      "display_text": "Box and ship exhibition materials",
+      "text": "Box and ship exhibition materials",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PJ",
+      "instructional_area_name": "Project Management",
+      "standard": "Understands tools, techniques, and systems that are used to plan, implement, monitor, and evaluate business projects",
+      "performance_element": "Manage post-event activities to help to ensure operational efficiencies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:252",
+      "level": "SP",
+      "official_text": "Identify types of public-relations activities",
+      "display_text": "Identify types of public-relations activities",
+      "text": "Identify types of public-relations activities",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of public-relations activities to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:253",
+      "level": "SP",
+      "official_text": "Discuss internal and external audiences for public-relations activities",
+      "display_text": "Discuss internal and external audiences for public-relations activities",
+      "text": "Discuss internal and external audiences for public-relations activities",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of public-relations activities to communicate with targeted audiences.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:410",
+      "level": "SP",
+      "official_text": "Create promotional banners/signs",
+      "display_text": "Create promotional banners/signs",
+      "text": "Create promotional banners/signs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:411",
+      "level": "SP",
+      "official_text": "Select promotional booth configurations/specifications",
+      "display_text": "Select promotional booth configurations/specifications",
+      "text": "Select promotional booth configurations/specifications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:412",
+      "level": "SP",
+      "official_text": "Determine promotional gadgets/participation draws",
+      "display_text": "Determine promotional gadgets/participation draws",
+      "text": "Determine promotional gadgets/participation draws",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:413",
+      "level": "SP",
+      "official_text": "Set-up promotional space",
+      "display_text": "Set-up promotional space",
+      "text": "Set-up promotional space",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Implement display techniques to attract customers and increase sales potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:421",
+      "level": "SP",
+      "official_text": "Develop media schedule",
+      "display_text": "Develop media schedule",
+      "text": "Develop media schedule",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage promotional activities to maximize return on promotional efforts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 35
+      }
+    },
+    {
+      "code": "PR:319",
+      "level": "SP",
+      "official_text": "Explain the nature of word-of-mouth (WOM) strategies",
+      "display_text": "Explain the nature of word-of-mouth (WOM) strategies",
+      "text": "Explain the nature of word-of-mouth (WOM) strategies",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize word-of-mouth strategies to build brand and to promote products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:363",
+      "level": "SP",
+      "official_text": "Discuss the role of customer voice in word-of-mouth strategies",
+      "display_text": "Discuss the role of customer voice in word-of-mouth strategies",
+      "text": "Discuss the role of customer voice in word-of-mouth strategies",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize word-of-mouth strategies to build brand and to promote products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:317",
+      "level": "SP",
+      "official_text": "Explain the nature of buzz-marketing",
+      "display_text": "Explain the nature of buzz-marketing",
+      "text": "Explain the nature of buzz-marketing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize word-of-mouth strategies to build brand and to promote products.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:301",
+      "level": "SP",
+      "official_text": "Discuss types of direct mail tactics",
+      "display_text": "Discuss types of direct mail tactics",
+      "text": "Discuss types of direct mail tactics",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:165",
+      "level": "SP",
+      "official_text": "Explain the nature of email marketing tactics",
+      "display_text": "Explain the nature of email marketing tactics",
+      "text": "Explain the nature of email marketing tactics",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:365",
+      "level": "SP",
+      "official_text": "Explain the use of social media for digital marketing",
+      "display_text": "Explain the use of social media for digital marketing",
+      "text": "Explain the use of social media for digital marketing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:281",
+      "level": "SP",
+      "official_text": "Describe the use of blogging for marketing communications",
+      "display_text": "Describe the use of blogging for marketing communications",
+      "text": "Describe the use of blogging for marketing communications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:366",
+      "level": "SP",
+      "official_text": "Explain the use of video/images for digital marketing",
+      "display_text": "Explain the use of video/images for digital marketing",
+      "text": "Explain the use of video/images for digital marketing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:276",
+      "level": "SP",
+      "official_text": "Describe mobile marketing tactics",
+      "display_text": "Describe mobile marketing tactics",
+      "text": "Describe mobile marketing tactics",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:367",
+      "level": "SP",
+      "official_text": "Explain mobile marketing applications",
+      "display_text": "Explain mobile marketing applications",
+      "text": "Explain mobile marketing applications",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:299",
+      "level": "SP",
+      "official_text": "Discuss the use of search engine optimization tactics for digital marketing",
+      "display_text": "Discuss the use of search engine optimization tactics for digital marketing",
+      "text": "Discuss the use of search engine optimization tactics for digital marketing",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand the use of direct marketing to attract attention and to build brand.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:399",
+      "level": "SP",
+      "official_text": "Describe participation factors evaluated by event sponsors/speakers",
+      "display_text": "Describe participation factors evaluated by event sponsors/speakers",
+      "text": "Describe participation factors evaluated by event sponsors/speakers",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:400",
+      "level": "SP",
+      "official_text": "Identify effective promotional headlines",
+      "display_text": "Identify effective promotional headlines",
+      "text": "Identify effective promotional headlines",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:401",
+      "level": "SP",
+      "official_text": "Explain the use of storytelling in promoting events",
+      "display_text": "Explain the use of storytelling in promoting events",
+      "text": "Explain the use of storytelling in promoting events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:414",
+      "level": "SP",
+      "official_text": "Discuss effective print promotional content",
+      "display_text": "Discuss effective print promotional content",
+      "text": "Discuss effective print promotional content",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:415",
+      "level": "SP",
+      "official_text": "Describe effective electronic promotional content",
+      "display_text": "Describe effective electronic promotional content",
+      "text": "Describe effective electronic promotional content",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:416",
+      "level": "SP",
+      "official_text": "Write promotional content for use on the website",
+      "display_text": "Write promotional content for use on the website",
+      "text": "Write promotional content for use on the website",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:417",
+      "level": "SP",
+      "official_text": "Write promotional content for use in social media",
+      "display_text": "Write promotional content for use in social media",
+      "text": "Write promotional content for use in social media",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:418",
+      "level": "SP",
+      "official_text": "Repurpose promotional content for use in multiple platforms",
+      "display_text": "Repurpose promotional content for use in multiple platforms",
+      "text": "Repurpose promotional content for use in multiple platforms",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:402",
+      "level": "SP",
+      "official_text": "Design event-related materials",
+      "display_text": "Design event-related materials",
+      "text": "Design event-related materials",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop content for use in marketing communications to create interest in product/business/idea.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:123",
+      "level": "SP",
+      "official_text": "Describe the use of color in advertisements",
+      "display_text": "Describe the use of color in advertisements",
+      "text": "Describe the use of color in advertisements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:222",
+      "level": "SP",
+      "official_text": "Describe the elements of design",
+      "display_text": "Describe the elements of design",
+      "text": "Describe the elements of design",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:322",
+      "level": "SP",
+      "official_text": "Explain the use of illustrations in advertisements",
+      "display_text": "Explain the use of illustrations in advertisements",
+      "text": "Explain the use of illustrations in advertisements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:295",
+      "level": "SP",
+      "official_text": "Discuss the nature of typography",
+      "display_text": "Discuss the nature of typography",
+      "text": "Discuss the nature of typography",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:326",
+      "level": "SP",
+      "official_text": "Explain type styles used in advertisements",
+      "display_text": "Explain type styles used in advertisements",
+      "text": "Explain type styles used in advertisements",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:275",
+      "level": "SP",
+      "official_text": "Describe effective advertising layouts",
+      "display_text": "Describe effective advertising layouts",
+      "text": "Describe effective advertising layouts",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:328",
+      "level": "SP",
+      "official_text": "Explain website-development process",
+      "display_text": "Explain website-development process",
+      "text": "Explain website-development process",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand how a website presence can be used to promote business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:333",
+      "level": "SP",
+      "official_text": "Identify strategies for attracting targeted audience to website",
+      "display_text": "Identify strategies for attracting targeted audience to website",
+      "text": "Identify strategies for attracting targeted audience to website",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand how a website presence can be used to promote business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:420",
+      "level": "SP",
+      "official_text": "Develop promotional brochures",
+      "display_text": "Develop promotional brochures",
+      "text": "Develop promotional brochures",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Develop promotional materials to gain attention, interest, and action of clients.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 36
+      }
+    },
+    {
+      "code": "PR:225",
+      "level": "SP",
+      "official_text": "Determine advertising reach of media",
+      "display_text": "Determine advertising reach of media",
+      "text": "Determine advertising reach of media",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage media planning and placement to enhance return on marketing investment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:009",
+      "level": "SP",
+      "official_text": "Calculate media costs",
+      "display_text": "Calculate media costs",
+      "text": "Calculate media costs",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage media planning and placement to enhance return on marketing investment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:104",
+      "level": "SP",
+      "official_text": "Buy ad space/time",
+      "display_text": "Buy ad space/time",
+      "text": "Buy ad space/time",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Manage media planning and placement to enhance return on marketing investment.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:057",
+      "level": "SP",
+      "official_text": "Write a press release",
+      "display_text": "Write a press release",
+      "text": "Write a press release",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize publicity to inform stakeholders of business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:185",
+      "level": "SP",
+      "official_text": "Cultivate media relationships",
+      "display_text": "Cultivate media relationships",
+      "text": "Cultivate media relationships",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize publicity to inform stakeholders of business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:234",
+      "level": "SP",
+      "official_text": "Participate in the design of collateral materials to promote special events",
+      "display_text": "Participate in the design of collateral materials to promote special events",
+      "text": "Participate in the design of collateral materials to promote special events",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:407",
+      "level": "SP",
+      "official_text": "Select event signage",
+      "display_text": "Select event signage",
+      "text": "Select event signage",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:408",
+      "level": "SP",
+      "official_text": "Determine event-related activities to engage participants",
+      "display_text": "Determine event-related activities to engage participants",
+      "text": "Determine event-related activities to engage participants",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:409",
+      "level": "SP",
+      "official_text": "Promote participant packages",
+      "display_text": "Promote participant packages",
+      "text": "Promote participant packages",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    },
+    {
+      "code": "RM:098",
+      "level": "SP",
+      "official_text": "Identify risks to successful event execution",
+      "display_text": "Identify risks to successful event execution",
+      "text": "Identify risks to successful event execution",
+      "tier": 3,
+      "curriculum_section": "Event Management Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Event Management",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risks to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 37
+      }
+    }
+  ]
+}

@@ -75,8 +75,8 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
     )
     kpi_id = catalog_id(kpi)
     _, knowledge_rows = _supabase_svc("/kpi_knowledge_items", params={
-        "kpi_id": f"eq.{kpi_id}", "review_status": "eq.approved",
-        "select": "knowledge_type,content,importance,evidence_count", "order": "importance.asc,evidence_count.desc", "limit": "30",
+        "kpi_id": f"eq.{kpi_id}", "review_status": "eq.approved", "authoritative": "eq.true",
+        "select": "id,knowledge_type,content,importance,evidence_count,source_references", "order": "importance.asc,evidence_count.desc", "limit": "30",
     })
     _, catalog_rows = _supabase_svc("/kpi_catalog", params={
         "id": f"eq.{kpi_id}", "select": "knowledge_version", "limit": "1",
@@ -89,6 +89,13 @@ def _generate_audit_item(item: dict, kpi: dict, plan: dict) -> str:
         )
         prompt += f"""\n\nAPPROVED KPI KNOWLEDGE (authoritative):\n{authoritative}
 Cover required and important knowledge without exceeding the lesson's existing word cap. Combine overlapping items; do not paste citations or mechanically repeat every detail."""
+    else:
+        _supabase_svc(
+            "/lesson_content_audits", method="PATCH",
+            payload={"generation_status": "failed", "failure_reason": "blocked: no approved authoritative KPI knowledge", "updated_at": utc_now()},
+            params={"id": f"eq.{item['id']}"}, prefer="return=minimal",
+        )
+        return "failed"
     lesson, errors = generate_valid_lesson(prompt, plan, priority="audit")
     if lesson is None:
         _supabase_svc(

@@ -105,6 +105,13 @@ def _eligible(questions,responses,flags,due,filters):
     return out
 
 
+def _exam_codes(event_id: str) -> set[str]:
+    return {
+        k["code"] for k in _load_all_kpis()[0]
+        if k.get("event") == event_id and "exam" in k.get("eligible_components", [])
+    }
+
+
 @practice_bp.post("/api/practice/sets/preview")
 def preview_set():
     user,error=require_user()
@@ -112,6 +119,8 @@ def preview_set():
     body=request.get_json(silent=True) or {}; event_id=canonical_event_id(body.get("event_id"))
     if not event_id:return jsonify({"error":"Unsupported event"}),400
     questions,responses,flags,due=_data(user["id"],event_id)
+    if body.get("mode") in {"exam", "mock"} or body.get("set_type") == "mock":
+        allowed = _exam_codes(event_id); questions = [q for q in questions if q.get("kpi_code") in allowed]
     return jsonify({"available":len(_eligible(questions,responses,flags,due,body.get("filters") or {}))})
 
 
@@ -122,6 +131,8 @@ def create_set():
     body=request.get_json(silent=True) or {}; event_id=canonical_event_id(body.get("event_id")); set_type=body.get("set_type","custom"); mode=body.get("mode","tutor")
     if not event_id or set_type not in {"smart","custom","mock"} or mode not in {"tutor","exam","mock"}: return jsonify({"error":"Invalid set configuration"}),400
     count=max(1,min(int(body.get("count") or (100 if set_type=="mock" else 10)),100)); questions,responses,flags,due=_data(user["id"],event_id)
+    if mode in {"exam", "mock"} or set_type == "mock":
+        allowed = _exam_codes(event_id); questions = [q for q in questions if q.get("kpi_code") in allowed]
     filters=body.get("filters") or {}; candidates=_eligible(questions,responses,flags,due,filters)
     attempts=defaultdict(list)
     for r in responses: attempts[r["question_id"]].append(r)

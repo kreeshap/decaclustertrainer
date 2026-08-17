@@ -5,6 +5,8 @@ from __future__ import annotations
 from typing import Any
 import re
 
+from app.content_quality import ContentQualityError, validate_demonstration_score
+
 
 class LearnContentError(ValueError):
     pass
@@ -288,10 +290,14 @@ def validate_roleplay_grade(raw: Any, kpi_codes: list[str]) -> dict:
     clean_coverage = []
     for code in kpi_codes:
         item = by_code[code]
+        try:
+            demonstration = validate_demonstration_score(item, code)
+        except ContentQualityError as error:
+            raise LearnContentError(str(error)) from error
         clean_coverage.append({
-            "code": code,
-            "addressed": bool(item.get("addressed")),
-            "note": _text(item.get("note"), f"kpi_coverage[{code}].note", 4),
+            **demonstration,
+            "addressed": demonstration["demonstration_level"] >= 2,
+            "note": demonstration["feedback"],
         })
     strengths = raw.get("strengths")
     improvements = raw.get("improvements")

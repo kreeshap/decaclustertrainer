@@ -1,0 +1,1239 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "marketing_tier3_management",
+  "name": "Marketing Management Pathway",
+  "cluster": "Marketing",
+  "tier": 3,
+  "curriculum_section": "Marketing Management Pathway",
+  "pathway": "Marketing Management",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Marketing",
+    "pages": [
+      35,
+      38
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "EI:082",
+      "level": "SP",
+      "official_text": "Explain the impact of business customs and practices on global trade",
+      "display_text": "Explain the impact of business customs and practices on global trade",
+      "text": "Explain the impact of business customs and practices on global trade",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:083",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the North American market",
+      "display_text": "Describe the nature of business customs and practices in the North American market",
+      "text": "Describe the nature of business customs and practices in the North American market",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:084",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Western Europe",
+      "display_text": "Explain the nature of business customs and practices in Western Europe",
+      "text": "Explain the nature of business customs and practices in Western Europe",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:117",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "display_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "text": "Explain the nature of business customs and practices in Eastern Europe",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:085",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Latin America",
+      "display_text": "Explain the nature of business customs and practices in Latin America",
+      "text": "Explain the nature of business customs and practices in Latin America",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:086",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "display_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:087",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in the Middle East",
+      "display_text": "Discuss the nature of business customs and practices in the Middle East",
+      "text": "Discuss the nature of business customs and practices in the Middle East",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:118",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in South Asia",
+      "display_text": "Explain the nature of business customs and practices in South Asia",
+      "text": "Explain the nature of business customs and practices in South Asia",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:119",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in Northern Africa",
+      "display_text": "Describe the nature of business customs and practices in Northern Africa",
+      "text": "Describe the nature of business customs and practices in Northern Africa",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "EI:120",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "display_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "NF:094",
+      "level": "SP",
+      "official_text": "Analyze the impact of technology on marketing",
+      "display_text": "Analyze the impact of technology on marketing",
+      "text": "Analyze the impact of technology on marketing",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "NF:106",
+      "level": "SP",
+      "official_text": "Use software to automate services",
+      "display_text": "Use software to automate services",
+      "text": "Use software to automate services",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "NF:205",
+      "level": "SP",
+      "official_text": "Use analytical tracking tools",
+      "display_text": "Use analytical tracking tools",
+      "text": "Use analytical tracking tools",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "NF:214",
+      "level": "SP",
+      "official_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "display_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "OP:434",
+      "level": "SP",
+      "official_text": "Determine sources of relevant, new marketing data",
+      "display_text": "Determine sources of relevant, new marketing data",
+      "text": "Determine sources of relevant, new marketing data",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "OP:435",
+      "level": "SP",
+      "official_text": "Evaluate options to purchase or sell marketing data",
+      "display_text": "Evaluate options to purchase or sell marketing data",
+      "text": "Evaluate options to purchase or sell marketing data",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "OP:429",
+      "level": "SP",
+      "official_text": "Maintain security of marketing data",
+      "display_text": "Maintain security of marketing data",
+      "text": "Maintain security of marketing data",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine technology security strategies needed to protect customer information and company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "OP:173",
+      "level": "SP",
+      "official_text": "Explain security considerations in marketing management",
+      "display_text": "Explain security considerations in marketing management",
+      "text": "Explain security considerations in marketing management",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine technology security strategies needed to protect customer information and company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 35
+      }
+    },
+    {
+      "code": "OP:430",
+      "level": "SP",
+      "official_text": "Cleanse existing marketing data to maintain relevancy",
+      "display_text": "Cleanse existing marketing data to maintain relevancy",
+      "text": "Cleanse existing marketing data to maintain relevancy",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Apply operational policies to perform procedures and activities that ensure marketing's efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "OP:431",
+      "level": "SP",
+      "official_text": "Apply marketing analytics",
+      "display_text": "Apply marketing analytics",
+      "text": "Apply marketing analytics",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Apply operational policies to perform procedures and activities that ensure marketing's efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "OP:184",
+      "level": "CS",
+      "official_text": "Track invoices",
+      "display_text": "Track invoices",
+      "text": "Track invoices",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "OP:437",
+      "level": "SP",
+      "official_text": "Document marketing processes",
+      "display_text": "Document marketing processes",
+      "text": "Document marketing processes",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Utilize business systems to expedite workflow and enhance a business's image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PD:144",
+      "level": "SP",
+      "official_text": "Assess the services of professional organizations in marketing",
+      "display_text": "Assess the services of professional organizations in marketing",
+      "text": "Assess the services of professional organizations in marketing",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PD:147",
+      "level": "SP",
+      "official_text": "Utilize professional development opportunities in marketing (e.g., continuing education courses, certifications, journals, online activities/courses)",
+      "display_text": "Utilize professional development opportunities in marketing (e.g., continuing education courses, certifications, journals, online activities/courses)",
+      "text": "Utilize professional development opportunities in marketing (e.g., continuing education courses, certifications, journals, online activities/courses)",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PD:132",
+      "level": "SP",
+      "official_text": "Employ career-advancement strategies in marketing",
+      "display_text": "Employ career-advancement strategies in marketing",
+      "text": "Employ career-advancement strategies in marketing",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PD:136",
+      "level": "SP",
+      "official_text": "Explain the nature of marketing management",
+      "display_text": "Explain the nature of marketing management",
+      "text": "Explain the nature of marketing management",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about marketing management to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PD:133",
+      "level": "SP",
+      "official_text": "Explain career opportunities in marketing management",
+      "display_text": "Explain career opportunities in marketing management",
+      "text": "Explain career opportunities in marketing management",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about marketing management to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PM:278",
+      "level": "SP",
+      "official_text": "Determine the impact of product standards' issues associated with global business",
+      "display_text": "Determine the impact of product standards' issues associated with global business",
+      "text": "Determine the impact of product standards' issues associated with global business",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PM:241",
+      "level": "SP",
+      "official_text": "Explain new product-development processes",
+      "display_text": "Explain new product-development processes",
+      "text": "Explain new product-development processes",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-development processes to maintain up-to-date product pipeline.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 36
+      }
+    },
+    {
+      "code": "PM:213",
+      "level": "SP",
+      "official_text": "Assess product-packaging requirements",
+      "display_text": "Assess product-packaging requirements",
+      "text": "Assess product-packaging requirements",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Assess product packaging to improve its function and to improve its brand recognition.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PM:236",
+      "level": "SP",
+      "official_text": "Evaluate graphic design on packages",
+      "display_text": "Evaluate graphic design on packages",
+      "text": "Evaluate graphic design on packages",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Assess product packaging to improve its function and to improve its brand recognition.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PM:233",
+      "level": "SP",
+      "official_text": "Evaluate adequacy of product packaging",
+      "display_text": "Evaluate adequacy of product packaging",
+      "text": "Evaluate adequacy of product packaging",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Assess product packaging to improve its function and to improve its brand recognition.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PM:228",
+      "level": "SP",
+      "official_text": "Develop positioning concept for a new product idea",
+      "display_text": "Develop positioning concept for a new product idea",
+      "text": "Develop positioning concept for a new product idea",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PM:214",
+      "level": "SP",
+      "official_text": "Communicate core values of product/service",
+      "display_text": "Communicate core values of product/service",
+      "text": "Communicate core values of product/service",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PM:246",
+      "level": "SP",
+      "official_text": "Identify product's/service's competitive advantage",
+      "display_text": "Identify product's/service's competitive advantage",
+      "text": "Identify product's/service's competitive advantage",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Position products/services to acquire desired business image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:470",
+      "level": "SP",
+      "official_text": "Track channel management cost data",
+      "display_text": "Track channel management cost data",
+      "text": "Track channel management cost data",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Employ marketing-information to aid in making and evaluating channel- management decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:485",
+      "level": "SP",
+      "official_text": "Collect product quality data to aid in making channel-management decisions",
+      "display_text": "Collect product quality data to aid in making channel-management decisions",
+      "text": "Collect product quality data to aid in making channel-management decisions",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Employ marketing-information to aid in making and evaluating channel- management decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:380",
+      "level": "SP",
+      "official_text": "Obtain and track information about domestic and foreign suppliers/manufacturers",
+      "display_text": "Obtain and track information about domestic and foreign suppliers/manufacturers",
+      "text": "Obtain and track information about domestic and foreign suppliers/manufacturers",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Employ marketing-information to aid in making and evaluating channel- management decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:347",
+      "level": "SP",
+      "official_text": "Display data in charts/graphs or in tables",
+      "display_text": "Display data in charts/graphs or in tables",
+      "text": "Display data in charts/graphs or in tables",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:394",
+      "level": "SP",
+      "official_text": "Provide sales analysis reports",
+      "display_text": "Provide sales analysis reports",
+      "text": "Provide sales analysis reports",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:386",
+      "level": "SP",
+      "official_text": "Prepare and use presentation software to support reports",
+      "display_text": "Prepare and use presentation software to support reports",
+      "text": "Prepare and use presentation software to support reports",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:390",
+      "level": "SP",
+      "official_text": "Prepare written reports for decision-making",
+      "display_text": "Prepare written reports for decision-making",
+      "text": "Prepare written reports for decision-making",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:374",
+      "level": "SP",
+      "official_text": "Measure media audience",
+      "display_text": "Measure media audience",
+      "text": "Measure media audience",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:472",
+      "level": "SP",
+      "official_text": "Leverage data to recommend personalized, relevant campaigns",
+      "display_text": "Leverage data to recommend personalized, relevant campaigns",
+      "text": "Leverage data to recommend personalized, relevant campaigns",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "IM:473",
+      "level": "SP",
+      "official_text": "Leverage data to support real-time customization of customer interactions",
+      "display_text": "Leverage data to support real-time customization of customer interactions",
+      "text": "Leverage data to support real-time customization of customer interactions",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 37
+      }
+    },
+    {
+      "code": "PR:123",
+      "level": "SP",
+      "official_text": "Describe the use of color in advertisements",
+      "display_text": "Describe the use of color in advertisements",
+      "text": "Describe the use of color in advertisements",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:222",
+      "level": "SP",
+      "official_text": "Describe the elements of design",
+      "display_text": "Describe the elements of design",
+      "text": "Describe the elements of design",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:322",
+      "level": "SP",
+      "official_text": "Explain the use of illustrations in advertisements",
+      "display_text": "Explain the use of illustrations in advertisements",
+      "text": "Explain the use of illustrations in advertisements",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:295",
+      "level": "SP",
+      "official_text": "Discuss the nature of typography",
+      "display_text": "Discuss the nature of typography",
+      "text": "Discuss the nature of typography",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:326",
+      "level": "SP",
+      "official_text": "Explain type styles used in advertisements",
+      "display_text": "Explain type styles used in advertisements",
+      "text": "Explain type styles used in advertisements",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:275",
+      "level": "SP",
+      "official_text": "Describe effective advertising layouts",
+      "display_text": "Describe effective advertising layouts",
+      "text": "Describe effective advertising layouts",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:334",
+      "level": "SP",
+      "official_text": "Identify types of drawing media",
+      "display_text": "Identify types of drawing media",
+      "text": "Identify types of drawing media",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:314",
+      "level": "SP",
+      "official_text": "Explain the impact of color harmonies on composition",
+      "display_text": "Explain the impact of color harmonies on composition",
+      "text": "Explain the impact of color harmonies on composition",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:274",
+      "level": "SP",
+      "official_text": "Describe digital color concepts",
+      "display_text": "Describe digital color concepts",
+      "text": "Describe digital color concepts",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Understand design principles to be able to communicate needs to designers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:315",
+      "level": "SP",
+      "official_text": "Explain the importance of company involvement in community activities",
+      "display_text": "Explain the importance of company involvement in community activities",
+      "text": "Explain the importance of company involvement in community activities",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Participate in company's community outreach involvement to foster a positive company image and to meet other professionals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:347",
+      "level": "SP",
+      "official_text": "Propose community issues for company involvement",
+      "display_text": "Propose community issues for company involvement",
+      "text": "Propose community issues for company involvement",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Participate in company's community outreach involvement to foster a positive company image and to meet other professionals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:341",
+      "level": "SP",
+      "official_text": "Participate in community outreach activities",
+      "display_text": "Participate in community outreach activities",
+      "text": "Participate in community outreach activities",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Participate in company's community outreach involvement to foster a positive company image and to meet other professionals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:073",
+      "level": "SP",
+      "official_text": "Explain the nature of a promotional plan",
+      "display_text": "Explain the nature of a promotional plan",
+      "text": "Explain the nature of a promotional plan",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Plan marketing communications to maximize effectiveness and to minimize costs.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:076",
+      "level": "SP",
+      "official_text": "Coordinate activities in the promotional mix",
+      "display_text": "Coordinate activities in the promotional mix",
+      "text": "Coordinate activities in the promotional mix",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Plan marketing communications to maximize effectiveness and to minimize costs.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:271",
+      "level": "SP",
+      "official_text": "Create written briefs for outside agencies/consultants",
+      "display_text": "Create written briefs for outside agencies/consultants",
+      "text": "Create written briefs for outside agencies/consultants",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Utilize outside agency/consultant to aid in promotional planning and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    },
+    {
+      "code": "PR:335",
+      "level": "SP",
+      "official_text": "Identify ways to track marketing-communications activities",
+      "display_text": "Identify ways to track marketing-communications activities",
+      "text": "Identify ways to track marketing-communications activities",
+      "tier": 3,
+      "curriculum_section": "Marketing Management Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Management",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Evaluate long-term and short-term results of promotional efforts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 38
+      }
+    }
+  ]
+}

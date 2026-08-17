@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "cluster": "Marketing",
+  "competitive_year": "2026-27",
+  "source_document": "source/2026-27-HS-DECA-Marketing.pdf",
+  "curriculum": [
+    "../shared/business_administration_core_2026_27.json",
+    "curriculum/tier2_marketing.json",
+    "curriculum/tier3_marketing_communications.json",
+    "curriculum/tier3_marketing_management.json",
+    "curriculum/tier3_marketing_research.json",
+    "curriculum/tier3_merchandising.json",
+    "curriculum/tier3_professional_selling.json"
+  ],
+  "exam_blueprint": "exam_blueprint.json",
+  "events": [
+    "events/AAM.json",
+    "events/ASM.json",
+    "events/BSM.json",
+    "events/FMS.json",
+    "events/MCS.json",
+    "events/RMS.json",
+    "events/SEM.json",
+    "events/BTDM.json",
+    "events/MTDM.json",
+    "events/STDM.json",
+    "events/IMCE.json",
+    "events/IMCP.json",
+    "events/IMCS.json",
+    "events/PSE.json",
+    "events/PMK.json"
+  ],
+  "counts": {
+    "business_administration_core_2026_27": 367,
+    "marketing_tier2": 83,
+    "marketing_tier3_communications": 160,
+    "marketing_tier3_management": 61,
+    "marketing_tier3_research": 68,
+    "marketing_tier3_merchandising": 126,
+    "marketing_tier3_professional_selling": 51
+  }
+}

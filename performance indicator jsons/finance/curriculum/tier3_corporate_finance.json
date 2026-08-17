@@ -1,0 +1,1859 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "finance_tier3_corporate_finance",
+  "name": "Corporate Finance Pathway",
+  "cluster": "Finance",
+  "tier": 3,
+  "curriculum_section": "Corporate Finance Pathway",
+  "pathway": "Corporate Finance",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Finance",
+    "pages": [
+      34,
+      38
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:155",
+      "level": "SP",
+      "official_text": "Comply with financial reporting and internal control laws and regulations in corporate finance",
+      "display_text": "Comply with financial reporting and internal control laws and regulations in corporate finance",
+      "text": "Comply with financial reporting and internal control laws and regulations in corporate finance",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Implement compliance measures in corporate finance to adhere to regulatory requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:082",
+      "level": "SP",
+      "official_text": "Explain the impact of business customs and practices on global trade",
+      "display_text": "Explain the impact of business customs and practices on global trade",
+      "text": "Explain the impact of business customs and practices on global trade",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:083",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the North American market",
+      "display_text": "Describe the nature of business customs and practices in the North American market",
+      "text": "Describe the nature of business customs and practices in the North American market",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:084",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Western Europe",
+      "display_text": "Explain the nature of business customs and practices in Western Europe",
+      "text": "Explain the nature of business customs and practices in Western Europe",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:117",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "display_text": "Explain the nature of business customs and practices in Eastern Europe",
+      "text": "Explain the nature of business customs and practices in Eastern Europe",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:085",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in Latin America",
+      "display_text": "Explain the nature of business customs and practices in Latin America",
+      "text": "Explain the nature of business customs and practices in Latin America",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:086",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "display_text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "text": "Describe the nature of business customs and practices in the Pacific Rim",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:087",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in the Middle East",
+      "display_text": "Discuss the nature of business customs and practices in the Middle East",
+      "text": "Discuss the nature of business customs and practices in the Middle East",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:118",
+      "level": "SP",
+      "official_text": "Explain the nature of business customs and practices in South Asia",
+      "display_text": "Explain the nature of business customs and practices in South Asia",
+      "text": "Explain the nature of business customs and practices in South Asia",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:119",
+      "level": "SP",
+      "official_text": "Describe the nature of business customs and practices in Northern Africa",
+      "display_text": "Describe the nature of business customs and practices in Northern Africa",
+      "text": "Describe the nature of business customs and practices in Northern Africa",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "EI:120",
+      "level": "SP",
+      "official_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "display_text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "text": "Discuss the nature of business customs and practices in Sub-Saharan Africa",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:345",
+      "level": "SP",
+      "official_text": "Discuss the nature of depreciation",
+      "display_text": "Discuss the nature of depreciation",
+      "text": "Discuss the nature of depreciation",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:359",
+      "level": "SP",
+      "official_text": "Describe the nature of cash flows",
+      "display_text": "Describe the nature of cash flows",
+      "text": "Describe the nature of cash flows",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:523",
+      "level": "SP",
+      "official_text": "Discuss the nature of corporate bonds",
+      "display_text": "Discuss the nature of corporate bonds",
+      "text": "Discuss the nature of corporate bonds",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:524",
+      "level": "SP",
+      "official_text": "Discuss the cost of corporate bonds",
+      "display_text": "Discuss the cost of corporate bonds",
+      "text": "Discuss the cost of corporate bonds",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:526",
+      "level": "SP",
+      "official_text": "Discuss the issuance of stock from a corporation",
+      "display_text": "Discuss the issuance of stock from a corporation",
+      "text": "Discuss the issuance of stock from a corporation",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:528",
+      "level": "SP",
+      "official_text": "Discuss the cost of common stock",
+      "display_text": "Discuss the cost of common stock",
+      "text": "Discuss the cost of common stock",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:729",
+      "level": "SP",
+      "official_text": "Discuss the nature of stock options",
+      "display_text": "Discuss the nature of stock options",
+      "text": "Discuss the nature of stock options",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:730",
+      "level": "SP",
+      "official_text": "Discuss the nature of Initial Public Offerings",
+      "display_text": "Discuss the nature of Initial Public Offerings",
+      "text": "Discuss the nature of Initial Public Offerings",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand fundamental financial concepts to appropriately manage business finances.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 34
+      }
+    },
+    {
+      "code": "FI:733",
+      "level": "SP",
+      "official_text": "Describe components of a payment system",
+      "display_text": "Describe components of a payment system",
+      "text": "Describe components of a payment system",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage payment and collection systems to efficiently use cash.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:734",
+      "level": "SP",
+      "official_text": "Describe components of a collection system",
+      "display_text": "Describe components of a collection system",
+      "text": "Describe components of a collection system",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage payment and collection systems to efficiently use cash.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:735",
+      "level": "SP",
+      "official_text": "Manage bank accounts (e.g., scope of services, fee structures, system integration)",
+      "display_text": "Manage bank accounts (e.g., scope of services, fee structures, system integration)",
+      "text": "Manage bank accounts (e.g., scope of services, fee structures, system integration)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage payment and collection systems to efficiently use cash.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:513",
+      "level": "SP",
+      "official_text": "Describe the nature of short-term financial management",
+      "display_text": "Describe the nature of short-term financial management",
+      "text": "Describe the nature of short-term financial management",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:739",
+      "level": "SP",
+      "official_text": "Describe cash management procedures",
+      "display_text": "Describe cash management procedures",
+      "text": "Describe cash management procedures",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:505",
+      "level": "SP",
+      "official_text": "Explain the use of cash budgets",
+      "display_text": "Explain the use of cash budgets",
+      "text": "Explain the use of cash budgets",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:633",
+      "level": "SP",
+      "official_text": "Analyze the impact of accounts payable schedules on working capital",
+      "display_text": "Analyze the impact of accounts payable schedules on working capital",
+      "text": "Analyze the impact of accounts payable schedules on working capital",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:637",
+      "level": "SP",
+      "official_text": "Analyze the impact of accounts receivable collection on working capital cycle",
+      "display_text": "Analyze the impact of accounts receivable collection on working capital cycle",
+      "text": "Analyze the impact of accounts receivable collection on working capital cycle",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:639",
+      "level": "SP",
+      "official_text": "Discuss the impact of employee benefits on business financials",
+      "display_text": "Discuss the impact of employee benefits on business financials",
+      "text": "Discuss the impact of employee benefits on business financials",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:641",
+      "level": "SP",
+      "official_text": "Discuss the impact of obsolescence on business expense",
+      "display_text": "Discuss the impact of obsolescence on business expense",
+      "text": "Discuss the impact of obsolescence on business expense",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:507",
+      "level": "SP",
+      "official_text": "Prepare cash flow budgets/forecasts",
+      "display_text": "Prepare cash flow budgets/forecasts",
+      "text": "Prepare cash flow budgets/forecasts",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:508",
+      "level": "SP",
+      "official_text": "Analyze cash budget/forecast variances",
+      "display_text": "Analyze cash budget/forecast variances",
+      "text": "Analyze cash budget/forecast variances",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:740",
+      "level": "SP",
+      "official_text": "Evaluate leases",
+      "display_text": "Evaluate leases",
+      "text": "Evaluate leases",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use short-term financial management to manage current assets and liabilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:741",
+      "level": "SP",
+      "official_text": "Develop policies to manage trade credit",
+      "display_text": "Develop policies to manage trade credit",
+      "text": "Develop policies to manage trade credit",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply strategies to improve liquidity",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:360",
+      "level": "SP",
+      "official_text": "Explain the role of capital markets in business finance",
+      "display_text": "Explain the role of capital markets in business finance",
+      "text": "Explain the role of capital markets in business finance",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply knowledge of capital markets to make suitable financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:367",
+      "level": "SP",
+      "official_text": "Calculate stock-related values (e.g., the value of a constant growth stock, the expected value of future dividends, the expected rate of return, etc.)",
+      "display_text": "Calculate stock-related values (e.g., the value of a constant growth stock, the expected value of future dividends, the expected rate of return, etc.)",
+      "text": "Calculate stock-related values (e.g., the value of a constant growth stock, the expected value of future dividends, the expected rate of return, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply knowledge of capital markets to make suitable financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:236",
+      "level": "SP",
+      "official_text": "Calculate bond-related values (e.g., the price of a bond given its yield to maturity, the coupon interest payment for a bond, the effects of interest rates on the price of a bond, etc.)",
+      "display_text": "Calculate bond-related values (e.g., the price of a bond given its yield to maturity, the coupon interest payment for a bond, the effects of interest rates on the price of a bond, etc.)",
+      "text": "Calculate bond-related values (e.g., the price of a bond given its yield to maturity, the coupon interest payment for a bond, the effects of interest rates on the price of a bond, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply knowledge of capital markets to make suitable financial decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:078",
+      "level": "SP",
+      "official_text": "Explain the nature of capital investment",
+      "display_text": "Explain the nature of capital investment",
+      "text": "Explain the nature of capital investment",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:745",
+      "level": "SP",
+      "official_text": "Explain methods used to analyze capital investments (e.g., payback period, discounted break-even, net present value, accounting rate of return, internal rate of return, etc.)",
+      "display_text": "Explain methods used to analyze capital investments (e.g., payback period, discounted break-even, net present value, accounting rate of return, internal rate of return, etc.)",
+      "text": "Explain methods used to analyze capital investments (e.g., payback period, discounted break-even, net present value, accounting rate of return, internal rate of return, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:746",
+      "level": "SP",
+      "official_text": "Explain the impact of the cost of capital on capital investments",
+      "display_text": "Explain the impact of the cost of capital on capital investments",
+      "text": "Explain the impact of the cost of capital on capital investments",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:747",
+      "level": "SP",
+      "official_text": "Calculate the cost of capital and its components (e.g., debt, equity)",
+      "display_text": "Calculate the cost of capital and its components (e.g., debt, equity)",
+      "text": "Calculate the cost of capital and its components (e.g., debt, equity)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:492",
+      "level": "SP",
+      "official_text": "Calculate cash flows associated with an investment (e.g., initial investment, operating cash inflows, operating cash outflows, terminal flows)",
+      "display_text": "Calculate cash flows associated with an investment (e.g., initial investment, operating cash inflows, operating cash outflows, terminal flows)",
+      "text": "Calculate cash flows associated with an investment (e.g., initial investment, operating cash inflows, operating cash outflows, terminal flows)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:646",
+      "level": "SP",
+      "official_text": "Use the time value of money to make business decisions (e.g., projects, investments, etc.)",
+      "display_text": "Use the time value of money to make business decisions (e.g., projects, investments, etc.)",
+      "text": "Use the time value of money to make business decisions (e.g., projects, investments, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:748",
+      "level": "SP",
+      "official_text": "Calculate capital investment return (e.g., payback, net present value, internal rate of return)",
+      "display_text": "Calculate capital investment return (e.g., payback, net present value, internal rate of return)",
+      "text": "Calculate capital investment return (e.g., payback, net present value, internal rate of return)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze finances to assist in capital budgeting decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 35
+      }
+    },
+    {
+      "code": "FI:750",
+      "level": "SP",
+      "official_text": "Identify project benefits and costs",
+      "display_text": "Identify project benefits and costs",
+      "text": "Identify project benefits and costs",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze proposed business projects to select acceptable project that enhances firm value",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:753",
+      "level": "SP",
+      "official_text": "Monitor project portfolio",
+      "display_text": "Monitor project portfolio",
+      "text": "Monitor project portfolio",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage capital investments to realize expected benefits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:756",
+      "level": "SP",
+      "official_text": "Manage loans",
+      "display_text": "Manage loans",
+      "text": "Manage loans",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use long-term financial management to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:757",
+      "level": "SP",
+      "official_text": "Manage investment portfolio",
+      "display_text": "Manage investment portfolio",
+      "text": "Manage investment portfolio",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use long-term financial management to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:758",
+      "level": "SP",
+      "official_text": "Manage pension investment portfolio",
+      "display_text": "Manage pension investment portfolio",
+      "text": "Manage pension investment portfolio",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use long-term financial management to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:346",
+      "level": "SP",
+      "official_text": "Explain forms of dividends",
+      "display_text": "Explain forms of dividends",
+      "text": "Explain forms of dividends",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply fundamental knowledge of dividends to assist in the distribution of dividends.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:530",
+      "level": "SP",
+      "official_text": "Explain the nature of dividend reinvestment plans (DRIPs)",
+      "display_text": "Explain the nature of dividend reinvestment plans (DRIPs)",
+      "text": "Explain the nature of dividend reinvestment plans (DRIPs)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Apply fundamental knowledge of dividends to assist in the distribution of dividends.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:502",
+      "level": "SP",
+      "official_text": "Discuss the financial planning process",
+      "display_text": "Discuss the financial planning process",
+      "text": "Discuss the financial planning process",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial planning in business finance to strive for business goals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:503",
+      "level": "SP",
+      "official_text": "Discuss the nature of short-term (operating) financial plans",
+      "display_text": "Discuss the nature of short-term (operating) financial plans",
+      "text": "Discuss the nature of short-term (operating) financial plans",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand financial planning in business finance to strive for business goals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:717",
+      "level": "SP",
+      "official_text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "display_text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "text": "Differentiate among management accounting responsibility centers (i.e., cost, profit, investment, revenue)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:718",
+      "level": "SP",
+      "official_text": "Discuss the use of cost-volume-profit analysis",
+      "display_text": "Discuss the use of cost-volume-profit analysis",
+      "text": "Discuss the use of cost-volume-profit analysis",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:719",
+      "level": "SP",
+      "official_text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "display_text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "text": "Discuss cost accounting systems (e.g., job costing, process costing, standard costing, activity-based costing [ABC])",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:720",
+      "level": "SP",
+      "official_text": "Distinguish between variable costing and absorption costing",
+      "display_text": "Distinguish between variable costing and absorption costing",
+      "text": "Distinguish between variable costing and absorption costing",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:721",
+      "level": "SP",
+      "official_text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "display_text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "text": "Describe common management accounting performance measures (e.g., balanced scorecard, return on investment [ROI], customer profitability analysis, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:722",
+      "level": "SP",
+      "official_text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "display_text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "text": "Discuss the role of standard costing in the preparation and analysis of budgets",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:723",
+      "level": "SP",
+      "official_text": "Describe the nature of flexible budgets",
+      "display_text": "Describe the nature of flexible budgets",
+      "text": "Describe the nature of flexible budgets",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:724",
+      "level": "SP",
+      "official_text": "Explain the role of transfer pricing in managerial accounting",
+      "display_text": "Explain the role of transfer pricing in managerial accounting",
+      "text": "Explain the role of transfer pricing in managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:725",
+      "level": "SP",
+      "official_text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "display_text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "text": "Explain the impact of business operational practices (e.g., total quality management [TQM], lean production, just-in-time [JIT], etc.) on managerial accounting",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Understand the fundamentals of managerial accounting to aid in financial decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:768",
+      "level": "SP",
+      "official_text": "Perform budgetary cost analysis (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "display_text": "Perform budgetary cost analysis (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "text": "Perform budgetary cost analysis (e.g., direct cost, indirect cost, sunk cost, differential cost, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct profit planning to forecast business profit.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:769",
+      "level": "SP",
+      "official_text": "Perform responsibility center budgeting (i.e., cost, profit, investment, revenue)",
+      "display_text": "Perform responsibility center budgeting (i.e., cost, profit, investment, revenue)",
+      "text": "Perform responsibility center budgeting (i.e., cost, profit, investment, revenue)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct profit planning to forecast business profit.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:509",
+      "level": "SP",
+      "official_text": "Discuss the nature of pro forma statements",
+      "display_text": "Discuss the nature of pro forma statements",
+      "text": "Discuss the nature of pro forma statements",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Conduct profit planning to forecast business profit.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 36
+      }
+    },
+    {
+      "code": "FI:546",
+      "level": "SP",
+      "official_text": "Discuss the analysis of a company's financial situation using its financial statements",
+      "display_text": "Discuss the analysis of a company's financial situation using its financial statements",
+      "text": "Discuss the analysis of a company's financial situation using its financial statements",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize a company's financial statements to analyze its financial situation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:547",
+      "level": "SP",
+      "official_text": "Discuss external forces affecting a company's value",
+      "display_text": "Discuss external forces affecting a company's value",
+      "text": "Discuss external forces affecting a company's value",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize a company's financial statements to analyze its financial situation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:548",
+      "level": "SP",
+      "official_text": "Explain how value is created for a company",
+      "display_text": "Explain how value is created for a company",
+      "text": "Explain how value is created for a company",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Utilize a company's financial statements to analyze its financial situation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:449",
+      "level": "SP",
+      "official_text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "display_text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "text": "Analyze transactions and accounts (e.g., purchase, sales, sales returns and allowances, uncollectible accounts, depreciation, debt)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Produce financial reports to communicate the results of business activity.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:347",
+      "level": "SP",
+      "official_text": "Compare mergers and acquisitions",
+      "display_text": "Compare mergers and acquisitions",
+      "text": "Compare mergers and acquisitions",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze ownership change transactions to aid in corporate growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:536",
+      "level": "SP",
+      "official_text": "Explain the nature of hostile takeovers",
+      "display_text": "Explain the nature of hostile takeovers",
+      "text": "Explain the nature of hostile takeovers",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze ownership change transactions to aid in corporate growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:772",
+      "level": "SP",
+      "official_text": "Explain divestiture concepts (e.g., spin-offs, split-ups, etc.)",
+      "display_text": "Explain divestiture concepts (e.g., spin-offs, split-ups, etc.)",
+      "text": "Explain divestiture concepts (e.g., spin-offs, split-ups, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Analyze ownership change transactions to aid in corporate growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:343",
+      "level": "SP",
+      "official_text": "Explain the purpose of internal accounting controls",
+      "display_text": "Explain the purpose of internal accounting controls",
+      "text": "Explain the purpose of internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "FI:480",
+      "level": "SP",
+      "official_text": "Maintain internal accounting controls",
+      "display_text": "Maintain internal accounting controls",
+      "text": "Maintain internal accounting controls",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement suitable internal accounting controls to ensure the proper recording of financial transactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "NF:240",
+      "level": "CS",
+      "official_text": "Describe manual and computerized treasury systems",
+      "display_text": "Describe manual and computerized treasury systems",
+      "text": "Describe manual and computerized treasury systems",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to perform business finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "NF:241",
+      "level": "SP",
+      "official_text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "display_text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "text": "Describe the nature of Extensible Business Reporting Language (XBRL)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to perform business finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "NF:242",
+      "level": "SP",
+      "official_text": "Use treasury systems (e.g., cash management, budgeting, forecasting)",
+      "display_text": "Use treasury systems (e.g., cash management, budgeting, forecasting)",
+      "text": "Use treasury systems (e.g., cash management, budgeting, forecasting)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize technology to perform business finance functions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "PD:215",
+      "level": "SP",
+      "official_text": "Explain the role and responsibilities of financial management personnel",
+      "display_text": "Explain the role and responsibilities of financial management personnel",
+      "text": "Explain the role and responsibilities of financial management personnel",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand careers in business finance to determine which role and responsibilities best match personal abilities and traits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "PD:218",
+      "level": "SP",
+      "official_text": "Describe the role and responsibilities of risk management personnel",
+      "display_text": "Describe the role and responsibilities of risk management personnel",
+      "text": "Describe the role and responsibilities of risk management personnel",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand careers in business finance to determine which role and responsibilities best match personal abilities and traits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "PD:219",
+      "level": "SP",
+      "official_text": "Discuss the role and responsibilities of treasury management personnel",
+      "display_text": "Discuss the role and responsibilities of treasury management personnel",
+      "text": "Discuss the role and responsibilities of treasury management personnel",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Understand careers in business finance to determine which role and responsibilities best match personal abilities and traits.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 37
+      }
+    },
+    {
+      "code": "PD:221",
+      "level": "SP",
+      "official_text": "Explain professional designations in the field of business finance (e.g., CF, CFA, CCM, CTP, CFM, etc.)",
+      "display_text": "Explain professional designations in the field of business finance (e.g., CF, CFA, CCM, CTP, CFM, etc.)",
+      "text": "Explain professional designations in the field of business finance (e.g., CF, CFA, CCM, CTP, CFM, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Explore licensing and certification in the field of business finance to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "PD:295",
+      "level": "SP",
+      "official_text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "display_text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "text": "Discuss the roles and responsibilities of accounting-standards-setting bodies (i.e., SEC, FASB, IASB, GASB)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "PD:296",
+      "level": "SP",
+      "official_text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "display_text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "text": "Compare U.S. Generally Accepted Accounting Principles (GAAP) and International Financial Reporting Standards (IFRS)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire knowledge of accounting standards to record, report, and evaluate financial data appropriately.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:077",
+      "level": "SP",
+      "official_text": "Identify financial risk factors associated with business contracts (e.g., ratio requirements, restricted transactions, financial report filing requirements)",
+      "display_text": "Identify financial risk factors associated with business contracts (e.g., ratio requirements, restricted transactions, financial report filing requirements)",
+      "text": "Identify financial risk factors associated with business contracts (e.g., ratio requirements, restricted transactions, financial report filing requirements)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:078",
+      "level": "SP",
+      "official_text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "display_text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "text": "Monitor for breach of contract of non-performance related terms and conditions",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:079",
+      "level": "SP",
+      "official_text": "Maintain contract compliance documentation",
+      "display_text": "Maintain contract compliance documentation",
+      "text": "Maintain contract compliance documentation",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:080",
+      "level": "SP",
+      "official_text": "Evaluate alternative revenue arrangements (e.g., cost-plus pricing, contingent fees)",
+      "display_text": "Evaluate alternative revenue arrangements (e.g., cost-plus pricing, contingent fees)",
+      "text": "Evaluate alternative revenue arrangements (e.g., cost-plus pricing, contingent fees)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:081",
+      "level": "SP",
+      "official_text": "Establish monitoring programs for contract-specific revenue arrangements",
+      "display_text": "Establish monitoring programs for contract-specific revenue arrangements",
+      "text": "Establish monitoring programs for contract-specific revenue arrangements",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:082",
+      "level": "SP",
+      "official_text": "Develop monitoring programs for restrictive contract requirements",
+      "display_text": "Develop monitoring programs for restrictive contract requirements",
+      "text": "Develop monitoring programs for restrictive contract requirements",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:083",
+      "level": "SP",
+      "official_text": "Establish processes for timely reporting of required information",
+      "display_text": "Establish processes for timely reporting of required information",
+      "text": "Establish processes for timely reporting of required information",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Administer contracts to achieve organizational goals and minimize risk.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:047",
+      "level": "SP",
+      "official_text": "Discuss the relationship between risk management and business finance",
+      "display_text": "Discuss the relationship between risk management and business finance",
+      "text": "Discuss the relationship between risk management and business finance",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:086",
+      "level": "SP",
+      "official_text": "Describe types of financial risks (e.g., interest rate risk, equity risk, commodity risk, etc.)",
+      "display_text": "Describe types of financial risks (e.g., interest rate risk, equity risk, commodity risk, etc.)",
+      "text": "Describe types of financial risks (e.g., interest rate risk, equity risk, commodity risk, etc.)",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    },
+    {
+      "code": "RM:048",
+      "level": "SP",
+      "official_text": "Discuss the nature of risk measurement",
+      "display_text": "Discuss the nature of risk measurement",
+      "text": "Discuss the nature of risk measurement",
+      "tier": 3,
+      "curriculum_section": "Corporate Finance Pathway",
+      "cluster": "Finance",
+      "pathway": "Corporate Finance",
+      "instructional_area_code": "RM",
+      "instructional_area_name": "Risk Management",
+      "standard": "Understands risk-management strategies and techniques used to minimize business loss",
+      "performance_element": "Manage risk to protect a business's well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Finance",
+        "page": 38
+      }
+    }
+  ]
+}

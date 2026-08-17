@@ -81,12 +81,41 @@ kbd { background: var(--border); border-radius: 3px; color: var(--white); paddin
 .question-import-form label, .question-import-fields label { display:grid; gap:6px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; }
 .question-import-form input, .question-import-form select, .question-import-fields input, .question-import-fields select, .question-import-fields textarea { width:100%; border:1px solid var(--border); background:#07191a; color:var(--white); padding:10px; font:inherit; }
 .question-import-form .primary-action, .question-import-fields label:last-child { grid-column:1 / -1; }
+.corpus-summary-grid { margin:18px 0; }
+.corpus-header { padding-bottom:0; }
+.corpus-nav { display:flex; gap:4px; margin:20px -22px 0; padding:0 22px; border-top:1px solid var(--border); overflow-x:auto; }
+.corpus-nav-button { background:transparent; border:0; border-bottom:2px solid transparent; color:var(--muted); cursor:pointer; font:700 .76rem 'Barlow'; letter-spacing:.05em; padding:14px 12px 12px; text-transform:uppercase; white-space:nowrap; }
+.corpus-nav-button:hover, .corpus-nav-button.active { color:var(--cyan); border-bottom-color:var(--cyan); }
+.generation-lock-card { border:1px solid var(--border2); background:rgba(7,25,26,.7); border-radius:8px; margin-top:16px; padding:16px; }
+.generation-lock-card div { align-items:center; display:flex; gap:9px; }
+.generation-lock-card p { color:var(--muted); margin:8px 0 12px; }
+.lock-icon { filter:grayscale(1); }
+.corpus-dropzone { align-items:center; border:1px dashed var(--border2); border-radius:8px; color:var(--white) !important; cursor:pointer; grid-column:1 / -1; justify-items:center; padding:24px; text-transform:none !important; }
+.corpus-dropzone input { max-width:340px; }
+.corpus-filter-row { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.corpus-filter { background:#07191a; border:1px solid var(--border2); border-radius:999px; color:var(--muted); cursor:pointer; font:600 .76rem 'Barlow'; padding:7px 11px; }
+.corpus-filter:hover, .corpus-filter.active { border-color:var(--cyan); color:var(--cyan); }
+.corpus-filter strong { color:var(--white); margin-left:3px; }
+.quality-metric-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.quality-metric-grid > div { background:#07191a; border:1px solid var(--border); border-radius:6px; display:grid; gap:4px; padding:11px; }
+.quality-metric-grid span { color:var(--muted); font-size:.74rem; text-transform:uppercase; }
+.corpus-document details, .pilot-audit-box { grid-column:1 / -1; }
+.corpus-document pre { color:var(--muted); overflow:auto; white-space:pre-wrap; }
+.pilot-audit-box { border:1px solid var(--border); display:grid; gap:9px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:8px; padding:12px; }
+.pilot-audit-box .corpus-pilot-audit { justify-self:start; }
+.corpus-type-tabs { margin:14px 0; }
+.corpus-document { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.corpus-document h3, .corpus-document p, .corpus-document .primary-action { grid-column:1 / -1; }
+.corpus-document label { display:grid; gap:5px; color:var(--muted); font-size:.78rem; }
+.corpus-document input, .corpus-document select { width:100%; border:1px solid var(--border); background:#07191a; color:var(--white); padding:9px; }
 .import-summary { padding:14px 0; color:var(--cyan); }
 .cluster-breakdown { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
 .cluster-breakdown span { border:1px solid var(--border); color:var(--muted); padding:6px 9px; font-size:.78rem; }
 .import-choices { display:grid; gap:8px; padding-left:28px; }
 .import-choices li { padding:8px 10px; border:1px solid var(--border); }
 @media (max-width:700px) { .question-import-form, .question-import-fields { grid-template-columns:1fr; } }
+@media (max-width:700px) { .corpus-document { grid-template-columns:1fr; } }
+@media (max-width:700px) { .quality-metric-grid, .pilot-audit-box { grid-template-columns:1fr; } }
 .source-search { width:100%; border:1px solid var(--border); background:#07191a; color:var(--white); padding:11px; font:inherit; margin-bottom:14px; }
 .sources-list { display:grid; gap:12px; }
 .source-card { border:1px solid var(--border); padding:15px; }

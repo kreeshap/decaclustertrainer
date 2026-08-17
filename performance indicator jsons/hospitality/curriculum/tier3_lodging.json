@@ -1,0 +1,1799 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "hospitality_tier3_lodging",
+  "name": "Lodging Pathway",
+  "cluster": "Hospitality + Tourism",
+  "tier": 3,
+  "curriculum_section": "Lodging Pathway",
+  "pathway": "Lodging",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Hospitality",
+    "pages": [
+      38,
+      43
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:168",
+      "level": "SP",
+      "official_text": "Distinguish between letters of agreement and contracts",
+      "display_text": "Distinguish between letters of agreement and contracts",
+      "text": "Distinguish between letters of agreement and contracts",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand the civil foundations of the legal environment of business to demonstrate knowledge of contracts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "BL:169",
+      "level": "SP",
+      "official_text": "Explain the use of hotel management contracts",
+      "display_text": "Explain the use of hotel management contracts",
+      "text": "Explain the use of hotel management contracts",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand the civil foundations of the legal environment of business to demonstrate knowledge of contracts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "BL:170",
+      "level": "SP",
+      "official_text": "Explain the nature of regulations affecting the hotel/lodging industry",
+      "display_text": "Explain the nature of regulations affecting the hotel/lodging industry",
+      "text": "Explain the nature of regulations affecting the hotel/lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "BL:171",
+      "level": "SP",
+      "official_text": "Describe the rights of guests in the hotel/lodging industry",
+      "display_text": "Describe the rights of guests in the hotel/lodging industry",
+      "text": "Describe the rights of guests in the hotel/lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire knowledge of commerce laws and regulations to continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CO:214",
+      "level": "CS",
+      "official_text": "Route telephone calls",
+      "display_text": "Route telephone calls",
+      "text": "Route telephone calls",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Apply verbal skills to obtain and convey information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CR:057",
+      "level": "SP",
+      "official_text": "Orient guests to lodging facility",
+      "display_text": "Orient guests to lodging facility",
+      "text": "Orient guests to lodging facility",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CR:058",
+      "level": "SP",
+      "official_text": "Offer services to guests",
+      "display_text": "Offer services to guests",
+      "text": "Offer services to guests",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CR:059",
+      "level": "SP",
+      "official_text": "Recommend alternative lodging facilities for guests",
+      "display_text": "Recommend alternative lodging facilities for guests",
+      "text": "Recommend alternative lodging facilities for guests",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CR:060",
+      "level": "SP",
+      "official_text": "Process guest room changes",
+      "display_text": "Process guest room changes",
+      "text": "Process guest room changes",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "CR:061",
+      "level": "SP",
+      "official_text": "Resolve reservation issues",
+      "display_text": "Resolve reservation issues",
+      "text": "Resolve reservation issues",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Resolve conflicts with/for customers to encourage repeat business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 38
+      }
+    },
+    {
+      "code": "FI:798",
+      "level": "SP",
+      "official_text": "Discuss the nature of lodging accounting systems",
+      "display_text": "Discuss the nature of lodging accounting systems",
+      "text": "Discuss the nature of lodging accounting systems",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:799",
+      "level": "SP",
+      "official_text": "Discuss lodging tax structures",
+      "display_text": "Discuss lodging tax structures",
+      "text": "Discuss lodging tax structures",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:800",
+      "level": "SP",
+      "official_text": "Explain the purpose of night audits",
+      "display_text": "Explain the purpose of night audits",
+      "text": "Explain the purpose of night audits",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:801",
+      "level": "SP",
+      "official_text": "Complete a night audit",
+      "display_text": "Complete a night audit",
+      "text": "Complete a night audit",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:802",
+      "level": "SP",
+      "official_text": "Reconcile accounting issues",
+      "display_text": "Reconcile accounting issues",
+      "text": "Reconcile accounting issues",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:803",
+      "level": "SP",
+      "official_text": "Produce daily reports",
+      "display_text": "Produce daily reports",
+      "text": "Produce daily reports",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Classify, record, and summarize data to produce needed financial information.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:807",
+      "level": "SP",
+      "official_text": "Process refunds",
+      "display_text": "Process refunds",
+      "text": "Process refunds",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts payable functions to record, control, and disburse payments to vendors.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:808",
+      "level": "SP",
+      "official_text": "Process advance deposits",
+      "display_text": "Process advance deposits",
+      "text": "Process advance deposits",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:809",
+      "level": "SP",
+      "official_text": "Track credit availability/usage",
+      "display_text": "Track credit availability/usage",
+      "text": "Track credit availability/usage",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "FI:810",
+      "level": "SP",
+      "official_text": "Post charges to guest folios",
+      "display_text": "Post charges to guest folios",
+      "text": "Post charges to guest folios",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Perform accounts receivable functions to record, control, and collect payments due from the sale of goods and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "MK:025",
+      "level": "SP",
+      "official_text": "Explain the nature of hotel/lodging marketing",
+      "display_text": "Explain the nature of hotel/lodging marketing",
+      "text": "Explain the nature of hotel/lodging marketing",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Understand marketing's role and function in business to facilitate economic exchanges with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "MK:027",
+      "level": "SP",
+      "official_text": "Identify factors that influence guest experiences throughout the guest life cycle",
+      "display_text": "Identify factors that influence guest experiences throughout the guest life cycle",
+      "text": "Identify factors that influence guest experiences throughout the guest life cycle",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire foundational knowledge of customer/client/business behavior to understand what motivates decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "MK:028",
+      "level": "SP",
+      "official_text": "Describe property features that influence customer appeal",
+      "display_text": "Describe property features that influence customer appeal",
+      "text": "Describe property features that influence customer appeal",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire foundational knowledge of customer/client/business behavior to understand what motivates decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 39
+      }
+    },
+    {
+      "code": "NF:299",
+      "level": "SP",
+      "official_text": "Explain ways that technology impacts the hotel/lodging industry",
+      "display_text": "Explain ways that technology impacts the hotel/lodging industry",
+      "text": "Explain ways that technology impacts the hotel/lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:300",
+      "level": "SP",
+      "official_text": "Explain the role and components of property management systems",
+      "display_text": "Explain the role and components of property management systems",
+      "text": "Explain the role and components of property management systems",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:301",
+      "level": "SP",
+      "official_text": "Discuss online guest reservation systems",
+      "display_text": "Discuss online guest reservation systems",
+      "text": "Discuss online guest reservation systems",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:302",
+      "level": "SP",
+      "official_text": "Maintain accurate guest room status/accounts",
+      "display_text": "Maintain accurate guest room status/accounts",
+      "text": "Maintain accurate guest room status/accounts",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:303",
+      "level": "SP",
+      "official_text": "Utilize property management system applications",
+      "display_text": "Utilize property management system applications",
+      "text": "Utilize property management system applications",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:304",
+      "level": "SP",
+      "official_text": "Describe system integration challenges in hotel management",
+      "display_text": "Describe system integration challenges in hotel management",
+      "text": "Describe system integration challenges in hotel management",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "NF:305",
+      "level": "SP",
+      "official_text": "Describe current issues and trends in the hotel/lodging industry",
+      "display_text": "Describe current issues and trends in the hotel/lodging industry",
+      "text": "Describe current issues and trends in the hotel/lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:113",
+      "level": "CS",
+      "official_text": "Explain procedures for handling robbery situations",
+      "display_text": "Explain procedures for handling robbery situations",
+      "text": "Explain procedures for handling robbery situations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:537",
+      "level": "CS",
+      "official_text": "Handle emergency situations in hotel/lodging establishments",
+      "display_text": "Handle emergency situations in hotel/lodging establishments",
+      "text": "Handle emergency situations in hotel/lodging establishments",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement safety procedures to minimize loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:538",
+      "level": "CS",
+      "official_text": "Identify hazardous chemicals/waste",
+      "display_text": "Identify hazardous chemicals/waste",
+      "text": "Identify hazardous chemicals/waste",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement biohazard safety procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:539",
+      "level": "CS",
+      "official_text": "Label/store hazardous chemicals/waste",
+      "display_text": "Label/store hazardous chemicals/waste",
+      "text": "Label/store hazardous chemicals/waste",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement biohazard safety procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:540",
+      "level": "SP",
+      "official_text": "Describe strategies for responding to biohazard incidents",
+      "display_text": "Describe strategies for responding to biohazard incidents",
+      "text": "Describe strategies for responding to biohazard incidents",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement biohazard safety procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:545",
+      "level": "SP",
+      "official_text": "Explain hotel security considerations",
+      "display_text": "Explain hotel security considerations",
+      "text": "Explain hotel security considerations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:546",
+      "level": "SP",
+      "official_text": "Use key-control measures to protect guests",
+      "display_text": "Use key-control measures to protect guests",
+      "text": "Use key-control measures to protect guests",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement security policies/procedures to minimize chance for loss.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:547",
+      "level": "CS",
+      "official_text": "Process deliveries",
+      "display_text": "Process deliveries",
+      "text": "Process deliveries",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:548",
+      "level": "CS",
+      "official_text": "Book and confirm room reservations (i.e., direct and indirect)",
+      "display_text": "Book and confirm room reservations (i.e., direct and indirect)",
+      "text": "Book and confirm room reservations (i.e., direct and indirect)",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:549",
+      "level": "CS",
+      "official_text": "Modify/cancel guest reservations",
+      "display_text": "Modify/cancel guest reservations",
+      "text": "Modify/cancel guest reservations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:550",
+      "level": "CS",
+      "official_text": "Extend reservations",
+      "display_text": "Extend reservations",
+      "text": "Extend reservations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:551",
+      "level": "CS",
+      "official_text": "Complete guest check-in procedures",
+      "display_text": "Complete guest check-in procedures",
+      "text": "Complete guest check-in procedures",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:552",
+      "level": "CS",
+      "official_text": "Process front-desk transactions (e.g., check cashing, valet parking, call routing, requests)",
+      "display_text": "Process front-desk transactions (e.g., check cashing, valet parking, call routing, requests)",
+      "text": "Process front-desk transactions (e.g., check cashing, valet parking, call routing, requests)",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:553",
+      "level": "CS",
+      "official_text": "Process guest departures",
+      "display_text": "Process guest departures",
+      "text": "Process guest departures",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:554",
+      "level": "SP",
+      "official_text": "Block group reservations",
+      "display_text": "Block group reservations",
+      "text": "Block group reservations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Perform daily activities to facilitate ongoing lodging operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 40
+      }
+    },
+    {
+      "code": "OP:556",
+      "level": "SP",
+      "official_text": "Identify performance/productivity standards for lodging facilities",
+      "display_text": "Identify performance/productivity standards for lodging facilities",
+      "text": "Identify performance/productivity standards for lodging facilities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:555",
+      "level": "CS",
+      "official_text": "Describe distribution systems used in lodging (e.g., global distribution systems [GDS], intersell agencies, property direct reservation channels, central reservation system, affiliate and non-affiliate networks, Internet, etc.)",
+      "display_text": "Describe distribution systems used in lodging (e.g., global distribution systems [GDS], intersell agencies, property direct reservation channels, central reservation system, affiliate and non-affiliate networks, Internet, etc.)",
+      "text": "Describe distribution systems used in lodging (e.g., global distribution systems [GDS], intersell agencies, property direct reservation channels, central reservation system, affiliate and non-affiliate networks, Internet, etc.)",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Acquire foundational knowledge of distribution to understand its role and function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:558",
+      "level": "CS",
+      "official_text": "Identify guest room/public area maintenance needs",
+      "display_text": "Identify guest room/public area maintenance needs",
+      "text": "Identify guest room/public area maintenance needs",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:559",
+      "level": "CS",
+      "official_text": "Process maintenance request",
+      "display_text": "Process maintenance request",
+      "text": "Process maintenance request",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:560",
+      "level": "SP",
+      "official_text": "Explain the housekeeping function",
+      "display_text": "Explain the housekeeping function",
+      "text": "Explain the housekeeping function",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:561",
+      "level": "SP",
+      "official_text": "Identify signs of pest infestations",
+      "display_text": "Identify signs of pest infestations",
+      "text": "Identify signs of pest infestations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:562",
+      "level": "SP",
+      "official_text": "Describe pest control strategies",
+      "display_text": "Describe pest control strategies",
+      "text": "Describe pest control strategies",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:563",
+      "level": "SP",
+      "official_text": "Assign guest rooms for cleaning",
+      "display_text": "Assign guest rooms for cleaning",
+      "text": "Assign guest rooms for cleaning",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Maintain property and equipment to facilitate ongoing business activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:494",
+      "level": "SP",
+      "official_text": "Identify waste management opportunities",
+      "display_text": "Identify waste management opportunities",
+      "text": "Identify waste management opportunities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:571",
+      "level": "SP",
+      "official_text": "Identify waste redirection opportunities",
+      "display_text": "Identify waste redirection opportunities",
+      "text": "Identify waste redirection opportunities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "OP:572",
+      "level": "SP",
+      "official_text": "Discuss strategies to manage guest use of water/energy",
+      "display_text": "Discuss strategies to manage guest use of water/energy",
+      "text": "Discuss strategies to manage guest use of water/energy",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Manage facilities to reduce costs and minimize social impact.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:355",
+      "level": "CS",
+      "official_text": "Describe the nature of the lodging industry",
+      "display_text": "Describe the nature of the lodging industry",
+      "text": "Describe the nature of the lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:356",
+      "level": "SP",
+      "official_text": "Describe the development of the lodging industry",
+      "display_text": "Describe the development of the lodging industry",
+      "text": "Describe the development of the lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:357",
+      "level": "SP",
+      "official_text": "Describe lodging accommodation types and classifications",
+      "display_text": "Describe lodging accommodation types and classifications",
+      "text": "Describe lodging accommodation types and classifications",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:358",
+      "level": "SP",
+      "official_text": "Describe levels of service in lodging establishments",
+      "display_text": "Describe levels of service in lodging establishments",
+      "text": "Describe levels of service in lodging establishments",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:359",
+      "level": "SP",
+      "official_text": "Describe the organizational structure of lodging establishments (e.g., rooms division, food and beverage division, marketing and sales division)",
+      "display_text": "Describe the organizational structure of lodging establishments (e.g., rooms division, food and beverage division, marketing and sales division)",
+      "text": "Describe the organizational structure of lodging establishments (e.g., rooms division, food and beverage division, marketing and sales division)",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:360",
+      "level": "SP",
+      "official_text": "Explain the nature of front office operations",
+      "display_text": "Explain the nature of front office operations",
+      "text": "Explain the nature of front office operations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:361",
+      "level": "SP",
+      "official_text": "Discuss the nature of food and beverage division",
+      "display_text": "Discuss the nature of food and beverage division",
+      "text": "Discuss the nature of food and beverage division",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:362",
+      "level": "SP",
+      "official_text": "Explain the nature of back-of-the house operations",
+      "display_text": "Explain the nature of back-of-the house operations",
+      "text": "Explain the nature of back-of-the house operations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:363",
+      "level": "SP",
+      "official_text": "Describe the role of hotel management companies",
+      "display_text": "Describe the role of hotel management companies",
+      "text": "Describe the role of hotel management companies",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire industry knowledge to facilitate work processes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 41
+      }
+    },
+    {
+      "code": "PD:364",
+      "level": "SP",
+      "official_text": "Explain employment opportunities in the lodging industry",
+      "display_text": "Explain employment opportunities in the lodging industry",
+      "text": "Explain employment opportunities in the lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Participate in career planning to enhance job-success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PD:365",
+      "level": "SP",
+      "official_text": "Determine the services provided by professional organizations in the lodging industry",
+      "display_text": "Determine the services provided by professional organizations in the lodging industry",
+      "text": "Determine the services provided by professional organizations in the lodging industry",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PM:295",
+      "level": "CS",
+      "official_text": "Describe the uses of grades and standards in lodging",
+      "display_text": "Describe the uses of grades and standards in lodging",
+      "text": "Describe the uses of grades and standards in lodging",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Apply quality assurances to enhance product/service offerings.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PM:297",
+      "level": "SP",
+      "official_text": "Explain the role of guest services",
+      "display_text": "Explain the role of guest services",
+      "text": "Explain the role of guest services",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PM:298",
+      "level": "SP",
+      "official_text": "Discuss the nature of concierge services",
+      "display_text": "Discuss the nature of concierge services",
+      "text": "Discuss the nature of concierge services",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PM:299",
+      "level": "SP",
+      "official_text": "Describe the purpose of guest relations",
+      "display_text": "Describe the purpose of guest relations",
+      "text": "Describe the purpose of guest relations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PM",
+      "instructional_area_name": "Product/Service Management",
+      "standard": "Understands the concepts and processes needed to obtain, develop, maintain, and improve a product or service mix in response to market opportunities and to build brand for the organization",
+      "performance_element": "Employ product-mix strategies to meet customer expectations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "CM:001",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of channel management",
+      "display_text": "Explain the nature and scope of channel management",
+      "text": "Explain the nature and scope of channel management",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "CM:003",
+      "level": "CS",
+      "official_text": "Explain the nature of channels of distribution",
+      "display_text": "Explain the nature of channels of distribution",
+      "text": "Explain the nature of channels of distribution",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Acquire foundational knowledge of channel management to understand its role in marketing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "CM:023",
+      "level": "SP",
+      "official_text": "Explain the nature of channel strategies in lodging organizations",
+      "display_text": "Explain the nature of channel strategies in lodging organizations",
+      "text": "Explain the nature of channel strategies in lodging organizations",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "CM:024",
+      "level": "SP",
+      "official_text": "Discuss room distribution payment models",
+      "display_text": "Discuss room distribution payment models",
+      "text": "Discuss room distribution payment models",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "CM",
+      "instructional_area_name": "Channel Management",
+      "standard": "Understands the concepts and processes needed to identify, select, monitor, and evaluate sales channels",
+      "performance_element": "Manage channel activities to minimize costs and to determine distribution strategies.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "MP:045",
+      "level": "SP",
+      "official_text": "Describe lodging market segments",
+      "display_text": "Describe lodging market segments",
+      "text": "Describe lodging market segments",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "MP",
+      "instructional_area_name": "Market Planning",
+      "standard": "Understands the concepts and strategies utilized to determine and target marketing strategies to a select audience",
+      "performance_element": "Select target market appropriate for product/business to obtain the best return on marketing investment (ROMI).",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 42
+      }
+    },
+    {
+      "code": "PI:080",
+      "level": "SP",
+      "official_text": "Explain considerations in hotel/lodging room pricing",
+      "display_text": "Explain considerations in hotel/lodging room pricing",
+      "text": "Explain considerations in hotel/lodging room pricing",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PI",
+      "instructional_area_name": "Pricing",
+      "standard": "Understands concepts and strategies utilized in determining and adjusting prices to maximize return and meet customers' perceptions of value",
+      "performance_element": "Develop a foundational knowledge of pricing to understand its role.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "PR:423",
+      "level": "SP",
+      "official_text": "Develop property fact book",
+      "display_text": "Develop property fact book",
+      "text": "Develop property fact book",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "PR:424",
+      "level": "SP",
+      "official_text": "Prepare sales kit",
+      "display_text": "Prepare sales kit",
+      "text": "Prepare sales kit",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "PR",
+      "instructional_area_name": "Promotion",
+      "standard": "Understands the concepts and strategies needed to communicate information about products, services, images, and/or ideas to achieve a desired outcome",
+      "performance_element": "Employ sales-promotion activities to inform or remind customers of business/product.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:112",
+      "level": "SP",
+      "official_text": "Differentiate between consumer and organizational buying behavior",
+      "display_text": "Differentiate between consumer and organizational buying behavior",
+      "text": "Differentiate between consumer and organizational buying behavior",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:494",
+      "level": "SP",
+      "official_text": "Identify lodging sales opportunities",
+      "display_text": "Identify lodging sales opportunities",
+      "text": "Identify lodging sales opportunities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to communicate product benefits and to ensure appropriateness of product for the customer.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:491",
+      "level": "CS",
+      "official_text": "Acquire knowledge of property capacity/amenities",
+      "display_text": "Acquire knowledge of property capacity/amenities",
+      "text": "Acquire knowledge of property capacity/amenities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to be equipped to solve customer/ client's problems.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:492",
+      "level": "CS",
+      "official_text": "Acquire knowledge of lodging meeting room capacity/requirements",
+      "display_text": "Acquire knowledge of lodging meeting room capacity/requirements",
+      "text": "Acquire knowledge of lodging meeting room capacity/requirements",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to be equipped to solve customer/ client's problems.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:493",
+      "level": "CS",
+      "official_text": "Acquire knowledge of food and beverage capabilities",
+      "display_text": "Acquire knowledge of food and beverage capabilities",
+      "text": "Acquire knowledge of food and beverage capabilities",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Acquire product knowledge to be equipped to solve customer/ client's problems.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:495",
+      "level": "SP",
+      "official_text": "Identify factors influencing customer selection of lodging property for groups/events",
+      "display_text": "Identify factors influencing customer selection of lodging property for groups/events",
+      "text": "Identify factors influencing customer selection of lodging property for groups/events",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:496",
+      "level": "SP",
+      "official_text": "Explain factors considered when determining group/event negotiation strategies",
+      "display_text": "Explain factors considered when determining group/event negotiation strategies",
+      "text": "Explain factors considered when determining group/event negotiation strategies",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:497",
+      "level": "SP",
+      "official_text": "Negotiate letters of agreement/block contracts",
+      "display_text": "Negotiate letters of agreement/block contracts",
+      "text": "Negotiate letters of agreement/block contracts",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:498",
+      "level": "SP",
+      "official_text": "Oversee fulfillment/delivery of client services",
+      "display_text": "Oversee fulfillment/delivery of client services",
+      "text": "Oversee fulfillment/delivery of client services",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Employ sales processes and techniques to enhance customer relationships and to increase the likelihood of making sales.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    },
+    {
+      "code": "SE:381",
+      "level": "SP",
+      "official_text": "Explain the nature of key account management",
+      "display_text": "Explain the nature of key account management",
+      "text": "Explain the nature of key account management",
+      "tier": 3,
+      "curriculum_section": "Lodging Pathway",
+      "cluster": "Hospitality + Tourism",
+      "pathway": "Lodging",
+      "instructional_area_code": "SE",
+      "instructional_area_name": "Selling",
+      "standard": "Understands the concepts and actions needed to determine client needs and wants and respond through planned, personalized communication that influences purchase decisions and enhances future business opportunities",
+      "performance_element": "Plan sales activities to increase sales efficiency and effectiveness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Hospitality",
+        "page": 43
+      }
+    }
+  ]
+}

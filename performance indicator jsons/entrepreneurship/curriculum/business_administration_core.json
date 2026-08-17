@@ -1,0 +1,3519 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "entrepreneurship_business_administration_core",
+  "name": "Business Administration Core",
+  "cluster": "Entrepreneurship",
+  "tier": null,
+  "curriculum_section": "Business Administration Core",
+  "pathway": null,
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Entrepreneurship",
+    "pages": [
+      2,
+      10
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "BL:051",
+      "level": "SP",
+      "official_text": "Describe methods used to protect intellectual property",
+      "display_text": "Describe methods used to protect intellectual property",
+      "text": "Describe methods used to protect intellectual property",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of business laws and regulations to understand their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:001",
+      "level": "SP",
+      "official_text": "Describe legal issues affecting businesses",
+      "display_text": "Describe legal issues affecting businesses",
+      "text": "Describe legal issues affecting businesses",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Acquire foundational knowledge of business laws and regulations to understand their nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:069",
+      "level": "SP",
+      "official_text": "Identify the basic torts relating to business enterprises",
+      "display_text": "Identify the basic torts relating to business enterprises",
+      "text": "Identify the basic torts relating to business enterprises",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand the civil foundations of the legal environment of business to demonstrate knowledge of contracts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:002",
+      "level": "SP",
+      "official_text": "Describe the nature of legally binding contracts",
+      "display_text": "Describe the nature of legally binding contracts",
+      "text": "Describe the nature of legally binding contracts",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand the civil foundations of the legal environment of business to demonstrate knowledge of contracts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:007",
+      "level": "SU",
+      "official_text": "Explain the nature of human resources regulations",
+      "display_text": "Explain the nature of human resources regulations",
+      "text": "Explain the nature of human resources regulations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand human-resources laws and regulations to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:008",
+      "level": "SU",
+      "official_text": "Explain the nature of workplace regulations (including OSHA, ADA)",
+      "display_text": "Explain the nature of workplace regulations (including OSHA, ADA)",
+      "text": "Explain the nature of workplace regulations (including OSHA, ADA)",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand human-resources laws and regulations to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:003",
+      "level": "CS",
+      "official_text": "Explain types of business ownership",
+      "display_text": "Explain types of business ownership",
+      "text": "Explain types of business ownership",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business ownership to establish and continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:006",
+      "level": "ON",
+      "official_text": "Select form of business ownership",
+      "display_text": "Select form of business ownership",
+      "text": "Select form of business ownership",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Apply knowledge of business ownership to establish and continue business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:009",
+      "level": "ON",
+      "official_text": "Explain the nature of tax regulations on business",
+      "display_text": "Explain the nature of tax regulations on business",
+      "text": "Explain the nature of tax regulations on business",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand tax laws and regulations to adhere to government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:010",
+      "level": "ON",
+      "official_text": "Explain the nature of businesses' reporting requirements",
+      "display_text": "Explain the nature of businesses' reporting requirements",
+      "text": "Explain the nature of businesses' reporting requirements",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand tax laws and regulations to adhere to government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "BL:011",
+      "level": "ON",
+      "official_text": "Develop strategies for legal/government compliance",
+      "display_text": "Develop strategies for legal/government compliance",
+      "text": "Develop strategies for legal/government compliance",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "BL",
+      "instructional_area_name": "Business Law",
+      "standard": "Understands business's responsibility to know, abide by, and enforce laws and regulations that affect business operations and transactions",
+      "performance_element": "Understand tax laws and regulations to adhere to government requirements.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "CO:009",
+      "level": "MN",
+      "official_text": "Prepare complex written reports",
+      "display_text": "Prepare complex written reports",
+      "text": "Prepare complex written reports",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "CO:062",
+      "level": "MN",
+      "official_text": "Write proposals",
+      "display_text": "Write proposals",
+      "text": "Write proposals",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CO",
+      "instructional_area_name": "Communication Skills",
+      "standard": "Understands the concepts, strategies, and systems used to obtain and convey ideas and information",
+      "performance_element": "Write internal and external business correspondence to convey and obtain information effectively.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 2
+      }
+    },
+    {
+      "code": "CR:008",
+      "level": "MN",
+      "official_text": "Explain management's role in customer relations",
+      "display_text": "Explain management's role in customer relations",
+      "text": "Explain management's role in customer relations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Foster positive relationships with customers to enhance company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "CR:001",
+      "level": "CS",
+      "official_text": "Identify company's brand promise",
+      "display_text": "Identify company's brand promise",
+      "text": "Identify company's brand promise",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "CR",
+      "instructional_area_name": "Customer Relations",
+      "standard": "Understands the techniques and strategies used to foster positive, ongoing relationships with customers",
+      "performance_element": "Reinforce company's image to exhibit the company's brand promise.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:065",
+      "level": "CS",
+      "official_text": "Identify the impact of small business/entrepreneurship on market economies",
+      "display_text": "Identify the impact of small business/entrepreneurship on market economies",
+      "text": "Identify the impact of small business/entrepreneurship on market economies",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand economic systems to be able to recognize the environments in which businesses function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:009",
+      "level": "CS",
+      "official_text": "Explain the concept of private enterprise",
+      "display_text": "Explain the concept of private enterprise",
+      "text": "Explain the concept of private enterprise",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand economic systems to be able to recognize the environments in which businesses function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:010",
+      "level": "CS",
+      "official_text": "Identify factors affecting a business's profit",
+      "display_text": "Identify factors affecting a business's profit",
+      "text": "Identify factors affecting a business's profit",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand economic systems to be able to recognize the environments in which businesses function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:011",
+      "level": "CS",
+      "official_text": "Determine factors affecting business risk",
+      "display_text": "Determine factors affecting business risk",
+      "text": "Determine factors affecting business risk",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand economic systems to be able to recognize the environments in which businesses function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:012",
+      "level": "CS",
+      "official_text": "Explain the concept of competition",
+      "display_text": "Explain the concept of competition",
+      "text": "Explain the concept of competition",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Understand economic systems to be able to recognize the environments in which businesses function.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:008",
+      "level": "CS",
+      "official_text": "Determine the relationship between government and business",
+      "display_text": "Determine the relationship between government and business",
+      "text": "Determine the relationship between government and business",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Acquire knowledge of the impact of government on business activities to make informed economic decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:072",
+      "level": "SP",
+      "official_text": "Describe the nature of taxes",
+      "display_text": "Describe the nature of taxes",
+      "text": "Describe the nature of taxes",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Acquire knowledge of the impact of government on business activities to make informed economic decisions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EC:077",
+      "level": "MN",
+      "official_text": "Describe the concept of economies of scale",
+      "display_text": "Describe the concept of economies of scale",
+      "text": "Describe the concept of economies of scale",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EC",
+      "instructional_area_name": "Economics",
+      "standard": "Understands the economic principles and concepts fundamental to business operations",
+      "performance_element": "Analyze cost/profit relationships to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EI:123",
+      "level": "CS",
+      "official_text": "Describe the nature of ethics",
+      "display_text": "Describe the nature of ethics",
+      "text": "Describe the nature of ethics",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Apply ethics to demonstrate trustworthiness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EI:124",
+      "level": "CS",
+      "official_text": "Explain reasons for ethical dilemmas",
+      "display_text": "Explain reasons for ethical dilemmas",
+      "text": "Explain reasons for ethical dilemmas",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Apply ethics to demonstrate trustworthiness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EI:125",
+      "level": "CS",
+      "official_text": "Recognize and respond to ethical dilemmas",
+      "display_text": "Recognize and respond to ethical dilemmas",
+      "text": "Recognize and respond to ethical dilemmas",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Apply ethics to demonstrate trustworthiness.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 3
+      }
+    },
+    {
+      "code": "EI:033",
+      "level": "CS",
+      "official_text": "Exhibit cultural sensitivity",
+      "display_text": "Exhibit cultural sensitivity",
+      "text": "Exhibit cultural sensitivity",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Identify with others' feelings, needs, and concerns to enhance interpersonal relations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:104",
+      "level": "SP",
+      "official_text": "Leverage personality types in business situations",
+      "display_text": "Leverage personality types in business situations",
+      "text": "Leverage personality types in business situations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Identify with others' feelings, needs, and concerns to enhance interpersonal relations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:105",
+      "level": "SU",
+      "official_text": "Adapt management style to the personality type of others",
+      "display_text": "Adapt management style to the personality type of others",
+      "text": "Adapt management style to the personality type of others",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Identify with others' feelings, needs, and concerns to enhance interpersonal relations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:108",
+      "level": "SP",
+      "official_text": "\"Sell\" ideas to others",
+      "display_text": "\"Sell\" ideas to others",
+      "text": "\"Sell\" ideas to others",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Use communication skills to influence others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:012",
+      "level": "SP",
+      "official_text": "Persuade others",
+      "display_text": "Persuade others",
+      "text": "Persuade others",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Use communication skills to influence others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:062",
+      "level": "SP",
+      "official_text": "Demonstrate negotiation skills",
+      "display_text": "Demonstrate negotiation skills",
+      "text": "Demonstrate negotiation skills",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Use communication skills to influence others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:044",
+      "level": "SU",
+      "official_text": "Encourage team building",
+      "display_text": "Encourage team building",
+      "text": "Encourage team building",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Implement teamwork techniques to accomplish goals.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:009",
+      "level": "CS",
+      "official_text": "Explain the concept of leadership",
+      "display_text": "Explain the concept of leadership",
+      "text": "Explain the concept of leadership",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:063",
+      "level": "CS",
+      "official_text": "Determine personal vision",
+      "display_text": "Determine personal vision",
+      "text": "Determine personal vision",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:006",
+      "level": "CS",
+      "official_text": "Demonstrate adaptability",
+      "display_text": "Demonstrate adaptability",
+      "text": "Demonstrate adaptability",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:027",
+      "level": "CS",
+      "official_text": "Develop an achievement orientation",
+      "display_text": "Develop an achievement orientation",
+      "text": "Develop an achievement orientation",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:060",
+      "level": "CS",
+      "official_text": "Enlist others in working toward a shared vision",
+      "display_text": "Enlist others in working toward a shared vision",
+      "text": "Enlist others in working toward a shared vision",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:111",
+      "level": "SU",
+      "official_text": "Act as a role model to fulfill the organization's standards/values",
+      "display_text": "Act as a role model to fulfill the organization's standards/values",
+      "text": "Act as a role model to fulfill the organization's standards/values",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:014",
+      "level": "SP",
+      "official_text": "Recognize/Reward others for their efforts and contributions",
+      "display_text": "Recognize/Reward others for their efforts and contributions",
+      "text": "Recognize/Reward others for their efforts and contributions",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Employ leadership skills to achieve workplace objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:113",
+      "level": "MN",
+      "official_text": "Determine stakeholder expectations",
+      "display_text": "Determine stakeholder expectations",
+      "text": "Determine stakeholder expectations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:114",
+      "level": "MN",
+      "official_text": "Establish strategic relationships with others",
+      "display_text": "Establish strategic relationships with others",
+      "text": "Establish strategic relationships with others",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:115",
+      "level": "MN",
+      "official_text": "Share best practices with key individuals and groups",
+      "display_text": "Share best practices with key individuals and groups",
+      "text": "Share best practices with key individuals and groups",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EI:116",
+      "level": "MN",
+      "official_text": "Leverage business relationships",
+      "display_text": "Leverage business relationships",
+      "text": "Leverage business relationships",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EI",
+      "instructional_area_name": "Emotional Intelligence",
+      "standard": "Understands techniques, strategies, and systems used to foster self-understanding and enhance relationships with others",
+      "performance_element": "Manage internal and external business relationships to foster positive interactions.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EN:039",
+      "level": "SP",
+      "official_text": "Describe the nature of entrepreneurship",
+      "display_text": "Describe the nature of entrepreneurship",
+      "text": "Describe the nature of entrepreneurship",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Understand fundamental factors about entrepreneurship to recognize its role and importance in the economy",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EN:040",
+      "level": "SP",
+      "official_text": "Explain the role requirements of entrepreneurs and owners",
+      "display_text": "Explain the role requirements of entrepreneurs and owners",
+      "text": "Explain the role requirements of entrepreneurs and owners",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Understand fundamental factors about entrepreneurship to recognize its role and importance in the economy",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EN:044",
+      "level": "SP",
+      "official_text": "Describe the use of business ethics in entrepreneurship",
+      "display_text": "Describe the use of business ethics in entrepreneurship",
+      "text": "Describe the use of business ethics in entrepreneurship",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Understand fundamental factors about entrepreneurship to recognize its role and importance in the economy",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EN:041",
+      "level": "SP",
+      "official_text": "Describe small-business opportunities in international trade",
+      "display_text": "Describe small-business opportunities in international trade",
+      "text": "Describe small-business opportunities in international trade",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Understand fundamental factors about entrepreneurship to recognize its role and importance in the economy",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 4
+      }
+    },
+    {
+      "code": "EN:001",
+      "level": "ON",
+      "official_text": "Explain the need for entrepreneurial discovery",
+      "display_text": "Explain the need for entrepreneurial discovery",
+      "text": "Explain the need for entrepreneurial discovery",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:002",
+      "level": "ON",
+      "official_text": "Discuss entrepreneurial discovery processes",
+      "display_text": "Discuss entrepreneurial discovery processes",
+      "text": "Discuss entrepreneurial discovery processes",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:003",
+      "level": "ON",
+      "official_text": "Assess global trends and opportunities for business ventures",
+      "display_text": "Assess global trends and opportunities for business ventures",
+      "text": "Assess global trends and opportunities for business ventures",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:004",
+      "level": "ON",
+      "official_text": "Determine opportunities for venture creation",
+      "display_text": "Determine opportunities for venture creation",
+      "text": "Determine opportunities for venture creation",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:005",
+      "level": "ON",
+      "official_text": "Assess opportunities for venture creation",
+      "display_text": "Assess opportunities for venture creation",
+      "text": "Assess opportunities for venture creation",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:006",
+      "level": "ON",
+      "official_text": "Generate venture ideas",
+      "display_text": "Generate venture ideas",
+      "text": "Generate venture ideas",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:038",
+      "level": "ON",
+      "official_text": "Determine feasibility of venture ideas",
+      "display_text": "Determine feasibility of venture ideas",
+      "text": "Determine feasibility of venture ideas",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Employ entrepreneurial discovery strategies to generate feasible ideas for business ventures.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:007",
+      "level": "ON",
+      "official_text": "Describe entrepreneurial planning considerations",
+      "display_text": "Describe entrepreneurial planning considerations",
+      "text": "Describe entrepreneurial planning considerations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:008",
+      "level": "ON",
+      "official_text": "Explain tools used by entrepreneurs for venture planning",
+      "display_text": "Explain tools used by entrepreneurs for venture planning",
+      "text": "Explain tools used by entrepreneurs for venture planning",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:009",
+      "level": "ON",
+      "official_text": "Assess start-up requirements",
+      "display_text": "Assess start-up requirements",
+      "text": "Assess start-up requirements",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:010",
+      "level": "ON",
+      "official_text": "Assess risks associated with venture",
+      "display_text": "Assess risks associated with venture",
+      "text": "Assess risks associated with venture",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:011",
+      "level": "ON",
+      "official_text": "Describe external resources useful to entrepreneurs during concept development",
+      "display_text": "Describe external resources useful to entrepreneurs during concept development",
+      "text": "Describe external resources useful to entrepreneurs during concept development",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:012",
+      "level": "ON",
+      "official_text": "Assess the need to use external resources for concept development",
+      "display_text": "Assess the need to use external resources for concept development",
+      "text": "Assess the need to use external resources for concept development",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:013",
+      "level": "ON",
+      "official_text": "Select strategies to protect intellectual property",
+      "display_text": "Select strategies to protect intellectual property",
+      "text": "Select strategies to protect intellectual property",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:014",
+      "level": "ON",
+      "official_text": "Use components of business plan to define venture idea",
+      "display_text": "Use components of business plan to define venture idea",
+      "text": "Use components of business plan to define venture idea",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Develop concept for new business venture to evaluate its success potential.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:015",
+      "level": "ON",
+      "official_text": "Describe processes used to acquire adequate financial resources for venture creation/start-up",
+      "display_text": "Describe processes used to acquire adequate financial resources for venture creation/start-up",
+      "text": "Describe processes used to acquire adequate financial resources for venture creation/start-up",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:016",
+      "level": "ON",
+      "official_text": "Select sources to finance venture creation/start-up",
+      "display_text": "Select sources to finance venture creation/start-up",
+      "text": "Select sources to finance venture creation/start-up",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:017",
+      "level": "ON",
+      "official_text": "Explain factors to consider in determining a venture's human-resources needs",
+      "display_text": "Explain factors to consider in determining a venture's human-resources needs",
+      "text": "Explain factors to consider in determining a venture's human-resources needs",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:018",
+      "level": "ON",
+      "official_text": "Explain considerations in making the decision to hire staff",
+      "display_text": "Explain considerations in making the decision to hire staff",
+      "text": "Explain considerations in making the decision to hire staff",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:019",
+      "level": "ON",
+      "official_text": "Describe considerations in selecting capital resources",
+      "display_text": "Describe considerations in selecting capital resources",
+      "text": "Describe considerations in selecting capital resources",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:020",
+      "level": "ON",
+      "official_text": "Identify capital resources needed for the venture",
+      "display_text": "Identify capital resources needed for the venture",
+      "text": "Identify capital resources needed for the venture",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:021",
+      "level": "ON",
+      "official_text": "Assess the costs/benefits associated with resources",
+      "display_text": "Assess the costs/benefits associated with resources",
+      "text": "Assess the costs/benefits associated with resources",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Determine needed resources for a new business venture to contribute to its start- up viability.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:042",
+      "level": "ON",
+      "official_text": "Establish banking procedures",
+      "display_text": "Establish banking procedures",
+      "text": "Establish banking procedures",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:022",
+      "level": "ON",
+      "official_text": "Use external resources to supplement entrepreneur's expertise",
+      "display_text": "Use external resources to supplement entrepreneur's expertise",
+      "text": "Use external resources to supplement entrepreneur's expertise",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:023",
+      "level": "ON",
+      "official_text": "Explain the complexity of business operations",
+      "display_text": "Explain the complexity of business operations",
+      "text": "Explain the complexity of business operations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:024",
+      "level": "ON",
+      "official_text": "Evaluate risk-taking opportunities",
+      "display_text": "Evaluate risk-taking opportunities",
+      "text": "Evaluate risk-taking opportunities",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:025",
+      "level": "ON",
+      "official_text": "Explain the need for business systems and procedures",
+      "display_text": "Explain the need for business systems and procedures",
+      "text": "Explain the need for business systems and procedures",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:026",
+      "level": "ON",
+      "official_text": "Describe the use of operating procedures",
+      "display_text": "Describe the use of operating procedures",
+      "text": "Describe the use of operating procedures",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:027",
+      "level": "ON",
+      "official_text": "Explain methods/processes for organizing workflow",
+      "display_text": "Explain methods/processes for organizing workflow",
+      "text": "Explain methods/processes for organizing workflow",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:028",
+      "level": "ON",
+      "official_text": "Develop and/or provide product/service",
+      "display_text": "Develop and/or provide product/service",
+      "text": "Develop and/or provide product/service",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:029",
+      "level": "ON",
+      "official_text": "Use creative problem-solving in business activities/decisions",
+      "display_text": "Use creative problem-solving in business activities/decisions",
+      "text": "Use creative problem-solving in business activities/decisions",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:030",
+      "level": "ON",
+      "official_text": "Explain the impact of resource productivity on venture success",
+      "display_text": "Explain the impact of resource productivity on venture success",
+      "text": "Explain the impact of resource productivity on venture success",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:031",
+      "level": "ON",
+      "official_text": "Create processes for ongoing opportunity recognition",
+      "display_text": "Create processes for ongoing opportunity recognition",
+      "text": "Create processes for ongoing opportunity recognition",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:032",
+      "level": "ON",
+      "official_text": "Develop plan to invest resources into improving current products or creating new ones",
+      "display_text": "Develop plan to invest resources into improving current products or creating new ones",
+      "text": "Develop plan to invest resources into improving current products or creating new ones",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:033",
+      "level": "ON",
+      "official_text": "Adapt to changes in business environment",
+      "display_text": "Adapt to changes in business environment",
+      "text": "Adapt to changes in business environment",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Actualize new business venture to generate profit and/or meet objectives.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 5
+      }
+    },
+    {
+      "code": "EN:034",
+      "level": "ON",
+      "official_text": "Explain the need for continuation planning",
+      "display_text": "Explain the need for continuation planning",
+      "text": "Explain the need for continuation planning",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Select harvesting strategies to identify entrepreneur's role in the business venture.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "EN:035",
+      "level": "ON",
+      "official_text": "Describe methods of venture harvesting",
+      "display_text": "Describe methods of venture harvesting",
+      "text": "Describe methods of venture harvesting",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Select harvesting strategies to identify entrepreneur's role in the business venture.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "EN:036",
+      "level": "ON",
+      "official_text": "Evaluate options for continued venture involvement",
+      "display_text": "Evaluate options for continued venture involvement",
+      "text": "Evaluate options for continued venture involvement",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Select harvesting strategies to identify entrepreneur's role in the business venture.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "EN:037",
+      "level": "ON",
+      "official_text": "Develop exit strategies",
+      "display_text": "Develop exit strategies",
+      "text": "Develop exit strategies",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "EN",
+      "instructional_area_name": "Entrepreneurship",
+      "standard": "Understands the concepts, processes, and skills associated with identifying new ideas, opportunities, and methods and with creating or starting a new project or venture",
+      "performance_element": "Select harvesting strategies to identify entrepreneur's role in the business venture.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:082",
+      "level": "ON",
+      "official_text": "Obtain insurance coverage",
+      "display_text": "Obtain insurance coverage",
+      "text": "Obtain insurance coverage",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Use risk management products to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:085",
+      "level": "CS",
+      "official_text": "Explain the concept of accounting",
+      "display_text": "Explain the concept of accounting",
+      "text": "Explain the concept of accounting",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Acquire a foundational knowledge of accounting to understand its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:093",
+      "level": "SP",
+      "official_text": "Explain the nature of balance sheets",
+      "display_text": "Explain the nature of balance sheets",
+      "text": "Explain the nature of balance sheets",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement accounting procedures to track money flow and to determine financial status.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:094",
+      "level": "SP",
+      "official_text": "Describe the nature of income statements",
+      "display_text": "Describe the nature of income statements",
+      "text": "Describe the nature of income statements",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement accounting procedures to track money flow and to determine financial status.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:092",
+      "level": "MN",
+      "official_text": "Prepare cash flow statements",
+      "display_text": "Prepare cash flow statements",
+      "text": "Prepare cash flow statements",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement accounting procedures to track money flow and to determine financial status.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:023",
+      "level": "ON",
+      "official_text": "Explain the purposes and importance of obtaining business credit",
+      "display_text": "Explain the purposes and importance of obtaining business credit",
+      "text": "Explain the purposes and importance of obtaining business credit",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:039",
+      "level": "ON",
+      "official_text": "Analyze critical banking relationships",
+      "display_text": "Analyze critical banking relationships",
+      "text": "Analyze critical banking relationships",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:040",
+      "level": "ON",
+      "official_text": "Make critical decisions regarding acceptance of bank cards",
+      "display_text": "Make critical decisions regarding acceptance of bank cards",
+      "text": "Make critical decisions regarding acceptance of bank cards",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:043",
+      "level": "ON",
+      "official_text": "Determine financing needed for business operations",
+      "display_text": "Determine financing needed for business operations",
+      "text": "Determine financing needed for business operations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:041",
+      "level": "ON",
+      "official_text": "Identify risks associated with obtaining business credit",
+      "display_text": "Identify risks associated with obtaining business credit",
+      "text": "Identify risks associated with obtaining business credit",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:031",
+      "level": "ON",
+      "official_text": "Explain sources of financial assistance",
+      "display_text": "Explain sources of financial assistance",
+      "text": "Explain sources of financial assistance",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:034",
+      "level": "ON",
+      "official_text": "Explain loan evaluation criteria used by lending institutions",
+      "display_text": "Explain loan evaluation criteria used by lending institutions",
+      "text": "Explain loan evaluation criteria used by lending institutions",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:033",
+      "level": "ON",
+      "official_text": "Complete loan application package",
+      "display_text": "Complete loan application package",
+      "text": "Complete loan application package",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Implement financial skills to obtain business credit and to control its use.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:357",
+      "level": "MN",
+      "official_text": "Describe the nature of cost-benefit analysis",
+      "display_text": "Describe the nature of cost-benefit analysis",
+      "text": "Describe the nature of cost-benefit analysis",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:358",
+      "level": "MN",
+      "official_text": "Determine relationships among total revenue, marginal revenue, output, and profit",
+      "display_text": "Determine relationships among total revenue, marginal revenue, output, and profit",
+      "text": "Determine relationships among total revenue, marginal revenue, output, and profit",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:099",
+      "level": "MN",
+      "official_text": "Develop company's/department's budget",
+      "display_text": "Develop company's/department's budget",
+      "text": "Develop company's/department's budget",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:096",
+      "level": "MN",
+      "official_text": "Forecast sales",
+      "display_text": "Forecast sales",
+      "text": "Forecast sales",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:097",
+      "level": "MN",
+      "official_text": "Calculate financial ratios",
+      "display_text": "Calculate financial ratios",
+      "text": "Calculate financial ratios",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:102",
+      "level": "MN",
+      "official_text": "Interpret financial statements",
+      "display_text": "Interpret financial statements",
+      "text": "Interpret financial statements",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:652",
+      "level": "ON",
+      "official_text": "File business tax returns",
+      "display_text": "File business tax returns",
+      "text": "File business tax returns",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "FI:653",
+      "level": "ON",
+      "official_text": "Verify the accuracy of business financial records",
+      "display_text": "Verify the accuracy of business financial records",
+      "text": "Verify the accuracy of business financial records",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "FI",
+      "instructional_area_name": "Financial Analysis",
+      "standard": "Understands tools, strategies, and systems used to maintain, monitor, control, and plan the use of financial resources",
+      "performance_element": "Manage financial resources to ensure solvency.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 6
+      }
+    },
+    {
+      "code": "HR:410",
+      "level": "CS",
+      "official_text": "Discuss the nature of human resources management",
+      "display_text": "Discuss the nature of human resources management",
+      "text": "Discuss the nature of human resources management",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Understand the role and function of human resources management to obtain a foundational knowledge of its nature and scope.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:508",
+      "level": "MN",
+      "official_text": "Coordinate human, capital, and fiscal resources to meet business priorities",
+      "display_text": "Coordinate human, capital, and fiscal resources to meet business priorities",
+      "text": "Coordinate human, capital, and fiscal resources to meet business priorities",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Implement organizational skills to facilitate others' work efforts.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:353",
+      "level": "SU",
+      "official_text": "Determine hiring needs",
+      "display_text": "Determine hiring needs",
+      "text": "Determine hiring needs",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:354",
+      "level": "SU",
+      "official_text": "Screen job applications/resumes",
+      "display_text": "Screen job applications/resumes",
+      "text": "Screen job applications/resumes",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:355",
+      "level": "SU",
+      "official_text": "Interview job applicants",
+      "display_text": "Interview job applicants",
+      "text": "Interview job applicants",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:356",
+      "level": "SU",
+      "official_text": "Select and hire new employees",
+      "display_text": "Select and hire new employees",
+      "text": "Select and hire new employees",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:358",
+      "level": "SU",
+      "official_text": "Dismiss/Fire employees",
+      "display_text": "Dismiss/Fire employees",
+      "text": "Dismiss/Fire employees",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:359",
+      "level": "SU",
+      "official_text": "Maintain human resources records",
+      "display_text": "Maintain human resources records",
+      "text": "Maintain human resources records",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Staff a business unit to satisfy work demands while adhering to budget constraints.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:392",
+      "level": "SU",
+      "official_text": "Train staff",
+      "display_text": "Train staff",
+      "text": "Train staff",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Manage staff growth and development to increase productivity and employee satisfaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:393",
+      "level": "SU",
+      "official_text": "Supervise staff",
+      "display_text": "Supervise staff",
+      "text": "Supervise staff",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Manage staff growth and development to increase productivity and employee satisfaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:403",
+      "level": "SU",
+      "official_text": "Foster \"right\" environment for employees",
+      "display_text": "Foster \"right\" environment for employees",
+      "text": "Foster \"right\" environment for employees",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Manage staff growth and development to increase productivity and employee satisfaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:368",
+      "level": "SU",
+      "official_text": "Assess employee performance",
+      "display_text": "Assess employee performance",
+      "text": "Assess employee performance",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Manage staff growth and development to increase productivity and employee satisfaction.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:366",
+      "level": "SU",
+      "official_text": "Handle employee complaints and grievances",
+      "display_text": "Handle employee complaints and grievances",
+      "text": "Handle employee complaints and grievances",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Resolve staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "HR:369",
+      "level": "SU",
+      "official_text": "Explain the nature of remedial action",
+      "display_text": "Explain the nature of remedial action",
+      "text": "Explain the nature of remedial action",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "HR",
+      "instructional_area_name": "Human Resources Management",
+      "standard": "Understands the tools, techniques, and systems that businesses use to plan, staff, lead, and organize its human resources",
+      "performance_element": "Resolve staff issues/problems to enhance productivity and improve employee relationships.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "MK:001",
+      "level": "CS",
+      "official_text": "Explain marketing and its importance in a global economy",
+      "display_text": "Explain marketing and its importance in a global economy",
+      "text": "Explain marketing and its importance in a global economy",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Understand marketing's role and function in business to facilitate economic exchanges with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "MK:002",
+      "level": "CS",
+      "official_text": "Describe marketing functions and related activities",
+      "display_text": "Describe marketing functions and related activities",
+      "text": "Describe marketing functions and related activities",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Understand marketing's role and function in business to facilitate economic exchanges with customers.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 7
+      }
+    },
+    {
+      "code": "MK:014",
+      "level": "SP",
+      "official_text": "Explain factors that influence customer/client/business buying behavior",
+      "display_text": "Explain factors that influence customer/client/business buying behavior",
+      "text": "Explain factors that influence customer/client/business buying behavior",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire foundational knowledge of customer/client/business behavior to understand what motivates decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "MK:019",
+      "level": "SP",
+      "official_text": "Describe connections between company actions and results (e.g., influencing consumer buying behavior, gaining market share, etc.)",
+      "display_text": "Describe connections between company actions and results (e.g., influencing consumer buying behavior, gaining market share, etc.)",
+      "text": "Describe connections between company actions and results (e.g., influencing consumer buying behavior, gaining market share, etc.)",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "MK",
+      "instructional_area_name": "Marketing",
+      "standard": "Understands the tools, techniques, and systems that businesses use to create exchanges and satisfy organizational objectives",
+      "performance_element": "Acquire foundational knowledge of customer/client/business behavior to understand what motivates decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:091",
+      "level": "MN",
+      "official_text": "Establish specifications for selecting hardware/software systems",
+      "display_text": "Establish specifications for selecting hardware/software systems",
+      "text": "Establish specifications for selecting hardware/software systems",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:012",
+      "level": "MN",
+      "official_text": "Determine venture's information technology needs",
+      "display_text": "Determine venture's information technology needs",
+      "text": "Determine venture's information technology needs",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:001",
+      "level": "SP",
+      "official_text": "Describe the nature of business records",
+      "display_text": "Describe the nature of business records",
+      "text": "Describe the nature of business records",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Maintain business records to facilitate business operations.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:013",
+      "level": "SP",
+      "official_text": "Describe current business trends",
+      "display_text": "Describe current business trends",
+      "text": "Describe current business trends",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:014",
+      "level": "SP",
+      "official_text": "Monitor internal records for business information",
+      "display_text": "Monitor internal records for business information",
+      "text": "Monitor internal records for business information",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:015",
+      "level": "SP",
+      "official_text": "Conduct an environmental scan to obtain business information",
+      "display_text": "Conduct an environmental scan to obtain business information",
+      "text": "Conduct an environmental scan to obtain business information",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:093",
+      "level": "SP",
+      "official_text": "Interpret statistical findings",
+      "display_text": "Interpret statistical findings",
+      "text": "Interpret statistical findings",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:216",
+      "level": "SP",
+      "official_text": "Translate research findings into actionable business recommendations",
+      "display_text": "Translate research findings into actionable business recommendations",
+      "text": "Translate research findings into actionable business recommendations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:139",
+      "level": "SP",
+      "official_text": "Explain the principles of data analysis",
+      "display_text": "Explain the principles of data analysis",
+      "text": "Explain the principles of data analysis",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Create and access databases to acquire information for business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "NF:148",
+      "level": "CS",
+      "official_text": "Discuss the nature of data mining",
+      "display_text": "Discuss the nature of data mining",
+      "text": "Discuss the nature of data mining",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Apply data mining methods to acquire pertinent information for business decision- making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "OP:189",
+      "level": "CS",
+      "official_text": "Explain the nature of operations",
+      "display_text": "Explain the nature of operations",
+      "text": "Explain the nature of operations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand operation's role and function in business to value its contribution to a company.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 8
+      }
+    },
+    {
+      "code": "OP:151",
+      "level": "MN",
+      "official_text": "Identify potential safety issues",
+      "display_text": "Identify potential safety issues",
+      "text": "Identify potential safety issues",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine needed safety policies/procedures to protect employees.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:012",
+      "level": "MN",
+      "official_text": "Establish safety policies and procedures",
+      "display_text": "Establish safety policies and procedures",
+      "text": "Establish safety policies and procedures",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine needed safety policies/procedures to protect employees.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:154",
+      "level": "MN",
+      "official_text": "Identify potential security issues",
+      "display_text": "Identify potential security issues",
+      "text": "Identify potential security issues",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop policies/procedures to protect workplace security.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:155",
+      "level": "MN",
+      "official_text": "Establish policies to protect company information and intangibles",
+      "display_text": "Establish policies to protect company information and intangibles",
+      "text": "Establish policies to protect company information and intangibles",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop policies/procedures to protect workplace security.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:157",
+      "level": "MN",
+      "official_text": "Establish policies and procedures to maintain physical security of the work environment",
+      "display_text": "Establish policies and procedures to maintain physical security of the work environment",
+      "text": "Establish policies and procedures to maintain physical security of the work environment",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Develop policies/procedures to protect workplace security.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:015",
+      "level": "CS",
+      "official_text": "Explain the nature and scope of purchasing",
+      "display_text": "Explain the nature and scope of purchasing",
+      "text": "Explain the nature and scope of purchasing",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:161",
+      "level": "SP",
+      "official_text": "Select vendors",
+      "display_text": "Select vendors",
+      "text": "Select vendors",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:162",
+      "level": "SP",
+      "official_text": "Evaluate vendor performance",
+      "display_text": "Evaluate vendor performance",
+      "text": "Evaluate vendor performance",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement purchasing activities to obtain business supplies, equipment, resources, and services.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:017",
+      "level": "CS",
+      "official_text": "Explain the concept of production",
+      "display_text": "Explain the concept of production",
+      "text": "Explain the concept of production",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand production's role and function in business to recognize its need in an organization.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:020",
+      "level": "MN",
+      "official_text": "Describe the role of management in the achievement of quality",
+      "display_text": "Describe the role of management in the achievement of quality",
+      "text": "Describe the role of management in the achievement of quality",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement quality-control processes to minimize errors and to expedite workflow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:022",
+      "level": "MN",
+      "official_text": "Establish efficient operating systems",
+      "display_text": "Establish efficient operating systems",
+      "text": "Establish efficient operating systems",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement quality-control processes to minimize errors and to expedite workflow.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:024",
+      "level": "SP",
+      "official_text": "Explain the nature of overhead/operating costs",
+      "display_text": "Explain the nature of overhead/operating costs",
+      "text": "Explain the nature of overhead/operating costs",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:192",
+      "level": "MN",
+      "official_text": "Conduct break-even analysis",
+      "display_text": "Conduct break-even analysis",
+      "text": "Conduct break-even analysis",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:027",
+      "level": "MN",
+      "official_text": "Negotiate service and maintenance contracts",
+      "display_text": "Negotiate service and maintenance contracts",
+      "text": "Negotiate service and maintenance contracts",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:028",
+      "level": "MN",
+      "official_text": "Negotiate lease or purchase of facility",
+      "display_text": "Negotiate lease or purchase of facility",
+      "text": "Negotiate lease or purchase of facility",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:029",
+      "level": "MN",
+      "official_text": "Develop expense control plans",
+      "display_text": "Develop expense control plans",
+      "text": "Develop expense control plans",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:030",
+      "level": "MN",
+      "official_text": "Use budgets to control operations",
+      "display_text": "Use budgets to control operations",
+      "text": "Use budgets to control operations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Implement expense-control strategies to enhance a business's financial wellbeing.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "OP:443",
+      "level": "CS",
+      "official_text": "Explain the concept of supply chain",
+      "display_text": "Explain the concept of supply chain",
+      "text": "Explain the concept of supply chain",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Understand supply chain management role to recognize its need in business.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 9
+      }
+    },
+    {
+      "code": "PD:256",
+      "level": "MN",
+      "official_text": "Establish performance standards to meet organizational goals",
+      "display_text": "Establish performance standards to meet organizational goals",
+      "text": "Establish performance standards to meet organizational goals",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Achieve organizational goals to contribute to company growth.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "PD:257",
+      "level": "MN",
+      "official_text": "Monitor progress in achieving organizational goals",
+      "display_text": "Monitor progress in achieving organizational goals",
+      "text": "Monitor progress in achieving organizational goals",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Achieve organizational goals to contribute to company growth.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "PD:126",
+      "level": "CS",
+      "official_text": "Explain the need for innovation skills",
+      "display_text": "Explain the need for innovation skills",
+      "text": "Explain the need for innovation skills",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "PD:017",
+      "level": "CS",
+      "official_text": "Make decisions",
+      "display_text": "Make decisions",
+      "text": "Make decisions",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "PD:077",
+      "level": "CS",
+      "official_text": "Demonstrate problem-solving skills",
+      "display_text": "Demonstrate problem-solving skills",
+      "text": "Demonstrate problem-solving skills",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "PD:019",
+      "level": "SP",
+      "official_text": "Use time-management skills",
+      "display_text": "Use time-management skills",
+      "text": "Use time-management skills",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize critical-thinking skills to determine best options/outcomes.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:001",
+      "level": "CS",
+      "official_text": "Explain the concept of management",
+      "display_text": "Explain the concept of management",
+      "text": "Explain the concept of management",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:002",
+      "level": "MN",
+      "official_text": "Explain the nature of managerial ethics",
+      "display_text": "Explain the nature of managerial ethics",
+      "text": "Explain the nature of managerial ethics",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Recognize management's role to understand its contribution to business success.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:007",
+      "level": "MN",
+      "official_text": "Explain the nature of business plans",
+      "display_text": "Explain the nature of business plans",
+      "text": "Explain the nature of business plans",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:008",
+      "level": "ON",
+      "official_text": "Develop company goals/objectives",
+      "display_text": "Develop company goals/objectives",
+      "text": "Develop company goals/objectives",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:009",
+      "level": "ON",
+      "official_text": "Define business mission",
+      "display_text": "Define business mission",
+      "text": "Define business mission",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:010",
+      "level": "ON",
+      "official_text": "Conduct an organizational SWOT",
+      "display_text": "Conduct an organizational SWOT",
+      "text": "Conduct an organizational SWOT",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:011",
+      "level": "MN",
+      "official_text": "Explain external planning considerations",
+      "display_text": "Explain external planning considerations",
+      "text": "Explain external planning considerations",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:027",
+      "level": "MN",
+      "official_text": "Identify and benchmark key performance indicators (e.g., dashboards, scorecards, etc.)",
+      "display_text": "Identify and benchmark key performance indicators (e.g., dashboards, scorecards, etc.)",
+      "text": "Identify and benchmark key performance indicators (e.g., dashboards, scorecards, etc.)",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:012",
+      "level": "ON",
+      "official_text": "Develop action plans",
+      "display_text": "Develop action plans",
+      "text": "Develop action plans",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:013",
+      "level": "ON",
+      "official_text": "Develop business plan",
+      "display_text": "Develop business plan",
+      "text": "Develop business plan",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Utilize planning tools to guide organization's/department's activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:074",
+      "level": "MN",
+      "official_text": "Select and apply metrics for measuring organizational success",
+      "display_text": "Select and apply metrics for measuring organizational success",
+      "text": "Select and apply metrics for measuring organizational success",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Control an organization's/department's activities to encourage growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:005",
+      "level": "MN",
+      "official_text": "Analyze operating results in relation to budget/industry",
+      "display_text": "Analyze operating results in relation to budget/industry",
+      "text": "Analyze operating results in relation to budget/industry",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Control an organization's/department's activities to encourage growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:006",
+      "level": "MN",
+      "official_text": "Track performance of business plan",
+      "display_text": "Track performance of business plan",
+      "text": "Track performance of business plan",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Control an organization's/department's activities to encourage growth and development.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    },
+    {
+      "code": "SM:075",
+      "level": "SP",
+      "official_text": "Explain the nature of risk management",
+      "display_text": "Explain the nature of risk management",
+      "text": "Explain the nature of risk management",
+      "tier": null,
+      "curriculum_section": "Business Administration Core",
+      "cluster": "Entrepreneurship",
+      "pathway": null,
+      "instructional_area_code": "SM",
+      "instructional_area_name": "Strategic Management",
+      "standard": "Understands tools, techniques, and systems that affect a business's ability to plan, control, and organize an organization/department",
+      "performance_element": "Identify potential business threats and opportunities to protect a business's financial well-being.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Entrepreneurship",
+        "page": 10
+      }
+    }
+  ]
+}

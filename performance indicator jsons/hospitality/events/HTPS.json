@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "cluster": "Hospitality + Tourism",
+  "competitive_year": "2026-27",
+  "event_id": "hospitality_and_tourism_professional_selling",
+  "event_code": "HTPS",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "name": "Hospitality and Tourism Professional Selling",
+  "event_type": "exam_only",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27",
+        "hospitality_tier2"
+      ]
+    },
+    "roleplay": null
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27",
+    "hospitality_tier2"
+  ]
+}

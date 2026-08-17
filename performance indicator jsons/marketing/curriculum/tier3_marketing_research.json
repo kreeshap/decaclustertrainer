@@ -1,0 +1,1379 @@
+{
+  "schema_version": 1,
+  "curriculum_id": "marketing_tier3_research",
+  "name": "Marketing Research Pathway",
+  "cluster": "Marketing",
+  "tier": 3,
+  "curriculum_section": "Marketing Research Pathway",
+  "pathway": "Marketing Research",
+  "source": {
+    "competitive_year": "2026-27",
+    "document": "2026-27-HS-DECA-Marketing",
+    "pages": [
+      39,
+      42
+    ]
+  },
+  "performance_indicators": [
+    {
+      "code": "NF:095",
+      "level": "SP",
+      "official_text": "Assess the impact of technology on marketing research",
+      "display_text": "Assess the impact of technology on marketing research",
+      "text": "Assess the impact of technology on marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "NF:205",
+      "level": "SP",
+      "official_text": "Use analytical tracking tools",
+      "display_text": "Use analytical tracking tools",
+      "text": "Use analytical tracking tools",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Utilize information-technology tools to manage and perform work responsibilities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "NF:213",
+      "level": "SP",
+      "official_text": "Identify emerging customer trends through social networking",
+      "display_text": "Identify emerging customer trends through social networking",
+      "text": "Identify emerging customer trends through social networking",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "NF:214",
+      "level": "SP",
+      "official_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "display_text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "text": "Use analytical software (e.g., SPSS, SAS, Excel, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "NF",
+      "instructional_area_name": "Information Management",
+      "standard": "Understands tools, strategies, and systems needed to access, process, maintain, evaluate, and disseminate information to assist business decision-making",
+      "performance_element": "Acquire information to guide business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "OP:429",
+      "level": "SP",
+      "official_text": "Maintain security of marketing data",
+      "display_text": "Maintain security of marketing data",
+      "text": "Maintain security of marketing data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine technology security strategies needed to protect customer information and company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "OP:174",
+      "level": "SP",
+      "official_text": "Explain security considerations in marketing research",
+      "display_text": "Explain security considerations in marketing research",
+      "text": "Explain security considerations in marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "OP",
+      "instructional_area_name": "Operations",
+      "standard": "Understands the processes and systems implemented to monitor, plan, and control the day-to- day activities required for continued business functioning",
+      "performance_element": "Determine technology security strategies needed to protect customer information and company image.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "PD:140",
+      "level": "SP",
+      "official_text": "Identify career opportunities in marketing research",
+      "display_text": "Identify career opportunities in marketing research",
+      "text": "Identify career opportunities in marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about the marketing research industry to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "PD:139",
+      "level": "SP",
+      "official_text": "Explain the role and responsibilities of marketing researchers",
+      "display_text": "Explain the role and responsibilities of marketing researchers",
+      "text": "Explain the role and responsibilities of marketing researchers",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Acquire information about the marketing research industry to aid in making career choices.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "PD:129",
+      "level": "SP",
+      "official_text": "Determine professional certification requirements in marketing research",
+      "display_text": "Determine professional certification requirements in marketing research",
+      "text": "Determine professional certification requirements in marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in marketing research.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "PD:143",
+      "level": "SP",
+      "official_text": "Assess the services of professional organizations in marketing research",
+      "display_text": "Assess the services of professional organizations in marketing research",
+      "text": "Assess the services of professional organizations in marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "PD",
+      "instructional_area_name": "Professional Development",
+      "standard": "Understands concepts, tools, and strategies used to explore, obtain, and develop in a business career",
+      "performance_element": "Utilize career-advancement activities to enhance professional development in marketing research.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 39
+      }
+    },
+    {
+      "code": "IM:381",
+      "level": "SP",
+      "official_text": "Obtain information from customer databases",
+      "display_text": "Obtain information from customer databases",
+      "text": "Obtain information from customer databases",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:432",
+      "level": "SP",
+      "official_text": "Maintain information on marketing partners' activities (e.g., vendors, others in supply/distribution channels)",
+      "display_text": "Maintain information on marketing partners' activities (e.g., vendors, others in supply/distribution channels)",
+      "text": "Maintain information on marketing partners' activities (e.g., vendors, others in supply/distribution channels)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:474",
+      "level": "SP",
+      "official_text": "Identify challenges with the use of unstructured data",
+      "display_text": "Identify challenges with the use of unstructured data",
+      "text": "Identify challenges with the use of unstructured data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:382",
+      "level": "SP",
+      "official_text": "Obtain marketing information from online sources (e.g., search engines, online databases, blogs, forums, listserves, web analytics, social media, geolocation services, etc.)",
+      "display_text": "Obtain marketing information from online sources (e.g., search engines, online databases, blogs, forums, listserves, web analytics, social media, geolocation services, etc.)",
+      "text": "Obtain marketing information from online sources (e.g., search engines, online databases, blogs, forums, listserves, web analytics, social media, geolocation services, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:433",
+      "level": "SP",
+      "official_text": "Conduct sentiment analysis",
+      "display_text": "Conduct sentiment analysis",
+      "text": "Conduct sentiment analysis",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:434",
+      "level": "SP",
+      "official_text": "Obtain marketing information from publications (e.g., newspapers; magazines--current trends, regulations, consumer issues)",
+      "display_text": "Obtain marketing information from publications (e.g., newspapers; magazines--current trends, regulations, consumer issues)",
+      "text": "Obtain marketing information from publications (e.g., newspapers; magazines--current trends, regulations, consumer issues)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:311",
+      "level": "SP",
+      "official_text": "Collect product quality data (e.g., customer complaints, returns, quality control)",
+      "display_text": "Collect product quality data (e.g., customer complaints, returns, quality control)",
+      "text": "Collect product quality data (e.g., customer complaints, returns, quality control)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:333",
+      "level": "SP",
+      "official_text": "Data mine clickstream data using web analytics for marketing information",
+      "display_text": "Data mine clickstream data using web analytics for marketing information",
+      "text": "Data mine clickstream data using web analytics for marketing information",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:409",
+      "level": "SP",
+      "official_text": "Track environmental changes that impact a business (e.g., technological changes, consumer trends, economic changes, regulatory changes, etc.)",
+      "display_text": "Track environmental changes that impact a business (e.g., technological changes, consumer trends, economic changes, regulatory changes, etc.)",
+      "text": "Track environmental changes that impact a business (e.g., technological changes, consumer trends, economic changes, regulatory changes, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:379",
+      "level": "SP",
+      "official_text": "Monitor and mine sales data (by volume, product, territory, channel, time period, etc.)",
+      "display_text": "Monitor and mine sales data (by volume, product, territory, channel, time period, etc.)",
+      "text": "Monitor and mine sales data (by volume, product, territory, channel, time period, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:368",
+      "level": "SP",
+      "official_text": "Identify transactional data through electronic means (e.g., bar coding, optical scanners, automatic replenishment systems, electronic data interchange [EDI], and reader-sorters)",
+      "display_text": "Identify transactional data through electronic means (e.g., bar coding, optical scanners, automatic replenishment systems, electronic data interchange [EDI], and reader-sorters)",
+      "text": "Identify transactional data through electronic means (e.g., bar coding, optical scanners, automatic replenishment systems, electronic data interchange [EDI], and reader-sorters)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:435",
+      "level": "SP",
+      "official_text": "Monitor competitors' activities",
+      "display_text": "Monitor competitors' activities",
+      "text": "Monitor competitors' activities",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:475",
+      "level": "SP",
+      "official_text": "Develop insights using trends occurring in other industries",
+      "display_text": "Develop insights using trends occurring in other industries",
+      "text": "Develop insights using trends occurring in other industries",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:373",
+      "level": "SP",
+      "official_text": "Measure market size and composition",
+      "display_text": "Measure market size and composition",
+      "text": "Measure market size and composition",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Monitor business data to stay abreast of trends and changes that could impact business decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:359",
+      "level": "SP",
+      "official_text": "Explain the nature of actionable research",
+      "display_text": "Explain the nature of actionable research",
+      "text": "Explain the nature of actionable research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine the need for and value of marketing research to optimize use of business resources.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:312",
+      "level": "SP",
+      "official_text": "Compare business objectives with the expected use of the marketing-research outcomes",
+      "display_text": "Compare business objectives with the expected use of the marketing-research outcomes",
+      "text": "Compare business objectives with the expected use of the marketing-research outcomes",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine the need for and value of marketing research to optimize use of business resources.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:436",
+      "level": "SP",
+      "official_text": "Explain the nature of the sampling design process",
+      "display_text": "Explain the nature of the sampling design process",
+      "text": "Explain the nature of the sampling design process",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:478",
+      "level": "SP",
+      "official_text": "Explain the nature of sample sources (e.g., MR sampling companies, general list brokers, customer lists)",
+      "display_text": "Explain the nature of sample sources (e.g., MR sampling companies, general list brokers, customer lists)",
+      "text": "Explain the nature of sample sources (e.g., MR sampling companies, general list brokers, customer lists)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:437",
+      "level": "SP",
+      "official_text": "Select sample sources in marketing research",
+      "display_text": "Select sample sources in marketing research",
+      "text": "Select sample sources in marketing research",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:438",
+      "level": "SP",
+      "official_text": "Discuss sampling issues with international marketing research projects",
+      "display_text": "Discuss sampling issues with international marketing research projects",
+      "text": "Discuss sampling issues with international marketing research projects",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:439",
+      "level": "SP",
+      "official_text": "Explain sampling techniques for probability and non-probability samples",
+      "display_text": "Explain sampling techniques for probability and non-probability samples",
+      "text": "Explain sampling techniques for probability and non-probability samples",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:440",
+      "level": "SP",
+      "official_text": "Discuss sampling techniques and issues associated with Internet sampling",
+      "display_text": "Discuss sampling techniques and issues associated with Internet sampling",
+      "text": "Discuss sampling techniques and issues associated with Internet sampling",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:441",
+      "level": "SP",
+      "official_text": "Describe statistical concepts associated with sampling",
+      "display_text": "Describe statistical concepts associated with sampling",
+      "text": "Describe statistical concepts associated with sampling",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Determine who and how many respondents are needed for marketing research findings to adequately represent the population's views.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 40
+      }
+    },
+    {
+      "code": "IM:286",
+      "level": "SP",
+      "official_text": "Describe types of rating scales (including Likert scales, semantic differential scales, behavior intention scales, etc.)",
+      "display_text": "Describe types of rating scales (including Likert scales, semantic differential scales, behavior intention scales, etc.)",
+      "text": "Describe types of rating scales (including Likert scales, semantic differential scales, behavior intention scales, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Develop data-collection instruments to facilitate data-collection process.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:450",
+      "level": "SP",
+      "official_text": "Apply approaches to increase participant cooperation with data collection",
+      "display_text": "Apply approaches to increase participant cooperation with data collection",
+      "text": "Apply approaches to increase participant cooperation with data collection",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:297",
+      "level": "SP",
+      "official_text": "Administer questionnaires",
+      "display_text": "Administer questionnaires",
+      "text": "Administer questionnaires",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:328",
+      "level": "SP",
+      "official_text": "Conduct telephone interviews",
+      "display_text": "Conduct telephone interviews",
+      "text": "Conduct telephone interviews",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:349",
+      "level": "SP",
+      "official_text": "Employ techniques to assess ongoing behavior (e.g., business records; manual record sheets; electronic recording devices for telephone, personal, and computer interviewing; smart cards; video recording)",
+      "display_text": "Employ techniques to assess ongoing behavior (e.g., business records; manual record sheets; electronic recording devices for telephone, personal, and computer interviewing; smart cards; video recording)",
+      "text": "Employ techniques to assess ongoing behavior (e.g., business records; manual record sheets; electronic recording devices for telephone, personal, and computer interviewing; smart cards; video recording)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:463",
+      "level": "SP",
+      "official_text": "Test alternatives (e.g., web pages, ads, appeals, etc.)",
+      "display_text": "Test alternatives (e.g., web pages, ads, appeals, etc.)",
+      "text": "Test alternatives (e.g., web pages, ads, appeals, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:322",
+      "level": "SP",
+      "official_text": "Conduct in-depth interviews",
+      "display_text": "Conduct in-depth interviews",
+      "text": "Conduct in-depth interviews",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Collect marketing-research data to answer research questions or to resolve issues.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:348",
+      "level": "SP",
+      "official_text": "Edit/clean research data",
+      "display_text": "Edit/clean research data",
+      "text": "Edit/clean research data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:362",
+      "level": "SP",
+      "official_text": "Code research data",
+      "display_text": "Code research data",
+      "text": "Code research data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:451",
+      "level": "SP",
+      "official_text": "Apply methods to treat missing data",
+      "display_text": "Apply methods to treat missing data",
+      "text": "Apply methods to treat missing data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:318",
+      "level": "SP",
+      "official_text": "Conduct error detection/edit routines",
+      "display_text": "Conduct error detection/edit routines",
+      "text": "Conduct error detection/edit routines",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:452",
+      "level": "SP",
+      "official_text": "Transcribe conversations/interviews",
+      "display_text": "Transcribe conversations/interviews",
+      "text": "Transcribe conversations/interviews",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:402",
+      "level": "SP",
+      "official_text": "Tabulate data",
+      "display_text": "Tabulate data",
+      "text": "Tabulate data",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:331",
+      "level": "SP",
+      "official_text": "Create data matrix",
+      "display_text": "Create data matrix",
+      "text": "Create data matrix",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:397",
+      "level": "SP",
+      "official_text": "Select and use appropriate data support systems",
+      "display_text": "Select and use appropriate data support systems",
+      "text": "Select and use appropriate data support systems",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:304",
+      "level": "SP",
+      "official_text": "Analyze narrative text (e.g., sorting, classifying/categorizing, identifying patterns, interpreting, selecting mechanical analysis approaches)",
+      "display_text": "Analyze narrative text (e.g., sorting, classifying/categorizing, identifying patterns, interpreting, selecting mechanical analysis approaches)",
+      "text": "Analyze narrative text (e.g., sorting, classifying/categorizing, identifying patterns, interpreting, selecting mechanical analysis approaches)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Process data to translate marketing information into useful insights/knowledge.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:400",
+      "level": "SP",
+      "official_text": "Set confidence levels",
+      "display_text": "Set confidence levels",
+      "text": "Set confidence levels",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:404",
+      "level": "SP",
+      "official_text": "Test for relationships",
+      "display_text": "Test for relationships",
+      "text": "Test for relationships",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:403",
+      "level": "SP",
+      "official_text": "Test for associations",
+      "display_text": "Test for associations",
+      "text": "Test for associations",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:405",
+      "level": "SP",
+      "official_text": "Test for significant differences",
+      "display_text": "Test for significant differences",
+      "text": "Test for significant differences",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:412",
+      "level": "SP",
+      "official_text": "Use statistical inferences to make estimates or to test hypotheses",
+      "display_text": "Use statistical inferences to make estimates or to test hypotheses",
+      "text": "Use statistical inferences to make estimates or to test hypotheses",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:369",
+      "level": "SP",
+      "official_text": "Identify types of modeling techniques",
+      "display_text": "Identify types of modeling techniques",
+      "text": "Identify types of modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:308",
+      "level": "SP",
+      "official_text": "Apply mathematical modeling techniques",
+      "display_text": "Apply mathematical modeling techniques",
+      "text": "Apply mathematical modeling techniques",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Apply statistical methods and software systems to aid in data interpretation.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:416",
+      "level": "SP",
+      "official_text": "Interpret descriptive statistics for marketing decision making",
+      "display_text": "Interpret descriptive statistics for marketing decision making",
+      "text": "Interpret descriptive statistics for marketing decision making",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Interpret research data into information for decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:370",
+      "level": "SP",
+      "official_text": "Interpret correlations",
+      "display_text": "Interpret correlations",
+      "text": "Interpret correlations",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Interpret research data into information for decision-making.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 41
+      }
+    },
+    {
+      "code": "IM:347",
+      "level": "SP",
+      "official_text": "Display data in charts/graphs or in tables",
+      "display_text": "Display data in charts/graphs or in tables",
+      "text": "Display data in charts/graphs or in tables",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:414",
+      "level": "SP",
+      "official_text": "Write executive summary of research report",
+      "display_text": "Write executive summary of research report",
+      "text": "Write executive summary of research report",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:386",
+      "level": "SP",
+      "official_text": "Prepare and use presentation software to support reports",
+      "display_text": "Prepare and use presentation software to support reports",
+      "text": "Prepare and use presentation software to support reports",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:391",
+      "level": "SP",
+      "official_text": "Present findings orally",
+      "display_text": "Present findings orally",
+      "text": "Present findings orally",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:390",
+      "level": "SP",
+      "official_text": "Prepare written reports for decision-making",
+      "display_text": "Prepare written reports for decision-making",
+      "text": "Prepare written reports for decision-making",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:383",
+      "level": "SP",
+      "official_text": "Post marketing research results electronically",
+      "display_text": "Post marketing research results electronically",
+      "text": "Post marketing research results electronically",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Report findings to communicate research information to others.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:392",
+      "level": "SP",
+      "official_text": "Pre-test promotional campaign (e.g., advertising, direct marketing, etc.)",
+      "display_text": "Pre-test promotional campaign (e.g., advertising, direct marketing, etc.)",
+      "text": "Pre-test promotional campaign (e.g., advertising, direct marketing, etc.)",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:374",
+      "level": "SP",
+      "official_text": "Measure media audience",
+      "display_text": "Measure media audience",
+      "text": "Measure media audience",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:375",
+      "level": "SP",
+      "official_text": "Measure response rates",
+      "display_text": "Measure response rates",
+      "text": "Measure response rates",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    },
+    {
+      "code": "IM:313",
+      "level": "SP",
+      "official_text": "Conduct advertising tracking studies",
+      "display_text": "Conduct advertising tracking studies",
+      "text": "Conduct advertising tracking studies",
+      "tier": 3,
+      "curriculum_section": "Marketing Research Pathway",
+      "cluster": "Marketing",
+      "pathway": "Marketing Research",
+      "instructional_area_code": "IM",
+      "instructional_area_name": "Marketing-Information Management",
+      "standard": "Understands the concepts, systems, and tools needed to gather, access, synthesize, evaluate, and disseminate information for use in making business decisions",
+      "performance_element": "Manage marketing information to guide and assess promotional activities.",
+      "source": {
+        "competitive_year": "2026-27",
+        "document": "2026-27-HS-DECA-Marketing",
+        "page": 42
+      }
+    }
+  ]
+}
