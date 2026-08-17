@@ -595,15 +595,26 @@ def admin_upload_practice_corpus():
     if storage_status not in (200, 201):
         return jsonify({"error": "The private original could not be stored.", "detail": storage_result}), 502
     event_codes = [value.strip().upper() for value in request.form.getlist("event_codes") if value.strip()] or suggestions.get("event_codes", [])
-    rights = str(request.form.get("rights_status") or "unknown")
+    if content_type == "exam":
+        event_codes = []
+    elif not event_codes:
+        return jsonify({"error": "Roleplays and case studies require an event code."}), 400
+    requested_cluster = str(request.form.get("cluster") or "").strip()
+    if content_type == "exam" and not requested_cluster:
+        return jsonify({"error": "Exams require a career cluster."}), 400
+    if content_type == "roleplay":
+        _, corpus_events = _load_all_kpis()
+        requested_cluster = next((event.get("cluster") or "" for event in corpus_events
+                                  if str(event.get("event_code") or "").upper() == event_codes[0]), "")
+    rights = "licensed_for_student_use" if content_type == "exam" else str(request.form.get("rights_status") or "unknown")
     payload = {
         "id": document_id, "content_type": content_type,
         "title": str(request.form.get("title") or suggestions["title"])[:300],
         "competitive_year": request.form.get("competitive_year") or suggestions.get("competitive_year"),
-        "cluster": request.form.get("cluster") or "", "event_codes": event_codes,
-        "event_type": request.form.get("event_type") or None,
+        "cluster": requested_cluster, "event_codes": event_codes,
+        "event_type": ("team_decision_making" if event_codes[0].endswith("TDM") else "individual_series") if content_type == "roleplay" else None,
         "competition_level": request.form.get("competition_level") or suggestions.get("competition_level") or "practice_sample",
-        "instructional_area": request.form.get("instructional_area") or "",
+        "instructional_area": (request.form.get("instructional_area") or "") if content_type == "roleplay" else "",
         "source_name": request.form.get("source_name") or "",
         "source_url": request.form.get("source_url") or None,
         "source_organization": request.form.get("source_organization") or "",
@@ -686,10 +697,16 @@ def admin_verify_practice_corpus(document_id):
     metadata = body.get("confirmed_metadata")
     if not isinstance(metadata, dict):
         return jsonify({"error": "Reviewer-confirmed metadata is required."}), 400
+    event_codes = metadata.get("event_codes") or document.get("event_codes") or []
+    if document["content_type"] == "exam":
+        event_codes = []
+        rights = "licensed_for_student_use"
+    elif not event_codes:
+        return jsonify({"error": "Roleplay verification requires an event code."}), 400
     payload = {"title": str(metadata.get("title") or document["title"])[:300],
                "competitive_year": metadata.get("competitive_year") or document.get("competitive_year"),
                "cluster": metadata.get("cluster") or document.get("cluster") or "",
-               "event_codes": metadata.get("event_codes") or document.get("event_codes") or [],
+               "event_codes": event_codes,
                "competition_level": metadata.get("competition_level") or document["competition_level"],
                "instructional_area": metadata.get("instructional_area") or document.get("instructional_area") or "",
                "source_name": metadata.get("source_name") or document.get("source_name") or "",
@@ -806,18 +823,23 @@ def admin_practice_corpus_dashboard():
                 child = questions if content_type == "exam" else roleplays
                 counts[key]["items"] += sum(1 for item in child if item.get("document_id") == doc["id"] and item.get("human_verified"))
         return dict(sorted(counts.items()))
-    events = sorted({event for doc in documents for event in (doc.get("event_codes") or [])})
+    exam_clusters = sorted({doc.get("cluster") for doc in documents if doc.get("content_type") == "exam" and doc.get("cluster")})
+    events = sorted({event for doc in documents if doc.get("content_type") == "roleplay" for event in (doc.get("event_codes") or [])})
     readiness_rows = []
     all_kpis, curriculum_events = _load_all_kpis()
     event_ids_by_code = {str(item.get("event_code") or "").upper(): item.get("id") for item in curriculum_events}
+    for cluster in exam_clusters:
+        readiness_rows.append(readiness("exam", documents, questions, cluster=cluster))
     for event in events:
-        readiness_rows.append(readiness("exam", documents, questions, event_code=event))
         readiness_rows.append(readiness("roleplay", documents, roleplays, event_code=event,
                                          cluster=next((d.get("cluster") or "" for d in documents if event in (d.get("event_codes") or [])), "")))
     snapshots = []
     for row in readiness_rows:
-        eligible_event_id = event_ids_by_code.get(row["event_code"])
-        eligible = {item["code"] for item in all_kpis if item.get("event") == eligible_event_id}
+        if row["content_type"] == "exam":
+            eligible = {item["code"] for item in all_kpis if item.get("deca_cluster") == row["cluster"] and "exam" in (item.get("eligible_components") or [])}
+        else:
+            eligible_event_id = event_ids_by_code.get(row["event_code"])
+            eligible = {item["code"] for item in all_kpis if item.get("event") == eligible_event_id and any(component in (item.get("eligible_components") or []) for component in ("roleplay", "case_study"))}
         row["pi_coverage"] = round(len(set(row.pop("pi_codes", [])) & eligible) / len(eligible), 5) if eligible else None
         snapshots.append({"content_type": row["content_type"], "event_code": row["event_code"], "cluster": row["cluster"],
                           "documents": row["documents"], "items": row["items"], "years_represented": row["years_represented"],

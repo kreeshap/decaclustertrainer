@@ -120,6 +120,7 @@ function showCorpusView(view) {
     $("corpus-upload-kicker").textContent = type === "exam" ? "Exam reference upload" : "Roleplay / case study upload";
     $("corpus-upload-heading").textContent = type === "exam" ? "Upload exam PDF" : "Upload roleplay / case study PDF";
     document.querySelectorAll(".roleplay-only").forEach((field) => { field.hidden = type !== "roleplay"; });
+    document.querySelectorAll(".exam-only").forEach((field) => { field.hidden = type !== "exam"; });
   }
   sessionStorage.setItem("ct_corpus_view", view);
 }
@@ -159,14 +160,13 @@ async function loadCorpusDocuments() {
     <details><summary>Field confidence</summary><pre>${escHtml(JSON.stringify(doc.field_confidence || {}, null, 2))}</pre></details>
     <label>Confirmed title<input class="corpus-title" value="${escHtml(doc.title)}"></label>
     <label>Year<input class="corpus-year" value="${escHtml(doc.competitive_year || "")}"></label>
-    <label>Cluster<input class="corpus-cluster" value="${escHtml(doc.cluster || "")}"></label>
-    <label>Event codes<input class="corpus-events" value="${escHtml((doc.event_codes || []).join(", "))}"></label>
+    ${doc.content_type === "exam" ? `<label>Career cluster<input class="corpus-cluster" value="${escHtml(doc.cluster || "")}"></label>` : ""}
+    ${doc.content_type === "roleplay" ? `<label>Event code<input class="corpus-events" value="${escHtml((doc.event_codes || []).join(", "))}"></label>` : ""}
     <label>Competition level<select class="corpus-level">${["district","association","icdc","practice_sample"].map((value) => `<option value="${value}" ${value === doc.competition_level ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>
-    <label>Instructional area<input class="corpus-area" value="${escHtml(doc.instructional_area || "")}"></label>
+    ${doc.content_type === "roleplay" ? `<label>Instructional area<input class="corpus-area" value="${escHtml(doc.instructional_area || "")}"></label>` : ""}
     <label>Source<input class="corpus-source" value="${escHtml(doc.source_name || "")}"></label>
-    <label>Source organization<input class="corpus-org" value="${escHtml(doc.source_organization || "")}"></label>
     <label>Source URL<input class="corpus-url" value="${escHtml(doc.source_url || "")}"></label>
-    <label>Rights<select class="corpus-rights">${["unknown","reference_only","owned","licensed_for_student_use","public_domain","do_not_use"].map((value) => `<option value="${value}" ${value === doc.rights_status ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>
+    ${doc.content_type === "roleplay" ? `<label>Rights<select class="corpus-rights">${["unknown","reference_only","owned","licensed_for_student_use","public_domain","do_not_use"].map((value) => `<option value="${value}" ${value === doc.rights_status ? "selected" : ""}>${value.replaceAll("_", " ")}</option>`).join("")}</select></label>` : ""}
     <label><input class="corpus-official" type="checkbox" ${doc.official_deca ? "checked" : ""}> Official DECA</label>
     <label><input class="corpus-benchmark" type="checkbox"> Benchmark eligible</label>
     <label><input class="corpus-publishable" type="checkbox"> Student publishable</label>
@@ -190,17 +190,17 @@ async function uploadCorpus(event) {
     const data = await readJson(await apiFetch("/api/admin/practice-corpus", { method: "POST", body: new FormData(event.currentTarget) }));
     $("corpus-upload-status").textContent = data.likely_duplicate ? "Parsed with a likely-duplicate warning; reviewer confirmation required." : "Parsed successfully; metadata and rights require review.";
     event.currentTarget.reset();
-    $("corpus-content-type").value = document.querySelector("[data-corpus-type].active")?.dataset.corpusType || "exam";
+    $("corpus-content-type").value = activeCorpusView === "roleplays" ? "roleplay" : "exam";
     await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
   } catch (error) { showMessage(error.message, true); }
 }
 
 async function verifyCorpus(card) {
-  const events = card.querySelector(".corpus-events").value.split(",").map((value) => value.trim().toUpperCase()).filter(Boolean);
+  const events = (card.querySelector(".corpus-events")?.value || "").split(",").map((value) => value.trim().toUpperCase()).filter(Boolean);
   const metadata = { title: card.querySelector(".corpus-title").value, competitive_year: card.querySelector(".corpus-year").value,
-    cluster: card.querySelector(".corpus-cluster").value, event_codes: events,
-    competition_level: card.querySelector(".corpus-level").value, instructional_area: card.querySelector(".corpus-area").value,
-    source_name: card.querySelector(".corpus-source").value, source_organization: card.querySelector(".corpus-org").value,
+    cluster: card.querySelector(".corpus-cluster")?.value || "", event_codes: events,
+    competition_level: card.querySelector(".corpus-level").value, instructional_area: card.querySelector(".corpus-area")?.value || "",
+    source_name: card.querySelector(".corpus-source").value,
     source_url: card.querySelector(".corpus-url").value, official_deca: card.querySelector(".corpus-official").checked };
   let structuredRoleplay = null;
   if (card.querySelector(".corpus-roleplay-json")) {
@@ -208,7 +208,7 @@ async function verifyCorpus(card) {
     catch { showMessage("Structured roleplay must be valid JSON.", true); return; }
   }
   try {
-    await readJson(await apiFetch(`/api/admin/practice-corpus/${encodeURIComponent(card.dataset.documentId)}/verify`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ confirmed_metadata: metadata, structured_roleplay: structuredRoleplay, gold_reference: card.querySelector(".corpus-gold")?.checked === true, rights_status: card.querySelector(".corpus-rights").value, benchmark_eligible: card.querySelector(".corpus-benchmark").checked, student_publishable: card.querySelector(".corpus-publishable").checked }) }));
+    await readJson(await apiFetch(`/api/admin/practice-corpus/${encodeURIComponent(card.dataset.documentId)}/verify`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ confirmed_metadata: metadata, structured_roleplay: structuredRoleplay, gold_reference: card.querySelector(".corpus-gold")?.checked === true, rights_status: card.querySelector(".corpus-rights")?.value || "licensed_for_student_use", benchmark_eligible: card.querySelector(".corpus-benchmark").checked, student_publishable: card.querySelector(".corpus-publishable").checked }) }));
     await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
   } catch (error) { showMessage(error.message, true); }
 }
@@ -585,11 +585,6 @@ $("save-lesson-audit").addEventListener("click", saveLessonAudit);
 $("close-lesson-audit").addEventListener("click", () => { $("lesson-audit-review").hidden = true; });
 $("question-import-form").addEventListener("submit", uploadQuestionPdf);
 $("corpus-upload-form").addEventListener("submit", uploadCorpus);
-document.querySelectorAll("[data-corpus-type]").forEach((button) => button.addEventListener("click", () => {
-  document.querySelectorAll("[data-corpus-type]").forEach((item) => item.classList.toggle("active", item === button));
-  $("corpus-content-type").value = button.dataset.corpusType;
-  document.querySelectorAll(".roleplay-only").forEach((field) => { field.hidden = button.dataset.corpusType !== "roleplay"; });
-}));
 $("corpus-review-list").addEventListener("click", (event) => {
   const button = event.target.closest(".corpus-verify");
   if (button) verifyCorpus(button.closest(".corpus-document"));

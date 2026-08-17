@@ -39,8 +39,8 @@ Applies the performance indicators to the business problem.
              "benchmark_eligible": True, "event_codes": ["ACT"], "cluster": "Finance",
              "competitive_year": str(2020 + i), "competition_level": "icdc"} for i in range(5)]
     items = [{"document_id": str(i % 5), "human_verified": True, "pi_code": None} for i in range(20)]
-    assert readiness("exam", docs, items, event_code="ACT")["status"] == "generator_ready"
-    assert readiness("exam", docs[:2], items, event_code="ACT")["status"] == "insufficient"
+    assert readiness("exam", docs, items, cluster="Finance")["status"] == "generator_ready"
+    assert readiness("exam", docs[:2], items, cluster="Finance")["status"] == "insufficient"
 
     roleplay_docs = [{"id": str(i), "content_type": "roleplay", "processing_state": "verified_reference",
                       "benchmark_eligible": True, "event_codes": ["ACT"], "cluster": "Finance",
@@ -61,6 +61,12 @@ Applies the performance indicators to the business problem.
     assert "AI generation locked" in template
     assert "Approve clean questions" not in template
     assert "Learn enrichment proposals" not in template
+    assert "Career cluster" in template and "Event code" in template
+    assert "data-corpus-type" not in template
+    assert "all exams are free" not in template.lower()  # behavior belongs in the server contract, not UI copy
+    assert 'rights = "licensed_for_student_use" if content_type == "exam"' in admin
+    css = (ROOT / "static" / "styles" / "adminpanel.css").read_text(encoding="utf-8")
+    assert "[hidden] { display:none !important; }" in css
     assert "data-question-filter" in (ROOT / "static" / "js" / "adminpanel.js").read_text(encoding="utf-8")
     pilot_migration = (ROOT / "supabase" / "migrations" / "20260817015000_real_corpus_pilot.sql").read_text(encoding="utf-8").lower()
     for requirement in ("corpus_parser_failures", "field_confidence", "review_priority", "gold_reference", "stability_delta"):

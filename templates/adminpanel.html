@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="/static/js/common.js"></script>
-        <link rel="stylesheet" href="/static/styles/adminpanel.css" />
+        <link rel="stylesheet" href="/static/styles/adminpanel.css?v=20260817-4" />
   </head>
   <body>
     <header class="app-topbar">
@@ -123,26 +123,18 @@
       <section class="panel question-import-panel" data-admin-group="questions" data-corpus-panel="exams roleplays">
         <div class="section-kicker" id="corpus-upload-kicker">Exam reference upload</div>
         <h2 id="corpus-upload-heading">Upload exam PDF</h2>
-        <div class="admin-tabs corpus-type-tabs" hidden>
-          <button type="button" class="admin-tab active" data-corpus-type="exam">Exam</button>
-          <button type="button" class="admin-tab" data-corpus-type="roleplay">Roleplay / Case Study</button>
-        </div>
         <form id="corpus-upload-form" class="question-import-form">
           <input name="content_type" id="corpus-content-type" type="hidden" value="exam">
           <label class="corpus-dropzone">Drop PDF here or choose file<input name="file" type="file" accept="application/pdf" required></label>
           <label>Title<input name="title" placeholder="Suggested from PDF if blank"></label>
           <label>Competitive year<input name="competitive_year" placeholder="2026-27"></label>
-          <label>Cluster<select name="cluster"><option value="">Suggest / unspecified</option><option>Finance</option><option>Marketing</option><option>Hospitality and Tourism</option><option>Business Management and Administration</option><option>Entrepreneurship</option></select></label>
-          <label>Event code(s)<input name="event_codes" placeholder="ACT (one per upload in v1)"></label>
-          <label class="roleplay-only" hidden>Event type<select name="event_type"><option value="">Suggest / unspecified</option><option value="individual_series">Individual Series</option><option value="team_decision_making">Team Decision Making</option></select></label>
+          <label class="exam-only">Career cluster<select name="cluster"><option value="">Choose cluster</option><option>Finance</option><option>Marketing</option><option>Hospitality and Tourism</option><option>Business Management and Administration</option><option>Entrepreneurship</option></select></label>
+          <label class="roleplay-only" hidden>Event code<input name="event_codes" placeholder="ACT"></label>
           <label>Competition level<select name="competition_level"><option value="practice_sample">Practice / Sample</option><option value="district">District</option><option value="association">Association</option><option value="icdc">ICDC</option></select></label>
-          <label class="roleplay-only" hidden>Instructional area<input name="instructional_area"></label>
           <label>Source<input name="source_name"></label>
           <label>Source URL<input name="source_url" type="url"></label>
-          <label>Source organization<input name="source_organization"></label>
-          <label>Rights/use status<select name="rights_status"><option value="unknown">Unknown - review required</option><option value="reference_only">Reference only</option><option value="owned">Owned</option><option value="licensed_for_student_use">Licensed for student use</option><option value="public_domain">Public domain</option><option value="do_not_use">Do not use</option></select></label>
+          <label class="roleplay-only" hidden>Rights/use status<select name="rights_status"><option value="unknown">Unknown - review required</option><option value="reference_only">Reference only</option><option value="owned">Owned</option><option value="licensed_for_student_use">Licensed for student use</option><option value="public_domain">Public domain</option><option value="do_not_use">Do not use</option></select></label>
           <label><input name="official_deca" type="checkbox" value="true"> Official DECA source</label>
-          <label class="audit-notes">Notes<textarea name="notes" rows="3"></textarea></label>
           <button class="primary-action" type="submit">Store privately and parse</button>
         </form>
         <div id="corpus-upload-status" class="import-summary">Uploaded material starts as reference-only and needs review.</div>
@@ -252,6 +244,6 @@
 
       <div class="ops-message" id="ops-message" role="status" aria-live="polite"></div>
     </main>
-    <script src="/static/js/adminpanel.js"></script>
+    <script src="/static/js/adminpanel.js?v=20260817-4"></script>
   </body>
 </html>
