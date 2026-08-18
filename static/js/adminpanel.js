@@ -183,11 +183,12 @@ async function loadCorpusDocuments() {
 
 async function uploadCorpus(event) {
   event.preventDefault();
+  const form = event.currentTarget;
   showMessage("Storing the private PDF and extracting corpus structure…");
   try {
-    const data = await readJson(await apiFetch("/api/admin/practice-corpus", { method: "POST", body: new FormData(event.currentTarget) }));
+    const data = await readJson(await apiFetch("/api/admin/practice-corpus", { method: "POST", body: new FormData(form) }));
     $("corpus-upload-status").textContent = data.likely_duplicate ? "Parsed with a likely-duplicate warning; reviewer confirmation required." : "Parsed successfully; metadata and rights require review.";
-    event.currentTarget.reset();
+    form.reset();
     $("corpus-content-type").value = activeCorpusView === "roleplays" ? "roleplay" : "exam";
     await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
   } catch (error) { showMessage(error.message, true); }

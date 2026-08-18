@@ -72,6 +72,8 @@ Applies the performance indicators to the business problem.
     admin_js = (ROOT / "static" / "js" / "adminpanel.js").read_text(encoding="utf-8")
     assert "data-question-filter" in admin_js
     assert "corpus-source" not in admin_js and "corpus-url" not in admin_js
+    assert "const form = event.currentTarget;" in admin_js
+    assert "event.currentTarget.reset()" not in admin_js
     pilot_migration = (ROOT / "supabase" / "migrations" / "20260817015000_real_corpus_pilot.sql").read_text(encoding="utf-8").lower()
     for requirement in ("corpus_parser_failures", "field_confidence", "review_priority", "gold_reference", "stability_delta"):
         assert requirement in pilot_migration
