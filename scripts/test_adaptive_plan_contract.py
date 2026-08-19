@@ -5,6 +5,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AdaptivePlanContractTests(unittest.TestCase):
+    def test_activity_library_is_structured_and_evidence_gated(self):
+        from app.study_activities import ACTIVITIES
+
+        for activity_name in ("learn", "personal_connection", "pi_compare_apply", "scenario_sprint", "pi_fluency", "focused_questions"):
+            activity = ACTIVITIES[activity_name]
+            for field in ("activity_type", "display_name", "description", "target_learning_problem", "minimum_evidence", "recommended_duration"):
+                self.assertIn(field, activity)
+
     def test_private_adaptive_tables_have_owner_rls(self):
         sql = (ROOT / "supabase/migrations/20260816223000_adaptive_state_today_plans.sql").read_text(encoding="utf-8")
         for table in ("user_adaptive_state", "user_today_plans"):

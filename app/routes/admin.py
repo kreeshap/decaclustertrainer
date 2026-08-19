@@ -316,7 +316,7 @@ def admin_auto_resolve_classification_review():
     if active:
         return jsonify({"error": "A classification batch is already running."}), 409
     try:
-        result = auto_resolve_existing_reviews(50)
+        result = auto_resolve_existing_reviews(10000)
         return jsonify({"ok": True, **result, "queued": 0})
     except Exception as error:
         return jsonify({"error": "Review items could not be auto-resolved.", "detail": str(error)}), 502

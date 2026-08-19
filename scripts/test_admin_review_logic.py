@@ -118,6 +118,16 @@ class AdminReviewLogicTests(unittest.TestCase):
         ]
         self.assertEqual(retryable_failed_kpi_ids(jobs), ["b"])
 
+    def test_keep_with_null_correction_auto_resolves(self):
+        reviewer = {"verdict": "keep", "correction": None, "reason": "The current classification is appropriate for this KPI."}
+        final, validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertFalse(needs_review)
+        self.assertEqual(final["primary_archetype"], "concept_discovery")
+        self.assertEqual(validator["routing_reason"], "reviewer_keep")
+        decision = build_review_decision({**BASE, "reviewer_result": reviewer, "deterministic_check": {}})
+        self.assertTrue(decision["auto_resolvable"])
+        self.assertNotIn("reviewer correction was missing", decision["problem"])
+
     def test_auto_resolved_pass_does_not_remain_in_manual_queue(self):
         decision = build_review_decision({
             **BASE,
@@ -126,6 +136,153 @@ class AdminReviewLogicTests(unittest.TestCase):
         })
         self.assertTrue(decision["auto_resolvable"])
         self.assertEqual(decision["choice_ids"], ["current"])
+        self.assertEqual(decision["reviewer"]["verdict"], "keep")
+
+    def test_missing_correction_does_not_imply_uncertainty_on_keep(self):
+        reviewer = sanitize_reviewer({
+            "verdict": "keep",
+            "correction": None,
+            "issues": [],
+            "reason": "No correction is needed because the current classification is appropriate.",
+        }, BASE)
+        self.assertEqual(reviewer["verdict"], "keep")
+        self.assertIsNone(reviewer["correction"])
+        _final, _validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertFalse(needs_review)
+
+    def test_change_with_valid_correction_auto_applies(self):
+        reviewer = {
+            "verdict": "change",
+            "correction": {"complexity": "standard"},
+            "reason": "This KPI needs more than a quick treatment because the learner must apply the concept.",
+        }
+        final, validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertFalse(needs_review)
+        self.assertTrue(validator["repaired"])
+        self.assertEqual(final["complexity"], "standard")
+        self.assertEqual(validator["routing_reason"], "reviewer_change")
+        decision = build_review_decision({**BASE, "reviewer_result": reviewer, "deterministic_check": {}})
+        self.assertTrue(decision["auto_resolvable"])
+        self.assertTrue(decision["applied_correction"])
+
+    def test_uncertain_stays_in_manual_review(self):
+        reviewer = {"verdict": "uncertain", "reason": "Reviewer is uncertain whether this KPI is Decision Lab or Concept Discovery."}
+        _final, validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertTrue(needs_review)
+        self.assertEqual(validator["routing_reason"], "reviewer_uncertain")
+        decision = build_review_decision({**BASE, "reviewer_result": reviewer, "deterministic_check": {}})
+        self.assertFalse(decision["auto_resolvable"])
+        self.assertIn("uncertain", decision["problem"].lower())
+        self.assertEqual(decision["choice_ids"], ["current", "skip"])
+        self.assertIsNone(decision["recommended"])
+
+    def test_invalid_change_goes_to_manual_review(self):
+        reviewer = {
+            "verdict": "change",
+            "correction": {"learner_action": "not-a-real-action"},
+            "reason": "The learner action should change, but the suggested value is not allowed.",
+        }
+        _final, validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertTrue(needs_review)
+        self.assertEqual(validator["routing_reason"], "invalid_correction")
+
+    def test_same_value_correction_never_auto_applies(self):
+        reviewer = sanitize_reviewer({
+            "verdict": "change",
+            "issues": ["The concept discovery archetype is insufficient for this KPI."],
+            "correction": {"primary_archetype": "concept_discovery"},
+            "reason": "The concept discovery archetype is insufficient for this KPI.",
+        }, BASE)
+        self.assertEqual(reviewer["verdict"], "uncertain")
+        self.assertEqual(reviewer["routing_reason"], "same_value_correction")
+        _final, _validator, needs_review = resolve_classification(BASE, reviewer)
+        self.assertTrue(needs_review)
+
+    def test_soft_heuristic_disagreement_does_not_force_review(self):
+        reviewer = {
+            "verdict": "keep",
+            "correction": None,
+            "reason": "Standard complexity is more appropriate than the deterministic quick label.",
+        }
+        classification = {**BASE, "complexity": "standard"}
+        _final, validator, needs_review = resolve_classification(classification, reviewer)
+        self.assertFalse(needs_review)
+        self.assertEqual(validator["routing_reason"], "reviewer_keep")
+        decision = build_review_decision({
+            **classification,
+            "reviewer_result": reviewer,
+            "deterministic_check": {
+                "complexity": "quick",
+                "disagreements": ["complexity"],
+                "disagreement_severity": "soft",
+            },
+        })
+        self.assertTrue(decision["auto_resolvable"])
+        self.assertTrue(decision["soft_heuristic_disagreement"])
+        self.assertNotIn("disagree", decision["problem"].lower())
+
+    def test_hard_contradiction_on_keep_requires_review(self):
+        broken = {**BASE, "learner_action": "choose", "deca_action": "explain"}
+        reviewer = {"verdict": "keep", "correction": None, "reason": "The current classification is appropriate."}
+        _final, validator, needs_review = resolve_classification(broken, reviewer)
+        self.assertTrue(needs_review)
+        self.assertEqual(validator["routing_reason"], "action_conflict")
+
+    def test_legacy_keep_from_missing_correction_bug(self):
+        stored = {
+            "verdict": "uncertain",
+            "issues": ["reviewer correction was missing"],
+            "corrected": None,
+            "confidence": 0.8,
+            "reason": "The current classification is appropriate. The deterministic alternative oversimplifies the KPI.",
+        }
+        reviewer = sanitize_reviewer(stored, BASE)
+        self.assertEqual(reviewer["verdict"], "keep")
+        self.assertEqual(reviewer["routing_reason"], "legacy_keep_inferred")
+        self.assertNotIn("reviewer correction was missing", reviewer["issues"])
+        _final, validator, needs_review = resolve_classification(BASE, stored)
+        self.assertFalse(needs_review)
+        self.assertEqual(validator["routing_reason"], "legacy_keep_inferred")
+
+    def test_legacy_correct_token_with_keep_reason(self):
+        stored = {
+            "verdict": "correct",
+            "corrected": None,
+            "reason": "The original AI classification better aligns with the KPI than the heuristic.",
+        }
+        reviewer = sanitize_reviewer(stored, BASE)
+        self.assertEqual(reviewer["verdict"], "keep")
+        _final, _validator, needs_review = resolve_classification(BASE, stored)
+        self.assertFalse(needs_review)
+
+    def test_legacy_ambiguous_stays_in_review(self):
+        stored = {
+            "verdict": "correct",
+            "corrected": None,
+            "reason": "There may be another way to frame this task.",
+        }
+        reviewer = sanitize_reviewer(stored, BASE)
+        self.assertEqual(reviewer["verdict"], "uncertain")
+        self.assertEqual(reviewer["routing_reason"], "legacy_ambiguous")
+        _final, _validator, needs_review = resolve_classification(BASE, stored)
+        self.assertTrue(needs_review)
+        decision = build_review_decision({**BASE, "reviewer_result": stored, "deterministic_check": {}})
+        self.assertFalse(decision["auto_resolvable"])
+        self.assertNotEqual(decision["problem"], "reviewer correction was missing")
+
+    def test_keep_problem_text_is_not_missing_correction(self):
+        decision = build_review_decision({
+            **BASE,
+            "reviewer_result": {
+                "verdict": "uncertain",
+                "issues": ["reviewer correction was missing"],
+                "reason": "The existing archetype correctly represents the task.",
+            },
+            "deterministic_check": {"disagreements": ["complexity"]},
+        })
+        self.assertTrue(decision["auto_resolvable"])
+        self.assertEqual(decision["problem"], "")
+
 
 
 if __name__ == "__main__":

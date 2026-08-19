@@ -28,6 +28,7 @@ from ..learn_helpers import (
     get_kpi_catalog,
     _get_kpi_meta,
 )
+from ..student_evidence import chronological, first_attempts, readiness_status
 from .blueprint import learn_bp  # noqa: F401 — re-exported for app registration
 
 
@@ -1223,11 +1224,19 @@ def learn_analytics():
             )
 
     questions_answered_total = max(total_q_ans, len(response_rows))
-    questions_correct_total = sum(1 for row in response_rows if row.get("correct") is True)
-    progress_accuracy = round(
-        questions_correct_total / max(questions_answered_total, 1) * 100,
-        1,
-    ) if questions_answered_total else 0
+    evidence = first_attempts(chronological(response_rows))
+    studied_first = first_attempts(
+        chronological([row for row in response_rows if row.get("kpi_code") in completed_codes])
+    )
+    questions_correct_total = evidence["correct"]
+    progress_accuracy = evidence["accuracy"] or 0
+    studied_mastery = studied_first["accuracy"]
+    evidence_status = readiness_status(
+        round(100 * len(completed_codes) / max(len({row.get("code") for row in catalog_rows if row.get("code")}), 1)),
+        evidence["attempts"],
+        studied_mastery,
+        progress_accuracy,
+    )
     avg_recent_response_ms = 0
     if history_rows:
         avg_recent_response_ms = round(
@@ -1238,24 +1247,30 @@ def learn_analytics():
     return jsonify(
         {
             "summary": {
-                "avg_mastery": avg_mastery,
+                "avg_mastery": studied_mastery if studied_mastery is not None else avg_mastery,
+                "srs_mastery": avg_mastery,
                 "mastered_kpis": mastered_kpis,
                 "total_kpis_seen": len(completed_codes),
                 "completed_kpis": len(completed_codes),
                 "total_kpis_available": len({row.get("code") for row in catalog_rows if row.get("code")}),
                 "questions_due": due_count,
                 "streak_days": streak,
-                "total_questions_answered": total_q_ans,
+                "total_questions_answered": evidence["attempts"],
+                "evidence_status": evidence_status,
+                "first_attempt_count": evidence["attempts"],
+                "retry_count": evidence["retry_count"],
             },
             "progress": {
-                "questions_answered": questions_answered_total,
+                "questions_answered": evidence["attempts"],
                 "questions_correct": questions_correct_total,
                 "accuracy_pct": progress_accuracy,
+                "retry_count": evidence["retry_count"],
+                "first_attempt_accuracy_pct": progress_accuracy,
                 "avg_recent_response_ms": avg_recent_response_ms,
                 "mastered_kpis": mastered_kpis,
                 "questions_due": due_count,
                 "streak_days": streak,
-                "avg_mastery": avg_mastery,
+                "avg_mastery": studied_mastery if studied_mastery is not None else avg_mastery,
                 "history_count": len(history_rows),
             },
             "kpi_mastery": mastery_rows,

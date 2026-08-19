@@ -88,6 +88,33 @@
                 return allKpis.find((k) => k.code === code) || null;
             }
 
+            function resumeStorageKey() {
+                return currentEventId ? `ct_learn_resume_${currentEventId}` : "";
+            }
+
+            function saveLearnResume(kpi) {
+                const key = resumeStorageKey();
+                if (!key || !kpi) return;
+                try {
+                    localStorage.setItem(key, JSON.stringify({
+                        kpi_code: kpi.code,
+                        kpi_text: kpi.text || "",
+                        updated_at: Date.now(),
+                    }));
+                } catch (e) {}
+            }
+
+            function clearLearnResume(code) {
+                const key = resumeStorageKey();
+                if (!key) return;
+                try {
+                    const current = JSON.parse(localStorage.getItem(key) || "null");
+                    if (!code || current?.kpi_code === code) localStorage.removeItem(key);
+                } catch (e) {
+                    localStorage.removeItem(key);
+                }
+            }
+
             function focusSessionOnKpi(kpiOrCode) {
                 const code = typeof kpiOrCode === "string"
                     ? kpiOrCode
@@ -342,6 +369,19 @@
 
                     renderLearnHome();
 
+                    const deepLink = new URLSearchParams(location.search).get("kpi");
+                    const savedResume = (() => {
+                        try {
+                            return JSON.parse(localStorage.getItem(`ct_learn_resume_${currentEventId}`) || "null");
+                        } catch (error) {
+                            return null;
+                        }
+                    })();
+                    const resumeCode = deepLink || savedResume?.kpi_code || "";
+                    if (resumeCode && findKpiByCode(resumeCode)) {
+                        startSession(resumeCode);
+                    }
+
                     // Load mastery dashboard asynchronously (non-blocking)
                     initMasteryDashboard(currentEventId);
 
@@ -378,8 +418,9 @@
                     ? findKpiByCode(focusCode)
                     : null;
                 sessionQueue = focused
-                    ? [focused, ...allKpis.filter((kpi) => kpi.code !== focused.code)]
-                    : [...allKpis];
+                    ? [focused, ...allKpis.filter((kpi) => kpi.code !== focused.code && !kpi.current_lesson_completed)]
+                    : allKpis.filter((kpi) => !kpi.current_lesson_completed);
+                if (!sessionQueue.length) sessionQueue = [...allKpis];
                 sessionIdx = 0;
                 completedKpiCodes = new Set();
                 kpiLoadToken++;
@@ -453,6 +494,7 @@
                 }
 
                 const kpi = sessionQueue[sessionIdx];
+                saveLearnResume(kpi);
                 const loadToken = ++kpiLoadToken;
                 $("skip-kpi-btn").style.display = "";
                 updateProgress();
@@ -1079,26 +1121,17 @@
                 if (qAnswered) return;
                 if (_qFirstClickTime === null) _qFirstClickTime = Date.now();
                 qAnswered = true;
-                sessionQAnswered++;
 
                 const btns = $("choices-list").querySelectorAll(".choice-btn");
-                btns.forEach((b, i) => {
-                    b.disabled = true;
-                    if (i === q.correct) b.classList.add("correct");
-                    else if (i === chosen && chosen !== q.correct)
-                        b.classList.add("wrong");
-                    else b.classList.add("neutral");
-                });
+                btns.forEach((b) => { b.disabled = true; });
 
                 let ok = chosen === q.correct;
-                if (!q._isRetry) {
-                    kpiFirstPassAnswered++;
-                    if (ok) kpiFirstPassCorrect++;
-                }
                 // Persist to Supabase (cross-device, permanent)
                 const sbId = q.id || "";
                 if (!sbId) {
                     showError("This question has no persistent ID and cannot be answered safely. Reload the lesson.");
+                    btns.forEach((b) => { b.disabled = false; });
+                    qAnswered = false;
                     return;
                 }
                 {
@@ -1126,6 +1159,8 @@
                         });
                         if (!saved.ok) {
                             showError("Your answer could not be saved. Reload and try again before continuing.");
+                            btns.forEach((b) => { b.disabled = false; });
+                            qAnswered = false;
                             return;
                         }
                         const savedAnswer = await saved.json();
@@ -1138,9 +1173,23 @@
                         }
                     } catch (error) {
                         showError("Your answer could not be saved. Check your connection, then reload and try again.");
+                        btns.forEach((b) => { b.disabled = false; });
+                        qAnswered = false;
                         return;
                     }
                 }
+
+                if (!q._isRetry) {
+                    kpiFirstPassAnswered++;
+                    if (ok) kpiFirstPassCorrect++;
+                }
+
+                const revealAnswer = ok || q._isRetry;
+                btns.forEach((b, i) => {
+                    if (revealAnswer && i === q.correct) b.classList.add("correct");
+                    else if (i === chosen && chosen !== q.correct) b.classList.add("wrong");
+                    else b.classList.add("neutral");
+                });
 
                 if (ok) sessionQCorrect++;
                 if ((q.question_type || "recognition") === "application") {
@@ -1157,8 +1206,12 @@
                 banner.className =
                     "result-banner " + (ok ? "correct" : "wrong");
                 $("result-icon").textContent = ok ? "✓" : "✗";
-                $("result-label").textContent = ok ? "Strong decision" : "Reconsider the evidence";
-                $("explanation-box").textContent = q.explanation || "";
+                $("result-label").textContent = ok ? "Strong decision" : (q._isRetry ? "Reconsider the evidence" : "Not yet");
+                $("explanation-box").textContent = ok
+                    ? (q.explanation || "")
+                    : q._isRetry
+                        ? `You chose “${q.choices[chosen]}.” ${q.explanation || "Compare that choice with the KPI's business reasoning."}`
+                        : `You chose “${q.choices[chosen]}.” That choice does not fit the KPI yet. You will retry this after the remaining questions; look for the business reasoning, not the wording of the choices.`;
                 $("result-panel").style.display = "block";
 
                 const isLast = qIdx + 1 >= qShown.length;
@@ -1215,6 +1268,7 @@
                     });
                     if (!completion.ok) throw new Error("Lesson completion could not be saved");
                     completedKpi.current_lesson_completed = true;
+                    clearLearnResume(completedKpi.code);
                 } catch (error) {
                     showError("Your lesson was completed, but its curriculum progress could not be saved. Please retry.");
                     return;
@@ -1497,6 +1551,8 @@
 
             function skipCurrentKpi() {
                 if (isReviewMode || sessionIdx >= sessionQueue.length) return;
+                const skipped = currentKpi();
+                if (skipped) clearLearnResume(skipped.code);
                 kpiLoadToken++;
                 sessionIdx++;
                 setPhase("mission", "pending");

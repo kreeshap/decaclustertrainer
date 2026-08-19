@@ -50,6 +50,8 @@ class LearnPipelineContractTests(unittest.TestCase):
     def test_failure_and_feedback_language_preserve_student_agency(self) -> None:
         self.assertIn('id="error-skip-btn"', LEARN_HTML)
         self.assertIn("Your progress is safe", LEARN_JS)
+        self.assertIn("You chose", LEARN_JS)
+        self.assertIn("q._isRetry", LEARN_JS)
         self.assertIn("Strong initial understanding", LEARN_JS)
         self.assertIn("First-attempt lesson performance", LEARN_HTML)
         self.assertIn("Mastery history", LEARN_HTML)

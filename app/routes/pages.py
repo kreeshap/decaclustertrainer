@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, render_template
 
 from ..ai import call_cloudflare, call_gemini_json, call_groq, call_mistral
+from ..auth_utils import get_current_user, is_admin
 
 pages_bp = Blueprint("pages", __name__)
 
@@ -8,6 +9,8 @@ pages_bp = Blueprint("pages", __name__)
 @pages_bp.get("/api/debug/ai")
 def debug_ai():
     """Quick smoke-test for every configured AI provider."""
+    if not is_admin(get_current_user()):
+        return jsonify({"error": "Unauthorized"}), 401
     probe = [{"role": "user", "content": 'Reply with valid JSON: {"ok": true}'}]
 
     groq_data, groq_err = call_groq(probe, max_tokens=20)

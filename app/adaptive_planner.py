@@ -3,6 +3,10 @@
 from datetime import date
 from urllib.parse import quote
 
+from .study_activities import ACTIVITIES, select_activity
+
+ACTIVITIES_FOCUSED = ACTIVITIES["focused_questions"]
+
 
 def task(task_id, label, minutes, href, baseline, target, **extra):
     return {"id": task_id, "label": label, "minutes": minutes, "href": href,
@@ -21,13 +25,16 @@ def build_plan(state, event_id, budget):
     active = state.get("unfinished_practice")
     kpi_minutes = max(3, min(12, round(float(state.get("median_kpi_minutes") or 6))))
     question_seconds = max(20, min(120, round(float(state.get("median_question_seconds") or 45))))
+    activity = select_activity(state)
 
     if active:
         remaining_questions = max(1, int(active["question_count"]) - int(active["current_index"]))
         minutes = max(2, min(remaining, round(remaining_questions * question_seconds / 60)))
         tasks.append(task("resume_practice", f"Continue {active.get('title') or 'practice questions'}", minutes,
                           f"/app/practicequestions.html?resume={active['id']}", active["current_index"],
-                          remaining_questions, remaining_questions=remaining_questions))
+                  remaining_questions, remaining_questions=remaining_questions,
+                  activity_type=activity["activity_type"], activity_name=activity["display_name"],
+                  activity_description=activity["description"]))
         reasons.append("UNFINISHED_WORK_PRIORITY")
         details.append(f"An active practice set has {remaining_questions} questions remaining.")
         remaining -= minutes
@@ -49,19 +56,23 @@ def build_plan(state, event_id, budget):
         minutes = min(remaining, max(2, count))
         topic_text = f" {weak['topic']}" if weak and weak_due else ""
         tasks.append(task("review", f"Review {count} due{topic_text} concept{'s' if count != 1 else ''}", minutes,
-                          "/app/learn.html?review=due", due, count))
+                  "/app/learn.html?review=due", due, count,
+                  activity_type="learn", activity_name="Learn Mode",
+                  activity_description="Review due material before it fades."))
         reasons.append("DUE_REVIEW_PRIORITY")
         details.append(f"{due} spaced-repetition reviews are currently due.")
         remaining -= minutes
 
     # Preserve room for a few questions. A five-minute plan deliberately skips new content.
     reserve_for_questions = 2 if remaining >= 2 else 0
-    if budget > 5 and remaining - reserve_for_questions >= kpi_minutes:
+    if budget > 5 and remaining - reserve_for_questions >= kpi_minutes and activity["activity_type"] in {"learn", "personal_connection"}:
         count = 2 if not due and coverage["percent"] < 20 and remaining - reserve_for_questions >= kpi_minutes * 2 else 1
         minutes = min(remaining - reserve_for_questions, count * kpi_minutes)
         topic_text = f" uncovered {weak['topic']}" if weak else " new"
         tasks.append(task("learn", f"Learn {count}{topic_text} KPI{'s' if count != 1 else ''}", minutes,
-                          "/app/learn.html", coverage["studied"], count))
+                          "/app/learn.html", coverage["studied"], count,
+                          activity_type=activity["activity_type"], activity_name=activity["display_name"],
+                          activity_description=activity["description"]))
         reasons.append("NEW_LEARNING_PRIORITY")
         remaining -= minutes
 
@@ -70,13 +81,18 @@ def build_plan(state, event_id, budget):
         topic = weak["topic"] if weak else None
         label = f"Practice {count} {topic + ' ' if topic else 'introductory '}questions"
         href = f"/app/practicequestions.html?topic={quote(topic)}" if topic else "/app/practicequestions.html"
-        tasks.append(task("questions", label, remaining, href, state["practice_attempt_count"], count))
+        questions_activity = activity if activity["activity_type"] not in {"learn", "personal_connection"} else ACTIVITIES_FOCUSED
+        tasks.append(task("questions", label, remaining, href, state["practice_attempt_count"], count,
+                  activity_type=questions_activity["activity_type"], activity_name=questions_activity["display_name"],
+                  activity_description=questions_activity["description"]))
         reasons.append("QUALIFIED_WEAKNESS_PRACTICE" if topic else "BROAD_EVIDENCE_BUILDING")
         remaining = 0
 
     if not tasks:
         tasks.append(task("questions", "Practice 3 introductory questions", budget,
-                          "/app/practicequestions.html", state["practice_attempt_count"], 3))
+                  "/app/practicequestions.html", state["practice_attempt_count"], 3,
+                  activity_type=activity["activity_type"], activity_name=activity["display_name"],
+                  activity_description=activity["description"]))
         reasons.append("BROAD_EVIDENCE_BUILDING")
 
     return {"date": date.today().isoformat(), "eventId": event_id, "started": False,

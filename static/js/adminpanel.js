@@ -551,7 +551,7 @@ async function autoResolveReviews() {
   showMessage("Resolving review items that do not need a human decision…");
   try {
     const data = await readJson(await apiFetch("/api/admin/content-operations/auto-resolve-review", { method: "POST" }));
-    showMessage(data.resolved ? `Auto-resolved ${data.resolved} obvious review items.` : "Nothing left that can be auto-resolved; remaining items need a human decision.");
+    showMessage(data.resolved ? `Auto-resolved ${data.resolved} items (${data.auto_kept ?? 0} keep current, ${data.auto_changed ?? 0} applied correction). ${data.still_review ?? 0} still need a human decision.` : "Nothing left that can be auto-resolved; remaining items need a human decision.");
   } catch (error) { showMessage(error.message, true); }
   await loadClassificationDashboard();
 }
@@ -601,6 +601,8 @@ function renderReview(item, remaining, decision) {
   const options = [{ id: "current", label: "Keep current", detail: prettyField(current.primary_archetype) }];
   if (decision?.recommended) {
     options.push({ id: "recommended", label: "Apply recommended", detail: prettyField(decision.recommended.primary_archetype) });
+  } else if ((decision?.choice_ids || []).includes("skip")) {
+    options.push({ id: "skip", label: "Skip for later", detail: "Leave in the review queue" });
   }
   $("review-options").innerHTML = "";
   options.forEach((option, index) => {
@@ -676,7 +678,7 @@ $("process-kpis").addEventListener("click", startBatch);
 $("auto-resolve-reviews").addEventListener("click", autoResolveReviews);
 $("retry-failed").addEventListener("click", retryFailed);
 $("review-items").addEventListener("click", loadNextReview);
-$("approve-review").addEventListener("click", () => saveReview("approve"));
+$("approve-review").addEventListener("click", () => saveReview(selectedChoice === "skip" ? "skip" : "approve"));
 $("skip-review").addEventListener("click", () => saveReview("skip"));
 $("close-review").addEventListener("click", () => { $("review-panel").hidden = true; loadClassificationDashboard(); });
 $("start-lesson-audit").addEventListener("click", startLessonAudit);
@@ -737,7 +739,7 @@ document.addEventListener("keydown", (event) => {
   const key = event.key.toLowerCase();
   if (key === "a") {
     event.preventDefault();
-    saveReview("approve");
+    saveReview(selectedChoice === "skip" ? "skip" : "approve");
   } else if (key === "s") {
     event.preventDefault();
     saveReview("skip");

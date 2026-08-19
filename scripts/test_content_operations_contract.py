@@ -61,7 +61,7 @@ class ContentOperationsContractTests(unittest.TestCase):
 
     def test_adversarial_review_repairs_confident_results_before_escalating(self):
         self.assertIn("Act as an adversarial instructional reviewer", PIPELINE)
-        self.assertIn('"verdict":"pass|correct|uncertain"', PIPELINE)
+        self.assertIn('"verdict":"keep|change|uncertain"', PIPELINE)
         self.assertIn("def resolve_classification", PIPELINE)
         self.assertIn("def sanitize_reviewer", PIPELINE)
         self.assertIn("recommended the same values", PIPELINE)
@@ -85,7 +85,7 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn('key === "s"', JS)
         self.assertIn("function escHtml(value)", JS)
         self.assertIn('body: JSON.stringify({ action, choice: selectedChoice })', JS)
-        self.assertIn("saveReview(\"approve\")", JS)
+        self.assertIn('saveReview(selectedChoice === "skip" ? "skip" : "approve")', JS)
 
     def test_approved_classification_drives_lessons_with_fallback(self):
         audit_ops = (ROOT / "app" / "audit_ops.py").read_text(encoding="utf-8")

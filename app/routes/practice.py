@@ -9,6 +9,7 @@ from flask import Blueprint, jsonify, request
 from ..auth_utils import get_current_user
 from ..events import canonical_event_id
 from ..learn_helpers import _load_all_kpis, _supabase_svc
+from ..student_evidence import first_attempts, topic_is_qualified
 
 practice_bp = Blueprint("practice_platform", __name__)
 
@@ -37,16 +38,17 @@ def _analytics(questions, responses, catalog, mastery):
     for row in mastery:
         topic = row.get("kpi_cluster") or row.get("deca_cluster") or "Other"
         if row.get("kpi_code"): topics[topic].setdefault("studied_kpis", set()).add(row["kpi_code"])
-    for row in responses:
+    evidence = first_attempts(responses)
+    for row in evidence["rows"]:
         q = qmap.get(row["question_id"])
         if not q: continue
-        topic = topics[q["kpi_cluster"]]; topic["attempts"] += 1; topic["correct"] += int(row["correct"])
-        topic["kpis"][q["kpi_code"]][1] += 1; topic["kpis"][q["kpi_code"]][0] += int(row["correct"])
+        topic = topics[q["kpi_cluster"]]; topic["attempts"] += 1; topic["correct"] += int(bool(row.get("correct")))
+        topic["kpis"][q["kpi_code"]][1] += 1; topic["kpis"][q["kpi_code"]][0] += int(bool(row.get("correct")))
     output = []
     for name, data in topics.items():
         total = len(data.get("total_kpis", set())); studied = len(data.get("studied_kpis", set()))
         coverage = round(100 * studied / total) if total else 0
-        qualified = total > 0 and coverage >= 50 and data["attempts"] >= 10
+        qualified = topic_is_qualified(coverage, data["attempts"], total)
         output.append({"topic": name, "correct": data["correct"], "attempts": data["attempts"],
              "accuracy": round(100*data["correct"]/data["attempts"]) if data["attempts"] else None,
              "kpis_studied": studied, "kpis_total": total, "coverage_pct": coverage,
@@ -151,7 +153,11 @@ def create_set():
 def get_set(set_id):
     user,error=require_user()
     if error:return error
-    _,sets=_supabase_svc("/practice_sets",params={"id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","limit":"1"})
+    event_id = canonical_event_id(request.args.get("event_id"))
+    params = {"id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","limit":"1"}
+    if event_id:
+        params["event_id"] = f"eq.{event_id}"
+    _,sets=_supabase_svc("/practice_sets",params=params)
     if not sets:return jsonify({"error":"Practice question set not found"}),404
     _,items=_supabase_svc("/practice_set_questions",params={"practice_set_id":f"eq.{set_id}","user_id":f"eq.{user['id']}","select":"*","order":"position.asc","limit":"100"})
     ids=[i["question_id"] for i in items or []]; _,questions=_supabase_svc("/kpi_questions",params={"id":f"in.({','.join(ids)})","select":"*","limit":"100"}) if ids else (200,[]); qmap={q["id"]:q for q in questions or []}

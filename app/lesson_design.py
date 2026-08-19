@@ -299,7 +299,9 @@ Rules:
 - Generate exactly {required_block_count} learning_blocks. The app, not the model, owns this count.
 - mini_roleplay: quick=1 decision, standard=2 decisions, deep=2-3 decisions.
 - practice_questions: generate EXACTLY 3 final questions:
-  1. Check / understanding / recognition
-  2. Apply / scenario
-  3. DECA Challenge / harder role-specific scenario
-- All practice questions: four plausible choices, only one correct."""
+  1. Check / understanding / recognition of this KPI's learner action, not a generic topic quiz
+  2. Apply / scenario that requires the student to {learner_action}
+  3. DECA Challenge / harder role-specific scenario that requires the student to {deca_action}
+- All practice questions: four plausible choices, only one correct. Distractors should be realistic business mistakes, never joke answers.
+- Wrong-answer explanations should name the misconception without wasting words.
+"""

@@ -3,7 +3,9 @@ import unittest
 from app.adaptive_planner import build_plan
 
 
-def student(studied=0, total=408, attempts=0, due=0, weak=None, unfinished=None):
+def student(studied=0, total=408, attempts=0, due=0, weak=None, unfinished=None,
+            application_attempts=0, application_accuracy=None, recognition_attempts=0,
+            timing_samples=0):
     return {
         "coverage": {"studied": studied, "total": total, "percent": round(100 * studied / total) if total else 0},
         "practice_attempt_count": attempts,
@@ -14,10 +16,30 @@ def student(studied=0, total=408, attempts=0, due=0, weak=None, unfinished=None)
         "unfinished_practice": unfinished,
         "median_kpi_minutes": 6,
         "median_question_seconds": 45,
+        "application_attempt_count": application_attempts,
+        "application_accuracy": application_accuracy,
+        "recognition_attempt_count": recognition_attempts,
+        "question_timing_sample_count": timing_samples,
     }
 
 
 class AdaptivePlannerScenarioTests(unittest.TestCase):
+    def test_activity_selector_prefers_learning_for_new_student(self):
+        plan = build_plan(student(), "financial_services_tdm", 20)
+        self.assertEqual(plan["tasks"][0]["activity_type"], "learn")
+
+    def test_activity_selector_targets_application_gap(self):
+        weak = {"topic": "Marketing", "kpis_studied": 14, "kpis_total": 19, "attempts": 31, "accuracy": 78, "coverage_pct": 74}
+        plan = build_plan(student(studied=170, total=200, attempts=66, weak=weak, application_attempts=5, application_accuracy=40, recognition_attempts=20), "financial_services_tdm", 20)
+        self.assertEqual(plan["tasks"][-1]["activity_type"], "scenario_sprint")
+
+    def test_activity_selector_prefers_fluency_when_speed_is_unknown(self):
+        plan = build_plan(student(studied=170, total=200, attempts=66, application_attempts=10, application_accuracy=80, recognition_attempts=20, timing_samples=0), "financial_services_tdm", 20)
+        self.assertEqual(plan["tasks"][-1]["activity_type"], "pi_fluency")
+
+    def test_activity_selector_keeps_thin_evidence_general(self):
+        plan = build_plan(student(studied=20, attempts=3, recognition_attempts=3), "financial_services_tdm", 10)
+        self.assertIn("learn", {task["activity_type"] for task in plan["tasks"]})
     def test_brand_new_student_builds_coverage_without_inventing_a_weakness(self):
         plan = build_plan(student(), "financial_services_tdm", 20)
         labels = " ".join(item["label"] for item in plan["tasks"])
