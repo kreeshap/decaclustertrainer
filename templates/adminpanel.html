@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="/static/js/common.js"></script>
-        <link rel="stylesheet" href="/static/styles/adminpanel.css?v=20260817-4" />
+        <link rel="stylesheet" href="/static/styles/adminpanel.css?v=20260818-1" />
   </head>
   <body>
     <header class="app-topbar">
@@ -136,14 +136,17 @@
           <button class="primary-action" type="submit">Store privately and parse</button>
         </form>
         <div id="corpus-upload-status" class="import-summary">Uploaded material starts as reference-only and needs review.</div>
-        <div id="corpus-review-list" class="sources-list"></div>
-        <div class="audit-actions"><button class="attention-row" id="review-corpus-question" type="button"><span>Review next extracted exam item</span><strong>→</strong></button></div>
       </section>
 
       <section class="panel question-import-review" id="corpus-question-review" data-admin-group="questions" data-corpus-panel="review" data-corpus-conditional hidden>
         <div class="review-topline"><span id="corpus-question-meta"></span><button id="close-corpus-question" type="button">Close</button></div>
-        <h2 id="corpus-question-stem"></h2>
-        <ol class="import-choices" id="corpus-question-choices" type="A"></ol>
+        <label>Question stem<textarea id="corpus-question-stem" rows="5"></textarea></label>
+        <div class="question-import-fields" id="corpus-question-choices">
+          <label>Choice A<input data-corpus-choice="0"></label>
+          <label>Choice B<input data-corpus-choice="1"></label>
+          <label>Choice C<input data-corpus-choice="2"></label>
+          <label>Choice D<input data-corpus-choice="3"></label>
+        </div>
         <div class="flag-box"><strong>Parser review priority</strong><p id="corpus-question-flags"></p></div>
         <div class="question-import-fields">
           <label>Official answer<select id="corpus-question-answer"><option value="">Unknown</option><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></label>
@@ -157,8 +160,17 @@
 
       <section class="panel question-import-panel" data-admin-group="questions" data-corpus-panel="review">
         <div class="section-kicker">Review queue</div>
-        <h2>Verify parsed exam items</h2>
-        <p>Every item is reviewed explicitly. Blank PI assignments remain blank instead of being guessed.</p>
+        <h2>Corpus work queue</h2>
+        <p>Every pending exam and roleplay stays visible until its document and extracted items are reviewed.</p>
+        <div class="batch-grid corpus-queue-grid">
+          <div><strong id="corpus-parsing-count">0</strong><span>Parsing now</span></div>
+          <div><strong id="corpus-document-review-count">0</strong><span>Documents to review</span></div>
+          <div><strong id="corpus-exam-review-count">0</strong><span>Exam items to review</span></div>
+          <div><strong id="corpus-roleplay-review-count">0</strong><span>Roleplays to review</span></div>
+        </div>
+        <div id="corpus-review-list" class="sources-list"></div>
+        <div class="section-kicker">Parsing activity and errors</div>
+        <div id="corpus-parse-log" class="corpus-log"></div>
         <form id="question-import-form" class="question-import-form" hidden>
           <label>PDF<input name="file" type="file" accept="application/pdf" required></label>
           <label>Source type<select name="source_type"><option value="deca_sample">DECA sample exam</option><option value="owned">My own questions</option><option value="licensed">Licensed material</option><option value="other">Other reference</option></select></label>
@@ -171,7 +183,7 @@
         <div id="question-status-filters" class="corpus-filter-row"></div>
         <div id="question-cluster-breakdown" class="cluster-breakdown corpus-filter-row"></div>
         <div class="audit-actions">
-          <button class="attention-row" id="review-question-imports" type="button"><span>Continue explicit review</span><strong id="question-import-pending">0</strong></button>
+          <button class="attention-row" id="review-question-imports" type="button"><span>Continue legacy import review</span><strong id="question-import-pending">0</strong></button>
         </div>
         <div id="question-style-summary" class="import-summary">AI question and roleplay generation is disabled until corpus readiness is verified.</div>
       </section>
@@ -242,6 +254,6 @@
 
       <div class="ops-message" id="ops-message" role="status" aria-live="polite"></div>
     </main>
-    <script src="/static/js/adminpanel.js?v=20260817-4"></script>
+    <script src="/static/js/adminpanel.js?v=20260818-1"></script>
   </body>
 </html>

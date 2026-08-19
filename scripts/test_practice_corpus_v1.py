@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from app.practice_corpus import parse_roleplay, readiness, suggest_metadata, text_fingerprint  # noqa: E402
+from app.practice_corpus import exam_review_flags, parse_roleplay, readiness, suggest_metadata, text_fingerprint  # noqa: E402
 
 
 def main():
@@ -34,6 +34,8 @@ Applies the performance indicators to the business problem.
     assert parsed["field_confidence"]["event_code"] == "high"
     assert "roleplay_section_boundary" not in parsed["review_flags"]
     assert text_fingerprint(text) == text_fingerprint(text)
+    contaminated = {"question_text": "A manager needs to decide how", "choices": ["A", "B", "C", "D Copyright © 2026 Test 1324 FINANCE EXAM 2"], "correct_index": 1}
+    assert set(exam_review_flags(contaminated)) == {"exam_choice_split", "header_contamination"}
 
     docs = [{"id": str(i), "content_type": "exam", "processing_state": "verified_reference",
              "benchmark_eligible": True, "event_codes": ["ACT"], "cluster": "Finance",
@@ -74,6 +76,14 @@ Applies the performance indicators to the business problem.
     assert "corpus-source" not in admin_js and "corpus-url" not in admin_js
     assert "const form = event.currentTarget;" in admin_js
     assert "event.currentTarget.reset()" not in admin_js
+    assert "data-corpus-choice" in template
+    assert '"stem": stem, "choices": choices' in admin
+    assert "corpus_parse_attempts" in admin
+    assert "corpus-parse-log" in template
+    assert "corpus-exam-review-count" in template
+    parse_attempt_migration = (ROOT / "supabase" / "migrations" / "20260818010000_corpus_parse_attempts.sql").read_text(encoding="utf-8").lower()
+    for requirement in ("enable row level security", "revoke all", "status", "error_message", "document_id"):
+        assert requirement in parse_attempt_migration
     pilot_migration = (ROOT / "supabase" / "migrations" / "20260817015000_real_corpus_pilot.sql").read_text(encoding="utf-8").lower()
     for requirement in ("corpus_parser_failures", "field_confidence", "review_priority", "gold_reference", "stability_delta"):
         assert requirement in pilot_migration

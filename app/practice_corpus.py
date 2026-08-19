@@ -12,10 +12,12 @@ import pdfplumber
 
 from .question_ingestion import build_style_profile, extract_pdf_questions
 
-PARSER_VERSION = "practice-corpus-2026-08-v1"
+PARSER_VERSION = "practice-corpus-2026-08-v2"
 EVENT_CODE = re.compile(r"\b(?:ACT|BFS|FTDM|HLM|QSRM|RFSM|HTDM|TTDM|PHT|HTPS|MCS|MMS|RMS|SEM|BTDM|MTDM|STDM)\b", re.I)
 PI_CODE = re.compile(r"\b[A-Z]{2,4}:\d{3}\b")
 YEAR = re.compile(r"\b(20\d{2})(?:\s*[-–]\s*(\d{2,4}))?\b")
+PAGE_ARTIFACT = re.compile(r"(?:copyright\s*©?|all rights reserved|\bDECA Inc\b|\bTest\s+\d+\b|\b(?:FINANCE|MARKETING|HOSPITALITY|BUSINESS MANAGEMENT|ENTREPRENEURSHIP)\s+EXAM(?:—KEY)?\s+\d+)", re.I)
+INCOMPLETE_ENDING = re.compile(r"\b(?:a|an|and|as|at|because|but|for|from|how|if|in|of|on|or|that|the|their|to|which|who|with|without)\s*[?:,]?\s*$", re.I)
 
 
 def normalized_text(text: str) -> str:
@@ -165,16 +167,28 @@ def exam_metrics(question: dict) -> dict:
     }
 
 
+def exam_review_flags(question: dict) -> list[str]:
+    stem = str(question.get("question_text") or "")
+    choices = [str(value) for value in question.get("choices") or []]
+    explanation = str(question.get("explanation") or "")
+    combined = "\n".join([stem, *choices, explanation])
+    flags = []
+    if len(choices) != 4 or any(not value.strip() for value in choices) or INCOMPLETE_ENDING.search(stem):
+        flags.append("exam_choice_split")
+    if question.get("correct_index") is None:
+        flags.append("exam_answer_key_mismatch")
+    if PAGE_ARTIFACT.search(combined):
+        flags.append("header_contamination")
+    return flags
+
+
 def parse_exam(file_bytes: bytes) -> tuple[list[dict], dict]:
     questions, stats = extract_pdf_questions(file_bytes)
     rows = []
     for question in questions:
         metrics = exam_metrics(question)
         choices = question.get("choices") or []
-        flags = []
-        if len(choices) != 4 or any(not str(value).strip() for value in choices): flags.append("exam_choice_split")
-        if question.get("correct_index") is None: flags.append("exam_answer_key_mismatch")
-        if re.search(r"(?:copyright|all rights reserved|page \d+|\bDECA Inc\b)", question["question_text"], re.I): flags.append("header_contamination")
+        flags = exam_review_flags(question)
         rows.append({
             "question_number": question["question_number"], "page_number": question.get("page_number"),
             "stem": question["question_text"], "choices": choices,

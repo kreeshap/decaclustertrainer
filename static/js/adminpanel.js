@@ -6,9 +6,11 @@ let currentQuestionImport = null;
 let latestQuestionDocument = null;
 let currentKnowledgeItem = null;
 let currentCorpusQuestion = null;
+let currentCorpusDocumentId = "";
 let activeQuestionFilter = "needs_review";
 let activeQuestionCluster = "";
 let activeCorpusView = "overview";
+let corpusRefreshTimer = null;
 const lessonAuditScores = {};
 const $ = (id) => document.getElementById(id);
 
@@ -151,10 +153,20 @@ async function loadCorpusDashboard() {
 
 async function loadCorpusDocuments() {
   const data = await readJson(await apiFetch("/api/admin/practice-corpus"));
-  const pending = (data.documents || []).filter((doc) => doc.processing_state !== "verified_reference");
+  const documents = data.documents || [];
+  const pending = documents.filter((doc) => doc.processing_state !== "verified_reference" || (doc.item_counts?.pending || 0) > 0);
+  const attempts = data.parse_attempts || [];
+  const parsing = attempts.filter((attempt) => attempt.status === "parsing");
+  const pendingExamItems = pending.filter((doc) => doc.content_type === "exam").reduce((total, doc) => total + (doc.item_counts?.pending || 0), 0);
+  const pendingRoleplays = pending.filter((doc) => doc.content_type === "roleplay" && (doc.item_counts?.pending || doc.processing_state !== "verified_reference")).length;
+  $("corpus-parsing-count").textContent = parsing.length;
+  $("corpus-document-review-count").textContent = pending.filter((doc) => doc.processing_state !== "verified_reference").length;
+  $("corpus-exam-review-count").textContent = pendingExamItems;
+  $("corpus-roleplay-review-count").textContent = pendingRoleplays;
   $("corpus-review-list").innerHTML = pending.map((doc) => `<article class="source-card corpus-document" data-document-id="${escHtml(doc.id)}">
     <h3>${escHtml(doc.title)}</h3>
-    <p>${escHtml(doc.content_type)} · ${escHtml(doc.original_filename)} · ${escHtml(doc.processing_state)}</p>
+    <div class="corpus-status-row"><span class="corpus-status-pill">${escHtml(doc.content_type)}</span><span class="corpus-status-pill">${escHtml(doc.processing_state.replaceAll("_", " "))}</span><span>${doc.item_counts?.pending || 0} of ${doc.item_counts?.total || 0} items awaiting review</span></div>
+    <p>${escHtml(doc.original_filename)}</p>
     <p>${doc.duplicate_of ? "⚠ Likely duplicate of another corpus document." : "No exact normalized-text duplicate detected."}</p>
     <p><strong>Review priority: ${escHtml(doc.review_priority || "normal")}</strong> · ${escHtml((doc.review_flags || []).join(", ") || "No deterministic flags")}</p>
     <details><summary>Field confidence</summary><pre>${escHtml(JSON.stringify(doc.field_confidence || {}, null, 2))}</pre></details>
@@ -170,7 +182,10 @@ async function loadCorpusDocuments() {
     <label><input class="corpus-publishable" type="checkbox"> Student publishable</label>
     ${doc.content_type === "roleplay" ? `<label><input class="corpus-gold" type="checkbox"> Gold reference</label>` : ""}
     ${doc.content_type === "roleplay" ? `<label class="audit-notes">Structured roleplay JSON<textarea class="corpus-roleplay-json" rows="12">${escHtml(JSON.stringify(doc.structured_roleplay || {}, null, 2))}</textarea></label>` : ""}
-    <button class="primary-action corpus-verify" type="button">Verify reference</button>
+    <div class="corpus-document-actions">
+      ${doc.processing_state !== "verified_reference" ? `<button class="primary-action corpus-verify" type="button">Verify document</button>` : ""}
+      ${doc.content_type === "exam" && (doc.item_counts?.pending || 0) ? `<button class="text-action corpus-review-exam" type="button">Review ${doc.item_counts.pending} exam items</button>` : ""}
+    </div>
     <fieldset class="pilot-audit-box"><legend>Pilot PDF comparison</legend>
       <label>Expected item count<input class="pilot-expected-count" type="number" min="0"></label>
       <label>Failure category<select class="pilot-failure-code"><option value="">No failure</option>${["exam_choice_split","exam_answer_key_mismatch","exam_multiline_stem","header_contamination","roleplay_pi_detection","roleplay_section_boundary","roleplay_judge_question_split","metadata_year_unknown","metadata_event_unknown","metadata_competition_level_unknown","table_or_special_format","page_break_split","other"].map((code) => `<option value="${code}">${code.replaceAll("_", " ")}</option>`).join("")}</select></label>
@@ -178,12 +193,25 @@ async function loadCorpusDocuments() {
       <label><input class="pilot-silent-corruption" type="checkbox"> Silent data corruption found</label>
       <button class="text-action corpus-pilot-audit" type="button">Record pilot audit</button>
     </fieldset>
-  </article>`).join("") || "<p>No corpus documents need review.</p>";
+  </article>`).join("") || "<p>No exams or roleplays need review.</p>";
+  const documentNames = Object.fromEntries(documents.map((doc) => [doc.id, doc.original_filename]));
+  const attemptRows = attempts.map((attempt) => ({ status: attempt.status, when: attempt.started_at, title: attempt.original_filename,
+    detail: attempt.status === "failed" ? `${attempt.stage}: ${attempt.error_message || "Unknown parsing error"}` : `${attempt.item_count || 0} items · ${attempt.stage.replaceAll("_", " ")}` }));
+  const failureRows = (data.parser_failures || []).map((failure) => ({ status: failure.resolved ? "resolved" : "failed", when: failure.created_at,
+    title: documentNames[failure.document_id] || "Removed document", detail: `${failure.failure_code.replaceAll("_", " ")}${failure.detail ? `: ${failure.detail}` : ""}` }));
+  const logRows = [...attemptRows, ...failureRows].sort((a, b) => String(b.when).localeCompare(String(a.when))).slice(0, 100);
+  $("corpus-parse-log").innerHTML = logRows.map((row) => `<div class="corpus-log-row ${row.status === "failed" ? "failed" : ""}"><strong>${escHtml(row.title)}</strong><span>${escHtml(row.status.toUpperCase())} · ${escHtml(row.detail)}</span><small>${escHtml(row.when ? new Date(row.when).toLocaleString() : "")}</small></div>`).join("") || "<div class=\"corpus-log-row\"><span>No parsing activity yet.</span></div>";
+  clearTimeout(corpusRefreshTimer);
+  if (parsing.length) corpusRefreshTimer = window.setTimeout(() => Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]), 3000);
 }
 
 async function uploadCorpus(event) {
   event.preventDefault();
   const form = event.currentTarget;
+  const submit = form.querySelector('[type="submit"]');
+  submit.disabled = true;
+  form.classList.add("corpus-upload-busy");
+  $("corpus-upload-status").textContent = `Parsing ${form.querySelector('[name="file"]').files[0]?.name || "PDF"}…`;
   showMessage("Storing the private PDF and extracting corpus structure…");
   try {
     const data = await readJson(await apiFetch("/api/admin/practice-corpus", { method: "POST", body: new FormData(form) }));
@@ -191,7 +219,14 @@ async function uploadCorpus(event) {
     form.reset();
     $("corpus-content-type").value = activeCorpusView === "roleplays" ? "roleplay" : "exam";
     await Promise.all([loadCorpusDocuments(), loadCorpusDashboard()]);
-  } catch (error) { showMessage(error.message, true); }
+  } catch (error) {
+    $("corpus-upload-status").textContent = `Parsing failed: ${error.message}`;
+    showMessage(error.message, true);
+    await loadCorpusDocuments().catch(() => {});
+  } finally {
+    submit.disabled = false;
+    form.classList.remove("corpus-upload-busy");
+  }
 }
 
 async function verifyCorpus(card) {
@@ -227,16 +262,20 @@ async function recordPilotAudit(card) {
   } catch (error) { showMessage(error.message, true); }
 }
 
-async function loadNextCorpusQuestion() {
+async function loadNextCorpusQuestion(documentId = "") {
   try {
+    if (documentId) currentCorpusDocumentId = documentId;
     showCorpusView("review");
-    const data = await readJson(await apiFetch("/api/admin/practice-corpus/questions/review-next"));
+    const selectedDocumentId = documentId || currentCorpusDocumentId;
+    const data = await readJson(await apiFetch(`/api/admin/practice-corpus/questions/review-next${selectedDocumentId ? `?document_id=${encodeURIComponent(selectedDocumentId)}` : ""}`));
     currentCorpusQuestion = data.question;
     $("corpus-question-review").hidden = !data.question;
-    if (!data.question) { showMessage("All extracted exam items are reviewed."); return; }
+    if (!data.question) { currentCorpusDocumentId = ""; showMessage("All extracted exam items in this exam are reviewed."); await loadCorpusDocuments(); return; }
     $("corpus-question-meta").textContent = `Question ${data.question.question_number} · Page ${data.question.page_number || "?"}`;
-    $("corpus-question-stem").textContent = data.question.stem;
-    $("corpus-question-choices").innerHTML = (data.question.choices || []).map((choice) => `<li>${escHtml(choice)}</li>`).join("");
+    $("corpus-question-stem").value = data.question.stem || "";
+    document.querySelectorAll("[data-corpus-choice]").forEach((input) => {
+      input.value = (data.question.choices || [])[Number(input.dataset.corpusChoice)] || "";
+    });
     $("corpus-question-answer").value = Number.isInteger(data.question.official_answer) ? String(data.question.official_answer) : "";
     $("corpus-question-pi").value = data.question.pi_code || "";
     $("corpus-question-area").value = data.question.instructional_area || "";
@@ -249,9 +288,13 @@ async function loadNextCorpusQuestion() {
 async function verifyCorpusQuestion() {
   if (!currentCorpusQuestion) return;
   const answer = $("corpus-question-answer").value;
+  const choices = [...document.querySelectorAll("[data-corpus-choice]")].map((input) => input.value.trim());
+  if (!$("corpus-question-stem").value.trim() || choices.some((choice) => !choice)) {
+    showMessage("Enter the question stem and all four answer choices.", true); return;
+  }
   try {
-    await readJson(await apiFetch(`/api/admin/practice-corpus/questions/${encodeURIComponent(currentCorpusQuestion.id)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ official_answer: answer === "" ? null : Number(answer), pi_code: $("corpus-question-pi").value, instructional_area: $("corpus-question-area").value, cognitive_demand: $("corpus-question-demand").value, gold_reference: $("corpus-question-gold").checked }) }));
-    await loadNextCorpusQuestion(); await loadCorpusDashboard();
+    await readJson(await apiFetch(`/api/admin/practice-corpus/questions/${encodeURIComponent(currentCorpusQuestion.id)}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ stem: $("corpus-question-stem").value.trim(), choices, official_answer: answer === "" ? null : Number(answer), pi_code: $("corpus-question-pi").value, instructional_area: $("corpus-question-area").value, cognitive_demand: $("corpus-question-demand").value, gold_reference: $("corpus-question-gold").checked }) }));
+    await loadNextCorpusQuestion(currentCorpusDocumentId); await loadCorpusDashboard();
   } catch (error) { showMessage(error.message, true); }
 }
 
@@ -588,6 +631,8 @@ $("corpus-review-list").addEventListener("click", (event) => {
   if (button) verifyCorpus(button.closest(".corpus-document"));
   const auditButton = event.target.closest(".corpus-pilot-audit");
   if (auditButton) recordPilotAudit(auditButton.closest(".corpus-document"));
+  const reviewExam = event.target.closest(".corpus-review-exam");
+  if (reviewExam) loadNextCorpusQuestion(reviewExam.closest(".corpus-document").dataset.documentId);
 });
 $("question-status-filters").addEventListener("click", (event) => {
   const button = event.target.closest("[data-question-filter]");
@@ -604,7 +649,6 @@ $("question-cluster-breakdown").addEventListener("click", (event) => {
   loadNextQuestionImport();
 });
 $("view-corpus-readiness").addEventListener("click", () => $("corpus-readiness").scrollIntoView({ behavior: "smooth", block: "start" }));
-$("review-corpus-question").addEventListener("click", loadNextCorpusQuestion);
 $("verify-corpus-question").addEventListener("click", verifyCorpusQuestion);
 $("close-corpus-question").addEventListener("click", () => { $("corpus-question-review").hidden = true; });
 $("review-question-imports").addEventListener("click", loadNextQuestionImport);

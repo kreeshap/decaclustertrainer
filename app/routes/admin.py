@@ -579,6 +579,18 @@ def admin_upload_practice_corpus():
     _, exact = _supabase_svc("/practice_corpus_documents", params={"file_sha256": f"eq.{digest}", "select": "*", "limit": "1"})
     if exact:
         return jsonify({"error": "This exact PDF already exists in the corpus.", "duplicate": exact[0]}), 409
+    attempt_payload = {"content_type": content_type, "original_filename": secure_filename(uploaded.filename or f"{content_type}.pdf"),
+                       "status": "parsing", "stage": "extracting", "created_by": user["id"]}
+    _, attempts = _supabase_svc("/corpus_parse_attempts", method="POST", payload=attempt_payload, prefer="return=representation")
+    attempt_id = attempts[0]["id"] if attempts else None
+    def finish_attempt(status, stage, error_message=None, document_id=None, item_count=0):
+        if not attempt_id:
+            return
+        _supabase_svc("/corpus_parse_attempts", method="PATCH",
+                      payload={"status": status, "stage": stage, "error_message": str(error_message or "")[:2000] or None,
+                               "document_id": document_id, "item_count": item_count,
+                               "finished_at": utc_now() if status != "parsing" else None, "updated_at": utc_now()},
+                      params={"id": f"eq.{attempt_id}"}, prefer="return=minimal")
     try:
         text, page_count = extract_pdf_text(file_bytes)
         suggestions = suggest_metadata(text, uploaded.filename or "upload.pdf", content_type)
@@ -587,20 +599,24 @@ def admin_upload_practice_corpus():
         _, similar = _supabase_svc("/practice_corpus_documents", params={"normalized_text_hash": f"eq.{text_hash}", "select": "id,title,original_filename", "limit": "1"})
         parsed = parse_exam(file_bytes) if content_type == "exam" else (parse_roleplay(text, suggestions), {"page_count": page_count})
     except Exception as error:
+        finish_attempt("failed", "extracting", error)
         return jsonify({"error": "PDF could not be parsed.", "detail": str(error)}), 422
     document_id = str(uuid.uuid4())
     safe_name = secure_filename(uploaded.filename or f"{content_type}.pdf")
     storage_path = f"{content_type}/{document_id}/{safe_name}"
     storage_status, storage_result = supabase_storage_upload(CORPUS_BUCKET, storage_path, file_bytes)
     if storage_status not in (200, 201):
+        finish_attempt("failed", "storage", storage_result)
         return jsonify({"error": "The private original could not be stored.", "detail": storage_result}), 502
     event_codes = [value.strip().upper() for value in request.form.getlist("event_codes") if value.strip()] or suggestions.get("event_codes", [])
     if content_type == "exam":
         event_codes = []
     elif not event_codes:
+        finish_attempt("failed", "metadata", "Roleplays and case studies require an event code.")
         return jsonify({"error": "Roleplays and case studies require an event code."}), 400
     requested_cluster = str(request.form.get("cluster") or "").strip()
     if content_type == "exam" and not requested_cluster:
+        finish_attempt("failed", "metadata", "Exams require a career cluster.")
         return jsonify({"error": "Exams require a career cluster."}), 400
     if content_type == "roleplay":
         _, corpus_events = _load_all_kpis()
@@ -631,6 +647,7 @@ def admin_upload_practice_corpus():
     }
     status, saved = _supabase_svc("/practice_corpus_documents", method="POST", payload=payload, prefer="return=representation")
     if status not in (200, 201) or not saved:
+        finish_attempt("failed", "document_save", saved)
         return jsonify({"error": "Parsed corpus metadata could not be saved.", "detail": saved}), 502
     if content_type == "exam":
         questions, stats = parsed
@@ -638,6 +655,7 @@ def admin_upload_practice_corpus():
         if rows:
             item_status, item_result = _supabase_svc("/reference_exam_questions", method="POST", payload=rows, prefer="return=representation")
             if item_status not in (200, 201):
+                finish_attempt("failed", "item_save", item_result, document_id)
                 return jsonify({"error": "Exam metadata saved, but questions could not be staged.", "document": saved[0], "detail": item_result}), 502
         failure_rows = [{"document_id": document_id, "item_type": "exam_question", "item_id": item["id"], "failure_code": code,
                          "field_name": "parser", "detail": "Deterministic parser review flag."}
@@ -648,6 +666,7 @@ def admin_upload_practice_corpus():
         roleplay.update({"document_id": document_id, "event_type": payload["event_type"]})
         roleplay_status, roleplay_result = _supabase_svc("/reference_roleplays", method="POST", payload=roleplay, prefer="return=representation")
         if roleplay_status not in (200, 201):
+            finish_attempt("failed", "item_save", roleplay_result, document_id)
             return jsonify({"error": "Roleplay metadata saved, but structured sections could not be staged.", "document": saved[0], "detail": roleplay_result}), 502
         failure_rows = [{"document_id": document_id, "item_type": "roleplay", "item_id": roleplay_result[0]["id"], "failure_code": code,
                          "field_name": "parser", "detail": "Deterministic parser review flag."}
@@ -659,6 +678,8 @@ def admin_upload_practice_corpus():
     if failure_rows:
         _supabase_svc("/corpus_parser_failures", method="POST", payload=failure_rows, prefer="return=minimal")
     result["likely_duplicate"] = similar[0] if similar else None
+    finish_attempt("succeeded", "complete", document_id=document_id,
+                   item_count=len(rows) if content_type == "exam" else 1)
     return jsonify(result), 201
 
 
@@ -671,10 +692,22 @@ def admin_list_practice_corpus():
     if request.args.get("content_type"):
         params["content_type"] = f"eq.{request.args['content_type']}"
     _, documents = _supabase_svc("/practice_corpus_documents", params=params)
+    _, questions = _supabase_svc("/reference_exam_questions", params={"select": "document_id,human_verified", "limit": "50000"})
     _, roleplays = _supabase_svc("/reference_roleplays", params={"select": "*", "limit": "1000"})
+    _, attempts = _supabase_svc("/corpus_parse_attempts", params={"select": "*", "order": "started_at.desc", "limit": "100"})
+    _, failures = _supabase_svc("/corpus_parser_failures", params={"select": "*", "order": "created_at.desc", "limit": "200"})
     roleplay_by_document = {row["document_id"]: row for row in roleplays or []}
-    result = [{**doc, "structured_roleplay": roleplay_by_document.get(doc["id"])} for doc in documents or []]
-    return jsonify({"documents": result})
+    question_counts = defaultdict(lambda: {"total": 0, "pending": 0})
+    for question in questions or []:
+        question_counts[question["document_id"]]["total"] += 1
+        if not question.get("human_verified"):
+            question_counts[question["document_id"]]["pending"] += 1
+    result = [{**doc, "structured_roleplay": roleplay_by_document.get(doc["id"]),
+               "item_counts": question_counts[doc["id"]] if doc["content_type"] == "exam" else
+                              {"total": 1 if roleplay_by_document.get(doc["id"]) else 0,
+                               "pending": 1 if roleplay_by_document.get(doc["id"]) and not roleplay_by_document[doc["id"]].get("human_verified") else 0}}
+              for doc in documents or []]
+    return jsonify({"documents": result, "parse_attempts": attempts or [], "parser_failures": failures or []})
 
 
 @admin_bp.patch("/api/admin/practice-corpus/<document_id>/verify")
@@ -736,7 +769,10 @@ def admin_next_reference_exam_question():
     _, err = require_admin()
     if err:
         return err
-    _, rows = _supabase_svc("/reference_exam_questions", params={"human_verified": "eq.false", "select": "*", "order": "created_at.asc,question_number.asc", "limit": "1"})
+    params = {"human_verified": "eq.false", "select": "*", "order": "created_at.asc,question_number.asc", "limit": "1"}
+    if request.args.get("document_id"):
+        params["document_id"] = f"eq.{request.args['document_id']}"
+    _, rows = _supabase_svc("/reference_exam_questions", params=params)
     return jsonify({"question": rows[0] if rows else None})
 
 
@@ -746,6 +782,13 @@ def admin_verify_reference_exam_question(question_id):
     if err:
         return err
     body = request.get_json(silent=True) or {}
+    stem = str(body.get("stem") or "").strip()
+    choices = body.get("choices")
+    if not stem:
+        return jsonify({"error": "Question stem is required."}), 400
+    if not isinstance(choices, list) or len(choices) != 4 or any(not str(choice).strip() for choice in choices):
+        return jsonify({"error": "Exactly four non-empty answer choices are required."}), 400
+    choices = [str(choice).strip() for choice in choices]
     answer = body.get("official_answer")
     if answer is not None:
         try:
@@ -755,7 +798,7 @@ def admin_verify_reference_exam_question(question_id):
         if answer not in range(4):
             return jsonify({"error": "official_answer must be 0-3 or null."}), 400
     pi_code = str(body.get("pi_code") or "").strip().upper() or None
-    payload = {"official_answer": answer, "pi_code": pi_code,
+    payload = {"stem": stem, "choices": choices, "official_answer": answer, "pi_code": pi_code,
                "pi_source": "human" if pi_code else "unknown",
                "instructional_area": str(body.get("instructional_area") or "").strip(),
                "cognitive_demand": str(body.get("cognitive_demand") or "").strip() or None,
