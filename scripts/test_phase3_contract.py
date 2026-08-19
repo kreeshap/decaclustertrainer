@@ -135,15 +135,17 @@ class Phase3ContractTests(unittest.TestCase):
             with self.subTest(case=case), self.assertRaises(validation.LearnContentError):
                 validation.validate_lesson(case)
 
-    def test_only_three_beta_event_sources_are_authoritative(self) -> None:
+    def test_finance_event_sources_cover_the_official_performance_indicator_matrix(self) -> None:
         event_ids = {
             "accounting_application_series": "ACT.json",
             "business_finance_series": "BFS.json",
+            "financial_consulting": "FCE.json",
             "financial_services_tdm": "FTDM.json",
+            "principles_of_finance": "PFN.json",
         }
-        events_source = (ROOT / "app" / "events.py").read_text(encoding="utf-8")
+        manifest = json.loads((ROOT / "performance indicator jsons" / "finance" / "manifest.json").read_text(encoding="utf-8"))
         for event_id, filename in event_ids.items():
-            self.assertIn(event_id, events_source)
+            self.assertIn(f"events/{filename}", manifest["events"])
             payload = json.loads((ROOT / "performance indicator jsons" / "finance" / "events" / filename).read_text(encoding="utf-8"))
             self.assertEqual(payload["event_id"], event_id)
 

@@ -245,7 +245,7 @@ def update_profile():
     if "default_event_id" in payload:
         event_id = canonical_event_id(payload.get("default_event_id") or payload.get("default_event"))
         if not event_id:
-            return jsonify({"detail": "Select one of the three supported beta events."}), 400
+            return jsonify({"detail": "Select a supported DECA event."}), 400
         event = BETA_EVENTS[event_id]
         if str(payload.get("default_cluster") or event["cluster"]).strip() != event["cluster"]:
             return jsonify({"detail": "The selected event does not belong to that cluster."}), 400

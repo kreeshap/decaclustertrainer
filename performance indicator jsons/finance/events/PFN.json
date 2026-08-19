@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cluster": "Finance",
+  "competitive_year": "2026-27",
+  "district_focus": {
+    "competitive_year": "2026-27",
+    "status": "pending",
+    "released_at": null,
+    "instructional_areas": []
+  },
+  "event_id": "principles_of_finance",
+  "event_code": "PFN",
+  "name": "Principles of Finance",
+  "event_type": "principles",
+  "curriculum_usage": {
+    "exam": {
+      "curriculum": [
+        "business_administration_core_2026_27"
+      ]
+    },
+    "roleplay": {
+      "curriculum": [
+        "business_administration_core_2026_27"
+      ]
+    }
+  },
+  "study_curriculum": [
+    "business_administration_core_2026_27"
+  ]
+}

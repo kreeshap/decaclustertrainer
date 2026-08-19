@@ -13,6 +13,8 @@
   "events": [
     "events/ACT.json",
     "events/BFS.json",
+    "events/FCE.json",
+    "events/PFN.json",
     "events/FTDM.json"
   ],
   "counts": {

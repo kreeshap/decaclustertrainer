@@ -1,6 +1,8 @@
 """Regression contracts for password recovery and dark-only settings."""
 
+import json
 from pathlib import Path
+import re
 import unittest
 
 
@@ -61,6 +63,29 @@ class EmailPasswordOnlySignInContracts(unittest.TestCase):
 
 
 class OnboardingContracts(unittest.TestCase):
+    def test_shared_picker_lists_every_manifest_backed_event_exactly_once(self):
+        manifest_events = []
+        for manifest_path in (ROOT / "performance indicator jsons").glob("*/manifest.json"):
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for relative_path in manifest.get("events", []):
+                manifest_events.append(
+                    json.loads(
+                        (manifest_path.parent / relative_path).read_text(encoding="utf-8")
+                    )
+                )
+
+        picker_names = re.findall(
+            r'\{\s*name:\s*"([^"]+)"\s*,\s*type:\s*"[^"]+"\s*\}',
+            CLUSTERS_JS,
+        )
+        expected_names = [event["name"] for event in manifest_events]
+        self.assertEqual(len(picker_names), len(set(picker_names)))
+        self.assertEqual(set(picker_names), set(expected_names))
+        self.assertIn(
+            "const BETA_EVENT_IDS = Object.freeze(CLUSTERS.flatMap",
+            CLUSTERS_JS,
+        )
+
     def test_onboarding_quick_tips_are_removed(self):
         combined = OPENING_HTML + OPENING_JS + OPENING_CSS
         for marker in (

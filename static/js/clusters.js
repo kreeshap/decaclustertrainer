@@ -21,18 +21,15 @@ const EVENT_TYPES = {
 
 const EVENT_ID_OVERRIDES = {
   "Financial Services Team Decision Making": "financial_services_tdm",
+  "Integrated Marketing Campaign-Event": "integrated_marketing_campaign_event",
+  "Integrated Marketing Campaign-Product": "integrated_marketing_campaign_product",
+  "Integrated Marketing Campaign-Service": "integrated_marketing_campaign_service",
 };
 
 const EVENT_ID_ALIASES = {
   "financial_services_team_decision_making": "financial_services_tdm",
   "financial services team decision making": "financial_services_tdm",
 };
-
-const BETA_EVENT_IDS = Object.freeze([
-  "accounting_application_series",
-  "business_finance_series",
-  "financial_services_tdm",
-]);
 
 function isSupportedBetaEventId(value) {
   return BETA_EVENT_IDS.includes(getEventIdByName(value));
@@ -54,14 +51,14 @@ const CLUSTERS = [
     events: []
   },
   {
-    name: "Business Management & Administration",
+    name: "Business Management + Administration",
     color: "#f5c400",
     glow: "rgba(245,196,0,0.2)",
     folder: "business_management",
     events: [
       { name: "Business Law and Ethics Team Decision Making", type: "tdm" },
       { name: "Human Resources Management Series",           type: "series" },
-      { name: "Business Services Operations Research",        type: "operations" },
+      { name: "Principles of Business Management and Administration", type: "principles" },
     ]
   },
   {
@@ -83,23 +80,23 @@ const CLUSTERS = [
       { name: "Financial Services Team Decision Making", type: "tdm" },
       { name: "Accounting Application Series",           type: "series" },
       { name: "Business Finance Series",                 type: "series" },
-      { name: "Finance Operations Research",             type: "operations" },
       { name: "Financial Consulting",                    type: "exam" },
+      { name: "Principles of Finance",                   type: "principles" },
     ]
   },
   {
-    name: "Hospitality & Tourism",
+    name: "Hospitality + Tourism",
     color: "#38bdf8",
     glow: "rgba(56,189,248,0.2)",
-    folder: "hospitality_tourism",
+    folder: "hospitality",
     events: [
       { name: "Hospitality Services Team Decision Making",          type: "tdm" },
       { name: "Hotel and Lodging Management Series",                type: "series" },
       { name: "Travel and Tourism Team Decision Making",            type: "tdm" },
       { name: "Quick Serve Restaurant Management Series",           type: "series" },
       { name: "Restaurant and Food Service Management Series",      type: "series" },
-      { name: "Hospitality and Tourism Operations Research",        type: "operations" },
-      { name: "Hospitality and Tourism Professional Selling",       type: "series" },
+      { name: "Hospitality and Tourism Professional Selling",       type: "exam" },
+      { name: "Principles of Hospitality and Tourism",              type: "principles" },
     ]
   },
   {
@@ -111,17 +108,18 @@ const CLUSTERS = [
       { name: "Buying and Merchandising Team Decision Making",             type: "tdm" },
       { name: "Marketing Management Team Decision Making",                 type: "tdm" },
       { name: "Sports and Entertainment Marketing Team Decision Making",   type: "tdm" },
-      { name: "Apparel and Accessories Marketing",                         type: "series" },
-      { name: "Automotive Services Marketing",                             type: "series" },
+      { name: "Apparel and Accessories Marketing Series",                  type: "series" },
+      { name: "Automotive Services Marketing Series",                      type: "series" },
       { name: "Business Services Marketing Series",                        type: "series" },
       { name: "Food Marketing Series",                                     type: "series" },
+      { name: "Integrated Marketing Campaign-Event",                       type: "exam" },
+      { name: "Integrated Marketing Campaign-Product",                     type: "exam" },
+      { name: "Integrated Marketing Campaign-Service",                     type: "exam" },
       { name: "Marketing Communications Series",                           type: "series" },
       { name: "Retail Merchandising Series",                               type: "series" },
       { name: "Sports and Entertainment Marketing Series",                 type: "series" },
-      { name: "Buying and Merchandising Operations Research",              type: "operations" },
-      { name: "Sports and Entertainment Marketing Operations Research",    type: "operations" },
-      { name: "Prepared Event",                                            type: "exam" },
-      { name: "Professional Selling",                                      type: "series" },
+      { name: "Professional Selling",                                      type: "exam" },
+      { name: "Principles of Marketing",                                   type: "principles" },
     ]
   },
   {
@@ -131,20 +129,11 @@ const CLUSTERS = [
     folder: "personal_finance",
     events: []
   },
-  {
-    name: "Principles",
-    color: "#a78bfa",
-    glow: "rgba(167,139,250,0.2)",
-    folder: "principles",
-    events: [
-      { name: "Principles of Business Management and Administration", type: "principles" },
-      { name: "Principles of Entrepreneurship",                       type: "principles" },
-      { name: "Principles of Finance",                                type: "principles" },
-      { name: "Principles of Hospitality",                            type: "principles" },
-      { name: "Principles of Marketing",                              type: "principles" },
-    ]
-  }
 ];
+
+const BETA_EVENT_IDS = Object.freeze(CLUSTERS.flatMap((cluster) =>
+  cluster.events.map((event) => getEventIdByName(typeof event === "string" ? event : event.name))
+));
 
 /**
  * Look up a cluster object by its name.
