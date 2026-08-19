@@ -63,8 +63,8 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn("Act as an adversarial instructional reviewer", PIPELINE)
         self.assertIn('"verdict":"pass|correct|uncertain"', PIPELINE)
         self.assertIn("def resolve_classification", PIPELINE)
-        self.assertIn("classifier_floor >= 0.80", PIPELINE)
-        self.assertIn("reviewer.get(\"confidence\", 0) >= 0.85", PIPELINE)
+        self.assertIn("def sanitize_reviewer", PIPELINE)
+        self.assertIn("recommended the same values", PIPELINE)
         self.assertIn("final_result, validation, needs_review", PIPELINE)
         self.assertIn("learner_action and deca_action are incompatible", PIPELINE)
 
@@ -78,10 +78,14 @@ class ContentOperationsContractTests(unittest.TestCase):
     def test_admin_review_is_fast_and_keyboard_driven(self):
         self.assertIn('id="review-panel"', HTML)
         self.assertIn('id="process-kpis"', HTML)
-        self.assertIn('event.key.toLowerCase() === "a"', JS)
+        self.assertIn("function isEditableTarget(target)", JS)
+        self.assertIn("if (isEditableTarget(event.target)) return;", JS)
+        self.assertIn('if (key === "a")', JS)
         self.assertIn('["1", "2"].includes(event.key)', JS)
-        self.assertIn('event.key.toLowerCase() === "s"', JS)
+        self.assertIn('key === "s"', JS)
         self.assertIn("function escHtml(value)", JS)
+        self.assertIn('body: JSON.stringify({ action, choice: selectedChoice })', JS)
+        self.assertIn("saveReview(\"approve\")", JS)
 
     def test_approved_classification_drives_lessons_with_fallback(self):
         audit_ops = (ROOT / "app" / "audit_ops.py").read_text(encoding="utf-8")

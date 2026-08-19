@@ -1,5 +1,7 @@
 let currentReview = null;
-let selectedArchetype = "";
+let currentReviewDecision = null;
+let selectedChoice = "current";
+let reviewBusy = false;
 let refreshTimer = null;
 let currentLessonAudit = null;
 let currentQuestionImport = null;
@@ -54,6 +56,10 @@ function renderDashboard(data) {
   $("batch-approved").textContent = batch?.auto_approved_count ?? 0;
   $("batch-review").textContent = batch?.needs_review_count ?? 0;
   $("batch-failed").textContent = batch?.failed_count ?? 0;
+  $("retry-failed").disabled = !(data.failed_processing);
+  $("review-items").disabled = !(summary.needs_review);
+  $("auto-resolve-reviews").disabled = !(summary.needs_review);
+  $("process-kpis").disabled = batch && ["queued", "processing"].includes(batch.status);
   clearTimeout(refreshTimer);
   if (batch && ["queued", "processing"].includes(batch.status)) refreshTimer = window.setTimeout(loadClassificationDashboard, 5000);
 }
@@ -446,16 +452,17 @@ function appendPreviewSection(parent, title, body) {
   parent.append(heading, textNode);
 }
 
-function renderLessonAudit(item) {
+function renderLessonAudit(item, remaining) {
   currentLessonAudit = item;
   Object.keys(lessonAuditScores).forEach((key) => delete lessonAuditScores[key]);
   if (!item) {
     $("lesson-audit-review").hidden = true;
     showMessage("The lesson audit inbox is clear.");
+    loadLessonAuditDashboard();
     return;
   }
   $("lesson-audit-review").hidden = false;
-  $("lesson-audit-meta").textContent = `${item.complexity} · ${String(item.skill_type).replaceAll("_", " ")}`;
+  $("lesson-audit-meta").textContent = `${remaining} remaining · ${item.complexity} · ${String(item.skill_type).replaceAll("_", " ")}`;
   $("lesson-audit-title").textContent = `${item.kpi?.code || item.kpi_id} — ${item.kpi?.name || "Lesson preview"}`;
   const lesson = item.generated_lesson || {};
   const preview = $("lesson-audit-preview");
@@ -493,7 +500,7 @@ function renderLessonAudit(item) {
 async function loadNextLessonAudit() {
   try {
     const data = await readJson(await apiFetch("/api/admin/content-audits/review-next"));
-    renderLessonAudit(data.item);
+    renderLessonAudit(data.item, data.remaining || 0);
   } catch (error) { showMessage(error.message, true); }
 }
 
@@ -528,33 +535,46 @@ async function startBatch() {
 }
 
 async function retryFailed() {
+  const button = $("retry-failed");
+  button.disabled = true;
   showMessage("Queuing failed classifications…");
   try {
     const data = await readJson(await apiFetch("/api/admin/content-operations/retry-failed", { method: "POST" }));
     showMessage(data.queued ? `${data.queued} failed KPIs queued again.` : "No failed classifications to retry.");
-    await loadDashboard();
   } catch (error) { showMessage(error.message, true); }
+  await loadDashboard();
 }
 
 async function autoResolveReviews() {
-  showMessage("AI is challenging and repairing the next review items…");
+  const button = $("auto-resolve-reviews");
+  button.disabled = true;
+  showMessage("Resolving review items that do not need a human decision…");
   try {
     const data = await readJson(await apiFetch("/api/admin/content-operations/auto-resolve-review", { method: "POST" }));
-    showMessage(data.queued ? `${data.queued} review items queued for AI resolution.` : "The review queue is clear.");
-    await loadClassificationDashboard();
+    showMessage(data.resolved ? `Auto-resolved ${data.resolved} obvious review items.` : "Nothing left that can be auto-resolved; remaining items need a human decision.");
   } catch (error) { showMessage(error.message, true); }
+  await loadClassificationDashboard();
 }
 
-function chooseOption(archetype) {
-  selectedArchetype = archetype;
+function prettyField(value) {
+  return String(value || "—").replaceAll("_", " ");
+}
+
+function fieldGrid(fields) {
+  return fields.map(([label, value]) => `<div><strong>${escHtml(prettyField(value))}</strong><span>${escHtml(label)}</span></div>`).join("");
+}
+
+function chooseOption(choice) {
+  selectedChoice = choice;
   document.querySelectorAll(".review-option").forEach((button) => {
-    button.classList.toggle("selected", button.dataset.archetype === archetype);
+    button.classList.toggle("selected", button.dataset.choice === choice);
   });
 }
 
-function renderReview(item, remaining) {
+function renderReview(item, remaining, decision) {
   currentReview = item;
-  selectedArchetype = item?.primary_archetype || "";
+  currentReviewDecision = decision || null;
+  selectedChoice = decision?.recommended ? "recommended" : "current";
   if (!item) {
     $("review-panel").hidden = true;
     showMessage("The classification review inbox is clear.");
@@ -566,42 +586,65 @@ function renderReview(item, remaining) {
   $("review-code").textContent = item.kpi?.code || item.kpi_id;
   $("review-name").textContent = item.kpi?.name || "Unnamed KPI";
   $("review-meta").textContent = [item.kpi?.cluster, item.kpi?.instructional_area].filter(Boolean).join(" • ");
-  const fields = [["Skill", item.skill_type], ["Complexity", item.complexity], ["Archetype", item.primary_archetype], ["Learner action", item.learner_action], ["DECA action", item.deca_action], ["Certainty", item.certainty]];
-  $("classification-grid").innerHTML = fields.map(([label, value]) => `<div><strong>${escHtml(String(value || "—").replaceAll("_", " "))}</strong><span>${escHtml(label)}</span></div>`).join("");
-  const reviewer = item.reviewer_result || {};
-  const disagreements = item.deterministic_check?.disagreements || [];
-  $("review-reason").textContent = reviewer.reason || item.ambiguity_reason || (disagreements.length ? `Classifier and deterministic check disagree on ${disagreements.join(", ")}.` : item.classification_reason);
-  const options = [item.primary_archetype, reviewer.recommended_archetype, item.alternative_archetype, item.deterministic_check?.primary_archetype]
-    .filter((value, index, values) => value && values.indexOf(value) === index).slice(0, 2);
+  const current = decision?.current || item;
+  $("review-current").innerHTML = fieldGrid([
+    ["Skill", current.skill_type],
+    ["Complexity", current.complexity],
+    ["Archetype", current.primary_archetype],
+    ["Learner action", current.learner_action],
+    ["DECA action", current.deca_action],
+  ]);
+  $("review-reason").textContent = decision?.problem || item.ambiguity_reason || item.classification_reason || "Needs a human decision.";
+  const changes = decision?.changes || [];
+  $("review-recommended-wrap").hidden = !changes.length;
+  $("review-changes").innerHTML = changes.map((change) => `<div class="review-change"><strong>${escHtml(prettyField(change.field))}</strong><span>${escHtml(prettyField(change.from))} → ${escHtml(prettyField(change.to))}</span></div>`).join("");
+  const options = [{ id: "current", label: "Keep current", detail: prettyField(current.primary_archetype) }];
+  if (decision?.recommended) {
+    options.push({ id: "recommended", label: "Apply recommended", detail: prettyField(decision.recommended.primary_archetype) });
+  }
   $("review-options").innerHTML = "";
   options.forEach((option, index) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "review-option" + (option === selectedArchetype ? " selected" : "");
-    button.dataset.archetype = option;
-    button.textContent = `${index + 1}. ${option.replaceAll("_", " ")}`;
-    button.addEventListener("click", () => chooseOption(option));
+    button.className = "review-option" + (option.id === selectedChoice ? " selected" : "");
+    button.dataset.choice = option.id;
+    button.innerHTML = `${index + 1}. ${escHtml(option.label)}<small>${escHtml(option.detail)}</small>`;
+    button.addEventListener("click", () => chooseOption(option.id));
     $("review-options").appendChild(button);
   });
+  $("approve-review").disabled = false;
+  $("skip-review").disabled = false;
   window.scrollTo({ top: $("review-panel").offsetTop - 70, behavior: "smooth" });
 }
 
 async function loadNextReview() {
   try {
     const data = await readJson(await apiFetch("/api/admin/content-operations/review-next"));
-    renderReview(data.item, data.remaining || 0);
+    renderReview(data.item, data.remaining || 0, data.decision);
   } catch (error) { showMessage(error.message, true); }
 }
 
 async function saveReview(action) {
-  if (!currentReview) return;
+  if (!currentReview || reviewBusy) return;
+  reviewBusy = true;
+  $("approve-review").disabled = true;
+  $("skip-review").disabled = true;
   try {
     await readJson(await apiFetch(`/api/admin/content-operations/review/${encodeURIComponent(currentReview.kpi_id)}`, {
       method: "PATCH", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action, primary_archetype: action === "approve" && selectedArchetype !== currentReview.primary_archetype ? selectedArchetype : "" }),
+      body: JSON.stringify({ action, choice: selectedChoice }),
     }));
     await loadNextReview();
-  } catch (error) { showMessage(error.message, true); }
+    await loadClassificationDashboard();
+  } catch (error) {
+    showMessage(error.message, true);
+  } finally {
+    reviewBusy = false;
+    if (currentReview) {
+      $("approve-review").disabled = false;
+      $("skip-review").disabled = false;
+    }
+  }
 }
 
 function showAdminTab(tabName) {
@@ -635,7 +678,7 @@ $("retry-failed").addEventListener("click", retryFailed);
 $("review-items").addEventListener("click", loadNextReview);
 $("approve-review").addEventListener("click", () => saveReview("approve"));
 $("skip-review").addEventListener("click", () => saveReview("skip"));
-$("close-review").addEventListener("click", () => { $("review-panel").hidden = true; });
+$("close-review").addEventListener("click", () => { $("review-panel").hidden = true; loadClassificationDashboard(); });
 $("start-lesson-audit").addEventListener("click", startLessonAudit);
 $("review-lesson-audits").addEventListener("click", loadNextLessonAudit);
 $("save-lesson-audit").addEventListener("click", saveLessonAudit);
@@ -682,18 +725,37 @@ $("sources-list").addEventListener("click", (event) => {
   const saveButton = event.target.closest(".source-save");
   if (saveButton) saveSource(saveButton.closest(".source-card"));
 });
+function isEditableTarget(target) {
+  if (!target || target === document.body) return false;
+  const tag = String(target.tagName || "").toLowerCase();
+  return target.isContentEditable || ["input", "textarea", "select"].includes(tag);
+}
+
 document.addEventListener("keydown", (event) => {
-  if ($("review-panel").hidden || !currentReview) return;
-  if (event.key.toLowerCase() === "a") saveReview("approve");
-  if (event.key.toLowerCase() === "s") saveReview("skip");
-  if (["1", "2"].includes(event.key)) {
+  if ($("review-panel").hidden || !currentReview || reviewBusy) return;
+  if (isEditableTarget(event.target)) return;
+  const key = event.key.toLowerCase();
+  if (key === "a") {
+    event.preventDefault();
+    saveReview("approve");
+  } else if (key === "s") {
+    event.preventDefault();
+    saveReview("skip");
+  } else if (["1", "2"].includes(event.key)) {
     const option = document.querySelectorAll(".review-option")[Number(event.key) - 1];
-    if (option) chooseOption(option.dataset.archetype);
+    if (option) {
+      event.preventDefault();
+      chooseOption(option.dataset.choice);
+    }
   }
 });
 
 requireAuth().then((user) => {
   if (!user) return;
   initTopbar(user);
+  if (!isAdminEmail(user.email)) {
+    document.querySelector(".main-shell").innerHTML = "<section class=\"panel\"><p>Admin access is required.</p></section>";
+    return;
+  }
   loadDashboard();
 });

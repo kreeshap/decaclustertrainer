@@ -40,6 +40,21 @@ DECA_ACTION_ALIASES = {
     "describe": "explain",
 }
 
+COMPARE_FIELDS = ("skill_type", "complexity", "primary_archetype", "learner_action", "deca_action")
+ACTION_COMPATIBILITY = {
+    "identify": {"identify", "explain"},
+    "classify": {"identify", "analyze"},
+    "predict": {"analyze", "evaluate"},
+    "choose": {"recommend", "evaluate"},
+    "rank": {"evaluate", "recommend"},
+    "sequence": {"demonstrate", "develop"},
+    "calculate": {"calculate", "analyze"},
+    "diagnose": {"analyze", "evaluate"},
+    "compare": {"analyze", "evaluate", "explain"},
+    "respond": {"respond", "demonstrate"},
+    "justify": {"justify", "recommend", "evaluate"},
+}
+
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
@@ -221,16 +236,105 @@ def classify_with_ai(kpi: dict) -> tuple[dict, str]:
     return _validate_classification(raw), model or GEMINI_MODEL
 
 
+def snapshot_fields(row: dict) -> dict:
+    return {field: row.get(field) for field in COMPARE_FIELDS}
+
+
+def fields_differ(left: dict, right: dict) -> bool:
+    return any(left.get(field) != right.get(field) for field in COMPARE_FIELDS)
+
+
+def compatibility_issues(classification: dict) -> list[str]:
+    issues = []
+    allowed = ACTION_COMPATIBILITY.get(classification.get("learner_action"), set())
+    if classification.get("deca_action") not in allowed:
+        issues.append("learner_action and deca_action are incompatible")
+    return issues
+
+
+def merge_classification(base: dict, overlay: dict | None, reason: str | None = None) -> dict:
+    candidate = {**base, **(overlay or {})}
+    if reason and len(reason.strip()) >= 20:
+        candidate["classification_reason"] = reason
+    if not candidate.get("recommended_interactions"):
+        candidate["recommended_interactions"] = base.get("recommended_interactions") or ["choose"]
+    if not candidate.get("classification_reason"):
+        candidate["classification_reason"] = base.get("classification_reason") or "Classification updated during review."
+    if not candidate.get("certainty"):
+        candidate["certainty"] = base.get("certainty") or "medium"
+    if "field_confidence" not in candidate:
+        candidate["field_confidence"] = base.get("field_confidence") or {}
+    return _validate_classification(candidate)
+
+
 def deterministic_disagreements(kpi: dict, ai_result: dict) -> tuple[dict, list[str]]:
     fallback = classify_kpi(kpi["name"])
-    compared = ("skill_type", "complexity", "primary_archetype", "learner_action", "deca_action")
-    disagreements = [field for field in compared if ai_result.get(field) != fallback.get(field)]
+    disagreements = [field for field in COMPARE_FIELDS if ai_result.get(field) != fallback.get(field)]
     return fallback, disagreements
+
+
+def sanitize_reviewer(raw: object, classification: dict) -> dict:
+    """Drop contradictory or malformed reviewer output before it reaches admins."""
+    if not isinstance(raw, dict):
+        return {
+            "verdict": "uncertain",
+            "issues": ["reviewer_malformed"],
+            "corrected": None,
+            "confidence": 0.0,
+            "recommended_archetype": None,
+            "reason": "Reviewer returned invalid data",
+        }
+    verdict = str(raw.get("verdict") or "uncertain").strip().lower()
+    if verdict not in {"pass", "correct", "uncertain"}:
+        verdict = "uncertain"
+    issues = [str(value)[:300] for value in (raw.get("issues") or []) if str(value).strip()][:6]
+    reason = str(raw.get("reason") or "").strip() or "No reviewer reason supplied."
+    try:
+        confidence = max(0.0, min(1.0, float(raw.get("confidence") or 0)))
+    except (TypeError, ValueError):
+        confidence = 0.0
+        issues.append("reviewer_confidence_malformed")
+    corrected_raw = raw.get("corrected") if isinstance(raw.get("corrected"), dict) else None
+    corrected = None
+    recommended_archetype = None
+    if verdict == "correct":
+        if not corrected_raw:
+            verdict = "uncertain"
+            issues.append("reviewer correction was missing")
+        else:
+            try:
+                corrected = merge_classification(classification, corrected_raw, reason)
+                if not fields_differ(classification, corrected):
+                    verdict = "uncertain"
+                    issues.append("reviewer criticized the classification but recommended the same values")
+                    corrected = None
+                elif compatibility_issues(corrected):
+                    verdict = "uncertain"
+                    issues.extend(compatibility_issues(corrected))
+                    issues.append("recommended correction is internally inconsistent")
+                    corrected = None
+                else:
+                    recommended_archetype = corrected["primary_archetype"]
+            except (TypeError, ValueError) as error:
+                verdict = "uncertain"
+                issues.append(f"invalid reviewer correction: {error}")
+                corrected = None
+    return {
+        "verdict": verdict,
+        "issues": list(dict.fromkeys(issues)),
+        "corrected": {field: corrected[field] for field in (*COMPARE_FIELDS, "recommended_interactions", "classification_reason", "certainty")} if corrected else None,
+        "confidence": confidence,
+        "recommended_archetype": recommended_archetype,
+        "reason": reason,
+    }
 
 
 def skeptical_review(kpi: dict, classification: dict, deterministic: dict, disagreements: list[str]) -> dict:
     prompt = f"""Act as an adversarial instructional reviewer. Assume the classifier may be wrong and try to prove it.
-Check KPI-verb/action alignment, archetype fit, complexity, and contradictions. If materially wrong, return a complete corrected classification using only the classifier's allowed values.
+Check KPI-verb/action alignment, archetype fit, complexity, and contradictions.
+If the classification is fine, verdict must be pass and corrected must be null.
+If it is materially wrong, verdict must be correct and corrected must be a complete replacement that DIFFERS from the current classification.
+Never criticize a field while recommending the same value for that field.
 
 KPI: {kpi['name']}
 AI classification: {json.dumps(classification, separators=(',', ':'))}
@@ -247,58 +351,176 @@ Return only JSON:
         ("Gemini", lambda: call_gemini_json(prompt, max_tokens=500, temperature=0.1)),
     ], "classification")
     if error or not isinstance(raw, dict):
-        return {"verdict": "uncertain", "issues": ["reviewer_unavailable"], "corrected": None, "confidence": 0.0, "recommended_archetype": None, "reason": error or "Reviewer returned invalid data"}
-    verdict = str(raw.get("verdict") or "review").strip().lower()
-    if verdict not in {"pass", "correct", "uncertain"}:
-        verdict = "uncertain"
-    corrected = raw.get("corrected") if isinstance(raw.get("corrected"), dict) else None
-    confidence = max(0.0, min(1.0, float(raw.get("confidence") or 0)))
-    return {
-        "verdict": verdict,
-        "issues": [str(value)[:300] for value in (raw.get("issues") or [])][:6],
-        "corrected": corrected,
-        "confidence": confidence,
-        "recommended_archetype": corrected.get("primary_archetype") if corrected else None,
-        "reason": str(raw.get("reason") or "").strip() or "No reviewer reason supplied.",
-    }
+        raw = {"verdict": "uncertain", "issues": ["reviewer_unavailable"], "corrected": None, "confidence": 0.0, "reason": error or "Reviewer returned invalid data"}
+    return sanitize_reviewer(raw, classification)
 
 
 def resolve_classification(classification: dict, reviewer: dict) -> tuple[dict, dict, bool]:
-    """Apply a confident adversarial repair; escalate only unresolved contradictions."""
+    """Apply a structurally valid repair; escalate only genuine ambiguity or contradictions."""
+    reviewer = sanitize_reviewer(reviewer, classification)
     final = dict(classification)
-    issues = []
+    issues = list(reviewer.get("issues") or [])
     repaired = False
-    if reviewer["verdict"] == "correct":
-        if reviewer["confidence"] < 0.85 or not reviewer.get("corrected"):
-            issues.append("reviewer correction was incomplete or low confidence")
-        else:
-            try:
-                candidate = {**classification, **reviewer["corrected"]}
-                candidate["classification_reason"] = reviewer.get("reason") or classification["classification_reason"]
-                final = _validate_classification(candidate)
-                repaired = True
-            except (TypeError, ValueError) as error:
-                issues.append(f"invalid reviewer correction: {error}")
-    elif reviewer["verdict"] != "pass":
-        issues.append("reviewer could not decide")
+    if reviewer["verdict"] == "correct" and reviewer.get("corrected"):
+        try:
+            final = merge_classification(classification, reviewer["corrected"], reviewer.get("reason"))
+            repaired = fields_differ(classification, final)
+            if not repaired:
+                issues.append("reviewer criticized the classification but recommended the same values")
+        except (TypeError, ValueError) as error:
+            issues.append(f"invalid reviewer correction: {error}")
+            final = dict(classification)
+    elif reviewer["verdict"] == "uncertain":
+        if "reviewer could not decide" not in issues:
+            issues.append("reviewer could not decide")
 
-    compatible = {
-        "identify": {"identify", "explain"}, "classify": {"identify", "analyze"},
-        "predict": {"analyze", "evaluate"}, "choose": {"recommend", "evaluate"},
-        "rank": {"evaluate", "recommend"}, "sequence": {"demonstrate", "develop"},
-        "calculate": {"calculate", "analyze"}, "diagnose": {"analyze", "evaluate"},
-        "compare": {"analyze", "evaluate", "explain"}, "respond": {"respond", "demonstrate"},
-        "justify": {"justify", "recommend", "evaluate"},
+    issues.extend(compatibility_issues(final))
+    issues = list(dict.fromkeys(issues))
+    auto_approve = (reviewer["verdict"] == "pass" and not compatibility_issues(classification)) or (
+        repaired and not compatibility_issues(final)
+    )
+    validator = {
+        "issues": issues,
+        "repaired": repaired,
+        "auto_approve": auto_approve,
+        "decision_basis": "reviewer_pass" if reviewer["verdict"] == "pass" else ("valid_repair" if repaired else "manual_review"),
     }
-    if final["deca_action"] not in compatible.get(final["learner_action"], set()):
-        issues.append("learner_action and deca_action are incompatible")
-    if repaired and all(final.get(key) == classification.get(key) for key in ("skill_type", "complexity", "primary_archetype", "learner_action", "deca_action")):
-        issues.append("reviewer criticized the unchanged classification")
+    return final, validator, not auto_approve
 
-    classifier_floor = min(classification.get("field_confidence", {}).values() or [0])
-    high_confidence = classifier_floor >= 0.80 and reviewer.get("confidence", 0) >= 0.85
-    validator = {"issues": issues, "repaired": repaired, "classifier_confidence_floor": classifier_floor}
-    return final, validator, not (high_confidence and not issues)
+
+def build_review_decision(row: dict) -> dict:
+    current = {
+        **snapshot_fields(row),
+        "secondary_archetype": row.get("secondary_archetype"),
+        "recommended_interactions": row.get("recommended_interactions") or [],
+        "certainty": row.get("certainty"),
+        "classification_reason": row.get("classification_reason"),
+    }
+    reviewer = sanitize_reviewer(row.get("reviewer_result") or {}, current)
+    recommended = None
+    if reviewer.get("corrected"):
+        try:
+            candidate = merge_classification(current, reviewer["corrected"], reviewer.get("reason"))
+            if fields_differ(current, candidate) and not compatibility_issues(candidate):
+                recommended = snapshot_fields(candidate)
+                recommended["recommended_interactions"] = candidate.get("recommended_interactions")
+                recommended["certainty"] = candidate.get("certainty")
+        except (TypeError, ValueError):
+            recommended = None
+    deterministic = row.get("deterministic_check") or {}
+    if recommended is None:
+        try:
+            fallback = {field: deterministic.get(field) for field in COMPARE_FIELDS if deterministic.get(field)}
+            if fallback:
+                candidate = merge_classification(current, fallback, "Deterministic instructional fallback.")
+                if fields_differ(current, candidate) and not compatibility_issues(candidate):
+                    recommended = snapshot_fields(candidate)
+                    recommended["source"] = "deterministic"
+        except (TypeError, ValueError):
+            recommended = None
+    changes = []
+    if recommended:
+        for field in COMPARE_FIELDS:
+            if current.get(field) != recommended.get(field):
+                changes.append({"field": field, "from": current.get(field), "to": recommended.get(field)})
+    problem_parts = [item for item in (reviewer.get("issues") or []) if item not in {"reviewer could not decide"}]
+    if reviewer.get("reason") and reviewer["verdict"] != "pass":
+        problem_parts.append(reviewer["reason"])
+    elif deterministic.get("issues"):
+        problem_parts.extend(str(item) for item in deterministic["issues"])
+    elif deterministic.get("disagreements"):
+        problem_parts.append("Classifier and deterministic check disagree on " + ", ".join(deterministic["disagreements"]) + ".")
+    problem = " ".join(dict.fromkeys(problem_parts)).strip() or "This classification needs a human decision."
+    original_ai = deterministic.get("original_ai") or {}
+    already_applied_repair = bool(original_ai) and fields_differ(original_ai, current) and not recommended
+    auto_resolvable = False
+    auto_resolve_reason = ""
+    apply_fields = snapshot_fields(current)
+    if reviewer["verdict"] == "pass" and not compatibility_issues(current):
+        auto_resolvable = True
+        auto_resolve_reason = "Reviewer agreed and deterministic checks passed."
+    elif recommended and reviewer["verdict"] == "correct":
+        auto_resolvable = True
+        auto_resolve_reason = "Applied a structurally valid reviewer correction."
+        apply_fields = {field: recommended[field] for field in COMPARE_FIELDS}
+        if recommended.get("recommended_interactions"):
+            apply_fields["recommended_interactions"] = recommended["recommended_interactions"]
+    elif already_applied_repair and not compatibility_issues(current):
+        auto_resolvable = True
+        auto_resolve_reason = "Reviewer repair already applied; no remaining contradiction."
+    if any("same values" in item for item in reviewer.get("issues") or []):
+        auto_resolvable = False
+        auto_resolve_reason = ""
+    return {
+        "current": snapshot_fields(current),
+        "recommended": {field: recommended[field] for field in COMPARE_FIELDS} if recommended else None,
+        "changes": changes,
+        "problem": problem,
+        "reviewer": reviewer,
+        "auto_resolvable": auto_resolvable,
+        "auto_resolve_reason": auto_resolve_reason,
+        "apply_fields": apply_fields,
+        "choice_ids": ["current"] + (["recommended"] if recommended else []),
+    }
+
+
+def apply_review_choice(row: dict, choice: str) -> dict:
+    decision = build_review_decision(row)
+    if choice == "recommended":
+        if not decision["recommended"]:
+            raise ValueError("No valid recommended correction is available")
+        payload = {field: decision["recommended"][field] for field in COMPARE_FIELDS}
+        payload["manual_override"] = True
+        return payload
+    if choice in {"", "current", "approve"}:
+        return {"manual_override": True}
+    raise ValueError("choice must be current or recommended")
+
+
+def retryable_failed_kpi_ids(jobs: list[dict]) -> list[str]:
+    latest: dict[str, dict] = {}
+    for job in sorted(jobs, key=lambda row: str(row.get("created_at") or "")):
+        kpi_id = job.get("kpi_id")
+        if kpi_id:
+            latest[kpi_id] = job
+    return [kpi_id for kpi_id, job in latest.items() if job.get("status") == "failed"]
+
+
+def auto_resolve_existing_reviews(limit: int = 50) -> dict:
+    status, rows = _supabase_svc(
+        "/kpi_classifications",
+        params={"review_status": "eq.needs_review", "select": "*", "order": "updated_at.asc", "limit": str(limit)},
+    )
+    if status != 200 or not isinstance(rows, list):
+        raise RuntimeError(f"Review queue could not be loaded: {rows}")
+    resolved = 0
+    for row in rows:
+        decision = build_review_decision(row)
+        if not decision["auto_resolvable"]:
+            continue
+        deterministic = dict(row.get("deterministic_check") or {})
+        deterministic.update({
+            "auto_resolved": True,
+            "auto_resolve_reason": decision["auto_resolve_reason"],
+            "auto_resolved_at": utc_now(),
+        })
+        payload = {
+            **decision["apply_fields"],
+            "review_status": "auto_approved",
+            "manual_override": False,
+            "reviewer_result": decision["reviewer"],
+            "deterministic_check": deterministic,
+            "updated_at": utc_now(),
+            "review_deferred_at": None,
+        }
+        save_status, save_data = _supabase_svc(
+            "/kpi_classifications", method="PATCH", payload=payload,
+            params={"kpi_id": f"eq.{row['kpi_id']}", "review_status": "eq.needs_review"},
+            prefer="return=representation",
+        )
+        if save_status == 200 and isinstance(save_data, list) and save_data:
+            resolved += 1
+    return {"resolved": resolved, "inspected": len(rows)}
 
 
 def _process_job(job: dict, kpi: dict) -> str:
@@ -321,7 +543,12 @@ def _process_job(job: dict, kpi: dict) -> str:
                 "learner_action", "deca_action", "recommended_interactions",
                 "classification_reason", "certainty", "ambiguity_reason", "alternative_archetype",
             )},
-            "deterministic_check": {**deterministic, "disagreements": disagreements, **validation},
+            "deterministic_check": {
+                **deterministic,
+                "disagreements": disagreements,
+                **validation,
+                "original_ai": snapshot_fields(ai_result),
+            },
             "reviewer_result": reviewer,
             "classifier_version": CLASSIFIER_VERSION,
             "classifier_model": model,

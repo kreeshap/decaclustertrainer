@@ -40,7 +40,12 @@ body { background: var(--bg); color: var(--white); font-family: 'Barlow', sans-s
 .batch-grid div, .classification-grid div { border: 1px solid var(--border); border-radius: 7px; padding: 12px; }
 .batch-grid strong, .batch-grid span, .classification-grid strong, .classification-grid span { display: block; }
 .batch-grid span, .classification-grid span { color: var(--muted); font-size: .72rem; margin-top: 4px; text-transform: uppercase; }
-.review-panel { border-color: var(--cyan); }
+.review-block { margin: 16px 0; }
+.review-changes { display: grid; gap: 8px; }
+.review-change { border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; }
+.review-change strong { text-transform: capitalize; }
+.review-change span { color: var(--muted); }
+.review-option small { display: block; color: var(--muted); margin-top: 4px; text-transform: none; font-size: .72rem; }
 .review-topline { color: var(--muted); display: flex; justify-content: space-between; text-transform: uppercase; }
 .review-topline button, .text-action { background: transparent; border: 0; color: var(--muted); cursor: pointer; }
 .review-code { color: var(--cyan); font: 700 .85rem 'Barlow Condensed'; letter-spacing: .1em; margin-top: 22px; }

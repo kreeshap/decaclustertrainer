@@ -5,7 +5,16 @@ import uuid
 from flask import Blueprint, jsonify, request
 
 from ..auth_utils import get_current_user, is_admin
-from ..content_ops import ARCHETYPES, catalog_id, launch_batch, sync_kpi_catalog, utc_now
+from ..content_ops import (
+    apply_review_choice,
+    auto_resolve_existing_reviews,
+    build_review_decision,
+    catalog_id,
+    launch_batch,
+    retryable_failed_kpi_ids,
+    sync_kpi_catalog,
+    utc_now,
+)
 from ..content_quality import ContentQualityError, validate_exam_item
 from ..audit_ops import launch_audit_batch, select_audit_kpis
 from ..db import supabase_admin_request, supabase_storage_upload
@@ -89,14 +98,15 @@ def admin_content_operations():
         params={"select": "*", "order": "created_at.desc", "limit": "1"},
     )
     latest = batches[0] if batch_status == 200 and isinstance(batches, list) and batches else None
-    failed_status, failed = _supabase_svc(
+    jobs_status, jobs = _supabase_svc(
         "/kpi_classification_jobs",
-        params={"status": "eq.failed", "select": "id", "limit": "10000"},
+        params={"select": "kpi_id,status,created_at", "order": "created_at.asc", "limit": "10000"},
     )
+    failed_ids = retryable_failed_kpi_ids(jobs if jobs_status == 200 and isinstance(jobs, list) else [])
     return jsonify({
         "classification": _classification_summary(),
         "generated_content": _generated_content_summary(),
-        "failed_processing": len(failed) if failed_status == 200 and isinstance(failed, list) else 0,
+        "failed_processing": len(failed_ids),
         "latest_batch": latest,
     })
 
@@ -180,7 +190,12 @@ def admin_next_content_audit():
     item = rows[0]
     _, catalog = _supabase_svc("/kpi_catalog", params={"id": f"eq.{item['kpi_id']}", "select": "*", "limit": "1"})
     item["kpi"] = catalog[0] if catalog else {}
-    return jsonify({"item": item})
+    remaining_status, remaining_rows = _supabase_svc(
+        "/lesson_content_audits",
+        params={"generation_status": "eq.ready", "review_status": "eq.pending", "select": "id", "limit": "1000"},
+    )
+    remaining = len(remaining_rows) if remaining_status == 200 and isinstance(remaining_rows, list) else 1
+    return jsonify({"item": item, "remaining": remaining})
 
 
 @admin_bp.patch("/api/admin/content-audits/<audit_id>")
@@ -206,6 +221,8 @@ def admin_review_content_audit(audit_id):
     )
     if status != 200:
         return jsonify({"error": "Audit review could not be saved.", "detail": data}), 502
+    if not data:
+        return jsonify({"error": "This audit was already saved or is no longer pending."}), 409
     return jsonify({"ok": True, "review_status": review_status})
 
 
@@ -269,13 +286,13 @@ def admin_retry_failed_classifications():
     user, err = require_admin()
     if err:
         return err
-    status, rows = _supabase_svc(
+    status, jobs = _supabase_svc(
         "/kpi_classification_jobs",
-        params={"status": "eq.failed", "select": "kpi_id", "order": "completed_at.asc", "limit": "20"},
+        params={"select": "kpi_id,status,created_at", "order": "created_at.asc", "limit": "10000"},
     )
-    if status != 200 or not isinstance(rows, list):
+    if status != 200 or not isinstance(jobs, list):
         return jsonify({"error": "Failed jobs could not be loaded."}), 502
-    kpi_ids = list(dict.fromkeys(row["kpi_id"] for row in rows))
+    kpi_ids = retryable_failed_kpi_ids(jobs)[:20]
     if not kpi_ids:
         return jsonify({"ok": True, "queued": 0})
     try:
@@ -298,19 +315,11 @@ def admin_auto_resolve_classification_review():
         return jsonify({"error": "Batch state could not be loaded."}), 502
     if active:
         return jsonify({"error": "A classification batch is already running."}), 409
-    status, rows = _supabase_svc(
-        "/kpi_classifications",
-        params={"review_status": "eq.needs_review", "select": "kpi_id", "order": "updated_at.asc", "limit": "20"},
-    )
-    if status != 200 or not isinstance(rows, list):
-        return jsonify({"error": "Review queue could not be loaded."}), 502
-    if not rows:
-        return jsonify({"ok": True, "queued": 0})
     try:
-        batch = _create_classification_batch(user["id"], [row["kpi_id"] for row in rows])
-        return jsonify({"ok": True, "queued": len(rows), "batch": batch}), 202
+        result = auto_resolve_existing_reviews(50)
+        return jsonify({"ok": True, **result, "queued": 0})
     except Exception as error:
-        return jsonify({"error": "AI resolution batch could not be started.", "detail": str(error)}), 502
+        return jsonify({"error": "Review items could not be auto-resolved.", "detail": str(error)}), 502
 
 
 @admin_bp.get("/api/admin/content-operations/review-next")
@@ -325,13 +334,17 @@ def admin_next_classification_review():
     if status != 200 or not isinstance(rows, list):
         return jsonify({"error": "Review queue could not be loaded."}), 502
     if not rows:
-        return jsonify({"item": None})
+        return jsonify({"item": None, "remaining": 0, "decision": None})
     item = rows[0]
     catalog_status, catalog = _supabase_svc(
         "/kpi_catalog", params={"id": f"eq.{item['kpi_id']}", "select": "*", "limit": "1"}
     )
     item["kpi"] = catalog[0] if catalog_status == 200 and isinstance(catalog, list) and catalog else {}
-    return jsonify({"item": item, "remaining": _classification_summary()["needs_review"]})
+    return jsonify({
+        "item": item,
+        "remaining": _classification_summary()["needs_review"],
+        "decision": build_review_decision(item),
+    })
 
 
 @admin_bp.patch("/api/admin/content-operations/review/<path:kpi_id>")
@@ -346,26 +359,33 @@ def admin_review_classification(kpi_id):
             "/kpi_classifications", method="PATCH",
             payload={"review_deferred_at": utc_now(), "updated_at": utc_now()},
             params={"kpi_id": f"eq.{kpi_id}", "review_status": "eq.needs_review"},
-            prefer="return=minimal",
+            prefer="return=representation",
         )
         if status not in (200, 204):
             return jsonify({"error": "Classification could not be deferred.", "detail": data}), 502
+        if status == 200 and not data:
+            return jsonify({"error": "This review item is no longer pending."}), 409
         return jsonify({"ok": True})
     if action != "approve":
         return jsonify({"error": "action must be approve or skip"}), 400
+    current_status, current_rows = _supabase_svc(
+        "/kpi_classifications",
+        params={"kpi_id": f"eq.{kpi_id}", "review_status": "eq.needs_review", "select": "*", "limit": "1"},
+    )
+    if current_status != 200 or not isinstance(current_rows, list) or not current_rows:
+        return jsonify({"error": "This review item is no longer pending."}), 409
+    try:
+        choice_payload = apply_review_choice(current_rows[0], str(body.get("choice") or "current").strip().lower())
+    except ValueError as error:
+        return jsonify({"error": str(error)}), 400
     payload = {
+        **choice_payload,
         "review_status": "approved",
         "reviewed_by": user["id"],
         "reviewed_at": utc_now(),
         "updated_at": utc_now(),
         "review_deferred_at": None,
     }
-    selected = str(body.get("primary_archetype") or "").strip()
-    if selected and selected not in ARCHETYPES:
-        return jsonify({"error": "Unsupported primary_archetype"}), 400
-    if selected:
-        payload["primary_archetype"] = selected
-        payload["manual_override"] = True
     status, data = _supabase_svc(
         "/kpi_classifications", method="PATCH", payload=payload,
         params={"kpi_id": f"eq.{kpi_id}", "review_status": "eq.needs_review"},
@@ -373,7 +393,9 @@ def admin_review_classification(kpi_id):
     )
     if status != 200:
         return jsonify({"error": "Classification review could not be saved.", "detail": data}), 502
-    return jsonify({"ok": True, "classification": data[0] if isinstance(data, list) and data else None})
+    if not data:
+        return jsonify({"error": "Classification review could not be saved."}), 409
+    return jsonify({"ok": True, "classification": data[0] if isinstance(data, list) else None})
 
 
 # ─── Dashboard ────────────────────────────────────────────────────────────────
