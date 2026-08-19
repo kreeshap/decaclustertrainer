@@ -151,7 +151,8 @@ Return only JSON:
   "classification_reason": "One concise explanation of the cognitive demand.",
   "certainty": "high|medium|low",
   "ambiguity_reason": null,
-  "alternative_archetype": null
+  "alternative_archetype": null,
+  "field_confidence": {{"skill_type":0.0,"complexity":0.0,"primary_archetype":0.0,"learner_action":0.0,"deca_action":0.0}}
 }}"""
 
 
@@ -198,6 +199,11 @@ def _validate_classification(raw: object) -> dict:
         classification_reason=reason,
         ambiguity_reason=str(result.get("ambiguity_reason") or "").strip() or None,
     )
+    confidence = result.get("field_confidence") or {}
+    result["field_confidence"] = {
+        field: max(0.0, min(1.0, float(confidence.get(field, 0))))
+        for field in ("skill_type", "complexity", "primary_archetype", "learner_action", "deca_action")
+    }
     return result
 
 
@@ -223,8 +229,8 @@ def deterministic_disagreements(kpi: dict, ai_result: dict) -> tuple[dict, list[
 
 
 def skeptical_review(kpi: dict, classification: dict, deterministic: dict, disagreements: list[str]) -> dict:
-    prompt = f"""Act as a skeptical instructional reviewer. Try to find a material failure in this DECA KPI classification.
-Focus on cognitive-demand mismatch, cluster bias, quantitative requirements, communication treated as recall, process treated as definition recall, and archetype/action inconsistency.
+    prompt = f"""Act as an adversarial instructional reviewer. Assume the classifier may be wrong and try to prove it.
+Check KPI-verb/action alignment, archetype fit, complexity, and contradictions. If materially wrong, return a complete corrected classification using only the classifier's allowed values.
 
 KPI: {kpi['name']}
 AI classification: {json.dumps(classification, separators=(',', ':'))}
@@ -232,7 +238,7 @@ Deterministic check: {json.dumps(deterministic, separators=(',', ':'))}
 Disagreement fields: {json.dumps(disagreements)}
 
 Return only JSON:
-{{"verdict":"pass|review","issue":null,"recommended_archetype":null,"reason":"Concise reason"}}"""
+{{"verdict":"pass|correct|uncertain","issues":[],"corrected":null,"confidence":0.0,"reason":"Concise reason"}}"""
     messages = [{"role": "user", "content": prompt}]
     raw, error, _ = coordinator.run([
         ("Groq", lambda: call_groq(messages, model=GROQ_CLASSIFIER_MODEL, temperature=0.1, max_tokens=500)),
@@ -241,19 +247,58 @@ Return only JSON:
         ("Gemini", lambda: call_gemini_json(prompt, max_tokens=500, temperature=0.1)),
     ], "classification")
     if error or not isinstance(raw, dict):
-        return {"verdict": "review" if disagreements else "pass", "issue": "reviewer_unavailable", "recommended_archetype": deterministic.get("primary_archetype"), "reason": error or "Reviewer returned invalid data"}
+        return {"verdict": "uncertain", "issues": ["reviewer_unavailable"], "corrected": None, "confidence": 0.0, "recommended_archetype": None, "reason": error or "Reviewer returned invalid data"}
     verdict = str(raw.get("verdict") or "review").strip().lower()
-    if verdict not in {"pass", "review"}:
-        verdict = "review"
-    recommendation = raw.get("recommended_archetype")
-    if recommendation not in ARCHETYPES:
-        recommendation = None
+    if verdict not in {"pass", "correct", "uncertain"}:
+        verdict = "uncertain"
+    corrected = raw.get("corrected") if isinstance(raw.get("corrected"), dict) else None
+    confidence = max(0.0, min(1.0, float(raw.get("confidence") or 0)))
     return {
         "verdict": verdict,
-        "issue": str(raw.get("issue") or "").strip() or None,
-        "recommended_archetype": recommendation,
+        "issues": [str(value)[:300] for value in (raw.get("issues") or [])][:6],
+        "corrected": corrected,
+        "confidence": confidence,
+        "recommended_archetype": corrected.get("primary_archetype") if corrected else None,
         "reason": str(raw.get("reason") or "").strip() or "No reviewer reason supplied.",
     }
+
+
+def resolve_classification(classification: dict, reviewer: dict) -> tuple[dict, dict, bool]:
+    """Apply a confident adversarial repair; escalate only unresolved contradictions."""
+    final = dict(classification)
+    issues = []
+    repaired = False
+    if reviewer["verdict"] == "correct":
+        if reviewer["confidence"] < 0.85 or not reviewer.get("corrected"):
+            issues.append("reviewer correction was incomplete or low confidence")
+        else:
+            try:
+                candidate = {**classification, **reviewer["corrected"]}
+                candidate["classification_reason"] = reviewer.get("reason") or classification["classification_reason"]
+                final = _validate_classification(candidate)
+                repaired = True
+            except (TypeError, ValueError) as error:
+                issues.append(f"invalid reviewer correction: {error}")
+    elif reviewer["verdict"] != "pass":
+        issues.append("reviewer could not decide")
+
+    compatible = {
+        "identify": {"identify", "explain"}, "classify": {"identify", "analyze"},
+        "predict": {"analyze", "evaluate"}, "choose": {"recommend", "evaluate"},
+        "rank": {"evaluate", "recommend"}, "sequence": {"demonstrate", "develop"},
+        "calculate": {"calculate", "analyze"}, "diagnose": {"analyze", "evaluate"},
+        "compare": {"analyze", "evaluate", "explain"}, "respond": {"respond", "demonstrate"},
+        "justify": {"justify", "recommend", "evaluate"},
+    }
+    if final["deca_action"] not in compatible.get(final["learner_action"], set()):
+        issues.append("learner_action and deca_action are incompatible")
+    if repaired and all(final.get(key) == classification.get(key) for key in ("skill_type", "complexity", "primary_archetype", "learner_action", "deca_action")):
+        issues.append("reviewer criticized the unchanged classification")
+
+    classifier_floor = min(classification.get("field_confidence", {}).values() or [0])
+    high_confidence = classifier_floor >= 0.80 and reviewer.get("confidence", 0) >= 0.85
+    validator = {"issues": issues, "repaired": repaired, "classifier_confidence_floor": classifier_floor}
+    return final, validator, not (high_confidence and not issues)
 
 
 def _process_job(job: dict, kpi: dict) -> str:
@@ -267,22 +312,16 @@ def _process_job(job: dict, kpi: dict) -> str:
         ai_result, model = classify_with_ai(kpi)
         deterministic, disagreements = deterministic_disagreements(kpi, ai_result)
         reviewer = skeptical_review(kpi, ai_result, deterministic, disagreements)
-        ambiguous = bool(ai_result.get("ambiguity_reason") or ai_result.get("alternative_archetype"))
-        needs_review = (
-            ai_result["certainty"] != "high"
-            or ambiguous
-            or bool(disagreements)
-            or reviewer["verdict"] == "review"
-        )
+        final_result, validation, needs_review = resolve_classification(ai_result, reviewer)
         status = "needs_review" if needs_review else "auto_approved"
         payload = {
             "kpi_id": kpi["id"],
-            **{key: ai_result.get(key) for key in (
+            **{key: final_result.get(key) for key in (
                 "skill_type", "complexity", "primary_archetype", "secondary_archetype",
                 "learner_action", "deca_action", "recommended_interactions",
                 "classification_reason", "certainty", "ambiguity_reason", "alternative_archetype",
             )},
-            "deterministic_check": {**deterministic, "disagreements": disagreements},
+            "deterministic_check": {**deterministic, "disagreements": disagreements, **validation},
             "reviewer_result": reviewer,
             "classifier_version": CLASSIFIER_VERSION,
             "classifier_model": model,

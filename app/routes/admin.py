@@ -285,6 +285,34 @@ def admin_retry_failed_classifications():
         return jsonify({"error": "Retry batch could not be started.", "detail": str(error)}), 502
 
 
+@admin_bp.post("/api/admin/content-operations/auto-resolve-review")
+def admin_auto_resolve_classification_review():
+    user, err = require_admin()
+    if err:
+        return err
+    active_status, active = _supabase_svc(
+        "/kpi_classification_batches",
+        params={"status": "in.(queued,processing)", "select": "id", "limit": "1"},
+    )
+    if active_status != 200 or not isinstance(active, list):
+        return jsonify({"error": "Batch state could not be loaded."}), 502
+    if active:
+        return jsonify({"error": "A classification batch is already running."}), 409
+    status, rows = _supabase_svc(
+        "/kpi_classifications",
+        params={"review_status": "eq.needs_review", "select": "kpi_id", "order": "updated_at.asc", "limit": "20"},
+    )
+    if status != 200 or not isinstance(rows, list):
+        return jsonify({"error": "Review queue could not be loaded."}), 502
+    if not rows:
+        return jsonify({"ok": True, "queued": 0})
+    try:
+        batch = _create_classification_batch(user["id"], [row["kpi_id"] for row in rows])
+        return jsonify({"ok": True, "queued": len(rows), "batch": batch}), 202
+    except Exception as error:
+        return jsonify({"error": "AI resolution batch could not be started.", "detail": str(error)}), 502
+
+
 @admin_bp.get("/api/admin/content-operations/review-next")
 def admin_next_classification_review():
     _, err = require_admin()

@@ -59,6 +59,15 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn('"comply": "demonstrate"', PIPELINE)
         self.assertIn("DECA_ACTION_ALIASES.get(value, value)", PIPELINE)
 
+    def test_adversarial_review_repairs_confident_results_before_escalating(self):
+        self.assertIn("Act as an adversarial instructional reviewer", PIPELINE)
+        self.assertIn('"verdict":"pass|correct|uncertain"', PIPELINE)
+        self.assertIn("def resolve_classification", PIPELINE)
+        self.assertIn("classifier_floor >= 0.80", PIPELINE)
+        self.assertIn("reviewer.get(\"confidence\", 0) >= 0.85", PIPELINE)
+        self.assertIn("final_result, validation, needs_review", PIPELINE)
+        self.assertIn("learner_action and deca_action are incompatible", PIPELINE)
+
     def test_admin_batch_is_bounded_and_admin_protected(self):
         self.assertIn('@admin_bp.post("/api/admin/content-operations/process")', ADMIN)
         self.assertIn("min(int(body.get(\"limit\") or 20), 20)", ADMIN)

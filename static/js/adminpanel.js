@@ -536,6 +536,15 @@ async function retryFailed() {
   } catch (error) { showMessage(error.message, true); }
 }
 
+async function autoResolveReviews() {
+  showMessage("AI is challenging and repairing the next review items…");
+  try {
+    const data = await readJson(await apiFetch("/api/admin/content-operations/auto-resolve-review", { method: "POST" }));
+    showMessage(data.queued ? `${data.queued} review items queued for AI resolution.` : "The review queue is clear.");
+    await loadClassificationDashboard();
+  } catch (error) { showMessage(error.message, true); }
+}
+
 function chooseOption(archetype) {
   selectedArchetype = archetype;
   document.querySelectorAll(".review-option").forEach((button) => {
@@ -621,6 +630,7 @@ document.querySelectorAll("[data-corpus-view]").forEach((button) => button.addEv
 showCorpusView(sessionStorage.getItem("ct_corpus_view") || "overview");
 
 $("process-kpis").addEventListener("click", startBatch);
+$("auto-resolve-reviews").addEventListener("click", autoResolveReviews);
 $("retry-failed").addEventListener("click", retryFailed);
 $("review-items").addEventListener("click", loadNextReview);
 $("approve-review").addEventListener("click", () => saveReview("approve"));
