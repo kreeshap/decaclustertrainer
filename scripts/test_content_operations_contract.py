@@ -49,6 +49,16 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn("kpis, events = _load_all_kpis()", PIPELINE)
         self.assertIn('"is_beta": True', PIPELINE)
 
+    def test_classification_polling_does_not_refresh_unrelated_admin_panels(self):
+        self.assertIn("async function loadClassificationDashboard()", JS)
+        start_batch = re.search(r"async function startBatch\(\) \{(.+?)\n\}", JS, re.S).group(1)
+        self.assertIn("await loadClassificationDashboard()", start_batch)
+        self.assertNotIn("await loadDashboard()", start_batch)
+
+    def test_common_model_action_synonyms_are_normalized(self):
+        self.assertIn('"comply": "demonstrate"', PIPELINE)
+        self.assertIn("DECA_ACTION_ALIASES.get(value, value)", PIPELINE)
+
     def test_admin_batch_is_bounded_and_admin_protected(self):
         self.assertIn('@admin_bp.post("/api/admin/content-operations/process")', ADMIN)
         self.assertIn("min(int(body.get(\"limit\") or 20), 20)", ADMIN)

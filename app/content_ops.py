@@ -32,6 +32,13 @@ DECA_ACTIONS = {
     "explain", "identify", "demonstrate", "analyze", "calculate",
     "recommend", "justify", "respond", "develop", "evaluate",
 }
+DECA_ACTION_ALIASES = {
+    "apply": "demonstrate",
+    "assess": "evaluate",
+    "comply": "demonstrate",
+    "decide": "recommend",
+    "describe": "explain",
+}
 
 
 def utc_now() -> str:
@@ -162,6 +169,8 @@ def _validate_classification(raw: object) -> dict:
     }
     for field, allowed in enum_fields.items():
         value = str(result.get(field) or "").strip().lower()
+        if field == "deca_action":
+            value = DECA_ACTION_ALIASES.get(value, value)
         if value not in allowed:
             raise ValueError(f"unsupported {field}: {value}")
         result[field] = value

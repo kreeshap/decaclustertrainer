@@ -55,12 +55,18 @@ function renderDashboard(data) {
   $("batch-review").textContent = batch?.needs_review_count ?? 0;
   $("batch-failed").textContent = batch?.failed_count ?? 0;
   clearTimeout(refreshTimer);
-  if (batch && ["queued", "processing"].includes(batch.status)) refreshTimer = window.setTimeout(loadDashboard, 5000);
+  if (batch && ["queued", "processing"].includes(batch.status)) refreshTimer = window.setTimeout(loadClassificationDashboard, 5000);
+}
+
+async function loadClassificationDashboard() {
+  try {
+    renderDashboard(await readJson(await apiFetch("/api/admin/content-operations")));
+  } catch (error) { showMessage(error.message, true); }
 }
 
 async function loadDashboard() {
   try {
-    renderDashboard(await readJson(await apiFetch("/api/admin/content-operations")));
+    await loadClassificationDashboard();
     await loadLessonAuditDashboard();
     await loadQuestionImports();
     await loadCorpusDashboard();
@@ -516,7 +522,7 @@ async function startBatch() {
       method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ limit: 20 }),
     }));
     showMessage(data.queued ? `${data.queued} KPIs queued. You can leave this page.` : data.message);
-    await loadDashboard();
+    await loadClassificationDashboard();
   } catch (error) { showMessage(error.message, true); }
   finally { button.disabled = false; }
 }
