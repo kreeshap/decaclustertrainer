@@ -42,6 +42,13 @@ class ContentOperationsContractTests(unittest.TestCase):
         self.assertIn("def skeptical_review", PIPELINE)
         self.assertIn("ThreadPoolExecutor(max_workers=3)", PIPELINE)
 
+    def test_catalog_sync_upserts_parent_events_before_kpis(self):
+        event_sync = PIPELINE.index('"/deca_events"')
+        catalog_sync = PIPELINE.index('"/kpi_catalog"')
+        self.assertLess(event_sync, catalog_sync)
+        self.assertIn("kpis, events = _load_all_kpis()", PIPELINE)
+        self.assertIn('"is_beta": True', PIPELINE)
+
     def test_admin_batch_is_bounded_and_admin_protected(self):
         self.assertIn('@admin_bp.post("/api/admin/content-operations/process")', ADMIN)
         self.assertIn("min(int(body.get(\"limit\") or 20), 20)", ADMIN)

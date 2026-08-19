@@ -43,7 +43,28 @@ def catalog_id(kpi: dict) -> str:
 
 
 def sync_kpi_catalog() -> list[dict]:
-    kpis, _ = _load_all_kpis()
+    kpis, events = _load_all_kpis()
+    event_rows = [
+        {
+            "id": event.get("id", ""),
+            "name": event.get("name", ""),
+            "cluster": event.get("cluster", ""),
+            "is_beta": True,
+        }
+        for event in events
+        if event.get("id") and event.get("name") and event.get("cluster")
+    ]
+    if event_rows:
+        status, data = _supabase_svc(
+            "/deca_events",
+            method="POST",
+            payload=event_rows,
+            params={"on_conflict": "id"},
+            prefer="resolution=merge-duplicates,return=minimal",
+        )
+        if status not in (200, 201, 204):
+            raise RuntimeError(f"DECA event sync failed: {data}")
+
     rows = [
         {
             "id": catalog_id(kpi),
